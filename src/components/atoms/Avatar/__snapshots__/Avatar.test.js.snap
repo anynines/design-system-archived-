@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component snapshots should match snapshot with image 1`] = `
+<DocumentFragment>
+  .c0 {
+  --size: 5rem;
+  --font-size: .8em;
+  --initials-font-size: 2.4em;
+  --level-position: .2em;
+  --level-size: 2em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: var(--space-lgr);
+  border-radius: var(--radius);
+  background-color: var(--color-dark);
+  background-position: center center;
+  background-size: cover;
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 2);
+  font-size: var(--text-sm);
+}
+
+.c0.rounded {
+  border-radius: 100%;
+}
+
+.c0.md {
+  width: var(--size);
+  height: var(--size);
+  font-size: var(--text-lg);
+}
+
+.c0.lg {
+  width: calc(var(--size) * 2);
+  height: calc(var(--size) * 2);
+  font-size: var(--text-xl);
+}
+
+.c0.level {
+  position: relative;
+}
+
+.c0.level .level {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: var(--level-position);
+  left: var(--level-position);
+  background-color: var(--color-primary);
+  width: var(--level-size);
+  height: var(--level-size);
+  color: var(--color-white-fix);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bd);
+  border-radius: 100%;
+}
+
+.c0.initials .initials {
+  color: var(--color-white-fix);
+  font-size: var(--initials-font-size);
+  font-weight: var(--font-weight-bd);
+}
+
+<div
+    class="c0 md rounded level false styled-avatar"
+    style="background-image: url(https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);"
+  >
+    <div
+      class="level"
+    >
+      46
+    </div>
+    <div
+      class="initials"
+      data-testid="initials"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Avatar component snapshots should match snapshot with username 1`] = `
+<DocumentFragment>
+  .c0 {
+  --size: 5rem;
+  --font-size: .8em;
+  --initials-font-size: 2.4em;
+  --level-position: .2em;
+  --level-size: 2em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: var(--space-lgr);
+  border-radius: var(--radius);
+  background-color: var(--color-dark);
+  background-position: center center;
+  background-size: cover;
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 2);
+  font-size: var(--text-sm);
+}
+
+.c0.rounded {
+  border-radius: 100%;
+}
+
+.c0.md {
+  width: var(--size);
+  height: var(--size);
+  font-size: var(--text-lg);
+}
+
+.c0.lg {
+  width: calc(var(--size) * 2);
+  height: calc(var(--size) * 2);
+  font-size: var(--text-xl);
+}
+
+.c0.level {
+  position: relative;
+}
+
+.c0.level .level {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: var(--level-position);
+  left: var(--level-position);
+  background-color: var(--color-primary);
+  width: var(--level-size);
+  height: var(--level-size);
+  color: var(--color-white-fix);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bd);
+  border-radius: 100%;
+}
+
+.c0.initials .initials {
+  color: var(--color-white-fix);
+  font-size: var(--initials-font-size);
+  font-weight: var(--font-weight-bd);
+}
+
+<div
+    class="c0 md rounded level initials styled-avatar"
+  >
+    <div
+      class="level"
+    >
+      46
+    </div>
+    <div
+      class="initials"
+      data-testid="initials"
+    >
+      TS
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,8 @@
+{
+  "primary": "rgb(231, 145, 84)",
+  "notice": "rgba(62,151,228,1)",
+  "success": "rgba(42,204,117,1)",
+  "warning": "rgba(228,209,62,1)",
+  "error": "rgba(222,85,67,1)",
+  "whiteFix": "rgba(255,255,255,1)"
+}
