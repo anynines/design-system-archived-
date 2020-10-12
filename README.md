@@ -13,13 +13,13 @@ Note: This project was bootstrapped with [Create React App](https://github.com/f
 Install from the command line:
 
 ```sh
-yarn install @avarteqgmbh/design_system
+yarn install @anynines/design-system
 ```
 
 Install via package.json:
 
 ```sh
-"@avarteqgmbh/design_system": "^0.6.0"
+"@anynines/design-system": "^0.1.0"
 ```
 
 ## Development
