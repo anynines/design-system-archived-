@@ -1,7 +1,10 @@
 {
   "name": "@anynines/design-system",
-  "version": "0.10.3",
+  "version": "0.1.0",
   "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "main": "dist/index",
   "types": "dist/index.d.ts",
   "files": [
