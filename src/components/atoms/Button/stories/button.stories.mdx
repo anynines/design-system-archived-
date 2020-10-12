@@ -1,0 +1,55 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import {Button} from '../Button'
+
+<Meta title='Atoms/Button' component={Button} />
+
+# Button
+
+Here's some _markdown_!
+
+## Preview
+
+<Preview>
+  <Story name='Basic' args={{ type: 'default', size: 'default' }}>
+    {(args) => <Button {...args}>Button</Button>}
+  </Story>
+</Preview>
+
+## Props
+
+<Props story='Basic' />
+
+## Stories
+
+### Default
+
+<Preview>
+  <Story name='Default'>
+    <Button {...{ type: 'default', size: 'default' }}>Button Default</Button>
+  </Story>
+</Preview>
+
+### Primary
+
+<Preview>
+  <Story name='Primary'>
+    <Button {...{ type: 'primary', size: 'default' }}>Button Primary</Button>
+  </Story>
+</Preview>
+
+### Submit
+
+<Preview>
+  <Story name='Submit'>
+    <Button {...{ type: 'submit', size: 'default' }}>Button Submit</Button>
+  </Story>
+</Preview>
+
+### OnClick
+
+<Preview>
+  <Story name='OnClick'>
+    <Button {...{ type: 'default', size: 'default' }}>Button OnClick</Button>
+  </Story>
+</Preview>

@@ -1,0 +1,505 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToggleMode /> should match non default snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 1.25rem;
+}
+
+.c1 svg {
+  width: 100%;
+}
+
+.c0 {
+  --size: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dark);
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--radius);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .icons {
+  --pos-top: -40px;
+  --pos-top--sm: -30px;
+  position: absolute;
+  top: var(--pos-top);
+  -webkit-transition: top 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
+}
+
+.c0 .icons .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: var(--size);
+  height: var(--size);
+}
+
+.c0 svg {
+  height: 18px;
+  color: var(--color-white);
+}
+
+.c0:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white-fix);
+}
+
+.c0:hover svg {
+  color: var(--color-white-fix);
+}
+
+.c0.sm {
+  width: 30px;
+  height: 30px;
+}
+
+.c0.sm img,
+.c0.sm svg {
+  height: 15px;
+}
+
+.c0.sm .icons {
+  top: var(--pos-top--sm);
+}
+
+.c0.sm .icon {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width:60em) {
+
+}
+
+@media (max-width:60em) {
+  .c0 {
+    background-color: var(--color-darker);
+  }
+}
+
+<div
+    class="c0 sm StyledToggleMode"
+    mode="light"
+  >
+    <div
+      class="icons"
+    >
+      <div
+        class="icon"
+      >
+        <i
+          class="c1"
+        >
+          <svg
+            data-name="sun (1)"
+            height="22.038"
+            id="sun_1_"
+            viewBox="0 0 22.038 22.038"
+            width="22.038"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              data-name="Gruppe 308"
+              id="Gruppe_308"
+            >
+              <g
+                data-name="Gruppe 307"
+                id="Gruppe_307"
+              >
+                <path
+                  d="M84.645,76.832A5.557,5.557,0,0,0,80.739,75.2a5.437,5.437,0,0,0-3.906,1.632,5.539,5.539,0,0,0,3.906,9.445,5.437,5.437,0,0,0,3.906-1.632,5.557,5.557,0,0,0,1.632-3.906A5.437,5.437,0,0,0,84.645,76.832Z"
+                  data-name="Pfad 225"
+                  fill="currentColor"
+                  id="Pfad_225"
+                  transform="translate(-69.72 -69.72)"
+                />
+                <path
+                  d="M141.558,3.76A.772.772,0,0,0,142.316,3V.758a.758.758,0,1,0-1.516,0V3A.772.772,0,0,0,141.558,3.76Z"
+                  data-name="Pfad 226"
+                  fill="currentColor"
+                  id="Pfad_226"
+                  transform="translate(-130.539)"
+                />
+                <path
+                  d="M220.268,44.271l1.6-1.6a.742.742,0,1,0-1.049-1.049l-1.6,1.6a.742.742,0,1,0,1.049,1.049Z"
+                  data-name="Pfad 227"
+                  fill="currentColor"
+                  id="Pfad_227"
+                  transform="translate(-203.04 -38.383)"
+                />
+                <path
+                  d="M253.8,140.8h-2.245a.758.758,0,0,0,0,1.516H253.8a.758.758,0,0,0,0-1.516Z"
+                  data-name="Pfad 228"
+                  fill="currentColor"
+                  id="Pfad_228"
+                  transform="translate(-232.523 -130.539)"
+                />
+                <path
+                  d="M219.868,218.819a.742.742,0,1,0-1.049,1.049l1.6,1.6a.742.742,0,0,0,1.049-1.049Z"
+                  data-name="Pfad 229"
+                  fill="currentColor"
+                  id="Pfad_229"
+                  transform="translate(-202.669 -202.669)"
+                />
+                <path
+                  d="M141.558,250.8a.772.772,0,0,0-.758.758V253.8a.758.758,0,0,0,1.516,0v-2.245A.772.772,0,0,0,141.558,250.8Z"
+                  data-name="Pfad 230"
+                  fill="currentColor"
+                  id="Pfad_230"
+                  transform="translate(-130.539 -232.523)"
+                />
+                <path
+                  d="M42.822,218.819l-1.6,1.6a.742.742,0,0,0,1.049,1.049l1.6-1.6a.742.742,0,1,0-1.049-1.049Z"
+                  data-name="Pfad 231"
+                  fill="currentColor"
+                  id="Pfad_231"
+                  transform="translate(-38.012 -202.669)"
+                />
+                <path
+                  d="M3.76,141.558A.772.772,0,0,0,3,140.8H.758a.758.758,0,1,0,0,1.516H3A.772.772,0,0,0,3.76,141.558Z"
+                  data-name="Pfad 232"
+                  fill="currentColor"
+                  id="Pfad_232"
+                  transform="translate(0 -130.539)"
+                />
+                <path
+                  d="M42.822,44.271a.742.742,0,1,0,1.049-1.049l-1.6-1.6a.742.742,0,1,0-1.049,1.049Z"
+                  data-name="Pfad 233"
+                  fill="currentColor"
+                  id="Pfad_233"
+                  transform="translate(-38.012 -38.383)"
+                />
+              </g>
+            </g>
+          </svg>
+        </i>
+      </div>
+      <div
+        class="icon"
+      >
+        <i
+          class="c1"
+        >
+          <svg
+            height="15"
+            viewBox="0 0 13.96 15"
+            width="13.96"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="night"
+              transform="translate(-16.646)"
+            >
+              <g
+                data-name="Gruppe 523"
+                id="Gruppe_523"
+                transform="translate(16.646)"
+              >
+                <path
+                  d="M30.494,10.854a.5.5,0,0,0-.557-.155,5.289,5.289,0,0,1-1.791.3A5.5,5.5,0,0,1,25.056.954a.5.5,0,0,0-.209-.909,4.854,4.854,0,0,0-.7-.045,7.5,7.5,0,1,0,6.386,11.432A.5.5,0,0,0,30.494,10.854Z"
+                  data-name="Pfad 299"
+                  fill="currentColor"
+                  id="Pfad_299"
+                  transform="translate(-16.646)"
+                />
+              </g>
+            </g>
+          </svg>
+        </i>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 1.25rem;
+}
+
+.c1 svg {
+  width: 100%;
+}
+
+.c0 {
+  --size: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dark);
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--radius);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .icons {
+  --pos-top: 0;
+  --pos-top--sm: 0;
+  position: absolute;
+  top: var(--pos-top);
+  -webkit-transition: top 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
+}
+
+.c0 .icons .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: var(--size);
+  height: var(--size);
+}
+
+.c0 svg {
+  height: 18px;
+  color: var(--color-white);
+}
+
+.c0:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white-fix);
+}
+
+.c0:hover svg {
+  color: var(--color-white-fix);
+}
+
+.c0.sm {
+  width: 30px;
+  height: 30px;
+}
+
+.c0.sm img,
+.c0.sm svg {
+  height: 15px;
+}
+
+.c0.sm .icons {
+  top: var(--pos-top--sm);
+}
+
+.c0.sm .icon {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width:60em) {
+  .c0 {
+    background-color: var(--color-darker);
+  }
+}
+
+<div
+    class="c0 lg StyledToggleMode"
+    mode="dark"
+  >
+    <div
+      class="icons"
+    >
+      <div
+        class="icon"
+      >
+        <i
+          class="c1"
+        >
+          <svg
+            data-name="sun (1)"
+            height="22.038"
+            id="sun_1_"
+            viewBox="0 0 22.038 22.038"
+            width="22.038"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              data-name="Gruppe 308"
+              id="Gruppe_308"
+            >
+              <g
+                data-name="Gruppe 307"
+                id="Gruppe_307"
+              >
+                <path
+                  d="M84.645,76.832A5.557,5.557,0,0,0,80.739,75.2a5.437,5.437,0,0,0-3.906,1.632,5.539,5.539,0,0,0,3.906,9.445,5.437,5.437,0,0,0,3.906-1.632,5.557,5.557,0,0,0,1.632-3.906A5.437,5.437,0,0,0,84.645,76.832Z"
+                  data-name="Pfad 225"
+                  fill="currentColor"
+                  id="Pfad_225"
+                  transform="translate(-69.72 -69.72)"
+                />
+                <path
+                  d="M141.558,3.76A.772.772,0,0,0,142.316,3V.758a.758.758,0,1,0-1.516,0V3A.772.772,0,0,0,141.558,3.76Z"
+                  data-name="Pfad 226"
+                  fill="currentColor"
+                  id="Pfad_226"
+                  transform="translate(-130.539)"
+                />
+                <path
+                  d="M220.268,44.271l1.6-1.6a.742.742,0,1,0-1.049-1.049l-1.6,1.6a.742.742,0,1,0,1.049,1.049Z"
+                  data-name="Pfad 227"
+                  fill="currentColor"
+                  id="Pfad_227"
+                  transform="translate(-203.04 -38.383)"
+                />
+                <path
+                  d="M253.8,140.8h-2.245a.758.758,0,0,0,0,1.516H253.8a.758.758,0,0,0,0-1.516Z"
+                  data-name="Pfad 228"
+                  fill="currentColor"
+                  id="Pfad_228"
+                  transform="translate(-232.523 -130.539)"
+                />
+                <path
+                  d="M219.868,218.819a.742.742,0,1,0-1.049,1.049l1.6,1.6a.742.742,0,0,0,1.049-1.049Z"
+                  data-name="Pfad 229"
+                  fill="currentColor"
+                  id="Pfad_229"
+                  transform="translate(-202.669 -202.669)"
+                />
+                <path
+                  d="M141.558,250.8a.772.772,0,0,0-.758.758V253.8a.758.758,0,0,0,1.516,0v-2.245A.772.772,0,0,0,141.558,250.8Z"
+                  data-name="Pfad 230"
+                  fill="currentColor"
+                  id="Pfad_230"
+                  transform="translate(-130.539 -232.523)"
+                />
+                <path
+                  d="M42.822,218.819l-1.6,1.6a.742.742,0,0,0,1.049,1.049l1.6-1.6a.742.742,0,1,0-1.049-1.049Z"
+                  data-name="Pfad 231"
+                  fill="currentColor"
+                  id="Pfad_231"
+                  transform="translate(-38.012 -202.669)"
+                />
+                <path
+                  d="M3.76,141.558A.772.772,0,0,0,3,140.8H.758a.758.758,0,1,0,0,1.516H3A.772.772,0,0,0,3.76,141.558Z"
+                  data-name="Pfad 232"
+                  fill="currentColor"
+                  id="Pfad_232"
+                  transform="translate(0 -130.539)"
+                />
+                <path
+                  d="M42.822,44.271a.742.742,0,1,0,1.049-1.049l-1.6-1.6a.742.742,0,1,0-1.049,1.049Z"
+                  data-name="Pfad 233"
+                  fill="currentColor"
+                  id="Pfad_233"
+                  transform="translate(-38.012 -38.383)"
+                />
+              </g>
+            </g>
+          </svg>
+        </i>
+      </div>
+      <div
+        class="icon"
+      >
+        <i
+          class="c1"
+        >
+          <svg
+            height="15"
+            viewBox="0 0 13.96 15"
+            width="13.96"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="night"
+              transform="translate(-16.646)"
+            >
+              <g
+                data-name="Gruppe 523"
+                id="Gruppe_523"
+                transform="translate(16.646)"
+              >
+                <path
+                  d="M30.494,10.854a.5.5,0,0,0-.557-.155,5.289,5.289,0,0,1-1.791.3A5.5,5.5,0,0,1,25.056.954a.5.5,0,0,0-.209-.909,4.854,4.854,0,0,0-.7-.045,7.5,7.5,0,1,0,6.386,11.432A.5.5,0,0,0,30.494,10.854Z"
+                  data-name="Pfad 299"
+                  fill="currentColor"
+                  id="Pfad_299"
+                  transform="translate(-16.646)"
+                />
+              </g>
+            </g>
+          </svg>
+        </i>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

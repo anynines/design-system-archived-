@@ -1,0 +1,104 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import {Menu} from '../Menu'
+
+<Meta title='Organisms/Menu' component={Menu} />
+
+## Preview
+
+<Preview>
+  <Story
+    name='MainMenu'
+    args={{
+      vertical: true,
+      items: [
+        {
+          id: 'menu',
+          icon: 'menu',
+          children: <>Menu</>,
+        },
+        {
+          id: 'shop',
+          icon: 'shop',
+          children: <>Shop</>,
+        },
+      ],
+    }}
+  >
+    {(args) => <Menu {...args}></Menu>}
+  </Story>
+</Preview>
+
+### Props 🔧
+
+Here you can see some of the props
+
+<Props story='MainMenu' />
+
+## Stories
+
+### Usermenu
+
+<Preview>
+  <Story name='UserMenu'>
+    <Menu
+      items={[
+        {
+          id: 'wishlist',
+          icon: 'wishlist',
+          counter: true,
+        },
+        {
+          id: 'cart',
+          icon: 'cart',
+          counter: true,
+        },
+        {
+          id: 'notifications',
+          icon: 'notifications',
+          counter: true,
+        },
+        {
+          id: 'points',
+          icon: 'points',
+          children: <>4242</>,
+        },
+      ]}
+    ></Menu>
+  </Story>
+</Preview>
+
+### Adminmenu
+
+<Preview>
+  <Story name='AdminMenu'>
+    <Menu
+      items={[
+        {
+          id: 'dashboard',
+          icon: 'dashboard',
+          vertical: true,
+          children: <>Dashboard</>,
+        },
+        {
+          id: 'users',
+          icon: 'users',
+          vertical: true,
+          children: <>Users</>,
+        },
+        {
+          id: 'pages',
+          icon: 'pages',
+          vertical: true,
+          children: <>Pages</>,
+        },
+        {
+          id: 'settings',
+          icon: 'settings',
+          vertical: true,
+          children: <>Settings</>,
+        },
+      ]}
+    ></Menu>
+  </Story>
+</Preview>

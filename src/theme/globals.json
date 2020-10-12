@@ -1,0 +1,32 @@
+{
+  "font": {
+    "name": "Lato",
+    "light": "300",
+    "regular": "400",
+    "bold": "700"
+  },
+  "radius": "10px",
+  "border": "none",
+  "contentMaxWidth": "75rem",
+  "shadow": "none",
+  "transition": "all 0.3s ease-in-out",
+  "logos": {
+    "vertical": {
+      "dark": "https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/dark_vertical.svg?sanitize=true",
+      "light": "https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/light_vertical.svg?sanitize=true"
+    },
+    "horizontal": {
+      "dark": "https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/dark_horizontal.svg?sanitize=true",
+      "light": "https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/light_horizontal.svg?sanitize=true"
+    }
+  },
+  "spacing": {
+    "baseUnit": "1em",
+    "fixedUnit": "1rem"
+  },
+  "typography": {
+    "baseUnit": "1em",
+    "headingLineHeight": "1.2",
+    "bodyLineHeight": "1.5"
+  }
+}

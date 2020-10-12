@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert component snapshot should match snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 1.25rem;
+}
+
+.c1 svg {
+  width: 100%;
+}
+
+.c0 {
+  --position: 2rem;
+  --width: 22rem;
+  --z-index: 90;
+  --bg-color: rgba(42,204,117,1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: fixed;
+  top: var(--position);
+  right: var(--position);
+  z-index: var(--z-index);
+  width: var(--width);
+  min-height: 4.5rem;
+  font-size: var(--text-lg);
+  border-radius: var(--radius);
+  box-shadow: 0 0 .5em rgba(0,0,0,0.15);
+}
+
+.c0 .alert-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: var(--space-md);
+  color: var(--color-white-fix);
+  border-bottom-left-radius: .5em;
+  border-top-left-radius: .5em;
+  -webkit-filter: brightness(90%);
+  filter: brightness(90%);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  max-width: 4.5rem;
+}
+
+.c0 .alert-icon svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.c0 .alert-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  position: relative;
+  background-color: var(--bg-color);
+  padding: var(--space-md) var(--space-lg);
+  color: var(--color-white-fix);
+  border-bottom-right-radius: .5em;
+  border-top-right-radius: .5em;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.c0 .alert-info h3 {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-white-fix);
+}
+
+.c0 .alert-info P {
+  margin: var(--space-md) 0 var(--space-sm);
+  line-height: 1.2;
+}
+
+.c0 .alert-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: 2em;
+  min-height: 2em;
+  color: var(--color-white-fix);
+  outline: none;
+}
+
+.c0 .alert-button svg {
+  width: 1em;
+  height: 1em;
+}
+
+<div
+    class="c0 AlertWrapper"
+    type="success"
+  >
+    <div
+      class="alert-icon"
+    >
+      <i
+        class="c1"
+      >
+        <svg
+          height="24.707"
+          viewBox="0 0 24.707 24.707"
+          width="24.707"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.353,0A12.353,12.353,0,1,0,24.707,12.353,12.367,12.367,0,0,0,12.353,0Zm.8,19.683c-.587.1-1.755.342-2.348.391a1.445,1.445,0,0,1-1.264-.658A1.544,1.544,0,0,1,9.358,18l2.335-6.421H9.265a2.9,2.9,0,0,1,2.285-2.7A8.939,8.939,0,0,1,13.9,8.493a1.862,1.862,0,0,1,1.264.658,1.544,1.544,0,0,1,.187,1.414l-2.335,6.421h2.427a2.733,2.733,0,0,1-2.284,2.7ZM13.9,7.721a1.544,1.544,0,1,1,1.544-1.544A1.544,1.544,0,0,1,13.9,7.721Z"
+            fill="currentColor"
+            id="info"
+          />
+        </svg>
+      </i>
+    </div>
+    <div
+      class="alert-info"
+    >
+      <h3>
+        Test Title
+      </h3>
+      <p>
+        Test Description
+      </p>
+      <button
+        class="alert-button"
+        type="button"
+      >
+        <i
+          class="c1"
+        >
+          <svg
+            height="10.852"
+            viewBox="0 0 10.852 10.852"
+            width="10.852"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              data-name="Gruppe 2951"
+              id="Gruppe_2951"
+              transform="translate(-2008.124 592.325) rotate(-45)"
+            >
+              <rect
+                data-name="Rechteck 507"
+                fill="currentColor"
+                height="2.79"
+                id="Rechteck_507"
+                rx="1.395"
+                transform="translate(1832.517 1007.4)"
+                width="12.557"
+              />
+              <rect
+                data-name="Rechteck 508"
+                fill="currentColor"
+                height="2.79"
+                id="Rechteck_508"
+                rx="1.395"
+                transform="translate(1837.4 1015.073) rotate(-90)"
+                width="12.557"
+              />
+            </g>
+          </svg>
+        </i>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
