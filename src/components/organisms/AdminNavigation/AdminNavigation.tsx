@@ -63,10 +63,11 @@ export const AdminNavigation: React.FC<AdminNavigationProps> = ({
 }
 
 const StyledAdminNavigation = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
   background-color: var(--color-dark);
   padding: var(--space-md);
   padding-top: 30px;
@@ -74,7 +75,6 @@ const StyledAdminNavigation = styled.div`
   height: calc(100vh - 60px);
   color: var(--color-white);
   border-radius: var(--radius);
-  overflow: hidden;
 
   .StyledMenuItem {
     .wrapper:not(.active):not(:hover) {
@@ -84,8 +84,8 @@ const StyledAdminNavigation = styled.div`
 
   .UserNav {
     position: absolute;
-    background-color: var(--color-darker);
     bottom: 0;
+    background-color: var(--color-darker);
   }
 
   .Logo {
