@@ -27,7 +27,7 @@ export const UserNav: React.FC<UserNavProps> = ({
   className = ''
 }) => {
   return (
-    <StyledUserNav className={className}>
+    <StyledUserNav className={`UserNav ${className}`}>
       <div className='left'>
         <Avatar size='sm' avatar={avatar} />
         <UserInfo userName={name} userGroup={description} />
