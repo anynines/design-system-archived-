@@ -43,9 +43,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : (
-              <></>
-            )}
+            ) : <></>}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -65,8 +63,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {children !== undefined ? (
               <span className='label'>{children}</span>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
           </div>
         </StyledMenuItem>
       )}
