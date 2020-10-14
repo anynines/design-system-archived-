@@ -21,7 +21,6 @@ export interface AdminNavigationProps {
 
 export interface AdminNavigationLink {
   id: string
-  link: string
   children: JSX.Element
   icon?: IconName
 }
