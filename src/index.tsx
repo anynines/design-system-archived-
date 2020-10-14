@@ -62,6 +62,8 @@ export * from './components/organisms/ProductItem/ProductItem'
 export * from './components/organisms/Table/Table'
 export * from './components/organisms/Table/SortableTable'
 export * from './components/organisms/Table/DraggableTable'
+export * from './components/organisms/AdminNavigation/AdminNavigation'
+export * from './components/organisms/UserNav/UserNav'
 
 // H E L P E R
 export * from './helpers/index'
