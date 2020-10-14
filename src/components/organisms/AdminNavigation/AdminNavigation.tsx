@@ -22,6 +22,7 @@ export interface AdminNavigationProps {
 export interface AdminNavigationLink {
   id: string
   link: string
+  children: JSX.Element
   icon?: IconName
 }
 
@@ -71,8 +72,8 @@ const StyledAdminNavigation = styled.div`
   background-color: var(--color-dark);
   padding: var(--space-md);
   padding-top: 30px;
-  width: 260px;
-  height: calc(100vh - 60px);
+  width: 100%;
+  height: 100%;
   color: var(--color-white);
   border-radius: var(--radius);
 
