@@ -95,7 +95,7 @@ const StyledAdminNavigation = styled.div`
   }
 
   ul {
-    padding-inline-start: inherit;
+    padding-top: 30px;
   }
 
   li {
