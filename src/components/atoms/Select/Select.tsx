@@ -38,7 +38,13 @@ export const Select: React.FC<SelectProps> = ({
     }
 
     setValueState(newValue)
-    // @todo update custom value add class is-active 
+
+    // update the custom select selected option to be synchronized
+    for( let option of document.getElementsByClassName("select-custom__option")){
+      if(option.getAttribute("data-value") === newValue){
+        updateOptionElement(option)
+      }
+    }
   }
 
   const updateOptionElement = (element: Element) => {
@@ -82,7 +88,6 @@ export const Select: React.FC<SelectProps> = ({
 
   const closeCustomSelectOptions = () => {
     setIsActive(false)
-    // @todo move to every required position
     document.removeEventListener('click', clickedOutside, false)
     document.removeEventListener('keydown', keyboardNavigation, false)
   }
@@ -96,16 +101,16 @@ export const Select: React.FC<SelectProps> = ({
 
     if(isActive){
       event.preventDefault()
-      if(event.key == "ArrowDown" && optionHoveredIndex < values.length - 1 ){
+      if(event.key === "ArrowDown" && optionHoveredIndex < values.length - 1 ){
         optionHoveredIndex += 1
         setOptionHover()
       }
-      if(event.key == "ArrowUp" && optionHoveredIndex > 0 ){
+      if(event.key === "ArrowUp" && optionHoveredIndex > 0 ){
         optionHoveredIndex -= 1
         setOptionHover()
       }
 
-      if(event.key == " " || event.key == "Enter" || event.key == "Spacebar"){
+      if(event.key === " " || event.key === "Enter" || event.key === "Spacebar"){
         
         const option = document.getElementsByClassName("select-custom__option")[optionHoveredIndex]
         if(typeof option != "undefined"){
@@ -116,7 +121,7 @@ export const Select: React.FC<SelectProps> = ({
         }
       }
 
-      if(event.key == "Escape"){
+      if(event.key === "Escape"){
         closeCustomSelectOptions()
       }
     }
