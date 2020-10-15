@@ -62,6 +62,7 @@ import Logout from './assets/logout'
 // M
 import Menu from './assets/menu'
 import Minus from './assets/minus'
+import MinusInSquare from './assets/minusInSquare'
 import Moon from './assets/moon'
 
 // N
@@ -99,6 +100,7 @@ import Tag from './assets/tag'
 import Text from './assets/text'
 import TitleDisabled from './assets/titleDisabled'
 import TurnAround from './assets/turnAround'
+import Telescope from './assets/telescope'
 
 // U
 import User from './assets/user'
@@ -152,6 +154,7 @@ export type IconName =
   | 'logout'
   | 'menu'
   | 'minus'
+  | 'minusInSquare'
   | 'moon'
   | 'news'
   | 'notifications'
@@ -171,6 +174,7 @@ export type IconName =
   | 'shop'
   | 'slider'
   | 'tag'
+  | 'telescope'
   | 'text'
   | 'turnAround'
   | 'user'
@@ -264,6 +268,8 @@ export const Icon: FC<IconProps> = ({ icon = 'menu', className }: IconProps) => 
         return <Menu />
       case 'minus':
         return <Minus />
+      case 'minusInSquare':
+        return <MinusInSquare />
       case 'moon':
         return <Moon />
       case 'notifications':
@@ -330,6 +336,8 @@ export const Icon: FC<IconProps> = ({ icon = 'menu', className }: IconProps) => 
         return <Paragraph />
       case 'photo':
         return <Photo />
+      case 'telescope':
+        return <Telescope />
       case 'titleDisabled':
         return <TitleDisabled />
       case 'unorderedList':
