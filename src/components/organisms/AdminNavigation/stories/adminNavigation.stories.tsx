@@ -13,6 +13,7 @@ export default {
 
 const StyledAdminNavigation = styled(AdminNavigation)`
   width: 260px;
+  height: 100vh;
 `
 
 
