@@ -1,3 +1,6 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable @typescript-eslint/no-use-before-define */
+
 import React from 'react'
 import styled from 'styled-components'
 import { ValidationOptions } from 'react-hook-form'
@@ -29,6 +32,33 @@ export const Select: React.FC<SelectProps> = ({
 }) => {
   const [valueState, setValueState] = React.useState(defaultValue)
   const [isActive, setIsActive] = React.useState(false)
+  let optionHoveredIndex = -1
+
+  const setOptionHover = (): void => {
+    const options = document.getElementsByClassName('select-custom__option')
+    for (const o of options) {
+      o.classList.remove('is-hovered')
+    }
+    if (optionHoveredIndex >= 0) {
+      options[optionHoveredIndex].classList.add('is-hovered')
+    }
+  }
+
+  const updateOptionElement = (element: Element): void => {
+    const options = document.getElementsByClassName('select-custom__option')
+
+    // @TODO set correct hover start position when using keyboard, it seems to reset, could be development only
+
+    for (const o of options) {
+      o.classList.remove('is-active')
+    }
+    element.classList.remove('is-hovered')
+    element.classList.add('is-active')
+
+    // set the next hover start index
+    optionHoveredIndex = Array.prototype.slice.call(options).indexOf(element)
+    setOptionHover()
+  }
 
   const onValueChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const newValue = event.target.value
@@ -40,43 +70,53 @@ export const Select: React.FC<SelectProps> = ({
     setValueState(newValue)
 
     // update the custom select selected option to be synchronized
-    for( let option of document.getElementsByClassName("select-custom__option")){
-      if(option.getAttribute("data-value") === newValue){
+    for (const option of document.getElementsByClassName('select-custom__option')) {
+      if (option.getAttribute('data-value') === newValue) {
         updateOptionElement(option)
       }
     }
   }
 
-  const updateOptionElement = (element: Element) => {
-    const options = document.getElementsByClassName("select-custom__option")
-    
-    // @TODO set correct hover start position when using keyboard, it seems to reset, could be development only
-
-    for(let o of options){
-      o.classList.remove("is-active")
-    }
-    element.classList.remove("is-hovered")
-    element.classList.add("is-active")
-  
-    // set the next hover start index
-    optionHoveredIndex = Array.prototype.slice.call(options).indexOf(element)
-    setOptionHover()
-  }
-
   const onCustomSelectOptionClick = (event: React.MouseEvent<HTMLDivElement>): void => {
-    const newValue = event.currentTarget.dataset.value || ""
+    const newValue = event.currentTarget.dataset.value || ''
 
     setValueState(newValue)
     updateOptionElement(event.currentTarget)
   }
 
-  const onCustomSelectClick = (event: React.MouseEvent<HTMLDivElement>): void => {
+  const onCustomSelectClick = (): void => {
     setIsActive(!isActive)
   }
 
-  const clickedOutside = (event: MouseEvent) => {
-    const el = event.target;
-    const domNode = document.getElementsByClassName("StyledSelect")[0];
+  const keyboardNavigation = (event: KeyboardEvent): void => {
+    if (isActive) {
+      event.preventDefault()
+      if (event.key === 'ArrowDown' && optionHoveredIndex < values.length - 1) {
+        optionHoveredIndex += 1
+        setOptionHover()
+      }
+      if (event.key === 'ArrowUp' && optionHoveredIndex > 0) {
+        optionHoveredIndex -= 1
+        setOptionHover()
+      }
+      if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
+        const option = document.getElementsByClassName('select-custom__option')[optionHoveredIndex]
+        if (typeof option !== 'undefined') {
+          const newValue = option.getAttribute('data-value') || ''
+          setValueState(newValue)
+          updateOptionElement(option)
+          closeCustomSelectOptions()
+        }
+      }
+      if (event.key === 'Escape') {
+        closeCustomSelectOptions()
+      }
+    }
+  }
+
+  const clickedOutside = (event: MouseEvent): void => {
+    const el = event.target
+    const domNode = document.getElementsByClassName('StyledSelect')[0]
     /*
      * NOTE: we have to check the type of el before doing the contains, otherwise
      * typescript will break
@@ -86,76 +126,31 @@ export const Select: React.FC<SelectProps> = ({
     }
   }
 
-  const closeCustomSelectOptions = () => {
+  const closeCustomSelectOptions = (): void => {
     setIsActive(false)
     document.removeEventListener('click', clickedOutside, false)
     document.removeEventListener('keydown', keyboardNavigation, false)
   }
-  
-  let optionHoveredIndex = -1
 
-  // const [OptionHoveredIndex, setOptionHoveredIndex] = React.useState(-1)
-
-  const keyboardNavigation = (event: KeyboardEvent) => {
-    
-
-    if(isActive){
-      event.preventDefault()
-      if(event.key === "ArrowDown" && optionHoveredIndex < values.length - 1 ){
-        optionHoveredIndex += 1
-        setOptionHover()
-      }
-      if(event.key === "ArrowUp" && optionHoveredIndex > 0 ){
-        optionHoveredIndex -= 1
-        setOptionHover()
-      }
-
-      if(event.key === " " || event.key === "Enter" || event.key === "Spacebar"){
-        
-        const option = document.getElementsByClassName("select-custom__option")[optionHoveredIndex]
-        if(typeof option != "undefined"){
-          const newValue = option.getAttribute("data-value") || ""
-          setValueState(newValue)
-          updateOptionElement(option)
-          closeCustomSelectOptions()
-        }
-      }
-
-      if(event.key === "Escape"){
-        closeCustomSelectOptions()
-      }
-    }
-  }
-
-  const setOptionHover = () => {
-    const options = document.getElementsByClassName("select-custom__option")
-    for(let o of options){
-      o.classList.remove("is-hovered")
-    }
-    if(optionHoveredIndex >= 0){
-      options[optionHoveredIndex].classList.add("is-hovered")
-    }
-  }
-
-  React.useEffect( () => {
-    if(isActive){
+  React.useEffect((): void => {
+    if (isActive) {
       document.addEventListener('click', clickedOutside, false)
       document.addEventListener('keydown', keyboardNavigation, false)
     }
   })
 
   return (
-    <StyledSelect className={`${className} ${isActive ? "is-active" : ""}`} >
-      <div className={`icon-wrapper`}>
+    <StyledSelect className={`${className} ${isActive ? 'is-active' : ''}`}>
+      <div className='icon-wrapper'>
         {icon && <Icon icon={icon} />}
       </div>
-      <span className={"select-label"} id={name} >{label}</span>
+      <span className='select-label' id={name}>{label}</span>
 
       {/*
       * There is a type incoherence between register() and ref attribut
       * The trick 'as unknown as undefined' is used to not use @ts-ignore
       */}
-      <div className={"selectWrapper"} >
+      <div className='selectWrapper'>
         <select
           // id={name}
           aria-labelledby={name}
@@ -169,11 +164,11 @@ export const Select: React.FC<SelectProps> = ({
           })}
         </select>
 
-        <div className={"select-custom"} aria-hidden={!isActive} onClick={onCustomSelectClick} >
-          <div className={"select-custom__option-container"} >
+        <div className='select-custom' aria-hidden={!isActive} onClick={onCustomSelectClick}>
+          <div className='select-custom__option-container'>
             {values.map((value): JSX.Element => {
-                return (<div className={"select-custom__option"} data-value={value} key={value} onClick={onCustomSelectOptionClick}>{value}</div>)
-              })}
+              return (<div className='select-custom__option' data-value={value} key={value} onClick={onCustomSelectOptionClick}>{value}</div>)
+            })}
           </div>
         </div>
       </div>
