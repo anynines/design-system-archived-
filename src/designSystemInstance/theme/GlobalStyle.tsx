@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     --content-max-width: ${(props): string => { return props.theme.globals.contentMaxWidth }};
     --shadow: ${(props): string => { return props.theme.globals.shadow }};
     --transition: ${(props): string => { return props.theme.globals.transition }};
-    
+    --transition-ease-in-out-300: 0.3s ease-in-out;
     /* S P A C I N G */
     --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }};
     --space-xs:  calc(var(--space-unit) * 0.25);
