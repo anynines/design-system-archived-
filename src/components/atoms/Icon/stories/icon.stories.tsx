@@ -87,6 +87,7 @@ export const Collection = () => (
     <IconWrapper icon='logout' />
     <IconWrapper icon='menu' />
     <IconWrapper icon='minus' />
+    <IconWrapper icon='minusInSquare' />
     <IconWrapper icon='moon' />
     <IconWrapper icon='news' />
     <IconWrapper icon='notifications' />
@@ -107,6 +108,7 @@ export const Collection = () => (
     <IconWrapper icon='slider' />
     <IconWrapper icon='tag' />
     <IconWrapper icon='text' />
+    <IconWrapper icon='telescope' />
     <IconWrapper icon='turnAround' />
     <IconWrapper icon='user' />
     <IconWrapper icon='users' />
