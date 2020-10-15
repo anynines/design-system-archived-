@@ -103,6 +103,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: var(--text-xl);
   }
 
+  ul {
+    margin: 0;
+    padding-inline-start: 0;
+  }
+
   ul, ol, li {
     list-style: none;
   }
