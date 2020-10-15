@@ -2,6 +2,21 @@ import { createGlobalStyle } from 'styled-components'
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.25);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+  }
+
   :root {
     /* C O L O R S */
     --color-primary: ${(props): string => { return props.theme.colors.primary }};
@@ -63,9 +78,17 @@ export const GlobalStyle = createGlobalStyle`
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};
   }
 
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
   body {
+    margin: 0;
     background-color: var(--color-darker);
+    padding: 0;
     line-height: var(--body-line-height);
+    color: var(--color-white);
     font-family: var(--font-family);
     font-size: var(--text-base-unit);
   }
@@ -78,6 +101,10 @@ export const GlobalStyle = createGlobalStyle`
   
   h1, .text-xxl {
     font-size: var(--text-xl);
+  }
+
+  ul, ol, li {
+    list-style: none;
   }
 
   * {
