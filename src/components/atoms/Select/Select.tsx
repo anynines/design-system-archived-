@@ -1,5 +1,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-restricted-syntax */
 
 import React from 'react'
 import styled from 'styled-components'
@@ -241,8 +243,8 @@ const StyledSelect = styled.div`
   .select-custom {
     position: relative;
     border: none;
-    cursor: pointer;
     background-color: var(--color-dark-50);
+    cursor: pointer;
     padding: var(--space-md) 0 0 calc(var(--icon-wrapper-size) + var(--space-md));
     width: 100%;
     height: var(--icon-wrapper-size);
@@ -277,27 +279,27 @@ const StyledSelect = styled.div`
 
   .select-custom {
     display: none;
-    left: 0;
     position: absolute;
     top: 0;
+    left: 0;
 
 
     &__option-container {
-      appearance: none;
-      background-color: var(--color-dark-50);
-      border-color: var(--color-primary);
-      border-radius: 0 0 var(--radius) var(--radius);
-      border-style: solid;
-      border-width: 1px;
-      color: var(--color-white);
       display: none;
-      left: 0;
-      outline: none;
       position: absolute;
       top: var(--icon-wrapper-size);
-      transition: color var(--transition-ease-in-out-300), background-color var(--transition-ease-in-out-300);
-      width: 100%;
+      left: 0;
       z-index: 1;
+      border-width: 1px;
+      border-style: solid;
+      background-color: var(--color-dark-50);
+      width: 100%;
+      color: var(--color-white);
+      appearance: none;
+      border-color: var(--color-primary);
+      border-radius: 0 0 var(--radius) var(--radius);
+      outline: none;
+      transition: color var(--transition-ease-in-out-300), background-color var(--transition-ease-in-out-300);
     }
 
     &__option {
