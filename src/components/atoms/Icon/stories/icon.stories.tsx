@@ -53,6 +53,7 @@ export const StyledIcon = (args: IconProps) => {
 
 export const Collection = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <IconWrapper icon='arrowUpRight' />
     <IconWrapper icon='bestseller' />
     <IconWrapper icon='button' />
     <IconWrapper icon='bin' />
@@ -60,6 +61,7 @@ export const Collection = () => (
     <IconWrapper icon='caretRight' />
     <IconWrapper icon='cart' />
     <IconWrapper icon='camera' />
+    <IconWrapper icon='calendar' />
     <IconWrapper icon='close' />
     <IconWrapper icon='color' />
     <IconWrapper icon='customer' />
@@ -67,6 +69,8 @@ export const Collection = () => (
     <IconWrapper icon='delivery' />
     <IconWrapper icon='drop' />
     <IconWrapper icon='edit' />
+    <IconWrapper icon='euro' />
+    <IconWrapper icon='frequency' />
     <IconWrapper icon='filter' />
     <IconWrapper icon='folder' />
     <IconWrapper icon='font' />
@@ -100,6 +104,7 @@ export const Collection = () => (
     <IconWrapper icon='points' />
     <IconWrapper icon='random' />
     <IconWrapper icon='remove' />
+    <IconWrapper icon='rocket' />
     <IconWrapper icon='sale' />
     <IconWrapper icon='sections' />
     <IconWrapper icon='send' />
@@ -110,6 +115,7 @@ export const Collection = () => (
     <IconWrapper icon='text' />
     <IconWrapper icon='telescope' />
     <IconWrapper icon='turnAround' />
+    <IconWrapper icon='unit' />
     <IconWrapper icon='user' />
     <IconWrapper icon='users' />
     <IconWrapper icon='widthSM' />
