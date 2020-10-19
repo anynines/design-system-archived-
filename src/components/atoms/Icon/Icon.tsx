@@ -194,165 +194,87 @@ export type IconName =
   | 'unorderedList'
   | 'widthIncrease'
 
+const ICONS: { [key in IconName]: JSX.Element } = {
+  bestseller: <Bestseller />,
+  bin: <Bin />,
+  button: <Button />,
+  camera: <Camera />,
+  caretDown: <CaretDown />,
+  caretRight: <CaretRight />,
+  cart: <Cart />,
+  close: <Close />,
+  color: <Color />,
+  customer: <Customer />,
+  dashboard: <Dashboard />,
+  delivery: <Delivery />,
+  drop: <Drop />,
+  edit: <Edit />,
+  filter: <Filter />,
+  folder: <Folder />,
+  font: <Font />,
+  globe: <Globe />,
+  grid1: <Grid1 />,
+  grid2: <Grid2 />,
+  grid4: <Grid4 />,
+  grid8: <Grid8 />,
+  grid16: <Grid16 />,
+  heart: <Heart />,
+  info: <Info />,
+  LangDE: <LangDE />,
+  LangEN: <LangEN />,
+  LangSP: <LangSP />,
+  LangIT: <LangIT />,
+  layout: <Layout />,
+  light: <Light />,
+  logout: <Logout />,
+  news: <News />,
+  menu: <Menu />,
+  minus: <Minus />,
+  minusInSquare: <MinusInSquare />,
+  moon: <Moon />,
+  notifications: <Notifications />,
+  novelties: <Novelties />,
+  orders: <Orders />,
+  pages: <Pages />,
+  pipette: <Pipette />,
+  placeholder: <Placeholder />,
+  plus: <Plus />,
+  points: <Points />,
+  random: <Random />,
+  remove: <Remove />,
+  sale: <Sale />,
+  sections: <Sections />,
+  send: <Send />,
+  settings: <Settings />,
+  shop: <Shop />,
+  slider: <Slider />,
+  tag: <Tag />,
+  text: <Text />,
+  turnAround: <TurnAround />,
+  user: <User />,
+  users: <Users />,
+  widthSM: <WidthSM />,
+  wishlist: <Wishlist />,
+  blockquote: <Blockquote />,
+  bold: <Bold />,
+  colorTransparent: <ColorTransparent />,
+  eye: <Eye />,
+  italic: <Italic />,
+  link: <LinkIcon />,
+  orderedList: <OrderedList />,
+  paragraph: <Paragraph />,
+  photo: <Photo />,
+  telescope: <Telescope />,
+  titleDisabled: <TitleDisabled />,
+  unorderedList: <UnorderedList />,
+  widthIncrease: <WidthIncrease />
+}
+
 // C O M P O N E N T
 export const Icon: FC<IconProps> = ({ icon = 'menu', className }: IconProps) => {
-  const getIconComponent = (): JSX.Element => {
-    switch (icon) {
-      case 'bestseller':
-        return <Bestseller />
-      case 'bin':
-        return <Bin />
-      case 'button':
-        return <Button />
-      case 'camera':
-        return <Camera />
-      case 'caretDown':
-        return <CaretDown />
-      case 'caretRight':
-        return <CaretRight />
-      case 'cart':
-        return <Cart />
-      case 'close':
-        return <Close />
-      case 'color':
-        return <Color />
-      case 'customer':
-        return <Customer />
-      case 'dashboard':
-        return <Dashboard />
-      case 'delivery':
-        return <Delivery />
-      case 'drop':
-        return <Drop />
-      case 'edit':
-        return <Edit />
-      case 'filter':
-        return <Filter />
-      case 'folder':
-        return <Folder />
-      case 'font':
-        return <Font />
-      case 'globe':
-        return <Globe />
-      case 'grid1':
-        return <Grid1 />
-      case 'grid2':
-        return <Grid2 />
-      case 'grid4':
-        return <Grid4 />
-      case 'grid8':
-        return <Grid8 />
-      case 'grid16':
-        return <Grid16 />
-      case 'heart':
-        return <Heart />
-      case 'info':
-        return <Info />
-      case 'LangDE':
-        return <LangDE />
-      case 'LangEN':
-        return <LangEN />
-      case 'LangSP':
-        return <LangSP />
-      case 'LangIT':
-        return <LangIT />
-      case 'layout':
-        return <Layout />
-      case 'light':
-        return <Light />
-      case 'logout':
-        return <Logout />
-      case 'news':
-        return <News />
-      case 'menu':
-        return <Menu />
-      case 'minus':
-        return <Minus />
-      case 'minusInSquare':
-        return <MinusInSquare />
-      case 'moon':
-        return <Moon />
-      case 'notifications':
-        return <Notifications />
-      case 'novelties':
-        return <Novelties />
-      case 'orders':
-        return <Orders />
-      case 'pages':
-        return <Pages />
-      case 'pipette':
-        return <Pipette />
-      case 'placeholder':
-        return <Placeholder />
-      case 'plus':
-        return <Plus />
-      case 'points':
-        return <Points />
-      case 'random':
-        return <Random />
-      case 'remove':
-        return <Remove />
-      case 'sale':
-        return <Sale />
-      case 'sections':
-        return <Sections />
-      case 'send':
-        return <Send />
-      case 'settings':
-        return <Settings />
-      case 'shop':
-        return <Shop />
-      case 'slider':
-        return <Slider />
-      case 'tag':
-        return <Tag />
-      case 'text':
-        return <Text />
-      case 'turnAround':
-        return <TurnAround />
-      case 'user':
-        return <User />
-      case 'users':
-        return <Users />
-      case 'widthSM':
-        return <WidthSM />
-      case 'wishlist':
-        return <Wishlist />
-      case 'blockquote':
-        return <Blockquote />
-      case 'bold':
-        return <Bold />
-      case 'colorTransparent':
-        return <ColorTransparent />
-      case 'eye':
-        return <Eye />
-      case 'italic':
-        return <Italic />
-      case 'link':
-        return <LinkIcon />
-      case 'orderedList':
-        return <OrderedList />
-      case 'paragraph':
-        return <Paragraph />
-      case 'photo':
-        return <Photo />
-      case 'telescope':
-        return <Telescope />
-      case 'titleDisabled':
-        return <TitleDisabled />
-      case 'unorderedList':
-        return <UnorderedList />
-      case 'widthIncrease':
-        return <WidthIncrease />
-
-      default:
-        return <Menu />
-    }
-  }
-
   return (
     <StyledIcon className={className}>
-      {getIconComponent()}
+      {ICONS[icon]}
     </StyledIcon>
   )
 }
