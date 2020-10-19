@@ -3,6 +3,9 @@ import styled from 'styled-components'
 
 // A S S E T S
 
+// A
+import ArrowUpRight from './assets/arrowUpRight'
+
 // B
 import Bestseller from './assets/bestseller'
 import Bin from './assets/bin'
@@ -12,6 +15,7 @@ import Button from './assets/button'
 
 // C
 import Camera from './assets/camera'
+import Calendar from './assets/calendar'
 import CaretDown from './assets/caretDown'
 import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
@@ -27,12 +31,14 @@ import Drop from './assets/drop'
 
 // E
 import Edit from './assets/edit'
+import Euro from './assets/euro'
 import Eye from './assets/eye'
 
 // F
 import Filter from './assets/filter'
 import Folder from './assets/folder'
 import Font from './assets/font'
+import Frequency from './assets/frequency'
 
 // G
 import Globe from './assets/globe'
@@ -86,6 +92,7 @@ import Points from './assets/points'
 // R
 import Random from './assets/random'
 import Remove from './assets/remove'
+import Rocket from './assets/rocket'
 
 // S
 import Sale from './assets/sale'
@@ -105,6 +112,7 @@ import Telescope from './assets/telescope'
 // U
 import User from './assets/user'
 import Users from './assets/users'
+import Unit from './assets/unit'
 import UnorderedList from './assets/unorderedList'
 
 // W
@@ -119,10 +127,11 @@ export interface IconProps {
 }
 
 // T Y P E S
-export type IconName =
+export type IconName = 'arrowUpRight'
   | 'bestseller'
   | 'bin'
   | 'button'
+  | 'calendar'
   | 'camera'
   | 'caretDown'
   | 'caretRight'
@@ -134,9 +143,11 @@ export type IconName =
   | 'delivery'
   | 'drop'
   | 'edit'
+  | 'euro'
   | 'filter'
   | 'folder'
   | 'font'
+  | 'frequency'
   | 'globe'
   | 'grid1'
   | 'grid2'
@@ -167,6 +178,7 @@ export type IconName =
   | 'points'
   | 'random'
   | 'remove'
+  | 'rocket'
   | 'sale'
   | 'sections'
   | 'send'
@@ -177,6 +189,7 @@ export type IconName =
   | 'telescope'
   | 'text'
   | 'turnAround'
+  | 'unit'
   | 'user'
   | 'users'
   | 'widthSM'
@@ -195,9 +208,11 @@ export type IconName =
   | 'widthIncrease'
 
 const ICONS: { [key in IconName]: JSX.Element } = {
+  arrowUpRight: <ArrowUpRight />,
   bestseller: <Bestseller />,
   bin: <Bin />,
   button: <Button />,
+  calendar: <Calendar />,
   camera: <Camera />,
   caretDown: <CaretDown />,
   caretRight: <CaretRight />,
@@ -209,8 +224,10 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   delivery: <Delivery />,
   drop: <Drop />,
   edit: <Edit />,
+  euro: <Euro />,
   filter: <Filter />,
   folder: <Folder />,
+  frequency: <Frequency />,
   font: <Font />,
   globe: <Globe />,
   grid1: <Grid1 />,
@@ -242,6 +259,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   points: <Points />,
   random: <Random />,
   remove: <Remove />,
+  rocket: <Rocket />,
   sale: <Sale />,
   sections: <Sections />,
   send: <Send />,
@@ -251,6 +269,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   tag: <Tag />,
   text: <Text />,
   turnAround: <TurnAround />,
+  unit: <Unit />,
   user: <User />,
   users: <Users />,
   widthSM: <WidthSM />,
