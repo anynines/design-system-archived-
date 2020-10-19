@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     /* C O L O R S */
     --color-primary: ${(props): string => { return props.theme.colors.primary }};
+    --color-primary-50: ${(props): string => { return props.theme.colors.primary50 }};
     --color-white: ${(props): string => { return props.theme.colors.white }};
     --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
     --color-light: ${(props): string => { return props.theme.colors.light }};

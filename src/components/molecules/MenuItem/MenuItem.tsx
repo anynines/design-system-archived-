@@ -82,9 +82,32 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
   
+  position: relative;
   display: var(--display);
   margin: var(--margin);
   list-style-type: none;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    z-index: 1;
+    width: 4px;
+    background-color: var(--color-primary);
+    height: 20px;
+    border-radius: 10px;
+    border: 3px solid var(--color-darker);
+    opacity: 0;
+    transition: left cubic-bezier(.28,.46,.8,.57) 160ms, right cubic-bezier(.28,.46,.8,.57) 160ms, opacity cubic-bezier(.28,.46,.8,.57) 60ms;
+  }
+
+  &:before {
+    left: -10px;
+  }
+  
+  &:after {
+    right: -10px;
+  }
 
   &:first-child {
     margin-left: 0;
@@ -103,6 +126,28 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
 
   i {
     margin-right: var(--svg-margin-right);
+  }
+
+  &.active,
+  &:hover {
+    &:before {
+      left: -5px;
+    }
+    &:after {
+      right: -5px;
+    }
+  }
+  
+  &:hover {
+    &:before, &:after {
+      opacity: 1;
+    }
+  }
+  
+  &.active {
+    &:before, &:after {
+      opacity: 1;
+    }
   }
 
   .wrapper {

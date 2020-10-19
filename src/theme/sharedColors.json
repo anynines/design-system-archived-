@@ -1,5 +1,6 @@
 {
-  "primary": "#E4833E",
+  "primary": "rgb(228,131,62)",
+  "primary50": "rgba(228,131,62,0.5)",
   "notice": "#3E97E4",
   "success": "#6AA84F",
   "warning": "#E0CD66",

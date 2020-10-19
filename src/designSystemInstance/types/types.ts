@@ -4,6 +4,7 @@ export type Mode = 'dark' | 'light'
 // I N T E R F A C E S
 export interface ThemeColors {
   primary: string
+  primary50: string
   notice: string
   success: string
   warning: string
