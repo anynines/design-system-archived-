@@ -7,7 +7,7 @@ import { TextInput, TextInputProps } from '../Text/TextInput'
 import { ColorInput } from '../Color/ColorInput'
 
 // I N T E R F A C E S
-export interface InputProps extends Omit<TextInputProps, 'pattern'> {
+export interface InputProps extends TextInputProps {
   type: InputType
   name: string
   label: string
@@ -30,6 +30,7 @@ export const Input: Input = (props) => {
     handleSubmit,
     errors,
     watch,
+    pattern,
     getValues,
     setValue,
     children
@@ -48,7 +49,7 @@ export const Input: Input = (props) => {
             name={name}
             color={value || '#000000'}
             label={label}
-            pattern={/^#(?:[0-9a-f]{3}){1,2}$/i}
+            pattern={pattern || /^#(?:[0-9a-f]{3}){1,2}$/i}
             register={register}
           >
             {children}
@@ -59,7 +60,7 @@ export const Input: Input = (props) => {
         return (
           <TextInput
             {...props}
-            pattern={/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/}
+            pattern={pattern || /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/}
           >
             {children}
           </TextInput>
@@ -69,7 +70,7 @@ export const Input: Input = (props) => {
         return (
           <TextInput
             {...props}
-            pattern={/^.{2,30}$/}
+            pattern={pattern || /^.{2,30}$/}
           >
             {children}
           </TextInput>

@@ -64,6 +64,9 @@ export const Basic = (args: InputProps) => (
 export const Text = (args: InputProps) => (
   <Input name='Text' type='text' icon='shop' label="Text" value='Default Value' {...args} />
 )
+export const CustomRegexPattern = (args: InputProps) => (
+  <Input name='Text' type='text' icon='shop' label="I match 4 digits numbers" pattern={/^[0-9]{4}$/} {...args} />
+)
 export const Color = (args: InputProps) => (
   <Input name='Color' type="color" label="Color" {...args} />
 )
