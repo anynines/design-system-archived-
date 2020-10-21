@@ -110,8 +110,8 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
 // S T Y L E S
 const StyledDateInput = styled.div`
   display: flex;
-  width: 100%;
   background: none;
+  width: 100%;
 
   & > div {
     width: 100%;
