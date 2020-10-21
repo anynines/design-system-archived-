@@ -17,3 +17,7 @@ export default {
 export const Basic = (args: DatePickerProps) => (
   <DatePicker  {...args} onDateChange={(timestamp) => { console.log(timestamp) }} />
 )
+
+export const GivenTimestampDate = (args: DatePickerProps) => (
+  <DatePicker  {...args} date={new Date().getTime() / 1000} focused onDateChange={(timestamp) => { console.log(timestamp) }} />
+)
