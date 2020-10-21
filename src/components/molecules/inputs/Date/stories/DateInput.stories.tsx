@@ -8,7 +8,7 @@ export default {
 }
 
 export const Basic = (args: DateInputProps) => (
-  <DateInput name='date' label="Date" date={new Date().getTime() / 1000} {...args} />
+  <DateInput name='date' label="Date" {...args} />
 )
 
 
