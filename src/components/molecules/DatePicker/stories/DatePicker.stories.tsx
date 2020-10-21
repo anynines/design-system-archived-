@@ -19,5 +19,9 @@ export const Basic = (args: DatePickerProps) => (
 )
 
 export const GivenTimestampDate = (args: DatePickerProps) => (
-  <DatePicker  {...args} date={new Date().getTime() / 1000} focused onDateChange={(timestamp) => { console.log(timestamp) }} />
+  <DatePicker  {...args} date={new Date().getTime() / 1000} onDateChange={(timestamp) => { console.log(timestamp) }} />
+)
+
+export const CustomMonthAmount = (args: DatePickerProps) => (
+  <DatePicker  {...args} date={new Date().getTime() / 1000} numberOfMonths={3} onDateChange={(timestamp) => { console.log(timestamp) }} />
 )
