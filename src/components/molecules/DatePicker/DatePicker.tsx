@@ -63,16 +63,16 @@ const StyledDatePicker = styled.div`
     border: 1px solid var(--color-dark-50);
 
     &:hover {
-      background: var(--color-darker-50);
       border: 1px double var(--color-darker);
+      background: var(--color-darker-50);
     }
   }
 
   .CalendarDay__selected, 
   .CalendarDay__selected:active, 
   .CalendarDay__selected:hover {
-    background: var(--color-primary);
     border: 1px double var(--color-primary);
+    background: var(--color-primary);
     color: var(--color-white);
   }
 
