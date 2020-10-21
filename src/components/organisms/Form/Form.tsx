@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 
 export interface FormProps {
   // 'react-hook-form' does not provide a useable TS definition for 'setValue' function
-  onSubmit?: (data: Record<string, string> | undefined, setValue?: any) => void  // eslint-disable-line
+  onSubmit?: (data: Record<string, string>, setValue?: any) => void  // eslint-disable-line
   children
   className?: string
 }
@@ -22,7 +22,7 @@ export const Form: React.FC<FormProps> = ({
   })
 
   const onSubmit = (data: Record<string, string> | undefined): void => {
-    if (onSubmitCallback) onSubmitCallback(data, setValue)
+    if (onSubmitCallback && data !== undefined) onSubmitCallback(data, setValue)
   }
 
   return (
