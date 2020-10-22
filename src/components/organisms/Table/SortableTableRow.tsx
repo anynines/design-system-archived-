@@ -6,14 +6,14 @@ import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon, Table
 import SortableTableColumn from './SortableTableColumn'
 
 interface SortableTableRowProps {
-  bodyIndex: number
-  rowIndex: number
-  row?: Row<TableRow>
-  type?: string
-  category?: string
-  getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
-  getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
-  getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
+	bodyIndex: number
+	rowIndex: number
+	row?: Row<TableRow>
+	type?: string
+	category?: string
+	getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
+	getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
+	getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
 }
 
 const SortableTableRow: React.FC<SortableTableRowProps> = (props) => {
@@ -33,7 +33,7 @@ const SortableTableRow: React.FC<SortableTableRowProps> = (props) => {
       <tr key={rowIndex}>
         <td className='category-name' key={`${bodyIndex.toString()}.-1.0`}>
           <Icon icon='folder' />
-          <span>{category}</span>
+          <span className='category-name-title'>{category}</span>
         </td>
       </tr>
     )
