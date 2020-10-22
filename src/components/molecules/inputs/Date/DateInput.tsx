@@ -12,7 +12,11 @@ export interface DateInputProps extends Omit<TextInputProps, 'value' | 'pattern'
   date?: number
   pattern?: RegExp
   onDateChange?: (date: number) => void
-  datePickerOptions?: DatePickerProps
+  datePickerOptions?: Omit<DatePickerProps, 'date' | 'onDateChange' | 'focused' | 'onFocusChange' | 'initialVisibleMonth'> & {
+    focused?: boolean
+    onFocusChange?: (arg: { focused: boolean }) => void
+    initialVisibleMonth?: (() => moment.Moment) | null
+  }
 }
 
 // match dd/mm/yyyy format
