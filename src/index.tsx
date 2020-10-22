@@ -51,7 +51,9 @@ export * from './components/molecules/MenuItem/MenuItem'
 export * from './components/molecules/SpecialCategories/SpecialCategories'
 
 // M O L E C U L E S - I N P U T S
+export * from './components/molecules/DatePicker/DatePicker'
 export * from './components/molecules/inputs/Color/ColorInput'
+export * from './components/molecules/inputs/Date/DateInput'
 export * from './components/molecules/inputs/Text/TextInput'
 export * from './components/molecules/inputs/Input/Input'
 
