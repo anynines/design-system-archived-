@@ -15,6 +15,8 @@ interface DraggableTableRowProps {
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
+  isFolderDraggable: boolean
+  setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface DraggableTableRowCategoryProps {
@@ -22,17 +24,27 @@ interface DraggableTableRowCategoryProps {
   idx: string
   key: string
   index: number
+  isFolderDraggable: boolean
+  setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const DraggableTableRowCategory: React.FC<DraggableTableRowCategoryProps> = (props) => {
   const {
-    row, idx
+    row, idx, isFolderDraggable, setIsFolderDraggable
   } = props
   return (
     <tr key={idx} className='draggable-table-row divider'>
-      <td className='category-name'>
+      <td className={`category-name ${isFolderDraggable ? 'active' : ''}`}>
         <Icon icon='folder' />
-        <span>{row.original.category}</span>
+        <span className='category-name-title'>{row.original.category}</span>
+        <div
+          role='button'
+          onClick={(): void => { setIsFolderDraggable(!isFolderDraggable) }}
+          className={`category-name-edit-icon ${isFolderDraggable ? 'active' : ''}`}
+          tabIndex={0}
+        >
+          <Icon icon='plus' />
+        </div>
       </td>
     </tr>
   )
@@ -41,10 +53,12 @@ const DraggableTableRowCategory: React.FC<DraggableTableRowCategoryProps> = (pro
 const DraggableTableRow = SortableElement(
   (props: DraggableTableRowProps): JSX.Element => {
     const {
-      row, isDraggable, getTableColumnColor, getTableColumnType, getTableColumnIconType
+      row, isDraggable, getTableColumnColor,
+      getTableColumnType, getTableColumnIconType,
+      isFolderDraggable
     } = props
     return (
-      <StyledRow {...row.getRowProps()} className={isDraggable ? '' : 'draggable'}>
+      <StyledRow {...row.getRowProps()} className={!isDraggable || isFolderDraggable ? '' : 'draggable'}>
         {row.cells.map((cell: Cell<TableRow, any>, cellIndex: number) => { // eslint-disable-line @typescript-eslint/no-explicit-any
           return (
             <DraggableTableColumn
@@ -62,8 +76,32 @@ const DraggableTableRow = SortableElement(
   }
 )
 
+const UndraggableTableRow: React.FC<DraggableTableRowProps> = (props) => {
+  const {
+    index, row, isDraggable, getTableColumnColor,
+    getTableColumnType, getTableColumnIconType,
+    isFolderDraggable
+  } = props
+  return (
+    <StyledRow key={index} className={!isDraggable || isFolderDraggable ? '' : 'draggable'}>
+      {row.cells.map((cell: Cell<TableRow, any>, cellIndex: number) => { // eslint-disable-line @typescript-eslint/no-explicit-any
+        return (
+          <DraggableTableColumn
+            key={`${cell.row.id}-${cell.column.id}`}
+            cell={cell}
+            cellIndex={cellIndex}
+            getTableColumnColor={getTableColumnColor}
+            getTableColumnType={getTableColumnType}
+            getTableColumnIconType={getTableColumnIconType}
+          />
+        )
+      })}
+    </StyledRow>
+  )
+}
+
 const StyledRow = styled.tr`
-  &.draggable-table-row{
+  &.draggable-table-row {
     width: 100%;
     border-radius: 5px;
     max-height: 60px;
@@ -81,24 +119,14 @@ const StyledRow = styled.tr`
       font-size: var(--text-md);
       filter: brightness(85%);
 
-      &:first-child{
+      &:first-child {
         padding-left: 1rem;
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
       }
-      &:last-child{
+      &:last-child {
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
-      }
-
-      &.category-name {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        span {
-          margin-left: .7rem;
-        }
       }
 
       span.blue, span.black {
@@ -173,4 +201,4 @@ const StyledRow = styled.tr`
 
 export default DraggableTableRow
 
-export { DraggableTableRowCategory }
+export { DraggableTableRowCategory, UndraggableTableRow }

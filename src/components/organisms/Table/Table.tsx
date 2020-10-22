@@ -261,7 +261,7 @@ const StyledTable = styled.div`
       }
     }
 
-    tbody{
+    tbody {
       border-radius: 5px;
 
       &:before {
@@ -280,7 +280,7 @@ const StyledTable = styled.div`
         }
       }
 
-      tr{
+      tr {
         border-radius: 5px;
 
         td {
@@ -304,8 +304,47 @@ const StyledTable = styled.div`
             flex-direction: row;
             align-items: center;
 
-            span {
+            &.active:before {
+              display: flex;
+              position: absolute;
+              left: -2px;
+              background-color: var(--color-white-fix);
+              filter: brightness(70%);
+              width: 4px;
+              height: 20px;
+              content: "";
+              border-radius: 2px;
+            }
+
+            &.active {
+              cursor: pointer;
+            }
+
+            span.category-name-title {
               margin-left: .7rem;
+            }
+
+            div.category-name-edit-icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              right: -15px;
+              border: 2px solid var(--color-darker);
+              background-color: var(--color-dark);
+              cursor: pointer;
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              outline: none;
+
+              &:hover {
+                filter: brightness(90%);
+              }
+
+              &.active {
+                background-color: var(--color-primary);
+              }
             }
           }
 
@@ -352,11 +391,11 @@ const StyledTable = styled.div`
           }
         }
 
-        &.draggable{
+        &.draggable {
           &:hover {
             cursor: pointer;
           }
-            
+          
           td:first-child{
             &:before{
               display: flex;

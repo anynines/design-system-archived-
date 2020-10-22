@@ -31,6 +31,8 @@ export const DraggableTable: React.FC<DraggableTableProps> = (props) => {
           setPages, pages, pagesPerFolder,
           sortCategoryAlphabeticallyAndControlLimits } = props
 
+  const [isFolderDraggable, setIsFolderDraggable] = React.useState<boolean>(false)
+
   const groupRowDataCategorically = (): void => {
     const pagesDataObject: TableData = {}
 
@@ -44,6 +46,31 @@ export const DraggableTable: React.FC<DraggableTableProps> = (props) => {
 
     const sortedPages: TableRow[] = sortCategoryAlphabeticallyAndControlLimits(pagesDataObject)
     setPages(sortedPages)
+  }
+
+  const shiftBodyDataCategorically = (oldIndex: number, newIndex: number): void => {
+    const pagesDataObject: TableData = {}
+
+    pages.forEach((page: TableRow): void => {
+      let { category } = page
+      category = category.toLowerCase()
+
+      if (!pagesDataObject[category]) pagesDataObject[category] = []
+      pagesDataObject[category].push(page)
+    })
+
+    const pagesDataArray: [string, TableRow[]][] = Object.entries(pagesDataObject)
+    const oldCategoryRows: [string, TableRow[]] = pagesDataArray[newIndex]
+    pagesDataArray[newIndex] = pagesDataArray[oldIndex]
+    pagesDataArray[oldIndex] = oldCategoryRows
+
+    let newlyOrderedPages: TableRow[] = []
+    pagesDataArray.forEach((pagesRow) => {
+      newlyOrderedPages = [...newlyOrderedPages, ...pagesRow[1]]
+    })
+
+    setPages(newlyOrderedPages)
+    setIsFolderDraggable(!isFolderDraggable)
   }
 
   const shiftArrayItemPosition = (
@@ -84,7 +111,8 @@ export const DraggableTable: React.FC<DraggableTableProps> = (props) => {
   }
 
   const onSortEnd = ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }): void => {
-    changeArrayItemPositionAndCategory(oldIndex, newIndex)
+    if (isFolderDraggable) shiftBodyDataCategorically(oldIndex, newIndex)
+    else changeArrayItemPositionAndCategory(oldIndex, newIndex)
   }
 
   React.useEffect(() => {
@@ -106,6 +134,8 @@ export const DraggableTable: React.FC<DraggableTableProps> = (props) => {
       getTableColumnType={getTableColumnType}
       getTableColumnIconType={getTableColumnIconType}
       disabledCategories={disabledCategories}
+      isFolderDraggable={isFolderDraggable}
+      setIsFolderDraggable={setIsFolderDraggable}
     />
   )
 }

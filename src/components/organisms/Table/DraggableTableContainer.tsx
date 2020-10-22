@@ -4,7 +4,8 @@ import { Row, HeaderGroup, TableBodyProps, TableProps } from 'react-table'
 
 import { TableRow, TableAccessor, TableColumnCellColor, TableColumnIcon, TableColumnCell } from './Table'
 import DraggableTableHead from './DraggableTableHead'
-import DraggableTableBody from './DraggableTableBody'
+import DraggableTableRowBody from './DraggableTableRowBody'
+import DraggableTableFolderBody from './DraggableTableFolderBody'
 
 interface DraggableTableContainerProps {
   prepareRow: (row: Row<TableRow>) => void
@@ -16,26 +17,48 @@ interface DraggableTableContainerProps {
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   disabledCategories: string[]
+  isFolderDraggable: boolean
+  setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const DraggableTableContainer = SortableContainer((
   { items,
     tableProps, headerGroups, prepareRow,
     tableBodyProps, getTableColumnColor, getTableColumnIconType,
-    getTableColumnType, disabledCategories }: DraggableTableContainerProps
+    getTableColumnType,
+    disabledCategories, isFolderDraggable, setIsFolderDraggable }: DraggableTableContainerProps
 ): JSX.Element => {
+  // console.log(isFolderDraggable)
   return (
     <table {...tableProps}>
       <DraggableTableHead headerGroups={headerGroups} />
-      <DraggableTableBody
-        items={items}
-        prepareRow={prepareRow}
-        tableBodyProps={tableBodyProps}
-        getTableColumnColor={getTableColumnColor}
-        getTableColumnType={getTableColumnType}
-        getTableColumnIconType={getTableColumnIconType}
-        disabledCategories={disabledCategories}
-      />
+      {
+        isFolderDraggable ? (
+          <DraggableTableFolderBody
+            items={items}
+            prepareRow={prepareRow}
+            tableBodyProps={tableBodyProps}
+            getTableColumnColor={getTableColumnColor}
+            getTableColumnType={getTableColumnType}
+            getTableColumnIconType={getTableColumnIconType}
+            disabledCategories={disabledCategories}
+            isFolderDraggable={isFolderDraggable}
+            setIsFolderDraggable={setIsFolderDraggable}
+          />
+        ) : (
+          <DraggableTableRowBody
+            items={items}
+            prepareRow={prepareRow}
+            tableBodyProps={tableBodyProps}
+            getTableColumnColor={getTableColumnColor}
+            getTableColumnType={getTableColumnType}
+            getTableColumnIconType={getTableColumnIconType}
+            disabledCategories={disabledCategories}
+            isFolderDraggable={isFolderDraggable}
+            setIsFolderDraggable={setIsFolderDraggable}
+          />
+        )
+      }
     </table>
   )
 })
