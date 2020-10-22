@@ -30,6 +30,10 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     onDateChange,
     className = '',
     datePickerOptions,
+    register,
+    getValues,
+    setValue,
+    name,
     children
   } = props
 
@@ -39,6 +43,7 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
 
   const [inputValue, setInputValue] = React.useState(date ? timestampToDDMMYYY(date) : '')
   const [selectedDate, setSelectedDate] = React.useState(date)
+  const formInputValue = register ? getValues()[name] : ''
   const [isDatePickerOpen, setIsDatePickerOpen] = React.useState(false)
   const dateInputRef = React.useRef<HTMLDivElement | null>(null)
 
@@ -49,15 +54,27 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     return new Date(+dateParts[2], Number(dateParts[1]) - 1, +dateParts[0]).getTime() / 1000
   }
 
+  const isDateValid = (dateString: string): boolean => {
+    return DATE_REGEX.exec(dateString) !== null
+  }
+
+  const getDateValue = (): number | undefined => {
+    if (register && isDateValid(formInputValue)) {
+      return DDMMYYYToTimestamp(formInputValue)
+    }
+    return selectedDate
+  }
+
   const renderDatePicker = (): JSX.Element => {
     if (isDatePickerOpen) {
       return (
         <StyledDatePicker
           {...datePickerOptions}
-          date={selectedDate}
+          date={getDateValue()}
           onDateChange={(updatedDate): void => {
             setSelectedDate(updatedDate)
-            setInputValue(timestampToDDMMYYY(updatedDate))
+            if (!register) setInputValue(timestampToDDMMYYY(updatedDate))
+            else setValue(name, timestampToDDMMYYY(updatedDate))
           }}
         />
       )
@@ -67,7 +84,7 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
   }
 
   React.useEffect(() => {
-    const inputValueIsDate = DATE_REGEX.exec(inputValue) !== null
+    const inputValueIsDate = isDateValid(inputValue)
 
     if (inputValueIsDate) {
       setSelectedDate(DDMMYYYToTimestamp(inputValue))
@@ -94,8 +111,10 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
         {...props}
         errorMessage='Please provide a date following the DD/MM/YYYY format'
         pattern={pattern}
-        value={inputValue}
-        onChange={setInputValue}
+        value={register ? formInputValue : inputValue}
+        onChange={(value): void => {
+          if (!register) setInputValue(value)
+        }}
         autoComplete='off'
       >
         <TextInput.Prepend
