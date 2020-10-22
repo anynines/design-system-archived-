@@ -28,6 +28,7 @@ export const Basic = () => (
   /* 'setValue' function's TS definition could not be resolved */
   <Form onSubmit={(data: Record<string, string> | undefined, setValue: any): void => { // eslint-disable-line
     if (data) {
+      console.log(data)
       setValue('firstName', '')
       setValue('lastName', '')
     }
@@ -37,6 +38,7 @@ export const Basic = () => (
     <Input name="userEmail" type='email' label='Email' autoComplete='off' />
     <Input name='Text' type='text' label="I match 4 digits numbers" pattern={/^[0-9]{4}$/} errorMessage='Please enter a 4 digits number' />
     <Input type='color' name='lightColor' label='Light Color' value="#999999" />
+    <Input type='date' name='date' label='Enter a date' />
     <Button type="submit">Submit</Button>
   </Form>
 )
