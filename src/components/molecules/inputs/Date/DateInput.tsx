@@ -98,6 +98,7 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
       }
     }
   }, [onDateChange, selectedDate])
+
   React.useEffect(() => {
     const cleanOnClickOutsideHook = onClickOutsideHook(dateInputRef, () => { setIsDatePickerOpen(false) })
 
@@ -105,6 +106,7 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
       cleanOnClickOutsideHook()
     })
   }, [])
+
   return (
     <StyledDateInput className={`DateInput ${className}`} ref={dateInputRef}>
       <TextInput
