@@ -124,6 +124,7 @@ import Wishlist from './assets/wishlist'
 export interface IconProps {
   icon?: IconName
   className?: string
+  dataFor?: string
 }
 
 // T Y P E S
@@ -290,9 +291,10 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 }
 
 // C O M P O N E N T
-export const Icon: FC<IconProps> = ({ icon = 'menu', className }: IconProps) => {
+export const Icon: FC<IconProps> = (props) => {
+  const { icon = 'menu', className, dataFor } = props
   return (
-    <StyledIcon className={className}>
+    <StyledIcon className={className} {...dataFor ? { 'data-tip': true, 'data-for': dataFor } : {}}>
       {ICONS[icon]}
     </StyledIcon>
   )

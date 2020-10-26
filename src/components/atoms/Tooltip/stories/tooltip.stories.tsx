@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from '../../Icon/Icon'
 import { Tooltip } from "../Tooltip"
 
 export default {
@@ -53,7 +54,7 @@ const paraStyles = { padding: 'var(--space-md)', borderRadius: 'var(--radius)', 
 
 export const Default = () => (
   <>
-    <p style={paraStyles} data-tip data-for='default'>Hover over me</p>
+    <Icon dataFor='default' icon={'plus' as IconName} />
     <Tooltip id='default'>
       Hello world
     </Tooltip>
