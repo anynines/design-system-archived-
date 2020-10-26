@@ -15,13 +15,13 @@ export default {
 }
 
 export const Basic = (args: DatePickerProps) => (
-  <DatePicker  {...args} onDateChange={(timestamp) => { console.log(timestamp) }} />
+  <DatePicker  {...args} onDateChange={action('Selected date as timestamp:')} />
 )
 
 export const GivenTimestampDate = (args: DatePickerProps) => (
-  <DatePicker  {...args} date={new Date().getTime() / 1000} onDateChange={(timestamp) => { console.log(timestamp) }} />
+  <DatePicker  {...args} date={new Date().getTime() / 1000} onDateChange={action('Selected date as timestamp:')} />
 )
 
 export const CustomMonthAmount = (args: DatePickerProps) => (
-  <DatePicker  {...args} date={new Date().getTime() / 1000} numberOfMonths={3} onDateChange={(timestamp) => { console.log(timestamp) }} />
+  <DatePicker  {...args} date={new Date().getTime() / 1000} numberOfMonths={3} onDateChange={action('Selected date as timestamp:')} />
 )
