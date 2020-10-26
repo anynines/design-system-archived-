@@ -29,15 +29,25 @@ export const Avatar: React.FC<AvatarProps> = ({
   className = 'styled-avatar',
   avatar,
   rounded,
-  level
+  level,
+  children
 }) => {
+  const renderAvatarContent = (): React.ReactNode => {
+    if (children) {
+      return children
+    }
+
+    return <div data-testid='initials' className='initials'>{!avatar && getInitials(userName)}</div>
+  }
+
   return (
     <StyledAvatar
       className={`${size && size} ${rounded && 'rounded'} ${level && 'level'} ${!avatar && 'initials'} ${className}`}
       style={avatar && { backgroundImage: `url(${avatar})` }}
     >
-      <div className='level'>{level}</div>
-      <div data-testid='initials' className='initials'>{!avatar && getInitials(userName)}</div>
+      {renderAvatarContent()}
+
+      {level ? <div className='level'>{level}</div> : null}
     </StyledAvatar>
   )
 }
@@ -64,6 +74,10 @@ const StyledAvatar = styled.div`
 
   &.rounded {
     border-radius: 100%;
+
+    &:not(.level) {
+      overflow: hidden;
+    }
   }
 
   &.md {
@@ -104,6 +118,11 @@ const StyledAvatar = styled.div`
       font-size: var(--initials-font-size);
       font-weight: var(--font-weight-bd);
     }
+  }
+
+  & > *:not(.initials):not(.level) {
+    width: 100%;
+    height: 100%;
   }
 `
 
