@@ -121,7 +121,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid",
+      "grid1",
       "slider",
       "pages"
     ],
@@ -149,7 +149,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid",
+      "grid1",
       "slider",
       "pages"
     ],
@@ -175,7 +175,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid"
+      "grid1"
     ],
     "slug": "/B/first-page",
     "category": "B",
@@ -201,7 +201,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid",
+      "grid1",
       "slider",
       "pages"
     ],

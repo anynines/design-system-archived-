@@ -42,7 +42,7 @@ export interface TableColumn {
 
 export type TableColumnCellColor = 'blue' | 'black'
 
-export type TableColumnCell = 'sticker' | 'icons' | 'icon'
+export type TableColumnCell = 'sticker' | 'icons' | 'icon' | 'link'
 
 export type TableColumnIcon = 'icon'
 
@@ -289,14 +289,29 @@ const StyledTable = styled.div`
           background-color: var(--color-dark);
           padding: .6rem 0;
 
-          &:first-child{
+          &:first-child {
             padding-left: 1rem;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
           }
-          &:last-child{
+          &:last-child {
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
+          }
+          &:last-child.table-row-link {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-right: 1rem;
+
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
           }
 
           &.category-name {

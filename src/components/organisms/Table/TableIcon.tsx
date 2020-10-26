@@ -5,7 +5,7 @@ import { TableColumnIcon } from './Table'
 
 interface TableIconProps {
   icon: string
-  type: TableColumnIcon | null
+  type: TableColumnIcon | null | undefined
   iconIndex: number
 }
 
