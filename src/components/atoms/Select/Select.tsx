@@ -14,7 +14,7 @@ import { Icon, IconName } from '../Icon/Icon'
 export interface SelectProps {
   name: string
   label: string
-  values: string[]
+  values: (string | number)[]
   onChange?: (value: string) => void
   defaultValue?: string
   register?: (validationRules: ValidationOptions) => void
@@ -64,10 +64,6 @@ export const Select: React.FC<SelectProps> = ({
 
   const onValueChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const newValue = event.target.value
-
-    if (onChange !== undefined) {
-      onChange(newValue)
-    }
 
     setValueState(newValue)
 
@@ -133,6 +129,12 @@ export const Select: React.FC<SelectProps> = ({
     document.removeEventListener('click', clickedOutside, false)
     document.removeEventListener('keydown', keyboardNavigation, false)
   }
+
+  React.useEffect((): void => {
+    if (onChange !== undefined) {
+      onChange(valueState.toString())
+    }
+  }, [onChange, valueState])
 
   React.useEffect((): void => {
     if (isActive) {
