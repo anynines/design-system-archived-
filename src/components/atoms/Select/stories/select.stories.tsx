@@ -48,3 +48,6 @@ export const Example = (args: SelectProps) => (
     action(value)
   }} />
 )
+export const WithNumber = (args: SelectProps) => (
+  <Select label='Pick a number' name='number' values={[1, 2, 3, 4]} icon='drop' onChange={action('Picked number')} />
+)
