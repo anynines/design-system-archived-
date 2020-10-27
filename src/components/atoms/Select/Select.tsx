@@ -290,7 +290,7 @@ const StyledSelect = styled.div`
       position: absolute;
       top: var(--icon-wrapper-size);
       left: 0;
-      z-index: 1;
+      z-index: 2;
       border-width: 1px;
       border-style: solid;
       background-color: var(--color-dark-50);
