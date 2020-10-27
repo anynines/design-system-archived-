@@ -145,9 +145,6 @@ export const Select: React.FC<SelectProps> = ({
 
   return (
     <StyledSelect className={`${className} ${isActive ? 'is-active' : ''}`}>
-      <div className='icon-wrapper'>
-        {icon && <Icon icon={icon} />}
-      </div>
       <span className='select-label' id={name}>{label}</span>
 
       {/*
@@ -176,6 +173,9 @@ export const Select: React.FC<SelectProps> = ({
           </div>
         </div>
       </div>
+      <div className='icon-wrapper'>
+        {icon && <Icon icon={icon} />}
+      </div>
     </StyledSelect>
   )
 }
@@ -194,7 +194,6 @@ const StyledSelect = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 10;
     background-color: var(--color-dark-50);
     width: var(--icon-wrapper-size);
     height: 100%;
