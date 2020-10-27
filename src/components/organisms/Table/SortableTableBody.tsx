@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, TableBodyProps } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon } from './Table'
+import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
 import SortableTableRow from './SortableTableRow'
 
 interface SortableTableBodyProps {
@@ -12,11 +12,15 @@ interface SortableTableBodyProps {
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
+  color?: TableRowColor
 }
 
-const SortableTableBody = ({
-  rows, index, prepareRow, tableBodyProps, getTableColumnColor, getTableColumnType, getTableColumnIconType
-}: SortableTableBodyProps): JSX.Element => {
+const SortableTableBody = (
+  {
+    rows, index, prepareRow, tableBodyProps, getTableColumnColor,
+    getTableColumnType, getTableColumnIconType, color
+  }: SortableTableBodyProps
+): JSX.Element => {
   return (
     <tbody {...tableBodyProps}>
       <SortableTableRow
@@ -40,6 +44,7 @@ const SortableTableBody = ({
             row={row}
             rowIndex={rowIndex}
             bodyIndex={index}
+            color={color}
           />
         )
       })}

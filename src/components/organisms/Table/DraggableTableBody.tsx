@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, TableBodyProps } from 'react-table'
 
 import DraggableTableRow, { DraggableTableRowCategory } from './DraggableTableRow'
-import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon } from './Table'
+import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
 
 interface DraggableTableBodyProps {
   items: Row<TableRow>[]
@@ -12,13 +12,16 @@ interface DraggableTableBodyProps {
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   disabledCategories: string[]
+  color?: TableRowColor
 }
 
 const DraggableTableBody: React.FC<DraggableTableBodyProps> = (
   props
 ): JSX.Element => {
-  const { items, prepareRow, tableBodyProps, getTableColumnColor, getTableColumnType,
-          getTableColumnIconType, disabledCategories } = props
+  const {
+    items, prepareRow, tableBodyProps, getTableColumnColor, getTableColumnType,
+    getTableColumnIconType, disabledCategories, color
+  } = props
   const rows: JSX.Element[] = []
 
   const isNewCategoryFound = (index: number): boolean => {
@@ -51,6 +54,7 @@ const DraggableTableBody: React.FC<DraggableTableBodyProps> = (
         getTableColumnColor={getTableColumnColor}
         getTableColumnType={getTableColumnType}
         getTableColumnIconType={getTableColumnIconType}
+        color={color}
       />
     )
   })

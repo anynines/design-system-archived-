@@ -222,7 +222,8 @@ export const Draggable: React.FC = () => {
     disabledCategories: ['A'],
     initialPages,
     type:'draggable',
-    pagesPerFolder: 2
+    pagesPerFolder: 2,
+    color: 'success'
   }
 
   return (
@@ -238,7 +239,8 @@ export const Sortable: React.FC = () => {
     getTableColumnIconType,
     initialPages,
     type:'sortable',
-    pagesPerFolder: 2
+    pagesPerFolder: 2,
+    color: 'warning'
   }
 
   return (
