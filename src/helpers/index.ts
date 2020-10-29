@@ -1,3 +1,5 @@
+import { ReactNode, cloneElement, Children } from 'react'
+
 export const getStylePropVal = (elem: HTMLElement, prop: string): string => {
   return getComputedStyle(elem).getPropertyValue(prop)
 }
@@ -33,4 +35,12 @@ export const createFaviconNode = (): void => {
   faviconNode.type = 'image/png'
 
   document.getElementsByTagName('head')[0].appendChild(faviconNode)
+}
+
+export const getChildrenWithNewProps = (children: any, props: any): ReactNode => { // eslint-disable-line
+  return Children.map(children, (child) => {
+    const isReactComponent = child && child.type instanceof Function
+    const clonedElement = cloneElement(child, { ...isReactComponent ? props : {} })
+    return clonedElement
+  })
 }
