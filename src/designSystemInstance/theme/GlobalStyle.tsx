@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+import * as builder from './PaletteBuilder'
+
+const palette = builder.buildPrimaryPaletteFromHexColor('#309440');
+
+
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar {
@@ -20,14 +25,22 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     /* C O L O R S */
     --color-primary: ${(props): string => { return props.theme.colors.primary }};
+    --color-primary: ${(): any => { return palette.primary }};
     --color-white: ${(props): string => { return props.theme.colors.white }};
     --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
     --color-light: ${(props): string => { return props.theme.colors.light }};
+    --color-light: ${(): any => { return palette.primaryLight }};
     --color-light-50: ${(props): string => { return props.theme.colors.light50 }};
+    --color-light-50: ${(): string => { return palette.primaryLight50 }};
+    --color-lighter: ${(): string => { return palette.primaryLighter }};
     --color-dark: ${(props): string => { return props.theme.colors.dark }};
+    --color-dark: ${(): string => { return palette.primaryDark }};
     --color-dark-50: ${(props): string => { return props.theme.colors.dark50 }};
+    --color-dark-50: ${(): string => { return palette.primaryDark50 }};
     --color-darker: ${(props): string => { return props.theme.colors.darker }};
+    --color-darker: ${(): string => { return palette.primaryDarker }};
     --color-darker-50: ${(props): string => { return props.theme.colors.darker50 }};
+    --color-darker-50: ${(): string => { return palette.primaryDark50 }};
     --color-white-fix: ${(props): string => { return props.theme.colors.whiteFix }};
     --color-notice: ${(props): string => { return props.theme.colors.notice }};
     --color-warning: ${(props): string => { return props.theme.colors.warning }};
