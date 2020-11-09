@@ -54,7 +54,9 @@ const paraStyles = { padding: 'var(--space-md)', borderRadius: 'var(--radius)', 
 
 export const Default = () => (
   <>
-    <Icon dataFor='default' icon={'plus' as IconName} />
+    <div data-tip data-for='default'>
+      <Icon icon={'plus' as IconName} />
+    </div>
     <Tooltip id='default'>
       Hello world
     </Tooltip>
