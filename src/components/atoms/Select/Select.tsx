@@ -295,6 +295,8 @@ const StyledSelect = styled.div`
       border-style: solid;
       background-color: var(--color-dark-50);
       width: 100%;
+      max-height: 120px;
+      overflow-y: scroll;
       color: var(--color-white);
       appearance: none;
       border-color: var(--color-primary);

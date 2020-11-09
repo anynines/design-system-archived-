@@ -36,7 +36,18 @@ export default {
 const defaultValues = [
   'Arial',
   'Comic Sans',
-  'Helevetica'
+  'Helevtica',
+  'Times New Roman',
+  'Roboto',
+  'Goldman',
+  'Oswald',
+  'Raleway',
+  'Ubuntu',
+  'Lora',
+  'Quicksand',
+  'Cabin',
+  'Open Sans',
+  'Lato'
 ]
 
 export const Basic = (args: SelectProps) => (
