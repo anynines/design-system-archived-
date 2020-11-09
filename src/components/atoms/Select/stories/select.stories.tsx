@@ -36,6 +36,12 @@ export default {
 const defaultValues = [
   'Arial',
   'Comic Sans',
+  'Helevtica'
+]
+
+const scrollableValues = [
+  'Arial',
+  'Comic Sans',
   'Helevtica',
   'Times New Roman',
   'Roboto',
@@ -56,6 +62,12 @@ export const Basic = (args: SelectProps) => (
 
 export const Example = (args: SelectProps) => (
   <Select label='Font' name='fontFamily' values={defaultValues} defaultValue={'Arial'} icon='font' onChange={(value) => {
+    action(value)
+  }} />
+)
+
+export const Scrollable = (args: SelectProps) => (
+  <Select label='Font' name='fontFamily' values={scrollableValues} defaultValue={'Arial'} icon='font' onChange={(value) => {
     action(value)
   }} />
 )
