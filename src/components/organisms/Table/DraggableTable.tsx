@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, TableProps, TableBodyProps, HeaderGroup } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, TableData } from './Table'
+import { TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, TableData, TableRowColor } from './Table'
 import DraggableTableContainer from './DraggableTableContainer'
 
 export interface DraggableTableProps {
@@ -19,17 +19,21 @@ export interface DraggableTableProps {
   pagesPerFolder: number
   folderLimit: number
   sortCategoryAlphabeticallyAndControlLimits: (pagesDataObject: TableData) => TableRow[]
+  color?: TableRowColor
 }
 
 // C O M P O N E N T
 export const DraggableTable: React.FC<DraggableTableProps> = (props) => {
-  const { rowsData: items, headerGroups, tableProps, tableBodyProps, prepareRow,
-          getTableColumnColor,
-          getTableColumnIconType,
-          getTableColumnType,
-          disabledCategories,
-          setPages, pages, pagesPerFolder,
-          sortCategoryAlphabeticallyAndControlLimits } = props
+  const {
+    rowsData: items, headerGroups, tableProps, tableBodyProps, prepareRow,
+    getTableColumnColor,
+    getTableColumnIconType,
+    getTableColumnType,
+    disabledCategories,
+    setPages, pages, pagesPerFolder,
+    sortCategoryAlphabeticallyAndControlLimits,
+    color
+  } = props
 
   const groupRowDataCategorically = (): void => {
     const pagesDataObject: TableData = {}
@@ -106,6 +110,7 @@ export const DraggableTable: React.FC<DraggableTableProps> = (props) => {
       getTableColumnType={getTableColumnType}
       getTableColumnIconType={getTableColumnIconType}
       disabledCategories={disabledCategories}
+      color={color}
     />
   )
 }

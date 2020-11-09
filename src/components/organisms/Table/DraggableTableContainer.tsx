@@ -2,7 +2,7 @@ import React from 'react'
 import { SortableContainer } from 'react-sortable-hoc'
 import { Row, HeaderGroup, TableBodyProps, TableProps } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCellColor, TableColumnIcon, TableColumnCell } from './Table'
+import { TableRow, TableAccessor, TableColumnCellColor, TableColumnIcon, TableColumnCell, TableRowColor } from './Table'
 import DraggableTableHead from './DraggableTableHead'
 import DraggableTableBody from './DraggableTableBody'
 
@@ -16,13 +16,19 @@ interface DraggableTableContainerProps {
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   disabledCategories: string[]
+  color?: TableRowColor
 }
 
 const DraggableTableContainer = SortableContainer((
-  { items,
-    tableProps, headerGroups, prepareRow,
+  {
+    items,
+    tableProps,
+    headerGroups,
+    prepareRow,
     tableBodyProps, getTableColumnColor, getTableColumnIconType,
-    getTableColumnType, disabledCategories }: DraggableTableContainerProps
+    getTableColumnType, disabledCategories,
+    color
+  }: DraggableTableContainerProps
 ): JSX.Element => {
   return (
     <table {...tableProps}>
@@ -35,6 +41,7 @@ const DraggableTableContainer = SortableContainer((
         getTableColumnType={getTableColumnType}
         getTableColumnIconType={getTableColumnIconType}
         disabledCategories={disabledCategories}
+        color={color}
       />
     </table>
   )

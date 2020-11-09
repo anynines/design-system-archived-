@@ -32,6 +32,8 @@ export interface TableRow {
 
 export type TableSortOption = 'draggable' | 'sortable'
 
+export type TableRowColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success'
+
 export type TableAccessor = 'page' | 'status' | 'permissions' | 'languages' | 'views' | 'authors' | 'sections' | 'category'
 
 export interface TableColumn {
@@ -55,6 +57,7 @@ export interface TableProps {
   initialPages: TableRow[]
   pagesPerFolder?: number
   folderLimit?: number
+  color?: TableRowColor
 }
 
 export interface SortableTableDataProps extends TableProps {
@@ -78,7 +81,8 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
     type,
     initialPages,
     pagesPerFolder = 10,
-    folderLimit = 5
+    folderLimit = 5,
+    color = 'dark'
   } = props
 
   const [localPages, setLocalPages] = React.useState<TableRow[]>(
@@ -148,7 +152,8 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
       pages: pages.length > 0 ? pages : localPages,
       pagesPerFolder,
       folderLimit,
-      sortCategoryAlphabeticallyAndControlLimits
+      sortCategoryAlphabeticallyAndControlLimits,
+      color
     }
   } else {
     tableProps = {
@@ -160,7 +165,8 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
       pagesPerFolder,
       folderLimit,
       tableHeaderData,
-      sortCategoryAlphabeticallyAndControlLimits
+      sortCategoryAlphabeticallyAndControlLimits,
+      color
     }
   }
 
@@ -312,6 +318,36 @@ const StyledTable = styled.div`
               justify-content: center;
               align-items: center;
             }
+          }
+
+          &.dark {
+            background-color: var(--color-dark);
+          }
+          &.light {
+            background-color: var(--color-light);
+            color: var(--color-dark);
+
+            span.black {
+              color: var(--color-light);
+            }
+
+            div.icon-wrapper{
+              svg {
+                background-color: var(--color-white);
+              }
+            }
+          }
+          &.success {
+            background-color: var(--color-success);
+          }
+          &.error {
+            background-color: var(--color-error);
+          }
+          &.warning {
+            background-color: var(--color-warning);
+          }
+          &.primary {
+            background-color: var(--color-primary);
           }
 
           &.category-name {

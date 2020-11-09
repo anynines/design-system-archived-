@@ -4,7 +4,7 @@ import { Row, Cell } from 'react-table'
 import styled from 'styled-components'
 
 import { Icon } from '../../atoms/Icon/Icon'
-import { TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon } from './Table'
+import { TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
 import DraggableTableColumn from './DraggableTableColumn'
 
 interface DraggableTableRowProps {
@@ -15,6 +15,7 @@ interface DraggableTableRowProps {
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
+  color?: TableRowColor
 }
 
 interface DraggableTableRowCategoryProps {
@@ -41,7 +42,7 @@ const DraggableTableRowCategory: React.FC<DraggableTableRowCategoryProps> = (pro
 const DraggableTableRow = SortableElement(
   (props: DraggableTableRowProps): JSX.Element => {
     const {
-      row, isDraggable, getTableColumnColor, getTableColumnType, getTableColumnIconType
+      row, isDraggable, getTableColumnColor, getTableColumnType, getTableColumnIconType, color
     } = props
     return (
       <StyledRow {...row.getRowProps()} className={isDraggable ? '' : 'draggable'}>
@@ -55,6 +56,7 @@ const DraggableTableRow = SortableElement(
               getTableColumnType={getTableColumnType}
               getTableColumnIconType={getTableColumnIconType}
               isLastColumn={row.cells.length - 1 === cellIndex}
+              color={color}
             />
           )
         })}
@@ -64,7 +66,7 @@ const DraggableTableRow = SortableElement(
 )
 
 const StyledRow = styled.tr`
-  &.draggable-table-row{
+  &.draggable-table-row {
     width: 100%;
     border-radius: 5px;
     max-height: 60px;
@@ -147,6 +149,36 @@ const StyledRow = styled.tr`
           height: 20px;
           border-radius: 50%;
         }
+      }
+
+      &.dark {
+        background-color: var(--color-dark);
+      }
+      &.light {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+
+        span.black {
+          color: var(--color-light);
+        }
+
+        div.icon-wrapper{
+          svg {
+            background-color: var(--color-white);
+          }
+        }
+      }
+      &.success {
+        background-color: var(--color-success);
+      }
+      &.error {
+        background-color: var(--color-error);
+      }
+      &.warning {
+        background-color: var(--color-warning);
+      }
+      &.primary {
+        background-color: var(--color-primary);
       }
     }
 

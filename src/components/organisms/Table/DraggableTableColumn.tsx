@@ -1,7 +1,7 @@
 import React  from 'react'
 import { Cell } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCell, TableColumnIcon, TableColumnCellColor } from './Table'
+import { TableRow, TableAccessor, TableColumnCell, TableColumnIcon, TableColumnCellColor, TableRowColor } from './Table'
 import TableCell from './TableCell'
 
 interface DraggableTableColumnProps {
@@ -11,11 +11,14 @@ interface DraggableTableColumnProps {
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   isLastColumn: boolean
+  color?: TableRowColor
 }
 
 const DraggableTableColumn: React.FC<DraggableTableColumnProps> = (props) => {
   const {
-    cell, getTableColumnColor, getTableColumnType, getTableColumnIconType, isLastColumn = false
+    cell,
+    getTableColumnColor, getTableColumnType, getTableColumnIconType, isLastColumn = false,
+    color
   } = props
 
   let header: TableAccessor | null = cell.column.Header as TableAccessor
@@ -26,7 +29,7 @@ const DraggableTableColumn: React.FC<DraggableTableColumnProps> = (props) => {
   const iconType: TableColumnIcon | null = getTableColumnIconType(header)
 
   return (
-    <td role='cell' className={isLastColumn ? 'table-row-link' : ''}>
+    <td role='cell' className={`${isLastColumn ? 'table-row-link' : ''} ${color}`}>
       <TableCell className={className} cellType={cellType} cell={cell} iconType={iconType} />
       {isLastColumn && <TableCell cellType='link' cell={cell} />}
     </td>

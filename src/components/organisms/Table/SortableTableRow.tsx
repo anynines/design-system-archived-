@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from '../../atoms/Icon/Icon'
 import { Row, Cell } from 'react-table'
 
-import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableAccessor } from './Table'
+import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableAccessor, TableRowColor } from './Table'
 import SortableTableColumn from './SortableTableColumn'
 
 interface SortableTableRowProps {
@@ -14,6 +14,7 @@ interface SortableTableRowProps {
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
+  color: TableRowColor
 }
 
 const SortableTableRow: React.FC<SortableTableRowProps> = (props) => {
@@ -25,7 +26,8 @@ const SortableTableRow: React.FC<SortableTableRowProps> = (props) => {
     category,
     getTableColumnColor,
     getTableColumnType,
-    getTableColumnIconType
+    getTableColumnIconType,
+    color
   } = props
 
   if (type === 'category') {
@@ -52,6 +54,7 @@ const SortableTableRow: React.FC<SortableTableRowProps> = (props) => {
               getTableColumnType={getTableColumnType}
               getTableColumnIconType={getTableColumnIconType}
               isLastColumn={cellIndex === row.cells.length - 1}
+              color={color}
             />
           )
         })}
