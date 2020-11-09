@@ -64,12 +64,12 @@ const data: TableRow[] = [
 export const TableV2: React.FC = () => {
   return (
     <Table data={data} sortDirection='asc' sortedBy='name'>
-      {/* <Head>
+      <Head>
         <Row>
           <Cell type='head' value='name' field='name' sortable />
           <Cell type='head' value='surname' field='surname' />
         </Row>
-      </Head> */}
+      </Head>
       <Body fields={['name', 'surname']} />
     </Table>
   )

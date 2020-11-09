@@ -14,7 +14,6 @@ export interface CellProps extends TableChildrenProps {
 // C O M P O N E N T S
 
 export const Cell: FC<CellProps> = (props) => {
-  console.log(props)
   const {
     // data,
     // sortDirection,
