@@ -1,6 +1,7 @@
 import React from 'react'
 import { Cell } from 'react-table'
 import { Icon, IconName } from '../../atoms/Icon/Icon'
+import { Tooltip } from '../../atoms/Tooltip/Tooltip'
 
 import TableIcon from './TableIcon'
 import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon } from './Table'
@@ -9,9 +10,9 @@ import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon } from
 
 interface TableCellProps {
   cell: Cell<TableRow, any> // eslint-disable-line @typescript-eslint/no-explicit-any
-  className: TableColumnCellColor | null
+  className?: TableColumnCellColor | null
   cellType: TableColumnCell | null
-  iconType: TableColumnIcon | null
+  iconType?: TableColumnIcon | null
 }
 
 const TableCell = (props: TableCellProps): any => { // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -45,6 +46,16 @@ const TableCell = (props: TableCellProps): any => { // eslint-disable-line @type
           <Icon icon={'eye' as IconName} />
           {cell.value}
         </span>
+      )
+    }
+    case 'link': {
+      return (
+        <a href={cell.row.original.slug}>
+          <Icon data-tip data-for='default' icon={'link' as IconName} />
+          <Tooltip id='default'>
+            Go to link
+          </Tooltip>
+        </a>
       )
     }
     default:

@@ -54,6 +54,7 @@ const DraggableTableRow = SortableElement(
               getTableColumnColor={getTableColumnColor}
               getTableColumnType={getTableColumnType}
               getTableColumnIconType={getTableColumnIconType}
+              isLastColumn={row.cells.length - 1 === cellIndex}
             />
           )
         })}

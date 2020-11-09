@@ -97,7 +97,7 @@ export const SortableTable: React.FC<SortableTableProps> = (props) => {
           <SortableTableBody
             key={rowCategory}
             index={rowIndex}
-            rows={rows}
+            rows={rowsByCategory}
             prepareRow={prepareRow}
             tableBodyProps={tableBodyProps}
             getTableColumnColor={getTableColumnColor}

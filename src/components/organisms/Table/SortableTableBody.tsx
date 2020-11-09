@@ -16,35 +16,38 @@ interface SortableTableBodyProps {
 
 const SortableTableBody = ({
   rows, index, prepareRow, tableBodyProps, getTableColumnColor, getTableColumnType, getTableColumnIconType
-}: SortableTableBodyProps): JSX.Element => {
-  return (
-    <tbody {...tableBodyProps}>
-      <SortableTableRow
-        key='-1'
-        type='category'
-        getTableColumnColor={getTableColumnColor}
-        getTableColumnType={getTableColumnType}
-        getTableColumnIconType={getTableColumnIconType}
-        category={rows[0]}
-        rowIndex={-1}
-        bodyIndex={index}
-      />
-      {rows[1].map((row: Row<TableRow>, rowIndex: number) => {
-        prepareRow(row)
-        return (
-          <SortableTableRow
-            key={row.id}
-            getTableColumnColor={getTableColumnColor}
-            getTableColumnType={getTableColumnType}
-            getTableColumnIconType={getTableColumnIconType}
-            row={row}
-            rowIndex={rowIndex}
-            bodyIndex={index}
-          />
-        )
-      })}
-    </tbody>
-  )
+}: SortableTableBodyProps): JSX.Element | null => {
+  if (rows && rows[1].length) {
+    return (
+      <tbody {...tableBodyProps}>
+        <SortableTableRow
+          key='-1'
+          type='category'
+          getTableColumnColor={getTableColumnColor}
+          getTableColumnType={getTableColumnType}
+          getTableColumnIconType={getTableColumnIconType}
+          category={rows[0]}
+          rowIndex={-1}
+          bodyIndex={index}
+        />
+        {rows[1].map((row: Row<TableRow>, rowIndex: number) => {
+          prepareRow(row)
+          return (
+            <SortableTableRow
+              key={row.id}
+              getTableColumnColor={getTableColumnColor}
+              getTableColumnType={getTableColumnType}
+              getTableColumnIconType={getTableColumnIconType}
+              row={row}
+              rowIndex={rowIndex}
+              bodyIndex={index}
+            />
+          )
+        })}
+      </tbody>
+    )
+  }
+  return null
 }
 
 export default SortableTableBody
