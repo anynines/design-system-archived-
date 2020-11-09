@@ -4,7 +4,7 @@ import { Row, Cell } from 'react-table'
 import styled from 'styled-components'
 
 import { Icon } from '../../atoms/Icon/Icon'
-import { TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon } from './Table'
+import { TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
 import DraggableTableColumn from './DraggableTableColumn'
 
 interface DraggableTableRowProps {
@@ -17,6 +17,7 @@ interface DraggableTableRowProps {
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   isFolderDraggable: boolean
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
+  color?: TableRowColor
 }
 
 interface DraggableTableRowCategoryProps {
@@ -55,8 +56,9 @@ const DraggableTableRow = SortableElement(
     const {
       row, isDraggable, getTableColumnColor,
       getTableColumnType, getTableColumnIconType,
-      isFolderDraggable
+      isFolderDraggable, color
     } = props
+
     return (
       <StyledRow {...row.getRowProps()} className={!isDraggable || isFolderDraggable ? '' : 'draggable'}>
         {row.cells.map((cell: Cell<TableRow, any>, cellIndex: number) => { // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -68,6 +70,8 @@ const DraggableTableRow = SortableElement(
               getTableColumnColor={getTableColumnColor}
               getTableColumnType={getTableColumnType}
               getTableColumnIconType={getTableColumnIconType}
+              isLastColumn={row.cells.length - 1 === cellIndex}
+              color={color}
             />
           )
         })}
@@ -80,7 +84,8 @@ const UndraggableTableRow: React.FC<DraggableTableRowProps> = (props) => {
   const {
     index, row, isDraggable, getTableColumnColor,
     getTableColumnType, getTableColumnIconType,
-    isFolderDraggable
+    isFolderDraggable,
+    color
   } = props
   return (
     <StyledRow key={index} className={!isDraggable || isFolderDraggable ? '' : 'draggable'}>
@@ -93,6 +98,8 @@ const UndraggableTableRow: React.FC<DraggableTableRowProps> = (props) => {
             getTableColumnColor={getTableColumnColor}
             getTableColumnType={getTableColumnType}
             getTableColumnIconType={getTableColumnIconType}
+            isLastColumn={cellIndex === row.cells.length - 1}
+            color={color}
           />
         )
       })}
@@ -174,6 +181,36 @@ const StyledRow = styled.tr`
           height: 20px;
           border-radius: 50%;
         }
+      }
+
+      &.dark {
+        background-color: var(--color-dark);
+      }
+      &.light {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+
+        span.black {
+          color: var(--color-light);
+        }
+
+        div.icon-wrapper{
+          svg {
+            background-color: var(--color-white);
+          }
+        }
+      }
+      &.success {
+        background-color: var(--color-success);
+      }
+      &.error {
+        background-color: var(--color-error);
+      }
+      &.warning {
+        background-color: var(--color-warning);
+      }
+      &.primary {
+        background-color: var(--color-primary);
       }
     }
 

@@ -4,8 +4,10 @@ import { SortableElement } from 'react-sortable-hoc'
 import styled from 'styled-components'
 
 import { DraggableTableRowCategory, UndraggableTableRow } from './DraggableTableRow'
-import { TableRow, TableAccessor, TableColumnCell,
-         TableColumnCellColor, TableColumnIcon } from './Table'
+import {
+  TableRow, TableAccessor, TableColumnCell,
+  TableColumnCellColor, TableColumnIcon, TableRowColor
+} from './Table'
 
 interface DraggableTableFolderBodyProps {
   items: Row<TableRow>[]
@@ -17,15 +19,19 @@ interface DraggableTableFolderBodyProps {
   disabledCategories: string[]
   isFolderDraggable: boolean
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
+  color?: TableRowColor
 }
 
 const DraggableTableFolderBody: React.FC<DraggableTableFolderBodyProps> = (
   props
 ) => {
-  const { items, prepareRow, tableBodyProps,
-          getTableColumnColor, getTableColumnType,
-          getTableColumnIconType, disabledCategories,
-          isFolderDraggable, setIsFolderDraggable } = props
+  const {
+    items, prepareRow, tableBodyProps,
+    getTableColumnColor, getTableColumnType,
+    getTableColumnIconType, disabledCategories,
+    isFolderDraggable, setIsFolderDraggable,
+    color
+  } = props
   const folders: JSX.Element[] = []
   let rows: JSX.Element[] = []
   let folderIndex = 0
@@ -88,6 +94,7 @@ const DraggableTableFolderBody: React.FC<DraggableTableFolderBodyProps> = (
         getTableColumnIconType={getTableColumnIconType}
         isFolderDraggable={isFolderDraggable}
         setIsFolderDraggable={setIsFolderDraggable}
+        color={color}
       />
     )
   })
@@ -145,6 +152,36 @@ const StyledBody = styled.tbody`
       &:last-child{
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+      }
+
+      &.dark {
+        background-color: var(--color-dark);
+      }
+      &.light {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+
+        span.black {
+          color: var(--color-light);
+        }
+
+        div.icon-wrapper{
+          svg {
+            background-color: var(--color-white);
+          }
+        }
+      }
+      &.success {
+        background-color: var(--color-success);
+      }
+      &.error {
+        background-color: var(--color-error);
+      }
+      &.warning {
+        background-color: var(--color-warning);
+      }
+      &.primary {
+        background-color: var(--color-primary);
       }
 
       &.category-name {

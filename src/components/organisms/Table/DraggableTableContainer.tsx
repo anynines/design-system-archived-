@@ -2,7 +2,7 @@ import React from 'react'
 import { SortableContainer } from 'react-sortable-hoc'
 import { Row, HeaderGroup, TableBodyProps, TableProps } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCellColor, TableColumnIcon, TableColumnCell } from './Table'
+import { TableRow, TableAccessor, TableColumnCellColor, TableColumnIcon, TableColumnCell, TableRowColor } from './Table'
 import DraggableTableHead from './DraggableTableHead'
 import DraggableTableRowBody from './DraggableTableRowBody'
 import DraggableTableFolderBody from './DraggableTableFolderBody'
@@ -19,16 +19,21 @@ interface DraggableTableContainerProps {
   disabledCategories: string[]
   isFolderDraggable: boolean
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
+  color?: TableRowColor
 }
 
 const DraggableTableContainer = SortableContainer((
-  { items,
-    tableProps, headerGroups, prepareRow,
+  {
+    items,
+    tableProps,
+    headerGroups,
+    prepareRow,
     tableBodyProps, getTableColumnColor, getTableColumnIconType,
     getTableColumnType,
-    disabledCategories, isFolderDraggable, setIsFolderDraggable }: DraggableTableContainerProps
+    disabledCategories, isFolderDraggable, setIsFolderDraggable,
+    color
+  }: DraggableTableContainerProps
 ): JSX.Element => {
-  // console.log(isFolderDraggable)
   return (
     <table {...tableProps}>
       <DraggableTableHead headerGroups={headerGroups} />
@@ -44,6 +49,7 @@ const DraggableTableContainer = SortableContainer((
             disabledCategories={disabledCategories}
             isFolderDraggable={isFolderDraggable}
             setIsFolderDraggable={setIsFolderDraggable}
+            color={color}
           />
         ) : (
           <DraggableTableRowBody
@@ -56,6 +62,7 @@ const DraggableTableContainer = SortableContainer((
             disabledCategories={disabledCategories}
             isFolderDraggable={isFolderDraggable}
             setIsFolderDraggable={setIsFolderDraggable}
+            color={color}
           />
         )
       }

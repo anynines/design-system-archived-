@@ -43,7 +43,6 @@ const StyledTextInputPrepend = styled.div<StyledTextInputPrependProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
   background-color: var(--color-dark-50);
   cursor: var(--cursor);
   width: 2.75rem;

@@ -1,6 +1,6 @@
 {
   "name": "@anynines/design-system",
-  "version": "0.1.11",
+  "version": "0.1.16",
   "private": false,
   "main": "dist/index",
   "types": "dist/index.d.ts",
@@ -10,11 +10,15 @@
   "dependencies": {
     "@storybook/addon-docs": "^6.0.0-beta.26",
     "@storybook/preset-create-react-app": "2.1.1",
+    "@types/moment": "^2.13.0",
+    "@types/react-dates": "^21.8.0",
     "array-move": "3.0.1",
     "babel-plugin-inline-json-import": "^0.3.2",
     "lodash.merge": "^4.6.2",
+    "moment": "^2.29.1",
     "react": "^16.12.0",
     "react-color": "^2.18.1",
+    "react-dates": "^21.8.0",
     "react-dom": "^16.6.3",
     "react-grid-system": "^6.3.0",
     "react-hook-form": "^5.2.0",

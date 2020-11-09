@@ -61,3 +61,9 @@ export const LevelRounded = () => (
 export const WithoutAvatar = () => (
   <Avatar size={'md'} userName={sampleUserName} level={46} rounded={true} />
 );
+
+export const AvatarWithChildren = () => (
+  <Avatar size={'md'} rounded>
+    <img src={sampleAvatarUrl} />
+  </Avatar>
+);

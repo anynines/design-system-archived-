@@ -1,31 +1,29 @@
 import React from 'react'
 
 // C O M P O N E N T S
-import { IconName } from '../../../atoms/Icon/Icon'
 import { LabelProps } from '../../../atoms/Label/Label'
 import { TextInput, TextInputProps } from '../Text/TextInput'
 import { ColorInput } from '../Color/ColorInput'
+import { DateInput, DateInputProps } from '../Date/DateInput'
 
 // I N T E R F A C E S
-export interface InputProps extends TextInputProps {
+interface DateInputRestrictedProps extends DateInputProps {
+  type: 'date'
+  value?: number
+}
+export type InputProps = DateInputRestrictedProps | TextInputProps & {
   type: InputType
-  name: string
-  label: string
-  icon?: IconName
   onChange?: (newValue: string) => void
-  value?: string
 }
 type Input = React.FC<InputProps>
   & { Label: React.FC<LabelProps> }
-export type InputType = 'text' | 'color' | 'email' | 'password'
+export type InputType = 'text' | 'color' | 'email' | 'password' | 'date'
 
 // C O M P O N E N T
 export const Input: Input = (props) => {
   const {
     name,
-    value,
     label,
-    type,
     register,
     handleSubmit,
     errors,
@@ -37,7 +35,7 @@ export const Input: Input = (props) => {
   } = props
 
   const renderInput = (): JSX.Element => {
-    switch (type) {
+    switch (props.type) {
       case 'color':
         return (
           <ColorInput
@@ -47,7 +45,7 @@ export const Input: Input = (props) => {
             setValue={setValue}
             errors={errors}
             name={name}
-            color={value || '#000000'}
+            color={props.value || '#000000'}
             label={label}
             pattern={pattern || /^#(?:[0-9a-f]{3}){1,2}$/i}
             register={register}
@@ -64,6 +62,10 @@ export const Input: Input = (props) => {
           >
             {children}
           </TextInput>
+        )
+      case 'date':
+        return (
+          <DateInput {...props}>{children}</DateInput>
         )
 
       default:

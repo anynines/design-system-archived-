@@ -14,7 +14,7 @@ import { Icon, IconName } from '../Icon/Icon'
 export interface SelectProps {
   name: string
   label: string
-  values: string[]
+  values: (string | number)[]
   onChange?: (value: string) => void
   defaultValue?: string
   register?: (validationRules: ValidationOptions) => void
@@ -64,10 +64,6 @@ export const Select: React.FC<SelectProps> = ({
 
   const onValueChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const newValue = event.target.value
-
-    if (onChange !== undefined) {
-      onChange(newValue)
-    }
 
     setValueState(newValue)
 
@@ -135,6 +131,12 @@ export const Select: React.FC<SelectProps> = ({
   }
 
   React.useEffect((): void => {
+    if (onChange !== undefined) {
+      onChange(valueState.toString())
+    }
+  }, [onChange, valueState])
+
+  React.useEffect((): void => {
     if (isActive) {
       document.addEventListener('click', clickedOutside, false)
       document.addEventListener('keydown', keyboardNavigation, false)
@@ -143,9 +145,6 @@ export const Select: React.FC<SelectProps> = ({
 
   return (
     <StyledSelect className={`${className} ${isActive ? 'is-active' : ''}`}>
-      <div className='icon-wrapper'>
-        {icon && <Icon icon={icon} />}
-      </div>
       <span className='select-label' id={name}>{label}</span>
 
       {/*
@@ -174,6 +173,9 @@ export const Select: React.FC<SelectProps> = ({
           </div>
         </div>
       </div>
+      <div className='icon-wrapper'>
+        {icon && <Icon icon={icon} />}
+      </div>
     </StyledSelect>
   )
 }
@@ -192,7 +194,6 @@ const StyledSelect = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 10;
     background-color: var(--color-dark-50);
     width: var(--icon-wrapper-size);
     height: 100%;
@@ -289,7 +290,7 @@ const StyledSelect = styled.div`
       position: absolute;
       top: var(--icon-wrapper-size);
       left: 0;
-      z-index: 1;
+      z-index: 2;
       border-width: 1px;
       border-style: solid;
       background-color: var(--color-dark-50);
