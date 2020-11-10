@@ -75,6 +75,10 @@ export const Email = (args: InputProps) => (
   <Input name='Email' type="email" icon='notifications' label="Email" {...args} />
 )
 
+export const Number = (args: InputProps) => (
+  <Input name='Nummer' type="number" icon='euro' label="Nummer" {...args} />
+)
+
 export const Password = (args: InputProps) => (
   <Input name='Password' label='Password' type="password" icon='random' {...args} />
 )
