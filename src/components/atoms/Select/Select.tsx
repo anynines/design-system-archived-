@@ -326,10 +326,6 @@ const StyledSelect = styled.div`
       &.is-active {
         background-color: var(--color-primary);
       }
-
-      /* &:last-of-type {
-        border-radius: 0 0 var(--radius) var(--radius);
-      } */
     }
   }
   @media (hover: hover) {
