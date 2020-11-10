@@ -57,20 +57,16 @@ const scrollableValues = [
 ]
 
 export const Basic = (args: SelectProps) => (
-  <Select {...args} values={defaultValues} defaultValue={'Arial'} />
+  <Select {...args} values={defaultValues} defaultValue={'Helevtica'} onChange={action("Selected item")}/>
 )
 
 export const Example = (args: SelectProps) => (
-  <Select label='Font' name='fontFamily' values={defaultValues} defaultValue={'Arial'} icon='font' onChange={(value) => {
-    action(value)
-  }} />
+  <Select label='Font' name='fontFamily' values={defaultValues} defaultValue={'Helevtica'} icon='font' onChange={action("Selected item")} />
 )
 
 export const Scrollable = (args: SelectProps) => (
-  <Select label='Font' name='fontFamily' values={scrollableValues} defaultValue={'Arial'} icon='font' onChange={(value) => {
-    action(value)
-  }} />
+  <Select label='Font' name='fontFamily' values={scrollableValues} defaultValue={'Helevtica'} icon='font' onChange={action("Selected item")} />
 )
 export const WithNumber = (args: SelectProps) => (
-  <Select label='Pick a number' name='number' values={[1, 2, 3, 4]} icon='drop' onChange={action('Picked number')} />
+  <Select label='Pick a number' name='number' values={[1, 2, 3, 4]} icon='drop' onChange={action('Selected item')} />
 )

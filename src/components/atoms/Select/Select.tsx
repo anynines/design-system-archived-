@@ -167,9 +167,11 @@ export const Select: React.FC<SelectProps> = ({
 
         <div className='select-custom' aria-hidden={!isActive} onClick={onCustomSelectClick}>
           <div className='select-custom__option-container'>
-            {values.map((value): JSX.Element => {
-              return (<div className='select-custom__option' data-value={value} key={value} onClick={onCustomSelectOptionClick}>{value}</div>)
-            })}
+            <div className='select-custom__inner-option-container'>
+              {values.map((value): JSX.Element => {
+                return (<div className='select-custom__option' data-value={value} key={value} onClick={onCustomSelectOptionClick}>{value}</div>)
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -187,6 +189,7 @@ const StyledSelect = styled.div`
   position: relative;
   margin-bottom: var(--space-xl);
   
+
   .icon-wrapper {
     display: flex;
     justify-content: center;
@@ -269,6 +272,8 @@ const StyledSelect = styled.div`
     .icon-wrapper {
       border-bottom-left-radius: 0;
     }
+    
+    select,
     .select-custom {
       border-radius: var(--radius) var(--radius) 0 0
     }
@@ -284,6 +289,10 @@ const StyledSelect = styled.div`
     top: 0;
     left: 0;
 
+    &__inner-option-container {
+      max-height: 120px;
+      overflow-y: auto;
+    }
 
     &__option-container {
       display: none;
@@ -291,12 +300,12 @@ const StyledSelect = styled.div`
       top: var(--icon-wrapper-size);
       left: 0;
       z-index: 2;
+      overflow: hidden;
       border-width: 1px;
       border-style: solid;
       background-color: var(--color-dark-50);
+      padding-bottom: calc(var(--radius) / 2);
       width: 100%;
-      max-height: 120px;
-      overflow-y: scroll;
       color: var(--color-white);
       appearance: none;
       border-color: var(--color-primary);
@@ -316,10 +325,6 @@ const StyledSelect = styled.div`
       }
       &.is-active {
         background-color: var(--color-primary);
-      }
-
-      &:last-of-type {
-        border-radius: 0 0 var(--radius) var(--radius);
       }
     }
   }
