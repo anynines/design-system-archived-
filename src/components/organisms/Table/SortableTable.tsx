@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, useTable, useSortBy } from 'react-table'
 
-import { TableColumn, TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, RowsDataObject, TableData } from './Table'
+import { TableColumn, TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, RowsDataObject, TableData, TableRowColor } from './Table'
 import SortableTableHead from './SortableTableHead'
 import SortableTableBody from './SortableTableBody'
 
@@ -15,19 +15,23 @@ export interface SortableTableProps {
   setPages: React.Dispatch<React.SetStateAction<TableRow[]>>
   pages: TableRow[]
   sortCategoryAlphabeticallyAndControlLimits: (pagesDataObject: TableData) => TableRow[]
+  color: TableRowColor
 }
 
 // C O M P O N E N T
 export const SortableTable: React.FC<SortableTableProps> = (props) => {
-  const { tableHeaderData,
-          getTableColumnColor,
-          getTableColumnType,
-          getTableColumnIconType,
-          pagesPerFolder,
-          folderLimit,
-          pages,
-          setPages,
-          sortCategoryAlphabeticallyAndControlLimits } = props
+  const {
+    tableHeaderData,
+    getTableColumnColor,
+    getTableColumnType,
+    getTableColumnIconType,
+    pagesPerFolder,
+    folderLimit,
+    pages,
+    setPages,
+    sortCategoryAlphabeticallyAndControlLimits,
+    color
+  } = props
   const {
     getTableProps,
     getTableBodyProps,
@@ -35,8 +39,9 @@ export const SortableTable: React.FC<SortableTableProps> = (props) => {
     rows,
     prepareRow
   } = useTable({ columns: tableHeaderData, data: pages }, useSortBy)
-  const rowsData = rows; const tableProps = getTableProps(); const
-      tableBodyProps = getTableBodyProps()
+  const rowsData = rows
+  const tableProps = getTableProps()
+  const tableBodyProps = getTableBodyProps()
 
   const sortRowDataArrayAndControlLimits = (rowsDataObject: RowsDataObject): [string, Row<TableRow>[]][] => {
     let rowsDataArray: [string, Row<TableRow>[]][] = Object.entries(rowsDataObject)
@@ -97,12 +102,13 @@ export const SortableTable: React.FC<SortableTableProps> = (props) => {
           <SortableTableBody
             key={rowCategory}
             index={rowIndex}
-            rows={rows}
+            rows={rowsByCategory}
             prepareRow={prepareRow}
             tableBodyProps={tableBodyProps}
             getTableColumnColor={getTableColumnColor}
             getTableColumnType={getTableColumnType}
             getTableColumnIconType={getTableColumnIconType}
+            color={color}
           />
         )
       })}

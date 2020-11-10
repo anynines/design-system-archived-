@@ -32,6 +32,8 @@ export interface TableRow {
 
 export type TableSortOption = 'draggable' | 'sortable'
 
+export type TableRowColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success'
+
 export type TableAccessor = 'page' | 'status' | 'permissions' | 'languages' | 'views' | 'authors' | 'sections' | 'category'
 
 export interface TableColumn {
@@ -42,7 +44,7 @@ export interface TableColumn {
 
 export type TableColumnCellColor = 'blue' | 'black'
 
-export type TableColumnCell = 'sticker' | 'icons' | 'icon'
+export type TableColumnCell = 'sticker' | 'icons' | 'icon' | 'link'
 
 export type TableColumnIcon = 'icon'
 
@@ -55,6 +57,7 @@ export interface TableProps {
   initialPages: TableRow[]
   pagesPerFolder?: number
   folderLimit?: number
+  color?: TableRowColor
 }
 
 export interface SortableTableDataProps extends TableProps {
@@ -78,7 +81,8 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
     type,
     initialPages,
     pagesPerFolder = 10,
-    folderLimit = 5
+    folderLimit = 5,
+    color = 'dark'
   } = props
 
   const [localPages, setLocalPages] = React.useState<TableRow[]>(
@@ -148,7 +152,8 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
       pages: pages.length > 0 ? pages : localPages,
       pagesPerFolder,
       folderLimit,
-      sortCategoryAlphabeticallyAndControlLimits
+      sortCategoryAlphabeticallyAndControlLimits,
+      color
     }
   } else {
     tableProps = {
@@ -160,7 +165,8 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
       pagesPerFolder,
       folderLimit,
       tableHeaderData,
-      sortCategoryAlphabeticallyAndControlLimits
+      sortCategoryAlphabeticallyAndControlLimits,
+      color
     }
   }
 
@@ -261,7 +267,7 @@ const StyledTable = styled.div`
       }
     }
 
-    tbody{
+    tbody {
       border-radius: 5px;
 
       &:before {
@@ -280,7 +286,7 @@ const StyledTable = styled.div`
         }
       }
 
-      tr{
+      tr {
         border-radius: 5px;
 
         td {
@@ -289,14 +295,59 @@ const StyledTable = styled.div`
           background-color: var(--color-dark);
           padding: .6rem 0;
 
-          &:first-child{
+          &:first-child {
             padding-left: 1rem;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
           }
-          &:last-child{
+          &:last-child {
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
+          }
+          &:last-child.table-row-link {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-right: 1rem;
+
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+
+          &.dark {
+            background-color: var(--color-dark);
+          }
+          &.light {
+            background-color: var(--color-light);
+            color: var(--color-dark);
+
+            span.black {
+              color: var(--color-light);
+            }
+
+            div.icon-wrapper{
+              svg {
+                background-color: var(--color-white);
+              }
+            }
+          }
+          &.success {
+            background-color: var(--color-success);
+          }
+          &.error {
+            background-color: var(--color-error);
+          }
+          &.warning {
+            background-color: var(--color-warning);
+          }
+          &.primary {
+            background-color: var(--color-primary);
           }
 
           &.category-name {
@@ -304,8 +355,47 @@ const StyledTable = styled.div`
             flex-direction: row;
             align-items: center;
 
-            span {
+            &.active:before {
+              display: flex;
+              position: absolute;
+              left: -2px;
+              background-color: var(--color-white-fix);
+              filter: brightness(70%);
+              width: 4px;
+              height: 20px;
+              content: "";
+              border-radius: 2px;
+            }
+
+            &.active {
+              cursor: pointer;
+            }
+
+            span.category-name-title {
               margin-left: .7rem;
+            }
+
+            div.category-name-edit-icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              right: -15px;
+              border: 2px solid var(--color-darker);
+              background-color: var(--color-dark);
+              cursor: pointer;
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              outline: none;
+
+              &:hover {
+                filter: brightness(90%);
+              }
+
+              &.active {
+                background-color: var(--color-primary);
+              }
             }
           }
 
@@ -352,11 +442,11 @@ const StyledTable = styled.div`
           }
         }
 
-        &.draggable{
+        &.draggable {
           &:hover {
             cursor: pointer;
           }
-            
+          
           td:first-child{
             &:before{
               display: flex;

@@ -290,7 +290,8 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 }
 
 // C O M P O N E N T
-export const Icon: FC<IconProps> = ({ icon = 'menu', className }: IconProps) => {
+export const Icon: FC<IconProps> = (props) => {
+  const { icon = 'menu', className } = props
   return (
     <StyledIcon className={className}>
       {ICONS[icon]}

@@ -121,7 +121,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid",
+      "grid1",
       "slider",
       "pages"
     ],
@@ -149,7 +149,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid",
+      "grid1",
       "slider",
       "pages"
     ],
@@ -175,7 +175,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid"
+      "grid1"
     ],
     "slug": "/B/first-page",
     "category": "B",
@@ -201,7 +201,7 @@ const initialPages: TableRow[] = [
       "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
     ],
     "sections": [
-      "grid",
+      "grid1",
       "slider",
       "pages"
     ],
@@ -222,7 +222,8 @@ export const Draggable: React.FC = () => {
     disabledCategories: ['A'],
     initialPages,
     type:'draggable',
-    pagesPerFolder: 2
+    pagesPerFolder: 2,
+    color: 'success'
   }
 
   return (
@@ -238,7 +239,8 @@ export const Sortable: React.FC = () => {
     getTableColumnIconType,
     initialPages,
     type:'sortable',
-    pagesPerFolder: 2
+    pagesPerFolder: 2,
+    color: 'warning'
   }
 
   return (

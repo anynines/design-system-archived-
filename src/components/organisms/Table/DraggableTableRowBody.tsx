@@ -2,9 +2,9 @@ import React from 'react'
 import { Row, TableBodyProps } from 'react-table'
 
 import DraggableTableRow, { DraggableTableRowCategory } from './DraggableTableRow'
-import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon } from './Table'
+import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
 
-interface DraggableTableBodyProps {
+interface DraggableTableRowBodyProps {
   items: Row<TableRow>[]
   prepareRow: (row: Row<TableRow>) => void
   tableBodyProps: TableBodyProps
@@ -12,13 +12,20 @@ interface DraggableTableBodyProps {
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   disabledCategories: string[]
+  isFolderDraggable: boolean
+  setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
+  color?: TableRowColor
 }
 
-const DraggableTableBody: React.FC<DraggableTableBodyProps> = (
+const DraggableTableRowBody: React.FC<DraggableTableRowBodyProps> = (
   props
 ): JSX.Element => {
-  const { items, prepareRow, tableBodyProps, getTableColumnColor, getTableColumnType,
-          getTableColumnIconType, disabledCategories } = props
+  const {
+    items, prepareRow, tableBodyProps,
+    getTableColumnColor, getTableColumnType,
+    getTableColumnIconType, disabledCategories,
+    isFolderDraggable, setIsFolderDraggable, color
+  } = props
   const rows: JSX.Element[] = []
 
   const isNewCategoryFound = (index: number): boolean => {
@@ -30,6 +37,10 @@ const DraggableTableBody: React.FC<DraggableTableBodyProps> = (
   items.forEach((item: Row<TableRow>, index: number) => {
     prepareRow(item)
 
+    const shouldRowBeDisabled = (): boolean => {
+      return isFolderDraggable || disabledCategories.includes(item.original.category)
+    }
+
     if (index === 0 || isNewCategoryFound(index)) {
       rows.push(
         <DraggableTableRowCategory
@@ -37,6 +48,8 @@ const DraggableTableBody: React.FC<DraggableTableBodyProps> = (
           index={index}
           row={items[index]}
           idx={`${index.toString()}.-1`}
+          isFolderDraggable={isFolderDraggable}
+          setIsFolderDraggable={setIsFolderDraggable}
         />
       )
     }
@@ -46,11 +59,14 @@ const DraggableTableBody: React.FC<DraggableTableBodyProps> = (
         key={index.toString()}
         index={index}
         row={item}
-        disabled={disabledCategories.includes(item.original.category)}
-        isDraggable={disabledCategories.includes(item.original.category)}
+        disabled={shouldRowBeDisabled()}
+        isDraggable={!shouldRowBeDisabled()}
         getTableColumnColor={getTableColumnColor}
         getTableColumnType={getTableColumnType}
         getTableColumnIconType={getTableColumnIconType}
+        isFolderDraggable={isFolderDraggable}
+        setIsFolderDraggable={setIsFolderDraggable}
+        color={color}
       />
     )
   })
@@ -62,4 +78,4 @@ const DraggableTableBody: React.FC<DraggableTableBodyProps> = (
   )
 }
 
-export default DraggableTableBody
+export default DraggableTableRowBody
