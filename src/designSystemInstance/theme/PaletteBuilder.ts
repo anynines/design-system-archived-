@@ -10,8 +10,8 @@ const multiplyRGB = (rgbMap, factor) => {
 }
 
 const rgbaToCssString = (rgbaMap) => {
-  const {r,g,b,a} = rgbaMap;
-  
+  const { r, g, b, a } = rgbaMap;
+
   return `rgb(${r},${g},${b},${a})`;
 }
 
@@ -27,5 +27,21 @@ export const buildPrimaryPaletteFromHexColor = (inputColorValue) => {
   }
 }
 
-const color = buildPrimaryPaletteFromHexColor('#777777');
-console.log(color);
+export const camelToPascalCase = (convertString: string): string => {
+
+  const convertArray: string[] = Array.from(convertString);
+
+  let char: string;
+
+  for (let i = 0; i < convertArray.length; i++) {
+    char = convertArray[i];
+
+    if (char !== char.toLowerCase()) {
+      char = '-'.concat(char.toLowerCase())
+      convertArray[i] = char;
+      console.log(char);
+    }
+  }
+
+  return convertArray.join('');
+}
