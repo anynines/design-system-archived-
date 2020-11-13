@@ -2,8 +2,9 @@ import { createGlobalStyle } from 'styled-components'
 
 import * as builder from './PaletteBuilder'
 
-const palette = builder.buildPrimaryPaletteFromHexColor('#309440');
+const dynamicVars: string = builder.buildPrimaryPaletteVariablesFromHexColor('#C70039')
 
+console.log('Vars: ', dynamicVars);
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
@@ -24,10 +25,9 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     /* C O L O R S */
-    --color-primary: ${(): any => { return palette.primary }};
+    ${dynamicVars}
+    ${/*--color-primary: ${(): any => { return palette.primary }};
     --color-primary: ${(props): string => { return props.theme.colors.primary }};
-    --color-white: ${(props): string => { return props.theme.colors.white }};
-    --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
     --color-light: ${(): any => { return palette.primaryLight }};
     --color-light: ${(props): string => { return props.theme.colors.light }};
     --color-light-50: ${(): string => { return palette.primaryLight50 }};
@@ -40,7 +40,9 @@ export const GlobalStyle = createGlobalStyle`
     --color-darker: ${(): string => { return palette.primaryDarker }};
     --color-darker: ${(props): string => { return props.theme.colors.darker }};
     --color-darker-50: ${(props): string => { return props.theme.colors.darker50 }};
-    --color-darker-50: ${(): string => { return palette.primaryDark50 }};
+  --color-darker-50: ${(): string => { return palette.primaryDark50 }};*/''}
+    --color-white: ${(props): string => { return props.theme.colors.white }};
+    --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
     --color-white-fix: ${(props): string => { return props.theme.colors.whiteFix }};
     --color-notice: ${(props): string => { return props.theme.colors.notice }};
     --color-warning: ${(props): string => { return props.theme.colors.warning }};

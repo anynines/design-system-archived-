@@ -17,31 +17,42 @@ const rgbaToCssString = (rgbaMap) => {
 
 export const buildPrimaryPaletteFromHexColor = (inputColorValue) => {
   return {
-    primary: convertHexColorToRGBAString(inputColorValue),
-    primaryLight: rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 1.3)),
-    primaryLight50: rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue, 0.5), 1.3)),
-    primaryLighter: rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 1.5)),
-    primaryDark: rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 0.7)),
-    primaryDark50: rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue, 0.5), 0.7)),
-    primaryDarker: rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 0.5))
+    'colorPprimary': convertHexColorToRGBAString(inputColorValue),
+    'colorLight': rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 1.3)),
+    'colorLight-50': rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue, 0.5), 1.3)),
+    'colorLighter': rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 1.5)),
+    'colorDark': rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 0.7)),
+    'colorDark-50': rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue, 0.5), 0.7)),
+    'colorDarker': rgbaToCssString(multiplyRGB(convertHexColorToRGBA(inputColorValue), 0.5))
   }
+}
+
+export const buildPrimaryPaletteVariablesFromHexColor = (inputColorValue) => {
+  const paletteMap: any = buildPrimaryPaletteFromHexColor(inputColorValue)
+  let paletteString = ''
+  Object.keys(paletteMap).map((key: string) => {
+    paletteString = paletteString.concat(`--${camelToPascalCase(key)}: ${paletteMap[key]};\n`)
+    return 0
+  })
+
+  return paletteString
 }
 
 export const camelToPascalCase = (convertString: string): string => {
 
-  const convertArray: string[] = Array.from(convertString);
+  const convertArray: string[] = Array.from(convertString)
 
-  let char: string;
+  let char: string
 
   for (let i = 0; i < convertArray.length; i++) {
-    char = convertArray[i];
+    char = convertArray[i]
 
     if (char !== char.toLowerCase()) {
       char = '-'.concat(char.toLowerCase())
-      convertArray[i] = char;
-      console.log(char);
+      convertArray[i] = char
+      console.log(char)
     }
   }
 
-  return convertArray.join('');
-}
+  return convertArray.join('')
+};
