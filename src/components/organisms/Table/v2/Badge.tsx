@@ -9,11 +9,6 @@ export interface BadgeProps {
 
 // C O M P O N E N T S
 
-export const Column = (props): JSX.Element => {
-  console.log(props)
-  return <thead />
-}
-
 export const Badge: React.FC<BadgeProps> = (props) => {
   const { value } = props
   return (

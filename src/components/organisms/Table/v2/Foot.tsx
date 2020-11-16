@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 import { getChildrenWithNewProps } from '../../../../helpers'
 
-export const Body: FC = ({ children, ...props }) => {
+export const Foot: FC = ({ children, ...props }) => {
   return (
-    <StyledBody>
+    <StyledFoot>
       {getChildrenWithNewProps(children, props)}
-    </StyledBody>
+    </StyledFoot>
   )
 }
 
-const StyledBody = styled.tbody`
+const StyledFoot = styled.tfoot`
   &:last-child{
     tr {
       &:last-child {

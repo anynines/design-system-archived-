@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 import { getChildrenWithNewProps } from '../../../../helpers'
 
-// C O M P O N E N T S
-
 export const Head = ({ children, ...props }): JSX.Element => {
   return (
     <StyledHead>
@@ -14,4 +12,14 @@ export const Head = ({ children, ...props }): JSX.Element => {
 }
 
 const StyledHead = styled.thead`
+  tr {
+    &:last-child {
+      td:first-child {
+        border-top-left-radius: 5px;
+      }
+      td:last-child {
+        border-top-right-radius: 5px;
+      }
+    } 
+  }
 `

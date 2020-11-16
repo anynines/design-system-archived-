@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useCallback } from 'react'
 import styled from 'styled-components'
 
 import { getChildrenWithNewProps } from '../../../../helpers'
@@ -11,17 +11,17 @@ export interface TableRow {
 export type TableSortDirection = 'asc' | 'desc' | null
 
 export interface TableProps {
-  data: TableRow[]
-  sortDirection?: TableSortDirection
-  sortedBy?: string
+  sortData: TableRow[]
+  originalData: TableRow[]
+  setSortData: Dispatch<SetStateAction<TableRow[]>>
 }
 
 export interface TableChildrenProps {
-  data: TableRow[]
+  sortData: TableRow[]
   sortDirection: TableSortDirection
   sortedBy: string
   setSortDirection: Dispatch<SetStateAction<TableSortDirection>>
-  setData: Dispatch<SetStateAction<TableRow[]>>
+  setSortData: Dispatch<SetStateAction<TableRow[]>>
   setSortedBy: Dispatch<SetStateAction<string>>
   onSort: (field: string) => void
 }
@@ -38,48 +38,24 @@ export const getCellValue = (row: TableRow, field: string): boolean | number | s
 // C O M P O N E N T S
 export const Table: React.FC<TableProps> = (props) => {
   const {
-    data,
-    sortDirection,
-    sortedBy,
+    sortData,
+    originalData,
+    setSortData,
     children
   } = props
 
-  const [currentData, setCurrentData] = React.useState<TableRow[]>([] as TableRow[])
   const [currentSortedBy, setCurrentSortedBy] = React.useState<string>('')
   const [currentSortDirection, setCurrentSortDirection] = React.useState<TableSortDirection>(null)
 
-  React.useEffect(() => {
-    if (data.length) {
-      setCurrentData(data)
-      if (sortedBy) setCurrentSortedBy(sortedBy)
-      if (sortDirection) setCurrentSortDirection(sortDirection)
+  const handleOnSort = useCallback((field: string): void => {
+    if (currentSortDirection === null) {
+      setSortData(originalData)
+      return
     }
-  }, [data, sortDirection, sortedBy])
-
-  const getDirection = (direction: TableSortDirection): TableSortDirection => {
-    if (direction === 'asc') return 'desc'
-    if (direction === 'desc') return null
-    return 'asc'
-  }
-
-  const handleOnSort = (field: string): void => {
-    const newData = [...currentData]
-
-    if (field !== currentSortedBy) {
-      setCurrentSortedBy(field)
-      setCurrentSortDirection('asc')
-    } else setCurrentSortDirection(getDirection(currentSortDirection))
-
-    if (newData.length) {
-      const value = newData[0][field]
-      if (Array.isArray(value) || typeof value === 'boolean') return
-      if (sortDirection === null) {
-        setCurrentData(data)
-        return
-      }
-    }
-
-    const sortedData = newData.sort((firstItem, secondItem) => {
+    console.log('reached start')
+    const newData = [...sortData]
+    let sortedData: TableRow[] = []
+    sortedData = newData.sort((firstItem, secondItem) => {
       const firstValue: string | boolean | number = getCellValue(firstItem, field)
       const secondValue: string | boolean | number = getCellValue(secondItem, field)
 
@@ -87,17 +63,22 @@ export const Table: React.FC<TableProps> = (props) => {
       if (typeof firstValue === 'number' && typeof secondValue === 'number') return Number(firstValue) - Number(secondValue)
       return 0
     })
-    if (sortDirection === 'desc') sortedData.reverse()
+    console.log('reached there almost')
+    if (currentSortDirection === 'desc') sortedData.reverse()
 
-    setCurrentData(sortedData)
-  }
+    setSortData(sortedData)
+  }, [originalData, setSortData, sortData, currentSortDirection])
+
+  React.useEffect(() => {
+    handleOnSort(currentSortedBy)
+  }, [currentSortDirection, currentSortedBy, handleOnSort])
 
   const childrenProps: TableChildrenProps = {
-    data: currentData,
+    sortData,
     sortDirection: currentSortDirection,
     sortedBy: currentSortedBy,
     setSortDirection: setCurrentSortDirection,
-    setData: setCurrentData,
+    setSortData,
     setSortedBy: setCurrentSortedBy,
     onSort: handleOnSort
   }
@@ -110,4 +91,7 @@ export const Table: React.FC<TableProps> = (props) => {
 }
 
 const StyledTable = styled.table`
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
 `
