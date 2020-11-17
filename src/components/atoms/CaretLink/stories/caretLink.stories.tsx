@@ -21,6 +21,7 @@ export const Basic = (args: CaretLinkProps) => (
   <MemoryRouter>
     <CaretLink
       {...args}
+      text='Click me to jump to a path'
       path='/test'
     />
   </MemoryRouter>
