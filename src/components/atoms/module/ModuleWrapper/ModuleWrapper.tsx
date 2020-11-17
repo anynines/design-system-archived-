@@ -6,19 +6,24 @@ export interface ModuleWrapperProps {
   customWidth?: boolean // TODO: Check type definition
   width?: number
   className?: string
+  style?: React.CSSProperties
 }
 
 // C O M P O N E N T
-export const ModuleWrapper: React.FC<ModuleWrapperProps> = ({
-  className = 'StyledModuleWrapper',
-  width = 280,
-  children,
-  customWidth
-}) => {
+export const ModuleWrapper: React.FC<ModuleWrapperProps> = (props) => {
+  const {
+    className = 'StyledModuleWrapper',
+    width = 280,
+    children,
+    customWidth,
+    style
+  } = props
+
   return (
     <StyledModuleWrapper
       className={`${customWidth ? 'customWidth' : ''} ${className}`}
       width={width}
+      style={style}
     >
       {children}
     </StyledModuleWrapper>
