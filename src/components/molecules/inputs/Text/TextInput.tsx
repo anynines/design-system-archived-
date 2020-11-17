@@ -4,7 +4,7 @@ import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-h
 
 // C O M P O N E N T S
 import { Icon, IconName } from '../../../atoms/Icon/Icon'
-import { Label, LabelProps } from '../../../atoms/Label/Label'
+import { InputLabel, InputLabelProps } from '../../../atoms/InputLabel/InputLabel'
 import { TextInputPrepend, TextInputPrependProps } from '../../../atoms/prepend/TextInputPrepend/TextInputPrepend'
 
 // I N T E R F A C E S
@@ -31,7 +31,7 @@ export interface TextInputProps {
 }
 type TextInput = React.FC<TextInputProps>
   & { Prepend: React.FC<TextInputPrependProps> }
-  & { Label: React.FC<LabelProps> }
+  & { Label: React.FC<InputLabelProps> }
 
 // C O M P O N E N T
 export const TextInput: TextInput = ({
@@ -121,7 +121,7 @@ export const TextInput: TextInput = ({
       {children}
       <StyledInputField>
         {/* There is a type incoherence between 'register()' and 'ref' attribute */}
-        <Label htmlFor={name}>{label}</Label>
+        <InputLabel htmlFor={name}>{label}</InputLabel>
         <input
           autoFocus={isFocus}
           autoComplete={autoComplete}
@@ -219,4 +219,4 @@ const StyledInput = styled.div<StyledInputProps>`
 `
 
 TextInput.Prepend = TextInputPrepend
-TextInput.Label = Label
+TextInput.Label = InputLabel
