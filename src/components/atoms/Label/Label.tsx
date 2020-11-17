@@ -14,7 +14,10 @@ export const Label: React.FC<LabelProps> = ({
   className
 }) => {
   return (
-    <StyledLabel htmlFor={htmlFor} className={`input-label ${className}`}>
+    <StyledLabel
+      htmlFor={htmlFor}
+      className={`input-label ${className}`}
+    >
       {children}
     </StyledLabel>
   )

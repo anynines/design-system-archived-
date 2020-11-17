@@ -4,12 +4,14 @@ import { Label, LabelProps } from '../Label'
 
 
 export default {
-  title: 'Atoms/Label',
+  title: 'Atoms/InputLabel',
   component: Label,
   argTypes: {
   },
 }
 
 export const Basic = (args: LabelProps) => (
-  <Label {...args} />
+  <Label {...args}>
+    Some label here
+  </Label>
 )
