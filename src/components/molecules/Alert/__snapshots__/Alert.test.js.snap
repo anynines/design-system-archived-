@@ -26,7 +26,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   --position: 2rem;
   --width: 22rem;
   --z-index: 90;
-  --bg-color: rgba(42,204,117,1);
+  --bg-color: #6AA84F;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
