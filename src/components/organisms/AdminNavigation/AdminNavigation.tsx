@@ -85,7 +85,7 @@ const StyledAdminNavigation = styled.div`
   .UserNav {
     position: absolute;
     bottom: 0;
-    background-color: var(--color-darker);
+    background-color: var(--color-darker-50);
   }
 
   .Logo {

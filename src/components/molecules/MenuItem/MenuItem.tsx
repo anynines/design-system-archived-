@@ -83,6 +83,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
   
   display: var(--display);
+  position: relative;
   margin: var(--margin);
   list-style-type: none;
 
