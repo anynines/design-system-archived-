@@ -105,5 +105,9 @@ const StyledButton = styled.button<StyledButtonProps>`
     color: var(--btn-color);
     font-weight: var(--font-weight-bd);
   }
+
+  &:hover {
+    background-color: var(--color-primary-lightened);
+  }
 `
 StyledButton.displayName = 'StyledButton'

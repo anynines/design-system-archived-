@@ -1,5 +1,6 @@
 {
   "primary": "rgb(228,131,62)",
+  "primaryLightened": "rgb(246,141,46)",
   "primary50": "rgba(228,131,62,0.5)",
   "notice": "#3E97E4",
   "success": "#6AA84F",

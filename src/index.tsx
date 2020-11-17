@@ -7,7 +7,6 @@ export * from './designSystemInstance/theme/defaultTheme'
 // A T O M S
 export * from './components/atoms/Avatar/Avatar'
 export * from './components/atoms/Button/Button'
-export * from './components/atoms/BackButton/BackButton'
 export * from './components/atoms/CaretLink/CaretLink'
 export * from './components/atoms/Favicon/Favicon'
 export * from './components/atoms/Icon/Icon'

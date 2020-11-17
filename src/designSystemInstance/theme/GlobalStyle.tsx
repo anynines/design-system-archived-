@@ -2,24 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.25);
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 5px;
-  }
-
+  /**************************************
+  **  Global Variables  *****************
+  **************************************/
   :root {
     /* C O L O R S */
     --color-primary: ${(props): string => { return props.theme.colors.primary }};
+    --color-primary-lightened: ${(props): string => { return props.theme.colors.primaryLightened }};
     --color-primary-50: ${(props): string => { return props.theme.colors.primary50 }};
     --color-white: ${(props): string => { return props.theme.colors.white }};
     --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
@@ -42,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     --shadow: ${(props): string => { return props.theme.globals.shadow }};
     --transition: ${(props): string => { return props.theme.globals.transition }};
     --transition-ease-in-out-300: 0.3s ease-in-out;
+
     /* S P A C I N G */
     --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }};
     --space-xs:  calc(var(--space-unit) * 0.25);
@@ -79,10 +70,9 @@ export const GlobalStyle = createGlobalStyle`
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};
   }
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  /**************************************
+  **  Global Styles  ********************
+  **************************************/
 
   body {
     margin: 0;
@@ -115,5 +105,26 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-lightened);
   }
 `
