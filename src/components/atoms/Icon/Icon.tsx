@@ -1,7 +1,5 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
-// A S S E T S
 
 // A
 import ArrowUpRight from './assets/arrowUpRight'
@@ -17,6 +15,7 @@ import Button from './assets/button'
 import Camera from './assets/camera'
 import Calendar from './assets/calendar'
 import CaretDown from './assets/caretDown'
+import CaretLeft from './assets/caretLeft'
 import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
 import Close from './assets/close'
@@ -134,6 +133,7 @@ export type IconName = 'arrowUpRight'
   | 'calendar'
   | 'camera'
   | 'caretDown'
+  | 'caretLeft'
   | 'caretRight'
   | 'cart'
   | 'close'
@@ -215,6 +215,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   calendar: <Calendar />,
   camera: <Camera />,
   caretDown: <CaretDown />,
+  caretLeft: <CaretLeft />,
   caretRight: <CaretRight />,
   cart: <Cart />,
   close: <Close />,
@@ -290,7 +291,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 }
 
 // C O M P O N E N T
-export const Icon: FC<IconProps> = (props) => {
+export const Icon: React.FC<IconProps> = (props) => {
   const { icon = 'menu', className } = props
   return (
     <StyledIcon className={className}>

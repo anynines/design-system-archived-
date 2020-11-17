@@ -54,34 +54,44 @@ export const StyledIcon = (args: IconProps) => {
 export const Collection = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
     <IconWrapper icon='arrowUpRight' />
+
     <IconWrapper icon='bestseller' />
-    <IconWrapper icon='button' />
     <IconWrapper icon='bin' />
+    <IconWrapper icon='button' />
+
+    <IconWrapper icon='calendar' />
+    <IconWrapper icon='camera' />
     <IconWrapper icon='caretDown' />
+    <IconWrapper icon='caretLeft' />
     <IconWrapper icon='caretRight' />
     <IconWrapper icon='cart' />
-    <IconWrapper icon='camera' />
-    <IconWrapper icon='calendar' />
     <IconWrapper icon='close' />
     <IconWrapper icon='color' />
     <IconWrapper icon='customer' />
+
     <IconWrapper icon='dashboard' />
     <IconWrapper icon='delivery' />
     <IconWrapper icon='drop' />
+
     <IconWrapper icon='edit' />
     <IconWrapper icon='euro' />
-    <IconWrapper icon='frequency' />
+    
     <IconWrapper icon='filter' />
     <IconWrapper icon='folder' />
     <IconWrapper icon='font' />
+    <IconWrapper icon='frequency' />
+
     <IconWrapper icon='globe' />
     <IconWrapper icon='grid1' />
     <IconWrapper icon='grid2' />
     <IconWrapper icon='grid4' />
     <IconWrapper icon='grid8' />
     <IconWrapper icon='grid16' />
+
     <IconWrapper icon='heart' />
+
     <IconWrapper icon='info' />
+
     <IconWrapper icon='LangDE' />
     <IconWrapper icon='LangEN' />
     <IconWrapper icon='LangSP' />
@@ -89,35 +99,44 @@ export const Collection = () => (
     <IconWrapper icon='layout' />
     <IconWrapper icon='light' />
     <IconWrapper icon='logout' />
+
     <IconWrapper icon='menu' />
     <IconWrapper icon='minus' />
     <IconWrapper icon='minusInSquare' />
     <IconWrapper icon='moon' />
+
     <IconWrapper icon='news' />
     <IconWrapper icon='notifications' />
     <IconWrapper icon='novelties' />
+
     <IconWrapper icon='orders' />
+
     <IconWrapper icon='pages' />
     <IconWrapper icon='pipette' />
     <IconWrapper icon='placeholder' />
     <IconWrapper icon='plus' />
     <IconWrapper icon='points' />
+
     <IconWrapper icon='random' />
     <IconWrapper icon='remove' />
     <IconWrapper icon='rocket' />
+
     <IconWrapper icon='sale' />
     <IconWrapper icon='sections' />
     <IconWrapper icon='send' />
     <IconWrapper icon='settings' />
     <IconWrapper icon='shop' />
     <IconWrapper icon='slider' />
+
     <IconWrapper icon='tag' />
     <IconWrapper icon='text' />
     <IconWrapper icon='telescope' />
     <IconWrapper icon='turnAround' />
+
     <IconWrapper icon='unit' />
     <IconWrapper icon='user' />
     <IconWrapper icon='users' />
+    
     <IconWrapper icon='widthSM' />
     <IconWrapper icon='wishlist' />
   </div>
