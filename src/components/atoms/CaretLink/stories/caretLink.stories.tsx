@@ -1,8 +1,8 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 
+import Wrapper from '../../../_helpers/Wrapper'
 import { CaretLink, CaretLinkProps } from '../CaretLink'
-
 
 export default {
   title: 'Atoms/CaretLink',
@@ -10,28 +10,21 @@ export default {
   argTypes: {
     text: {
       control: { type: 'text' },
+      defaultValue: 'Peter Weinmann'
     },
     path: {
-      control: { type: 'text' },
+      control: { type: 'text'},
+      defaultValue: '/test'
     }
   },
 }
 
 export const Basic = (args: CaretLinkProps) => (
   <MemoryRouter>
-    <CaretLink
-      {...args}
-      text='Click me to jump to a path'
-      path='/test'
-    />
-  </MemoryRouter>
-)
-
-export const SampleLink = () => (
-  <MemoryRouter>
-    <CaretLink
-      text='Zurück zum Login'
-      path='/test'
-    />
+    <Wrapper>
+      <CaretLink
+        {...args}
+      />
+    </Wrapper>
   </MemoryRouter>
 )
