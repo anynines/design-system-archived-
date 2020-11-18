@@ -3,12 +3,12 @@ import styled, { ThemeContext } from 'styled-components'
 
 // I N T E R F A C E
 export interface ButtonProps {
-  style?: React.CSSProperties
   className?: string
   type?: ButtonType
   size?: ButtonSize
   width?: ButtonWidth
   onClick?: () => void
+  style?: React.CSSProperties
 }
 
 // T Y P E S
@@ -18,15 +18,16 @@ export type ButtonSize = 'sm' | 'default'
 export type ButtonWidth = 'block' | 'inline'
 
 // C O M P O N E N T
-export const Button: React.FC<ButtonProps> = ({
-  type = 'default',
-  size = 'default',
-  width = 'inline',
-  className,
-  onClick,
-  children,
-  style
-}) => {
+export const Button: React.FC<ButtonProps> = (props) => {
+  const {
+    type = 'default',
+    size = 'default',
+    width = 'inline',
+    className,
+    onClick,
+    children,
+    style
+  } = props
   const { colors } = React.useContext(ThemeContext)
 
   let btnColor
