@@ -35,7 +35,7 @@ export default {
     },
     moveIcon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',

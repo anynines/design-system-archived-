@@ -12,7 +12,7 @@ export default {
   argTypes: {
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',
@@ -75,7 +75,7 @@ export const Collection = () => (
 
     <IconWrapper icon='edit' />
     <IconWrapper icon='euro' />
-    
+
     <IconWrapper icon='filter' />
     <IconWrapper icon='folder' />
     <IconWrapper icon='font' />
@@ -136,7 +136,7 @@ export const Collection = () => (
     <IconWrapper icon='unit' />
     <IconWrapper icon='user' />
     <IconWrapper icon='users' />
-    
+
     <IconWrapper icon='widthSM' />
     <IconWrapper icon='wishlist' />
   </div>

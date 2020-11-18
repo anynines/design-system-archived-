@@ -10,7 +10,7 @@ export default {
     id: { control: null },
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: {
           menu: "menu",
           shop: "shop",

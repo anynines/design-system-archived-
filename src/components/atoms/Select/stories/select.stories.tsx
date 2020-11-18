@@ -10,7 +10,7 @@ export default {
   argTypes: {
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',
@@ -57,7 +57,7 @@ const scrollableValues = [
 ]
 
 export const Basic = (args: SelectProps) => (
-  <Select {...args} values={defaultValues} defaultValue={'Helevtica'} onChange={action("Selected item")}/>
+  <Select {...args} values={defaultValues} defaultValue={'Helevtica'} onChange={action("Selected item")} />
 )
 
 export const Example = (args: SelectProps) => (

@@ -13,7 +13,7 @@ export default {
     slug: { control: { type: "text" } },
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',

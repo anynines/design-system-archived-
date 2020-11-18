@@ -8,7 +8,7 @@ export default {
   argTypes: {
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',
@@ -28,7 +28,7 @@ export default {
     },
     type: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'text',
           'color',

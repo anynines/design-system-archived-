@@ -12,7 +12,7 @@ export default {
   component: DesignSystemInstance,
   argTypes: {
     mode: {
-      control: { type: 'options', options: ["dark", "light"] }
+      control: { type: 'select', options: ["dark", "light"] }
     },
     storagePrefix: {
       control: { type: 'text' }

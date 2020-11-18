@@ -15,7 +15,7 @@ export default {
     },
     type: {
       control: {
-        type: 'options',
+        type: 'select',
         options: {
           success: "success",
           error: "error",

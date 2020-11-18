@@ -22,7 +22,7 @@ export default {
       control: { type: 'string[]' }
     },
     type: {
-      control: { type: 'options', options: ["sortable", "draggable"] }
+      control: { type: 'select', options: ["sortable", "draggable"] }
     },
     pages: {
       control: { type: 'TableRow[]' }
@@ -221,7 +221,7 @@ export const Draggable: React.FC = () => {
     getTableColumnIconType,
     disabledCategories: ['A'],
     initialPages,
-    type:'draggable',
+    type: 'draggable',
     pagesPerFolder: 2,
     color: 'success'
   }
@@ -238,7 +238,7 @@ export const Sortable: React.FC = () => {
     getTableColumnType,
     getTableColumnIconType,
     initialPages,
-    type:'sortable',
+    type: 'sortable',
     pagesPerFolder: 2,
     color: 'warning'
   }

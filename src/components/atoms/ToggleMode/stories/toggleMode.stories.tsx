@@ -8,10 +8,10 @@ export default {
   component: ToggleMode,
   argTypes: {
     size: {
-      control: { type: "options", options: { Default: "lg", Sm: "sm" } }
+      control: { type: "select", options: { Default: "lg", Sm: "sm" } }
     },
     mode: {
-      control: { type: "options", options: { Dark: "dark", Light: "light" } }
+      control: { type: "select", options: { Dark: "dark", Light: "light" } }
     },
     setMode: {
       control: { type: 'disabled' },

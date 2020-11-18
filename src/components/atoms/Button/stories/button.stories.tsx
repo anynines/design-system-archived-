@@ -8,13 +8,13 @@ export default {
   component: Button,
   argTypes: {
     type: {
-      control: { type: 'options', options: ['dark', 'darker', 'default', 'primary', 'submit'] }
+      control: { type: 'select', options: ['dark', 'darker', 'default', 'primary', 'submit'] }
     },
     size: {
-      control: { type: 'options', options: { Default: 'default', Sm: 'sm' } }
+      control: { type: 'select', options: { Default: 'default', Sm: 'sm' } }
     },
     width: {
-      control: { type: 'options', options: { Default: 'inline', Block: 'Block' } }
+      control: { type: 'select', options: { Default: 'inline', Block: 'Block' } }
     },
     onClick: {
       control: { type: 'disabled' },

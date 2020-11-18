@@ -11,7 +11,7 @@ export default {
     },
     size: {
       control: {
-        type: 'options',
+        type: 'select',
         required: false,
         options: {
           small: 'sm',
