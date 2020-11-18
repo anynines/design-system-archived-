@@ -16,6 +16,7 @@ export interface MenuItemProps {
   onClick?: () => void
   children?: JSX.Element
   className?: string
+  style?: React.CSSProperties
 }
 
 // C O M P O N E N T
@@ -27,7 +28,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   icon,
   path,
   onClick,
-  children
+  children,
+  style
 }) => {
   return (
     <>
@@ -38,6 +40,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           label={children}
           className={`menu-item ${className}`}
           id={icon}
+          style={style}
         >
           <NavLink to={`${path}`} className='wrapper' activeClassName='active'>
             {icon && <Icon icon={icon} />}
@@ -55,6 +58,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           icon={icon}
           className={`menu-item ${className}`}
           id={icon}
+          style={style}
         >
           <div
             className={`wrapper ${active && 'active'} ${counter && 'counter'}`}

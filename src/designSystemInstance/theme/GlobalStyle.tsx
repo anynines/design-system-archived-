@@ -129,4 +129,13 @@ export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-lightened);
   }
+
+  .tooltip-wrapper {
+    position: relative;
+    &:hover {
+      .tooltip {
+        display: block;
+      }
+    }
+  }
 `

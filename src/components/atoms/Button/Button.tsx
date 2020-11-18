@@ -74,7 +74,7 @@ export const Button: React.FC<ButtonProps> = ({
       btnBgColor={btnBgColor}
       onClick={(): void => { return (onClick && onClick()) }}
     >
-      <span>{children}</span>
+      {children}
     </StyledButton>
   )
 }
@@ -108,14 +108,12 @@ const StyledButton = styled.button<StyledButtonProps>`
   border-radius: var(--radius);
   outline: none;
   transition: var(--transition);
-
-  span {
-    color: var(--btn-color);
-    font-weight: var(--font-weight-bd);
-  }
+  color: var(--btn-color);
+  font-weight: var(--font-weight-bd);
 
   &:hover {
     background-color: var(--color-primary-lightened);
+    color: var(--color-white-fix);
   }
 `
 StyledButton.displayName = 'StyledButton'
