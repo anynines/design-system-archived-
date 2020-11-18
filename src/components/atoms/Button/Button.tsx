@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
 
 // I N T E R F A C E
 export interface ButtonProps {
@@ -13,66 +13,25 @@ export interface ButtonProps {
 
 // T Y P E S
 // @Note They will only be extracted in the props table if the param is optional...
-export type ButtonType = 'primary' | 'dark' | 'darker' | 'default' | 'submit'
-export type ButtonSize = 'sm' | 'default'
+export type ButtonType = 'primary' | 'dark' | 'darker' | 'submit'
+export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonWidth = 'block' | 'inline'
 
 // C O M P O N E N T
-export const Button: React.FC<ButtonProps> = (props) => {
-  const {
-    type = 'default',
-    size = 'default',
-    width = 'inline',
-    className,
-    onClick,
-    children,
-    style
-  } = props
-  const { colors } = React.useContext(ThemeContext)
-
-  let btnColor
-  let btnBgColor
-  switch (type) {
-    case 'primary':
-      btnColor = colors.whiteFix
-      btnBgColor = colors.primary
-      break
-
-    case 'submit':
-      btnColor = colors.whiteFix
-      btnBgColor = colors.primary
-      break
-
-    case 'dark':
-      btnColor = colors.white
-      btnBgColor = colors.dark
-      break
-
-    case 'darker':
-      btnColor = colors.white
-      btnBgColor = colors.darker
-      break
-
-    case 'default':
-      btnColor = colors.white
-      btnBgColor = colors.dark
-      break
-
-    default:
-      btnColor = colors.dark
-      btnBgColor = colors.white
-      break
-  }
-
+export const Button: React.FC<ButtonProps> = ({
+  type = 'primary',
+  size = 'md',
+  width = 'inline',
+  className,
+  onClick,
+  children,
+  style
+}) => {
   return (
     <StyledButton
       style={style}
-      className={`btn ${className}`}
+      className={`btn ${type} ${size} ${width} ${className}`}
       type={type === 'submit' ? 'submit' : 'button'}
-      size={size}
-      width={width}
-      btnColor={btnColor}
-      btnBgColor={btnBgColor}
       onClick={(): void => { return (onClick && onClick()) }}
     >
       {children}
@@ -80,41 +39,63 @@ export const Button: React.FC<ButtonProps> = (props) => {
   )
 }
 
-// I N T E R F A C E
-interface StyledButtonProps {
-  btnColor: string
-  btnBgColor: string
-  size: string
-  width: string
-}
-
 // S T Y L E S
-const StyledButton = styled.button<StyledButtonProps>`
-  --btn-width: ${(props): string => { return props.width === 'inline' ? 'auto' : '100%' }};
-  --btn-color: ${(props): string => { return props.btnColor }};
-  --btn-bg-color: ${(props): string => { return props.btnBgColor }};
-  --btn-font-size: ${(props): string => { return props.size === 'sm' ? 'var(--text-md)' : 'var(--text-lg)' }};
-
+const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
-  background-color: var(--btn-bg-color);
   cursor: pointer;
   padding: var(--space-lg) var(--space-lgr);
-  width: var(--btn-width);
-  color: var(--btn-color);
+  width: auto;
+  color: var(--color-white);
   font-family: var(--font-family);
-  font-size: var(--btn-font-size);
   border-radius: var(--radius);
   outline: none;
   transition: var(--transition);
-  color: var(--btn-color);
   font-weight: var(--font-weight-bd);
+  border: var(--border);
+
+  /* Width */
+  &.block {
+    width: 100%;
+  }
+
+  /* Sizes */
+  &.xs {
+    font-size: var(--text-xs);
+  }
+
+  &.sm {
+    font-size: var(--text-sm);
+  }
+  
+  &.md {
+    font-size: var(--text-md);
+  }
+  
+  &.lg {
+    font-size: var(--text-lg);
+  }
+
+  /* Types */
+  &.primary, &.submit {
+    color: var(--color-white-fix);
+    background-color: var(--color-primary);
+  }
+
+  &.dark {
+    background-color: var(--color-dark);
+  }
+
+  &.darker {
+    background-color: var(--color-darker);
+  }
 
   &:hover {
     background-color: var(--color-primary-lightened);
     color: var(--color-white-fix);
+    box-shadow: var(--shadow);
   }
 `
 StyledButton.displayName = 'StyledButton'
