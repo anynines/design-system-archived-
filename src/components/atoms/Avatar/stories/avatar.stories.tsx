@@ -27,7 +27,8 @@ export default {
       control: { type: 'boolean' }
     },
     level: {
-      control: { type: 'number' }
+      control: { type: 'number' },
+      defaultValue: 42
     },
     userName: {
       control: { type: 'text' },
@@ -69,13 +70,5 @@ export const Rounded = () => (
 export const WithoutAvatar = () => (
   <Wrapper>
     <Avatar size={'md'} userName={sampleUserName} level={46} rounded={true} />
-  </Wrapper>
-)
-
-export const AvatarWithChildren = () => (
-  <Wrapper>
-    <Avatar size={'md'} rounded>
-      <img src={sampleAvatarUrl} />
-    </Avatar>
   </Wrapper>
 )

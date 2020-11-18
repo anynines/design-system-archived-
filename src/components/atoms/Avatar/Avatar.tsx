@@ -70,7 +70,7 @@ const StyledAvatar = styled.div`
   --size: 5rem;
   --font-size: .8em;
   --initials-font-size: 2.4em;
-  --level-position: 0;
+  --level-position: -0.3em;
   --level-size: 2em;
   
   display: flex;
