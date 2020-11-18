@@ -3,9 +3,11 @@ import styled, { ThemeContext } from 'styled-components'
 
 // I N T E R F A C E
 export interface ButtonProps {
+  style?: React.CSSProperties
+  className?: string
   type?: ButtonType
   size?: ButtonSize
-  className?: string
+  width?: ButtonWidth
   onClick?: () => void
 }
 
@@ -13,14 +15,17 @@ export interface ButtonProps {
 // @Note They will only be extracted in the props table if the param is optional...
 export type ButtonType = 'primary' | 'dark' | 'darker' | 'default' | 'submit'
 export type ButtonSize = 'sm' | 'default'
+export type ButtonWidth = 'block' | 'inline'
 
 // C O M P O N E N T
 export const Button: React.FC<ButtonProps> = ({
   type = 'default',
   size = 'default',
-  className = '',
+  width = 'inline',
+  className,
   onClick,
-  children
+  children,
+  style
 }) => {
   const { colors } = React.useContext(ThemeContext)
 
@@ -60,9 +65,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <StyledButton
+      style={style}
       className={`btn ${className}`}
-      size={size}
       type={type === 'submit' ? 'submit' : 'button'}
+      size={size}
+      width={width}
       btnColor={btnColor}
       btnBgColor={btnBgColor}
       onClick={(): void => { return (onClick && onClick()) }}
@@ -77,11 +84,12 @@ interface StyledButtonProps {
   btnColor: string
   btnBgColor: string
   size: string
+  width: string
 }
 
 // S T Y L E S
 const StyledButton = styled.button<StyledButtonProps>`
-  --btn-width: ${(props): string => { return props.size === 'sm' ? 'auto' : '100%' }};
+  --btn-width: ${(props): string => { return props.width === 'inline' ? 'auto' : '100%' }};
   --btn-color: ${(props): string => { return props.btnColor }};
   --btn-bg-color: ${(props): string => { return props.btnBgColor }};
   --btn-font-size: ${(props): string => { return props.size === 'sm' ? 'var(--text-md)' : 'var(--text-lg)' }};
