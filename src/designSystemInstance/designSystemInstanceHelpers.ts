@@ -46,12 +46,14 @@ export const getToggledTheme = <T extends Theme>(theme: T): T => {
       ...theme.colors,
       white: theme.colors.darker,
       white50: theme.colors.darker50,
+      white10: theme.colors.darker10,
       light: theme.colors.dark,
       light50: theme.colors.dark50,
       dark: theme.colors.light,
       dark50: theme.colors.light50,
       darker: theme.colors.white,
-      darker50: theme.colors.white50
+      darker50: theme.colors.white50,
+      darker10: theme.colors.white10
     }
   }
 }

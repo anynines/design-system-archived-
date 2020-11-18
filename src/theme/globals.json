@@ -8,7 +8,7 @@
   "radius": "10px",
   "border": "none",
   "contentMaxWidth": "75rem",
-  "shadow": "none",
+  "shadow": "0 0 6px var(--color-white-10)",
   "transition": "all 0.3s ease-in-out",
   "logos": {
     "vertical": {

@@ -12,12 +12,14 @@ export interface ThemeColors {
   whiteFix: string
   white: string
   white50: string
+  white10: string
   light: string
   light50: string
   dark: string
   dark50: string
   darker: string
   darker50: string
+  darker10: string
 }
 export interface Globals {
   font: {
