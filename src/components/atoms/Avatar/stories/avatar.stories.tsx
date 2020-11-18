@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Wrapper from '../../../_helpers/Wrapper'
 import { Avatar, AvatarProps } from '../Avatar'
 
 export default {
@@ -7,7 +8,9 @@ export default {
   component: Avatar,
   argTypes: {
     avatar: {
-      control: { type: 'text' }
+      control: { type: 'text' },
+      description: 'Url for the avatar',
+      defaultValue: ''
     },
     size: {
       control: {
@@ -21,11 +24,15 @@ export default {
       },
     },
     rounded: {
-      control: { type: 'boolean' },
-      description: 'Peter Weinmann'
+      control: { type: 'boolean' }
     },
     level: {
       control: { type: 'number' }
+    },
+    userName: {
+      control: { type: 'text' },
+      description: 'User Name as a fallback if no avatar is chosen',
+      defaultValue: 'Test User'
     }
   }
 }
@@ -33,39 +40,42 @@ const sampleUserName = 'Test User with some Subnames'
 const sampleAvatarUrl = 'https://images.pexels.com/photos/936559/pexels-photo-936559.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
 
 export const Basic = (args: AvatarProps) => (
-  <Avatar {...args} />
+  <Wrapper>
+    <Avatar {...args} />
+  </Wrapper>
 )
 
-export const Small = () => (
-  <Avatar size={'sm'} avatar={sampleAvatarUrl} />
-)
-
-export const Medium = () => (
-  <Avatar size={'md'} avatar={sampleAvatarUrl} />
-)
-
-export const Large = () => (
-  <Avatar size={'lg'} avatar={sampleAvatarUrl} />
+export const Sizes = () => (
+  <Wrapper justify='space-around'>
+    <Avatar size={'lg'} avatar={sampleAvatarUrl} />
+    <Avatar size={'md'} avatar={sampleAvatarUrl} />
+    <Avatar size={'sm'} avatar={sampleAvatarUrl} />
+  </Wrapper>
 )
 
 export const Level = () => (
-  <Avatar size={'md'} avatar={sampleAvatarUrl} level={46} />
+  <Wrapper justify='space-around'>
+    <Avatar size={'md'} avatar={sampleAvatarUrl} level={46} />
+    <Avatar size={'md'} avatar={sampleAvatarUrl} level={46} rounded={true} />
+  </Wrapper>
 )
 
 export const Rounded = () => (
-  <Avatar size={'md'} avatar={sampleAvatarUrl} rounded={true} />
-)
-
-export const LevelRounded = () => (
-  <Avatar size={'md'} avatar={sampleAvatarUrl} level={46} rounded={true} />
+  <Wrapper>
+    <Avatar size={'md'} avatar={sampleAvatarUrl} rounded={true} />
+  </Wrapper>
 )
 
 export const WithoutAvatar = () => (
-  <Avatar size={'md'} userName={sampleUserName} level={46} rounded={true} />
+  <Wrapper>
+    <Avatar size={'md'} userName={sampleUserName} level={46} rounded={true} />
+  </Wrapper>
 )
 
 export const AvatarWithChildren = () => (
-  <Avatar size={'md'} rounded>
-    <img src={sampleAvatarUrl} />
-  </Avatar>
+  <Wrapper>
+    <Avatar size={'md'} rounded>
+      <img src={sampleAvatarUrl} />
+    </Avatar>
+  </Wrapper>
 )

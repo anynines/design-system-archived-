@@ -25,7 +25,7 @@ export const getInitials = (userName: string): string => {
 
 // C O M P O N E N T
 export const Avatar: React.FC<AvatarProps> = ({
-  userName = 'John Doe',
+  userName = '',
   size = 'sm',
   rounded = false,
   level,
@@ -55,7 +55,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         ${!avatar && 'initials'} 
         ${className}
       `}
-      style={avatar && { backgroundImage: `url(${avatar})` }}
+      style={{ style, backgroundImage: `${avatar && `url(${avatar})`}` }}
       avatar={avatar}
     >
       {renderAvatarContent()}
@@ -70,7 +70,7 @@ const StyledAvatar = styled.div`
   --size: 5rem;
   --font-size: .8em;
   --initials-font-size: 2.4em;
-  --level-position: .2em;
+  --level-position: 0;
   --level-size: 2em;
   
   display: flex;
@@ -78,12 +78,17 @@ const StyledAvatar = styled.div`
   align-items: center;
   margin-right: var(--space-lgr);
   border-radius: var(--radius);
+  border: var(--border);
   background-color: var(--color-dark);
   background-position: center center;
   background-size: cover;
   width: calc(var(--size) / 2);
   height: calc(var(--size) / 2);
   font-size: var(--text-sm);
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
 
   &.rounded {
     border-radius: 100%;
