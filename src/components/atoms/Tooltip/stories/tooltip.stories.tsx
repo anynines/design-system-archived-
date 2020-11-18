@@ -11,8 +11,11 @@ export default {
 }
 
 export const Default = () => (
-  <div style={{ minHeight: 300 }}>
-    <Button className='tooltip-wrapper'>
+  <div style={{ minHeight: 300, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <Button
+      type='primary'
+      className='tooltip-wrapper'
+    >
         <span>👆 Hover over me</span>
         <Tooltip>
           👏  Good job you did it!
