@@ -5,10 +5,11 @@ import styled from 'styled-components'
 export interface AvatarProps {
   avatar?: string
   userName?: string
-  className?: string
-  size: string
+  size?: string
   rounded?: boolean
   level?: number
+  className?: string
+  style?: React.CSSProperties
 }
 
 export const getInitials = (userName: string): string => {
@@ -24,12 +25,13 @@ export const getInitials = (userName: string): string => {
 
 // C O M P O N E N T
 export const Avatar: React.FC<AvatarProps> = ({
-  userName = 'Default User',
+  userName = 'John Doe',
   size = 'sm',
-  className = 'styled-avatar',
-  avatar,
-  rounded,
+  rounded = false,
   level,
+  avatar,
+  className,
+  style,
   children
 }) => {
   const renderAvatarContent = (): React.ReactNode => {
@@ -37,13 +39,24 @@ export const Avatar: React.FC<AvatarProps> = ({
       return children
     }
 
-    return <div data-testid='initials' className='initials'>{!avatar && getInitials(userName)}</div>
+    return (
+      <div data-testid='initials' className='initials'>
+        {!avatar && getInitials(userName)}
+      </div>
+    )
   }
 
   return (
     <StyledAvatar
-      className={`${size && size} ${rounded && 'rounded'} ${level && 'level'} ${!avatar && 'initials'} ${className}`}
+      className={`
+        ${size} 
+        ${rounded && 'rounded'} 
+        ${level && 'level'} 
+        ${!avatar && 'initials'} 
+        ${className}
+      `}
       style={avatar && { backgroundImage: `url(${avatar})` }}
+      avatar={avatar}
     >
       {renderAvatarContent()}
 
@@ -125,5 +138,4 @@ const StyledAvatar = styled.div`
     height: 100%;
   }
 `
-
 StyledAvatar.displayName = 'StyledAvatar'
