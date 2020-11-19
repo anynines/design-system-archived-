@@ -8,12 +8,14 @@ export interface WrapperProps {
   direction?: WrapperDirection
   align?: WrapperAlignment
   justify?: WrapperAlignment
+  flexWrap?: WrapperFlexWrap
 }
 
 // T Y P E S
 export type WrapperBgColor = 'light' | 'dark'
 export type WrapperDirection = 'row' | 'column'
 export type WrapperAlignment = 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'space-between' | 'space-around'
+export type WrapperFlexWrap = 'nowrap' | 'wrap'
 
 // C O M P O N E N T
 const Wrapper: React.FC<WrapperProps> = (props) => {
@@ -23,6 +25,7 @@ const Wrapper: React.FC<WrapperProps> = (props) => {
     direction = 'row',
     justify = 'center',
     align = 'center',
+    flexWrap = 'nowrap',
     children
   } = props
   return (
@@ -31,11 +34,12 @@ const Wrapper: React.FC<WrapperProps> = (props) => {
         height,
         flexDirection: direction,
         alignItems: align,
+        flexWrap,
         justifyContent: justify
       }}
       className={bgColor}
     >
-      { children }
+      { children}
     </StyledWrapper>
   )
 }

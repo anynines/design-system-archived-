@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Wrapper from '../../../_helpers/Wrapper'
 import { Icon, IconProps } from '../Icon'
 
 // S T O R Y   H E L P E R S
@@ -37,7 +38,9 @@ export default {
 }
 
 export const Menu = (args: IconProps) => (
-  <Icon {...args} />
+  <Wrapper>
+    <Icon {...args} />
+  </Wrapper>
 )
 
 export const StyledIcon = (args: IconProps) => {
@@ -48,11 +51,11 @@ export const StyledIcon = (args: IconProps) => {
     color: red;
   `
 
-  return <StyledIcon {...args} />
+  return <Wrapper><StyledIcon {...args} /></Wrapper>
 }
 
 export const Collection = () => (
-  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+  <Wrapper flexWrap='wrap' height='100%'>
     <IconWrapper icon='arrowUpRight' />
 
     <IconWrapper icon='bestseller' />
@@ -139,5 +142,5 @@ export const Collection = () => (
 
     <IconWrapper icon='widthSM' />
     <IconWrapper icon='wishlist' />
-  </div>
+  </Wrapper>
 )
