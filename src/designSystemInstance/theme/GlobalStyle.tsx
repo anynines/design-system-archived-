@@ -1,5 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 
+import * as builder from './PaletteBuilder'
+
+const dynamicVars: string = builder.buildPrimaryPaletteVariablesFromHexColor('#C70039')
+
+console.log('Vars: ', dynamicVars);
+
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
 
@@ -8,18 +14,29 @@ export const GlobalStyle = createGlobalStyle`
   **************************************/
   :root {
     /* C O L O R S */
+    ${dynamicVars}
+    ${/*--color-primary: ${(): any => { return palette.primary }};
     --color-primary: ${(props): string => { return props.theme.colors.primary }};
+    --color-light: ${(): any => { return palette.primaryLight }};
     --color-primary-lightened: ${(props): string => { return props.theme.colors.primaryLightened }};
     --color-primary-50: ${(props): string => { return props.theme.colors.primary50 }};
     --color-white: ${(props): string => { return props.theme.colors.white }};
     --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
     --color-white-10: ${(props): string => { return props.theme.colors.white10 }};
     --color-light: ${(props): string => { return props.theme.colors.light }};
+    --color-light-50: ${(): string => { return palette.primaryLight50 }};
     --color-light-50: ${(props): string => { return props.theme.colors.light50 }};
+    --color-lighter: ${(): string => { return palette.primaryLighter }};
+    --color-dark: ${(): string => { return palette.primaryDark }};
     --color-dark: ${(props): string => { return props.theme.colors.dark }};
+    --color-dark-50: ${(): string => { return palette.primaryDark50 }};
     --color-dark-50: ${(props): string => { return props.theme.colors.dark50 }};
+    --color-darker: ${(): string => { return palette.primaryDarker }};
     --color-darker: ${(props): string => { return props.theme.colors.darker }};
     --color-darker-50: ${(props): string => { return props.theme.colors.darker50 }};
+  --color-darker-50: ${(): string => { return palette.primaryDark50 }};*/''}
+    --color-white: ${(props): string => { return props.theme.colors.white }};
+    --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
     --color-darker-10: ${(props): string => { return props.theme.colors.darker10 }};
     --color-white-fix: ${(props): string => { return props.theme.colors.whiteFix }};
     --color-notice: ${(props): string => { return props.theme.colors.notice }};
