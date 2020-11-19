@@ -24,12 +24,12 @@ export const Basic = (args: UserInfoProps) => (
 
 export const Small = () => (
   <UserInfoWrapper>
-    <UserInfo userName={"TestUser"} userGroup={"TestGroup"} />
+    <UserInfo userName={'TestUser'} userGroup={'TestGroup'} />
   </UserInfoWrapper>
 )
 
 export const Medium = () => (
   <UserInfoWrapper>
-    <UserInfo userName={"TestUser"} userGroup={"TestGroup"} size="md" />
+    <UserInfo userName={'TestUser'} userGroup={'TestGroup'} size='md' />
   </UserInfoWrapper>
 )

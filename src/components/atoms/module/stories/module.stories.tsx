@@ -17,15 +17,15 @@ export default {
       control: { type: 'boolean' }
     },
     width: {
-      control: { type: "number" }
+      control: { type: 'number' }
     },
   }
 }
 
 const SampleProduct =
 {
-  title: "Something very special",
-  imageUrl: "https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  title: 'Something very special',
+  imageUrl: 'https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
   variations: [],
   price: 142
 }
@@ -59,10 +59,10 @@ export const Basic = (args: ModuleWrapperProps) => (
         />
       </ModuleContent>
 
-      <ModuleFooter 
-        totalItems={12} 
-        itemLabel={'Artikel'} 
-        totalPrice={142} 
+      <ModuleFooter
+        totalItems={12}
+        itemLabel={'Artikel'}
+        totalPrice={142}
         priceLabel={'Preis'}
       >
         <Button type='primary'>

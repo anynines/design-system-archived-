@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { action } from '@storybook/addon-actions'
 
 import { Button } from '../../../atoms/Button/Button';
@@ -12,7 +12,7 @@ export default {
       control: { type: 'boolean' }
     },
     onHide: {
-      control: { type: "disabled" }
+      control: { type: 'disabled' }
     },
   }
 }
@@ -37,4 +37,4 @@ export const Basic = (args: ModalProps) => (
       </Modal.Footer>
     </Modal>
   </>
-);
+)

@@ -17,9 +17,9 @@ export default {
       control: {
         type: 'select',
         options: {
-          success: "success",
-          error: "error",
-          warning: "warning"
+          success: 'success',
+          error: 'error',
+          warning: 'warning'
         }
       }
     },

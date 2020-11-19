@@ -7,9 +7,9 @@ export default {
   component: Menu,
   argTypes: {
     items: { control: null },
-    selectedItem: { control: { type: "number" } },
+    selectedItem: { control: { type: 'number' } },
     onClick: { control: null },
-    vertical: { control: { type: "boolean" } },
+    vertical: { control: { type: 'boolean' } },
     children: { control: null }
   }
 }

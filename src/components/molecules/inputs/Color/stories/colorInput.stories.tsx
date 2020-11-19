@@ -19,9 +19,9 @@ export default {
 }
 
 export const Basic = (args: ColorInputProps) => (
-  <ColorInput name='Primary' label="Primary" {...args} />
+  <ColorInput name='Primary' label='Primary' {...args} />
 )
 
 export const Custom = (args: ColorInputProps) => (
-  <ColorInput name='Custom' label="Custom" color="#49426F" {...args} />
+  <ColorInput name='Custom' label='Custom' color='#49426F' {...args} />
 )

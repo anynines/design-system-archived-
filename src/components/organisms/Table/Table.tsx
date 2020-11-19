@@ -225,7 +225,7 @@ const StyledTable = styled.div`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
 
       tr{
@@ -274,7 +274,7 @@ const StyledTable = styled.div`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
 
       &:last-child {
@@ -282,7 +282,7 @@ const StyledTable = styled.div`
           display:block;
           text-indent:-99999px;
           line-height:1rem;
-          content:"@";
+          content:'@';
         }
       }
 
@@ -363,7 +363,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content: "";
+              content: '';
               border-radius: 2px;
             }
 
@@ -456,7 +456,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content:"";
+              content:'';
               border-radius: 2px;
             }
           }
@@ -467,7 +467,7 @@ const StyledTable = styled.div`
             display:block;
             text-indent:-99999px;
             line-height:1rem;
-            content:"@";
+            content:'@';
           }
         } 
       }

@@ -8,9 +8,9 @@ export default {
   title: 'Molecules/SpecialCategories',
   component: SpecialCategories,
   argTypes: {
-    id: { control: { type: "number" } },
-    name: { control: { type: "text" } },
-    slug: { control: { type: "text" } },
+    id: { control: { type: 'number' } },
+    name: { control: { type: 'text' } },
+    slug: { control: { type: 'text' } },
     icon: {
       control: {
         type: 'select',
@@ -36,28 +36,28 @@ export default {
 
 const SpecialItems: SpecialCategory[] = [
   {
-    "id": 100,
-    "name": "Bestseller",
-    "icon": "bestseller",
-    "slug": "/shop/bestseller"
+    'id': 100,
+    'name': 'Bestseller',
+    'icon': 'bestseller',
+    'slug': '/shop/bestseller'
   },
   {
-    "id": 101,
-    "name": "Novelties",
-    "icon": "novelties",
-    "slug": "/shop/novelties"
+    'id': 101,
+    'name': 'Novelties',
+    'icon': 'novelties',
+    'slug': '/shop/novelties'
   },
   {
-    "id": 102,
-    "name": "Sale",
-    "icon": "sale",
-    "slug": "/shop/sale"
+    'id': 102,
+    'name': 'Sale',
+    'icon': 'sale',
+    'slug': '/shop/sale'
   },
   {
-    "id": 103,
-    "name": "Random",
-    "icon": "random",
-    "slug": "/shop/random"
+    'id': 103,
+    'name': 'Random',
+    'icon': 'random',
+    'slug': '/shop/random'
   }
 ]
 

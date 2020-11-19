@@ -228,7 +228,7 @@ const StyledRow = styled.tr`
           filter: brightness(70%);
           width: 4px;
           height: 20px;
-          content:"";
+          content:'';
           border-radius: 2px;
         }
       }

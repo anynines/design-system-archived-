@@ -59,22 +59,22 @@ export default {
 }
 
 export const Basic = (args: InputProps) => (
-  <Input name='Basic' label="Basic" {...args} />
+  <Input name='Basic' label='Basic' {...args} />
 )
 export const Text = (args: InputProps) => (
-  <Input name='Text' type='text' icon='shop' label="Text" value='Default Value' {...args} />
+  <Input name='Text' type='text' icon='shop' label='Text' value='Default Value' {...args} />
 )
 export const CustomRegexPattern = (args: InputProps) => (
-  <Input name='Text' type='text' icon='shop' label="I match 4 digits numbers" pattern={/^[0-9]{4}$/} {...args} />
+  <Input name='Text' type='text' icon='shop' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} {...args} />
 )
 export const Color = (args: InputProps) => (
-  <Input name='Color' type="color" label="Color" {...args} />
+  <Input name='Color' type='color' label='Color' {...args} />
 )
 
 export const Email = (args: InputProps) => (
-  <Input name='Email' type="email" icon='notifications' label="Email" {...args} />
+  <Input name='Email' type='email' icon='notifications' label='Email' {...args} />
 )
 
 export const Password = (args: InputProps) => (
-  <Input name='Password' label='Password' type="password" icon='random' {...args} />
+  <Input name='Password' label='Password' type='password' icon='random' {...args} />
 )

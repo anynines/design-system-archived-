@@ -59,8 +59,8 @@ export default {
 
 const SampleProduct =
 {
-  title: "Something very special",
-  imageUrl: "https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  title: 'Something very special',
+  imageUrl: 'https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
   variations: [],
   price: 142
 }
