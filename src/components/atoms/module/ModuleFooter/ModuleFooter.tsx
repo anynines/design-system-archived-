@@ -56,12 +56,12 @@ export const ModuleFooter: React.FC<ModuleFooterProps> = ({
 
 // S T Y L E S
 const StyledModuleFooter = styled.div`
-  background-color:var(--color-darker);  
+  background-color: var(--color-black);  
   padding: var(--space-md);
   width: 100%;
   min-height: 5rem;
   color: var(--color-white);
-  border-radius:var(--radius);
+  border-radius: var(--radius);
 
   h2 {
     opacity: 0.5;

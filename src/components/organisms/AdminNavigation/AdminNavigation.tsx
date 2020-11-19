@@ -78,7 +78,7 @@ const StyledAdminNavigation = styled.div`
 
   .StyledMenuItem {
     .wrapper:not(.active):not(:hover) {
-      background-color: var(--color-darker);
+      background-color: var(--color-black);
     }
   }
 

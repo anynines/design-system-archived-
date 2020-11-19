@@ -36,7 +36,7 @@ const StyledRemoveItem = styled.button<StyledRemoveItemProps>`
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 2px solid var(--color-darker);
+  border: 2px solid var(--color-black);
   border-radius: 50%;
   background-color: var(--color-dark);
   cursor: pointer;

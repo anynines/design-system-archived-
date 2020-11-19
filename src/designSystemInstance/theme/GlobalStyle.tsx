@@ -82,7 +82,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     padding: 0;
     line-height: var(--body-line-height);
     color: var(--color-white);

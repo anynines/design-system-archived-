@@ -215,7 +215,7 @@ const StyledBody = styled.tbody`
           align-items: center;
           position: absolute;
           right: -15px;
-          border: 2px solid var(--color-darker);
+          border: 2px solid var(--color-black);
           background-color: var(--color-dark);
           cursor: pointer;
           width: 25px;
@@ -245,7 +245,7 @@ const StyledBody = styled.tbody`
         }
       }
       span.black {
-        background-color: var(--color-darker);
+        background-color: var(--color-black);
       }
 
       div.icon-wrapper{
@@ -258,7 +258,7 @@ const StyledBody = styled.tbody`
           height: 20px;
           
           svg {
-            background-color: var(--color-darker);
+            background-color: var(--color-black);
             padding: 5px;
             width: 20px;
             height: 20px;

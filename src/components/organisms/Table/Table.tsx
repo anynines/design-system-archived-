@@ -186,7 +186,7 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
 }
 
 const StyledTable = styled.div`
-  background-color: var(--color-darker);
+  background-color: var(--color-black);
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -230,7 +230,7 @@ const StyledTable = styled.div`
 
       tr{
         th {
-          background-color: var(--color-darker);
+          background-color: var(--color-black);
 
           &:first-child {
             padding-left: 1rem;
@@ -251,7 +251,7 @@ const StyledTable = styled.div`
               transform: rotate(-180deg);
             }
             svg {
-              background-color: var(--color-darker);
+              background-color: var(--color-black);
               padding: 5px;
               width: 20px;
               height: 20px;
@@ -381,7 +381,7 @@ const StyledTable = styled.div`
               align-items: center;
               position: absolute;
               right: -15px;
-              border: 2px solid var(--color-darker);
+              border: 2px solid var(--color-black);
               background-color: var(--color-dark);
               cursor: pointer;
               width: 25px;
@@ -411,7 +411,7 @@ const StyledTable = styled.div`
             }
           }
           span.black {
-            background-color: var(--color-darker);
+            background-color: var(--color-black);
           }
 
           div.icon-wrapper{
@@ -424,7 +424,7 @@ const StyledTable = styled.div`
               height: 20px;
               
               svg {
-                background-color: var(--color-darker);
+                background-color: var(--color-black);
                 padding: 5px;
                 width: 20px;
                 height: 20px;

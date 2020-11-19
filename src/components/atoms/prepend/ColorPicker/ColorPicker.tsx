@@ -36,7 +36,7 @@ const StyledColorPicker = styled.div`
     border-radius: var(--radius) !important;
 
     input {
-      background-color: var(--color-darker) !important;
+      background-color: var(--color-black) !important;
       padding-top: 0 !important;
       color: var(--color-white) !important;
       box-shadow: none !important;

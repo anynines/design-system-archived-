@@ -115,7 +115,7 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 
 @media (max-width:60em) {
   .c0 {
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
   }
 }
 
@@ -365,7 +365,7 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 
 @media (max-width:60em) {
   .c0 {
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
   }
 }
 

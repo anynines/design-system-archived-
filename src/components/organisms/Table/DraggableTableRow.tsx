@@ -153,7 +153,7 @@ const StyledRow = styled.tr`
       }
 
       span.black {
-        background-color: var(--color-darker);
+        background-color: var(--color-black);
       }
 
       div.icon-wrapper{
@@ -166,7 +166,7 @@ const StyledRow = styled.tr`
           height: 20px;
             
           svg {
-            background-color: var(--color-darker);
+            background-color: var(--color-black);
             padding: 5px;
             width: 20px;
             height: 20px;

@@ -131,7 +131,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
         position: absolute;
         top: -.45rem;
         right: -.45rem;
-        border: 2px solid var(--color-darker);
+        border: 2px solid var(--color-black);
         background-color: var(--color-primary);
         width: .8rem;
         height: .8rem;

@@ -121,7 +121,7 @@ const StyledModal = styled.div`
 
   .modal-popup {
     position: relative;
-    background: var(--color-darker);
+    background: var(--color-black);
     padding: var(--modal-box-padding);
     max-width: var(--modal-box-max-width);
     text-align: center;

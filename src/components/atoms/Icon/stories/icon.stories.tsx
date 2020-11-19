@@ -45,7 +45,7 @@ export const Menu = (args: IconProps) => (
 
 export const StyledIcon = (args: IconProps) => {
   const StyledIcon = styled(Icon)`
-    border: solid var(--color-darker) 2px;
+    border: solid var(--color-black) 2px;
     border-radius: 5px;
     padding: 5px;
     color: red;

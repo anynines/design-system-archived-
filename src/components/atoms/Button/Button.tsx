@@ -13,7 +13,7 @@ export interface ButtonProps {
 
 // T Y P E S
 // @Note They will only be extracted in the props table if the param is optional...
-export type ButtonType = 'primary' | 'dark' | 'darker' | 'submit'
+export type ButtonType = 'primary' | 'dark' | 'black' | 'submit'
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonWidth = 'block' | 'inline'
 
@@ -85,11 +85,11 @@ const StyledButton = styled.button`
   }
 
   &.dark {
-    background-color: var(--color-dark);
+    background-color: var(--color-black);
   }
 
-  &.darker {
-    background-color: var(--color-darker);
+  &.black {
+    background-color: var(--color-black);
   }
 
   &:hover {

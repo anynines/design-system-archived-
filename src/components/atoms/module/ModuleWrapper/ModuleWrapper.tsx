@@ -61,7 +61,7 @@ const StyledModuleWrapper = styled.div<StyledModuleWrapperProps>`
     top: 6.25rem;
     left: 50%;
     overflow: hidden;
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     padding: 0;
     transform: translateX(-50%);
     max-width: var(--content-max-width); 

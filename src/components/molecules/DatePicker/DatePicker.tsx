@@ -64,7 +64,7 @@ const StyledDatePicker = styled.div`
     border: 1px solid var(--color-dark-50);
 
     &:hover {
-      border: 1px double var(--color-darker);
+      border: 1px double var(--color-black);
       background: var(--color-darker-50);
     }
   }

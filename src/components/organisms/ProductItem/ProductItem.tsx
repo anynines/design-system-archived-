@@ -132,7 +132,7 @@ const StyledProductItem = styled.div`
     position: absolute;
     top: 0;
     right: -2.5rem;
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     min-width: 2.5rem;
     height: 100%;
     color: var(--color-white);
@@ -142,7 +142,7 @@ const StyledProductItem = styled.div`
       position: absolute;
       top: calc(50% - .75rem);
       left: -0.4rem;
-      background-color: var(--color-darker);
+      background-color: var(--color-black);
       width: .4rem;
       height: 1.5rem;
       content: '';
@@ -155,7 +155,7 @@ const StyledProductItem = styled.div`
       justify-content: center;
       align-items: center;
       border: none;
-      background-color: var(--color-darker);
+      background-color: var(--color-black);
       cursor: pointer;
       width: 2.5rem;
       height: 2.5rem;
@@ -227,7 +227,7 @@ const StyledProductItem = styled.div`
         
         .change-quantity {
           border: none;
-          background-color: var(--color-darker);
+          background-color: var(--color-black);
           cursor: pointer;
           color: var(--color-white);
           border-radius: var(--radius);
@@ -275,7 +275,7 @@ const StyledProductItem = styled.div`
 
   @media (max-width: 60em) {
     margin-bottom: var(--space-fixed-xs);
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     padding-right: 4.3rem;
 
     .actions {

@@ -9,16 +9,25 @@ export default {
   component: Button,
   argTypes: {
     type: {
-      control: { type: 'select', options: ['dark', 'darker', 'primary', 'submit'] }
+      control: {
+        type: 'select',
+        options: ['dark', 'darker', 'primary', 'submit']
+      }
     },
     size: {
-      control: { type: 'select', options: ['xs' ,'sm' , 'md' , 'lg'] }
+      control: {
+        type: 'select',
+        options: ['xs', 'sm', 'md', 'lg']
+      }
     },
     width: {
-      control: { type: 'select', options: ['inline', 'block']}
+      control: {
+        type: 'select',
+        options: ['inline', 'block']
+      }
     },
     onClick: {
-      control: { type: 'disabled' },
+      control: { type: 'disabled' }
     },
   }
 }
@@ -42,8 +51,8 @@ export const Types = () => (
     <Button type='dark'>
       Button Dark
     </Button>
-    <Button type='darker'>
-      Button Darker
+    <Button type='black'>
+      Button Black
     </Button>
   </Wrapper>
 )
