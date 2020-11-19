@@ -1,48 +1,35 @@
 import { createGlobalStyle } from 'styled-components'
-
 import * as builder from './PaletteBuilder'
+import { colors } from '../../theme/globals.json'
 
-const dynamicVars: string = builder.buildPrimaryPaletteVariablesFromHexColor('#C70039')
-
-console.log('Vars: ', dynamicVars);
+const dynamicPrimary: string = builder.buildPrimaryPaletteFromHexColor(colors.primary, 'Primary')
+const dynamicSuccess: string = builder.buildPrimaryPaletteFromHexColor(colors.success, 'Success')
+const dynamicNotice: string = builder.buildPrimaryPaletteFromHexColor(colors.notice, 'Notice')
+const dynamicWarning: string = builder.buildPrimaryPaletteFromHexColor(colors.warning, 'Warning')
+const dynamicError: string = builder.buildPrimaryPaletteFromHexColor(colors.error, 'Error')
+const dynamicWhite: string = builder.buildContrastPaletteFromHexColor(colors.white, 'White')
+const dynamicLight: string = builder.buildContrastPaletteFromHexColor(colors.light, 'Light')
+const dynamicDark: string = builder.buildContrastPaletteFromHexColor(colors.dark, 'Dark')
+const dynamicBlack: string = builder.buildContrastPaletteFromHexColor(colors.black, 'Black')
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
-
   /**************************************
   **  Global Variables  *****************
   **************************************/
   :root {
     /* C O L O R S */
-    ${dynamicVars}
-    ${/*--color-primary: ${(): any => { return palette.primary }};
-    --color-primary: ${(props): string => { return props.theme.colors.primary }};
-    --color-light: ${(): any => { return palette.primaryLight }};
-    --color-primary-lightened: ${(props): string => { return props.theme.colors.primaryLightened }};
-    --color-primary-50: ${(props): string => { return props.theme.colors.primary50 }};
-    --color-white: ${(props): string => { return props.theme.colors.white }};
-    --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
-    --color-white-10: ${(props): string => { return props.theme.colors.white10 }};
-    --color-light: ${(props): string => { return props.theme.colors.light }};
-    --color-light-50: ${(): string => { return palette.primaryLight50 }};
-    --color-light-50: ${(props): string => { return props.theme.colors.light50 }};
-    --color-lighter: ${(): string => { return palette.primaryLighter }};
-    --color-dark: ${(): string => { return palette.primaryDark }};
-    --color-dark: ${(props): string => { return props.theme.colors.dark }};
-    --color-dark-50: ${(): string => { return palette.primaryDark50 }};
-    --color-dark-50: ${(props): string => { return props.theme.colors.dark50 }};
-    --color-darker: ${(): string => { return palette.primaryDarker }};
-    --color-darker: ${(props): string => { return props.theme.colors.darker }};
-    --color-darker-50: ${(props): string => { return props.theme.colors.darker50 }};
-  --color-darker-50: ${(): string => { return palette.primaryDark50 }};*/''}
-    --color-white: ${(props): string => { return props.theme.colors.white }};
-    --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
-    --color-darker-10: ${(props): string => { return props.theme.colors.darker10 }};
-    --color-white-fix: ${(props): string => { return props.theme.colors.whiteFix }};
-    --color-notice: ${(props): string => { return props.theme.colors.notice }};
-    --color-warning: ${(props): string => { return props.theme.colors.warning }};
-    --color-error: ${(props): string => { return props.theme.colors.error }};
-    --color-success: ${(props): string => { return props.theme.colors.success }};
+    ${dynamicPrimary}
+    ${dynamicSuccess}
+    ${dynamicNotice}
+    ${dynamicWarning}
+    ${dynamicError}
+    ${dynamicWhite}
+    ${dynamicLight}
+    ${dynamicDark}
+    ${dynamicBlack}
+
+    --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
     
     /* G L O B A L S */
     --radius: ${(props): string => { return props.theme.globals.radius }};

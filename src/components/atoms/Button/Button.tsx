@@ -93,7 +93,7 @@ const StyledButton = styled.button`
   }
 
   &:hover {
-    background-color: var(--color-primary-lightened);
+    background-color: var(--color-primary-light);
     color: var(--color-white-fix);
     box-shadow: var(--shadow);
   }
