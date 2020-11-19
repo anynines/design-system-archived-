@@ -85,7 +85,7 @@ const StyledButton = styled.button`
   }
 
   &.dark {
-    background-color: var(--color-black);
+    background-color: var(--color-dark);
   }
 
   &.black {
