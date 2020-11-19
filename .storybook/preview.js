@@ -1,8 +1,9 @@
-import { addDecorator, configure } from '@storybook/react'
+import { addDecorator } from '@storybook/react'
 import { addParameters } from '@storybook/client-api'
 import { withThemesProvider } from 'storybook-addon-styled-component-theme'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import ThemeProvider from '../src/theme/theme-provider'
+import { getToggledTheme } from '../src/designSystemInstance/designSystemInstanceHelpers'
 
 // V A R I A B L E S
 import globals from '../src/theme/globals.json'
@@ -10,18 +11,18 @@ import globals from '../src/theme/globals.json'
 export const darkTheme = {
   name: 'dark',
   background: globals.colors.black,
-  globals,
+  globals
 }
 
 export const lightTheme = {
   name: 'light',
   background: globals.colors.white,
-  globals,
+  globals
 }
 
 const themes = [
   darkTheme,
-  lightTheme
+  getToggledTheme(lightTheme)
 ]
 
 const customViewports = {

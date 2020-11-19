@@ -1,5 +1,11 @@
 import React from 'react'
-import { Col as ReactGridSystemCol, Offsets, Push, Pull, ScreenClassMap } from 'react-grid-system'
+import {
+  Col as ReactGridSystemCol,
+  Offsets,
+  Push,
+  Pull,
+  ScreenClassMap
+} from 'react-grid-system'
 
 // I N T E R F A C E S
 export interface ColProps extends ScreenClassMap<number | 'content'> {

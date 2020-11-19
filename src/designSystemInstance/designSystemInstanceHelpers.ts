@@ -42,9 +42,15 @@ export const onThemeChange = <T extends Theme>(
 export const getToggledTheme = <T extends Theme>(theme: T): T => {
   return {
     ...theme,
-    white: theme.globals.colors.black,
-    light: theme.globals.colors.dark,
-    dark: theme.globals.colors.light,
-    black: theme.globals.colors.white
+    globals: {
+      ...theme.globals,
+      colors: {
+        ...theme.globals.colors,
+        white: theme.globals.colors.black,
+        light: theme.globals.colors.dark,
+        dark: theme.globals.colors.light,
+        black: theme.globals.colors.white
+      }
+    }
   }
 }

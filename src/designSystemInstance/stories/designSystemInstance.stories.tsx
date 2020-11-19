@@ -64,15 +64,14 @@ export const Basic = <T extends Theme>(args: DesignSystemInstanceProps<T>) => (
       <span>Button Primary</span>
     </Button>
     <br />
-    <Button type='default'>
+    <Button type='black'>
       <span>Button Default</span>
     </Button>
     <br />
     <HelperButton />
     <br />
-    <Avatar userName={'TestUser'} size={'md'} />
-  </DesignSystemInstance >
-);
+  </DesignSystemInstance>
+)
 
 export const WithStoragePrefixAndCustomTheme = <T extends CustomTheme>(args: DesignSystemInstanceProps<T>) => (
   <DesignSystemInstance theme={exampletheme2} storagePrefix='Storybook' {...args}>
@@ -80,13 +79,12 @@ export const WithStoragePrefixAndCustomTheme = <T extends CustomTheme>(args: Des
       <span>Button Primary</span>
     </Button>
     <br />
-    <Button type='default'>
+    <Button type='black'>
       <span>Button Default</span>
     </Button>
     <br />
     <HelperButton />
     <br />
-    <Avatar userName={'TestUser'} size={'md'} />
     <span>{exampletheme2.layout}</span>
   </DesignSystemInstance >
-);
+)
