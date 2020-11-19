@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Wrapper from '../../../../_helpers/Wrapper'
 import { Icon } from '../../../../atoms/Icon/Icon'
 import { TextInputPrepend, TextInputPrependProps } from '../TextInputPrepend'
 
@@ -15,7 +16,9 @@ export default {
 }
 
 export const Basic = (args: TextInputPrependProps) => (
-  <TextInputPrepend {...args}>
-    <Icon />
-  </TextInputPrepend>
+  <Wrapper>
+    <TextInputPrepend {...args}>
+      <Icon />
+    </TextInputPrepend>
+  </Wrapper>
 )

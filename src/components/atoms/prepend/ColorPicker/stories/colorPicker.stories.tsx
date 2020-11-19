@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Wrapper from '../../../../_helpers/Wrapper'
 import { ColorPicker } from '../ColorPicker'
 
 
@@ -11,5 +12,7 @@ export default {
 }
 
 export const Basic = () => (
-  <ColorPicker />
+  <Wrapper>
+    <ColorPicker />
+  </Wrapper>
 )

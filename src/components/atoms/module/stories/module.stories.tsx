@@ -1,6 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 
+import Wrapper from '../../../_helpers/Wrapper'
 import { Icon } from '../../Icon/Icon'
 import { Button } from '../../Button/Button'
 import { ModuleWrapper, ModuleWrapperProps } from '../ModuleWrapper/ModuleWrapper'
@@ -31,7 +32,7 @@ const SampleProduct =
 }
 
 export const Basic = (args: ModuleWrapperProps) => (
-  <div style={{ minHeight: '500px', position: 'relative', padding: '30px' }}>
+  <Wrapper height='500px'>
     <ModuleWrapper
       {...args}
       style={{ position: 'relative', top: 0 }}
@@ -70,5 +71,5 @@ export const Basic = (args: ModuleWrapperProps) => (
         </Button>
       </ModuleFooter>
     </ModuleWrapper>
-  </div>
+  </Wrapper>
 )
