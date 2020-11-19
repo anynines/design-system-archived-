@@ -38,26 +38,39 @@ export const CaretLink: React.FC<CaretLinkProps> = ({
 const StyledCaretLink = styled.div`
   a {
     display: flex;
+    position: relative;
     align-items: center;
-    opacity: 0.5;
-    margin-top: .3rem;
     transition: var(--transition);
     text-decoration: none;
     color: var(--color-white);
-    
-    &:hover {
-      opacity: 1;
-    }
-  }
-  
-  svg {
-    margin-right: var(--space-sm);
-    color: var(--color-primary);
-  }
+    padding-left: 25px;
 
-  span {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-md);
+    i {
+      position: absolute;
+      transition: var(--transition);
+      left: 5px;
+      color: var(--color-primary);
+    }
+
+    span {
+      transition: var(--transition);
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-md);
+      opacity: 0.5;
+    }
+
+    &:hover {
+      padding-left: 0;
+
+      i {
+        left: calc(100% + 5px);
+      }
+
+      span {
+        margin-left: -5px;
+        opacity: 1;
+      }
+    }
   }
 `
 StyledCaretLink.displayName = 'StyledCaretLink'

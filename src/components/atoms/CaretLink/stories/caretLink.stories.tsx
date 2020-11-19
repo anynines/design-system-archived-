@@ -10,7 +10,7 @@ export default {
   argTypes: {
     text: {
       control: { type: 'text' },
-      defaultValue: 'Peter Weinmann'
+      defaultValue: 'Simple link component'
     },
     path: {
       control: { type: 'text'},
