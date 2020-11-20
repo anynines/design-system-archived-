@@ -8,10 +8,16 @@ export default {
 }
 
 export const Basic = (args: DateInputProps) => (
-  <DateInput name='date' label='Date' {...args} />
+  <DateInput 
+    {...args}
+  />
 )
 
-
 export const CustomDatePicker = () => (
-  <DateInput name='date' label='Date' date={new Date().getTime() / 1000} datePickerOptions={{ numberOfMonths: 2 }} />
+  <DateInput 
+    name='date' 
+    label='Date' 
+    date={new Date().getTime() / 1000} 
+    datePickerOptions={{ numberOfMonths: 2 }}
+  />
 )

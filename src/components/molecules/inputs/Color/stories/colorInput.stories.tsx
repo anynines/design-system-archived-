@@ -19,5 +19,7 @@ export default {
 }
 
 export const Basic = (args: ColorInputProps) => (
-  <ColorInput name='Primary' label='Primary' {...args} />
+  <ColorInput 
+    {...args}
+  />
 )

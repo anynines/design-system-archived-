@@ -63,6 +63,7 @@ export const Input: Input = (props) => {
             {children}
           </TextInput>
         )
+
       case 'date':
         return (
           <DateInput {...props}>{children}</DateInput>

@@ -16,11 +16,6 @@ export default {
 
 export const Basic = (args: ImageUploaderProps) => (
   <ImageUploader
-    id='settingsAppLogo'
-    alt='App'
-    label='App'
-    addToFormData={action('Image Upload')}
-    defaultValue=''
     {...args}
   />
 )

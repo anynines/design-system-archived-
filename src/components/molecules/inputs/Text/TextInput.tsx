@@ -23,7 +23,6 @@ export interface TextInputProps {
   autoComplete?: 'on' | 'off'
   autoFocus?: boolean
   className?: string
-  /* TS definitions for 'getValue' and 'setValues' functions could not be resolved from 'react-hook-forms' */
   getValues?: any // eslint-disable-line
   setValue?: any // eslint-disable-line
   watch?: any //eslint-disable-line
