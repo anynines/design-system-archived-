@@ -4,6 +4,9 @@ export * from './designSystemInstance/types/types'
 export * from './designSystemInstance/theme/GlobalStyle'
 export * from './designSystemInstance/theme/defaultTheme'
 
+// I N T R O D U C T I O N
+export * from './components/introduction/Colors/Color'
+
 // A T O M S
 export * from './components/atoms/Avatar/Avatar'
 export * from './components/atoms/Button/Button'
