@@ -42,14 +42,13 @@ const customViewports = {
   }
 }
 
-addDecorator(withThemesProvider(themes, ThemeProvider))
-
-addParameters({
-  viewport: {
-    viewports: { ...customViewports, ...INITIAL_VIEWPORTS }
-  },
-})
+export const decorators = [
+  withThemesProvider(themes, ThemeProvider)
+]
 
 export const parameters = {
   actions: { argTypesRegex: "^on.*" },
+  viewport: {
+    viewports: { ...customViewports, ...INITIAL_VIEWPORTS }
+  },
 }
