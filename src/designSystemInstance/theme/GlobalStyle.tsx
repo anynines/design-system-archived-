@@ -1,16 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 import * as builder from './PaletteBuilder'
-import { colors } from '../../theme/globals.json'
-
-const dynamicPrimary: string = builder.buildPrimaryPaletteFromHexColor(colors.primary, 'Primary')
-const dynamicSuccess: string = builder.buildPrimaryPaletteFromHexColor(colors.success, 'Success')
-const dynamicNotice: string = builder.buildPrimaryPaletteFromHexColor(colors.notice, 'Notice')
-const dynamicWarning: string = builder.buildPrimaryPaletteFromHexColor(colors.warning, 'Warning')
-const dynamicError: string = builder.buildPrimaryPaletteFromHexColor(colors.error, 'Error')
-const dynamicWhite: string = builder.buildContrastPaletteFromHexColor(colors.white, 'White')
-const dynamicLight: string = builder.buildContrastPaletteFromHexColor(colors.light, 'Light')
-const dynamicDark: string = builder.buildContrastPaletteFromHexColor(colors.dark, 'Dark')
-const dynamicBlack: string = builder.buildContrastPaletteFromHexColor(colors.black, 'Black')
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
@@ -19,15 +8,15 @@ export const GlobalStyle = createGlobalStyle`
   **************************************/
   :root {
     /* C O L O R S */
-    ${dynamicPrimary}
-    ${dynamicSuccess}
-    ${dynamicNotice}
-    ${dynamicWarning}
-    ${dynamicError}
-    ${dynamicWhite}
-    ${dynamicLight}
-    ${dynamicDark}
-    ${dynamicBlack}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.primary, 'Primary') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.success, 'Success') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.notice, 'Success') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.warning, 'Warning') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.error, 'Error') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.white, 'White') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.light, 'Light') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.dark, 'Dark') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.black, 'Black') }}
 
     --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
     
