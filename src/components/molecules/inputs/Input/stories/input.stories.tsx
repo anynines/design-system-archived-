@@ -61,20 +61,20 @@ export default {
 export const Basic = (args: InputProps) => (
   <Input name='Basic' label='Basic' {...args} />
 )
-export const Text = (args: InputProps) => (
-  <Input name='Text' type='text' icon='shop' label='Text' value='Default Value' {...args} />
+export const Text = () => (
+  <Input name='Text' type='text' icon='shop' label='Text' value='Default Value' />
 )
-export const CustomRegexPattern = (args: InputProps) => (
-  <Input name='Text' type='text' icon='shop' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} {...args} />
+export const CustomRegexPattern = () => (
+  <Input name='Text' type='text' icon='shop' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} />
 )
-export const Color = (args: InputProps) => (
-  <Input name='Color' type='color' label='Color' {...args} />
-)
-
-export const Email = (args: InputProps) => (
-  <Input name='Email' type='email' icon='notifications' label='Email' {...args} />
+export const Color = () => (
+  <Input name='Color' type='color' label='Color' />
 )
 
-export const Password = (args: InputProps) => (
-  <Input name='Password' label='Password' type='password' icon='random' {...args} />
+export const Email = () => (
+  <Input name='Email' type='email' icon='notifications' label='Email' />
+)
+
+export const Password = () => (
+  <Input name='Password' label='Password' type='password' icon='random' />
 )

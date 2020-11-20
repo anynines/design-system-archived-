@@ -17,7 +17,7 @@ export const Basic = (args: TextInputProps) => (
   <TextInput {...args} name='primaryColor' label='Basic Input' />
 )
 
-export const Form = (args: TextInputProps) => (
+export const Form = () => (
   <FormComponent onSubmit={(data: Record<string, string> | undefined): void => {
   }}>
     <TextInput name='firstName' label='Form Input' autoComplete='off' value='Dummy' />
