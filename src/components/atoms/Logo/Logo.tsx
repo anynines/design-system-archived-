@@ -9,6 +9,7 @@ export interface LogoProps {
   vertical?: boolean
   onClick?: () => void
   className?: string
+  style?: React.CSSProperties
 }
 
 // C O M P O N E N T
@@ -17,7 +18,8 @@ export const Logo: FC<LogoProps> = ({
   path = '/',
   vertical = true,
   src: url,
-  onClick
+  onClick,
+  style
 }: LogoProps) => {
   return (
     <NavLink
@@ -26,6 +28,7 @@ export const Logo: FC<LogoProps> = ({
         return onClick && onClick()
       }}
       className={vertical ? 'vertical' : ''}
+      style={style}
     >
       <StyledLogoWrapper className={`Logo ${vertical ? 'vertical' : ''} ${className}`}>
         <img src={url} alt='logo' />
@@ -36,7 +39,7 @@ export const Logo: FC<LogoProps> = ({
 
 // S T Y L E S
 const StyledLogoWrapper = styled.span`
-  --logo-height: 1rem;
+  --logo-height: 2rem;
 
   img {
     margin-top: calc(var(--space-sm) * 2);
@@ -47,14 +50,7 @@ const StyledLogoWrapper = styled.span`
     margin-bottom: var(--space-lgr);
 
     img {
-      height: calc(var(--logo-height) * 5);
-    }
-  }
-
-  @media (min-width: 60em) {
-    img {
-      margin-top: 0;
-      height: calc(var(--logo-height) * 2.5);
+      height: calc(var(--logo-height) * 2);
     }
   }
 `

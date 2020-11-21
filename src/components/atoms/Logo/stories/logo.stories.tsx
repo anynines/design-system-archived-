@@ -26,35 +26,16 @@ export default {
   },
 }
 
-export const HorizontalDark = (args: LogoProps) => (
-  <MemoryRouter>
-    <Wrapper bgColor='light'>
-      <Logo
-        {...args}
-        path='/test'
-        vertical={false}
-        src={globals.logos.horizontal.dark}
-        onClick={action('button-click')}
-      />
-    </Wrapper>
-  </MemoryRouter>
-)
-
-export const HorizontalLight = () => (
+export const Vertical = (args: LogoProps) => (
   <MemoryRouter>
     <Wrapper>
       <Logo
         path='/test'
-        vertical={false}
-        src={globals.logos.horizontal.light}
+        vertical={true}
+        src={globals.logos.vertical.light}
         onClick={action('button-click')}
       />
     </Wrapper>
-  </MemoryRouter>
-)
-
-export const VerticalDark = () => (
-  <MemoryRouter>
     <Wrapper bgColor='light'>
       <Logo
         path='/test'
@@ -66,13 +47,21 @@ export const VerticalDark = () => (
   </MemoryRouter>
 )
 
-export const VerticalLight = () => (
+export const Horizontal = () => (
   <MemoryRouter>
     <Wrapper>
       <Logo
         path='/test'
-        vertical={true}
-        src={globals.logos.vertical.light}
+        vertical={false}
+        src={globals.logos.horizontal.light}
+        onClick={action('button-click')}
+      />
+    </Wrapper>
+    <Wrapper bgColor='light'>
+      <Logo
+        path='/test'
+        vertical={false}
+        src={globals.logos.horizontal.dark}
         onClick={action('button-click')}
       />
     </Wrapper>
