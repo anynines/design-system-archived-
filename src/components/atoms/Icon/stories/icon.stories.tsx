@@ -43,17 +43,6 @@ export const Menu = (args: IconProps) => (
   </Wrapper>
 )
 
-export const StyledIcon = (args: IconProps) => {
-  const StyledIcon = styled(Icon)`
-    border: solid var(--color-black) 2px;
-    border-radius: 5px;
-    padding: 5px;
-    color: red;
-  `
-
-  return <Wrapper><StyledIcon {...args} /></Wrapper>
-}
-
 export const Collection = () => (
   <Wrapper flexWrap='wrap' height='100%'>
     <IconWrapper icon='arrowUpRight' />
@@ -144,3 +133,14 @@ export const Collection = () => (
     <IconWrapper icon='wishlist' />
   </Wrapper>
 )
+
+export const StyledIcon = (args: IconProps) => {
+  const StyledIcon = styled(Icon)`
+    border: solid var(--color-black) 2px;
+    border-radius: 5px;
+    padding: 5px;
+    color: red;
+  `
+
+  return <Wrapper><StyledIcon {...args} /></Wrapper>
+}

@@ -33,7 +33,7 @@ export default {
     userName: {
       control: { type: 'text' },
       description: 'User Name as a fallback if no avatar is chosen',
-      defaultValue: 'Test User'
+      defaultValue: 'Johanna Doe'
     }
   }
 }

@@ -123,6 +123,7 @@ import Wishlist from './assets/wishlist'
 export interface IconProps {
   icon?: IconName
   className?: string
+  style?: React.CSSProperties
 }
 
 // T Y P E S
@@ -291,10 +292,13 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 }
 
 // C O M P O N E N T
-export const Icon: React.FC<IconProps> = (props) => {
-  const { icon = 'menu', className } = props
+export const Icon: React.FC<IconProps> = ({
+  icon = 'menu',
+  className,
+  style
+}) => {
   return (
-    <StyledIcon className={className}>
+    <StyledIcon className={className} style={style}>
       {ICONS[icon]}
     </StyledIcon>
   )
@@ -309,5 +313,8 @@ const StyledIcon = styled.i`
   
   svg {
     width: 100%;
+    height: 100%;
+    max-width: 20px;
+    max-height: 20px;
   }
 `
