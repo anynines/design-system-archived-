@@ -210,6 +210,7 @@ const StyledSelect = styled.div`
   position: relative;
   margin-bottom: var(--space-xl);
   border-radius: var(--radius);
+  width: 100%;
   
   .icon-wrapper {
     display: flex;
@@ -287,7 +288,6 @@ const StyledSelect = styled.div`
     background-color: var(--color-dark);
     border: var(--border);
     position: relative;
-    border: none;
     padding: 14px 0 0 calc(var(--icon-wrapper-size) + 12px);
     color: var(--color-white);
     appearance: none;
@@ -337,9 +337,7 @@ const StyledSelect = styled.div`
       left: 0;
       z-index: 2;
       overflow: hidden;
-      border: var(--border);
       background-color: var(--color-dark);
-      padding-bottom: calc(var(--radius) / 2);
       width: 100%;
       color: var(--color-white);
       appearance: none;
@@ -351,6 +349,7 @@ const StyledSelect = styled.div`
     &__option {
       cursor: pointer;
       padding: var(--space-md) var(--space-lg);
+      border: none;
 
       &.is-active {
         background-color: var(--color-primary-dark);
