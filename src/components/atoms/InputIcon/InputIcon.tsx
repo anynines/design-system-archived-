@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 // I N T E R F A C E S
-export interface TextInputPrependProps {
+export interface InputIconProps {
   onClick?: () => void
   clickable?: boolean
   className?: string
 }
 
 // C O M P O N E N T
-export const TextInputPrepend: React.FC<TextInputPrependProps> = ({
+export const InputIcon: React.FC<InputIconProps> = ({
   className = 'StyledTextInputPrepend',
   clickable = false,
   onClick,
@@ -22,22 +22,22 @@ export const TextInputPrepend: React.FC<TextInputPrependProps> = ({
   }
 
   return (
-    <StyledTextInputPrepend
+    <StyledInputIcon
       className={`input-prepend ${className}`}
       onClick={onPrependClick}
       clickable={clickable}
     >
       {children}
-    </StyledTextInputPrepend>
+    </StyledInputIcon>
   )
 }
 
-interface StyledTextInputPrependProps {
+interface StyledInputIconProps {
   clickable: boolean
 }
 
 // S T Y L E S
-const StyledTextInputPrepend = styled.div<StyledTextInputPrependProps>`
+const StyledInputIcon = styled.div<StyledInputIconProps>`
   --cursor: ${(props): string => { return props.clickable ? 'pointer' : 'default' }};
 
   display: flex;
