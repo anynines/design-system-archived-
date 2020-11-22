@@ -9,23 +9,28 @@ export interface SpinnerProps {
   hidden?: boolean
   className?: string
   color?: string
+  style?: React.CSSProperties
 }
 interface StyledSpinnerProps extends SpinnerProps {
   sizeInPx: number
 }
-export type SpinnerSize = 'sm' | 'lg'
+export type SpinnerSize = 'sm' | 'md' | 'lg'
 
 // C O M P O N E N T
 export const Spinner: React.FC<SpinnerProps> = ({
-  size = 'lg',
+  size = 'md',
   hidden = false,
   className = 'StyledSpinner',
-  color
+  color = 'var(--color-primary)',
+  style
 }) => {
   const getSpinnerSize = (): number => {
     switch (size) {
       case 'lg':
-        return 65
+        return 60
+
+      case 'md':
+        return 45
 
       case 'sm':
         return 30
@@ -36,12 +41,19 @@ export const Spinner: React.FC<SpinnerProps> = ({
   }
 
   return (
-    <StyledSpinner sizeInPx={getSpinnerSize()} hidden={hidden} color={color} className={className}>
+    <StyledSpinner
+      sizeInPx={getSpinnerSize()}
+      hidden={hidden}
+      color={color}
+      className={className}
+      style={style}
+    >
       <SpinnerIcon />
     </StyledSpinner>
   )
 }
 
+// S T Y L E S
 const StyledSpinner = styled.span<StyledSpinnerProps>`
   --display: ${(props): string => { return props.hidden ? 'none' : 'flex' }};
   --visibility: ${(props): string => { return props.hidden ? 'hidden' : 'visible' }};
