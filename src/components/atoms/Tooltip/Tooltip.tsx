@@ -5,8 +5,8 @@ import styled from 'styled-components'
 export interface TooltipProps {
   text?: string
   position?: string
-  style?: React.CSSProperties
   className?: string
+  style?: React.CSSProperties
 }
 
 // C O M P O N E N T
@@ -15,8 +15,8 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
     text,
     position = 'bottom',
     children,
-    style,
-    className
+    className,
+    style
   } = props
 
   return (
