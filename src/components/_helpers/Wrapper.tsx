@@ -9,25 +9,25 @@ export interface WrapperProps {
   align?: WrapperAlignment
   justify?: WrapperAlignment
   flexWrap?: WrapperFlexWrap
+  style?: React.CSSProperties
 }
 
 // T Y P E S
-export type WrapperBgColor = 'light' | 'dark'
+export type WrapperBgColor = 'light' | 'dark' | 'black'
 export type WrapperDirection = 'row' | 'column'
 export type WrapperAlignment = 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'space-between' | 'space-around'
 export type WrapperFlexWrap = 'nowrap' | 'wrap'
 
 // C O M P O N E N T
-const Wrapper: React.FC<WrapperProps> = (props) => {
-  const {
-    height = '200px',
-    bgColor = 'dark',
-    direction = 'row',
-    justify = 'center',
-    align = 'center',
-    flexWrap = 'nowrap',
-    children
-  } = props
+const Wrapper: React.FC<WrapperProps> = ({
+  height = '200px',
+  bgColor = 'dark',
+  direction = 'row',
+  justify = 'center',
+  align = 'center',
+  flexWrap = 'nowrap',
+  children
+}) => {
   return (
     <StyledWrapper
       style={{
@@ -56,6 +56,10 @@ const StyledWrapper = styled.div`
 
   &.dark {
     background-color: var(--color-dark);
+  }
+
+  &.black {
+    background-color: var(--color-black);
   }
 `
 
