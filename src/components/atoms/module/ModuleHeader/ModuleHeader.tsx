@@ -11,7 +11,11 @@ export const ModuleHeader: React.FC<ModuleHeaderProps> = ({
   className = 'StyledModuleHeader',
   children
 }) => {
-  return <StyledModuleHeader className={className}>{children}</StyledModuleHeader>
+  return (
+    <StyledModuleHeader className={className}>
+      {children}
+    </StyledModuleHeader>
+  )
 }
 
 // S T Y L E S
@@ -24,7 +28,11 @@ const StyledModuleHeader = styled.div`
   padding: 0 var(--space-md);
   height: var(--header-height);
   color: var(--color-white-fix);
-  border-radius: var(--radius);
+  border: var(--radius) var(--radius) 0 0;
+  margin-top: calc(var(--space-md) * -1);
+  margin-right: calc(var(--space-md) * -1);
+  margin-bottom: var(--space-md);
+  margin-left: calc(var(--space-md) * -1);
 
   i {
     margin-right: var(--space-sm);
