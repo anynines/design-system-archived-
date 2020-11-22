@@ -17,7 +17,6 @@ export * from './components/atoms/InputLabel/InputLabel'
 export * from './components/atoms/Logo/Logo'
 export * from './components/atoms/Select/Select'
 export * from './components/atoms/Spinner/Spinner'
-export * from './components/atoms/ToggleLayout/ToggleLayout'
 export * from './components/atoms/ToggleMode/ToggleMode'
 
 // A T O M S - M O D A L
