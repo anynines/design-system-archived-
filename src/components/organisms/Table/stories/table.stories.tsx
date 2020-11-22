@@ -3,7 +3,7 @@ import React from 'react'
 import { Table, TableAccessor, DraggableTableDataProps, SortableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRow } from '../Table'
 
 export default {
-  title: 'Organisms/Table',
+  title: '🌳 Organisms/Table',
   component: Table,
   argTypes: {
     tableHeaderData: {

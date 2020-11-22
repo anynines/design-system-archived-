@@ -3,7 +3,7 @@ import React from 'react'
 import { Notification, NotificationProps } from '../Notification'
 
 export default {
-  title: 'Molecules/Notification',
+  title: '🌱 Molecules/Notification',
   component: Notification,
   argTypes: {
     icon: {

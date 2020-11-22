@@ -4,7 +4,7 @@ import { TextInput, TextInputProps } from '../TextInput'
 import { Form as FormComponent } from '../../../../organisms/Form/Form'
 
 export default {
-  title: 'Molecules/Inputs/TextInput',
+  title: '🌱 Molecules/Inputs/TextInput',
   component: TextInput,
   argTypes: {
     color: {

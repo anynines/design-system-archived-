@@ -2,9 +2,10 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 
 import { ToggleMode, ToggleModeProps } from '../ToggleMode'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
-  title: 'Atoms/ToggleMode',
+  title: '💧 Atoms/ToggleMode',
   component: ToggleMode,
   argTypes: {
     size: {
@@ -20,32 +21,43 @@ export default {
 }
 
 export const Basic = (args: ToggleModeProps) => (
-  <ToggleMode
-    {...args}
-    setMode={action('mode-set')}
-  />
+  <Wrapper>
+    <ToggleMode
+      {...args}
+      setMode={action('mode-set')}
+    />
+  </Wrapper>
 )
 
-export const Light = (args: ToggleModeProps) => (
-  <ToggleMode
-    {...args}
-    mode='light'
-    setMode={action('mode-set')}
-  />
+export const Light = () => (
+  <Wrapper>
+    <ToggleMode
+      mode='light'
+      setMode={action('mode-set')}
+    />
+  </Wrapper>
 )
 
-export const Dark = (args: ToggleModeProps) => (
-  <ToggleMode
-    {...args}
-    mode='dark'
-    setMode={action('mode-set')}
-  />
+export const Dark = () => (
+  <Wrapper>
+    <ToggleMode
+      mode='dark'
+      setMode={action('mode-set')}
+    />
+  </Wrapper>
 )
 
-export const Small = (args: ToggleModeProps) => (
-  <ToggleMode
-    {...args}
-    size='sm'
-    setMode={action('mode-set')}
-  />
+export const Sizes = () => (
+  <Wrapper justify='space-around'>
+    <ToggleMode
+      mode='dark'
+      size='sm'
+      setMode={action('mode-set')}
+    />
+    <ToggleMode
+      mode='dark'
+      size='lg'
+      setMode={action('mode-set')}
+    />
+  </Wrapper>
 )

@@ -5,7 +5,7 @@ import { ImageUploader, ImageUploaderProps } from '../ImageUploader'
 
 
 export default {
-  title: 'Molecules/ImageUploader',
+  title: '🌱 Molecules/ImageUploader',
   component: ImageUploader,
   argTypes: {
     register: {

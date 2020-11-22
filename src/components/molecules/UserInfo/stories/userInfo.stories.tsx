@@ -4,7 +4,7 @@ import { UserInfo, UserInfoProps } from '../UserInfo'
 import { UserInfoWrapper } from './UserInfoWrapper'
 
 export default {
-  title: 'Molecules/UserInfo',
+  title: '🌱 Molecules/UserInfo',
   component: UserInfo,
   argTypes: {
     userName: {

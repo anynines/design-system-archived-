@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import { SpecialCategories, SpecialCategory } from '../SpecialCategories'
 
 export default {
-  title: 'Molecules/SpecialCategories',
+  title: '🌱 Molecules/SpecialCategories',
   component: SpecialCategories,
   argTypes: {
     id: { control: { type: 'number' } },

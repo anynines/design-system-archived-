@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import Wrapper from '../../../_helpers/Wrapper'
 import { Icon, IconProps } from '../Icon'
@@ -8,7 +7,7 @@ import { Icon, IconProps } from '../Icon'
 import IconWrapper from './IconWrapper'
 
 export default {
-  title: 'Atoms/Icon',
+  title: '💧 Atoms/Icon',
   component: Icon,
   argTypes: {
     icon: {
@@ -133,14 +132,3 @@ export const Collection = () => (
     <IconWrapper icon='wishlist' />
   </Wrapper>
 )
-
-export const StyledIcon = (args: IconProps) => {
-  const StyledIcon = styled(Icon)`
-    border: solid var(--color-black) 2px;
-    border-radius: 5px;
-    padding: 5px;
-    color: red;
-  `
-
-  return <Wrapper><StyledIcon {...args} /></Wrapper>
-}

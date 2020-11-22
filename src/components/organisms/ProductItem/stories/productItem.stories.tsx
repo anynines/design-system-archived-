@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { ProductItem, ProductItemProps } from '../ProductItem'
 
 export default {
-  title: 'Organisms/ProductItem',
+  title: '🌳 Organisms/ProductItem',
   component: ProductItem,
   argTypes: {
     product: {

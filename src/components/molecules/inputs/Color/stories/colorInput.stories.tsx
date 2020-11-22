@@ -3,7 +3,7 @@ import React from 'react'
 import { ColorInput, ColorInputProps } from '../ColorInput'
 
 export default {
-  title: 'Molecules/Inputs/ColorInput',
+  title: '🌱 Molecules/Inputs/ColorInput',
   component: ColorInput,
   argTypes: {
     icon: {

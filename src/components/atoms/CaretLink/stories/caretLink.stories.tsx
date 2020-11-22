@@ -5,7 +5,7 @@ import Wrapper from '../../../_helpers/Wrapper'
 import { CaretLink, CaretLinkProps } from '../CaretLink'
 
 export default {
-  title: 'Atoms/CaretLink',
+  title: '💧 Atoms/CaretLink',
   component: CaretLink,
   argTypes: {
     text: {

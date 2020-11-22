@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { MenuItem, MenuItemProps } from '../MenuItem'
 
 export default {
-  title: 'Molecules/MenuItem',
+  title: '🌱 Molecules/MenuItem',
   component: MenuItem,
   argTypes: {
     id: { control: null },

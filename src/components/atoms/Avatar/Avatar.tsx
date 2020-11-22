@@ -55,7 +55,10 @@ export const Avatar: React.FC<AvatarProps> = ({
         ${!avatar && 'initials'} 
         ${className}
       `}
-      style={{ style, backgroundImage: `${avatar && `url(${avatar})`}` }}
+      style={{
+        style,
+        backgroundImage: `${avatar && `url(${avatar})`}`
+      }}
       avatar={avatar}
     >
       {renderAvatarContent()}

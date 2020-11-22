@@ -4,7 +4,7 @@ import Wrapper from '../../../_helpers/Wrapper'
 import { Avatar, AvatarProps } from '../Avatar'
 
 export default {
-  title: 'Atoms/Avatar',
+  title: '💧 Atoms/Avatar',
   component: Avatar,
   argTypes: {
     avatar: {

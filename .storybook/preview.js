@@ -1,5 +1,3 @@
-import { addDecorator } from '@storybook/react'
-import { addParameters } from '@storybook/client-api'
 import { withThemesProvider } from 'storybook-addon-styled-component-theme'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import ThemeProvider from '../src/theme/theme-provider'
@@ -51,4 +49,9 @@ export const parameters = {
   viewport: {
     viewports: { ...customViewports, ...INITIAL_VIEWPORTS }
   },
+  options: {
+    storySort: {
+      order: ['👋 Get started', '💧 Atoms', '🌱 Molecules', '🌳 Organisms'],
+    },
+  }
 }

@@ -5,7 +5,7 @@ import Wrapper from '../../../_helpers/Wrapper'
 import { Button, ButtonProps } from '../Button'
 
 export default {
-  title: 'Atoms/Button',
+  title: '💧 Atoms/Button',
   component: Button,
   argTypes: {
     type: {

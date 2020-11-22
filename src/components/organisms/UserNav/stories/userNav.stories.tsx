@@ -3,7 +3,7 @@ import React from 'react'
 import { UserNav, UserNavProps } from '../UserNav'
 
 export default {
-  title: 'Organisms/UserNav',
+  title: '🌳 Organisms/UserNav',
   component: UserNav,
   argTypes: {
     register: {

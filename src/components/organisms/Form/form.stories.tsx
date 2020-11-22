@@ -6,7 +6,7 @@ import { Button } from '../../atoms/Button/Button'
 import { Select } from '../../atoms/Select/Select'
 
 export default {
-  title: 'Organisms/Form',
+  title: '🌳 Organisms/Form',
   component: Form,
   argTypes: {
     className: {

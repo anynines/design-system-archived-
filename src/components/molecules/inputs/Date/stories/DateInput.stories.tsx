@@ -3,7 +3,7 @@ import React from 'react'
 import { DateInput, DateInputProps } from '../DateInput'
 
 export default {
-  title: 'Molecules/Inputs/DateInput',
+  title: '🌱 Molecules/Inputs/DateInput',
   component: DateInput
 }
 

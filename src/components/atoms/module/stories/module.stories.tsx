@@ -11,7 +11,7 @@ import { ModuleFooter } from '../ModuleFooter/ModuleFooter'
 import { ProductItem } from '../../../organisms/ProductItem/ProductItem'
 
 export default {
-  title: 'Atoms/Module',
+  title: '💧 Atoms/Module',
   component: ModuleWrapper,
   argTypes: {
     customWidth: {
@@ -32,7 +32,32 @@ const SampleProduct =
 }
 
 export const Basic = (args: ModuleWrapperProps) => (
-  <Wrapper height='500px'>
+  <Wrapper
+    height='500px'
+  >
+    <ModuleWrapper
+      {...args}
+      style={{ position: 'relative', top: 0 }}
+    >
+
+      <ModuleHeader>
+        <Icon icon='points' />
+        <span>Some Module Header</span>
+      </ModuleHeader>
+
+      <ModuleContent>
+        Put some children here
+      </ModuleContent>
+
+    </ModuleWrapper>
+  </Wrapper>
+)
+
+
+export const CartExample = (args: ModuleWrapperProps) => (
+  <Wrapper
+    height='500px'
+  >
     <ModuleWrapper
       {...args}
       style={{ position: 'relative', top: 0 }}
@@ -66,7 +91,7 @@ export const Basic = (args: ModuleWrapperProps) => (
         totalPrice={142}
         priceLabel={'Preis'}
       >
-        <Button type='primary'>
+        <Button type='primary' width='block'>
           <span>Kaufen</span>
         </Button>
       </ModuleFooter>

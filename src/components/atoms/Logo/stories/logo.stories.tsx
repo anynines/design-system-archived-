@@ -8,7 +8,7 @@ import { Logo, LogoProps } from '../Logo'
 import globals from '../../../../theme/globals.json'
 
 export default {
-  title: 'Atoms/Logo',
+  title: '💧 Atoms/Logo',
   component: Logo,
   argTypes: {
     src: {

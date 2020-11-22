@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button } from '../../Button/Button'
 import { Tooltip } from '../Tooltip'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
-  title: 'Atoms/Tooltip',
+  title: '💧 Atoms/Tooltip',
   component: Tooltip,
   argTypes: {
 
@@ -11,7 +12,7 @@ export default {
 }
 
 export const Default = () => (
-  <div style={{ minHeight: 300, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <Wrapper>
     <Button
       type='primary'
       className='tooltip-wrapper'
@@ -21,5 +22,5 @@ export const Default = () => (
         👏  Good job you did it!
         </Tooltip>
     </Button>
-  </div>
+  </Wrapper>
 )

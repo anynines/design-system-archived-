@@ -3,7 +3,7 @@ import React from 'react'
 import { Menu, MenuItemObject, MenuProps } from '../Menu'
 
 export default {
-  title: 'Organisms/Menu',
+  title: '🌳 Organisms/Menu',
   component: Menu,
   argTypes: {
     items: { control: null },

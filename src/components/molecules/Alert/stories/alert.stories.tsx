@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { Alert, AlertProps } from '../Alert'
 
 export default {
-  title: 'Molecules/Alert',
+  title: '🌱 Molecules/Alert',
   component: Alert,
   argTypes: {
     title: {

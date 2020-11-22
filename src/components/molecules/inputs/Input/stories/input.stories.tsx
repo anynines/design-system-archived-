@@ -3,7 +3,7 @@ import React from 'react'
 import { Input, InputProps } from '../Input'
 
 export default {
-  title: 'Molecules/Inputs/Input',
+  title: '🌱 Molecules/Inputs/Input',
   component: Input,
   argTypes: {
     icon: {

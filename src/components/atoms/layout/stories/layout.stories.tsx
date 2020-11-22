@@ -8,7 +8,7 @@ import { Page } from '../Page/Page'
 
 
 export default {
-  title: 'Atoms/Layout',
+  title: '💧 Atoms/Layout',
   component: Col, Container, Row, Section, Page,
 }
 
