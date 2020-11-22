@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   /**************************************
   **  Global Variables  *****************
   **************************************/
+
   :root {
     /* C O L O R S */
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.primary, 'Primary') }}
@@ -67,6 +68,30 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /**************************************
+  **  Scrollbar  ************************
+  **************************************/
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-lightened);
+  }
+
+  /**************************************
   **  Global Styles  ********************
   **************************************/
 
@@ -87,68 +112,68 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: var(--text-xxxl);
     margin-bottom: 0.1em;
+    font-size: var(--text-xxxl);
   }
 
   h2 {
-    font-size: var(--text-xxl);
     margin-bottom: 0.2em;
+    font-size: var(--text-xxl);
   }
 
   h3 {
-    font-size: var(--text-xl);
     margin-bottom: 0.25em;
+    font-size: var(--text-xl);
   }
 
   h4 {
-    font-size: var(--text-lgr);
     margin-bottom: 0.25em;
+    font-size: var(--text-lgr);
   }
 
   h5 {
-    font-size: var(--text-lg);
     margin-bottom: 0.25em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-size: var(--text-lg);
   }
 
   h6 {
-    font-size: var(--text-md);
     margin-bottom: 0.25em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-size: var(--text-md);
   }
 
   p {
     margin-top: 0.25em;
     margin-bottom: 0.75em;
-    font-size: var(--text-lg);
-    font-weight: 300;
     letter-spacing: 1.5;
     color: var(--color-white-80);
+    font-size: var(--text-lg);
+    font-weight: 300;
   }
 
   hr {
+    margin: var(--text-md) 0;
     width: 100%;
     border-color: var(--color-white-10);
-    margin: var(--text-md) 0;
   }
 
   pre {
-    padding: var(--space-lg);
     background-color: var(--color-black);
-    border-radius: var(--radius);
+    padding: var(--space-lg);
     width: 100%;
     font-size: var(--text-lg);
+    border-radius: var(--radius);
   }
 
   code {
-    padding: 4px;
     margin: 0 2px;
     background-color: var(--color-black);
-    border-radius: 2px;
+    padding: 4px;
     font-size: var(--text-lg);
+    border-radius: 2px;
   }
 
   ul {
@@ -176,27 +201,6 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-  }
-
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 5px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-lightened);
   }
 
   .tooltip-wrapper {

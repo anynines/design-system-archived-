@@ -27,29 +27,27 @@ export const Color: React.FC<ColorProps> = ({
 }
 
 const StyledColor = styled.div`
-  height: 100px;
-  width: 100px;
-  background-color: var(--primary);
-  border-radius: var(--radius);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary);
+  width: 100px;
+  height: 100px;
   transition: var(--transition);
   border-radius: 0;
   
   span {
-    font-size: 12px;
-    padding: 4px;
-    border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.2);
+    padding: 4px;
     color: var(--color-white);
+    font-size: 12px;
+    border-radius: 5px;
   }
 
   &.main-color {
     span {
-      padding: 4px;
-      border-radius: 2px;
       background-color: rgba(0, 0, 0, 0.6);
+      padding: 4px;
     }
   }
 

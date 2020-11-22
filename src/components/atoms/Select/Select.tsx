@@ -280,14 +280,56 @@ const StyledSelect = styled.div`
   }
 
   .select-custom {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: transparent;
     cursor: pointer;
+
+    &__inner-option-container {
+      max-height: 160px;
+      overflow-y: auto;
+    }
+
+    &__option-container {
+      display: none;
+      position: absolute;
+      top: var(--icon-wrapper-size);
+      left: 0;
+      z-index: 2;
+      overflow: hidden;
+      background-color: var(--color-dark);
+      width: 100%;
+      color: var(--color-white);
+      appearance: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      outline: none;
+      transition: color var(--transition-ease-in-out-300), background-color var(--transition-ease-in-out-300);
+    }
+
+    &__option {
+      border: none;
+      cursor: pointer;
+      padding: var(--space-md) var(--space-lg);
+
+      &.is-active {
+        background-color: var(--color-primary-dark);
+        color: var(--color-white-fix);
+      }
+
+      &:hover,
+      &.is-hovered {
+        background-color: var(--color-primary);
+        color: var(--color-white-fix);
+      }
+    }
   }
 
   select {
-    background-color: var(--color-dark);
-    border: var(--border);
     position: relative;
+    border: var(--border);
+    background-color: var(--color-dark);
     padding: 14px 0 0 calc(var(--icon-wrapper-size) + 12px);
     color: var(--color-white);
     appearance: none;
@@ -319,50 +361,6 @@ const StyledSelect = styled.div`
     }
   }
 
-  .select-custom {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    &__inner-option-container {
-      max-height: 160px;
-      overflow-y: auto;
-    }
-
-    &__option-container {
-      display: none;
-      position: absolute;
-      top: var(--icon-wrapper-size);
-      left: 0;
-      z-index: 2;
-      overflow: hidden;
-      background-color: var(--color-dark);
-      width: 100%;
-      color: var(--color-white);
-      appearance: none;
-      border-radius: 0 0 var(--radius) var(--radius);
-      outline: none;
-      transition: color var(--transition-ease-in-out-300), background-color var(--transition-ease-in-out-300);
-    }
-
-    &__option {
-      cursor: pointer;
-      padding: var(--space-md) var(--space-lg);
-      border: none;
-
-      &.is-active {
-        background-color: var(--color-primary-dark);
-        color: var(--color-white-fix);
-      }
-
-      &:hover,
-      &.is-hovered {
-        background-color: var(--color-primary);
-        color: var(--color-white-fix);
-      }
-    }
-  }
   @media (hover: hover) {
     .select-custom {
       display: block;

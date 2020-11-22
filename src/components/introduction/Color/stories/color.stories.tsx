@@ -49,6 +49,10 @@ export const BaseColors = () => (
 export const Primary = () => (
   <Wrapper>
     <Color
+      color='var(--color-primary-lighter)'
+      colorLabel='-lighter'
+    />
+    <Color
       color='var(--color-primary-light)'
       colorLabel='-light'
     />
@@ -60,6 +64,10 @@ export const Primary = () => (
     <Color
       color='var(--color-primary-dark)'
       colorLabel='-dark'
+    />
+    <Color
+      color='var(--color-primary-darker)'
+      colorLabel='-darker'
     />
   </Wrapper>
 )
@@ -271,6 +279,10 @@ export const White = () => (
 export const Success = () => (
   <Wrapper>
     <Color
+      color='var(--color-success-lighter)'
+      colorLabel='-lighter'
+    />
+    <Color
       color='var(--color-success-light)'
       colorLabel='-light'
     />
@@ -283,11 +295,19 @@ export const Success = () => (
       color='var(--color-success-dark)'
       colorLabel='-dark'
     />
+    <Color
+      color='var(--color-success-darker)'
+      colorLabel='-darker'
+    />
   </Wrapper>
 )
 
 export const Notice = () => (
   <Wrapper>
+    <Color
+      color='var(--color-notice-lighter)'
+      colorLabel='-lighter'
+    />
     <Color
       color='var(--color-notice-light)'
       colorLabel='-light'
@@ -301,11 +321,19 @@ export const Notice = () => (
       color='var(--color-notice-dark)'
       colorLabel='-dark'
     />
+    <Color
+      color='var(--color-notice-darker)'
+      colorLabel='-darker'
+    />
   </Wrapper>
 )
 
 export const Warning = () => (
   <Wrapper>
+    <Color
+      color='var(--color-warning-lighter)'
+      colorLabel='-lighter'
+    />
     <Color
       color='var(--color-warning-light)'
       colorLabel='-light'
@@ -319,11 +347,19 @@ export const Warning = () => (
       color='var(--color-warning-dark)'
       colorLabel='-dark'
     />
+    <Color
+      color='var(--color-warning-darker)'
+      colorLabel='-darker'
+    />
   </Wrapper>
 )
 
 export const Error = () => (
   <Wrapper>
+    <Color
+      color='var(--color-error-lighter)'
+      colorLabel='-lighter'
+    />
     <Color
       color='var(--color-error-light)'
       colorLabel='-light'
@@ -336,6 +372,10 @@ export const Error = () => (
     <Color
       color='var(--color-error-dark)'
       colorLabel='-dark'
+    />
+    <Color
+      color='var(--color-error-darker)'
+      colorLabel='-darker'
     />
   </Wrapper>
 )

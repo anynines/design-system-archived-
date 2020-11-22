@@ -61,7 +61,6 @@ export const convertHexColorToRGBAString = (hexColor, alpha = 1): string => {
 }
 
 export const camelToPascalCase = (convertString: string): string => {
-
   const convertArray: string[] = Array.from(convertString)
 
   let char: string

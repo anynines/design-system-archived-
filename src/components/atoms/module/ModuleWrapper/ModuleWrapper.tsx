@@ -43,12 +43,12 @@ const StyledModuleWrapper = styled.div<StyledModuleWrapperProps>`
   top: 3.2rem;
   left: 0;
   z-index: 100;
-  background-color: var(--color-black);
   border: var(--border);
-  box-shadow: var(--shadow);
+  background-color: var(--color-black);
   padding: var(--space-md);
   width: 100%;
   color: var(--color-white);
+  box-shadow: var(--shadow);
   border-radius: var(--radius);
   overflow-x: hidden;
   overflow-y: auto;

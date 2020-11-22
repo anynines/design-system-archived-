@@ -26,14 +26,13 @@ export const Color: React.FC<ColorProps> = ({
 }
 
 const StyledColor = styled.div`
-  height: 100px;
-  width: 100px;
-  background-color: var(--primary);
-  border-radius: var(--radius);
-  border: var(--border);
   display: flex;
   justify-content: center;
   align-items: center;
+  border: var(--border);
+  background-color: var(--primary);
+  width: 100px;
+  height: 100px;
   transition: var(--transition);
   border-radius: 0;
   

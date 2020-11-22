@@ -38,25 +38,25 @@ export const CaretLink: React.FC<CaretLinkProps> = ({
 const StyledCaretLink = styled.div`
   a {
     display: flex;
-    position: relative;
     align-items: center;
-    transition: var(--transition);
+    position: relative;
+    padding-left: 25px;
     text-decoration: none;
     color: var(--color-white);
-    padding-left: 25px;
+    transition: var(--transition);
 
     i {
       position: absolute;
-      transition: var(--transition);
       left: 5px;
       color: var(--color-primary);
+      transition: var(--transition);
     }
 
     span {
-      transition: var(--transition);
+      opacity: 0.5;
       font-size: var(--text-lg);
       font-weight: var(--font-weight-md);
-      opacity: 0.5;
+      transition: var(--transition);
     }
 
     &:hover {
@@ -67,8 +67,8 @@ const StyledCaretLink = styled.div`
       }
 
       span {
-        margin-left: -5px;
         opacity: 1;
+        margin-left: -5px;
       }
     }
   }

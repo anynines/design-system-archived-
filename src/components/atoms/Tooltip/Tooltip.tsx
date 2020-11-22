@@ -44,23 +44,23 @@ const StyledTooltip = styled.div`
   .tooltip-inner {
     position: relative;
     z-index: 999;
+    border: var(--border);
     padding: 8px;
+    white-space: nowrap;
     font-family: var(--font-family);
+    font-size: 12px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    border: var(--border);
-    white-space: nowrap;
-    font-size: 12px;
     max-width: 220px;
   }
 
   &:before, &:after {
-    content: '';
     position: absolute;
-    height: 10px;
-    width: 10px;
     top: -3px;
     left: 50%;
+    width: 10px;
+    height: 10px;
+    content: '';
     transform: translateX(-50%) rotate(45deg);
     border-radius: 3px;
   }

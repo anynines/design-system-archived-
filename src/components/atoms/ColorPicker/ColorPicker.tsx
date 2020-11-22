@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { ChromePicker, ChromePickerProps } from 'react-color'
 
-
 interface ColorPickerProps extends ChromePickerProps {
   style?: React.CSSProperties
 }

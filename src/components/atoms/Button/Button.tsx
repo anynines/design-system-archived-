@@ -45,16 +45,16 @@ const StyledButton = styled.button`
   justify-content: center;
   align-items: center;
   border: none;
+  border: var(--border);
   cursor: pointer;
   padding: var(--space-lg) var(--space-lgr);
   width: auto;
   color: var(--color-white);
   font-family: var(--font-family);
+  font-weight: var(--font-weight-bd);
   border-radius: var(--radius);
   outline: none;
   transition: var(--transition);
-  font-weight: var(--font-weight-bd);
-  border: var(--border);
 
   /* Width */
   &.block {
@@ -80,8 +80,8 @@ const StyledButton = styled.button`
 
   /* Types */
   &.primary, &.submit {
-    color: var(--color-white-fix);
     background-color: var(--color-primary);
+    color: var(--color-white-fix);
   }
 
   &.dark {

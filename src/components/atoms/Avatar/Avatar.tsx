@@ -9,7 +9,6 @@ export interface AvatarProps {
   rounded?: boolean
   level?: number
   className?: string
-  style?: React.CSSProperties
 }
 
 export const getInitials = (userName: string): string => {
@@ -31,7 +30,6 @@ export const Avatar: React.FC<AvatarProps> = ({
   level,
   avatar,
   className,
-  style,
   children
 }) => {
   const renderAvatarContent = (): React.ReactNode => {
@@ -56,7 +54,6 @@ export const Avatar: React.FC<AvatarProps> = ({
         ${className}
       `}
       style={{
-        style,
         backgroundImage: `${avatar && `url(${avatar})`}`
       }}
       avatar={avatar}
