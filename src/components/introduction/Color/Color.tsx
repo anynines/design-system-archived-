@@ -37,7 +37,7 @@ const StyledColor = styled.div`
   border-radius: 0;
   
   span {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--color-black-20);
     padding: 4px;
     color: var(--color-white);
     font-size: 12px;
@@ -46,7 +46,7 @@ const StyledColor = styled.div`
 
   &.main-color {
     span {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: var(--color-black-60);
       padding: 4px;
     }
   }

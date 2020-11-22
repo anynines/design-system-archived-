@@ -20,6 +20,9 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 
 .c1 svg {
   width: 100%;
+  height: 100%;
+  max-width: 16px;
+  max-height: 16px;
 }
 
 .c0 {
@@ -274,6 +277,9 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 
 .c1 svg {
   width: 100%;
+  height: 100%;
+  max-width: 16px;
+  max-height: 16px;
 }
 
 .c0 {
