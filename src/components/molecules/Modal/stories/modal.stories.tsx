@@ -5,7 +5,7 @@ import { Button } from '../../../atoms/Button/Button';
 import { Modal, ModalProps } from '../Modal'
 
 export default {
-  title: 'Molecules/Modal',
+  title: '🌱 Molecules/Modal',
   component: Modal,
   argTypes: {
     show: {

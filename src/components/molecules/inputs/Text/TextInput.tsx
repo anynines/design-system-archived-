@@ -5,7 +5,7 @@ import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-h
 // C O M P O N E N T S
 import { Icon, IconName } from '../../../atoms/Icon/Icon'
 import { InputLabel, InputLabelProps } from '../../../atoms/InputLabel/InputLabel'
-import { TextInputPrepend, TextInputPrependProps } from '../../../atoms/prepend/TextInputPrepend/TextInputPrepend'
+import { InputIcon, InputIconProps } from '../../../atoms/InputIcon/InputIcon'
 
 // I N T E R F A C E S
 export interface TextInputProps {
@@ -29,7 +29,7 @@ export interface TextInputProps {
   handleSubmit?: (callback: OnSubmit<any>) => (e?: React.BaseSyntheticEvent) => Promise<void> // eslint-disable-line
 }
 type TextInput = React.FC<TextInputProps>
-  & { Prepend: React.FC<TextInputPrependProps> }
+  & { Prepend: React.FC<InputIconProps> }
   & { Label: React.FC<InputLabelProps> }
 
 // C O M P O N E N T
@@ -71,9 +71,9 @@ export const TextInput: TextInput = ({
   const renderIconAsPrepend = (): JSX.Element => {
     if (icon !== undefined) {
       return (
-        <TextInputPrepend>
+        <InputIcon>
           <Icon icon={icon} />
-        </TextInputPrepend>
+        </InputIcon>
       )
     }
 
@@ -217,5 +217,5 @@ const StyledInput = styled.div<StyledInputProps>`
   }
 `
 
-TextInput.Prepend = TextInputPrepend
+TextInput.Prepend = InputIcon
 TextInput.Label = InputLabel

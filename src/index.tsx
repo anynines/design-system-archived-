@@ -5,7 +5,7 @@ export * from './designSystemInstance/theme/GlobalStyle'
 export * from './designSystemInstance/theme/defaultTheme'
 
 // I N T R O D U C T I O N
-export * from './components/introduction/Colors/Color'
+export * from './components/introduction/Color/Color'
 
 // A T O M S
 export * from './components/atoms/Avatar/Avatar'
@@ -18,6 +18,7 @@ export * from './components/atoms/Logo/Logo'
 export * from './components/atoms/Select/Select'
 export * from './components/atoms/Spinner/Spinner'
 export * from './components/atoms/ToggleMode/ToggleMode'
+export * from './components/atoms/ColorPicker/ColorPicker'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
@@ -29,10 +30,6 @@ export * from './components/atoms/module/ModuleWrapper/ModuleWrapper'
 export * from './components/atoms/module/ModuleHeader/ModuleHeader'
 export * from './components/atoms/module/ModuleContent/ModuleContent'
 export * from './components/atoms/module/ModuleFooter/ModuleFooter'
-
-// A T O M S - P R E P E N D
-export * from './components/atoms/prepend/ColorPicker/ColorPicker'
-export * from './components/atoms/prepend/TextInputPrepend/TextInputPrepend'
 
 // A T O M S - L A Y O U T
 export * from './components/atoms/layout/Col/Col'

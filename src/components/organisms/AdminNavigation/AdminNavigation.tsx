@@ -17,6 +17,7 @@ export interface AdminNavigationProps {
   setMode: (mode: Mode) => void
   logoutUser: () => void
   className?: string
+  style?: React.CSSProperties
 }
 
 export interface AdminNavigationLink {
@@ -34,10 +35,11 @@ export const AdminNavigation: React.FC<AdminNavigationProps> = ({
   mode,
   setMode,
   logoutUser,
-  className = ''
+  className,
+  style
 }) => {
   return (
-    <StyledAdminNavigation className={className}>
+    <StyledAdminNavigation style={style} className={className}>
       <Logo
         src={logoSrc}
         vertical

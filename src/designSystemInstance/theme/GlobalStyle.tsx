@@ -53,13 +53,14 @@ export const GlobalStyle = createGlobalStyle`
     --font-weight-rg: ${(props): string => { return props.theme.globals.font.regular }};
     --font-weight-bd: ${(props): string => { return props.theme.globals.font.bold }};
     --text-base-unit: ${(props): string => { return props.theme.globals.typography.baseUnit }};
-    --text-xs:  calc(var(--text-base-unit) * 0.375);
-    --text-sm:  calc(var(--text-base-unit) * 0.5);
-    --text-md:  calc(var(--text-base-unit) * 0.75);
+    --text-xs:  calc(var(--text-base-unit) * 0.5);
+    --text-sm:  calc(var(--text-base-unit) * 0.6);
+    --text-md:  calc(var(--text-base-unit) * 0.8);
     --text-lg:  calc(var(--text-base-unit));
     --text-lgr: calc(var(--text-base-unit) * 1.5);
     --text-xl:  calc(var(--text-base-unit) * 2);
     --text-xxl: calc(var(--text-base-unit) * 3);
+    --text-xxxl: calc(var(--text-base-unit) * 4);
 
     --body-line-height: ${(props): string => { return props.theme.globals.typography.bodyLineHeight }};
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};
@@ -79,14 +80,75 @@ export const GlobalStyle = createGlobalStyle`
     font-size: var(--text-base-unit);
   }
 
-  h1, h2, h3, h4 {
-    margin-bottom: var(--space-md);
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
     line-height: var(--heading-line-height);
     font-weight: var(--font-weight-bd);
   }
-  
-  h1, .text-xxl {
+
+  h1 {
+    font-size: var(--text-xxxl);
+    margin-bottom: 0.1em;
+  }
+
+  h2 {
+    font-size: var(--text-xxl);
+    margin-bottom: 0.2em;
+  }
+
+  h3 {
     font-size: var(--text-xl);
+    margin-bottom: 0.25em;
+  }
+
+  h4 {
+    font-size: var(--text-lgr);
+    margin-bottom: 0.25em;
+  }
+
+  h5 {
+    font-size: var(--text-lg);
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  h6 {
+    font-size: var(--text-md);
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  p {
+    margin-top: 0.25em;
+    margin-bottom: 0.75em;
+    font-size: var(--text-lg);
+    font-weight: 300;
+    letter-spacing: 1.5;
+    color: var(--color-white-80);
+  }
+
+  hr {
+    width: 100%;
+    border-color: var(--color-white-10);
+    margin: var(--text-md) 0;
+  }
+
+  pre {
+    padding: var(--space-lg);
+    background-color: var(--color-black);
+    border-radius: var(--radius);
+    width: 100%;
+    font-size: var(--text-lg);
+  }
+
+  code {
+    padding: 4px;
+    margin: 0 2px;
+    background-color: var(--color-black);
+    border-radius: 2px;
+    font-size: var(--text-lg);
   }
 
   ul {
@@ -96,6 +158,20 @@ export const GlobalStyle = createGlobalStyle`
 
   ul, ol, li {
     list-style: none;
+  }
+
+  .ol, .ul {
+    line-height: 2;
+    font-size: var(--text-lg);
+    font-weight: 300;
+  }
+
+  .ol, .ol li {
+    list-style: decimal;
+  }
+
+  .ul, .ul li {
+    list-style: circle;
   }
 
   * {
