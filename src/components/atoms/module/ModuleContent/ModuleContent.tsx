@@ -16,7 +16,7 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
 
 // S T Y L E S
 const StyledModuleContent = styled.div`
-  color: var(--color-white-fix);
   padding: 0 var(--space-md);
+  color: var(--color-white-fix);
 `
 StyledModuleContent.displayName = 'StyledModuleContent'
