@@ -57,12 +57,9 @@ export const ModuleFooter: React.FC<ModuleFooterProps> = ({
 // S T Y L E S
 const StyledModuleFooter = styled.div`
   margin-top: var(--space-md);
-  margin-right: calc(var(--space-md) * -1);
-  margin-bottom: calc(var(--space-md) * -1);
-  margin-left: calc(var(--space-md) * -1);
   background-color: var(--color-dark);
   padding: var(--space-md);
-  width: calc(100% + var(--space-md) * 2);
+  width: 100%;
   min-height: 5rem;
   color: var(--color-white);
   border-radius: 0 0 var(--radius) var(--radius);

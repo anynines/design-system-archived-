@@ -19,10 +19,18 @@ export default {
       },
       price: {
         control: { type: 'number' },
+      },
+      defaultValue: {
+        title: 'Awesome Product',
+        imageUrl: 'https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+        variations: 'Some text',
+        price: 42.00,
+
       }
     },
     quantity: {
       control: { type: 'number' },
+      defaultValue: 4
     },
     setItemQuantity: {
       control: { type: 'disabled' },
@@ -52,6 +60,7 @@ export default {
           'dashboard'
         ],
       },
+      defaultValue: 'heart'
     },
 
   }
@@ -70,12 +79,12 @@ export const Basic = (args: ProductItemProps) => (
   <ProductItem {...args} deleteItem={action('delete-click')} move={action('move-click')} />
 )
 
-export const Product = (args: ProductItemProps) => (
+export const Product = () => (
   <ProductItem
-    {...args}
     deleteItem={action('delete-click')}
     move={action('move-click')}
     product={SampleProduct}
     quantity={1}
+    moveIcon='heart'
   />
 )

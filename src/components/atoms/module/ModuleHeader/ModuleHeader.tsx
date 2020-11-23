@@ -24,10 +24,7 @@ const StyledModuleHeader = styled.div`
 
   display: flex;
   align-items: center;
-  margin-top: calc(var(--space-md) * -1);
-  margin-right: calc(var(--space-md) * -1);
   margin-bottom: var(--space-md);
-  margin-left: calc(var(--space-md) * -1);
   border: var(--radius) var(--radius) 0 0;
   background-color: var(--color-primary);
   padding: 0 var(--space-md);

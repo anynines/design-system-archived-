@@ -99,7 +99,7 @@ const StyledProductItem = styled.div`
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin-bottom: var(--space-lgr);
+  margin-bottom: var(--space-md);
   background-color: var(--color-dark);
   cursor: pointer;
   border-radius: var(--radius);
@@ -132,7 +132,8 @@ const StyledProductItem = styled.div`
     position: absolute;
     top: 0;
     right: -2.5rem;
-    background-color: var(--color-black);
+    background-color: transparent;
+    background-color: var(--color-dark);
     min-width: 2.5rem;
     height: 100%;
     color: var(--color-white);
@@ -155,7 +156,7 @@ const StyledProductItem = styled.div`
       justify-content: center;
       align-items: center;
       border: none;
-      background-color: var(--color-black);
+      background-color: var(--color-black-50);
       cursor: pointer;
       width: 2.5rem;
       height: 2.5rem;
