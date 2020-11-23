@@ -22,6 +22,7 @@ export default {
           large: 'lg'
         }
       },
+      defaultValue: 'md'
     },
     rounded: {
       control: { type: 'boolean' }
