@@ -28,9 +28,9 @@ export const Row: React.FC<RowProps> = ({
 
 const StyledRow = styled.div`
   display: flex;
-  margin-left: calc(var(--space-md) * -1);
   margin-right: calc(var(--space-md) * -1);
   margin-bottom: calc(var(--space-md) * 2);
+  margin-left: calc(var(--space-md) * -1);
   
   &:last-child {
     margin-bottom: 0;

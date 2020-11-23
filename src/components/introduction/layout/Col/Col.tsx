@@ -27,7 +27,7 @@ export const Col: React.FC<ColProps> = ({
 }
 
 const StyledCol = styled.div`
+  margin: 0 var(--space-md);
   width: auto;
   flex: 1;
-  margin: 0 var(--space-md);
 `

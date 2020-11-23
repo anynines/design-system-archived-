@@ -154,8 +154,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   blockquote {
-    border-left: 5px solid var(--color-primary);
     margin-left: 0;
+    border-left: 5px solid var(--color-primary);
     padding: 0 10px;
     font-weight: var(--font-weight-lt);
     font-style: italic;

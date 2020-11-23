@@ -28,7 +28,7 @@ export const Container: React.FC<ContainerProps> = ({
 }
 
 const StyledContainer = styled.div`
-  max-width: var(--content-max-width);
-  width: 100%;
   margin: 0 auto;
+  width: 100%;
+  max-width: var(--content-max-width);
 `

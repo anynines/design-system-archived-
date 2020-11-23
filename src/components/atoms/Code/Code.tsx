@@ -30,34 +30,34 @@ export const Code: React.FC<CodeProps> = ({
 
 const StyledCode = styled.div`
   position: relative;
-  background-color: var(--color-black);
-  border: var(--border);
-  border-radius: var(--radius);
   overflow: hidden;
+  border: var(--border);
+  background-color: var(--color-black);
   width: 100%;
+  border-radius: var(--radius);
 
   pre {
     display: block;
+    margin: 0;
     padding: var(--space-lg);
     width: 100%;
     font-size: var(--text-lg);
     max-width: 100%;
     overflow-x: auto;
-    margin: 0;
   }
 
   .language-label {
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
     background-color: var(--color-white-10);
     padding: 8px;
     font-size: var(--text-sm);
   }
 
   .hljs {
-    color: #abb2bf;
     background-color: var(--color-black);
+    color: #abb2bf;
   }
   
   .hljs-comment,
@@ -92,6 +92,15 @@ const StyledCode = styled.div`
     color: #98c379;
   }
   
+  .hljs-bullet,
+  .hljs-link,
+  .hljs-meta,
+  .hljs-selector-id,
+  .hljs-symbol,
+  .hljs-title {
+    color: #61aeee;
+  }
+
   .hljs-built_in,
   .hljs-class .hljs-title {
     color: #e6c07b;
@@ -108,14 +117,7 @@ const StyledCode = styled.div`
     color: #d19a66;
   }
   
-  .hljs-bullet,
-  .hljs-link,
-  .hljs-meta,
-  .hljs-selector-id,
-  .hljs-symbol,
-  .hljs-title {
-    color: #61aeee;
-  }
+  
   
   .hljs-emphasis {
     font-style: italic;
