@@ -6,6 +6,11 @@ export * from './designSystemInstance/theme/defaultTheme'
 
 // I N T R O D U C T I O N
 export * from './components/introduction/Color/Color'
+export * from './components/introduction/layout/Col/Col'
+export * from './components/introduction/layout/Container/Container'
+export * from './components/introduction/layout/Page/Page'
+export * from './components/introduction/layout/Row/Row'
+export * from './components/introduction/layout/Section/Section'
 
 // A T O M S
 export * from './components/atoms/Avatar/Avatar'
@@ -30,13 +35,6 @@ export * from './components/atoms/module/ModuleWrapper/ModuleWrapper'
 export * from './components/atoms/module/ModuleHeader/ModuleHeader'
 export * from './components/atoms/module/ModuleContent/ModuleContent'
 export * from './components/atoms/module/ModuleFooter/ModuleFooter'
-
-// A T O M S - L A Y O U T
-export * from './components/atoms/layout/Col/Col'
-export * from './components/atoms/layout/Container/Container'
-export * from './components/atoms/layout/Page/Page'
-export * from './components/atoms/layout/Row/Row'
-export * from './components/atoms/layout/Section/Section'
 
 // M O L E C U L E S
 export * from './components/molecules/Alert/Alert'
