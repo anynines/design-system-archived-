@@ -20,7 +20,7 @@ export type WrapperFlexWrap = 'nowrap' | 'wrap'
 
 // C O M P O N E N T
 const Wrapper: React.FC<WrapperProps> = ({
-  height = '200px',
+  height = 'auto',
   bgColor = 'dark',
   direction = 'row',
   justify = 'center',
