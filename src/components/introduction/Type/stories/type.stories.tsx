@@ -20,7 +20,9 @@ export const BaseType = () => (
     height='auto'
   >
     <h1>Headline One</h1>
-    <p>Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen.</p>
+    <p>Sehr bekannt ist dieser: <a target='_blank' href='https://github.com/anynines/design-system' className='link'>The quick brown fox</a> jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen.</p>
+
+    <blockquote>The quick brown fox jumps over the lazy old dog.</blockquote>
 
     <hr/>
 
@@ -46,16 +48,6 @@ export const BaseType = () => (
     
     <h6>Headline Six</h6>
     <p>Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. In Lateinisch sieht zum Beispiel fast jede Schrift gut aus. Quod erat demonstrandum.</p>
-
-    <hr/>
-    
-    <h4>Code Snippets</h4>
-    <p>Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog. Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™ are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. <code>In Lateinisch sieht zum Beispiel</code> fast jede Schrift gut aus. Quod erat demonstrandum.</p>
-    <pre>
-      <code>
-        Some example code goes here
-      </code>
-    </pre>
 
     <hr />
     
@@ -136,21 +128,5 @@ export const UnorderedList = () => (
       <li>Another fresh numbered item</li>
       <li>The last but not the least ordered item</li>
     </ol>
-  </Wrapper>
-)
-
-export const CodeSnippets = () => (
-  <Wrapper
-    direction='column'
-    justify='flex-start'
-    align='flex-start'
-    height='auto'
-  >
-    <p>You can also use code snippets inside a paragraph <code>Some inline code</code> just this simple</p>
-    <pre>
-      <code>
-        Some example code goes here
-      </code>
-    </pre>
   </Wrapper>
 )

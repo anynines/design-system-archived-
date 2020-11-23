@@ -6,7 +6,6 @@ export const GlobalStyle = createGlobalStyle`
   /**************************************
   **  Global Variables  *****************
   **************************************/
-
   :root {
     /* C O L O R S */
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.primary, 'Primary') }}
@@ -154,26 +153,27 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 300;
   }
 
+  blockquote {
+    border-left: 5px solid var(--color-primary);
+    margin-left: 0;
+    padding: 0 10px;
+    font-weight: var(--font-weight-lt);
+    font-style: italic;
+  }
+
+  a.link {
+    color: var(--color-primary);
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
+  }
+
   hr {
     margin: var(--text-md) 0;
     width: 100%;
     border-color: var(--color-white-10);
-  }
-
-  pre {
-    background-color: var(--color-black);
-    padding: var(--space-lg);
-    width: 100%;
-    font-size: var(--text-lg);
-    border-radius: var(--radius);
-  }
-
-  code {
-    margin: 0 2px;
-    background-color: var(--color-black);
-    padding: 4px;
-    font-size: var(--text-lg);
-    border-radius: 2px;
   }
 
   ul {
@@ -197,6 +197,14 @@ export const GlobalStyle = createGlobalStyle`
 
   .ul, .ul li {
     list-style: circle;
+  }
+
+  code {
+    margin: 0 2px;
+    background-color: var(--color-black);
+    padding: 4px;
+    font-size: var(--text-lg);
+    border-radius: 2px;
   }
 
   * {

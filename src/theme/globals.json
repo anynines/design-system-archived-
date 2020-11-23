@@ -7,15 +7,15 @@
   },
   "colors": {
     "primary": "#e4833e",
+    "white": "#ffffff",
+    "light": "#ebedff",
+    "dark": "#1d3252",
+    "black": "#062035",
     "success": "#6aa84f",
     "notice": "#3e97e4",
     "warning": "#e0cd66",
     "error": "#e06666",
-    "white": "#ffffff",
-    "whiteFix": "#ffffff",
-    "light": "#ebedff",
-    "dark": "#1d3252",
-    "black": "#062035"
+    "whiteFix": "#ffffff"
   },
   "radius": "10px",
   "border": "1px solid var(--color-white-10)",
