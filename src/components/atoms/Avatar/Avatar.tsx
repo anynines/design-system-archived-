@@ -67,7 +67,7 @@ export const Avatar: React.FC<AvatarProps> = ({
 
 // S T Y L E S
 const StyledAvatar = styled.div`
-  --size: 5rem;
+  --size: 3rem;
   --font-size: .8em;
   --initials-font-size: 2.4em;
   --level-position: -0.3em;
@@ -82,8 +82,8 @@ const StyledAvatar = styled.div`
   background-color: var(--color-dark);
   background-position: center center;
   background-size: cover;
-  width: calc(var(--size) / 2);
-  height: calc(var(--size) / 2);
+  width: calc(var(--size) * 0.75);
+  height: calc(var(--size) * 0.75);
   font-size: var(--text-sm);
 
   &:hover {
@@ -100,14 +100,14 @@ const StyledAvatar = styled.div`
 
   &.md {
     width: var(--size);
-    height:var(--size);
-    font-size: var(--text-lg);
+    height: var(--size);
+    font-size: var(--text-sm);
   }
 
   &.lg {
     width: calc(var(--size) * 2);
     height: calc(var(--size) * 2);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
   }
 
   &.level {
