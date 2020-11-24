@@ -39,7 +39,7 @@ const Wrapper: React.FC<WrapperProps> = ({
       }}
       className={bgColor}
     >
-      { children}
+      {children}
     </StyledWrapper>
   )
 }

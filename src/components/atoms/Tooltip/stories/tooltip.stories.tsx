@@ -20,7 +20,7 @@ export const Default = () => (
       <span>👆 Hover over me</span>
       <Tooltip>
         👏  Good job you did it!
-        </Tooltip>
+      </Tooltip>
     </Button>
   </Wrapper>
 )
