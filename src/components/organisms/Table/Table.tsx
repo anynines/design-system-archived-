@@ -186,7 +186,7 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
 }
 
 const StyledTable = styled.div`
-  background-color: var(--color-darker);
+  background-color: var(--color-black);
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -225,12 +225,12 @@ const StyledTable = styled.div`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
 
       tr{
         th {
-          background-color: var(--color-darker);
+          background-color: var(--color-black);
 
           &:first-child {
             padding-left: 1rem;
@@ -251,7 +251,7 @@ const StyledTable = styled.div`
               transform: rotate(-180deg);
             }
             svg {
-              background-color: var(--color-darker);
+              background-color: var(--color-black);
               padding: 5px;
               width: 20px;
               height: 20px;
@@ -274,7 +274,7 @@ const StyledTable = styled.div`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
 
       &:last-child {
@@ -282,7 +282,7 @@ const StyledTable = styled.div`
           display:block;
           text-indent:-99999px;
           line-height:1rem;
-          content:"@";
+          content:'@';
         }
       }
 
@@ -363,7 +363,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content: "";
+              content: '';
               border-radius: 2px;
             }
 
@@ -381,7 +381,7 @@ const StyledTable = styled.div`
               align-items: center;
               position: absolute;
               right: -15px;
-              border: 2px solid var(--color-darker);
+              border: 2px solid var(--color-black);
               background-color: var(--color-dark);
               cursor: pointer;
               width: 25px;
@@ -411,7 +411,7 @@ const StyledTable = styled.div`
             }
           }
           span.black {
-            background-color: var(--color-darker);
+            background-color: var(--color-black);
           }
 
           div.icon-wrapper{
@@ -424,7 +424,7 @@ const StyledTable = styled.div`
               height: 20px;
               
               svg {
-                background-color: var(--color-darker);
+                background-color: var(--color-black);
                 padding: 5px;
                 width: 20px;
                 height: 20px;
@@ -456,7 +456,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content:"";
+              content:'';
               border-radius: 2px;
             }
           }
@@ -467,7 +467,7 @@ const StyledTable = styled.div`
             display:block;
             text-indent:-99999px;
             line-height:1rem;
-            content:"@";
+            content:'@';
           }
         } 
       }

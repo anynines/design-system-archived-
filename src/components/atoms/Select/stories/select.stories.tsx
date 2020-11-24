@@ -1,16 +1,16 @@
 import React from 'react'
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions'
 
 import { Select, SelectProps } from '../Select'
-
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
-  title: 'Atoms/Select',
+  title: '💧 Atoms/Select',
   component: Select,
   argTypes: {
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',
@@ -27,22 +27,30 @@ export default {
           'dashboard'
         ],
       },
+      defaultValue: 'points'
+    },
+    label: {
+      control: {
+        type: 'text'
+      },
+      defaultValue: 'My Label'
     },
     register: {
       control: { type: 'disabled' }
     },
   },
 }
+
 const defaultValues = [
   'Arial',
   'Comic Sans',
-  'Helevtica'
+  'Helvetica'
 ]
 
 const scrollableValues = [
   'Arial',
   'Comic Sans',
-  'Helevtica',
+  'Helvetica',
   'Times New Roman',
   'Roboto',
   'Goldman',
@@ -57,16 +65,50 @@ const scrollableValues = [
 ]
 
 export const Basic = (args: SelectProps) => (
-  <Select {...args} values={defaultValues} defaultValue={'Helevtica'} onChange={action("Selected item")}/>
+  <Wrapper bgColor='black'>
+    <Select
+      {...args}
+      values={defaultValues}
+      defaultValue={'Helvetica'}
+      onChange={action('Selected item')}
+      />
+  </Wrapper>
 )
 
-export const Example = (args: SelectProps) => (
-  <Select label='Font' name='fontFamily' values={defaultValues} defaultValue={'Helevtica'} icon='font' onChange={action("Selected item")} />
+export const Example = () => (
+  <Wrapper bgColor='black'>
+    <Select
+      label='Font'
+      name='fontFamily'
+      values={defaultValues}
+      defaultValue={'Helvetica'}
+      icon='font'
+      onChange={action('Selected item')}
+    />
+  </Wrapper>
 )
 
-export const Scrollable = (args: SelectProps) => (
-  <Select label='Font' name='fontFamily' values={scrollableValues} defaultValue={'Helevtica'} icon='font' onChange={action("Selected item")} />
+export const Scrollable = () => (
+  <Wrapper bgColor='black'>
+    <Select
+      label='Font'
+      name='fontFamily'
+      values={scrollableValues}
+      defaultValue={'Helvetica'}
+      icon='font'
+      onChange={action('Selected item')}
+    />
+  </Wrapper>
 )
-export const WithNumber = (args: SelectProps) => (
-  <Select label='Pick a number' name='number' values={[1, 2, 3, 4]} icon='drop' onChange={action('Selected item')} />
+
+export const WithNumber = () => (
+  <Wrapper bgColor='black'>
+    <Select
+      label='Pick a number'
+      name='number'
+      values={[1, 2, 3, 4]}
+      icon='drop'
+      onChange={action('Selected item')}
+    />
+  </Wrapper>
 )

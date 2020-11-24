@@ -1,33 +1,26 @@
-import { addDecorator, configure } from '@storybook/react';
-import { addParameters } from '@storybook/client-api';
-import { withThemesProvider } from 'storybook-addon-styled-component-theme';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import ThemeProvider from '../src/theme/theme-provider';
+import { withThemesProvider } from 'storybook-addon-styled-component-theme'
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import ThemeProvider from '../src/theme/theme-provider'
+import { getToggledTheme } from '../src/designSystemInstance/designSystemInstanceHelpers'
 
 // V A R I A B L E S
 import globals from '../src/theme/globals.json'
-import sharedColors from '../src/theme/sharedColors.json'
-import darkColors from '../src/theme/darkColors.json'
-import lightColors from '../src/theme/lightColors.json'
-
 
 export const darkTheme = {
   name: 'dark',
-  background: darkColors.dark,
-  globals,
-  colors: { ...sharedColors, ...darkColors },
+  background: globals.colors.black,
+  globals
 }
 
 export const lightTheme = {
   name: 'light',
-  background: lightColors.dark,
-  globals,
-  colors: { ...sharedColors, ...lightColors },
+  background: globals.colors.white,
+  globals
 }
 
 const themes = [
   darkTheme,
-  lightTheme
+  getToggledTheme(lightTheme)
 ]
 
 const customViewports = {
@@ -45,17 +38,20 @@ const customViewports = {
       height: '42em',
     },
   }
-};
+}
 
-addDecorator(withThemesProvider(themes, ThemeProvider));
-
-addParameters({
-  viewport: {
-    viewports: { ...customViewports, ...INITIAL_VIEWPORTS }
-  },
-});
-
+export const decorators = [
+  withThemesProvider(themes, ThemeProvider)
+]
 
 export const parameters = {
   actions: { argTypesRegex: "^on.*" },
-};
+  viewport: {
+    viewports: { ...customViewports, ...INITIAL_VIEWPORTS }
+  },
+  options: {
+    storySort: {
+      order: ['👋 Get started', ['Welcome'], '💧 Atoms', '🌱 Molecules', '🌳 Organisms'],
+    },
+  }
+}

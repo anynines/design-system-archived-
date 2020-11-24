@@ -75,7 +75,7 @@ export const Notification: React.FC<NotificationProps> = ({
 const StyledNotification = styled.div`
   display: flex;
   margin-bottom: var(--space-fixed-sm);
-  background-color: var(--color-darker);
+  background-color: var(--color-black);
   padding: var(--space-lg);
   color: var(--color-white);
   font-size: var(--text-md);

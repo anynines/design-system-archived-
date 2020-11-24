@@ -1,39 +1,24 @@
 import { createGlobalStyle } from 'styled-components'
+import * as builder from './PaletteBuilder'
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.25);
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 5px;
-  }
-
+  /**************************************
+  **  Global Variables  *****************
+  **************************************/
   :root {
     /* C O L O R S */
-    --color-primary: ${(props): string => { return props.theme.colors.primary }};
-    --color-primary-50: ${(props): string => { return props.theme.colors.primary50 }};
-    --color-white: ${(props): string => { return props.theme.colors.white }};
-    --color-white-50: ${(props): string => { return props.theme.colors.white50 }};
-    --color-light: ${(props): string => { return props.theme.colors.light }};
-    --color-light-50: ${(props): string => { return props.theme.colors.light50 }};
-    --color-dark: ${(props): string => { return props.theme.colors.dark }};
-    --color-dark-50: ${(props): string => { return props.theme.colors.dark50 }};
-    --color-darker: ${(props): string => { return props.theme.colors.darker }};
-    --color-darker-50: ${(props): string => { return props.theme.colors.darker50 }};
-    --color-white-fix: ${(props): string => { return props.theme.colors.whiteFix }};
-    --color-notice: ${(props): string => { return props.theme.colors.notice }};
-    --color-warning: ${(props): string => { return props.theme.colors.warning }};
-    --color-error: ${(props): string => { return props.theme.colors.error }};
-    --color-success: ${(props): string => { return props.theme.colors.success }};
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.primary, 'Primary') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.success, 'Success') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.notice, 'Notice') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.warning, 'Warning') }}
+    ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.error, 'Error') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.white, 'White') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.light, 'Light') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.dark, 'Dark') }}
+    ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.black, 'Black') }}
+
+    --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
     
     /* G L O B A L S */
     --radius: ${(props): string => { return props.theme.globals.radius }};
@@ -42,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     --shadow: ${(props): string => { return props.theme.globals.shadow }};
     --transition: ${(props): string => { return props.theme.globals.transition }};
     --transition-ease-in-out-300: 0.3s ease-in-out;
+
     /* S P A C I N G */
     --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }};
     --space-xs:  calc(var(--space-unit) * 0.25);
@@ -67,26 +53,50 @@ export const GlobalStyle = createGlobalStyle`
     --font-weight-rg: ${(props): string => { return props.theme.globals.font.regular }};
     --font-weight-bd: ${(props): string => { return props.theme.globals.font.bold }};
     --text-base-unit: ${(props): string => { return props.theme.globals.typography.baseUnit }};
-    --text-xs:  calc(var(--text-base-unit) * 0.375);
-    --text-sm:  calc(var(--text-base-unit) * 0.5);
-    --text-md:  calc(var(--text-base-unit) * 0.75);
+    --text-xs:  calc(var(--text-base-unit) * 0.5);
+    --text-sm:  calc(var(--text-base-unit) * 0.6);
+    --text-md:  calc(var(--text-base-unit) * 0.8);
     --text-lg:  calc(var(--text-base-unit));
     --text-lgr: calc(var(--text-base-unit) * 1.5);
     --text-xl:  calc(var(--text-base-unit) * 2);
     --text-xxl: calc(var(--text-base-unit) * 3);
+    --text-xxxl: calc(var(--text-base-unit) * 4);
 
     --body-line-height: ${(props): string => { return props.theme.globals.typography.bodyLineHeight }};
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};
   }
 
+  /**************************************
+  **  Scrollbar  ************************
+  **************************************/
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+  }
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--color-primary-lighter);
   }
+
+  /**************************************
+  **  Global Styles  ********************
+  **************************************/
 
   body {
     margin: 0;
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     padding: 0;
     line-height: var(--body-line-height);
     color: var(--color-white);
@@ -94,14 +104,77 @@ export const GlobalStyle = createGlobalStyle`
     font-size: var(--text-base-unit);
   }
 
-  h1, h2, h3, h4 {
-    margin-bottom: var(--space-md);
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
     line-height: var(--heading-line-height);
     font-weight: var(--font-weight-bd);
   }
-  
-  h1, .text-xxl {
+
+  h1 {
+    margin-bottom: 0.1em;
+    font-size: var(--text-xxxl);
+  }
+
+  h2 {
+    margin-bottom: 0.2em;
+    font-size: var(--text-xxl);
+  }
+
+  h3 {
+    margin-bottom: 0.25em;
     font-size: var(--text-xl);
+  }
+
+  h4 {
+    margin-bottom: 0.25em;
+    font-size: var(--text-lgr);
+  }
+
+  h5 {
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: var(--text-lg);
+  }
+
+  h6 {
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: var(--text-md);
+  }
+
+  p {
+    margin-top: 0.25em;
+    margin-bottom: 0.75em;
+    letter-spacing: 1.5;
+    color: var(--color-white-80);
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-lt);
+  }
+
+  blockquote {
+    margin-left: 0;
+    border-left: 5px solid var(--color-primary);
+    padding: 0 10px;
+    font-weight: var(--font-weight-lt);
+    font-style: italic;
+  }
+
+  a.link {
+    color: var(--color-primary);
+    transition: var(--transition);
+    font-weight: var(--font-weight-bd);
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
+  }
+
+  hr {
+    margin: var(--text-xl) 0;
+    width: 100%;
+    border-color: var(--color-white-10);
   }
 
   ul {
@@ -113,7 +186,38 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  .ol, .ul {
+    line-height: 2;
+    font-size: var(--text-lg);
+    font-weight: 300;
+  }
+
+  .ol, .ol li {
+    list-style: decimal;
+  }
+
+  .ul, .ul li {
+    list-style: circle;
+  }
+
+  code {
+    margin: 0 2px;
+    background-color: var(--color-black);
+    padding: 4px;
+    font-size: var(--text-lg);
+    border-radius: 2px;
+  }
+
   * {
     box-sizing: border-box;
+  }
+
+  .tooltip-wrapper {
+    position: relative;
+    &:hover {
+      .tooltip {
+        display: block;
+      }
+    }
   }
 `

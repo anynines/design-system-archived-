@@ -3,7 +3,7 @@ import React from 'react'
 import { Table, TableAccessor, DraggableTableDataProps, SortableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRow } from '../Table'
 
 export default {
-  title: 'Organisms/Table',
+  title: '🌳 Organisms/Table',
   component: Table,
   argTypes: {
     tableHeaderData: {
@@ -22,7 +22,7 @@ export default {
       control: { type: 'string[]' }
     },
     type: {
-      control: { type: 'options', options: ["sortable", "draggable"] }
+      control: { type: 'select', options: ['sortable', 'draggable'] }
     },
     pages: {
       control: { type: 'TableRow[]' }
@@ -104,112 +104,112 @@ const getTableColumnIconType = (type: TableAccessor | null): TableColumnIcon | n
 
 const initialPages: TableRow[] = [
   {
-    "id": 0,
-    "page": "First Page",
-    "status": "published",
-    "permissions": "public",
-    "languages": [
-      "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/512px-United-kingdom_flag_icon_round.svg.png",
-      "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
+    'id': 0,
+    'page': 'First Page',
+    'status': 'published',
+    'permissions': 'public',
+    'languages': [
+      'https://cdn.countryflags.com/thumbs/germany/flag-round-250.png',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/512px-United-kingdom_flag_icon_round.svg.png',
+      'https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg'
     ],
-    "views": 1234,
-    "authors": [
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png",
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
+    'views': 1234,
+    'authors': [
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png',
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'
     ],
-    "sections": [
-      "grid1",
-      "slider",
-      "pages"
+    'sections': [
+      'grid1',
+      'slider',
+      'pages'
     ],
-    "slug": "/A/first-page",
-    "category": "A",
-    "title": "First Page",
-    "name": "First Page",
-    "published": true
+    'slug': '/A/first-page',
+    'category': 'A',
+    'title': 'First Page',
+    'name': 'First Page',
+    'published': true
   },
   {
-    "id": 1,
-    "page": "Second Page",
-    "status": "published",
-    "permissions": "public",
-    "languages": [
-      "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/512px-United-kingdom_flag_icon_round.svg.png",
-      "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
+    'id': 1,
+    'page': 'Second Page',
+    'status': 'published',
+    'permissions': 'public',
+    'languages': [
+      'https://cdn.countryflags.com/thumbs/germany/flag-round-250.png',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/512px-United-kingdom_flag_icon_round.svg.png',
+      'https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg'
     ],
-    "views": 1234,
-    "authors": [
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png",
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
+    'views': 1234,
+    'authors': [
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png',
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'
     ],
-    "sections": [
-      "grid1",
-      "slider",
-      "pages"
+    'sections': [
+      'grid1',
+      'slider',
+      'pages'
     ],
-    "slug": "/A/second-page",
-    "category": "A",
-    "title": "Second Page",
-    "name": "Second Page",
-    "published": true
+    'slug': '/A/second-page',
+    'category': 'A',
+    'title': 'Second Page',
+    'name': 'Second Page',
+    'published': true
   },
   {
-    "id": 2,
-    "page": "First Page",
-    "status": "published",
-    "permissions": "public",
-    "languages": [
-      "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png"
+    'id': 2,
+    'page': 'First Page',
+    'status': 'published',
+    'permissions': 'public',
+    'languages': [
+      'https://cdn.countryflags.com/thumbs/germany/flag-round-250.png'
     ],
-    "views": 1585,
-    "authors": [
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png",
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
+    'views': 1585,
+    'authors': [
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png',
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'
     ],
-    "sections": [
-      "grid1"
+    'sections': [
+      'grid1'
     ],
-    "slug": "/B/first-page",
-    "category": "B",
-    "title": "First Page",
-    "name": "First Page",
-    "published": true
+    'slug': '/B/first-page',
+    'category': 'B',
+    'title': 'First Page',
+    'name': 'First Page',
+    'published': true
   },
   {
-    "id": 3,
-    "page": "Second Page",
-    "status": "published",
-    "permissions": "public",
-    "languages": [
-      "https://cdn.countryflags.com/thumbs/germany/flag-round-250.png",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/512px-United-kingdom_flag_icon_round.svg.png",
-      "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
+    'id': 3,
+    'page': 'Second Page',
+    'status': 'published',
+    'permissions': 'public',
+    'languages': [
+      'https://cdn.countryflags.com/thumbs/germany/flag-round-250.png',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/512px-United-kingdom_flag_icon_round.svg.png',
+      'https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg'
     ],
-    "views": 1234,
-    "authors": [
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png",
-      "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-      "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
+    'views': 1234,
+    'authors': [
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png',
+      'https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png',
+      'https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png'
     ],
-    "sections": [
-      "grid1",
-      "slider",
-      "pages"
+    'sections': [
+      'grid1',
+      'slider',
+      'pages'
     ],
-    "slug": "/B/second-page",
-    "category": "b",
-    "title": "Second Page",
-    "name": "Second Page",
-    "published": true
+    'slug': '/B/second-page',
+    'category': 'b',
+    'title': 'Second Page',
+    'name': 'Second Page',
+    'published': true
   }
 ]
 
@@ -221,7 +221,7 @@ export const Draggable: React.FC = () => {
     getTableColumnIconType,
     disabledCategories: ['A'],
     initialPages,
-    type:'draggable',
+    type: 'draggable',
     pagesPerFolder: 2,
     color: 'success'
   }
@@ -238,7 +238,7 @@ export const Sortable: React.FC = () => {
     getTableColumnType,
     getTableColumnIconType,
     initialPages,
-    type:'sortable',
+    type: 'sortable',
     pagesPerFolder: 2,
     color: 'warning'
   }

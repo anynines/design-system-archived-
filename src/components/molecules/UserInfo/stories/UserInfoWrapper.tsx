@@ -16,7 +16,7 @@ export const UserInfoWrapper: React.FC<UserInfoWrapperProps> = ({ children }) =>
 
 // S T L Y E S
 const StyledUserWrapper = styled.div`
-  background-color: var(--color-darker);
+  background-color: var(--color-black);
   padding: var(--space-lg);
   border-radius: var(--radius);
 `

@@ -4,8 +4,16 @@ import merge from 'lodash.merge'
 
 // H E L P E R S
 import { LocalStorage } from '../helpers/localStorage'
-import { createFaviconNode, isBrowserPreferenceModeDark } from '../helpers'
-import { getTheme, getMode, onThemeChange, getToggledTheme } from './designSystemInstanceHelpers'
+import {
+  createFaviconNode,
+  isBrowserPreferenceModeDark
+} from '../helpers'
+import {
+  getTheme,
+  getMode,
+  onThemeChange,
+  getToggledTheme
+} from './designSystemInstanceHelpers'
 
 // D E F A U L T  T H E M E
 import { defaultTheme } from './theme/defaultTheme'
@@ -14,7 +22,14 @@ import { defaultTheme } from './theme/defaultTheme'
 import { GlobalStyle } from './theme/GlobalStyle'
 
 // I N T E R F A C E S
-import { ThemeContextParam, DesignSystemInstanceProps, DesignSystemContextElements, Theme, PartialTheme, Mode } from './types/types'
+import {
+  ThemeContextParam,
+  DesignSystemInstanceProps,
+  DesignSystemContextElements,
+  Theme,
+  PartialTheme,
+  Mode
+} from './types/types'
 
 // C O M P O N E N T
 export const createDesignSystemContext = <T extends PartialTheme>(): DesignSystemContextElements<

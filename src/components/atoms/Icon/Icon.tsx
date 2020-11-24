@@ -1,7 +1,5 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
-// A S S E T S
 
 // A
 import ArrowUpRight from './assets/arrowUpRight'
@@ -17,6 +15,7 @@ import Button from './assets/button'
 import Camera from './assets/camera'
 import Calendar from './assets/calendar'
 import CaretDown from './assets/caretDown'
+import CaretLeft from './assets/caretLeft'
 import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
 import Close from './assets/close'
@@ -124,6 +123,7 @@ import Wishlist from './assets/wishlist'
 export interface IconProps {
   icon?: IconName
   className?: string
+  style?: React.CSSProperties
 }
 
 // T Y P E S
@@ -134,6 +134,7 @@ export type IconName = 'arrowUpRight'
   | 'calendar'
   | 'camera'
   | 'caretDown'
+  | 'caretLeft'
   | 'caretRight'
   | 'cart'
   | 'close'
@@ -215,6 +216,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   calendar: <Calendar />,
   camera: <Camera />,
   caretDown: <CaretDown />,
+  caretLeft: <CaretLeft />,
   caretRight: <CaretRight />,
   cart: <Cart />,
   close: <Close />,
@@ -290,10 +292,13 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 }
 
 // C O M P O N E N T
-export const Icon: FC<IconProps> = (props) => {
-  const { icon = 'menu', className } = props
+export const Icon: React.FC<IconProps> = ({
+  icon = 'menu',
+  className,
+  style
+}) => {
   return (
-    <StyledIcon className={className}>
+    <StyledIcon className={className} style={style}>
       {ICONS[icon]}
     </StyledIcon>
   )
@@ -308,5 +313,8 @@ const StyledIcon = styled.i`
   
   svg {
     width: 100%;
+    height: 100%;
+    max-width: 16px;
+    max-height: 16px;
   }
 `

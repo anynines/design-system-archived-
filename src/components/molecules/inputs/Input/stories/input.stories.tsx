@@ -3,12 +3,12 @@ import React from 'react'
 import { Input, InputProps } from '../Input'
 
 export default {
-  title: 'Molecules/Inputs/Input',
+  title: '🌱 Molecules/Inputs/Input',
   component: Input,
   argTypes: {
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',
@@ -28,7 +28,7 @@ export default {
     },
     type: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'text',
           'color',
@@ -55,26 +55,57 @@ export default {
     onFocusChange: {
       control: { type: 'disabled' }
     }
-  },
+  }
 }
 
 export const Basic = (args: InputProps) => (
-  <Input name='Basic' label="Basic" {...args} />
-)
-export const Text = (args: InputProps) => (
-  <Input name='Text' type='text' icon='shop' label="Text" value='Default Value' {...args} />
-)
-export const CustomRegexPattern = (args: InputProps) => (
-  <Input name='Text' type='text' icon='shop' label="I match 4 digits numbers" pattern={/^[0-9]{4}$/} {...args} />
-)
-export const Color = (args: InputProps) => (
-  <Input name='Color' type="color" label="Color" {...args} />
+  <Input
+    {...args}
+  />
 )
 
-export const Email = (args: InputProps) => (
-  <Input name='Email' type="email" icon='notifications' label="Email" {...args} />
+export const Text = () => (
+  <Input
+    name='Text'
+    type='text'
+    icon='shop'
+    label='Text'
+    value='Default Value'
+  />
 )
 
-export const Password = (args: InputProps) => (
-  <Input name='Password' label='Password' type="password" icon='random' {...args} />
+export const CustomRegexPattern = () => (
+  <Input
+    name='CustomRegex'
+    type='text'
+    icon='shop'
+    label='I match 4 digits numbers'
+    pattern={/^[0-9]{4}$/}
+  />
+)
+
+export const Color = () => (
+  <Input
+    name='Color'
+    type='color'
+    label='Color'
+  />
+)
+
+export const Email = () => (
+  <Input
+    name='Email'
+    type='email'
+    icon='notifications'
+    label='Email'
+  />
+)
+
+export const Password = () => (
+  <Input
+    name='Password'
+    label='Password'
+    type='password'
+    icon='random'
+  />
 )

@@ -20,13 +20,16 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 
 .c1 svg {
   width: 100%;
+  height: 100%;
+  max-width: 16px;
+  max-height: 16px;
 }
 
 .c0 {
   --position: 2rem;
   --width: 22rem;
   --z-index: 90;
-  --bg-color: #6AA84F;
+  --bg-color: #6aa84f;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

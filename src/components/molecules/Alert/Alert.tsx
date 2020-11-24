@@ -45,7 +45,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   --position: 2rem;
   --width: 22rem;
   --z-index: 90;
-  --bg-color: ${(props): string => { return props.theme.colors[props.type] }};
+  --bg-color: ${(props): string => { return props.theme.globals.colors[props.type] }};
 
   display: flex;
   flex-direction: row;
