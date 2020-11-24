@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Highlight from 'react-highlight.js'
 
 export interface CodeProps {
   language?: string
@@ -21,9 +20,11 @@ export const Code: React.FC<CodeProps> = ({
       <div className='language-label'>
         <span>{ language }</span>
       </div>
-      <Highlight language={language}>
-        { code || children }
-      </Highlight>
+      <pre>
+        <code>
+          { code || children }
+        </code>
+      </pre>
     </StyledCode>
   )
 }
@@ -121,8 +122,6 @@ const StyledCode = styled.div`
   .hljs-variable {
     color: #d19a66;
   }
-  
-  
   
   .hljs-emphasis {
     font-style: italic;
