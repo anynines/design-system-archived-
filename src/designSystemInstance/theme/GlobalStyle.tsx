@@ -87,7 +87,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-lightened);
+    background: var(--color-primary-lighter);
   }
 
   /**************************************
@@ -150,7 +150,7 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: 1.5;
     color: var(--color-white-80);
     font-size: var(--text-lg);
-    font-weight: 300;
+    font-weight: var(--font-weight-lt);
   }
 
   blockquote {
@@ -164,6 +164,7 @@ export const GlobalStyle = createGlobalStyle`
   a.link {
     color: var(--color-primary);
     transition: var(--transition);
+    font-weight: var(--font-weight-bd);
 
     &:hover {
       color: var(--color-primary-light);
@@ -171,7 +172,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    margin: var(--text-md) 0;
+    margin: var(--text-xl) 0;
     width: 100%;
     border-color: var(--color-white-10);
   }

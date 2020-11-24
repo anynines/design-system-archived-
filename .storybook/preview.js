@@ -51,7 +51,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['👋 Get started', '💧 Atoms', '🌱 Molecules', '🌳 Organisms'],
+      order: ['👋 Get started', ['Welcome'], '💧 Atoms', '🌱 Molecules', '🌳 Organisms'],
     },
   }
 }

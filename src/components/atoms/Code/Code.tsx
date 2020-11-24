@@ -16,6 +16,7 @@ export const Code: React.FC<CodeProps> = ({
   style,
   children
 }) => {
+
   return (
     <StyledCode style={style} className={className}>
       <div className='language-label'>
@@ -31,6 +32,7 @@ export const Code: React.FC<CodeProps> = ({
 const StyledCode = styled.div`
   position: relative;
   overflow: hidden;
+  margin-bottom: var(--space-lgr);
   border: var(--border);
   background-color: var(--color-black);
   width: 100%;
@@ -52,7 +54,11 @@ const StyledCode = styled.div`
     bottom: 0;
     background-color: var(--color-white-10);
     padding: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-size: var(--text-sm);
+    font-weight: var(--font-weight-bd);
+    border-radius: var(--radius) 0 0 0;
   }
 
   .hljs {
