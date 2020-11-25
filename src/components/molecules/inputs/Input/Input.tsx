@@ -17,7 +17,7 @@ export type InputProps = DateInputRestrictedProps | TextInputProps & {
 }
 type Input = React.FC<InputProps>
   & { Label: React.FC<InputLabelProps> }
-export type InputType = 'text' | 'color' | 'email' | 'password' | 'date'
+export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'date'
 
 // C O M P O N E N T
 export const Input: Input = (props) => {
@@ -59,6 +59,16 @@ export const Input: Input = (props) => {
           <TextInput
             {...props}
             pattern={pattern || /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/}
+          >
+            {children}
+          </TextInput>
+        )
+
+      case 'number':
+        return (
+          <TextInput
+            {...props}
+            pattern={pattern || /^[0-9]{2,30}$/}
           >
             {children}
           </TextInput>

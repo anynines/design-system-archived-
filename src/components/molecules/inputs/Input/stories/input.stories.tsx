@@ -101,6 +101,15 @@ export const Email = () => (
   />
 )
 
+export const Number = () => (
+  <Input 
+    name='Nummer' 
+    type="number" 
+    icon='euro' 
+    label="Nummer"  
+  />
+)
+
 export const Password = () => (
   <Input
     name='Password'
