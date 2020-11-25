@@ -12,7 +12,7 @@ export interface NotificationProps {
   icon?: IconName
   msg?: string
   date: number
-  width?: NotificationWidth,
+  width?: NotificationWidth
   style?: React.CSSProperties
 }
 
