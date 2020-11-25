@@ -110,7 +110,7 @@ const StyledToggleMode = styled.div<StyledToggleModeProps>`
     }
   }
   @media (max-width: 60em) {
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
   }
 `
 

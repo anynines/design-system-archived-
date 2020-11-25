@@ -5,10 +5,10 @@ import styled from 'styled-components'
 export interface AvatarProps {
   avatar?: string
   userName?: string
-  className?: string
-  size: string
+  size?: string
   rounded?: boolean
   level?: number
+  className?: string
 }
 
 export const getInitials = (userName: string): string => {
@@ -24,12 +24,12 @@ export const getInitials = (userName: string): string => {
 
 // C O M P O N E N T
 export const Avatar: React.FC<AvatarProps> = ({
-  userName = 'Default User',
+  userName = '',
   size = 'sm',
-  className = 'styled-avatar',
-  avatar,
-  rounded,
+  rounded = false,
   level,
+  avatar,
+  className,
   children
 }) => {
   const renderAvatarContent = (): React.ReactNode => {
@@ -37,13 +37,26 @@ export const Avatar: React.FC<AvatarProps> = ({
       return children
     }
 
-    return <div data-testid='initials' className='initials'>{!avatar && getInitials(userName)}</div>
+    return (
+      <div data-testid='initials' className='initials'>
+        {!avatar && getInitials(userName)}
+      </div>
+    )
   }
 
   return (
     <StyledAvatar
-      className={`${size && size} ${rounded && 'rounded'} ${level && 'level'} ${!avatar && 'initials'} ${className}`}
-      style={avatar && { backgroundImage: `url(${avatar})` }}
+      className={`
+        ${size} 
+        ${rounded && 'rounded'} 
+        ${level && 'level'} 
+        ${!avatar && 'initials'} 
+        ${className}
+      `}
+      style={{
+        backgroundImage: `${avatar && `url(${avatar})`}`
+      }}
+      avatar={avatar}
     >
       {renderAvatarContent()}
 
@@ -54,10 +67,10 @@ export const Avatar: React.FC<AvatarProps> = ({
 
 // S T Y L E S
 const StyledAvatar = styled.div`
-  --size: 5rem;
+  --size: 3rem;
   --font-size: .8em;
   --initials-font-size: 2.4em;
-  --level-position: .2em;
+  --level-position: -0.3em;
   --level-size: 2em;
   
   display: flex;
@@ -65,12 +78,17 @@ const StyledAvatar = styled.div`
   align-items: center;
   margin-right: var(--space-lgr);
   border-radius: var(--radius);
+  border: var(--border);
   background-color: var(--color-dark);
   background-position: center center;
   background-size: cover;
-  width: calc(var(--size) / 2);
-  height: calc(var(--size) / 2);
+  width: calc(var(--size) * 0.75);
+  height: calc(var(--size) * 0.75);
   font-size: var(--text-sm);
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
 
   &.rounded {
     border-radius: 100%;
@@ -82,14 +100,14 @@ const StyledAvatar = styled.div`
 
   &.md {
     width: var(--size);
-    height:var(--size);
-    font-size: var(--text-lg);
+    height: var(--size);
+    font-size: var(--text-sm);
   }
 
   &.lg {
     width: calc(var(--size) * 2);
     height: calc(var(--size) * 2);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
   }
 
   &.level {
@@ -125,5 +143,4 @@ const StyledAvatar = styled.div`
     height: 100%;
   }
 `
-
 StyledAvatar.displayName = 'StyledAvatar'

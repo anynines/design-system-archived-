@@ -8,18 +8,25 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
 export interface NotificationProps {
+  className?: string
   icon?: IconName
   msg?: string
   date: number
-  className?: string
+  width?: NotificationWidth
+  style?: React.CSSProperties
 }
+
+// T Y P E S
+export type NotificationWidth = 'block' | 'inline'
 
 // C O M P O N E N T
 export const Notification: React.FC<NotificationProps> = ({
   date = 0,
   className = 'StyledNotification',
   icon,
-  msg
+  msg,
+  width = 'inline',
+  style
 }) => {
   const renderTimeIntervale = (): JSX.Element => {
     const timestampInterval = Math.abs(date - timestamp())
@@ -57,7 +64,10 @@ export const Notification: React.FC<NotificationProps> = ({
   }
 
   return (
-    <StyledNotification className={className}>
+    <StyledNotification
+      style={style}
+      className={`${className} ${width}`}
+    >
       <div className='icon-wrapper'>
         {icon && <Icon icon={icon} />}
       </div>
@@ -75,7 +85,7 @@ export const Notification: React.FC<NotificationProps> = ({
 const StyledNotification = styled.div`
   display: flex;
   margin-bottom: var(--space-fixed-sm);
-  background-color: var(--color-darker);
+  background-color: var(--color-black);
   padding: var(--space-lg);
   color: var(--color-white);
   font-size: var(--text-md);
@@ -108,6 +118,10 @@ const StyledNotification = styled.div`
       opacity: 0.5;
       margin-top: var(--space-xs);
     }
+  }
+
+  &.block {
+    width: 100%;
   }
 
   @media (min-width: 60em) {

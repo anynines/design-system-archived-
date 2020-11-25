@@ -67,7 +67,7 @@ export const StyledSpecialCategories = styled.div`
     overflow: hidden;
     border-radius: var(--radius);
     transition: var(--transition);
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     cursor: pointer;
     padding: 1.4em;
     min-height: 8rem;

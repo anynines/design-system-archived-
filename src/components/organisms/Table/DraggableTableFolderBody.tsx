@@ -38,8 +38,8 @@ const DraggableTableFolderBody: React.FC<DraggableTableFolderBodyProps> = (
 
   const isNewCategoryFound = (index: number): boolean => {
     return index - 1 >= 0
-     && items[index].original.category.toLowerCase()
-     !== items[index - 1].original.category.toLowerCase()
+      && items[index].original.category.toLowerCase()
+      !== items[index - 1].original.category.toLowerCase()
   }
 
   const Folder = SortableElement(
@@ -111,7 +111,7 @@ const StyledBody = styled.tbody`
     display:block;
     text-indent:-99999px;
     line-height:1rem;
-    content:"@";
+    content:'@';
   }
 
   &:last-child {
@@ -119,7 +119,7 @@ const StyledBody = styled.tbody`
       display:block;
       text-indent:-99999px;
       line-height:1rem;
-      content:"@";
+      content:'@';
     }
   }
 
@@ -197,7 +197,7 @@ const StyledBody = styled.tbody`
           filter: brightness(70%);
           width: 4px;
           height: 20px;
-          content: "";
+          content: '';
           border-radius: 2px;
         }
 
@@ -215,7 +215,7 @@ const StyledBody = styled.tbody`
           align-items: center;
           position: absolute;
           right: -15px;
-          border: 2px solid var(--color-darker);
+          border: 2px solid var(--color-black);
           background-color: var(--color-dark);
           cursor: pointer;
           width: 25px;
@@ -245,7 +245,7 @@ const StyledBody = styled.tbody`
         }
       }
       span.black {
-        background-color: var(--color-darker);
+        background-color: var(--color-black);
       }
 
       div.icon-wrapper{
@@ -258,7 +258,7 @@ const StyledBody = styled.tbody`
           height: 20px;
           
           svg {
-            background-color: var(--color-darker);
+            background-color: var(--color-black);
             padding: 5px;
             width: 20px;
             height: 20px;
@@ -290,7 +290,7 @@ const StyledBody = styled.tbody`
           filter: brightness(70%);
           width: 4px;
           height: 20px;
-          content:"";
+          content:'';
           border-radius: 2px;
         }
       }
@@ -301,7 +301,7 @@ const StyledBody = styled.tbody`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
     } 
   }

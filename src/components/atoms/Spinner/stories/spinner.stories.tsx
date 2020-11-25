@@ -1,18 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import { Spinner, SpinnerProps } from '../Spinner';
+import { Spinner, SpinnerProps } from '../Spinner'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
-  title: 'Atoms/Spinner',
+  title: '💧 Atoms/Spinner',
   component: Spinner,
   argTypes: {
     size: {
       control: {
-        type: 'options',
+        type: 'select',
         options: {
-          small: "sm",
-          medium: "md",
-          large: "lg",
+          small: 'sm',
+          medium: 'md',
+          large: 'lg',
         }
       },
     },
@@ -26,21 +27,21 @@ export default {
 }
 
 export const Basic = (args: SpinnerProps) => (
-  <Spinner {...args} />
-);
+  <Wrapper>
+    <Spinner {...args} />
+  </Wrapper>
+)
 
-export const Small = (args: SpinnerProps) => (
-  <Spinner {...args} size={'sm'} />
-);
-export const Medium = (args: SpinnerProps) => (
-  <Spinner {...args} />
-);
-export const Large = (args: SpinnerProps) => (
-  <Spinner {...args} size={'lg'} />
-);
-export const Hidden = (args: SpinnerProps) => (
-  <Spinner {...args} hidden={true} />
-);
-export const Colorised = (args: SpinnerProps) => (
-  <Spinner {...args} color={'#ff1e4c'} />
-);
+export const Sizes = () => (
+  <Wrapper justify='space-around' >
+    <Spinner size={'sm'} />
+    <Spinner size={'md'} />
+    <Spinner size={'lg'} />
+  </Wrapper>
+)
+
+export const CustomColor = () => (
+  <Wrapper>
+    <Spinner color={'#ff1e4c'} />
+  </Wrapper>
+)

@@ -1,11 +1,11 @@
 import React from 'react'
-import { action } from "@storybook/addon-actions"
+import { action } from '@storybook/addon-actions'
 
 import { ImageUploader, ImageUploaderProps } from '../ImageUploader'
 
 
 export default {
-  title: 'Molecules/ImageUploader',
+  title: '🌱 Molecules/ImageUploader',
   component: ImageUploader,
   argTypes: {
     register: {
@@ -15,5 +15,7 @@ export default {
 }
 
 export const Basic = (args: ImageUploaderProps) => (
-  <ImageUploader id='settingsAppLogo' alt='App' label='App' addToFormData={action('Image Upload')} defaultValue='' {...args} />
+  <ImageUploader
+    {...args}
+  />
 )

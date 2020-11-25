@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { Alert, AlertProps } from '../Alert'
 
 export default {
-  title: 'Molecules/Alert',
+  title: '🌱 Molecules/Alert',
   component: Alert,
   argTypes: {
     title: {
@@ -15,11 +15,11 @@ export default {
     },
     type: {
       control: {
-        type: 'options',
+        type: 'select',
         options: {
-          success: "success",
-          error: "error",
-          warning: "warning"
+          success: 'success',
+          error: 'error',
+          warning: 'warning'
         }
       }
     },

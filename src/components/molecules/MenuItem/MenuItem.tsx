@@ -16,6 +16,7 @@ export interface MenuItemProps {
   onClick?: () => void
   children?: JSX.Element
   className?: string
+  style?: React.CSSProperties
 }
 
 // C O M P O N E N T
@@ -27,7 +28,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   icon,
   path,
   onClick,
-  children
+  children,
+  style
 }) => {
   return (
     <>
@@ -38,6 +40,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           label={children}
           className={`menu-item ${className}`}
           id={icon}
+          style={style}
         >
           <NavLink to={`${path}`} className='wrapper' activeClassName='active'>
             {icon && <Icon icon={icon} />}
@@ -55,6 +58,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           icon={icon}
           className={`menu-item ${className}`}
           id={icon}
+          style={style}
         >
           <div
             className={`wrapper ${active && 'active'} ${counter && 'counter'}`}
@@ -83,6 +87,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
   
   display: var(--display);
+  position: relative;
   margin: var(--margin);
   list-style-type: none;
 
@@ -126,7 +131,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
         position: absolute;
         top: -.45rem;
         right: -.45rem;
-        border: 2px solid var(--color-darker);
+        border: 2px solid var(--color-black);
         background-color: var(--color-primary);
         width: .8rem;
         height: .8rem;

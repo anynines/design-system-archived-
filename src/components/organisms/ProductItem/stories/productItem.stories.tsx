@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { ProductItem, ProductItemProps } from '../ProductItem'
 
 export default {
-  title: 'Organisms/ProductItem',
+  title: '🌳 Organisms/ProductItem',
   component: ProductItem,
   argTypes: {
     product: {
@@ -19,10 +19,18 @@ export default {
       },
       price: {
         control: { type: 'number' },
+      },
+      defaultValue: {
+        title: 'Awesome Product',
+        imageUrl: 'https://images.pexels.com/photos/335257/pexels-photo-335257.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+        variations: 'Some text',
+        price: 42.00,
+
       }
     },
     quantity: {
       control: { type: 'number' },
+      defaultValue: 4
     },
     setItemQuantity: {
       control: { type: 'disabled' },
@@ -35,7 +43,7 @@ export default {
     },
     moveIcon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',
@@ -52,6 +60,7 @@ export default {
           'dashboard'
         ],
       },
+      defaultValue: 'heart'
     },
 
   }
@@ -59,8 +68,8 @@ export default {
 
 const SampleProduct =
 {
-  title: "Something very special",
-  imageUrl: "https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  title: 'Something very special',
+  imageUrl: 'https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
   variations: [],
   price: 142
 }
@@ -70,12 +79,12 @@ export const Basic = (args: ProductItemProps) => (
   <ProductItem {...args} deleteItem={action('delete-click')} move={action('move-click')} />
 )
 
-export const Product = (args: ProductItemProps) => (
+export const Product = () => (
   <ProductItem
-    {...args}
     deleteItem={action('delete-click')}
     move={action('move-click')}
     product={SampleProduct}
     quantity={1}
+    moveIcon='heart'
   />
 )

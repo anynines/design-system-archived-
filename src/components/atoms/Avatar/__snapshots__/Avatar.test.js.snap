@@ -3,10 +3,10 @@
 exports[`Avatar component snapshots should match snapshot with image 1`] = `
 <DocumentFragment>
   .c0 {
-  --size: 5rem;
+  --size: 3rem;
   --font-size: .8em;
   --initials-font-size: 2.4em;
-  --level-position: .2em;
+  --level-position: -0.3em;
   --level-size: 2em;
   display: -webkit-box;
   display: -webkit-flex;
@@ -22,12 +22,17 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
   align-items: center;
   margin-right: var(--space-lgr);
   border-radius: var(--radius);
+  border: var(--border);
   background-color: var(--color-dark);
   background-position: center center;
   background-size: cover;
-  width: calc(var(--size) / 2);
-  height: calc(var(--size) / 2);
+  width: calc(var(--size) * 0.75);
+  height: calc(var(--size) * 0.75);
   font-size: var(--text-sm);
+}
+
+.c0:hover {
+  box-shadow: var(--shadow);
 }
 
 .c0.rounded {
@@ -41,13 +46,13 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
 .c0.md {
   width: var(--size);
   height: var(--size);
-  font-size: var(--text-lg);
+  font-size: var(--text-sm);
 }
 
 .c0.lg {
   width: calc(var(--size) * 2);
   height: calc(var(--size) * 2);
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
 }
 
 .c0.level {
@@ -91,7 +96,13 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
 }
 
 <div
-    class="c0 md rounded level false styled-avatar"
+    class="c0 
+        md 
+        rounded 
+        level 
+        false 
+        undefined
+      "
     style="background-image: url(https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);"
   >
     <div
@@ -110,10 +121,10 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
 exports[`Avatar component snapshots should match snapshot with username 1`] = `
 <DocumentFragment>
   .c0 {
-  --size: 5rem;
+  --size: 3rem;
   --font-size: .8em;
   --initials-font-size: 2.4em;
-  --level-position: .2em;
+  --level-position: -0.3em;
   --level-size: 2em;
   display: -webkit-box;
   display: -webkit-flex;
@@ -129,12 +140,17 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
   align-items: center;
   margin-right: var(--space-lgr);
   border-radius: var(--radius);
+  border: var(--border);
   background-color: var(--color-dark);
   background-position: center center;
   background-size: cover;
-  width: calc(var(--size) / 2);
-  height: calc(var(--size) / 2);
+  width: calc(var(--size) * 0.75);
+  height: calc(var(--size) * 0.75);
   font-size: var(--text-sm);
+}
+
+.c0:hover {
+  box-shadow: var(--shadow);
 }
 
 .c0.rounded {
@@ -148,13 +164,13 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
 .c0.md {
   width: var(--size);
   height: var(--size);
-  font-size: var(--text-lg);
+  font-size: var(--text-sm);
 }
 
 .c0.lg {
   width: calc(var(--size) * 2);
   height: calc(var(--size) * 2);
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
 }
 
 .c0.level {
@@ -198,7 +214,13 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
 }
 
 <div
-    class="c0 md rounded level initials styled-avatar"
+    class="c0 
+        md 
+        rounded 
+        level 
+        initials 
+        undefined
+      "
   >
     <div
       class="initials"

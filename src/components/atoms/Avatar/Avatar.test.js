@@ -18,13 +18,17 @@ describe('Avatar component', () => {
 
   describe('snapshots', () => {
     it('should match snapshot with image', () => {
-      component = renderWithProviders(<Avatar size={size} avatar={sampleAvatarUrl} level={level} rounded={rounded} />)
+      component = renderWithProviders(
+        <Avatar size={size} avatar={sampleAvatarUrl} level={level} rounded={rounded} />
+      )
       const { asFragment } = component
       expect(asFragment()).toMatchSnapshot()
     })
 
     it('should match snapshot with username', () => {
-      component = renderWithProviders(<Avatar size={size} userName={sampleUserName} level={level} rounded={rounded} />)
+      component = renderWithProviders(
+        <Avatar size={size} userName={sampleUserName} level={level} rounded={rounded} />
+      )
       const { asFragment } = component
       expect(asFragment()).toMatchSnapshot()
     })
@@ -41,14 +45,18 @@ describe('Avatar component', () => {
 
   describe('texts', () => {
     it('should print correct label', () => {
-      component = renderWithProviders(<Avatar size={size} avatar={sampleAvatarUrl} level={level} />)
+      component = renderWithProviders(
+        <Avatar size={size} avatar={sampleAvatarUrl} level={level} />
+      )
       const { container } = component
       const lvl = container.querySelector('.level')
       expect(Number(lvl.textContent)).toBe(level)
     })
 
     it('should print correct initial', () => {
-      component = renderWithProviders(<Avatar size={size} userName={sampleUserName} level={level} rounded={rounded} />)
+      component = renderWithProviders(
+        <Avatar size={size} userName={sampleUserName} level={level} rounded={rounded} />
+      )
       const { getByTestId } = component
       const init = getByTestId('initials')
       expect(init.textContent).toBe('TS')

@@ -43,7 +43,7 @@ const StyledIconWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: .5rem;
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     padding: 1.35em;
     width: var(--size);
     height: var(--size);

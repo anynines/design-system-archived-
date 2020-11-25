@@ -3,13 +3,13 @@ import React from 'react'
 import { Menu, MenuItemObject, MenuProps } from '../Menu'
 
 export default {
-  title: 'Organisms/Menu',
+  title: '🌳 Organisms/Menu',
   component: Menu,
   argTypes: {
     items: { control: null },
-    selectedItem: { control: { type: "number" } },
+    selectedItem: { control: { type: 'number' } },
     onClick: { control: null },
-    vertical: { control: { type: "boolean" } },
+    vertical: { control: { type: 'boolean' } },
     children: { control: null }
   }
 }

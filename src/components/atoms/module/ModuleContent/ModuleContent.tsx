@@ -16,11 +16,7 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
 
 // S T Y L E S
 const StyledModuleContent = styled.div`
-  padding: var(--space-xs) 0;
+  padding: 0 var(--space-md);
   color: var(--color-white-fix);
-
-  @media (min-width: 60em) {
-    padding: var(--space-md);
-  }
 `
 StyledModuleContent.displayName = 'StyledModuleContent'
