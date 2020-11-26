@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { TableChildrenProps, TableSortDirection } from './Table'
+import { TableChildrenProps, TableSortDirection, TableSortArgs } from './Table'
 import { Icon } from '../../../atoms/Icon/Icon'
 
 // T Y P E S
@@ -15,6 +15,7 @@ export interface CellProps extends TableChildrenProps {
   color?: CellColor
   field?: string
   sortable?: boolean
+  onSort?: (sortArgs: TableSortArgs) => void
 }
 
 // C O M P O N E N T S
@@ -30,7 +31,8 @@ export const Cell: FC<CellProps> = (props) => {
     type,
     value,
     component,
-    color
+    color,
+    onSort
   } = props
 
   const renderValue = (): string | boolean | number | JSX.Element | undefined => {
@@ -54,23 +56,23 @@ export const Cell: FC<CellProps> = (props) => {
   }
 
   const renderSortableIcon = (): JSX.Element | null => {
-    if (sortable && sortedBy === field) {
+    if (onSort && sortable && sortedBy === field) {
       if (sortDirection === 'desc') return <Icon className='inverted' icon='caretDown' />
       if (sortDirection === 'asc') return <Icon icon='caretDown' />
     }
-    if (sortable && sortDirection === null) return <Icon icon='unorderedList' />
+    if (onSort && sortable && sortDirection === null) return <Icon icon='unorderedList' />
     return null
   }
 
   if (type === 'head') {
     return (
       <StyledHeadCell
-        className={`${sortable ? 'head ' : ''}${color || null}`}
-        onClick={handleOnClickCell}
+        className={`${onSort && sortable ? 'head ' : ''}${color || null}`}
+        {...onSort ? { onClick: handleOnClickCell } : {}}
       >
         <div>
           {renderValue()}
-          {renderSortableIcon() }
+          {renderSortableIcon()}
         </div>
       </StyledHeadCell>
     )

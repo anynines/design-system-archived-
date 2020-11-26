@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useCallback } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 
 import { getChildrenWithNewProps } from '../../../../helpers'
@@ -14,6 +14,7 @@ export interface TableProps {
   sortData: TableRow[]
   originalData: TableRow[]
   setSortData: Dispatch<SetStateAction<TableRow[]>>
+  onSort?: (sortArgs: TableSortArgs) => void
 }
 
 export interface TableChildrenProps {
@@ -23,7 +24,15 @@ export interface TableChildrenProps {
   setSortDirection: Dispatch<SetStateAction<TableSortDirection>>
   setSortData: Dispatch<SetStateAction<TableRow[]>>
   setSortedBy: Dispatch<SetStateAction<string>>
-  onSort: (field: string) => void
+  onSort?: (sortArgs: TableSortArgs) => void
+}
+
+export interface TableSortArgs {
+  field: string
+  sortDirection: TableSortDirection
+  setSortData: Dispatch<SetStateAction<TableRow[]>>
+  originalData: TableRow[]
+  sortData: TableRow[]
 }
 
 // H E L P E R S
@@ -35,43 +44,43 @@ export const getCellValue = (row: TableRow, field: string): boolean | number | s
   return ''
 }
 
+export const handleSort = (sortArgs: TableSortArgs): void => {
+  const { field, sortDirection, setSortData, originalData, sortData } = sortArgs
+
+  if (sortDirection === null) {
+    setSortData(originalData)
+    return
+  }
+
+  const newData = [...sortData]
+  let sortedData: TableRow[] = []
+
+  sortedData = newData.sort((firstItem, secondItem) => {
+    const firstValue: string | boolean | number = getCellValue(firstItem, field)
+    const secondValue: string | boolean | number = getCellValue(secondItem, field)
+
+    if (typeof firstValue === 'string' && typeof secondValue === 'string') return firstValue.charCodeAt(0) - secondValue.charCodeAt(0)
+    if (typeof firstValue === 'number' && typeof secondValue === 'number') return Number(firstValue) - Number(secondValue)
+    return 0
+  })
+
+  if (sortDirection === 'desc') sortedData.reverse()
+
+  setSortData(sortedData)
+}
+
 // C O M P O N E N T S
 export const Table: React.FC<TableProps> = (props) => {
   const {
     sortData,
-    originalData,
     setSortData,
+    onSort,
+    originalData,
     children
   } = props
 
   const [currentSortedBy, setCurrentSortedBy] = React.useState<string>('')
   const [currentSortDirection, setCurrentSortDirection] = React.useState<TableSortDirection>(null)
-
-  const handleOnSort = useCallback((field: string): void => {
-    if (currentSortDirection === null) {
-      setSortData(originalData)
-      return
-    }
-    console.log('reached start')
-    const newData = [...sortData]
-    let sortedData: TableRow[] = []
-    sortedData = newData.sort((firstItem, secondItem) => {
-      const firstValue: string | boolean | number = getCellValue(firstItem, field)
-      const secondValue: string | boolean | number = getCellValue(secondItem, field)
-
-      if (typeof firstValue === 'string' && typeof secondValue === 'string') return firstValue.charCodeAt(0) - secondValue.charCodeAt(0)
-      if (typeof firstValue === 'number' && typeof secondValue === 'number') return Number(firstValue) - Number(secondValue)
-      return 0
-    })
-    console.log('reached there almost')
-    if (currentSortDirection === 'desc') sortedData.reverse()
-
-    setSortData(sortedData)
-  }, [originalData, setSortData, sortData, currentSortDirection])
-
-  React.useEffect(() => {
-    handleOnSort(currentSortedBy)
-  }, [currentSortDirection, currentSortedBy, handleOnSort])
 
   const childrenProps: TableChildrenProps = {
     sortData,
@@ -79,9 +88,22 @@ export const Table: React.FC<TableProps> = (props) => {
     sortedBy: currentSortedBy,
     setSortDirection: setCurrentSortDirection,
     setSortData,
-    setSortedBy: setCurrentSortedBy,
-    onSort: handleOnSort
+    setSortedBy: setCurrentSortedBy
   }
+  if (onSort) childrenProps.onSort = onSort
+
+  React.useEffect(() => {
+    if (onSort) {
+      const args: TableSortArgs = {
+        field: currentSortedBy,
+        sortDirection: currentSortDirection,
+        setSortData,
+        originalData,
+        sortData
+      }
+      onSort(args)
+    }
+  }, [onSort, currentSortDirection]) // eslint-disable-line
 
   return (
     <StyledTable>
