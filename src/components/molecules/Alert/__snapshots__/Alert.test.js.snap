@@ -26,10 +26,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 }
 
 .c0 {
-  --position: 2rem;
   --width: 22rem;
-  --z-index: 90;
-  --bg-color: #6aa84f;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -37,15 +34,44 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  position: fixed;
-  top: var(--position);
-  right: var(--position);
   z-index: var(--z-index);
   width: var(--width);
   min-height: 4.5rem;
   font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
+}
+
+.c0.notice {
+  background-color: var(--color-notice);
+}
+
+.c0.notice .alert-icon {
+  background-color: var(--color-notice-dark);
+}
+
+.c0.success {
+  background-color: var(--color-success);
+}
+
+.c0.success .alert-icon {
+  background-color: var(--color-success-dark);
+}
+
+.c0.warning {
+  background-color: var(--color-warning);
+}
+
+.c0.warning .alert-icon {
+  background-color: var(--color-warning-dark);
+}
+
+.c0.error {
+  background-color: var(--color-error);
+}
+
+.c0.error .alert-icon {
+  background-color: var(--color-error-dark);
 }
 
 .c0 .alert-icon {
@@ -66,8 +92,6 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   color: var(--color-white-fix);
   border-bottom-left-radius: .5em;
   border-top-left-radius: .5em;
-  -webkit-filter: brightness(90%);
-  filter: brightness(90%);
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -98,7 +122,6 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   position: relative;
   background-color: var(--bg-color);
   padding: var(--space-md) var(--space-lg);
-  color: var(--color-white-fix);
   border-bottom-right-radius: .5em;
   border-top-right-radius: .5em;
   -webkit-flex: 3;
@@ -106,9 +129,13 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   flex: 3;
 }
 
-.c0 .alert-info h3 {
-  margin: var(--space-sm) 0 0;
+.c0 .alert-info h4,
+.c0 .alert-info p {
   color: var(--color-white-fix);
+}
+
+.c0 .alert-info h4 {
+  margin: var(--space-xs) 0 0;
 }
 
 .c0 .alert-info P {
@@ -147,8 +174,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 }
 
 <div
-    class="c0 AlertWrapper"
-    type="success"
+    class="c0 AlertWrapper success"
   >
     <div
       class="alert-icon"
@@ -173,9 +199,9 @@ exports[`Alert component snapshot should match snapshot 1`] = `
     <div
       class="alert-info"
     >
-      <h3>
+      <h4>
         Test Title
-      </h3>
+      </h4>
       <p>
         Test Description
       </p>

@@ -67,8 +67,8 @@ describe('Alert component', () => {
     })
 
     it('should print correct description', () => {
-      const h3 = container.querySelector('h3')
-      expect(h3.textContent).toBe(title)
+      const h4 = container.querySelector('h4')
+      expect(h4.textContent).toBe(title)
     })
 
     it('should print correct title', () => {
