@@ -2099,6 +2099,17 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
+"@storybook/addon-toolbars@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-6.1.0.tgz#65354060c5130497d545293e8540157cc331e1e4"
+  integrity sha512-1c5W73guqR+SDKJKozRBhTTm0KtAe9upvC02PPmb2E+H3APO+cBxuvRoe4p2tT3v3Jrwnd1EvunkbQrFzakuOA==
+  dependencies:
+    "@storybook/addons" "6.1.0"
+    "@storybook/api" "6.1.0"
+    "@storybook/client-api" "6.1.0"
+    "@storybook/components" "6.1.0"
+    core-js "^3.0.1"
+
 "@storybook/addon-viewport@^6.1.0":
   version "6.1.5"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.1.5.tgz#4b8b39934ed646d18a8c510e3f15a50919278f69"

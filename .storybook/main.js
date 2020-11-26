@@ -25,6 +25,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-viewport/register',
     '@storybook/preset-create-react-app',
+    '@storybook/addon-toolbars',
     'storybook-addon-styled-component-theme/dist/register',
     {
       name: '@storybook/addon-docs',
