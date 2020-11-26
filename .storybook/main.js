@@ -22,10 +22,11 @@ module.exports = {
     return config
   },
   addons: [
+    '@storybook/addons',
     '@storybook/addon-links',
+    '@storybook/addon-toolbars',
     '@storybook/addon-viewport/register',
     '@storybook/preset-create-react-app',
-    'storybook-addon-styled-component-theme/dist/register',
     {
       name: '@storybook/addon-docs',
       options: {

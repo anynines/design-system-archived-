@@ -44,6 +44,32 @@ export const decorators = [
   withThemesProvider(themes, ThemeProvider)
 ]
 
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    defaultValue: 'en',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', right: '🇺🇸', title: 'English' },
+        { value: 'de', right: '🇩🇪', title: 'Deutsch' },
+        { value: 'es', right: '🇪🇸', title: 'Español' },
+      ],
+    },
+  },
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'circlehollow',
+      // array of plain string values or MenuItem shape (see below)
+      items: ['light', 'dark'],
+    },
+  },
+};
+
 export const parameters = {
   actions: { argTypesRegex: "^on.*" },
   viewport: {
