@@ -174,7 +174,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 }
 
 <div
-    class="c0 AlertWrapper success"
+    class="c0 alert-wrapper undefined success"
   >
     <div
       class="alert-icon"
