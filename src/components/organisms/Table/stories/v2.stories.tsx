@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Table, TableRow, getCellValue } from '../v2/Table'
+import { Table, TableRow, getCellValue, handleSort } from '../v2/Table'
 import { Badge } from '../v2/Badge'
 import { Row } from '../v2/Row'
 import { Head } from '../v2/Head'
@@ -20,6 +20,9 @@ export default {
     },
     sortDirection: {
       control: { type: 'TableSortDirection' }
+    },
+    onSort: {
+      control: { type: '(sortArgs: TableSortArgs) => void' }
     }
   }
 }
@@ -238,7 +241,7 @@ export const TableV2: React.FC = () => {
   const [currentData, setCurrentData] = React.useState<TableRow[]>(userData as TableRow[])
 
   return (
-    <Table sortData={currentData} originalData={userData} setSortData={setCurrentData}>
+    <Table sortData={currentData} originalData={userData} setSortData={setCurrentData} onSort={handleSort}>
       <Head>
         <Row>
           <Cell type='head' value='full name' field='employee' sortable color='success' />
