@@ -9,9 +9,9 @@ export interface AlertProps {
   className?: string
   description: string
   onClose: () => void
+  style?: React.CSSProperties
   title: string
   type: AlertType
-  style?: React.CSSProperties
 }
 
 interface AlertStyledProps {
@@ -19,17 +19,17 @@ interface AlertStyledProps {
 }
 
 export const Alert: React.FC<AlertProps> = ({
-  type = 'success',
-  className = 'AlertWrapper',
-  title,
+  className,
   description,
   onClose,
-  style
+  style,
+  title,
+  type = 'success'
 }) => {
   if (!title || !description) return null
   return (
     <AlertWrapper
-      className={`${className} ${type}`}
+      className={`alert-wrapper ${className} ${type}`}
       style={style}
     >
       <div className='alert-icon'>
