@@ -3,14 +3,15 @@ import styled from 'styled-components'
 
 import { Icon } from '../../atoms/Icon/Icon'
 
-export type AlertType = 'success' | 'error' | 'warning'
+export type AlertType = 'success' | 'notice' | 'error' | 'warning'
 
 export interface AlertProps {
-  title: string
+  className?: string
   description: string
   onClose: () => void
+  style?: React.CSSProperties
+  title: string
   type: AlertType
-  className?: string
 }
 
 interface AlertStyledProps {
@@ -18,20 +19,24 @@ interface AlertStyledProps {
 }
 
 export const Alert: React.FC<AlertProps> = ({
-  type = 'success',
-  className = 'AlertWrapper',
-  title,
+  className,
   description,
-  onClose
+  onClose,
+  style,
+  title,
+  type = 'success'
 }) => {
   if (!title || !description) return null
   return (
-    <AlertWrapper type={type} className={className}>
+    <AlertWrapper
+      className={`alert-wrapper ${className} ${type}`}
+      style={style}
+    >
       <div className='alert-icon'>
         <Icon icon='info' />
       </div>
       <div className='alert-info'>
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <p>{description}</p>
         <button onClick={onClose} type='button' className='alert-button'>
           <Icon icon='close' />
@@ -42,22 +47,48 @@ export const Alert: React.FC<AlertProps> = ({
 }
 
 const AlertWrapper = styled.div<AlertStyledProps>`
-  --position: 2rem;
   --width: 22rem;
-  --z-index: 90;
-  --bg-color: ${(props): string => { return props.theme.globals.colors[props.type] }};
 
   display: flex;
   flex-direction: row;
-  position: fixed;
-  top: var(--position);
-  right: var(--position);
   z-index: var(--z-index);
   width: var(--width);
   min-height: 4.5rem;
   font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
+
+  &.notice {
+    background-color: var(--color-notice);
+
+    .alert-icon {
+      background-color: var(--color-notice-dark);
+    }
+  }
+
+  &.success {
+    background-color: var(--color-success);
+
+    .alert-icon {
+      background-color: var(--color-success-dark);
+    }
+  }
+
+  &.warning {
+    background-color: var(--color-warning);
+
+    .alert-icon {
+      background-color: var(--color-warning-dark);
+    }
+  }
+
+  &.error {
+    background-color: var(--color-error);
+
+    .alert-icon {
+      background-color: var(--color-error-dark);
+    }
+  }
 
   .alert-icon {
     display: flex;
@@ -68,7 +99,6 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     color: var(--color-white-fix);
     border-bottom-left-radius: .5em;
     border-top-left-radius: .5em;
-    filter: brightness(90%);
     flex: 1;
     max-width: 4.5rem;
 
@@ -86,14 +116,17 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     position: relative;
     background-color: var(--bg-color);
     padding: var(--space-md) var(--space-lg);
-    color: var(--color-white-fix);
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
     flex: 3;
 
-    h3 {
-      margin: var(--space-sm) 0 0;
+    h4,
+    p {
       color: var(--color-white-fix);
+    }
+
+    h4 {
+      margin: var(--space-xs) 0 0;
     }
 
     P {
