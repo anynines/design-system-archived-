@@ -17,8 +17,17 @@ interface SortableTableColumnProps {
 }
 
 const SortableTableColumn: React.FC<SortableTableColumnProps> = (props) => {
-  const { bodyIndex, rowIndex, cell, cellIndex, getTableColumnColor,
-    getTableColumnType, getTableColumnIconType, isLastColumn = false, color } = props
+  const {
+    bodyIndex,
+    cell,
+    cellIndex,
+    color,
+    getTableColumnColor,
+    getTableColumnType,
+    getTableColumnIconType,
+    isLastColumn = false,
+    rowIndex
+  } = props
 
   const header: TableAccessor | null = cell.column.Header as TableAccessor
   const className: TableColumnCellColor | null = getTableColumnColor(header)

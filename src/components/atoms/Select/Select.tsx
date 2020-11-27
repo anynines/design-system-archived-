@@ -32,7 +32,7 @@ export const Select: React.FC<SelectProps> = ({
   register,
   style,
   values,
-  defaultValue = values[0],
+  defaultValue = values[0]
 }) => {
   const [valueState, setValueState] = React.useState(defaultValue)
   const [isActive, setIsActive] = React.useState(false)
