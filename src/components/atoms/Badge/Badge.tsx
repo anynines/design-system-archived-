@@ -5,14 +5,15 @@ import styled from 'styled-components'
 
 export interface BadgeProps {
   value: string | boolean | number
+  className?: string
 }
 
 // C O M P O N E N T S
 
 export const Badge: React.FC<BadgeProps> = (props) => {
-  const { value } = props
+  const { value, className = null } = props
   return (
-    <StyledBadge>{value.toString()}</StyledBadge>
+    <StyledBadge className={className}>{value.toString()}</StyledBadge>
   )
 }
 
@@ -22,5 +23,5 @@ const StyledBadge = styled.span`
   color: var(--color-light);
   font-size: var(--text-md);
   font-weight: var(--font-weight-bd);
-  border-radius: 5px
+  border-radius: var(--radius);
 `

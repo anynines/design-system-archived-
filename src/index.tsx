@@ -17,6 +17,7 @@ export * from './components/atoms/Select/Select'
 export * from './components/atoms/Spinner/Spinner'
 export * from './components/atoms/ToggleLayout/ToggleLayout'
 export * from './components/atoms/ToggleMode/ToggleMode'
+export * from './components/atoms/Badge/Badge'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
