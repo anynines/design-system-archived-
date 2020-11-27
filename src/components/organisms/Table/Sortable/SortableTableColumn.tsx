@@ -1,8 +1,8 @@
 import React from 'react'
 import { Cell } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
-import TableCell from './TableCell'
+import { CustomTableRow as TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from '../Custom/CustomTable'
+import TableCell from '../Custom/TableCell'
 
 interface SortableTableColumnProps {
   bodyIndex: number

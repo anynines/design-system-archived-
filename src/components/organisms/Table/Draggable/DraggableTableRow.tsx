@@ -3,8 +3,8 @@ import { SortableElement } from 'react-sortable-hoc'
 import { Row, Cell } from 'react-table'
 import styled from 'styled-components'
 
-import { Icon } from '../../atoms/Icon/Icon'
-import { TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
+import { Icon } from '../../../atoms/Icon/Icon'
+import { CustomTableRow as TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon, TableRowColor } from '../Custom/CustomTable'
 import DraggableTableColumn from './DraggableTableColumn'
 
 interface DraggableTableRowProps {

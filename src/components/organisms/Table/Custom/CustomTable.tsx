@@ -2,32 +2,32 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable, useSortBy, Row } from 'react-table'
 
-import { SortableTable, SortableTableProps } from './SortableTable'
-import { DraggableTable, DraggableTableProps } from './DraggableTable'
+import { SortableTable, SortableTableProps } from '../Sortable/SortableTable'
+import { DraggableTable, DraggableTableProps } from '../Draggable/DraggableTable'
 
 // T Y P E S
 export interface RowsDataObject {
-  [key: string]: Row<TableRow>[]
+  [key: string]: Row<CustomTableRow>[]
 }
 
 export interface TableData {
-  [key: string]: TableRow[]
+  [key: string]: CustomTableRow[]
 }
 
-export interface TableRow {
+export interface CustomTableRow {
+  page: string
+  status: string
+  permissions: string
+  languages: string[]
+  views: number
   authors: string[]
+  sections: string[]
   category: string
   id?: number
-  languages: string[]
-  name?: string
-  page: string
-  permissions: string
-  published?: boolean
-  sections: string[]
   slug?: string
-  status: string
   title?: string
-  views: number
+  name?: string
+  published?: boolean
 }
 
 export type TableSortOption = 'draggable' | 'sortable'
@@ -37,8 +37,8 @@ export type TableRowColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' |
 export type TableAccessor = 'page' | 'status' | 'permissions' | 'languages' | 'views' | 'authors' | 'sections' | 'category'
 
 export interface TableColumn {
-  accessor: TableAccessor
   Header: TableAccessor
+  accessor: TableAccessor
   sortType?: string
 }
 
@@ -48,52 +48,52 @@ export type TableColumnCell = 'sticker' | 'icons' | 'icon' | 'link'
 
 export type TableColumnIcon = 'icon'
 
-export interface TableProps {
-  color?: TableRowColor
-  folderLimit?: number
+export interface CustomTableProps {
+  tableHeaderData: TableColumn[]
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  initialPages: TableRow[]
-  pagesPerFolder?: number
-  tableHeaderData: TableColumn[]
   type: TableSortOption
+  initialPages: CustomTableRow[]
+  pagesPerFolder?: number
+  folderLimit?: number
+  color?: TableRowColor
 }
 
-export interface SortableTableDataProps extends TableProps {
+export interface SortableTableDataProps extends CustomTableProps {
   type: 'sortable'
 }
 
-export interface DraggableTableDataProps extends TableProps {
-  disabledCategories: string[]
-  pages?: TableRow[]
-  setPages?: React.Dispatch<React.SetStateAction<TableRow[]>>
+export interface DraggableTableDataProps extends CustomTableProps {
   type: 'draggable'
+  disabledCategories: string[]
+  setPages?: React.Dispatch<React.SetStateAction<CustomTableRow[]>>
+  pages?: CustomTableRow[]
 }
 
 // C O M P O N E N T
-export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> = (props) => {
+export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataProps> = (props) => {
   const {
-    color = 'dark',
-    folderLimit = 5,
+    tableHeaderData,
     getTableColumnColor,
     getTableColumnIconType,
     getTableColumnType,
+    type,
     initialPages,
     pagesPerFolder = 10,
-    tableHeaderData,
-    type
+    folderLimit = 5,
+    color = 'dark'
   } = props
 
-  const [localPages, setLocalPages] = React.useState<TableRow[]>(
-    [] as TableRow[]
+  const [localPages, setLocalPages] = React.useState<CustomTableRow[]>(
+    [] as CustomTableRow[]
   )
 
   React.useEffect(() => {
     if (initialPages.length) setLocalPages(initialPages)
   }, [props, initialPages])
 
-  const decideTableData = (): TableRow[] => {
+  const decideTableData = (): CustomTableRow[] => {
     if (type !== 'draggable') return localPages
 
     props = props as DraggableTableDataProps
@@ -102,8 +102,8 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
     return localPages
   }
 
-  const sortCategoryAlphabeticallyAndControlLimits = (pagesDataObject: TableData): TableRow[] => {
-    let pagesDataArray: [string, TableRow[]][] = Object.entries(pagesDataObject)
+  const sortCategoryAlphabeticallyAndControlLimits = (pagesDataObject: TableData): CustomTableRow[] => {
+    let pagesDataArray: [string, CustomTableRow[]][] = Object.entries(pagesDataObject)
       .sort((a, b) => {
         const categoryA: string = a[0].toUpperCase()
         const categoryB: string = b[0].toUpperCase()
@@ -117,7 +117,7 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
       return pagesArray
     })
 
-    let sortedPages: TableRow[] = []
+    let sortedPages: CustomTableRow[] = []
     pagesDataArray.forEach((pages) => {
       sortedPages = [...sortedPages, ...pages[1]]
     })
@@ -126,11 +126,11 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
   }
 
   const {
-    headerGroups,
     getTableProps,
     getTableBodyProps,
-    prepareRow,
-    rows
+    headerGroups,
+    rows,
+    prepareRow
   } = useTable({ columns: tableHeaderData, data: decideTableData() }, useSortBy)
 
   let tableProps: SortableTableProps | DraggableTableProps
@@ -186,7 +186,7 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
 }
 
 const StyledTable = styled.div`
-  background-color: var(--color-black);
+  background-color: var(--color-darker);
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -225,12 +225,12 @@ const StyledTable = styled.div`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:'@';
+        content:"@";
       }
 
       tr{
         th {
-          background-color: var(--color-black);
+          background-color: var(--color-darker);
 
           &:first-child {
             padding-left: 1rem;
@@ -251,7 +251,7 @@ const StyledTable = styled.div`
               transform: rotate(-180deg);
             }
             svg {
-              background-color: var(--color-black);
+              background-color: var(--color-darker);
               padding: 5px;
               width: 20px;
               height: 20px;
@@ -274,7 +274,7 @@ const StyledTable = styled.div`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:'@';
+        content:"@";
       }
 
       &:last-child {
@@ -282,7 +282,7 @@ const StyledTable = styled.div`
           display:block;
           text-indent:-99999px;
           line-height:1rem;
-          content:'@';
+          content:"@";
         }
       }
 
@@ -317,6 +317,48 @@ const StyledTable = styled.div`
               display: flex;
               justify-content: center;
               align-items: center;
+            }
+          }
+
+          span.blue, span.black {
+            background-color: rgb(59, 185, 255);
+            padding: 2px 5px;
+            font-size: var(--text-md);
+            font-weight: var(--font-weight-bd);
+            border-radius: 5px;
+
+            svg {
+              margin-right: 5px;
+            }
+          }
+          span.black {
+            background-color: var(--color-darker);
+          }
+
+          div.icon-wrapper{
+            display: flex;
+            flex-direction: row;
+
+            span {
+              margin-right: 5px;
+              width: 20px;
+              height: 20px;
+              
+              svg {
+                background-color: var(--color-darker);
+                padding: 5px;
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+              }
+            }
+
+            img.icon {
+              display: block;
+              margin-right: 2px;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
             }
           }
 
@@ -363,7 +405,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content: '';
+              content: "";
               border-radius: 2px;
             }
 
@@ -381,7 +423,7 @@ const StyledTable = styled.div`
               align-items: center;
               position: absolute;
               right: -15px;
-              border: 2px solid var(--color-black);
+              border: 2px solid var(--color-darker);
               background-color: var(--color-dark);
               cursor: pointer;
               width: 25px;
@@ -399,47 +441,7 @@ const StyledTable = styled.div`
             }
           }
 
-          span.blue, span.black {
-            background-color: rgb(59, 185, 255);
-            padding: 2px 5px;
-            font-size: var(--text-md);
-            font-weight: var(--font-weight-bd);
-            border-radius: 5px;
-
-            svg {
-              margin-right: 5px;
-            }
-          }
-          span.black {
-            background-color: var(--color-black);
-          }
-
-          div.icon-wrapper{
-            display: flex;
-            flex-direction: row;
-
-            span {
-              margin-right: 5px;
-              width: 20px;
-              height: 20px;
-              
-              svg {
-                background-color: var(--color-black);
-                padding: 5px;
-                width: 20px;
-                height: 20px;
-                border-radius: 5px;
-              }
-            }
-
-            img.icon {
-              display: block;
-              margin-right: 2px;
-              width: 20px;
-              height: 20px;
-              border-radius: 50%;
-            }
-          }
+          
         }
 
         &.draggable {
@@ -456,7 +458,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content:'';
+              content:"";
               border-radius: 2px;
             }
           }
@@ -467,11 +469,11 @@ const StyledTable = styled.div`
             display:block;
             text-indent:-99999px;
             line-height:1rem;
-            content:'@';
+            content:"@";
           }
         } 
       }
     }
   }`
 
-export default Table
+export default CustomTable

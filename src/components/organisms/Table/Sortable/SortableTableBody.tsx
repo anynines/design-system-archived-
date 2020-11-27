@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, TableBodyProps } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
+import { CustomTableRow as TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from '../Custom/CustomTable'
 import SortableTableRow from './SortableTableRow'
 
 interface SortableTableBodyProps {

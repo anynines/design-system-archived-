@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Icon, IconName } from '../../atoms/Icon/Icon'
-import { TableColumnIcon } from './Table'
+import { Icon, IconName } from '../../../atoms/Icon/Icon'
+import { TableColumnIcon } from './CustomTable'
 
 interface TableIconProps {
   icon: string
