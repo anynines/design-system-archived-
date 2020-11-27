@@ -9,25 +9,25 @@ import { InputIcon, InputIconProps } from '../../../atoms/InputIcon/InputIcon'
 
 // I N T E R F A C E S
 export interface TextInputProps {
-  name: string
-  register?: (validationRules: ValidationOptions) => void
-  value?: string
-  label: string
-  pattern?: RegExp
-  icon?: IconName
-  color?: string
-  errors?: NestDataObject<Record<string, string>, FieldError>
-  errorMessage?: string
-  onChange?: (newValue: string) => void
-  onFocusChange?: (isFocus: boolean) => void
   autoComplete?: 'on' | 'off'
   autoFocus?: boolean
+  color?: string
   className?: string
+  errorMessage?: string
+  errors?: NestDataObject<Record<string, string>, FieldError>
   getValues?: any // eslint-disable-line
-  setValue?: any // eslint-disable-line
-  watch?: any //eslint-disable-line
   handleSubmit?: (callback: OnSubmit<any>) => (e?: React.BaseSyntheticEvent) => Promise<void> // eslint-disable-line
+  icon?: IconName
+  label: string
+  name: string
+  onChange?: (newValue: string) => void
+  onFocusChange?: (isFocus: boolean) => void
+  pattern?: RegExp
+  register?: (validationRules: ValidationOptions) => void
+  setValue?: any // eslint-disable-line
   style?: React.CSSProperties
+  value?: string
+  watch?: any //eslint-disable-line
 }
 type TextInput = React.FC<TextInputProps>
   & { Prepend: React.FC<InputIconProps> }
@@ -35,23 +35,23 @@ type TextInput = React.FC<TextInputProps>
 
 // C O M P O N E N T
 export const TextInput: TextInput = ({
-  name,
-  register,
-  watch,
-  value = '',
-  label,
-  errors = {},
-  pattern = /.*/,
-  icon,
-  errorMessage,
-  onChange,
-  onFocusChange,
   autoComplete = 'on',
   autoFocus = false,
   children,
   className = 'StyledInput',
+  errorMessage,
+  errors = {},
+  icon,
+  label,
+  name,
+  onChange,
+  onFocusChange,
+  pattern = /.*/,
+  register,
   setValue,
-  style
+  style,
+  value = '',
+  watch
 }) => {
   const [isFocus, setIsFocus] = React.useState(autoFocus)
   const [localValue, setLocalValue] = React.useState<string>(value || '')

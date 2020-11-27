@@ -8,17 +8,17 @@ import { DayPickerSingleDateController, DayPickerSingleDateControllerShape } fro
 
 // I N T E R F A C E S
 export type DatePickerProps = Omit<DayPickerSingleDateControllerShape, 'onDateChange' | 'renderMonthText' | 'date'> & {
-  onDateChange: (dateAsTimestamp: number) => void
-  date?: number
   className?: string
+  date?: number
+  onDateChange: (dateAsTimestamp: number) => void
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
-  onDateChange: onDateChangeProps,
-  date,
-  numberOfMonths = 1,
   className = '',
+  date,
   focused = true,
+  numberOfMonths = 1,
+  onDateChange: onDateChangeProps,
   ...rest
 }) => {
   const onDateChange = (updatedDate: Moment | null): void => {

@@ -4,18 +4,18 @@ import styled from 'styled-components'
 // I N T E R F A C E S
 export type sizeType = 'sm' | 'md'
 export interface UserInfoProps {
+  className?: string
+  size?: sizeType
   userName: string
   userGroup: string
-  size?: sizeType
-  className?: string
 }
 
 // C O M P O N E N T
 export const UserInfo: React.FC<UserInfoProps> = ({
   className = 'StyledUserInfo',
+  size,
   userName,
-  userGroup,
-  size
+  userGroup
 }) => {
   return (
     <StyledUserInfo size={size} className={className}>

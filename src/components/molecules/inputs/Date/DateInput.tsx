@@ -25,16 +25,16 @@ const DATE_REGEX = /^(?:(?:(?:(?:0[1-9]|1[0-9]|2[0-8])[/](?:0[1-9]|1[012]))|(?:(
 // C O M P O N E N T
 export const DateInput: React.FC<DateInputProps> = (props) => {
   const {
-    date,
-    pattern = DATE_REGEX,
-    onDateChange,
+    children,
     className = '',
+    date,
     datePickerOptions,
-    register,
     getValues,
-    setValue,
     name,
-    children
+    onDateChange,
+    pattern = DATE_REGEX,
+    setValue,
+    register
   } = props
 
   const timestampToDDMMYYY = (timestamp: number): string => {

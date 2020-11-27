@@ -22,16 +22,16 @@ export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'da
 // C O M P O N E N T
 export const Input: Input = (props) => {
   const {
+    children,
+    errors,
+    getValues,
+    handleSubmit,
     name,
     label,
-    register,
-    handleSubmit,
-    errors,
-    watch,
     pattern,
-    getValues,
+    register,
     setValue,
-    children
+    watch
   } = props
 
   const renderInput = (): JSX.Element => {
