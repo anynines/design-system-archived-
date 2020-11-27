@@ -8,35 +8,35 @@ import { UserNav, UserNavProps } from '../UserNav/UserNav'
 import { Mode } from '../../../designSystemInstance/types/types'
 
 export interface AdminNavigationProps {
-  logoSrc: string
-  links: AdminNavigationLink[]
-  onLinkClick: (link: string) => void
   activeLink: string
-  userInfo: Omit<UserNavProps, 'mode' | 'setMode' | 'logoutUser' | 'className'>
-  mode: Mode
-  setMode: (mode: Mode) => void
-  logoutUser: () => void
   className?: string
+  links: AdminNavigationLink[]
+  logoSrc: string
+  logoutUser: () => void
+  mode: Mode
+  onLinkClick: (link: string) => void
+  setMode: (mode: Mode) => void
   style?: React.CSSProperties
+  userInfo: Omit<UserNavProps, 'mode' | 'setMode' | 'logoutUser' | 'className'>
 }
 
 export interface AdminNavigationLink {
-  id: string
   children: JSX.Element
   icon?: IconName
+  id: string
 }
 
 export const AdminNavigation: React.FC<AdminNavigationProps> = ({
-  logoSrc,
-  links,
-  onLinkClick,
   activeLink,
-  userInfo,
-  mode,
-  setMode,
-  logoutUser,
   className,
-  style
+  links,
+  logoSrc,
+  logoutUser,
+  mode,
+  onLinkClick,
+  setMode,
+  style,
+  userInfo
 }) => {
   return (
     <StyledAdminNavigation style={style} className={className}>

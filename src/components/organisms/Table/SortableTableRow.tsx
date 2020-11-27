@@ -7,27 +7,27 @@ import SortableTableColumn from './SortableTableColumn'
 
 interface SortableTableRowProps {
   bodyIndex: number
-  rowIndex: number
-  row?: Row<TableRow>
-  type?: string
   category?: string
+  color: TableRowColor
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  color: TableRowColor
+  row?: Row<TableRow>
+  rowIndex: number
+  type?: string
 }
 
 const SortableTableRow: React.FC<SortableTableRowProps> = (props) => {
   const {
     bodyIndex,
-    rowIndex,
-    row,
-    type = 'cell',
     category,
+    color,
     getTableColumnColor,
     getTableColumnType,
     getTableColumnIconType,
-    color
+    row,
+    rowIndex,
+    type = 'cell'
   } = props
 
   if (type === 'category') {

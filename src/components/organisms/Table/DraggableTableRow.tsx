@@ -8,25 +8,25 @@ import { TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableCo
 import DraggableTableColumn from './DraggableTableColumn'
 
 interface DraggableTableRowProps {
-  row: Row<TableRow>
-  key: string
-  index: number
-  isDraggable: boolean
+  color?: TableRowColor
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
+  index: number
+  isDraggable: boolean
   isFolderDraggable: boolean
+  key: string
+  row: Row<TableRow>
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
-  color?: TableRowColor
 }
 
 interface DraggableTableRowCategoryProps {
-  row: Row<TableRow>
   idx: string
   key: string
   index: number
   isFolderDraggable: boolean
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
+  row: Row<TableRow>
 }
 
 const DraggableTableRowCategory: React.FC<DraggableTableRowCategoryProps> = (props) => {

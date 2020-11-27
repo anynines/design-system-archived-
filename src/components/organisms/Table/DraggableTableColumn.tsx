@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import { Cell } from 'react-table'
 
 import { TableRow, TableAccessor, TableColumnCell, TableColumnIcon, TableColumnCellColor, TableRowColor } from './Table'
@@ -7,18 +7,18 @@ import TableCell from './TableCell'
 interface DraggableTableColumnProps {
   cell: Cell<TableRow, any> // eslint-disable-line @typescript-eslint/no-explicit-any
   cellIndex: number
+  color?: TableRowColor
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   isLastColumn: boolean
-  color?: TableRowColor
 }
 
 const DraggableTableColumn: React.FC<DraggableTableColumnProps> = (props) => {
   const {
     cell,
-    getTableColumnColor, getTableColumnType, getTableColumnIconType, isLastColumn = false,
-    color
+    color,
+    getTableColumnColor, getTableColumnType, getTableColumnIconType, isLastColumn = false
   } = props
 
   let header: TableAccessor | null = cell.column.Header as TableAccessor

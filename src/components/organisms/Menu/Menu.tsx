@@ -10,21 +10,21 @@ export interface MenuItemObject extends MenuItemProps {
 }
 
 export interface MenuProps {
-  items: MenuItemObject[]
-  selectedItem?: string | null
-  onClick?: (itemId: string) => void
-  vertical?: boolean
   className?: string
+  items: MenuItemObject[]
+  onClick?: (itemId: string) => void
+  selectedItem?: string | null
+  vertical?: boolean
 }
 
 // C O M P O N E N T
 export const Menu: React.FC<MenuProps> = ({
+  children,
   className = 'StyledMenu',
-  vertical = false,
-  selectedItem,
   items,
   onClick,
-  children
+  selectedItem,
+  vertical = false
 }) => {
   const menuOutput = items.map((item) => {
     if (onClick) {

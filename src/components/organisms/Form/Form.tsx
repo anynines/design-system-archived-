@@ -9,9 +9,9 @@ export interface FormProps {
 }
 
 export const Form: React.FC<FormProps> = ({
+  children,
   className = 'StyledForm',
-  onSubmit: onSubmitCallback,
-  children
+  onSubmit: onSubmitCallback
 }) => {
   const { register, handleSubmit, errors, watch, getValues, setValue } = useForm()
   const formProps = { register, watch, getValues, errors, setValue }
