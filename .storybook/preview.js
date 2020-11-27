@@ -1,6 +1,8 @@
-import { withThemesProvider } from 'storybook-addon-styled-component-theme'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import ThemeProvider from '../src/theme/theme-provider'
+import { GlobalStyle } from '../src/designSystemInstance/theme/GlobalStyle'
 import { getToggledTheme } from '../src/designSystemInstance/designSystemInstanceHelpers'
 
 // V A R I A B L E S
@@ -18,31 +20,6 @@ export const lightTheme = {
   globals
 }
 
-const themes = [
-  darkTheme,
-  getToggledTheme(lightTheme)
-]
-
-const customViewports = {
-  breakpointDown: {
-    name: 'Breakpoint Down',
-    styles: {
-      width: '59em',
-      height: '34em',
-    },
-  },
-  breakpointUp: {
-    name: 'Breakpoint Up',
-    styles: {
-      width: '80em',
-      height: '42em',
-    },
-  }
-}
-
-export const decorators = [
-  withThemesProvider(themes, ThemeProvider)
-]
 export const globalTypes = {
   locale: {
     name: 'Locale',
@@ -60,14 +37,46 @@ export const globalTypes = {
   theme: {
     name: 'Theme',
     description: 'Global theme for components',
-    defaultValue: 'light',
+    defaultValue: 'dark',
     toolbar: {
       icon: 'circlehollow',
-      // array of plain string values or MenuItem shape (see below)
-      items: ['light', 'dark'],
+      items: [
+        { value: darkTheme, title: 'dark', key: 'darkTheme' },
+        { value: getToggledTheme(lightTheme), title: 'light', key: 'lightTheme' },
+      ],
     },
   },
-};
+}
+
+const withThemeProvider = (Story, context) => {
+  const theme = context.globals.theme
+
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Story {...context} />
+    </ThemeProvider>
+  )
+}
+
+export const decorators = [withThemeProvider]
+
+const customViewports = {
+  breakpointDown: {
+    name: 'Breakpoint Down',
+    styles: {
+      width: '59em',
+      height: '34em',
+    },
+  },
+  breakpointUp: {
+    name: 'Breakpoint Up',
+    styles: {
+      width: '80em',
+      height: '42em',
+    },
+  }
+}
 
 export const parameters = {
   actions: { argTypesRegex: "^on.*" },
