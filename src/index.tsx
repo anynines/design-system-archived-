@@ -35,6 +35,8 @@ export * from './components/atoms/Table/TFoot'
 export * from './components/atoms/Table/THead'
 export * from './components/atoms/Table/THeadCell'
 export * from './components/atoms/Table/TRow'
+export * from './components/atoms/ToggleMode/ToggleMode'
+export * from './components/atoms/Badge/Badge'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'

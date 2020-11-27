@@ -16,10 +16,10 @@ const StyledBody = styled.tbody`
     tr {
       &:last-child {
         td:first-child {
-          border-bottom-left-radius: 5px;
+          border-bottom-left-radius: var(--radius);
         }
         td:last-child {
-          border-bottom-right-radius: 5px;
+          border-bottom-right-radius: var(--radius);
         }
       } 
     }
