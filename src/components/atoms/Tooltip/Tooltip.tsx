@@ -3,20 +3,20 @@ import styled from 'styled-components'
 
 // I N T E R F A C E
 export interface TooltipProps {
-  text?: string
-  position?: string
   className?: string
+  position?: string
   style?: React.CSSProperties
+  text?: string
 }
 
 // C O M P O N E N T
 export const Tooltip: React.FC<TooltipProps> = (props) => {
   const {
-    text,
-    position = 'bottom',
     children,
     className,
-    style
+    position = 'bottom',
+    style,
+    text
   } = props
 
   return (

@@ -4,11 +4,11 @@ import styled from 'styled-components'
 // I N T E R F A C E
 export interface AvatarProps {
   avatar?: string
-  userName?: string
-  size?: string
-  rounded?: boolean
-  level?: number
   className?: string
+  level?: number
+  rounded?: boolean
+  size?: string
+  userName?: string
 }
 
 export const getInitials = (userName: string): string => {
@@ -24,13 +24,13 @@ export const getInitials = (userName: string): string => {
 
 // C O M P O N E N T
 export const Avatar: React.FC<AvatarProps> = ({
-  userName = '',
-  size = 'sm',
-  rounded = false,
-  level,
   avatar,
+  children,
   className,
-  children
+  level,
+  rounded = false,
+  size = 'sm',
+  userName = ''
 }) => {
   const renderAvatarContent = (): React.ReactNode => {
     if (children) {

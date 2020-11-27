@@ -8,8 +8,8 @@ export interface ModuleHeaderProps {
 
 // C O M P O N E N T
 export const ModuleHeader: React.FC<ModuleHeaderProps> = ({
-  className = 'StyledModuleHeader',
-  children
+  children,
+  className = 'StyledModuleHeader'
 }) => {
   return (
     <StyledModuleHeader className={className}>

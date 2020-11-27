@@ -3,21 +3,21 @@ import styled from 'styled-components'
 
 // I N T E R F A C E
 export interface ModuleFooterProps {
-  totalItems: number
-  itemLabel: string
-  totalPrice: number
-  priceLabel: string
   className?: string
+  itemLabel: string
+  priceLabel: string
+  totalItems: number
+  totalPrice: number
 }
 
 // C O M P O N E N T
 export const ModuleFooter: React.FC<ModuleFooterProps> = ({
+  children,
   className = 'StyledModuleFooter',
-  totalItems,
   itemLabel,
-  totalPrice,
   priceLabel,
-  children
+  totalItems,
+  totalPrice
 }) => {
   const getItemsIndicator = (): JSX.Element => {
     if (totalItems > 0) {

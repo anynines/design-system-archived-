@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface InputLabelProps {
-  htmlFor: string
   className?: string
+  htmlFor: string
 }
 
 // C O M P O N E N T
 export const InputLabel: React.FC<InputLabelProps> = ({
-  htmlFor,
   children,
-  className
+  className,
+  htmlFor
 }) => {
   return (
     <StyledInputLabel

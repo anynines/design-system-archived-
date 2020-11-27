@@ -5,10 +5,10 @@ import SpinnerIcon from './assets/spinner'
 
 // I N T E R F A C E S
 export interface SpinnerProps {
-  size?: SpinnerSize
-  hidden?: boolean
   className?: string
   color?: string
+  hidden?: boolean
+  size?: SpinnerSize
   style?: React.CSSProperties
 }
 interface StyledSpinnerProps extends SpinnerProps {
@@ -18,10 +18,10 @@ export type SpinnerSize = 'sm' | 'md' | 'lg'
 
 // C O M P O N E N T
 export const Spinner: React.FC<SpinnerProps> = ({
-  size = 'md',
-  hidden = false,
   className = 'StyledSpinner',
   color = 'var(--color-primary)',
+  hidden = false,
+  size = 'md',
   style
 }) => {
   const getSpinnerSize = (): number => {

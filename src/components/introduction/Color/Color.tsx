@@ -5,16 +5,16 @@ import styled from 'styled-components'
 export interface ColorProps {
   color?: string
   colorLabel?: string
-  textColor?: string
   mainColor?: boolean
+  textColor?: string
 }
 
 // C O M P O N E N T
 export const Color: React.FC<ColorProps> = ({
   color = 'var(--color-black)',
   colorLabel = 'Some black',
-  textColor = 'var(--color-white)',
-  mainColor = false
+  mainColor = false,
+  textColor = 'var(--color-white)'
 }) => {
   return (
     <StyledColor

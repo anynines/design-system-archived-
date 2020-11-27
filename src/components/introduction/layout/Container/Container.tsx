@@ -3,18 +3,18 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface ContainerProps {
+  className?: string
   fluid?: boolean
   id?: string
-  className?: string
   style?: React.CSSProperties
 }
 
 // C O M P O N E N T
 export const Container: React.FC<ContainerProps> = ({
-  id,
+  children,
   className,
-  style,
-  children
+  id,
+  style
 }) => {
   return (
     <StyledContainer

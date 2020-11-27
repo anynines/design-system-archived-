@@ -3,17 +3,17 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface InputIconProps {
-  onClick?: () => void
-  clickable?: boolean
   className?: string
+  clickable?: boolean
+  onClick?: () => void
 }
 
 // C O M P O N E N T
 export const InputIcon: React.FC<InputIconProps> = ({
+  children,
   className = 'StyledTextInputPrepend',
   clickable = false,
-  onClick,
-  children
+  onClick
 }) => {
   const onPrependClick = (): void => {
     if (onClick !== undefined) {

@@ -7,19 +7,19 @@ import { Icon } from '../Icon/Icon'
 
 // I N T E R F A C E S
 export interface CaretLinkProps {
-  text: string
-  path: string
   className?: string
+  path: string
   style?: React.CSSProperties
+  text: string
 }
 
 // C O M P O N E N T
 export const CaretLink: React.FC<CaretLinkProps> = ({
-  text,
-  path,
-  className,
   children,
-  style
+  className,
+  path,
+  style,
+  text
 }) => {
   return (
     <StyledCaretLink

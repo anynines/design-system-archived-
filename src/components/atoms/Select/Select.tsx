@@ -12,27 +12,27 @@ import { Icon, IconName } from '../Icon/Icon'
 
 // I N T E R F A C E
 export interface SelectProps {
-  name: string
-  label: string
-  values: (string | number)[]
-  icon?: IconName
+  className?: string
   defaultValue?: string
+  icon?: IconName
+  label: string
+  name: string
   onChange?: (value: string) => void
   register?: (validationRules: ValidationOptions) => void
-  className?: string
   style?: React.CSSProperties
+  values: (string | number)[]
 }
 
 export const Select: React.FC<SelectProps> = ({
-  values,
-  name,
-  label,
-  register,
-  onChange,
-  icon,
-  defaultValue = values[0],
   className,
-  style
+  icon,
+  label,
+  name,
+  onChange,
+  register,
+  style,
+  values,
+  defaultValue = values[0],
 }) => {
   const [valueState, setValueState] = React.useState(defaultValue)
   const [isActive, setIsActive] = React.useState(false)

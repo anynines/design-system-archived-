@@ -121,8 +121,8 @@ import Wishlist from './assets/wishlist'
 
 // I N T E R F A C E S
 export interface IconProps {
-  icon?: IconName
   className?: string
+  icon?: IconName
   style?: React.CSSProperties
 }
 
@@ -293,8 +293,8 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 
 // C O M P O N E N T
 export const Icon: React.FC<IconProps> = ({
-  icon = 'menu',
   className,
+  icon = 'menu',
   style
 }) => {
   return (

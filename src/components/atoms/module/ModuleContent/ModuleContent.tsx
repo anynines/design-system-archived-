@@ -8,8 +8,8 @@ export interface ModuleContentProps {
 
 // C O M P O N E N T
 export const ModuleContent: React.FC<ModuleContentProps> = ({
-  className = 'StyledModuleContent',
-  children
+  children,
+  className = 'StyledModuleContent'
 }) => {
   return <StyledModuleContent className={className}>{children}</StyledModuleContent>
 }
