@@ -1,6 +1,5 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { GlobalStyle } from '../src/designSystemInstance/theme/GlobalStyle'
 import { getToggledTheme } from '../src/designSystemInstance/designSystemInstanceHelpers'
@@ -8,6 +7,7 @@ import { getToggledTheme } from '../src/designSystemInstance/designSystemInstanc
 // V A R I A B L E S
 import globals from '../src/theme/globals.json'
 
+// T H E M E S
 export const darkTheme = {
   name: 'dark',
   background: globals.colors.black,
@@ -20,6 +20,29 @@ export const lightTheme = {
   globals
 }
 
+const getTheme = (theme) => {
+  if (theme == 'dark') {
+    return darkTheme
+  }
+  if (theme == 'light') {
+    return getToggledTheme(lightTheme)
+  }
+}
+
+const withThemeProvider = (Story, context) => {
+  const theme = getTheme(context.globals.theme)
+
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Story {...context} />
+    </ThemeProvider>
+  )
+}
+
+export const decorators = [withThemeProvider]
+
+// G L O B A L T Y P E S   A N D   T O O L B A R 
 export const globalTypes = {
   locale: {
     name: 'Locale',
@@ -41,25 +64,12 @@ export const globalTypes = {
     toolbar: {
       icon: 'circlehollow',
       items: [
-        { value: darkTheme, title: 'dark', key: 'darkTheme' },
-        { value: getToggledTheme(lightTheme), title: 'light', key: 'lightTheme' },
+        { value: 'dark', title: 'dark', icon: 'circle' },
+        { value: 'light', title: 'light' },
       ],
     },
   },
 }
-
-const withThemeProvider = (Story, context) => {
-  const theme = context.globals.theme
-
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Story {...context} />
-    </ThemeProvider>
-  )
-}
-
-export const decorators = [withThemeProvider]
 
 const customViewports = {
   breakpointDown: {
@@ -80,6 +90,30 @@ const customViewports = {
 
 export const parameters = {
   actions: { argTypesRegex: "^on.*" },
+  backgrounds: {
+    values: [
+      {
+        name: 'white',
+        value: globals.colors.white,
+      },
+      {
+        name: 'light',
+        value: globals.colors.light,
+      },
+      {
+        name: 'dark',
+        value: globals.colors.dark,
+      },
+      {
+        name: 'black',
+        value: globals.colors.black,
+      },
+      {
+        name: 'primary',
+        value: globals.colors.primary,
+      },
+    ],
+  },
   viewport: {
     viewports: { ...customViewports, ...INITIAL_VIEWPORTS }
   },
