@@ -3,17 +3,17 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface RowProps {
-  id?: string
   className?: string
+  id?: string
   style?: React.CSSProperties
 }
 
 // C O M P O N E N T
 export const Row: React.FC<RowProps> = ({
-  id,
+  children,
   className,
-  style,
-  children
+  id,
+  style
 }) => {
   return (
     <StyledRow

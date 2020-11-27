@@ -15,19 +15,19 @@ export interface TableData {
 }
 
 export interface TableRow {
-  page: string
-  status: string
-  permissions: string
-  languages: string[]
-  views: number
   authors: string[]
-  sections: string[]
   category: string
   id?: number
-  slug?: string
-  title?: string
+  languages: string[]
   name?: string
+  page: string
+  permissions: string
   published?: boolean
+  sections: string[]
+  slug?: string
+  status: string
+  title?: string
+  views: number
 }
 
 export type TableSortOption = 'draggable' | 'sortable'
@@ -37,8 +37,8 @@ export type TableRowColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' |
 export type TableAccessor = 'page' | 'status' | 'permissions' | 'languages' | 'views' | 'authors' | 'sections' | 'category'
 
 export interface TableColumn {
-  Header: TableAccessor
   accessor: TableAccessor
+  Header: TableAccessor
   sortType?: string
 }
 
@@ -49,15 +49,15 @@ export type TableColumnCell = 'sticker' | 'icons' | 'icon' | 'link'
 export type TableColumnIcon = 'icon'
 
 export interface TableProps {
-  tableHeaderData: TableColumn[]
+  color?: TableRowColor
+  folderLimit?: number
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  type: TableSortOption
   initialPages: TableRow[]
   pagesPerFolder?: number
-  folderLimit?: number
-  color?: TableRowColor
+  tableHeaderData: TableColumn[]
+  type: TableSortOption
 }
 
 export interface SortableTableDataProps extends TableProps {
@@ -65,24 +65,24 @@ export interface SortableTableDataProps extends TableProps {
 }
 
 export interface DraggableTableDataProps extends TableProps {
-  type: 'draggable'
   disabledCategories: string[]
-  setPages?: React.Dispatch<React.SetStateAction<TableRow[]>>
   pages?: TableRow[]
+  setPages?: React.Dispatch<React.SetStateAction<TableRow[]>>
+  type: 'draggable'
 }
 
 // C O M P O N E N T
 export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> = (props) => {
   const {
-    tableHeaderData,
+    color = 'dark',
+    folderLimit = 5,
     getTableColumnColor,
     getTableColumnIconType,
     getTableColumnType,
-    type,
     initialPages,
     pagesPerFolder = 10,
-    folderLimit = 5,
-    color = 'dark'
+    tableHeaderData,
+    type
   } = props
 
   const [localPages, setLocalPages] = React.useState<TableRow[]>(
@@ -126,11 +126,11 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
   }
 
   const {
+    headerGroups,
     getTableProps,
     getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow
+    prepareRow,
+    rows
   } = useTable({ columns: tableHeaderData, data: decideTableData() }, useSortBy)
 
   let tableProps: SortableTableProps | DraggableTableProps

@@ -7,32 +7,32 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 // I N T E R F A C E
 export interface ProductItemProps {
   className?: string
-  quantity: number
+  deleteItem: () => void
+  move?: () => void
+  moveIcon: IconName
   product: {
     title: string
     imageUrl: string
     variations: string[]
     price: number
   } | undefined
+  quantity: number
   setItemQuantity?: (itemQuantity: number) => void
-  deleteItem: () => void
-  move?: () => void
-  moveIcon: IconName
 }
 
 // C O M P O N E N T
 export const ProductItem: React.FC<ProductItemProps> = ({
+  className = 'StyledProductItem',
+  deleteItem,
+  move,
+  moveIcon,
   product = {
     title: '',
     imageUrl: '',
     variations: [],
     price: 0
   },
-  className = 'StyledProductItem',
-  quantity: productInitialQuantity,
-  deleteItem,
-  move,
-  moveIcon
+  quantity: productInitialQuantity
 }) => {
   const [quantity, setQuantity] = React.useState<number>(productInitialQuantity)
 

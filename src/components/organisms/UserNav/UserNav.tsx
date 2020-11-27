@@ -9,22 +9,22 @@ import { Mode } from '../../../designSystemInstance/types/types'
 
 export interface UserNavProps {
   avatar: string
-  name: string
-  description: string
-  mode: Mode
-  setMode: (mode: Mode) => void
-  logoutUser: () => void
   className?: string
+  description: string
+  logoutUser: () => void
+  mode: Mode
+  name: string
+  setMode: (mode: Mode) => void
 }
 
 export const UserNav: React.FC<UserNavProps> = ({
   avatar,
-  name,
+  className = '',
   description,
-  mode,
-  setMode,
   logoutUser,
-  className = ''
+  mode,
+  name,
+  setMode
 }) => {
   return (
     <StyledUserNav className={`UserNav ${className}`}>

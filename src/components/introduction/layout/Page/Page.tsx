@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface PageProps {
-  id?: string
   className?: string
+  id?: string
 }
 
 // C O M P O N E N T
 export const Page: React.FC<PageProps> = ({
+  children,
   className = 'StyledPage',
-  id,
-  children
+  id
 }) => {
   return (
     <StyledPage id={id} className={className}>

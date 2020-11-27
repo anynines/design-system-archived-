@@ -5,16 +5,16 @@ import DraggableTableRow, { DraggableTableRowCategory } from './DraggableTableRo
 import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
 
 interface DraggableTableRowBodyProps {
-  items: Row<TableRow>[]
-  prepareRow: (row: Row<TableRow>) => void
-  tableBodyProps: TableBodyProps
+  color?: TableRowColor
+  disabledCategories: string[]
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  disabledCategories: string[]
   isFolderDraggable: boolean
+  items: Row<TableRow>[]
+  prepareRow: (row: Row<TableRow>) => void
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
-  color?: TableRowColor
+  tableBodyProps: TableBodyProps
 }
 
 const DraggableTableRowBody: React.FC<DraggableTableRowBodyProps> = (

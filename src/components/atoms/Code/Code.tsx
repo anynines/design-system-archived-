@@ -2,27 +2,27 @@ import React from 'react'
 import styled from 'styled-components'
 
 export interface CodeProps {
-  language?: string
-  code?: string
   className?: string
+  code?: string
+  language?: string
   style?: React.CSSProperties
 }
 
 export const Code: React.FC<CodeProps> = ({
-  language = 'html',
-  code,
+  children,
   className,
-  style,
-  children
+  code,
+  language = 'html',
+  style
 }) => {
   return (
     <StyledCode style={style} className={className}>
       <div className='language-label'>
-        <span>{ language }</span>
+        <span>{language}</span>
       </div>
       <pre>
         <code>
-          { code || children }
+          {code || children}
         </code>
       </pre>
     </StyledCode>

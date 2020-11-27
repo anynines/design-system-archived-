@@ -4,22 +4,22 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface LogoProps {
-  src: string
-  path?: string
-  vertical?: boolean
-  onClick?: () => void
   className?: string
+  onClick?: () => void
+  path?: string
+  src: string
   style?: React.CSSProperties
+  vertical?: boolean
 }
 
 // C O M P O N E N T
 export const Logo: FC<LogoProps> = ({
   className = 'StyledLogoWrapper',
-  path = '/',
-  vertical = true,
-  src: url,
   onClick,
-  style
+  path = '/',
+  src: url,
+  style,
+  vertical = true
 }: LogoProps) => {
   return (
     <NavLink

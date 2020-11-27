@@ -5,8 +5,8 @@ import { TableColumnIcon } from './Table'
 
 interface TableIconProps {
   icon: string
-  type: TableColumnIcon | null | undefined
   iconIndex: number
+  type: TableColumnIcon | null | undefined
 }
 
 const TableIcon: React.FC<TableIconProps> = ({ icon, type, iconIndex }) => {

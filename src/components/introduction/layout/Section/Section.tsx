@@ -5,9 +5,9 @@ import { Container } from '../Container/Container'
 
 // I N T E R F A C E S
 export interface SectionProps {
-  id?: string
-  className?: string
   bgColor?: BgColorType
+  className?: string
+  id?: string
   style?: React.CSSProperties
 }
 
@@ -15,11 +15,11 @@ export type BgColorType = 'black' | 'dark' | 'primary' | 'light' | 'white'
 
 // C O M P O N E N T
 export const Section: React.FC<SectionProps> = ({
-  id,
-  className,
   bgColor = 'dark',
-  style,
-  children
+  children,
+  className,
+  id,
+  style
 }) => {
   return (
     <StyledSection

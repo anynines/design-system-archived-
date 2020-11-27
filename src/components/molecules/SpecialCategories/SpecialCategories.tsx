@@ -7,23 +7,23 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
 export interface SpecialCategoriesProps {
-  specialCategories?: SpecialCategory[]
-  onClick?: () => void
   className?: string
+  onClick?: () => void
+  specialCategories?: SpecialCategory[]
 }
 
 export interface SpecialCategory {
+  icon: IconName
   id: number
   name: string
   slug: string
-  icon: IconName
 }
 
 // C O M P O N E N T
 export const SpecialCategories: React.FC<SpecialCategoriesProps> = ({
   className = 'StyledSpecialCategories',
-  specialCategories,
-  onClick
+  onClick,
+  specialCategories
 }) => {
   const location = useLocation()
 

@@ -6,19 +6,28 @@ import TableCell from './TableCell'
 
 interface SortableTableColumnProps {
   bodyIndex: number
-  rowIndex: number
-  cellIndex: number
   cell: Cell<TableRow, any> // eslint-disable-line @typescript-eslint/no-explicit-any
-  isLastColumn?: boolean
+  cellIndex: number
+  color: TableRowColor
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  color: TableRowColor
+  isLastColumn?: boolean
+  rowIndex: number
 }
 
 const SortableTableColumn: React.FC<SortableTableColumnProps> = (props) => {
-  const { bodyIndex, rowIndex, cell, cellIndex, getTableColumnColor,
-          getTableColumnType, getTableColumnIconType, isLastColumn = false, color } = props
+  const {
+    bodyIndex,
+    cell,
+    cellIndex,
+    color,
+    getTableColumnColor,
+    getTableColumnType,
+    getTableColumnIconType,
+    isLastColumn = false,
+    rowIndex
+  } = props
 
   const header: TableAccessor | null = cell.column.Header as TableAccessor
   const className: TableColumnCellColor | null = getTableColumnColor(header)

@@ -4,11 +4,11 @@ import styled from 'styled-components'
 // I N T E R F A C E
 export interface ButtonProps {
   className?: string
-  type?: ButtonType
-  size?: ButtonSize
-  width?: ButtonWidth
   onClick?: () => void
+  size?: ButtonSize
   style?: React.CSSProperties
+  type?: ButtonType
+  width?: ButtonWidth
 }
 
 // T Y P E S
@@ -19,13 +19,13 @@ export type ButtonWidth = 'block' | 'inline'
 
 // C O M P O N E N T
 export const Button: React.FC<ButtonProps> = ({
-  type = 'primary',
-  size = 'md',
-  width = 'inline',
+  children,
   className,
   onClick,
-  children,
-  style
+  size = 'md',
+  style,
+  type = 'primary',
+  width = 'inline'
 }) => {
   return (
     <StyledButton

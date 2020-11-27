@@ -3,20 +3,20 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface ModuleWrapperProps {
-  customWidth?: boolean // TODO: Check type definition
-  width?: number
   className?: string
+  customWidth?: boolean // TODO: Check type definition
   style?: React.CSSProperties
+  width?: number
 }
 
 // C O M P O N E N T
 export const ModuleWrapper: React.FC<ModuleWrapperProps> = (props) => {
   const {
-    className = 'StyledModuleWrapper',
-    width = 280,
     children,
+    className = 'StyledModuleWrapper',
     customWidth,
-    style
+    style,
+    width = 280
   } = props
 
   return (

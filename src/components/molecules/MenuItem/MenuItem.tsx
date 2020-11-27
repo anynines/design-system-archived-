@@ -7,29 +7,29 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
 export interface MenuItemProps {
-  id?: string
-  icon?: IconName
-  path?: string
-  counter?: boolean
   active?: boolean
-  vertical?: boolean
-  onClick?: () => void
   children?: JSX.Element
   className?: string
+  counter?: boolean
+  icon?: IconName
+  id?: string
+  onClick?: () => void
+  path?: string
   style?: React.CSSProperties
+  vertical?: boolean
 }
 
 // C O M P O N E N T
 export const MenuItem: React.FC<MenuItemProps> = ({
+  active = false,
+  children,
   className = 'StyledMenuItem',
   counter = false,
-  active = false,
-  vertical = false,
   icon,
-  path,
   onClick,
-  children,
-  style
+  path,
+  style,
+  vertical = false
 }) => {
   return (
     <>

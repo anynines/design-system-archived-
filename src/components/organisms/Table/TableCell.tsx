@@ -10,13 +10,18 @@ import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon } from
 
 interface TableCellProps {
   cell: Cell<TableRow, any> // eslint-disable-line @typescript-eslint/no-explicit-any
-  className?: TableColumnCellColor | null
   cellType: TableColumnCell | null
+  className?: TableColumnCellColor | null
   iconType?: TableColumnIcon | null
 }
 
 const TableCell = (props: TableCellProps): any => { // eslint-disable-line @typescript-eslint/no-explicit-any
-  const { cell, className, cellType, iconType } = props
+  const {
+    cell,
+    cellType,
+    className,
+    iconType
+  } = props
 
   switch (cellType) {
     case 'sticker':
