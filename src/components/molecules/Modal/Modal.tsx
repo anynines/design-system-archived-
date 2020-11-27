@@ -17,23 +17,27 @@ type Modal = React.FC<ModalProps>
   & { Footer: React.FC<ModalFooterProps> }
 
 export interface ModalProps {
-  show: boolean
-  onHide: () => void
-  title?: string
-  description?: string
+  className?: string
   confirmationText?: string
+  description?: string
   onConfirm?: () => void
+  onHide: () => void
+  show: boolean
+  style?: React.CSSProperties
+  title?: string
 }
 
 // C O M P O N E N T
 export const Modal: Modal = ({
-  show,
-  onHide,
   children,
-  title,
-  description,
+  className,
   confirmationText = 'Confirm',
-  onConfirm
+  description,
+  onConfirm,
+  onHide,
+  show,
+  style,
+  title
 }) => {
   const modalPopupRef = React.useRef<HTMLDivElement | null>(null)
 
@@ -74,7 +78,10 @@ export const Modal: Modal = ({
 
   if (show) {
     return ReactDOM.createPortal(
-      <StyledModal>
+      <StyledModal
+        className={`modal-wrapper ${className}`}
+        style={style}
+      >
         <div className='modal-popup' ref={modalPopupRef}>
           <button
             type='button'
@@ -85,8 +92,8 @@ export const Modal: Modal = ({
           >
             <Icon icon='close' />
           </button>
-          {title && <ModalHeader>{titleOutput}</ModalHeader>}
-          {description && <ModalBody>{descriptionOutput}</ModalBody>}
+          {title && titleOutput}
+          {description && descriptionOutput}
           {children}
           {onConfirm && <ModalFooter>{confirmOutput}</ModalFooter>}
         </div>

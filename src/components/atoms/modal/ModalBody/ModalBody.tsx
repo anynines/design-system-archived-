@@ -5,16 +5,21 @@ import styled from 'styled-components'
 export interface ModalBodyProps {
   className?: string
   description?: string
+  style?: React.CSSProperties
 }
 
 // C O M P O N E N T
 export const ModalBody: React.FC<ModalBodyProps> = ({
-  className,
   children,
-  description
+  className,
+  description,
+  style
 }) => {
   return (
-    <StyledModalBody className={`modal-body ${className && className}`}>
+    <StyledModalBody
+      className={`modal-body ${className && className}`}
+      style={style}
+    >
       {description && <p>{description}</p>}
       {children}
     </StyledModalBody>
