@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Table, TableAccessor, DraggableTableDataProps, SortableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRow } from '../Table'
+import { CustomTable as Table, TableAccessor, DraggableTableDataProps, SortableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, CustomTableRow as TableRow } from '../Custom/CustomTable'
 
 export default {
-  title: 'Organisms/Table',
+  title: 'Organisms/CustomTable',
   component: Table,
   argTypes: {
     tableHeaderData: {

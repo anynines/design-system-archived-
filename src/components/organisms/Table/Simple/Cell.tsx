@@ -10,7 +10,6 @@ export type CellColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'su
 
 export interface CellProps extends TableChildrenProps {
   type: CellType
-  component?: JSX.Element
   value?: string | boolean | number
   color?: CellColor
   field?: string
@@ -30,15 +29,15 @@ export const Cell: FC<CellProps> = (props) => {
     field = '',
     type,
     value,
-    component,
     color,
-    onSort
+    onSort,
+    children
   } = props
 
-  const renderValue = (): string | boolean | number | JSX.Element | undefined => {
+  const renderValue = (): string | boolean | number | JSX.Element | React.ReactNode => {
     if (value) return value.toString()
     if (field) return field.toString()
-    if (component) return component
+    if (children) return children
     return ''
   }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Cell } from 'react-table'
-import { Icon, IconName } from '../../atoms/Icon/Icon'
-import { Tooltip } from '../../atoms/Tooltip/Tooltip'
+import { Icon, IconName } from '../../../atoms/Icon/Icon'
+import { Tooltip } from '../../../atoms/Tooltip/Tooltip'
 
 import TableIcon from './TableIcon'
-import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon } from './Table'
+import { CustomTableRow as TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon } from './CustomTable'
 
 /* Some parts of Cell's TS definition could not be resolved */
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Icon } from '../../atoms/Icon/Icon'
+import { Icon } from '../../../atoms/Icon/Icon'
 import { Row, Cell } from 'react-table'
 
-import { TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableAccessor, TableRowColor } from './Table'
+import { CustomTableRow as TableRow, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableAccessor, TableRowColor } from '../Custom/CustomTable'
 import SortableTableColumn from './SortableTableColumn'
 
 interface SortableTableRowProps {

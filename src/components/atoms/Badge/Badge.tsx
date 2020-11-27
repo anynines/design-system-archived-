@@ -18,7 +18,7 @@ export const Badge: React.FC<BadgeProps> = (props) => {
 
 const StyledBadge = styled.span`
   background-color: var(--color-notice);
-  padding: 5px 10px;
+  padding: var(--space-sm) var(--space-lg);
   color: var(--color-light);
   font-size: var(--text-md);
   font-weight: var(--font-weight-bd);

@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, TableBodyProps } from 'react-table'
 
 import DraggableTableRow, { DraggableTableRowCategory } from './DraggableTableRow'
-import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
+import { CustomTableRow as TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from '../Custom/CustomTable'
 
 interface DraggableTableRowBodyProps {
   items: Row<TableRow>[]

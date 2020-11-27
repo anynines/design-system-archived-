@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { Table, TableRow, getCellValue, handleSort } from '../v2/Table'
-import { Badge } from '../v2/Badge'
-import { Row } from '../v2/Row'
-import { Head } from '../v2/Head'
-import { Body } from "../v2/Body"
-import { Foot } from "../v2/Foot"
-import { Cell } from '../v2/Cell'
+import { Table, TableRow, getCellValue, handleSort } from '../Simple/Table'
+import { Badge } from '../../../atoms/Badge/Badge'
+import { Row } from '../Simple/Row'
+import { Head } from '../Simple/Head'
+import { Body } from "../Simple/Body"
+import { Foot } from "../Simple/Foot"
+import { Cell } from '../Simple/Cell'
 
 export default {
-  title: 'Organisms/TableV2',
+  title: 'Organisms/SimpleTable',
   component: Table,
   argTypes: {
     sortData: {
@@ -237,7 +237,7 @@ const metaData = [
     }
 ]
 
-export const TableV2: React.FC = () => {
+export const Simple: React.FC = () => {
   const [currentData, setCurrentData] = React.useState<TableRow[]>(userData as TableRow[])
 
   return (
@@ -276,7 +276,7 @@ export const TableV2: React.FC = () => {
               <Cell value={row['september']} />
               <Cell value={row['october']} />
               <Cell value={row['november']} />
-              <Cell component={<Badge value='n/a' />} />
+              <Cell><Badge value='n/a' /></Cell>
               <Cell value={row['average']} color='warning' />
             </Row>
           )
@@ -298,7 +298,7 @@ export const TableV2: React.FC = () => {
               <Cell value={row['september']} color='light' />
               <Cell value={row['october']} color='light' />
               <Cell value={row['november']} color='light' />
-              <Cell component={<Badge value='n/a' />} color='light' />
+              <Cell color='light'><Badge value='n/a' /></Cell>
               <Cell value={row['average']} color='dark' />
             </Row>
           )

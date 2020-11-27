@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, useTable, useSortBy } from 'react-table'
 
-import { TableColumn, TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, RowsDataObject, TableData, TableRowColor } from './Table'
+import { TableColumn, CustomTableRow as TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, RowsDataObject, TableData, TableRowColor } from '../Custom/CustomTable'
 import SortableTableHead from './SortableTableHead'
 import SortableTableBody from './SortableTableBody'
 

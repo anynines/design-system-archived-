@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeaderGroup } from 'react-table'
 
-import { TableRow } from './Table'
+import { CustomTableRow as TableRow } from '../Custom/CustomTable'
 
 interface DraggableTableHeadProps {
   headerGroups: HeaderGroup<TableRow>[]

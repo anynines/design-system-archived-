@@ -1,10 +1,10 @@
 import React from 'react'
-import { Icon } from '../../atoms/Icon/Icon'
+import { Icon } from '../../../atoms/Icon/Icon'
 import { HeaderGroup } from 'react-table'
 
 import { SortableTableHeadColumn } from './SortableTableHeadColumn'
 
-import { TableRow } from './Table'
+import { CustomTableRow as TableRow } from '../Custom/CustomTable'
 
 interface SortableTableHeadProps {
   headerGroups: HeaderGroup<TableRow>[]
