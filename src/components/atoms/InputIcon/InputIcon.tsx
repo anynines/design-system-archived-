@@ -43,9 +43,10 @@ const StyledInputIcon = styled.div<StyledInputIconProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-dark-50);
+  background-color: var(--color-white-10);
   cursor: var(--cursor);
-  width: 2.75rem;
+  width: 44px;
+  min-width: 44px;
   min-height: 100%;
   color: var(--color-white);
   border-radius: 10px 0 0 10px;

@@ -101,6 +101,8 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 .c0 .alert-icon svg {
   width: 1.5em;
   height: 1.5em;
+  max-width: 1.5em;
+  max-height: 1.5em;
 }
 
 .c0 .alert-info {
@@ -134,12 +136,13 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   color: var(--color-white-fix);
 }
 
-.c0 .alert-info h4 {
-  margin: var(--space-xs) 0 0;
+.c0 .alert-info span {
+  font-weight: 900;
 }
 
 .c0 .alert-info P {
-  margin: var(--space-md) 0 var(--space-sm);
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
   line-height: 1.2;
 }
 
@@ -199,9 +202,9 @@ exports[`Alert component snapshot should match snapshot 1`] = `
     <div
       class="alert-info"
     >
-      <h4>
+      <span>
         Test Title
-      </h4>
+      </span>
       <p>
         Test Description
       </p>

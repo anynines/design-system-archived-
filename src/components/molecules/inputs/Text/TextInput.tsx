@@ -27,6 +27,7 @@ export interface TextInputProps {
   setValue?: any // eslint-disable-line
   watch?: any //eslint-disable-line
   handleSubmit?: (callback: OnSubmit<any>) => (e?: React.BaseSyntheticEvent) => Promise<void> // eslint-disable-line
+  style?: React.CSSProperties
 }
 type TextInput = React.FC<TextInputProps>
   & { Prepend: React.FC<InputIconProps> }
@@ -49,7 +50,8 @@ export const TextInput: TextInput = ({
   autoFocus = false,
   children,
   className = 'StyledInput',
-  setValue
+  setValue,
+  style
 }) => {
   const [isFocus, setIsFocus] = React.useState(autoFocus)
   const [localValue, setLocalValue] = React.useState<string>(value || '')
@@ -113,6 +115,7 @@ export const TextInput: TextInput = ({
     <StyledInput
       className={`${isFocus ? 'focus' : ''} ${isValueEmpty() ? 'empty' : ''} ${errors && errors[name] !== undefined ? 'error' : ''}`}
       withPrepend={(children !== undefined && children !== null) || icon !== undefined}
+      style={style}
       id={`${name}Wrapper`}
       autoFocus={isFocus}
     >
@@ -154,8 +157,9 @@ const StyledInput = styled.div<StyledInputProps>`
   
   display: flex;
   position: relative;
-  margin-bottom: var(--space-md);
-  background-color: var(--color-dark-50);
+  margin-bottom: var(--space-xl);
+  border: var(--border);
+  background-color: var(--color-dark);
   font-size: 1em;
   border-radius: var(--radius);
 
@@ -164,7 +168,14 @@ const StyledInput = styled.div<StyledInputProps>`
   }
   
   .input-label {
-    left: 1em;
+    position: absolute;
+    top: 0.25rem;
+    left: 12px;
+    z-index: 1;
+    opacity: 0.5;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 800;
   }
   
   input {

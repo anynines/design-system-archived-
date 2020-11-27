@@ -36,7 +36,7 @@ export const Alert: React.FC<AlertProps> = ({
         <Icon icon='info' />
       </div>
       <div className='alert-info'>
-        <h4>{title}</h4>
+        <span>{title}</span>
         <p>{description}</p>
         <button onClick={onClose} type='button' className='alert-button'>
           <Icon icon='close' />
@@ -57,6 +57,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
+
 
   &.notice {
     background-color: var(--color-notice);
@@ -105,6 +106,8 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     svg {
       width: 1.5em;
       height: 1.5em;
+      max-width: 1.5em;
+      max-height: 1.5em;
     }
   }
 
@@ -125,12 +128,13 @@ const AlertWrapper = styled.div<AlertStyledProps>`
       color: var(--color-white-fix);
     }
 
-    h4 {
-      margin: var(--space-xs) 0 0;
+    span {
+      font-weight: 900;
     }
 
     P {
-      margin: var(--space-md) 0 var(--space-sm);
+      margin-top: var(--space-xs);
+      margin-bottom: 0;
       line-height: 1.2;
     }
   }
