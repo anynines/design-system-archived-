@@ -36,6 +36,7 @@ export const CaretLink: React.FC<CaretLinkProps> = ({
 
 // S T Y L E S
 const StyledCaretLink = styled.div`
+  display: inline-block;
   a {
     display: flex;
     align-items: center;
