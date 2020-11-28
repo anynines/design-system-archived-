@@ -11,7 +11,7 @@ export default {
     type: {
       control: {
         type: 'select',
-        options: ['dark', 'black', 'primary', 'submit']
+        options: ['dark', 'black', 'primary', 'submit', 'white']
       }
     },
     size: {

@@ -62,6 +62,9 @@ export * from './components/organisms/Table/DraggableTable'
 export * from './components/organisms/AdminNavigation/AdminNavigation'
 export * from './components/organisms/UserNav/UserNav'
 
+// T E M P L A T E S
+export * from './components/templates/TopNavigation/TopNavigation'
+
 // H E L P E R
 export * from './helpers/index'
 export * from './helpers/localStorage'
