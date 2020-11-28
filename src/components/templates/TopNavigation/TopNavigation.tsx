@@ -6,7 +6,7 @@ export interface TopNavigationProps {
   style?: React.CSSProperties
 }
 
-const TopNavigation: React.FC<TopNavigationProps> = ({
+export const TopNavigation: React.FC<TopNavigationProps> = ({
   children,
   className,
   style
@@ -46,5 +46,3 @@ const StyledTopNavigation = styled.div`
     display: flex;
   }
 `
-
-export default TopNavigation

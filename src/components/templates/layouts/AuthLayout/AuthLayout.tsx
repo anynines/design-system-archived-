@@ -2,19 +2,27 @@ import React from 'react'
 import styled from 'styled-components'
 
 export interface AuthLayoutProps {
-  bgImage?: string
   authLayout?: AuthLayoutType
+  bgImage?: string
+  className?: string
+  style?: React.CSSProperties
 }
 
 export type AuthLayoutType = '' | 'center-full-bg' | 'full-page-left' | 'full-page-right'
 
 export const AuthLayout: React.FC<AuthLayoutProps> = ({
-  bgImage = 'https://images.pexels.com/photos/266834/pexels-photo-266834.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
   authLayout,
-  children
+  bgImage = 'https://images.pexels.com/photos/266834/pexels-photo-266834.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+  children,
+  className,
+  style
 }) => {
   return (
-    <StyledAuthLayout className={`layout-${authLayout}`} bgImage={bgImage}>
+    <StyledAuthLayout
+      bgImage={bgImage}
+      className={`auth-layout layout-${authLayout} ${className}`}
+      style={style}
+    >
       <div className='auth-container'>
         <div className='auth-form'>{children}</div>
         {

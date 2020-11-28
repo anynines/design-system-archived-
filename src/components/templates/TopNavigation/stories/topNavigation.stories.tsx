@@ -2,8 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MemoryRouter } from 'react-router-dom'
 
-import Wrapper from '../../../_helpers/Wrapper'
-import TopNavigation from '../TopNavigation'
+import { TopNavigation } from '../TopNavigation'
 import { Logo } from '../../../atoms/Logo/Logo'
 import { Menu } from '../../../organisms/Menu/Menu'
 
@@ -52,16 +51,6 @@ export const Basic = () => (
               id: 'cart',
               icon: 'cart',
               counter: true,
-            },
-            {
-              id: 'notifications',
-              icon: 'notifications',
-              counter: true,
-            },
-            {
-              id: 'points',
-              icon: 'points',
-              children: <>4242</>,
             }
           ]}
         />
