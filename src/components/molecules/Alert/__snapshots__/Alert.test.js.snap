@@ -205,7 +205,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
       class="alert-icon"
     >
       <i
-        class="c1 icon undefined sm"
+        class="c1 icon undefined md"
       >
         <svg
           height="24.707"

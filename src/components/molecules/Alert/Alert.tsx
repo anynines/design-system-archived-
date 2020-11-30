@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Icon } from '../../atoms/Icon/Icon'
+import { Icon, IconSize } from '../../atoms/Icon/Icon'
 
 export type AlertType = 'success' | 'notice' | 'error' | 'warning'
 
@@ -9,6 +9,7 @@ export interface AlertProps {
   className?: string
   description: string
   onClose: () => void
+  size: IconSize
   style?: React.CSSProperties
   title: string
   type: AlertType
@@ -22,6 +23,7 @@ export const Alert: React.FC<AlertProps> = ({
   className,
   description,
   onClose,
+  size = 'md',
   style,
   title,
   type = 'success'
@@ -33,7 +35,7 @@ export const Alert: React.FC<AlertProps> = ({
       style={style}
     >
       <div className='alert-icon'>
-        <Icon icon='info' />
+        <Icon icon='info' size={size} />
       </div>
       <div className='alert-info'>
         <span>{title}</span>
