@@ -20,7 +20,7 @@ export interface MenuProps {
 // C O M P O N E N T
 export const Menu: React.FC<MenuProps> = ({
   children,
-  className = 'StyledMenu',
+  className,
   items,
   onClick,
   selectedItem,

@@ -38,7 +38,7 @@ export const TextInput: TextInput = ({
   autoComplete = 'on',
   autoFocus = false,
   children,
-  className = 'StyledInput',
+  className,
   errorMessage,
   errors = {},
   icon,

@@ -21,7 +21,7 @@ export type NotificationWidth = 'block' | 'inline'
 
 // C O M P O N E N T
 export const Notification: React.FC<NotificationProps> = ({
-  className = 'StyledNotification',
+  className,
   date = 0,
   icon,
   msg,

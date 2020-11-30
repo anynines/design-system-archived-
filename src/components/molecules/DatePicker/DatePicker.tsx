@@ -14,7 +14,7 @@ export type DatePickerProps = Omit<DayPickerSingleDateControllerShape, 'onDateCh
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
-  className = '',
+  className,
   date,
   focused = true,
   numberOfMonths = 1,

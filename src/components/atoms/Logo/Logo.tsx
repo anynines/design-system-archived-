@@ -14,7 +14,7 @@ export interface LogoProps {
 
 // C O M P O N E N T
 export const Logo: FC<LogoProps> = ({
-  className = 'StyledLogoWrapper',
+  className,
   onClick,
   path = '/',
   src: url,

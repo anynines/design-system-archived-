@@ -3,12 +3,13 @@ import styled from 'styled-components'
 
 // I N T E R F A C E
 export interface WrapperProps {
-  height?: string
-  bgColor?: WrapperBgColor
-  direction?: WrapperDirection
   align?: WrapperAlignment
-  justify?: WrapperAlignment
+  bgColor?: WrapperBgColor
+  className?: string
+  direction?: WrapperDirection
   flexWrap?: WrapperFlexWrap
+  height?: string
+  justify?: WrapperAlignment
   style?: React.CSSProperties
 }
 
@@ -22,6 +23,7 @@ export type WrapperFlexWrap = 'nowrap' | 'wrap'
 const Wrapper: React.FC<WrapperProps> = ({
   align = 'center',
   children,
+  className,
   bgColor = 'dark',
   direction = 'row',
   flexWrap = 'nowrap',
@@ -37,7 +39,7 @@ const Wrapper: React.FC<WrapperProps> = ({
         flexWrap,
         justifyContent: justify
       }}
-      className={bgColor}
+      className={`styled-wrapper ${bgColor} ${className}`}
     >
       {children}
     </StyledWrapper>

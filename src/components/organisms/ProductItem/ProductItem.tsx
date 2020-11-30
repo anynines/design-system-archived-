@@ -22,7 +22,7 @@ export interface ProductItemProps {
 
 // C O M P O N E N T
 export const ProductItem: React.FC<ProductItemProps> = ({
-  className = 'StyledProductItem',
+  className,
   deleteItem,
   move,
   moveIcon,
@@ -43,7 +43,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   }
 
   return (
-    <StyledProductItem className={className}>
+    <StyledProductItem className={`product-item {className}`}>
       <div className='image'>
         <div
           className='image-container'

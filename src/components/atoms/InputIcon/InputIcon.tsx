@@ -11,7 +11,7 @@ export interface InputIconProps {
 // C O M P O N E N T
 export const InputIcon: React.FC<InputIconProps> = ({
   children,
-  className = 'StyledTextInputPrepend',
+  className,
   clickable = false,
   onClick
 }) => {

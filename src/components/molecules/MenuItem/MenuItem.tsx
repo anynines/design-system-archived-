@@ -23,7 +23,7 @@ export interface MenuItemProps {
 export const MenuItem: React.FC<MenuItemProps> = ({
   active = false,
   children,
-  className = 'StyledMenuItem',
+  className,
   counter = false,
   icon,
   onClick,

@@ -39,7 +39,7 @@ export const AdminNavigation: React.FC<AdminNavigationProps> = ({
   userInfo
 }) => {
   return (
-    <StyledAdminNavigation style={style} className={className}>
+    <StyledAdminNavigation style={style} className={`admin-navigation ${className}`}>
       <Logo
         src={logoSrc}
         vertical
