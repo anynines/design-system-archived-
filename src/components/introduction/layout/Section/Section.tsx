@@ -24,7 +24,7 @@ export const Section: React.FC<SectionProps> = ({
   return (
     <StyledSection
       id={id}
-      className={`${className} section--${bgColor}`}
+      className={`section ${className} section--${bgColor}`}
       style={style}
     >
       <Container>

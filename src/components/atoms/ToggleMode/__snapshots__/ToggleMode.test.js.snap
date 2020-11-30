@@ -123,7 +123,7 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 }
 
 <div
-    class="c0 sm StyledToggleMode"
+    class="c0 toggle-mode sm undefined"
     mode="light"
   >
     <div
@@ -376,7 +376,7 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 }
 
 <div
-    class="c0 lg StyledToggleMode"
+    class="c0 toggle-mode lg undefined"
     mode="dark"
   >
     <div

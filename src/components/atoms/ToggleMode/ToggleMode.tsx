@@ -18,14 +18,14 @@ export type ToggleModeButtonSize = 'sm' | 'lg'
 
 // C O M P O N E N T
 export const ToggleMode: React.FC<ToggleModeProps> = ({
-  className = 'StyledToggleMode',
+  className,
   mode = 'dark',
   setMode,
   size = 'lg'
 }) => {
   return (
     <StyledToggleMode
-      className={`${size} ${className}`}
+      className={`toggle-mode ${size} ${className}`}
       onClick={(): void => { return (setMode && setMode()) }}
       mode={mode}
     >

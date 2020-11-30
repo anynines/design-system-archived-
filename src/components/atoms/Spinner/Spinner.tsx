@@ -18,7 +18,7 @@ export type SpinnerSize = 'sm' | 'md' | 'lg'
 
 // C O M P O N E N T
 export const Spinner: React.FC<SpinnerProps> = ({
-  className = 'StyledSpinner',
+  className,
   color = 'var(--color-primary)',
   hidden = false,
   size = 'md',
@@ -45,7 +45,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
       sizeInPx={getSpinnerSize()}
       hidden={hidden}
       color={color}
-      className={className}
+      className={`spinner-wrapper ${className}`}
       style={style}
     >
       <SpinnerIcon />

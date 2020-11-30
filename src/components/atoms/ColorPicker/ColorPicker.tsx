@@ -3,16 +3,18 @@ import styled from 'styled-components'
 import { ChromePicker, ChromePickerProps } from 'react-color'
 
 interface ColorPickerProps extends ChromePickerProps {
+  className?: string
   style?: React.CSSProperties
 }
 
 // C O M P O N E N T
 export const ColorPicker: React.FC<ColorPickerProps> = ({
+  className,
   style,
   ...props
 }) => {
   return (
-    <StyledColorPicker style={style}>
+    <StyledColorPicker style={style} className={`color-picker ${className}`}>
       <ChromePicker {...props} disableAlpha />
       <div className='caret' />
     </StyledColorPicker>

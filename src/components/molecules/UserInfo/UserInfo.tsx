@@ -12,13 +12,13 @@ export interface UserInfoProps {
 
 // C O M P O N E N T
 export const UserInfo: React.FC<UserInfoProps> = ({
-  className = 'StyledUserInfo',
+  className,
   size,
   userName,
   userGroup
 }) => {
   return (
-    <StyledUserInfo size={size} className={className}>
+    <StyledUserInfo size={size} className={`user-info ${className}`}>
       <span className='user-name'>{userName}</span>
       <span className='user-group'>{userGroup}</span>
     </StyledUserInfo>

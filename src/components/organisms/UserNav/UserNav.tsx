@@ -19,7 +19,7 @@ export interface UserNavProps {
 
 export const UserNav: React.FC<UserNavProps> = ({
   avatar,
-  className = '',
+  className,
   description,
   logoutUser,
   mode,
@@ -27,7 +27,7 @@ export const UserNav: React.FC<UserNavProps> = ({
   setMode
 }) => {
   return (
-    <StyledUserNav className={`UserNav ${className}`}>
+    <StyledUserNav className={`user-nav ${className}`}>
       <div className='left'>
         <Avatar size='sm' avatar={avatar} />
         <UserInfo userName={name} userGroup={description} />

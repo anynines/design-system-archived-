@@ -10,7 +10,7 @@ export interface FormProps {
 
 export const Form: React.FC<FormProps> = ({
   children,
-  className = 'StyledForm',
+  className,
   onSubmit: onSubmitCallback
 }) => {
   const { register, handleSubmit, errors, watch, getValues, setValue } = useForm()
@@ -26,7 +26,7 @@ export const Form: React.FC<FormProps> = ({
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={className}>
+    <form onSubmit={handleSubmit(onSubmit)} className={`form-wrapper ${className}`}>
       {childrenWithProps}
     </form>
   )

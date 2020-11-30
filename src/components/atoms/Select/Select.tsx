@@ -147,7 +147,7 @@ export const Select: React.FC<SelectProps> = ({
 
   return (
     <StyledSelect
-      className={`${className} 
+      className={`select-wrapper ${className} 
       ${isActive ? 'is-active' : ''}`}
       style={style}
     >
