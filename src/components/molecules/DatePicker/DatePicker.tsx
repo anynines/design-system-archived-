@@ -37,7 +37,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 
   return (
     <StyledDatePicker
-      className={`DatePicker ${className}`}
+      className={`date-picker ${className}`}
     >
 
       <DayPickerSingleDateController

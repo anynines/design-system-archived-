@@ -65,7 +65,7 @@ export const Notification: React.FC<NotificationProps> = ({
 
   return (
     <StyledNotification
-      className={`${className} ${width}`}
+      className={`notification ${className} ${width}`}
       style={style}
     >
       <div className='icon-wrapper'>

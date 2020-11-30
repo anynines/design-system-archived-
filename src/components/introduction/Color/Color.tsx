@@ -19,7 +19,7 @@ export const Color: React.FC<ColorProps> = ({
   return (
     <StyledColor
       style={{ backgroundColor: color, color: textColor }}
-      className={mainColor && 'main-color'}
+      className={`color ${mainColor && 'main-color'}`}
     >
       <span>{colorLabel}</span>
     </StyledColor>

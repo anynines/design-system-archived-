@@ -25,7 +25,7 @@ export interface ImageUploaderProps {
 export const ImageUploader: React.FC<ImageUploaderProps> = ({
   addToFormData,
   alt,
-  className = 'StyledImageInput',
+  className,
   defaultValue,
   id,
   label
@@ -65,7 +65,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
   }, [addToFormData, defaultValue, id])
 
   return (
-    <StyledImageInput className={className}>
+    <StyledImageInput className={`image-uploader ${className}`}>
       <span>{label}</span>
       {currentImage ? <img src={currentImage} alt={alt} /> : <Icon icon='placeholder' />}
       <input type='file' id={id} onChange={handleChange} />

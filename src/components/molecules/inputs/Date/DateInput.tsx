@@ -9,6 +9,7 @@ import { onClickOutsideHook } from '../../../../helpers/react'
 
 // I N T E R F A C E S
 export interface DateInputProps extends Omit<TextInputProps, 'value' | 'pattern'> {
+  className?: string
   date?: number
   pattern?: RegExp
   onDateChange?: (date: number) => void
@@ -26,7 +27,7 @@ const DATE_REGEX = /^(?:(?:(?:(?:0[1-9]|1[0-9]|2[0-8])[/](?:0[1-9]|1[012]))|(?:(
 export const DateInput: React.FC<DateInputProps> = (props) => {
   const {
     children,
-    className = '',
+    className,
     date,
     datePickerOptions,
     getValues,
@@ -108,7 +109,7 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
   }, [])
 
   return (
-    <StyledDateInput className={`DateInput ${className}`} ref={dateInputRef}>
+    <StyledDateInput className={`date-input ${className}`} ref={dateInputRef}>
       <TextInput
         {...props}
         errorMessage='Please provide a date following the DD/MM/YYYY format'

@@ -113,7 +113,7 @@ export const TextInput: TextInput = ({
 
   return (
     <StyledInput
-      className={`${isFocus ? 'focus' : ''} ${isValueEmpty() ? 'empty' : ''} ${errors && errors[name] !== undefined ? 'error' : ''}`}
+      className={`text-input ${isFocus ? 'focus' : ''} ${isValueEmpty() ? 'empty' : ''} ${errors && errors[name] !== undefined ? 'error' : ''}`}
       withPrepend={(children !== undefined && children !== null) || icon !== undefined}
       style={style}
       id={`${name}Wrapper`}

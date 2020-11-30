@@ -18,7 +18,7 @@ export const Col: React.FC<ColProps> = ({
   return (
     <StyledCol
       id={id}
-      className={className}
+      className={`column ${className}`}
       style={style}
     >
       {children}
