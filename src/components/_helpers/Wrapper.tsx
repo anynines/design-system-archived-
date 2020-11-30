@@ -49,6 +49,7 @@ const StyledWrapper = styled.div`
   display: flex;
   padding: var(--space-xl);
   border-radius: var(--radius);
+  margin: var(--space-xl);
 
   &.light {
     background-color: var(--color-white);
