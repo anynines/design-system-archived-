@@ -23,7 +23,7 @@ export const CaretLink: React.FC<CaretLinkProps> = ({
 }) => {
   return (
     <StyledCaretLink
-      className={className}
+      className={`caret-link ${className}`}
       style={style}
     >
       <NavLink to={path}>

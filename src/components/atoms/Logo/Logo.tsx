@@ -30,7 +30,7 @@ export const Logo: FC<LogoProps> = ({
       className={vertical ? 'vertical' : ''}
       style={style}
     >
-      <StyledLogoWrapper className={`Logo ${vertical ? 'vertical' : ''} ${className}`}>
+      <StyledLogoWrapper className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}>
         <img src={url} alt='logo' />
       </StyledLogoWrapper>
     </NavLink>

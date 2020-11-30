@@ -16,7 +16,7 @@ export const Code: React.FC<CodeProps> = ({
   style
 }) => {
   return (
-    <StyledCode style={style} className={className}>
+    <StyledCode style={style} className={`code-wrapper ${className}`}>
       <div className='language-label'>
         <span>{language}</span>
       </div>

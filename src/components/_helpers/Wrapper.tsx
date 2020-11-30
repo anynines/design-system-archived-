@@ -20,13 +20,13 @@ export type WrapperFlexWrap = 'nowrap' | 'wrap'
 
 // C O M P O N E N T
 const Wrapper: React.FC<WrapperProps> = ({
-  height = 'auto',
+  align = 'center',
+  children,
   bgColor = 'dark',
   direction = 'row',
-  justify = 'center',
-  align = 'center',
   flexWrap = 'nowrap',
-  children
+  height = 'auto',
+  justify = 'center'
 }) => {
   return (
     <StyledWrapper

@@ -9,9 +9,9 @@ export interface ModuleContentProps {
 // C O M P O N E N T
 export const ModuleContent: React.FC<ModuleContentProps> = ({
   children,
-  className = 'StyledModuleContent'
+  className
 }) => {
-  return <StyledModuleContent className={className}>{children}</StyledModuleContent>
+  return <StyledModuleContent className={`module-content ${className}`}>{children}</StyledModuleContent>
 }
 
 // S T Y L E S
