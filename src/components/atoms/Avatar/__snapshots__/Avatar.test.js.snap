@@ -97,6 +97,7 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
 
 <div
     class="c0 
+        avatar-wrapper
         md 
         rounded 
         level 
@@ -215,6 +216,7 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
 
 <div
     class="c0 
+        avatar-wrapper
         md 
         rounded 
         level 
