@@ -70,6 +70,7 @@ export const Basic = (args: SpecialCategory) => (
     </div>
   </MemoryRouter>
 )
+
 export const SampleCategories = () => (
   <MemoryRouter>
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>

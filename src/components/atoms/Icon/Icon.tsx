@@ -124,10 +124,13 @@ import Wishlist from './assets/wishlist'
 export interface IconProps {
   className?: string
   icon?: IconName
+  size?: IconSize
   style?: React.CSSProperties
 }
 
 // T Y P E S
+export type IconSize = 'sm' | 'md' | 'lg'
+
 export type IconName = 'arrowUpRight'
   | 'bestseller'
   | 'bin'
@@ -298,10 +301,11 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 export const Icon: React.FC<IconProps> = ({
   className,
   icon = 'menu',
+  size = 'sm',
   style
 }) => {
   return (
-    <StyledIcon className={className} style={style}>
+    <StyledIcon className={`icon ${className} ${size}`} style={style}>
       {ICONS[icon]}
     </StyledIcon>
   )
@@ -309,15 +313,38 @@ export const Icon: React.FC<IconProps> = ({
 
 // S T Y L E S
 const StyledIcon = styled.i`
+  --icon-size: 1rem;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 1.25rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
   
   svg {
     width: 100%;
     height: 100%;
-    max-width: 16px;
-    max-height: 16px;
+    max-width: var(--icon-size);
+    max-height: var(--icon-size);
+  }
+
+  &.md {
+    width: calc(var(--icon-size) * 2);
+    height: calc(var(--icon-size) * 2);
+
+    svg {
+      max-width: calc(var(--icon-size) * 2);
+      max-height: calc(var(--icon-size) * 2);
+    }
+  }
+
+  &.lg {
+    width: calc(var(--icon-size) * 4);
+    height: calc(var(--icon-size) * 4);
+
+    svg {
+      max-width: calc(var(--icon-size) * 4);
+      max-height: calc(var(--icon-size) * 4);
+    }
   }
 `

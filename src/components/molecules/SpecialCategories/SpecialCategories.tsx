@@ -53,6 +53,8 @@ export const SpecialCategories: React.FC<SpecialCategoriesProps> = ({
 
 // S T Y L E S
 export const StyledSpecialCategories = styled.div`
+  --category-icon-size: 8rem;
+  
   display: grid;
   margin: 0 10px;
   font-size: var(--text-lg);
@@ -90,16 +92,18 @@ export const StyledSpecialCategories = styled.div`
 
     i {
       position: absolute;
-      right: -1rem;
+      right: 2rem;
       bottom: -1rem;
       opacity: 0.1;
-      width: 60%;
-      height: 85%;
+      width: var(--category-icon-size);
+      height: var(--category-icon-size);
       color: var(--color-white);
       transition: var(--transition);
 
       svg {
         width: 100%;
+        max-width: var(--category-icon-size);
+        max-height: var(--category-icon-size);
       }
     }
 
