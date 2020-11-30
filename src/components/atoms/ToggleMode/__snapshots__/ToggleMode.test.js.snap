@@ -3,6 +3,7 @@
 exports[`<ToggleMode /> should match non default snapshot 1`] = `
 <DocumentFragment>
   .c1 {
+  --icon-size: 1rem;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -15,14 +16,35 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 1.25rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 
 .c1 svg {
   width: 100%;
   height: 100%;
-  max-width: 16px;
-  max-height: 16px;
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
+}
+
+.c1.md {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+}
+
+.c1.md svg {
+  max-width: calc(var(--icon-size) * 2);
+  max-height: calc(var(--icon-size) * 2);
+}
+
+.c1.lg {
+  width: calc(var(--icon-size) * 4);
+  height: calc(var(--icon-size) * 4);
+}
+
+.c1.lg svg {
+  max-width: calc(var(--icon-size) * 4);
+  max-height: calc(var(--icon-size) * 4);
 }
 
 .c0 {
@@ -133,7 +155,7 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
         class="icon"
       >
         <i
-          class="c1"
+          class="c1 icon undefined sm"
         >
           <svg
             data-name="sun (1)"
@@ -223,7 +245,7 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
         class="icon"
       >
         <i
-          class="c1"
+          class="c1 icon undefined sm"
         >
           <svg
             height="15"
@@ -260,6 +282,7 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 <DocumentFragment>
   .c1 {
+  --icon-size: 1rem;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -272,14 +295,35 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 1.25rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 
 .c1 svg {
   width: 100%;
   height: 100%;
-  max-width: 16px;
-  max-height: 16px;
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
+}
+
+.c1.md {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+}
+
+.c1.md svg {
+  max-width: calc(var(--icon-size) * 2);
+  max-height: calc(var(--icon-size) * 2);
+}
+
+.c1.lg {
+  width: calc(var(--icon-size) * 4);
+  height: calc(var(--icon-size) * 4);
+}
+
+.c1.lg svg {
+  max-width: calc(var(--icon-size) * 4);
+  max-height: calc(var(--icon-size) * 4);
 }
 
 .c0 {
@@ -386,7 +430,7 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
         class="icon"
       >
         <i
-          class="c1"
+          class="c1 icon undefined sm"
         >
           <svg
             data-name="sun (1)"
@@ -476,7 +520,7 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
         class="icon"
       >
         <i
-          class="c1"
+          class="c1 icon undefined sm"
         >
           <svg
             height="15"
