@@ -21,7 +21,7 @@ export interface SpecialCategory {
 
 // C O M P O N E N T
 export const SpecialCategories: React.FC<SpecialCategoriesProps> = ({
-  className = 'StyledSpecialCategories',
+  className,
   onClick,
   specialCategories
 }) => {

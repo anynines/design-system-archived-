@@ -9,10 +9,10 @@ export interface ModuleHeaderProps {
 // C O M P O N E N T
 export const ModuleHeader: React.FC<ModuleHeaderProps> = ({
   children,
-  className = 'StyledModuleHeader'
+  className
 }) => {
   return (
-    <StyledModuleHeader className={className}>
+    <StyledModuleHeader className={`module-header ${className}`}>
       {children}
     </StyledModuleHeader>
   )

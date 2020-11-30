@@ -47,6 +47,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   return (
     <StyledAvatar
       className={`
+        avatar-wrapper
         ${size} 
         ${rounded && 'rounded'} 
         ${level && 'level'} 

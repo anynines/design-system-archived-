@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 // I N T E R F A C E
 export interface ColorProps {
+  className?: string
   color?: string
   colorLabel?: string
   mainColor?: boolean
@@ -11,6 +12,7 @@ export interface ColorProps {
 
 // C O M P O N E N T
 export const Color: React.FC<ColorProps> = ({
+  className,
   color = 'var(--color-black)',
   colorLabel = 'Some black',
   mainColor = false,
@@ -19,7 +21,7 @@ export const Color: React.FC<ColorProps> = ({
   return (
     <StyledColor
       style={{ backgroundColor: color, color: textColor }}
-      className={mainColor && 'main-color'}
+      className={`color ${mainColor && 'main-color'} ${className}`}
     >
       <span>{colorLabel}</span>
     </StyledColor>

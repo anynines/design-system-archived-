@@ -19,7 +19,7 @@ export const Container: React.FC<ContainerProps> = ({
   return (
     <StyledContainer
       id={id}
-      className={className}
+      className={`container ${className}`}
       style={style}
     >
       {children}

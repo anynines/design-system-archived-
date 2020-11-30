@@ -14,7 +14,7 @@ export interface LogoProps {
 
 // C O M P O N E N T
 export const Logo: FC<LogoProps> = ({
-  className = 'StyledLogoWrapper',
+  className,
   onClick,
   path = '/',
   src: url,
@@ -30,7 +30,7 @@ export const Logo: FC<LogoProps> = ({
       className={vertical ? 'vertical' : ''}
       style={style}
     >
-      <StyledLogoWrapper className={`Logo ${vertical ? 'vertical' : ''} ${className}`}>
+      <StyledLogoWrapper className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}>
         <img src={url} alt='logo' />
       </StyledLogoWrapper>
     </NavLink>

@@ -13,7 +13,7 @@ export interface ModuleFooterProps {
 // C O M P O N E N T
 export const ModuleFooter: React.FC<ModuleFooterProps> = ({
   children,
-  className = 'StyledModuleFooter',
+  className,
   itemLabel,
   priceLabel,
   totalItems,
@@ -48,7 +48,7 @@ export const ModuleFooter: React.FC<ModuleFooterProps> = ({
   }
 
   return (
-    <StyledModuleFooter className={className}>
+    <StyledModuleFooter className={`module-footer ${className}`}>
       {getItemsIndicator()}
     </StyledModuleFooter>
   )

@@ -18,7 +18,7 @@ export const Row: React.FC<RowProps> = ({
   return (
     <StyledRow
       id={id}
-      className={className}
+      className={`row ${className}`}
       style={style}
     >
       {children}
