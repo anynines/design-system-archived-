@@ -4,6 +4,30 @@ import * as builder from './PaletteBuilder'
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
   /**************************************
+  **  Scrollbar  ************************
+  **************************************/
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-lighter);
+  }
+
+  /**************************************
   **  Global Variables  *****************
   **************************************/
   :root {
@@ -67,32 +91,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /**************************************
-  **  Scrollbar  ************************
-  **************************************/
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 5px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-lighter);
-  }
-
-  /**************************************
   **  Global Styles  ********************
   **************************************/
+
+  .sb-show-main.sb-main-padded {
+    padding: 0 !important;
+  }
 
   body {
     margin: 0;

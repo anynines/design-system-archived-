@@ -62,6 +62,7 @@ import LangIT from './assets/languages/it'
 import Layout from './assets/layout'
 import Light from './assets/light'
 import LinkIcon from './assets/link'
+import Lock from './assets/lock'
 import Logout from './assets/logout'
 
 // M
@@ -163,6 +164,7 @@ export type IconName = 'arrowUpRight'
   | 'LangIT'
   | 'layout'
   | 'light'
+  | 'lock'
   | 'logout'
   | 'menu'
   | 'minus'
@@ -245,6 +247,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   LangIT: <LangIT />,
   layout: <Layout />,
   light: <Light />,
+  lock: <Lock />,
   logout: <Logout />,
   news: <News />,
   menu: <Menu />,

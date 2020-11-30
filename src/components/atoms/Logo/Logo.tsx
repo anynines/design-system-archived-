@@ -38,11 +38,11 @@ export const Logo: FC<LogoProps> = ({
 }
 
 // S T Y L E S
-const StyledLogoWrapper = styled.span`
-  --logo-height: 2rem;
+const StyledLogoWrapper = styled.div`
+  --logo-height: 40px;
+  height: var(--logo-height);
 
   img {
-    margin-top: calc(var(--space-sm) * 2);
     height: var(--logo-height);
   }
 

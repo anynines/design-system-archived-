@@ -68,13 +68,15 @@ const StyledAdminNavigation = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 20px;
+  left: 20px;
   overflow: hidden;
   background-color: var(--color-dark);
   padding: var(--space-md);
   padding-top: 30px;
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: calc(100vh - 40px);
   color: var(--color-white);
   border-radius: var(--radius);
 
@@ -87,7 +89,7 @@ const StyledAdminNavigation = styled.div`
   .UserNav {
     position: absolute;
     bottom: 0;
-    background-color: var(--color-darker-50);
+    background-color: var(--color-black-50);
   }
 
   .Logo {

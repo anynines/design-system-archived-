@@ -47,6 +47,7 @@ const Wrapper: React.FC<WrapperProps> = ({
 // S T Y L E S
 const StyledWrapper = styled.div`
   display: flex;
+  margin: var(--space-xl);
   padding: var(--space-xl);
   border-radius: var(--radius);
 

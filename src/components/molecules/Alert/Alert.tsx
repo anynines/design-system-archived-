@@ -58,39 +58,6 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
 
-
-  &.notice {
-    background-color: var(--color-notice);
-
-    .alert-icon {
-      background-color: var(--color-notice-dark);
-    }
-  }
-
-  &.success {
-    background-color: var(--color-success);
-
-    .alert-icon {
-      background-color: var(--color-success-dark);
-    }
-  }
-
-  &.warning {
-    background-color: var(--color-warning);
-
-    .alert-icon {
-      background-color: var(--color-warning-dark);
-    }
-  }
-
-  &.error {
-    background-color: var(--color-error);
-
-    .alert-icon {
-      background-color: var(--color-error-dark);
-    }
-  }
-
   .alert-icon {
     display: flex;
     justify-content: center;
@@ -157,6 +124,38 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     svg {
       width: 1em;
       height: 1em;
+    }
+  }
+
+  &.notice {
+    background-color: var(--color-notice);
+
+    .alert-icon {
+      background-color: var(--color-notice-dark);
+    }
+  }
+
+  &.success {
+    background-color: var(--color-success);
+
+    .alert-icon {
+      background-color: var(--color-success-dark);
+    }
+  }
+
+  &.warning {
+    background-color: var(--color-warning);
+
+    .alert-icon {
+      background-color: var(--color-warning-dark);
+    }
+  }
+
+  &.error {
+    background-color: var(--color-error);
+
+    .alert-icon {
+      background-color: var(--color-error-dark);
     }
   }
 `
