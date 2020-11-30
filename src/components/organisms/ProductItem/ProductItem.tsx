@@ -43,7 +43,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   }
 
   return (
-    <StyledProductItem className={`product-item {className}`}>
+    <StyledProductItem className={`product-item ${className}`}>
       <div className='image'>
         <div
           className='image-container'
