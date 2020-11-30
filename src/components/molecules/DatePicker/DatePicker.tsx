@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import moment, { Moment } from 'moment'
 
 import 'react-dates/initialize'
+import 'react-dates/lib/css/_datepicker.css'
 import { DayPickerSingleDateController, DayPickerSingleDateControllerShape } from 'react-dates'
 
 // I N T E R F A C E S
