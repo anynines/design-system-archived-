@@ -10,11 +10,11 @@ export interface PageProps {
 // C O M P O N E N T
 export const Page: React.FC<PageProps> = ({
   children,
-  className = 'StyledPage',
+  className,
   id
 }) => {
   return (
-    <StyledPage id={id} className={className}>
+    <StyledPage id={id} className={`page ${className}`}>
       <div className='page'>{children}</div>
     </StyledPage>
   )

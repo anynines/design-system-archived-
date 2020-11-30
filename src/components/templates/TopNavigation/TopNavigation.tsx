@@ -29,12 +29,12 @@ const StyledTopNavigation = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
+  border-bottom: 1px solid var(--color-white-10);
   background: var(--color-darker);
   padding: 20px;
   width: 100%;
   height: 80px;
   color: var(--color-white);
-  border-bottom: 1px solid var(--color-white-10);
   box-shadow: 0 0 6px var(--color-dark-20);
 
   .wrapper {

@@ -22,6 +22,10 @@ export const Adminland: React.FC<AdminlandProps> = ({
 }
 
 const StyledAdminland = styled.div`
-  padding: 30px;
+  padding: 20px;
   padding-left: 320px;
+  
+  .page {
+    margin-top: 0;
+  }
 `

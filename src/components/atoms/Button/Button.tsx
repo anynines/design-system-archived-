@@ -100,7 +100,7 @@ const StyledButton = styled.button`
   &:hover {
     background-color: var(--color-primary-light);
     color: var(--color-white-fix);
-    box-shadow: var(--shadow);
+    box-shadow: 0 0 6px var(--color-light-10);
   }
 `
 StyledButton.displayName = 'StyledButton'

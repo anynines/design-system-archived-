@@ -55,8 +55,10 @@ const StyledCaretLink = styled.div`
 
     span {
       opacity: 0.5;
-      font-size: var(--text-lg);
-      font-weight: var(--font-weight-md);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      font-weight: var(--font-weight-bd);
       transition: var(--transition);
     }
 

@@ -43,9 +43,9 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-dark);
   width: 100%;
   height: 100vh;
-  background-color: var(--color-dark);
 
   .auth-container {
     display: flex;
