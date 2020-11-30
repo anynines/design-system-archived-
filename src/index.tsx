@@ -64,6 +64,9 @@ export * from './components/organisms/UserNav/UserNav'
 
 // T E M P L A T E S
 export * from './components/templates/TopNavigation/TopNavigation'
+export * from './components/templates/layouts/AuthLayout/AuthLayout'
+export * from './components/templates/layouts/Adminland/Adminland'
+export * from './components/templates/layouts/Userland/Userland'
 
 // H E L P E R
 export * from './helpers/index'
