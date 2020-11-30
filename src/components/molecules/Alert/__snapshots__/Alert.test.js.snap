@@ -42,38 +42,6 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
 }
 
-.c0.notice {
-  background-color: var(--color-notice);
-}
-
-.c0.notice .alert-icon {
-  background-color: var(--color-notice-dark);
-}
-
-.c0.success {
-  background-color: var(--color-success);
-}
-
-.c0.success .alert-icon {
-  background-color: var(--color-success-dark);
-}
-
-.c0.warning {
-  background-color: var(--color-warning);
-}
-
-.c0.warning .alert-icon {
-  background-color: var(--color-warning-dark);
-}
-
-.c0.error {
-  background-color: var(--color-error);
-}
-
-.c0.error .alert-icon {
-  background-color: var(--color-error-dark);
-}
-
 .c0 .alert-icon {
   display: -webkit-box;
   display: -webkit-flex;
@@ -174,6 +142,38 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 .c0 .alert-button svg {
   width: 1em;
   height: 1em;
+}
+
+.c0.notice {
+  background-color: var(--color-notice);
+}
+
+.c0.notice .alert-icon {
+  background-color: var(--color-notice-dark);
+}
+
+.c0.success {
+  background-color: var(--color-success);
+}
+
+.c0.success .alert-icon {
+  background-color: var(--color-success-dark);
+}
+
+.c0.warning {
+  background-color: var(--color-warning);
+}
+
+.c0.warning .alert-icon {
+  background-color: var(--color-warning-dark);
+}
+
+.c0.error {
+  background-color: var(--color-error);
+}
+
+.c0.error .alert-icon {
+  background-color: var(--color-error-dark);
 }
 
 <div
