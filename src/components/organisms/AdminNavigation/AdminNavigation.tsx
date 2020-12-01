@@ -76,7 +76,6 @@ const StyledAdminNavigation = styled.div`
   flex-direction: column;
   align-items: center;
   position: fixed;
-  overflow: hidden;
   top: 20px;
   left: 20px;
   overflow: hidden;
