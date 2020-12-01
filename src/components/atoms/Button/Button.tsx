@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// A T O M S
+import { Icon, IconName } from '../Icon/Icon'
+
 // I N T E R F A C E
 export interface ButtonProps {
   className?: string
+  icon?: IconName
   onClick?: () => void
   size?: ButtonSize
   style?: React.CSSProperties
@@ -21,6 +25,7 @@ export type ButtonWidth = 'block' | 'inline'
 export const Button: React.FC<ButtonProps> = ({
   children,
   className,
+  icon,
   onClick,
   size = 'md',
   style,
@@ -33,7 +38,9 @@ export const Button: React.FC<ButtonProps> = ({
       className={`btn ${type} ${size} ${width} ${className}`}
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={(): void => { return (onClick && onClick()) }}
+      icon={icon}
     >
+      {icon && <Icon icon={icon} />}
       {children}
     </StyledButton>
   )
@@ -64,10 +71,18 @@ const StyledButton = styled.button`
   /* Sizes */
   &.xs {
     font-size: var(--text-xs);
+
+    i {
+      --icon-size: .6rem;
+    }
   }
 
   &.sm {
     font-size: var(--text-sm);
+
+    i {
+      --icon-size: .75rem;
+    }
   }
   
   &.md {
@@ -101,6 +116,10 @@ const StyledButton = styled.button`
     background-color: var(--color-primary-light);
     color: var(--color-white-fix);
     box-shadow: 0 0 6px var(--color-light-10);
+  }
+
+  i {
+    margin-right: var(--space-md);
   }
 `
 StyledButton.displayName = 'StyledButton'
