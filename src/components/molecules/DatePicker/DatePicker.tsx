@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import moment, { Moment } from 'moment'
 
 import 'react-dates/initialize'
+import 'react-dates/lib/css/_datepicker.css'
 import { DayPickerSingleDateController, DayPickerSingleDateControllerShape } from 'react-dates'
 
 // I N T E R F A C E S
@@ -64,7 +65,7 @@ const StyledDatePicker = styled.div`
 
     &:hover {
       border: 1px double var(--color-black);
-      background: var(--color-darker-50);
+      background: var(--color-dark-50);
     }
   }
 
