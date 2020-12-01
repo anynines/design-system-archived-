@@ -70,7 +70,7 @@ export interface ThemeContextParam<T extends Theme> {
 
 export interface DesignSystemInstanceProps<T> {
   theme?: T
-  persistantThemeStorage?: boolean
+  persistantModeStorage?: boolean
   mode?: Mode
   useFavicon?: boolean
   autoDetectPreferenceMode?: boolean
