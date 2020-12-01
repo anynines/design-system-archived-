@@ -2,8 +2,9 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 import { getChildrenWithNewProps } from '../../../../helpers'
+import { TableChildrenProps } from './Table'
 
-export const Body: FC = ({ children, ...props }) => {
+export const Body: FC<TableChildrenProps> = ({ children, ...props }) => {
   return (
     <StyledBody>
       {getChildrenWithNewProps(children, props)}

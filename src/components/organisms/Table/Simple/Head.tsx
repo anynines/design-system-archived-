@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 
 import { getChildrenWithNewProps } from '../../../../helpers'
+import { TableChildrenProps } from './Table'
 
-export const Head = ({ children, ...props }): JSX.Element => {
+export const Head: FC<TableChildrenProps> = ({ children, ...props }): JSX.Element => {
   return (
     <StyledHead>
       {getChildrenWithNewProps(children, props)}

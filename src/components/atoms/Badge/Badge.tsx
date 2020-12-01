@@ -4,7 +4,7 @@ import styled from 'styled-components'
 // T Y P E S
 
 export interface BadgeProps {
-  value: string | boolean | number
+  value: string | number
   className?: string
 }
 
@@ -13,7 +13,7 @@ export interface BadgeProps {
 export const Badge: React.FC<BadgeProps> = (props) => {
   const { value, className = null } = props
   return (
-    <StyledBadge className={className}>{value.toString()}</StyledBadge>
+    <StyledBadge className={className}>{value}</StyledBadge>
   )
 }
 
