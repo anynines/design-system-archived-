@@ -74,7 +74,7 @@ export const Basic = <T extends Theme>(args: DesignSystemInstanceProps<T>) => (
 )
 
 export const WithStoragePrefixAndCustomTheme = <T extends CustomTheme>(args: DesignSystemInstanceProps<T>) => (
-  <DesignSystemInstance theme={exampletheme2} storagePrefix='Storybook' {...args}>
+  <DesignSystemInstance theme={undefined} storagePrefix='Storybook' {...args}>
     <Button type='primary'>
       <span>Button Primary</span>
     </Button>

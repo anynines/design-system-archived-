@@ -10,7 +10,7 @@ import { Mode } from '../../../designSystemInstance/types/types'
 export interface AdminNavigationProps {
   activeLink: string
   className?: string
-  links: AdminNavigationLink[]
+  links?: AdminNavigationLink[]
   logoSrc: string
   logoutUser: () => void
   mode: Mode
@@ -24,6 +24,7 @@ export interface AdminNavigationLink {
   children: JSX.Element
   icon?: IconName
   id: string
+  path?: string
 }
 
 export const AdminNavigation: React.FC<AdminNavigationProps> = ({
@@ -36,14 +37,20 @@ export const AdminNavigation: React.FC<AdminNavigationProps> = ({
   onLinkClick,
   setMode,
   style,
-  userInfo
+  userInfo,
+  children
 }) => {
   return (
-    <StyledAdminNavigation style={style} className={`admin-navigation ${className}`}>
+    <StyledAdminNavigation
+      style={style}
+      className={`admin-navigation ${className}`}
+    >
       <Logo
         src={logoSrc}
         vertical
       />
+
+      {children}
 
       <Menu
         items={links}
@@ -69,42 +76,40 @@ const StyledAdminNavigation = styled.div`
   flex-direction: column;
   align-items: center;
   position: fixed;
+  overflow: hidden;
   top: 20px;
   left: 20px;
   overflow: hidden;
   background-color: var(--color-dark);
-  padding: var(--space-md);
+  padding: var(--space-lg);
   padding-top: 30px;
   width: 280px;
   height: calc(100vh - 40px);
   color: var(--color-white);
   border-radius: var(--radius);
 
-  .StyledMenuItem {
+  .menu-item {
     .wrapper:not(.active):not(:hover) {
       background-color: var(--color-black);
     }
   }
 
-  .UserNav {
+  .user-nav {
     position: absolute;
     bottom: 0;
     background-color: var(--color-black-50);
   }
 
-  .Logo {
+  .logo-wrapper {
+    margin-bottom: 30px;
     img {
       margin-top: 0;
     }
   }
 
-  ul {
-    padding-top: 30px;
-  }
-
   li {
     margin: 0;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
 
     &:last-child {
       margin-bottom: 0;

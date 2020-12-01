@@ -23,6 +23,7 @@ export * from './components/atoms/Logo/Logo'
 export * from './components/atoms/Select/Select'
 export * from './components/atoms/Spinner/Spinner'
 export * from './components/atoms/ToggleMode/ToggleMode'
+export * from './components/atoms/ToggleLayout/ToggleLayout'
 export * from './components/atoms/ColorPicker/ColorPicker'
 
 // A T O M S - M O D A L
@@ -42,6 +43,7 @@ export * from './components/molecules/ImageUploader/ImageUploader'
 export * from './components/molecules/Modal/Modal'
 export * from './components/molecules/Notification/Notification'
 export * from './components/molecules/UserInfo/UserInfo'
+export * from './components/molecules/UserDropdown/UserDropdown'
 export * from './components/molecules/MenuItem/MenuItem'
 export * from './components/molecules/SpecialCategories/SpecialCategories'
 

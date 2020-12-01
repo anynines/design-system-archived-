@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Container } from '../Container/Container'
+import { Container, containerSizeType } from '../Container/Container'
 
 // I N T E R F A C E S
 export interface SectionProps {
   bgColor?: BgColorType
   className?: string
+  containerSize?: containerSizeType
   id?: string
   style?: React.CSSProperties
 }
@@ -18,6 +19,7 @@ export const Section: React.FC<SectionProps> = ({
   bgColor = 'dark',
   children,
   className,
+  containerSize,
   id,
   style
 }) => {
@@ -27,7 +29,7 @@ export const Section: React.FC<SectionProps> = ({
       className={`section ${className} section--${bgColor}`}
       style={style}
     >
-      <Container>
+      <Container containerSize={containerSize}>
         {children}
       </Container>
     </StyledSection>

@@ -28,4 +28,8 @@ const StyledAdminland = styled.div`
   .page {
     margin-top: 0;
   }
+
+  .section {
+    border-radius: var(--radius);
+  }
 `

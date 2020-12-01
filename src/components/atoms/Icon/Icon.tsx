@@ -49,6 +49,7 @@ import Grid16 from './assets/grid16'
 
 // H
 import Heart from './assets/heart'
+import Home from './assets/home'
 
 // I
 import Info from './assets/info'
@@ -157,6 +158,7 @@ export type IconName = 'arrowUpRight'
   | 'grid8'
   | 'grid16'
   | 'heart'
+  | 'home'
   | 'info'
   | 'LangDE'
   | 'LangEN'
@@ -240,6 +242,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   grid8: <Grid8 />,
   grid16: <Grid16 />,
   heart: <Heart />,
+  home: <Home />,
   info: <Info />,
   LangDE: <LangDE />,
   LangEN: <LangEN />,
