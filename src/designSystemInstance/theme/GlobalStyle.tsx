@@ -32,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   **************************************/
   :root {
     /* C O L O R S */
+    ${(props): any => { console.log('props', props.theme.globals.colors) }}
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.primary, 'Primary') }}
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.success, 'Success') }}
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.notice, 'Notice') }}

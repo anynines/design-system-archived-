@@ -42,7 +42,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           id={icon}
           style={style}
         >
-          <NavLink to={`${path}`} className='wrapper' activeClassName='active'>
+          <NavLink exact to={`${path}`} className='wrapper' activeClassName='active'>
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
@@ -82,7 +82,7 @@ interface StyledMenuItemProps {
 // S T Y L E S
 const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --display: ${(props): string => { return props.vertical ? 'inline-block' : 'block' }};
-  --margin: ${(props): string => { return props.vertical ? '0 0 20px 0' : '0 10px' }};
+  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-lg) 0' : '0 var(--space-sm)' }};
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
   
@@ -90,6 +90,10 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   position: relative;
   margin: var(--margin);
   list-style-type: none;
+
+  a {
+    text-decoration: none;
+  }
 
   &:first-child {
     margin-left: 0;

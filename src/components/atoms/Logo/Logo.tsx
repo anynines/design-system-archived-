@@ -47,6 +47,7 @@ const StyledLogoWrapper = styled.div`
   }
 
   &.vertical {
+    height: auto;
     margin-bottom: var(--space-lgr);
 
     img {
