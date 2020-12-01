@@ -9,7 +9,7 @@ export interface AlertProps {
   className?: string
   description: string
   onClose: () => void
-  size: IconSize
+  size?: IconSize
   style?: React.CSSProperties
   title: string
   type: AlertType
