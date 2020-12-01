@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // A T O M S
-import { Icon, IconName } from '../../atoms/Icon/Icon'
+import { Icon, IconName } from '../Icon/Icon'
 
 // I N T E R F A C E
 export interface ButtonProps {
