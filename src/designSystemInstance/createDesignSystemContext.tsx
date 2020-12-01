@@ -44,7 +44,7 @@ export const createDesignSystemContext = <T extends PartialTheme>(): DesignSyste
     const {
       theme = defaultTheme,
       mode = 'dark',
-      persistantThemeStorage = true,
+      persistantThemeStorage = false,
       useFavicon = false,
       autoDetectPreferenceMode = true,
       storagePrefix = 'ds_',
