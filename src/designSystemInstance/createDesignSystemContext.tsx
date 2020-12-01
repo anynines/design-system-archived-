@@ -11,7 +11,6 @@ import {
 import {
   getTheme,
   getMode,
-  onThemeChange,
   getToggledTheme
 } from './designSystemInstanceHelpers'
 
@@ -44,7 +43,7 @@ export const createDesignSystemContext = <T extends PartialTheme>(): DesignSyste
     const {
       theme = defaultTheme,
       mode = 'dark',
-      persistantThemeStorage = true,
+      persistantModeStorage = true,
       useFavicon = false,
       autoDetectPreferenceMode = true,
       storagePrefix = 'ds_',
@@ -56,14 +55,12 @@ export const createDesignSystemContext = <T extends PartialTheme>(): DesignSyste
     }
 
     const [themeState, setThemeState] = React.useState<T & Theme>(getTheme(
-      getMergedTheme(theme),
-      storagePrefix,
-      persistantThemeStorage
+      getMergedTheme(theme)
     ))
     const [modeState, setModeState] = React.useState<Mode>(getMode(
       mode,
       storagePrefix,
-      persistantThemeStorage
+      persistantModeStorage
     ))
 
     const setMode = React.useCallback((newMode: Mode): void => {
@@ -86,10 +83,6 @@ export const createDesignSystemContext = <T extends PartialTheme>(): DesignSyste
         setMode('light')
       }
     }, [setMode])
-
-    React.useEffect(() => {
-      onThemeChange(themeState, storagePrefix, persistantThemeStorage)
-    }, [storagePrefix, themeState, persistantThemeStorage])
 
     React.useEffect(() => {
       if (useFavicon) {

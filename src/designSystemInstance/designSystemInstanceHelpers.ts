@@ -2,16 +2,8 @@ import { LocalStorage } from '../helpers/localStorage'
 import { Theme, Mode } from './types/types'
 
 export const getTheme = <T extends Theme>(
-  theme: T,
-  storagePrefix: string,
-  useLocalStorage: boolean
+  theme: T
 ): T => {
-  const themeStoredInLocalStorage = LocalStorage.getItem(`${storagePrefix}theme`)
-
-  if (useLocalStorage && themeStoredInLocalStorage !== null) {
-    return JSON.parse(themeStoredInLocalStorage)
-  }
-
   return theme
 }
 
@@ -27,16 +19,6 @@ export const getMode = (
   }
 
   return mode
-}
-
-export const onThemeChange = <T extends Theme>(
-  theme: T,
-  storagePrefix: string,
-  useLocalStorage: boolean
-): void => {
-  if (useLocalStorage) {
-    LocalStorage.setItem(`${storagePrefix}theme`, theme)
-  }
 }
 
 export const getToggledTheme = <T extends Theme>(theme: T): T => {
