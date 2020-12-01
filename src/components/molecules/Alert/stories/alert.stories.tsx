@@ -30,6 +30,17 @@ export default {
     },
     onClose: {
       control: { type: 'disabled' },
+    },
+    size: {
+      name: 'IconSize',
+      control: {
+        type: 'select',
+        options: {
+          small: 'sm',
+          medium: 'md',
+          large: 'lg'
+        }
+      }
     }
   }
 }

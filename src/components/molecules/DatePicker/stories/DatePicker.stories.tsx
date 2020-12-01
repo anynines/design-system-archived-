@@ -1,6 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 
+import Wrapper from '../../../_helpers/Wrapper'
 import { DatePicker, DatePickerProps } from '../DatePicker'
 
 
@@ -15,13 +16,19 @@ export default {
 }
 
 export const Basic = (args: DatePickerProps) => (
-  <DatePicker  {...args} onDateChange={action('Selected date as timestamp:')} />
+  <Wrapper>
+    <DatePicker  {...args} onDateChange={action('Selected date as timestamp:')} />
+  </Wrapper>
 )
 
 export const GivenTimestampDate = (args: DatePickerProps) => (
-  <DatePicker  {...args} date={new Date().getTime() / 1000} onDateChange={action('Selected date as timestamp:')} />
+  <Wrapper>
+    <DatePicker  {...args} date={new Date().getTime() / 1000} onDateChange={action('Selected date as timestamp:')} />
+  </Wrapper>
 )
 
 export const CustomMonthAmount = (args: DatePickerProps) => (
-  <DatePicker  {...args} date={new Date().getTime() / 1000} numberOfMonths={3} onDateChange={action('Selected date as timestamp:')} />
+  <Wrapper>
+    <DatePicker  {...args} date={new Date().getTime() / 1000} numberOfMonths={3} onDateChange={action('Selected date as timestamp:')} />
+  </Wrapper>
 )

@@ -32,6 +32,16 @@ export default {
     },
     className: {
       control: { type: 'text' },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: [
+          'sm',
+          'md',
+          'lg'
+        ]
+      }
     }
   },
 }
@@ -42,93 +52,107 @@ export const Menu = (args: IconProps) => (
   </Wrapper>
 )
 
-export const Collection = () => (
+export const Sizes = () => (
+  <>
+    <Wrapper>
+      <Icon icon='caretLeft' size='sm' />
+    </Wrapper>
+    <Wrapper>
+      <Icon icon='caretLeft' size='md' />
+    </Wrapper>
+    <Wrapper>
+      <Icon icon='caretLeft' size='lg' />
+    </Wrapper>
+  </>
+)
+
+export const Collection = (args: IconProps) => (
   <Wrapper flexWrap='wrap' height='100%'>
-    <IconWrapper icon='arrowUpRight' />
+    <IconWrapper icon='arrowUpRight' size={args.size} />
 
-    <IconWrapper icon='bestseller' />
-    <IconWrapper icon='bin' />
-    <IconWrapper icon='button' />
+    <IconWrapper icon='bestseller' size={args.size} />
+    <IconWrapper icon='bin' size={args.size} />
+    <IconWrapper icon='button' size={args.size} />
 
-    <IconWrapper icon='calendar' />
-    <IconWrapper icon='camera' />
-    <IconWrapper icon='caretDown' />
-    <IconWrapper icon='caretLeft' />
-    <IconWrapper icon='caretRight' />
-    <IconWrapper icon='cart' />
-    <IconWrapper icon='close' />
-    <IconWrapper icon='color' />
-    <IconWrapper icon='customer' />
+    <IconWrapper icon='calendar' size={args.size} />
+    <IconWrapper icon='camera' size={args.size} />
+    <IconWrapper icon='caretDown' size={args.size} />
+    <IconWrapper icon='caretLeft' size={args.size} />
+    <IconWrapper icon='caretRight' size={args.size} />
+    <IconWrapper icon='cart' size={args.size} />
+    <IconWrapper icon='close' size={args.size} />
+    <IconWrapper icon='color' size={args.size} />
+    <IconWrapper icon='customer' size={args.size} />
 
-    <IconWrapper icon='dashboard' />
-    <IconWrapper icon='delivery' />
-    <IconWrapper icon='drop' />
+    <IconWrapper icon='dashboard' size={args.size} />
+    <IconWrapper icon='delivery' size={args.size} />
+    <IconWrapper icon='drop' size={args.size} />
 
-    <IconWrapper icon='edit' />
-    <IconWrapper icon='euro' />
+    <IconWrapper icon='edit' size={args.size} />
+    <IconWrapper icon='euro' size={args.size} />
 
-    <IconWrapper icon='filter' />
-    <IconWrapper icon='folder' />
-    <IconWrapper icon='font' />
-    <IconWrapper icon='frequency' />
+    <IconWrapper icon='filter' size={args.size} />
+    <IconWrapper icon='folder' size={args.size} />
+    <IconWrapper icon='font' size={args.size} />
+    <IconWrapper icon='frequency' size={args.size} />
 
-    <IconWrapper icon='globe' />
-    <IconWrapper icon='grid1' />
-    <IconWrapper icon='grid2' />
-    <IconWrapper icon='grid4' />
-    <IconWrapper icon='grid8' />
-    <IconWrapper icon='grid16' />
+    <IconWrapper icon='globe' size={args.size} />
+    <IconWrapper icon='grid1' size={args.size} />
+    <IconWrapper icon='grid2' size={args.size} />
+    <IconWrapper icon='grid4' size={args.size} />
+    <IconWrapper icon='grid8' size={args.size} />
+    <IconWrapper icon='grid16' size={args.size} />
 
-    <IconWrapper icon='heart' />
+    <IconWrapper icon='heart' size={args.size} />
 
-    <IconWrapper icon='info' />
+    <IconWrapper icon='info' size={args.size} />
 
-    <IconWrapper icon='LangDE' />
-    <IconWrapper icon='LangEN' />
-    <IconWrapper icon='LangSP' />
-    <IconWrapper icon='LangIT' />
-    <IconWrapper icon='layout' />
-    <IconWrapper icon='light' />
-    <IconWrapper icon='logout' />
+    <IconWrapper icon='LangDE' size={args.size} />
+    <IconWrapper icon='LangEN' size={args.size} />
+    <IconWrapper icon='LangSP' size={args.size} />
+    <IconWrapper icon='LangIT' size={args.size} />
+    <IconWrapper icon='layout' size={args.size} />
+    <IconWrapper icon='light' size={args.size} />
+    <IconWrapper icon='logout' size={args.size} />
 
-    <IconWrapper icon='menu' />
-    <IconWrapper icon='minus' />
-    <IconWrapper icon='minusInSquare' />
-    <IconWrapper icon='moon' />
+    <IconWrapper icon='menu' size={args.size} />
+    <IconWrapper icon='minus' size={args.size} />
+    <IconWrapper icon='minusInSquare' size={args.size} />
+    <IconWrapper icon='moon' size={args.size} />
 
-    <IconWrapper icon='news' />
-    <IconWrapper icon='notifications' />
-    <IconWrapper icon='novelties' />
+    <IconWrapper icon='news' size={args.size} />
+    <IconWrapper icon='notifications' size={args.size} />
+    <IconWrapper icon='novelties' size={args.size} />
 
-    <IconWrapper icon='orders' />
+    <IconWrapper icon='orders' size={args.size} />
 
-    <IconWrapper icon='pages' />
-    <IconWrapper icon='pipette' />
-    <IconWrapper icon='placeholder' />
-    <IconWrapper icon='plus' />
-    <IconWrapper icon='points' />
+    <IconWrapper icon='pages' size={args.size} />
+    <IconWrapper icon='pipette' size={args.size} />
+    <IconWrapper icon='placeholder' size={args.size} />
+    <IconWrapper icon='plus' size={args.size} />
+    <IconWrapper icon='points' size={args.size} />
 
-    <IconWrapper icon='random' />
-    <IconWrapper icon='remove' />
-    <IconWrapper icon='rocket' />
+    <IconWrapper icon='random' size={args.size} />
+    <IconWrapper icon='remove' size={args.size} />
+    <IconWrapper icon='rocket' size={args.size} />
 
-    <IconWrapper icon='sale' />
-    <IconWrapper icon='sections' />
-    <IconWrapper icon='send' />
-    <IconWrapper icon='settings' />
-    <IconWrapper icon='shop' />
-    <IconWrapper icon='slider' />
+    <IconWrapper icon='sale' size={args.size} />
+    <IconWrapper icon='sections' size={args.size} />
+    <IconWrapper icon='send' size={args.size} />
+    <IconWrapper icon='settings' size={args.size} />
+    <IconWrapper icon='shop' size={args.size} />
+    <IconWrapper icon='slider' size={args.size} />
 
-    <IconWrapper icon='tag' />
-    <IconWrapper icon='text' />
-    <IconWrapper icon='telescope' />
-    <IconWrapper icon='turnAround' />
+    <IconWrapper icon='tag' size={args.size} />
+    <IconWrapper icon='text' size={args.size} />
+    <IconWrapper icon='telescope' size={args.size} />
+    <IconWrapper icon='turnAround' size={args.size} />
 
-    <IconWrapper icon='unit' />
-    <IconWrapper icon='user' />
-    <IconWrapper icon='users' />
+    <IconWrapper icon='unit' size={args.size} />
+    <IconWrapper icon='user' size={args.size} />
+    <IconWrapper icon='users' size={args.size} />
 
-    <IconWrapper icon='widthSM' />
-    <IconWrapper icon='wishlist' />
+    <IconWrapper icon='widthSM' size={args.size} />
+    <IconWrapper icon='wishlist' size={args.size} />
   </Wrapper>
 )
