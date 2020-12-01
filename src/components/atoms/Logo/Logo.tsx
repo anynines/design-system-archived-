@@ -48,6 +48,7 @@ const StyledLogoWrapper = styled.div`
 
   &.vertical {
     margin-bottom: var(--space-lgr);
+    height: auto;
 
     img {
       height: calc(var(--logo-height) * 2);
