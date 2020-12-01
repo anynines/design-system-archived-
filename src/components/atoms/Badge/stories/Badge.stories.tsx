@@ -19,6 +19,5 @@ export const Basic = (args) => (
   <>
     <Badge value='Basic' />
     <Badge value={1} className='basic' />
-    <Badge value={false} className='basic' />
   </>
 );

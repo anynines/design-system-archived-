@@ -248,7 +248,7 @@ export const Simple: React.FC = () => {
           <Cell type='head' value='january' field='january' />
           <Cell type='head' value='february' field='february' />
           <Cell type='head' value='march' field='march' />
-          <Cell type='head' value='april' field='april' />
+          <Cell type='head' value='april' field='april' sortable />
           <Cell type='head' value='may' field='may' />
           <Cell type='head' value='june' field='june' />
           <Cell type='head' value='july' field='july' />

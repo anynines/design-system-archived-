@@ -59,7 +59,7 @@ export const Cell: FC<CellProps> = (props) => {
       if (sortDirection === 'desc') return <Icon className='inverted' icon='caretDown' />
       if (sortDirection === 'asc') return <Icon icon='caretDown' />
     }
-    if (onSort && sortable && sortDirection === null) return <Icon icon='unorderedList' />
+    if (onSort && sortable && (sortDirection === null || sortedBy !== field)) return <Icon icon='unorderedList' />
     return null
   }
 
@@ -101,6 +101,12 @@ const StyledBodyCell = styled.td`
     text-transform: capitalize;
     color: var(--color-white);
     font-size: var(--text-md);
+
+    i {
+      margin-left: var(--space-sm);
+      width: 10px;
+      height: 10px;
+    }
   }
   
   &.head {
