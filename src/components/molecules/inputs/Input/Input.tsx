@@ -1,7 +1,7 @@
 import React from 'react'
 
 // C O M P O N E N T S
-import { LabelProps } from '../../../atoms/Label/Label'
+import { InputLabelProps } from '../../../atoms/InputLabel/InputLabel'
 import { TextInput, TextInputProps } from '../Text/TextInput'
 import { ColorInput } from '../Color/ColorInput'
 import { DateInput, DateInputProps } from '../Date/DateInput'
@@ -16,22 +16,22 @@ export type InputProps = DateInputRestrictedProps | TextInputProps & {
   onChange?: (newValue: string) => void
 }
 type Input = React.FC<InputProps>
-  & { Label: React.FC<LabelProps> }
-export type InputType = 'text' | 'color' | 'email' | 'password' | 'date'
+  & { Label: React.FC<InputLabelProps> }
+export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'date'
 
 // C O M P O N E N T
 export const Input: Input = (props) => {
   const {
+    children,
+    errors,
+    getValues,
+    handleSubmit,
     name,
     label,
-    register,
-    handleSubmit,
-    errors,
-    watch,
     pattern,
-    getValues,
+    register,
     setValue,
-    children
+    watch
   } = props
 
   const renderInput = (): JSX.Element => {
@@ -58,11 +58,22 @@ export const Input: Input = (props) => {
         return (
           <TextInput
             {...props}
-            pattern={pattern || /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/}
+            pattern={pattern || /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/}
           >
             {children}
           </TextInput>
         )
+
+      case 'number':
+        return (
+          <TextInput
+            {...props}
+            pattern={pattern || /^[0-9]{2,30}$/}
+          >
+            {children}
+          </TextInput>
+        )
+
       case 'date':
         return (
           <DateInput {...props}>{children}</DateInput>

@@ -3,21 +3,21 @@ import styled from 'styled-components'
 
 // I N T E R F A C E
 export interface ModuleFooterProps {
-  totalItems: number
-  itemLabel: string
-  totalPrice: number
-  priceLabel: string
   className?: string
+  itemLabel: string
+  priceLabel: string
+  totalItems: number
+  totalPrice: number
 }
 
 // C O M P O N E N T
 export const ModuleFooter: React.FC<ModuleFooterProps> = ({
-  className = 'StyledModuleFooter',
-  totalItems,
+  children,
+  className,
   itemLabel,
-  totalPrice,
   priceLabel,
-  children
+  totalItems,
+  totalPrice
 }) => {
   const getItemsIndicator = (): JSX.Element => {
     if (totalItems > 0) {
@@ -48,7 +48,7 @@ export const ModuleFooter: React.FC<ModuleFooterProps> = ({
   }
 
   return (
-    <StyledModuleFooter className={className}>
+    <StyledModuleFooter className={`module-footer ${className}`}>
       {getItemsIndicator()}
     </StyledModuleFooter>
   )
@@ -56,12 +56,13 @@ export const ModuleFooter: React.FC<ModuleFooterProps> = ({
 
 // S T Y L E S
 const StyledModuleFooter = styled.div`
-  background-color:var(--color-darker);  
+  margin-top: var(--space-md);
+  background-color: var(--color-dark);
   padding: var(--space-md);
   width: 100%;
   min-height: 5rem;
   color: var(--color-white);
-  border-radius:var(--radius);
+  border-radius: 0 0 var(--radius) var(--radius);
 
   h2 {
     opacity: 0.5;

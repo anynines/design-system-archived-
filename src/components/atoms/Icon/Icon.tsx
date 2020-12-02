@@ -1,7 +1,5 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
-// A S S E T S
 
 // A
 import ArrowUpRight from './assets/arrowUpRight'
@@ -17,6 +15,7 @@ import Button from './assets/button'
 import Camera from './assets/camera'
 import Calendar from './assets/calendar'
 import CaretDown from './assets/caretDown'
+import CaretLeft from './assets/caretLeft'
 import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
 import Close from './assets/close'
@@ -50,6 +49,7 @@ import Grid16 from './assets/grid16'
 
 // H
 import Heart from './assets/heart'
+import Home from './assets/home'
 
 // I
 import Info from './assets/info'
@@ -63,6 +63,7 @@ import LangIT from './assets/languages/it'
 import Layout from './assets/layout'
 import Light from './assets/light'
 import LinkIcon from './assets/link'
+import Lock from './assets/lock'
 import Logout from './assets/logout'
 
 // M
@@ -122,11 +123,15 @@ import Wishlist from './assets/wishlist'
 
 // I N T E R F A C E S
 export interface IconProps {
-  icon?: IconName
   className?: string
+  icon?: IconName
+  size?: IconSize
+  style?: React.CSSProperties
 }
 
 // T Y P E S
+export type IconSize = 'sm' | 'md' | 'lg'
+
 export type IconName = 'arrowUpRight'
   | 'bestseller'
   | 'bin'
@@ -134,6 +139,7 @@ export type IconName = 'arrowUpRight'
   | 'calendar'
   | 'camera'
   | 'caretDown'
+  | 'caretLeft'
   | 'caretRight'
   | 'cart'
   | 'close'
@@ -155,6 +161,7 @@ export type IconName = 'arrowUpRight'
   | 'grid8'
   | 'grid16'
   | 'heart'
+  | 'home'
   | 'info'
   | 'LangDE'
   | 'LangEN'
@@ -162,6 +169,7 @@ export type IconName = 'arrowUpRight'
   | 'LangIT'
   | 'layout'
   | 'light'
+  | 'lock'
   | 'logout'
   | 'menu'
   | 'minus'
@@ -215,6 +223,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   calendar: <Calendar />,
   camera: <Camera />,
   caretDown: <CaretDown />,
+  caretLeft: <CaretLeft />,
   caretRight: <CaretRight />,
   cart: <Cart />,
   close: <Close />,
@@ -236,6 +245,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   grid8: <Grid8 />,
   grid16: <Grid16 />,
   heart: <Heart />,
+  home: <Home />,
   info: <Info />,
   LangDE: <LangDE />,
   LangEN: <LangEN />,
@@ -243,6 +253,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   LangIT: <LangIT />,
   layout: <Layout />,
   light: <Light />,
+  lock: <Lock />,
   logout: <Logout />,
   news: <News />,
   menu: <Menu />,
@@ -290,10 +301,14 @@ const ICONS: { [key in IconName]: JSX.Element } = {
 }
 
 // C O M P O N E N T
-export const Icon: FC<IconProps> = (props) => {
-  const { icon = 'menu', className } = props
+export const Icon: React.FC<IconProps> = ({
+  className,
+  icon = 'menu',
+  size = 'sm',
+  style
+}) => {
   return (
-    <StyledIcon className={className}>
+    <StyledIcon className={`icon ${className} ${size}`} style={style}>
       {ICONS[icon]}
     </StyledIcon>
   )
@@ -301,12 +316,38 @@ export const Icon: FC<IconProps> = (props) => {
 
 // S T Y L E S
 const StyledIcon = styled.i`
+  --icon-size: 1rem;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 1.25rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
   
   svg {
     width: 100%;
+    height: 100%;
+    max-width: var(--icon-size);
+    max-height: var(--icon-size);
+  }
+
+  &.md {
+    width: calc(var(--icon-size) * 2);
+    height: calc(var(--icon-size) * 2);
+
+    svg {
+      max-width: calc(var(--icon-size) * 2);
+      max-height: calc(var(--icon-size) * 2);
+    }
+  }
+
+  &.lg {
+    width: calc(var(--icon-size) * 4);
+    height: calc(var(--icon-size) * 4);
+
+    svg {
+      max-width: calc(var(--icon-size) * 4);
+      max-height: calc(var(--icon-size) * 4);
+    }
   }
 `

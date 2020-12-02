@@ -5,21 +5,21 @@ import { CustomTableRow as TableRow, TableAccessor, TableColumnCellColor, TableC
 import DraggableTableContainer from './DraggableTableContainer'
 
 export interface DraggableTableProps {
-  rowsData: Row<TableRow>[]
-  prepareRow: (row: Row<TableRow>) => void
-  tableBodyProps: TableBodyProps
-  tableProps: TableProps
+  color?: TableRowColor
+  disabledCategories: string[]
+  folderLimit: number
   headerGroups: HeaderGroup<TableRow>[]
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  disabledCategories: string[]
-  setPages: React.Dispatch<React.SetStateAction<TableRow[]>>
   pages: TableRow[]
   pagesPerFolder: number
-  folderLimit: number
+  prepareRow: (row: Row<TableRow>) => void
+  rowsData: Row<TableRow>[]
+  setPages: React.Dispatch<React.SetStateAction<TableRow[]>>
   sortCategoryAlphabeticallyAndControlLimits: (pagesDataObject: TableData) => TableRow[]
-  color?: TableRowColor
+  tableBodyProps: TableBodyProps
+  tableProps: TableProps
 }
 
 // C O M P O N E N T

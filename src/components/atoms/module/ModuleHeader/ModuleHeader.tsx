@@ -8,10 +8,14 @@ export interface ModuleHeaderProps {
 
 // C O M P O N E N T
 export const ModuleHeader: React.FC<ModuleHeaderProps> = ({
-  className = 'StyledModuleHeader',
-  children
+  children,
+  className
 }) => {
-  return <StyledModuleHeader className={className}>{children}</StyledModuleHeader>
+  return (
+    <StyledModuleHeader className={`module-header ${className}`}>
+      {children}
+    </StyledModuleHeader>
+  )
 }
 
 // S T Y L E S
@@ -20,11 +24,12 @@ const StyledModuleHeader = styled.div`
 
   display: flex;
   align-items: center;
+  margin-bottom: var(--space-md);
+  border: var(--radius) var(--radius) 0 0;
   background-color: var(--color-primary);
   padding: 0 var(--space-md);
   height: var(--header-height);
   color: var(--color-white-fix);
-  border-radius: var(--radius);
 
   i {
     margin-right: var(--space-sm);

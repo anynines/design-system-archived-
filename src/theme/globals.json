@@ -3,12 +3,24 @@
     "name": "Lato",
     "light": "300",
     "regular": "400",
-    "bold": "700"
+    "bold": "900"
+  },
+  "colors": {
+    "primary": "#e4833e",
+    "white": "#ffffff",
+    "light": "#ebedff",
+    "dark": "#1d3252",
+    "black": "#062035",
+    "success": "#6aa84f",
+    "notice": "#3e97e4",
+    "warning": "#e0cd66",
+    "error": "#e06666",
+    "whiteFix": "#ffffff"
   },
   "radius": "10px",
-  "border": "none",
+  "border": "1px solid var(--color-white-10)",
   "contentMaxWidth": "75rem",
-  "shadow": "none",
+  "shadow": "0 0 6px var(--color-black-50)",
   "transition": "all 0.3s ease-in-out",
   "logos": {
     "vertical": {

@@ -8,25 +8,25 @@ import { CustomTableRow as TableRow, TableColumnCell, TableAccessor, TableColumn
 import DraggableTableColumn from './DraggableTableColumn'
 
 interface DraggableTableRowProps {
-  row: Row<TableRow>
-  key: string
-  index: number
-  isDraggable: boolean
+  color?: TableRowColor
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
+  index: number
+  isDraggable: boolean
   isFolderDraggable: boolean
+  key: string
+  row: Row<TableRow>
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
-  color?: TableRowColor
 }
 
 interface DraggableTableRowCategoryProps {
-  row: Row<TableRow>
   idx: string
   key: string
   index: number
   isFolderDraggable: boolean
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
+  row: Row<TableRow>
 }
 
 const DraggableTableRowCategory: React.FC<DraggableTableRowCategoryProps> = (props) => {
@@ -110,7 +110,7 @@ const UndraggableTableRow: React.FC<DraggableTableRowProps> = (props) => {
 const StyledRow = styled.tr`
   &.draggable-table-row {
     width: 100%;
-    border-radius: 5px;
+    border-radius: var(--radius);
     max-height: 60px;
 
     td {
@@ -128,12 +128,17 @@ const StyledRow = styled.tr`
 
       &:first-child {
         padding-left: 1rem;
-        border-bottom-left-radius: 5px;
-        border-top-left-radius: 5px;
+        border-bottom-left-radius: var(--radius);
+        border-top-left-radius: var(--radius);
       }
       &:last-child {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+      }
+
+      a.cell-link {
+        position: relative;
+        color: var(--color-dark);
       }
 
       span.blue, span.black {
@@ -142,18 +147,18 @@ const StyledRow = styled.tr`
         align-items: center;
         flex-wrap: nowrap;
         background-color: rgb(59, 185, 255);
-        padding: 2px 5px;
+        padding: 2px var(--space-sm);
         font-size: var(--text-md);
         font-weight: var(--font-weight-bd);
-        border-radius: 5px;
+        border-radius: var(--radius);
 
         svg {
-          margin-right: 5px;
+          margin-right: var(--space-sm);
         }
       }
 
       span.black {
-        background-color: var(--color-darker);
+        background-color: var(--color-dark);
       }
 
       div.icon-wrapper{
@@ -161,16 +166,17 @@ const StyledRow = styled.tr`
         flex-direction: row;
 
         span {
-          margin-right: 5px;
-          width: 20px;
-          height: 20px;
+          margin-right: var(--space-sm);
+          
+          
             
           svg {
-            background-color: var(--color-darker);
-            padding: 5px;
+            background-color: var(--color-black);
+            padding: 3px;
             width: 20px;
             height: 20px;
             border-radius: 5px;
+            
           }
         }
 
@@ -228,7 +234,7 @@ const StyledRow = styled.tr`
           filter: brightness(70%);
           width: 4px;
           height: 20px;
-          content:"";
+          content:'';
           border-radius: 2px;
         }
       }

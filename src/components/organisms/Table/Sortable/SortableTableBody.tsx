@@ -5,14 +5,14 @@ import { CustomTableRow as TableRow, TableAccessor, TableColumnCell, TableColumn
 import SortableTableRow from './SortableTableRow'
 
 interface SortableTableBodyProps {
-  rows: [string, Row<TableRow>[]]
-  index: number
-  prepareRow: (row: Row<TableRow>) => void
-  tableBodyProps: TableBodyProps
+  color: TableRowColor
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  color: TableRowColor
+  index: number
+  prepareRow: (row: Row<TableRow>) => void
+  rows: [string, Row<TableRow>[]]
+  tableBodyProps: TableBodyProps
 }
 
 const SortableTableBody = (

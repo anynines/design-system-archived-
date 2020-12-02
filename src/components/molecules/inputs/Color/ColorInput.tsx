@@ -4,23 +4,23 @@ import styled from 'styled-components'
 // C O M P O N E N T S
 import { Icon } from '../../../atoms/Icon/Icon'
 import { TextInput, TextInputProps } from '../Text/TextInput'
-import { ColorPicker } from '../../../atoms/prepend/ColorPicker/ColorPicker'
+import { ColorPicker } from '../../../atoms/ColorPicker/ColorPicker'
 
 // I N T E R F A C E S
 export interface ColorInputProps extends Omit<TextInputProps, 'value' | 'pattern'> {
   color: string
-  pattern?: RegExp
   onColorChange?: (color: string) => void
+  pattern?: RegExp
 }
 
 // C O M P O N E N T
 export const ColorInput: React.FC<ColorInputProps> = (props) => {
   const {
+    children,
     color,
     name,
-    pattern = /^#(?:[0-9a-f]{3}){1,2}$/i,
     onColorChange,
-    children
+    pattern = /^#(?:[0-9a-f]{3}){1,2}$/i
   } = props
 
   const [selectedColor, setSelectedColor] = React.useState(color)

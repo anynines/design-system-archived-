@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import { createDesignSystemContext } from '../createDesignSystemContext';
-import { DesignSystemInstanceProps, Theme } from '../types/types';
-import { Button } from '../../components/atoms/Button/Button';
-import { Avatar } from '../../components/atoms/Avatar/Avatar';
+import { createDesignSystemContext } from '../createDesignSystemContext'
+import { DesignSystemInstanceProps, Theme } from '../types/types'
+import { Button } from '../../components/atoms/Button/Button'
+import { Avatar } from '../../components/atoms/Avatar/Avatar'
 
 const { DesignSystemInstance, ThemeContext } = createDesignSystemContext()
 
@@ -12,7 +12,7 @@ export default {
   component: DesignSystemInstance,
   argTypes: {
     mode: {
-      control: { type: 'options', options: ["dark", "light"] }
+      control: { type: 'select', options: ['dark', 'light'] }
     },
     storagePrefix: {
       control: { type: 'text' }
@@ -38,7 +38,7 @@ const exampletheme2 = {
     radius: '0'
   },
   colors: {
-    primary: "rgb(12, 19, 227)"
+    primary: 'rgb(12, 19, 227)'
   },
   layout: 'center'
 };
@@ -60,33 +60,31 @@ const HelperButton = () => {
 
 export const Basic = <T extends Theme>(args: DesignSystemInstanceProps<T>) => (
   <DesignSystemInstance persistantThemeStorage={false} {...args}>
-    <Button type="primary">
+    <Button type='primary'>
       <span>Button Primary</span>
     </Button>
     <br />
-    <Button type="default">
+    <Button type='black'>
       <span>Button Default</span>
     </Button>
     <br />
     <HelperButton />
     <br />
-    <Avatar userName={'TestUser'} size={'md'} />
-  </DesignSystemInstance >
-);
+  </DesignSystemInstance>
+)
 
 export const WithStoragePrefixAndCustomTheme = <T extends CustomTheme>(args: DesignSystemInstanceProps<T>) => (
-  <DesignSystemInstance theme={exampletheme2} storagePrefix='Storybook' {...args}>
-    <Button type="primary">
+  <DesignSystemInstance theme={undefined} storagePrefix='Storybook' {...args}>
+    <Button type='primary'>
       <span>Button Primary</span>
     </Button>
     <br />
-    <Button type="default">
+    <Button type='black'>
       <span>Button Default</span>
     </Button>
     <br />
     <HelperButton />
     <br />
-    <Avatar userName={'TestUser'} size={'md'} />
     <span>{exampletheme2.layout}</span>
   </DesignSystemInstance >
-);
+)

@@ -4,20 +4,28 @@ export * from './designSystemInstance/types/types'
 export * from './designSystemInstance/theme/GlobalStyle'
 export * from './designSystemInstance/theme/defaultTheme'
 
+// I N T R O D U C T I O N
+export * from './components/introduction/Color/Color'
+export * from './components/introduction/layout/Col/Col'
+export * from './components/introduction/layout/Container/Container'
+export * from './components/introduction/layout/Page/Page'
+export * from './components/introduction/layout/Row/Row'
+export * from './components/introduction/layout/Section/Section'
+
 // A T O M S
 export * from './components/atoms/Avatar/Avatar'
 export * from './components/atoms/Button/Button'
-export * from './components/atoms/BackButton/BackButton'
 export * from './components/atoms/CaretLink/CaretLink'
 export * from './components/atoms/Favicon/Favicon'
 export * from './components/atoms/Icon/Icon'
-export * from './components/atoms/Label/Label'
+export * from './components/atoms/InputLabel/InputLabel'
 export * from './components/atoms/Logo/Logo'
 export * from './components/atoms/Select/Select'
 export * from './components/atoms/Spinner/Spinner'
-export * from './components/atoms/ToggleLayout/ToggleLayout'
 export * from './components/atoms/ToggleMode/ToggleMode'
 export * from './components/atoms/Badge/Badge'
+export * from './components/atoms/ToggleLayout/ToggleLayout'
+export * from './components/atoms/ColorPicker/ColorPicker'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
@@ -30,24 +38,13 @@ export * from './components/atoms/module/ModuleHeader/ModuleHeader'
 export * from './components/atoms/module/ModuleContent/ModuleContent'
 export * from './components/atoms/module/ModuleFooter/ModuleFooter'
 
-// A T O M S - P R E P E N D
-export * from './components/atoms/prepend/ColorPicker/ColorPicker'
-export * from './components/atoms/prepend/TextInputPrepend/TextInputPrepend'
-
-// A T O M S - L A Y O U T
-export * from './components/atoms/layout/Col/Col'
-export * from './components/atoms/layout/Container/Container'
-export * from './components/atoms/layout/Page/Page'
-export * from './components/atoms/layout/Row/Row'
-export * from './components/atoms/layout/Section/Section'
-
 // M O L E C U L E S
 export * from './components/molecules/Alert/Alert'
 export * from './components/molecules/ImageUploader/ImageUploader'
 export * from './components/molecules/Modal/Modal'
 export * from './components/molecules/Notification/Notification'
-export * from './components/atoms/RemoveItem/RemoveItem'
 export * from './components/molecules/UserInfo/UserInfo'
+export * from './components/molecules/UserDropdown/UserDropdown'
 export * from './components/molecules/MenuItem/MenuItem'
 export * from './components/molecules/SpecialCategories/SpecialCategories'
 
@@ -66,6 +63,12 @@ export * from './components/organisms/Table/Custom/CustomTable'
 export * from './components/organisms/Table/Simple/Table'
 export * from './components/organisms/AdminNavigation/AdminNavigation'
 export * from './components/organisms/UserNav/UserNav'
+
+// T E M P L A T E S
+export * from './components/templates/TopNavigation/TopNavigation'
+export * from './components/templates/layouts/AuthLayout/AuthLayout'
+export * from './components/templates/layouts/Adminland/Adminland'
+export * from './components/templates/layouts/Userland/Userland'
 
 // H E L P E R
 export * from './helpers/index'

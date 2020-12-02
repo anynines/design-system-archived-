@@ -7,23 +7,23 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
 export interface SpecialCategoriesProps {
-  specialCategories?: SpecialCategory[]
-  onClick?: () => void
   className?: string
+  onClick?: () => void
+  specialCategories?: SpecialCategory[]
 }
 
 export interface SpecialCategory {
+  icon: IconName
   id: number
   name: string
   slug: string
-  icon: IconName
 }
 
 // C O M P O N E N T
 export const SpecialCategories: React.FC<SpecialCategoriesProps> = ({
-  className = 'StyledSpecialCategories',
-  specialCategories,
-  onClick
+  className,
+  onClick,
+  specialCategories
 }) => {
   const location = useLocation()
 
@@ -53,6 +53,8 @@ export const SpecialCategories: React.FC<SpecialCategoriesProps> = ({
 
 // S T Y L E S
 export const StyledSpecialCategories = styled.div`
+  --category-icon-size: 8rem;
+  
   display: grid;
   margin: 0 10px;
   font-size: var(--text-lg);
@@ -67,7 +69,7 @@ export const StyledSpecialCategories = styled.div`
     overflow: hidden;
     border-radius: var(--radius);
     transition: var(--transition);
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     cursor: pointer;
     padding: 1.4em;
     min-height: 8rem;
@@ -90,16 +92,18 @@ export const StyledSpecialCategories = styled.div`
 
     i {
       position: absolute;
-      right: -1rem;
+      right: 2rem;
       bottom: -1rem;
       opacity: 0.1;
-      width: 60%;
-      height: 85%;
+      width: var(--category-icon-size);
+      height: var(--category-icon-size);
       color: var(--color-white);
       transition: var(--transition);
 
       svg {
         width: 100%;
+        max-width: var(--category-icon-size);
+        max-height: var(--category-icon-size);
       }
     }
 

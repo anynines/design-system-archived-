@@ -15,19 +15,19 @@ export interface TableData {
 }
 
 export interface CustomTableRow {
-  page: string
-  status: string
-  permissions: string
-  languages: string[]
-  views: number
   authors: string[]
-  sections: string[]
   category: string
   id?: number
-  slug?: string
-  title?: string
+  languages: string[]
   name?: string
+  page: string
+  permissions: string
   published?: boolean
+  sections: string[]
+  slug?: string
+  status: string
+  title?: string
+  views: number
 }
 
 export type TableSortOption = 'draggable' | 'sortable'
@@ -37,8 +37,8 @@ export type TableRowColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' |
 export type TableAccessor = 'page' | 'status' | 'permissions' | 'languages' | 'views' | 'authors' | 'sections' | 'category'
 
 export interface TableColumn {
-  Header: TableAccessor
   accessor: TableAccessor
+  Header: TableAccessor
   sortType?: string
 }
 
@@ -56,8 +56,8 @@ export interface CustomTableProps {
   type: TableSortOption
   initialPages: CustomTableRow[]
   pagesPerFolder?: number
-  folderLimit?: number
   color?: TableRowColor
+  folderLimit?: number
 }
 
 export interface SortableTableDataProps extends CustomTableProps {
@@ -74,15 +74,15 @@ export interface DraggableTableDataProps extends CustomTableProps {
 // C O M P O N E N T
 export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataProps> = (props) => {
   const {
-    tableHeaderData,
+    color = 'dark',
+    folderLimit = 5,
     getTableColumnColor,
     getTableColumnIconType,
     getTableColumnType,
-    type,
     initialPages,
     pagesPerFolder = 10,
-    folderLimit = 5,
-    color = 'dark'
+    tableHeaderData,
+    type
   } = props
 
   const [localPages, setLocalPages] = React.useState<CustomTableRow[]>(
@@ -126,11 +126,11 @@ export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataPr
   }
 
   const {
+    headerGroups,
     getTableProps,
     getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow
+    prepareRow,
+    rows
   } = useTable({ columns: tableHeaderData, data: decideTableData() }, useSortBy)
 
   let tableProps: SortableTableProps | DraggableTableProps
@@ -186,7 +186,7 @@ export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataPr
 }
 
 const StyledTable = styled.div`
-  background-color: var(--color-darker);
+  background-color: var(--color-black);
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -225,17 +225,17 @@ const StyledTable = styled.div`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
 
       tr{
         th {
-          background-color: var(--color-darker);
+          background-color: var(--color-black);
 
           &:first-child {
             padding-left: 1rem;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius: var(--radius);
+            border-bottom-left-radius: var(--radius);
           }
 
           &.sortable {
@@ -251,8 +251,8 @@ const StyledTable = styled.div`
               transform: rotate(-180deg);
             }
             svg {
-              background-color: var(--color-darker);
-              padding: 5px;
+              background-color: var(--color-black);
+              padding: 3px;
               width: 20px;
               height: 20px;
               filter: brightness(70%);
@@ -260,21 +260,21 @@ const StyledTable = styled.div`
             }
           }
           &:last-child{
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
           }
         }
       }
     }
 
     tbody {
-      border-radius: 5px;
+      border-radius: var(--radius);
 
       &:before {
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
 
       &:last-child {
@@ -282,12 +282,12 @@ const StyledTable = styled.div`
           display:block;
           text-indent:-99999px;
           line-height:1rem;
-          content:"@";
+          content:'@';
         }
       }
 
       tr {
-        border-radius: 5px;
+        border-radius: var(--radius);
 
         td {
           border-top: 0;
@@ -297,20 +297,20 @@ const StyledTable = styled.div`
 
           &:first-child {
             padding-left: 1rem;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius: var(--radius);
+            border-bottom-left-radius: var(--radius);
           }
           &:last-child {
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
           }
           &:last-child.table-row-link {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
             padding-right: 1rem;
 
             a {
@@ -320,19 +320,29 @@ const StyledTable = styled.div`
             }
           }
 
+          a.cell-link {
+            position: relative;
+            color: var(--color-dark);
+          }
+          
           span.blue, span.black {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             background-color: rgb(59, 185, 255);
-            padding: 2px 5px;
+            padding: 2px var(--space-sm);
+            width: 60%;
             font-size: var(--text-md);
             font-weight: var(--font-weight-bd);
-            border-radius: 5px;
+            border-radius: var(--radius);
 
             svg {
-              margin-right: 5px;
+              margin-right: var(--space-sm);
             }
           }
           span.black {
-            background-color: var(--color-darker);
+            background-color: var(--color-dark);
           }
 
           div.icon-wrapper{
@@ -340,17 +350,16 @@ const StyledTable = styled.div`
             flex-direction: row;
 
             span {
-              margin-right: 5px;
-              width: 20px;
-              height: 20px;
+              margin-right: var(--space-sm);
               
               svg {
-                background-color: var(--color-darker);
-                padding: 5px;
+                background-color: var(--color-dark);
+                padding: 3px;
                 width: 20px;
                 height: 20px;
                 border-radius: 5px;
               }
+              
             }
 
             img.icon {
@@ -405,7 +414,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content: "";
+              content: '';
               border-radius: 2px;
             }
 
@@ -423,9 +432,10 @@ const StyledTable = styled.div`
               align-items: center;
               position: absolute;
               right: -15px;
-              border: 2px solid var(--color-darker);
+              border: 2px solid var(--color-black);
               background-color: var(--color-dark);
               cursor: pointer;
+              padding: var(--space-sm);
               width: 25px;
               height: 25px;
               border-radius: 50%;
@@ -440,8 +450,6 @@ const StyledTable = styled.div`
               }
             }
           }
-
-          
         }
 
         &.draggable {
@@ -458,7 +466,7 @@ const StyledTable = styled.div`
               filter: brightness(70%);
               width: 4px;
               height: 20px;
-              content:"";
+              content:'';
               border-radius: 2px;
             }
           }
@@ -469,7 +477,7 @@ const StyledTable = styled.div`
             display:block;
             text-indent:-99999px;
             line-height:1rem;
-            content:"@";
+            content:'@';
           }
         } 
       }

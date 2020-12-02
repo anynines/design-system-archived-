@@ -7,27 +7,29 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
 export interface MenuItemProps {
-  id?: string
-  icon?: IconName
-  path?: string
-  counter?: boolean
   active?: boolean
-  vertical?: boolean
-  onClick?: () => void
   children?: JSX.Element
   className?: string
+  counter?: boolean
+  icon?: IconName
+  id?: string
+  onClick?: () => void
+  path?: string
+  style?: React.CSSProperties
+  vertical?: boolean
 }
 
 // C O M P O N E N T
 export const MenuItem: React.FC<MenuItemProps> = ({
-  className = 'StyledMenuItem',
-  counter = false,
   active = false,
-  vertical = false,
+  children,
+  className,
+  counter = false,
   icon,
-  path,
   onClick,
-  children
+  path,
+  style,
+  vertical = false
 }) => {
   return (
     <>
@@ -38,8 +40,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           label={children}
           className={`menu-item ${className}`}
           id={icon}
+          style={style}
         >
-          <NavLink to={`${path}`} className='wrapper' activeClassName='active'>
+          <NavLink exact to={`${path}`} className='wrapper' activeClassName='active'>
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
@@ -55,6 +58,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           icon={icon}
           className={`menu-item ${className}`}
           id={icon}
+          style={style}
         >
           <div
             className={`wrapper ${active && 'active'} ${counter && 'counter'}`}
@@ -78,13 +82,18 @@ interface StyledMenuItemProps {
 // S T Y L E S
 const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --display: ${(props): string => { return props.vertical ? 'inline-block' : 'block' }};
-  --margin: ${(props): string => { return props.vertical ? '0 0 20px 0' : '0 10px' }};
+  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-lg) 0' : '0 var(--space-sm)' }};
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
   
   display: var(--display);
+  position: relative;
   margin: var(--margin);
   list-style-type: none;
+
+  a {
+    text-decoration: none;
+  }
 
   &:first-child {
     margin-left: 0;
@@ -126,7 +135,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
         position: absolute;
         top: -.45rem;
         right: -.45rem;
-        border: 2px solid var(--color-darker);
+        border: 2px solid var(--color-black);
         background-color: var(--color-primary);
         width: .8rem;
         height: .8rem;

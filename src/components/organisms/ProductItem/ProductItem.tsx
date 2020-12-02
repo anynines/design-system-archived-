@@ -7,32 +7,32 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 // I N T E R F A C E
 export interface ProductItemProps {
   className?: string
-  quantity: number
+  deleteItem: () => void
+  move?: () => void
+  moveIcon: IconName
   product: {
     title: string
     imageUrl: string
     variations: string[]
     price: number
   } | undefined
+  quantity: number
   setItemQuantity?: (itemQuantity: number) => void
-  deleteItem: () => void
-  move?: () => void
-  moveIcon: IconName
 }
 
 // C O M P O N E N T
 export const ProductItem: React.FC<ProductItemProps> = ({
+  className,
+  deleteItem,
+  move,
+  moveIcon,
   product = {
     title: '',
     imageUrl: '',
     variations: [],
     price: 0
   },
-  className = 'StyledProductItem',
-  quantity: productInitialQuantity,
-  deleteItem,
-  move,
-  moveIcon
+  quantity: productInitialQuantity
 }) => {
   const [quantity, setQuantity] = React.useState<number>(productInitialQuantity)
 
@@ -43,7 +43,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   }
 
   return (
-    <StyledProductItem className={className}>
+    <StyledProductItem className={`product-item ${className}`}>
       <div className='image'>
         <div
           className='image-container'
@@ -99,7 +99,7 @@ const StyledProductItem = styled.div`
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin-bottom: var(--space-lgr);
+  margin-bottom: var(--space-md);
   background-color: var(--color-dark);
   cursor: pointer;
   border-radius: var(--radius);
@@ -132,7 +132,8 @@ const StyledProductItem = styled.div`
     position: absolute;
     top: 0;
     right: -2.5rem;
-    background-color: var(--color-darker);
+    background-color: transparent;
+    background-color: var(--color-dark);
     min-width: 2.5rem;
     height: 100%;
     color: var(--color-white);
@@ -142,7 +143,7 @@ const StyledProductItem = styled.div`
       position: absolute;
       top: calc(50% - .75rem);
       left: -0.4rem;
-      background-color: var(--color-darker);
+      background-color: var(--color-black);
       width: .4rem;
       height: 1.5rem;
       content: '';
@@ -155,7 +156,7 @@ const StyledProductItem = styled.div`
       justify-content: center;
       align-items: center;
       border: none;
-      background-color: var(--color-darker);
+      background-color: var(--color-black-50);
       cursor: pointer;
       width: 2.5rem;
       height: 2.5rem;
@@ -227,7 +228,7 @@ const StyledProductItem = styled.div`
         
         .change-quantity {
           border: none;
-          background-color: var(--color-darker);
+          background-color: var(--color-black);
           cursor: pointer;
           color: var(--color-white);
           border-radius: var(--radius);
@@ -275,7 +276,7 @@ const StyledProductItem = styled.div`
 
   @media (max-width: 60em) {
     margin-bottom: var(--space-fixed-xs);
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     padding-right: 4.3rem;
 
     .actions {

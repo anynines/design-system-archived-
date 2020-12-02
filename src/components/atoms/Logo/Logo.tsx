@@ -4,20 +4,22 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface LogoProps {
-  src: string
-  path?: string
-  vertical?: boolean
-  onClick?: () => void
   className?: string
+  onClick?: () => void
+  path?: string
+  src: string
+  style?: React.CSSProperties
+  vertical?: boolean
 }
 
 // C O M P O N E N T
 export const Logo: FC<LogoProps> = ({
-  className = 'StyledLogoWrapper',
+  className,
+  onClick,
   path = '/',
-  vertical = true,
   src: url,
-  onClick
+  style,
+  vertical = true
 }: LogoProps) => {
   return (
     <NavLink
@@ -26,8 +28,9 @@ export const Logo: FC<LogoProps> = ({
         return onClick && onClick()
       }}
       className={vertical ? 'vertical' : ''}
+      style={style}
     >
-      <StyledLogoWrapper className={`Logo ${vertical ? 'vertical' : ''} ${className}`}>
+      <StyledLogoWrapper className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}>
         <img src={url} alt='logo' />
       </StyledLogoWrapper>
     </NavLink>
@@ -35,26 +38,20 @@ export const Logo: FC<LogoProps> = ({
 }
 
 // S T Y L E S
-const StyledLogoWrapper = styled.span`
-  --logo-height: 1rem;
+const StyledLogoWrapper = styled.div`
+  --logo-height: 40px;
+  height: var(--logo-height);
 
   img {
-    margin-top: calc(var(--space-sm) * 2);
     height: var(--logo-height);
   }
 
   &.vertical {
     margin-bottom: var(--space-lgr);
+    height: auto;
 
     img {
-      height: calc(var(--logo-height) * 5);
-    }
-  }
-
-  @media (min-width: 60em) {
-    img {
-      margin-top: 0;
-      height: calc(var(--logo-height) * 2.5);
+      height: calc(var(--logo-height) * 2);
     }
   }
 `

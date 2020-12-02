@@ -3,22 +3,27 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export interface ModuleWrapperProps {
-  customWidth?: boolean // TODO: Check type definition
-  width?: number
   className?: string
+  customWidth?: boolean // TODO: Check type definition
+  style?: React.CSSProperties
+  width?: number
 }
 
 // C O M P O N E N T
-export const ModuleWrapper: React.FC<ModuleWrapperProps> = ({
-  className = 'StyledModuleWrapper',
-  width = 280,
-  children,
-  customWidth
-}) => {
+export const ModuleWrapper: React.FC<ModuleWrapperProps> = (props) => {
+  const {
+    children,
+    className,
+    customWidth,
+    style,
+    width = 280
+  } = props
+
   return (
     <StyledModuleWrapper
-      className={`${customWidth ? 'customWidth' : ''} ${className}`}
+      className={`module-wrapper ${customWidth ? 'customWidth' : ''} ${className}`}
       width={width}
+      style={style}
     >
       {children}
     </StyledModuleWrapper>
@@ -38,10 +43,12 @@ const StyledModuleWrapper = styled.div<StyledModuleWrapperProps>`
   top: 3.2rem;
   left: 0;
   z-index: 100;
-  background-color: var(--color-dark);
-  padding: var(--space-xs);
+  border: var(--border);
+  background-color: var(--color-black);
+  padding: var(--space-md);
   width: 100%;
   color: var(--color-white);
+  box-shadow: var(--shadow);
   border-radius: var(--radius);
   overflow-x: hidden;
   overflow-y: auto;
@@ -56,7 +63,7 @@ const StyledModuleWrapper = styled.div<StyledModuleWrapperProps>`
     top: 6.25rem;
     left: 50%;
     overflow: hidden;
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
     padding: 0;
     transform: translateX(-50%);
     max-width: var(--content-max-width); 

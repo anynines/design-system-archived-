@@ -2,28 +2,24 @@
 export type Mode = 'dark' | 'light'
 
 // I N T E R F A C E S
-export interface ThemeColors {
-  primary: string
-  notice: string
-  success: string
-  warning: string
-  error: string
-  whiteFix: string
-  white: string
-  white50: string
-  light: string
-  light50: string
-  dark: string
-  dark50: string
-  darker: string
-  darker50: string
-}
 export interface Globals {
   font: {
     name: string
     light: string
     regular: string
     bold: string
+  }
+  colors: {
+    primary: string
+    notice: string
+    success: string
+    warning: string
+    error: string
+    whiteFix: string
+    white: string
+    light: string
+    dark: string
+    black: string
   }
   radius: string
   contentMaxWidth: string
@@ -53,7 +49,6 @@ export interface Globals {
 export interface Theme {
   name: string
   globals: Globals
-  colors: ThemeColors
 }
 
 export type PartialTheme = RecursivePartial<Theme>
@@ -62,8 +57,8 @@ type RecursivePartial<T> = {
   [P in keyof T]?:
   T[P] extends (infer U)[] ? RecursivePartial<U>[] :
   T[P] extends object ? RecursivePartial<T[P]> :
-  T[P];
-};
+  T[P]
+}
 
 export interface ThemeContextParam<T extends Theme> {
   theme: T
@@ -75,7 +70,7 @@ export interface ThemeContextParam<T extends Theme> {
 
 export interface DesignSystemInstanceProps<T> {
   theme?: T
-  persistantThemeStorage?: boolean
+  persistantModeStorage?: boolean
   mode?: Mode
   useFavicon?: boolean
   autoDetectPreferenceMode?: boolean

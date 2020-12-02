@@ -8,40 +8,49 @@ import { UserNav, UserNavProps } from '../UserNav/UserNav'
 import { Mode } from '../../../designSystemInstance/types/types'
 
 export interface AdminNavigationProps {
-  logoSrc: string
-  links: AdminNavigationLink[]
-  onLinkClick: (link: string) => void
   activeLink: string
-  userInfo: Omit<UserNavProps, 'mode' | 'setMode' | 'logoutUser' | 'className'>
-  mode: Mode
-  setMode: (mode: Mode) => void
-  logoutUser: () => void
   className?: string
+  links?: AdminNavigationLink[]
+  logoSrc: string
+  logoutUser: () => void
+  mode: Mode
+  onLinkClick: (link: string) => void
+  setMode: (mode: Mode) => void
+  style?: React.CSSProperties
+  userInfo: Omit<UserNavProps, 'mode' | 'setMode' | 'logoutUser' | 'className'>
 }
 
 export interface AdminNavigationLink {
-  id: string
   children: JSX.Element
   icon?: IconName
+  id: string
+  path?: string
 }
 
 export const AdminNavigation: React.FC<AdminNavigationProps> = ({
-  logoSrc,
-  links,
-  onLinkClick,
   activeLink,
-  userInfo,
-  mode,
-  setMode,
+  className,
+  links,
+  logoSrc,
   logoutUser,
-  className = ''
+  mode,
+  onLinkClick,
+  setMode,
+  style,
+  userInfo,
+  children
 }) => {
   return (
-    <StyledAdminNavigation className={className}>
+    <StyledAdminNavigation
+      style={style}
+      className={`admin-navigation ${className}`}
+    >
       <Logo
         src={logoSrc}
         vertical
       />
+
+      {children}
 
       <Menu
         items={links}
@@ -66,41 +75,40 @@ const StyledAdminNavigation = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 20px;
+  left: 20px;
   overflow: hidden;
   background-color: var(--color-dark);
-  padding: var(--space-md);
+  padding: var(--space-lg);
   padding-top: 30px;
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: calc(100vh - 40px);
   color: var(--color-white);
   border-radius: var(--radius);
 
-  .StyledMenuItem {
+  .menu-item {
     .wrapper:not(.active):not(:hover) {
-      background-color: var(--color-darker);
+      background-color: var(--color-black);
     }
   }
 
-  .UserNav {
+  .user-nav {
     position: absolute;
     bottom: 0;
-    background-color: var(--color-darker);
+    background-color: var(--color-black-50);
   }
 
-  .Logo {
+  .logo-wrapper {
+    margin-bottom: 30px;
     img {
       margin-top: 0;
     }
   }
 
-  ul {
-    padding-top: 30px;
-  }
-
   li {
     margin: 0;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
 
     &:last-child {
       margin-bottom: 0;

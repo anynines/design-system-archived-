@@ -4,53 +4,54 @@ import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-h
 
 // C O M P O N E N T S
 import { Icon, IconName } from '../../../atoms/Icon/Icon'
-import { Label, LabelProps } from '../../../atoms/Label/Label'
-import { TextInputPrepend, TextInputPrependProps } from '../../../atoms/prepend/TextInputPrepend/TextInputPrepend'
+import { InputLabel, InputLabelProps } from '../../../atoms/InputLabel/InputLabel'
+import { InputIcon, InputIconProps } from '../../../atoms/InputIcon/InputIcon'
 
 // I N T E R F A C E S
 export interface TextInputProps {
-  name: string
-  register?: (validationRules: ValidationOptions) => void
-  value?: string
-  label: string
-  pattern?: RegExp
-  icon?: IconName
-  color?: string
-  errors?: NestDataObject<Record<string, string>, FieldError>
-  errorMessage?: string
-  onChange?: (newValue: string) => void
-  onFocusChange?: (isFocus: boolean) => void
   autoComplete?: 'on' | 'off'
   autoFocus?: boolean
+  color?: string
   className?: string
-  /* TS definitions for 'getValue' and 'setValues' functions could not be resolved from 'react-hook-forms' */
+  errorMessage?: string
+  errors?: NestDataObject<Record<string, string>, FieldError>
   getValues?: any // eslint-disable-line
-  setValue?: any // eslint-disable-line
-  watch?: any //eslint-disable-line
   handleSubmit?: (callback: OnSubmit<any>) => (e?: React.BaseSyntheticEvent) => Promise<void> // eslint-disable-line
+  icon?: IconName
+  label: string
+  name: string
+  onChange?: (newValue: string) => void
+  onFocusChange?: (isFocus: boolean) => void
+  pattern?: RegExp
+  register?: (validationRules: ValidationOptions) => void
+  setValue?: any // eslint-disable-line
+  style?: React.CSSProperties
+  value?: string
+  watch?: any //eslint-disable-line
 }
 type TextInput = React.FC<TextInputProps>
-  & { Prepend: React.FC<TextInputPrependProps> }
-  & { Label: React.FC<LabelProps> }
+  & { Prepend: React.FC<InputIconProps> }
+  & { Label: React.FC<InputLabelProps> }
 
 // C O M P O N E N T
 export const TextInput: TextInput = ({
-  name,
-  register,
-  watch,
-  value = '',
-  label,
-  errors = {},
-  pattern = /.*/,
-  icon,
-  errorMessage,
-  onChange,
-  onFocusChange,
   autoComplete = 'on',
   autoFocus = false,
   children,
-  className = 'StyledInput',
-  setValue
+  className,
+  errorMessage,
+  errors = {},
+  icon,
+  label,
+  name,
+  onChange,
+  onFocusChange,
+  pattern = /.*/,
+  register,
+  setValue,
+  style,
+  value = '',
+  watch
 }) => {
   const [isFocus, setIsFocus] = React.useState(autoFocus)
   const [localValue, setLocalValue] = React.useState<string>(value || '')
@@ -72,9 +73,9 @@ export const TextInput: TextInput = ({
   const renderIconAsPrepend = (): JSX.Element => {
     if (icon !== undefined) {
       return (
-        <TextInputPrepend>
+        <InputIcon>
           <Icon icon={icon} />
-        </TextInputPrepend>
+        </InputIcon>
       )
     }
 
@@ -112,8 +113,9 @@ export const TextInput: TextInput = ({
 
   return (
     <StyledInput
-      className={`${isFocus ? 'focus' : ''} ${isValueEmpty() ? 'empty' : ''} ${errors && errors[name] !== undefined ? 'error' : ''}`}
+      className={`text-input ${isFocus ? 'focus' : ''} ${isValueEmpty() ? 'empty' : ''} ${errors && errors[name] !== undefined ? 'error' : ''}`}
       withPrepend={(children !== undefined && children !== null) || icon !== undefined}
+      style={style}
       id={`${name}Wrapper`}
       autoFocus={isFocus}
     >
@@ -121,7 +123,7 @@ export const TextInput: TextInput = ({
       {children}
       <StyledInputField>
         {/* There is a type incoherence between 'register()' and 'ref' attribute */}
-        <Label htmlFor={name}>{label}</Label>
+        <InputLabel htmlFor={name}>{label}</InputLabel>
         <input
           autoFocus={isFocus}
           autoComplete={autoComplete}
@@ -155,8 +157,9 @@ const StyledInput = styled.div<StyledInputProps>`
   
   display: flex;
   position: relative;
-  margin-bottom: var(--space-md);
-  background-color: var(--color-dark-50);
+  margin-bottom: var(--space-xl);
+  border: var(--border);
+  background-color: var(--color-dark);
   font-size: 1em;
   border-radius: var(--radius);
 
@@ -165,7 +168,14 @@ const StyledInput = styled.div<StyledInputProps>`
   }
   
   .input-label {
-    left: 1em;
+    position: absolute;
+    top: 0.25rem;
+    left: 12px;
+    z-index: 1;
+    opacity: 0.5;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 800;
   }
   
   input {
@@ -218,5 +228,5 @@ const StyledInput = styled.div<StyledInputProps>`
   }
 `
 
-TextInput.Prepend = TextInputPrepend
-TextInput.Label = Label
+TextInput.Prepend = InputIcon
+TextInput.Label = InputLabel

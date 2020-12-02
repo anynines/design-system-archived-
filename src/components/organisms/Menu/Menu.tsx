@@ -10,32 +10,32 @@ export interface MenuItemObject extends MenuItemProps {
 }
 
 export interface MenuProps {
-  items: MenuItemObject[]
-  selectedItem?: string | null
-  onClick?: (itemId: string) => void
-  vertical?: boolean
   className?: string
+  items?: MenuItemObject[]
+  onClick?: (itemId: string) => void
+  selectedItem?: string | null
+  vertical?: boolean
 }
 
 // C O M P O N E N T
 export const Menu: React.FC<MenuProps> = ({
-  className = 'StyledMenu',
-  vertical = false,
-  selectedItem,
+  children,
+  className,
   items,
   onClick,
-  children
+  selectedItem,
+  vertical = false
 }) => {
-  const menuOutput = items.map((item) => {
+  const menuOutput = items && items.map((item) => {
     if (onClick) {
       return (
         <MenuItem
-          key={item.id}
-          id={item.icon}
-          icon={item.icon}
-          counter={item.counter}
-          onClick={(): void => { onClick(item.id) }}
           active={selectedItem === item.id}
+          counter={item.counter}
+          icon={item.icon}
+          id={item.icon}
+          key={item.id}
+          onClick={(): void => { onClick(item.id) }}
           vertical={item.vertical}
         >
           {item.children}
@@ -45,12 +45,12 @@ export const Menu: React.FC<MenuProps> = ({
 
     return (
       <MenuItem
-        key={item.icon}
-        id={item.icon}
-        path={item.path}
-        icon={item.icon}
-        counter={item.counter}
         active={selectedItem === item.id}
+        counter={item.counter}
+        icon={item.icon}
+        id={item.icon}
+        key={item.icon}
+        path={item.path}
         vertical={item.vertical}
       >
         {item.children}
@@ -58,7 +58,10 @@ export const Menu: React.FC<MenuProps> = ({
     )
   })
   return (
-    <StyledMenu className={`menu-item-wrapper ${className}`} vertical={vertical}>
+    <StyledMenu
+      className={`menu-item-wrapper ${className}`}
+      vertical={vertical}
+    >
       {menuOutput}
       {children}
     </StyledMenu>

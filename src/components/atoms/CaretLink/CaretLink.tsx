@@ -8,21 +8,27 @@ import { Icon } from '../Icon/Icon'
 // I N T E R F A C E S
 export interface CaretLinkProps {
   className?: string
-  text: string
   path: string
+  style?: React.CSSProperties
+  text: string
 }
 
 // C O M P O N E N T
 export const CaretLink: React.FC<CaretLinkProps> = ({
-  className = 'StyledCaretLink',
-  text,
-  path
+  children,
+  className,
+  path,
+  style,
+  text
 }) => {
   return (
-    <StyledCaretLink className={className}>
+    <StyledCaretLink
+      className={`caret-link ${className}`}
+      style={style}
+    >
       <NavLink to={path}>
         <Icon icon='caretRight' />
-        <span>{text}</span>
+        <span>{children || text}</span>
       </NavLink>
     </StyledCaretLink>
   )
@@ -30,28 +36,44 @@ export const CaretLink: React.FC<CaretLinkProps> = ({
 
 // S T Y L E S
 const StyledCaretLink = styled.div`
+  display: inline-block;
   a {
     display: flex;
     align-items: center;
-    opacity: 0.5;
-    margin-top: .3rem;
-    transition: var(--transition);
+    position: relative;
+    padding-left: 25px;
     text-decoration: none;
     color: var(--color-white);
-    
-    &:hover {
-      opacity: 1;
-    }
-  }
-  
-  svg {
-    margin-right: var(--space-sm);
-    color: var(--color-primary);
-  }
+    transition: var(--transition);
 
-  span {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-md);
+    i {
+      position: absolute;
+      left: 5px;
+      color: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    span {
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      font-weight: var(--font-weight-bd);
+      transition: var(--transition);
+    }
+
+    &:hover {
+      padding-left: 0;
+
+      i {
+        left: calc(100% + 5px);
+      }
+
+      span {
+        opacity: 1;
+        margin-left: -5px;
+      }
+    }
   }
 `
 StyledCaretLink.displayName = 'StyledCaretLink'

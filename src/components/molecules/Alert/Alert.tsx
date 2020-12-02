@@ -1,16 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Icon } from '../../atoms/Icon/Icon'
+import { Icon, IconSize } from '../../atoms/Icon/Icon'
 
-export type AlertType = 'success' | 'error' | 'warning'
+export type AlertType = 'success' | 'notice' | 'error' | 'warning'
 
 export interface AlertProps {
-  title: string
+  className?: string
   description: string
   onClose: () => void
+  size?: IconSize
+  style?: React.CSSProperties
+  title: string
   type: AlertType
-  className?: string
 }
 
 interface AlertStyledProps {
@@ -18,20 +20,25 @@ interface AlertStyledProps {
 }
 
 export const Alert: React.FC<AlertProps> = ({
-  type = 'success',
-  className = 'AlertWrapper',
-  title,
+  className,
   description,
-  onClose
+  onClose,
+  size = 'md',
+  style,
+  title,
+  type = 'success'
 }) => {
   if (!title || !description) return null
   return (
-    <AlertWrapper type={type} className={className}>
+    <AlertWrapper
+      className={`alert-wrapper ${className} ${type}`}
+      style={style}
+    >
       <div className='alert-icon'>
-        <Icon icon='info' />
+        <Icon icon='info' size={size} />
       </div>
       <div className='alert-info'>
-        <h3>{title}</h3>
+        <span>{title}</span>
         <p>{description}</p>
         <button onClick={onClose} type='button' className='alert-button'>
           <Icon icon='close' />
@@ -42,16 +49,10 @@ export const Alert: React.FC<AlertProps> = ({
 }
 
 const AlertWrapper = styled.div<AlertStyledProps>`
-  --position: 2rem;
   --width: 22rem;
-  --z-index: 90;
-  --bg-color: ${(props): string => { return props.theme.colors[props.type] }};
 
   display: flex;
   flex-direction: row;
-  position: fixed;
-  top: var(--position);
-  right: var(--position);
   z-index: var(--z-index);
   width: var(--width);
   min-height: 4.5rem;
@@ -68,13 +69,14 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     color: var(--color-white-fix);
     border-bottom-left-radius: .5em;
     border-top-left-radius: .5em;
-    filter: brightness(90%);
     flex: 1;
     max-width: 4.5rem;
 
     svg {
       width: 1.5em;
       height: 1.5em;
+      max-width: 1.5em;
+      max-height: 1.5em;
     }
   }
 
@@ -86,18 +88,22 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     position: relative;
     background-color: var(--bg-color);
     padding: var(--space-md) var(--space-lg);
-    color: var(--color-white-fix);
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
     flex: 3;
 
-    h3 {
-      margin: var(--space-sm) 0 0;
+    h4,
+    p {
       color: var(--color-white-fix);
     }
 
+    span {
+      font-weight: 900;
+    }
+
     P {
-      margin: var(--space-md) 0 var(--space-sm);
+      margin-top: var(--space-xs);
+      margin-bottom: 0;
       line-height: 1.2;
     }
   }
@@ -120,6 +126,38 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     svg {
       width: 1em;
       height: 1em;
+    }
+  }
+
+  &.notice {
+    background-color: var(--color-notice);
+
+    .alert-icon {
+      background-color: var(--color-notice-dark);
+    }
+  }
+
+  &.success {
+    background-color: var(--color-success);
+
+    .alert-icon {
+      background-color: var(--color-success-dark);
+    }
+  }
+
+  &.warning {
+    background-color: var(--color-warning);
+
+    .alert-icon {
+      background-color: var(--color-warning-dark);
+    }
+  }
+
+  &.error {
+    background-color: var(--color-error);
+
+    .alert-icon {
+      background-color: var(--color-error-dark);
     }
   }
 `

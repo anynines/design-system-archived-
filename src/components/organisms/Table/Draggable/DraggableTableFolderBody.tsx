@@ -10,16 +10,16 @@ import {
 } from '../Custom/CustomTable'
 
 interface DraggableTableFolderBodyProps {
-  items: Row<TableRow>[]
-  prepareRow: (row: Row<TableRow>) => void
-  tableBodyProps: TableBodyProps
+  color?: TableRowColor
+  disabledCategories: string[]
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  disabledCategories: string[]
   isFolderDraggable: boolean
+  items: Row<TableRow>[]
+  prepareRow: (row: Row<TableRow>) => void
   setIsFolderDraggable: React.Dispatch<React.SetStateAction<boolean>>
-  color?: TableRowColor
+  tableBodyProps: TableBodyProps
 }
 
 const DraggableTableFolderBody: React.FC<DraggableTableFolderBodyProps> = (
@@ -38,8 +38,8 @@ const DraggableTableFolderBody: React.FC<DraggableTableFolderBodyProps> = (
 
   const isNewCategoryFound = (index: number): boolean => {
     return index - 1 >= 0
-     && items[index].original.category.toLowerCase()
-     !== items[index - 1].original.category.toLowerCase()
+      && items[index].original.category.toLowerCase()
+      !== items[index - 1].original.category.toLowerCase()
   }
 
   const Folder = SortableElement(
@@ -111,7 +111,7 @@ const StyledBody = styled.tbody`
     display:block;
     text-indent:-99999px;
     line-height:1rem;
-    content:"@";
+    content:'@';
   }
 
   &:last-child {
@@ -119,7 +119,7 @@ const StyledBody = styled.tbody`
       display:block;
       text-indent:-99999px;
       line-height:1rem;
-      content:"@";
+      content:'@';
     }
   }
 
@@ -136,7 +136,7 @@ const StyledBody = styled.tbody`
   }
 
   tr {
-    border-radius: 5px;
+    border-radius: var(--radius);
 
     td {
       border-top: 0;
@@ -144,14 +144,67 @@ const StyledBody = styled.tbody`
       background-color: var(--color-dark);
       padding: .6rem 0;
 
+      a.cell-link {
+        position: relative;
+        color: var(--color-dark);
+      }
+      
+      span.blue, span.black {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(59, 185, 255);
+        padding: 2px var(--space-sm);
+        width: 60%;
+        font-size: var(--text-md);
+        font-weight: var(--font-weight-bd);
+        border-radius: var(--radius);
+
+        svg {
+          margin-right: var(--space-sm);
+        }
+      }
+      span.black {
+        background-color: var(--color-dark);
+      }
+
+      div.icon-wrapper{
+        display: flex;
+        flex-direction: row;
+
+        span {
+          margin-right: var(--space-sm);
+
+         
+          
+          svg {
+            background-color: var(--color-black);
+            padding: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+          }
+          
+        }
+
+        img.icon {
+          display: block;
+          margin-right: 2px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+        }
+      }
+
       &:first-child{
         padding-left: 1rem;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-top-left-radius: var(--radius);
+        border-bottom-left-radius: var(--radius);
       }
       &:last-child{
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
       }
 
       &.dark {
@@ -197,7 +250,7 @@ const StyledBody = styled.tbody`
           filter: brightness(70%);
           width: 4px;
           height: 20px;
-          content: "";
+          content: '';
           border-radius: 2px;
         }
 
@@ -215,9 +268,10 @@ const StyledBody = styled.tbody`
           align-items: center;
           position: absolute;
           right: -15px;
-          border: 2px solid var(--color-darker);
+          border: 2px solid var(--color-black);
           background-color: var(--color-dark);
           cursor: pointer;
+          padding: var(--space-sm);
           width: 25px;
           height: 25px;
           border-radius: 50%;
@@ -233,47 +287,7 @@ const StyledBody = styled.tbody`
         }
       }
 
-      span.blue, span.black {
-        background-color: rgb(59, 185, 255);
-        padding: 2px 5px;
-        font-size: var(--text-md);
-        font-weight: var(--font-weight-bd);
-        border-radius: 5px;
-
-        svg {
-          margin-right: 5px;
-        }
-      }
-      span.black {
-        background-color: var(--color-darker);
-      }
-
-      div.icon-wrapper{
-        display: flex;
-        flex-direction: row;
-
-        span {
-          margin-right: 5px;
-          width: 20px;
-          height: 20px;
-          
-          svg {
-            background-color: var(--color-darker);
-            padding: 5px;
-            width: 20px;
-            height: 20px;
-            border-radius: 5px;
-          }
-        }
-
-        img.icon {
-          display: block;
-          margin-right: 2px;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-        }
-      }
+      
     }
 
     &.draggable {
@@ -290,7 +304,7 @@ const StyledBody = styled.tbody`
           filter: brightness(70%);
           width: 4px;
           height: 20px;
-          content:"";
+          content:'';
           border-radius: 2px;
         }
       }
@@ -301,7 +315,7 @@ const StyledBody = styled.tbody`
         display:block;
         text-indent:-99999px;
         line-height:1rem;
-        content:"@";
+        content:'@';
       }
     } 
   }

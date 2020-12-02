@@ -5,15 +5,15 @@ import { action } from '@storybook/addon-actions'
 import { SpecialCategories, SpecialCategory } from '../SpecialCategories'
 
 export default {
-  title: 'Molecules/SpecialCategories',
+  title: '🌱 Molecules/SpecialCategories',
   component: SpecialCategories,
   argTypes: {
-    id: { control: { type: "number" } },
-    name: { control: { type: "text" } },
-    slug: { control: { type: "text" } },
+    id: { control: { type: 'number' } },
+    name: { control: { type: 'text' } },
+    slug: { control: { type: 'text' } },
     icon: {
       control: {
-        type: 'options',
+        type: 'select',
         options: [
           'menu',
           'shop',
@@ -36,28 +36,28 @@ export default {
 
 const SpecialItems: SpecialCategory[] = [
   {
-    "id": 100,
-    "name": "Bestseller",
-    "icon": "bestseller",
-    "slug": "/shop/bestseller"
+    'id': 100,
+    'name': 'Bestseller',
+    'icon': 'bestseller',
+    'slug': '/shop/bestseller'
   },
   {
-    "id": 101,
-    "name": "Novelties",
-    "icon": "novelties",
-    "slug": "/shop/novelties"
+    'id': 101,
+    'name': 'Novelties',
+    'icon': 'novelties',
+    'slug': '/shop/novelties'
   },
   {
-    "id": 102,
-    "name": "Sale",
-    "icon": "sale",
-    "slug": "/shop/sale"
+    'id': 102,
+    'name': 'Sale',
+    'icon': 'sale',
+    'slug': '/shop/sale'
   },
   {
-    "id": 103,
-    "name": "Random",
-    "icon": "random",
-    "slug": "/shop/random"
+    'id': 103,
+    'name': 'Random',
+    'icon': 'random',
+    'slug': '/shop/random'
   }
 ]
 
@@ -70,6 +70,7 @@ export const Basic = (args: SpecialCategory) => (
     </div>
   </MemoryRouter>
 )
+
 export const SampleCategories = () => (
   <MemoryRouter>
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>

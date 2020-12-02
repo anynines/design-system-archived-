@@ -13,22 +13,22 @@ export interface ImageProps {
 }
 
 export interface ImageUploaderProps {
-  className?: string
-  alt: string
-  label: string
-  id: string
-  defaultValue?: string | undefined
   addToFormData: (url: string | undefined, id: string) => void
+  alt: string
+  className?: string
+  defaultValue?: string | undefined
+  id: string
   images: ImageProps
+  label: string
 }
 
 export const ImageUploader: React.FC<ImageUploaderProps> = ({
-  className = 'StyledImageInput',
+  addToFormData,
   alt,
-  label,
-  id,
+  className,
   defaultValue,
-  addToFormData
+  id,
+  label
 }) => {
   const [currentImage, setCurrentImage] = React.useState<string | undefined>(defaultValue)
 
@@ -65,7 +65,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
   }, [addToFormData, defaultValue, id])
 
   return (
-    <StyledImageInput className={className}>
+    <StyledImageInput className={`image-uploader ${className}`}>
       <span>{label}</span>
       {currentImage ? <img src={currentImage} alt={alt} /> : <Icon icon='placeholder' />}
       <input type='file' id={id} onChange={handleChange} />

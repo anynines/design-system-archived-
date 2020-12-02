@@ -12,25 +12,27 @@ import { Icon, IconName } from '../Icon/Icon'
 
 // I N T E R F A C E
 export interface SelectProps {
-  name: string
-  label: string
-  values: (string | number)[]
-  onChange?: (value: string) => void
-  defaultValue?: string
-  register?: (validationRules: ValidationOptions) => void
-  icon?: IconName
   className?: string
+  defaultValue?: string
+  icon?: IconName
+  label: string
+  name: string
+  onChange?: (value: string) => void
+  register?: (validationRules: ValidationOptions) => void
+  style?: React.CSSProperties
+  values: (string | number)[]
 }
 
 export const Select: React.FC<SelectProps> = ({
-  values,
-  name,
-  label,
-  register,
-  onChange,
+  className,
   icon,
-  defaultValue = values[0],
-  className = 'StyledSelect'
+  label,
+  name,
+  onChange,
+  register,
+  style,
+  values,
+  defaultValue = values[0]
 }) => {
   const [valueState, setValueState] = React.useState(defaultValue)
   const [isActive, setIsActive] = React.useState(false)
@@ -144,11 +146,17 @@ export const Select: React.FC<SelectProps> = ({
   })
 
   return (
-    <StyledSelect className={`${className} ${isActive ? 'is-active' : ''}`}>
-      <span className='select-label' id={name}>{label}</span>
+    <StyledSelect
+      className={`select-wrapper ${className} 
+      ${isActive ? 'is-active' : ''}`}
+      style={style}
+    >
+      <span className='select-label' id={name}>
+        {label}
+      </span>
 
       {/*
-      * There is a type incoherence between register() and ref attribut
+      * There is a type incoherence between register() and ref attribute
       * The trick 'as unknown as undefined' is used to not use @ts-ignore
       */}
       <div className='selectWrapper'>
@@ -165,11 +173,26 @@ export const Select: React.FC<SelectProps> = ({
           })}
         </select>
 
-        <div className='select-custom' aria-hidden={!isActive} onClick={onCustomSelectClick}>
+        <div
+          className='select-custom'
+          aria-hidden={!isActive}
+          onClick={onCustomSelectClick}
+        >
           <div className='select-custom__option-container'>
-            {values.map((value): JSX.Element => {
-              return (<div className='select-custom__option' data-value={value} key={value} onClick={onCustomSelectOptionClick}>{value}</div>)
-            })}
+            <div className='select-custom__inner-option-container'>
+              {values.map((value): JSX.Element => {
+                return (
+                  <div
+                    className='select-custom__option'
+                    data-value={value}
+                    key={value}
+                    onClick={onCustomSelectOptionClick}
+                  >
+                    {value}
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -186,6 +209,8 @@ const StyledSelect = styled.div`
   
   position: relative;
   margin-bottom: var(--space-xl);
+  border-radius: var(--radius);
+  width: 100%;
   
   .icon-wrapper {
     display: flex;
@@ -194,12 +219,15 @@ const StyledSelect = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: var(--color-dark-50);
+    background-color: var(--color-white-10);
     width: var(--icon-wrapper-size);
     height: 100%;
     color: var(--color-white);
-    border-radius: 10px 0 0 10px;
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: var(--radius) 0 0 var(--radius);
+    transition: 
+      color 0.3s ease-in-out, 
+      background-color 0.3s ease-in-out,
+      border-radius 0.3s ease-in-out;
 
     svg {
       width: 1rem;
@@ -209,12 +237,13 @@ const StyledSelect = styled.div`
 
   .select-label {
     position: absolute;
-    top: .125rem;
+    top: 0.25rem;
     left: 3.5rem;
     z-index: 1;
-    opacity: .5;
+    opacity: 0.5;
     color: var(--color-white);
-    font-size: var(--text-md);
+    font-size: 10px;
+    font-weight: 800;
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
 
@@ -237,20 +266,72 @@ const StyledSelect = styled.div`
 
     .icon-wrapper {
       background-color: var(--color-primary);
+      svg {
+        color: var(--color-white-fix);
+      }
     }
   }
   
   select,
   .select-custom {
-    position: relative;
-    border: none;
-    background-color: var(--color-dark-50);
-    cursor: pointer;
-    padding: var(--space-md) 0 0 calc(var(--icon-wrapper-size) + var(--space-md));
     width: 100%;
     height: var(--icon-wrapper-size);
-    color: var(--color-white);
     font-size: var(--text-md);
+  }
+
+  .select-custom {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &__inner-option-container {
+      max-height: 160px;
+      overflow-y: auto;
+    }
+
+    &__option-container {
+      display: none;
+      position: absolute;
+      top: var(--icon-wrapper-size);
+      left: 0;
+      z-index: 2;
+      overflow: hidden;
+      background-color: var(--color-dark);
+      width: 100%;
+      color: var(--color-white);
+      appearance: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      outline: none;
+      transition: color var(--transition-ease-in-out-300), background-color var(--transition-ease-in-out-300);
+    }
+
+    &__option {
+      border: none;
+      cursor: pointer;
+      padding: var(--space-md) var(--space-lg);
+
+      &.is-active {
+        background-color: var(--color-primary-dark);
+        color: var(--color-white-fix);
+      }
+
+      &:hover,
+      &.is-hovered {
+        background-color: var(--color-primary);
+        color: var(--color-white-fix);
+      }
+    }
+  }
+
+  select {
+    position: relative;
+    border: var(--border);
+    background-color: var(--color-dark);
+    padding: 14px 0 0 calc(var(--icon-wrapper-size) + 12px);
+    color: var(--color-white);
     appearance: none;
     border-radius: var(--radius);
     outline: none;
@@ -269,8 +350,10 @@ const StyledSelect = styled.div`
     .icon-wrapper {
       border-bottom-left-radius: 0;
     }
+    
+    select,
     .select-custom {
-      border-radius: var(--radius) var(--radius) 0 0
+      border-radius: var(--radius) var(--radius) 0 0;
     }
     
     .select-custom__option-container {
@@ -278,49 +361,6 @@ const StyledSelect = styled.div`
     }
   }
 
-  .select-custom {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-
-    &__option-container {
-      display: none;
-      position: absolute;
-      top: var(--icon-wrapper-size);
-      left: 0;
-      z-index: 2;
-      border-width: 1px;
-      border-style: solid;
-      background-color: var(--color-dark-50);
-      width: 100%;
-      color: var(--color-white);
-      appearance: none;
-      border-color: var(--color-primary);
-      border-radius: 0 0 var(--radius) var(--radius);
-      outline: none;
-      transition: color var(--transition-ease-in-out-300), background-color var(--transition-ease-in-out-300);
-    }
-
-    &__option {
-      cursor: pointer;
-      padding: var(--space-md) var(--space-lg);
-
-      &:hover,
-      &.is-hovered {
-        background-color: var(--color-light-50);
-        color: var(--color-black);
-      }
-      &.is-active {
-        background-color: var(--color-primary);
-      }
-
-      &:last-of-type {
-        border-radius: 0 0 var(--radius) var(--radius);
-      }
-    }
-  }
   @media (hover: hover) {
     .select-custom {
       display: block;

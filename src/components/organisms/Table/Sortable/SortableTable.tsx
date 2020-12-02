@@ -6,38 +6,38 @@ import SortableTableHead from './SortableTableHead'
 import SortableTableBody from './SortableTableBody'
 
 export interface SortableTableProps {
-  tableHeaderData: TableColumn[]
+  color: TableRowColor
+  folderLimit: number
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  pagesPerFolder: number
-  folderLimit: number
-  setPages: React.Dispatch<React.SetStateAction<TableRow[]>>
   pages: TableRow[]
+  pagesPerFolder: number
+  setPages: React.Dispatch<React.SetStateAction<TableRow[]>>
   sortCategoryAlphabeticallyAndControlLimits: (pagesDataObject: TableData) => TableRow[]
-  color: TableRowColor
+  tableHeaderData: TableColumn[]
 }
 
 // C O M P O N E N T
 export const SortableTable: React.FC<SortableTableProps> = (props) => {
   const {
-    tableHeaderData,
+    color,
+    folderLimit,
     getTableColumnColor,
     getTableColumnType,
     getTableColumnIconType,
-    pagesPerFolder,
-    folderLimit,
     pages,
+    pagesPerFolder,
     setPages,
     sortCategoryAlphabeticallyAndControlLimits,
-    color
+    tableHeaderData
   } = props
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
-    prepareRow
+    prepareRow,
+    rows
   } = useTable({ columns: tableHeaderData, data: pages }, useSortBy)
   const rowsData = rows
   const tableProps = getTableProps()

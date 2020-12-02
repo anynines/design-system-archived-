@@ -8,19 +8,15 @@ export interface ModuleContentProps {
 
 // C O M P O N E N T
 export const ModuleContent: React.FC<ModuleContentProps> = ({
-  className = 'StyledModuleContent',
-  children
+  children,
+  className
 }) => {
-  return <StyledModuleContent className={className}>{children}</StyledModuleContent>
+  return <StyledModuleContent className={`module-content ${className}`}>{children}</StyledModuleContent>
 }
 
 // S T Y L E S
 const StyledModuleContent = styled.div`
-  padding: var(--space-xs) 0;
+  padding: 0 var(--space-md);
   color: var(--color-white-fix);
-
-  @media (min-width: 60em) {
-    padding: var(--space-md);
-  }
 `
 StyledModuleContent.displayName = 'StyledModuleContent'

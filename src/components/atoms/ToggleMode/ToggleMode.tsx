@@ -8,24 +8,24 @@ import { Icon } from '../Icon/Icon'
 
 // I N T E R F A C E S
 export interface ToggleModeProps {
-  size?: ToggleModeButtonSize
-  mode: Mode
   className?: string
+  mode: Mode
   setMode?: () => void
+  size?: ToggleModeButtonSize
 }
 
 export type ToggleModeButtonSize = 'sm' | 'lg'
 
 // C O M P O N E N T
 export const ToggleMode: React.FC<ToggleModeProps> = ({
+  className,
   mode = 'dark',
-  size = 'lg',
-  className = 'StyledToggleMode',
-  setMode
+  setMode,
+  size = 'lg'
 }) => {
   return (
     <StyledToggleMode
-      className={`${size} ${className}`}
+      className={`toggle-mode ${size} ${className}`}
       onClick={(): void => { return (setMode && setMode()) }}
       mode={mode}
     >
@@ -110,7 +110,7 @@ const StyledToggleMode = styled.div<StyledToggleModeProps>`
     }
   }
   @media (max-width: 60em) {
-    background-color: var(--color-darker);
+    background-color: var(--color-black);
   }
 `
 

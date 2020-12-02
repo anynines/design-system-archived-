@@ -10,13 +10,18 @@ import { CustomTableRow as TableRow, TableColumnCell, TableColumnCellColor, Tabl
 
 interface TableCellProps {
   cell: Cell<TableRow, any> // eslint-disable-line @typescript-eslint/no-explicit-any
-  className?: TableColumnCellColor | null
   cellType: TableColumnCell | null
+  className?: TableColumnCellColor | null
   iconType?: TableColumnIcon | null
 }
 
 const TableCell = (props: TableCellProps): any => { // eslint-disable-line @typescript-eslint/no-explicit-any
-  const { cell, className, cellType, iconType } = props
+  const {
+    cell,
+    cellType,
+    className,
+    iconType
+  } = props
 
   switch (cellType) {
     case 'sticker':
@@ -50,9 +55,12 @@ const TableCell = (props: TableCellProps): any => { // eslint-disable-line @type
     }
     case 'link': {
       return (
-        <a href={cell.row.original.slug}>
+        <a
+          href={cell.row.original.slug}
+          className='cell-link'
+        >
           <Icon data-tip data-for='default' icon={'link' as IconName} />
-          <Tooltip id='default'>
+          <Tooltip>
             Go to link
           </Tooltip>
         </a>

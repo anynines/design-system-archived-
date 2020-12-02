@@ -25,7 +25,7 @@ describe('<ToggleMode />', () => {
 
   it('should setMode on click', () => {
     const { container } = component
-    fireEvent.click(container.querySelector('.StyledToggleMode'))
+    fireEvent.click(container.querySelector('.toggle-mode'))
 
     expect(setModeSpy).toHaveBeenCalled()
   })
