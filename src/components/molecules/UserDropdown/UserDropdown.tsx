@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Avatar } from '../../atoms/Avatar/Avatar'
-import { ToggleMode } from '../../atoms/ToggleMode/ToggleMode'
 import { UserInfo } from '../UserInfo/UserInfo'
 
 export interface UserDropdownProps {
@@ -28,21 +27,27 @@ export const UserDropdown: React.FC<UserDropdownProps> = ({
   }
   return (
     <StyledUserDropdown
-      className={`
-        user-dropdown 
-        ${className} 
-        ${children && active && 'active'}
-      `}
       style={style}
-      onClick={(): void => { return (onClick()) }}
+      className={`${children && active && 'active'}`}
     >
-      <Avatar
-        rounded
-        size='sm'
-        avatar={avatarImg}
-        userName={name}
-      />
-      <UserInfo userName={name} userGroup={role} />
+      <button
+        type='button'
+        className={`
+          user-dropdown 
+          ${className} 
+          ${children && active && 'active'}
+        `}
+        onClick={(): void => { return (onClick()) }}
+      >
+        <Avatar
+          rounded
+          size='sm'
+          avatar={avatarImg}
+          userName={name}
+        />
+        <UserInfo userName={name} userGroup={role} />
+      </button>
+
       {children && (
         <div className='user-menu'>
           <div className='user-menu--header'>
@@ -55,7 +60,6 @@ export const UserDropdown: React.FC<UserDropdownProps> = ({
             />
             <span className='user-menu--name'>{name}</span>
             <span className='user-menu--role'>{role}</span>
-            <ToggleMode mode='dark' />
             <hr />
           </div>
           { children }
@@ -66,57 +70,85 @@ export const UserDropdown: React.FC<UserDropdownProps> = ({
 }
 
 const StyledUserDropdown = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 20px;
-  background-color: var(--color-dark);
-  max-width: 200px;
-  cursor: pointer;
-  padding-right: 12px;
-  height: 40px;
-  border-radius: 50px calc(var(--radius) * 2) calc(var(--radius) * 2) 50px;
-  transition: var(--transition);
   position: relative;
 
-  span {
-    transition: var(--transition);
-  }
-
-  .avatar-wrapper {
-    height: 40px;
-    width: 40px;
-    margin-right: var(--space-lg);
-  }
-
-  .user-info {
-    margin-right: 20px;
-  }
-
-  .user-menu {
-    position: absolute;
-    display: none;
-    top: 60px;
-    right: 0;
+  .user-dropdown {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    margin-left: 20px;
+    border: none;
     background-color: var(--color-dark);
-    border-radius: var(--radius);
-    padding: 20px;
-    width: 260px;
-    box-shadow: var(--shadow);
-    border: var(--border);
-    flex-direction: column;
+    cursor: pointer;
+    padding: 0;
+    padding-right: 12px;
+    height: 40px;
+    text-align: left;
+    max-width: 200px;
+    border-radius: 50px calc(var(--radius) * 2) calc(var(--radius) * 2) 50px;
+    transition: var(--transition);
+    outline: none;
 
-    &--header {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+    .user-name {
+      margin-bottom: 1px;
+      font-size: 12px;
+    }
+    
+    .user-group {
+      font-size: 10px;
+    }
+
+    &:hover {
+      background-color: var(--color-primary);
+      span {
+        color: var(--color-white-fix);
+      }
     }
 
     .avatar-wrapper {
-      height: 100px;
-      width: 100px;
+      margin-right: var(--space-lg);
+      width: 40px;
+      height: 40px;
+    }
+
+    .user-info {
+      margin-right: 20px;
+    }
+  }
+
+  .user-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    border: var(--border);
+    background-color: var(--color-dark);
+    padding: 20px;
+    width: 260px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    &--header {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+
+      .toggle-mode {
+        background-color: var(--color-black-50);
+
+        &:hover {
+          background-color: var(--color-primary);
+        }
+      }
+    }
+
+    .avatar-wrapper {
       margin-bottom: var(--space-sm);
+      width: 100px;
+      height: 100px;
 
       .level {
         font-size: 14px;
@@ -129,15 +161,15 @@ const StyledUserDropdown = styled.div`
     }
 
     &--role {
+      opacity: 0.5;
       font-size: 12px;
       font-weight: 300;
-      opacity: 0.5;
     }
 
     .toggle-mode {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 20px;
+      right: 20px;
       border: var(--border);
     }
 
@@ -146,7 +178,8 @@ const StyledUserDropdown = styled.div`
     }
 
     .menu-item .wrapper {
-      background-color: var(--color-black);
+      border: var(--border);
+      background-color: var(--color-black-50);
 
       &:hover {
         background-color: var(--color-primary);
@@ -154,16 +187,7 @@ const StyledUserDropdown = styled.div`
     }
   }
 
-
   &.active .user-menu {
     display: flex;
-  }
-
-  &.active,
-  &:hover {
-    background-color: var(--color-primary);
-    span {
-      color: var(--color-white-fix);
-    }
   }
 `

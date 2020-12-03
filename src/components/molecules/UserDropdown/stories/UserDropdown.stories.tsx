@@ -36,14 +36,25 @@ export const Basic = (args: UserDropdownProps) => (
 export const WithDropdown = () => (
   <Wrapper bgColor='black'>
     <UserDropdown
+      avatarImg={avatarUrl}
+      level={42}
       name='Johanna Doe'
       role='Contributor'
-      level={42}
-      avatarImg={avatarUrl}
     >
       <Menu vertical>
-        <MenuItem icon={'menu'} vertical onClick={action('label clicked')}>
-          <>Icon and Label</>
+        <MenuItem 
+          icon='user' 
+          onClick={action('You clicked your Profile 🐣')}
+          vertical 
+        >
+          <>Profile</>
+        </MenuItem>
+        <MenuItem 
+          icon='logout' 
+          onClick={action('You clicked your Profile �')}
+          vertical 
+        >
+          <>Logout</>
         </MenuItem>
       </Menu>
     </UserDropdown>

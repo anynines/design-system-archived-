@@ -157,6 +157,10 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: var(--font-weight-lt);
   }
 
+  button, span {
+    font-family: var(--font-family);
+  }
+
   blockquote {
     margin-left: 0;
     border-left: 5px solid var(--color-primary);
