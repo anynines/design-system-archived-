@@ -3,7 +3,6 @@ import React from 'react'
 import { createDesignSystemContext } from '../createDesignSystemContext'
 import { DesignSystemInstanceProps, Theme } from '../types/types'
 import { Button } from '../../components/atoms/Button/Button'
-import { Avatar } from '../../components/atoms/Avatar/Avatar'
 
 const { DesignSystemInstance, ThemeContext } = createDesignSystemContext()
 
@@ -59,7 +58,7 @@ const HelperButton = () => {
 }
 
 export const Basic = <T extends Theme>(args: DesignSystemInstanceProps<T>) => (
-  <DesignSystemInstance persistantThemeStorage={false} {...args}>
+  <DesignSystemInstance {...args}>
     <Button type='primary'>
       <span>Button Primary</span>
     </Button>
