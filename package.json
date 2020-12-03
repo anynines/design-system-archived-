@@ -1,6 +1,6 @@
 {
   "name": "@anynines/design-system",
-  "version": "0.1.31",
+  "version": "0.1.34",
   "private": false,
   "main": "dist/index",
   "types": "dist/index.d.ts",
