@@ -4,22 +4,33 @@ import { Avatar } from '../../atoms/Avatar/Avatar'
 import { UserInfo } from '../UserInfo/UserInfo'
 
 export interface UserDropdownProps {
-  name: string
-  role: string
   avatarImg: string
+  className?: string
+  name: string
+  onClick?: () => void
+  role: string
+  style?: React.CSSProperties
 }
 
 export const UserDropdown: React.FC<UserDropdownProps> = ({
+  avatarImg,
+  className,
   name,
+  onClick,
   role,
-  avatarImg
+  style
 }) => {
   return (
-    <StyledUserDropdown>
+    <StyledUserDropdown
+      className={`user-dropdown ${className}`}
+      onClick={(): void => { return (onClick && onClick()) }}
+      style={style}
+    >
       <Avatar
         rounded
         size='sm'
         avatar={avatarImg}
+        userName={name}
       />
       <UserInfo userName={name} userGroup={role} />
     </StyledUserDropdown>
