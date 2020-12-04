@@ -7,7 +7,7 @@ export interface PageHeaderProps {
 }
 
 // C O M P O N E N T
-const PageHeader: React.FC<PageHeaderProps> = (props) => {
+export const PageHeader: React.FC<PageHeaderProps> = (props) => {
   const { className, children } = props
 
   return (
@@ -32,5 +32,3 @@ const StyledPageHeader = styled.header`
     font-size: var(--text-xl);
   }
 `
-
-export default PageHeader
