@@ -44,11 +44,13 @@ const StyledLogoWrapper = styled.div`
 
   img {
     height: var(--logo-height);
+    max-width: 180px;
   }
 
   &.vertical {
     margin-bottom: var(--space-lgr);
     height: auto;
+    max-width: auto;
 
     img {
       height: calc(var(--logo-height) * 2);
