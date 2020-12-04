@@ -19,21 +19,34 @@ export const Logo: FC<LogoProps> = ({
   path = '/',
   src: url,
   style,
-  vertical = true
+  vertical = true,
 }: LogoProps) => {
+  if (path) {
+    return (
+      <NavLink
+        to={path}
+        onClick={(): void => {
+          return onClick && onClick()
+        }}
+        className={vertical ? 'vertical' : ''}
+        style={style}
+      >
+        <StyledLogoWrapper
+          className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}
+        >
+          <img src={url} alt='logo' />
+        </StyledLogoWrapper>
+      </NavLink>
+    )
+  }
   return (
-    <NavLink
-      to={path}
-      onClick={(): void => {
-        return onClick && onClick()
-      }}
-      className={vertical ? 'vertical' : ''}
-      style={style}
-    >
-      <StyledLogoWrapper className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}>
+    <div className={vertical ? 'vertical' : ''} style={style}>
+      <StyledLogoWrapper
+        className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}
+      >
         <img src={url} alt='logo' />
       </StyledLogoWrapper>
-    </NavLink>
+    </div>
   )
 }
 

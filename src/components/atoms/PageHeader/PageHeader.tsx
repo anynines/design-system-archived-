@@ -10,11 +10,7 @@ export interface PageHeaderProps {
 export const PageHeader: React.FC<PageHeaderProps> = (props) => {
   const { className, children } = props
 
-  return (
-    <StyledPageHeader className={className}>
-      {children}
-    </StyledPageHeader>
-  )
+  return <StyledPageHeader className={className}>{children}</StyledPageHeader>
 }
 
 // S T Y L E S
@@ -23,7 +19,7 @@ const StyledPageHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  background-color: var(--color-dark);
+  background-color: var(--color-dark-50);
   padding: 20px;
   border-radius: var(--radius);
 

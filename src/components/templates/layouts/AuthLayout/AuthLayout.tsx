@@ -13,7 +13,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
   bgImage = 'https://images.pexels.com/photos/266834/pexels-photo-266834.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
   children,
   className,
-  style
+  style,
 }) => {
   return (
     <StyledAuthLayout
@@ -23,11 +23,11 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
     >
       <div className='auth-container'>
         <div className='auth-form'>{children}</div>
-        {
-          authLayout !== 'center-full-bg'
-            ? <div className='auth-image' />
-            : <></>
-        }
+        {authLayout !== 'center-full-bg' ? (
+          <div className='auth-image' />
+        ) : (
+          <></>
+        )}
       </div>
     </StyledAuthLayout>
   )
@@ -45,6 +45,13 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
   width: 100%;
   height: 100vh;
 
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
   .auth-container {
     display: flex;
     align-items: stretch;
@@ -60,21 +67,25 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
     }
 
     .auth-image {
-      background-color: rgba(0,0,0,.25);
-      background-image: url(${(props): string => { return props.bgImage }});
+      background-color: rgba(0, 0, 0, 0.25);
+      background-image: url(${(props): string => {
+        return props.bgImage
+      }});
       background-position: center center;
       background-size: cover;
       width: 50%;
     }
   }
 
-  &.layout-center-full-bg { 
-    background-image: url(${(props): string => { return props.bgImage }});
+  &.layout-center-full-bg {
+    background-image: url(${(props): string => {
+      return props.bgImage
+    }});
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    
+
     .auth-image {
       display: none;
     }
@@ -89,7 +100,8 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
     }
   }
 
-  &.layout-full-page-left, &.layout-full-page-right {
+  &.layout-full-page-left,
+  &.layout-full-page-right {
     .auth-container {
       width: 100%;
       height: 100vh;

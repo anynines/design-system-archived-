@@ -1,9 +1,10 @@
 import React, { Children, cloneElement } from 'react'
 import { useForm } from 'react-hook-form'
+import styled from 'styled-components'
 
 export interface FormProps {
   // 'react-hook-form' does not provide a useable TS definition for 'setValue' function
-  onSubmit?: (data: Record<string, string>, setValue?: any) => void  // eslint-disable-line
+  onSubmit?: (data: Record<string, string>, setValue?: any) => void // eslint-disable-line
   children
   className?: string
 }
@@ -11,13 +12,22 @@ export interface FormProps {
 export const Form: React.FC<FormProps> = ({
   children,
   className,
-  onSubmit: onSubmitCallback
+  onSubmit: onSubmitCallback,
 }) => {
-  const { register, handleSubmit, errors, watch, getValues, setValue } = useForm()
+  const {
+    register,
+    handleSubmit,
+    errors,
+    watch,
+    getValues,
+    setValue,
+  } = useForm()
   const formProps = { register, watch, getValues, errors, setValue }
   const childrenWithProps = Children.map(children, (child) => {
     const isReactComponent = child.type instanceof Function
-    const clonedElement = cloneElement(child, { ...isReactComponent ? formProps : {} })
+    const clonedElement = cloneElement(child, {
+      ...(isReactComponent ? formProps : {}),
+    })
     return clonedElement
   })
 
@@ -26,8 +36,29 @@ export const Form: React.FC<FormProps> = ({
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={`form-wrapper ${className}`}>
+    <StyledForm
+      onSubmit={handleSubmit(onSubmit)}
+      className={`form-wrapper ${className}`}
+    >
       {childrenWithProps}
-    </form>
+    </StyledForm>
   )
 }
+
+const StyledForm = styled.form`
+  .form-footer {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      margin: 0 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+`
