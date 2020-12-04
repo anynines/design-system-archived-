@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { Userland } from '../Userland'
 import { TopNavigation } from '../../../TopNavigation/TopNavigation'
 import { Logo } from '../../../../atoms/Logo/Logo'
-import { Menu } from '../../../../organisms/Menu/Menu'
+import { Menu } from '../../../../molecules/Menu/Menu'
 import { Section } from '../../../../introduction/layout/Section/Section'
 
 
@@ -17,7 +17,7 @@ export const Basic = () => (
   <MemoryRouter>
     <Userland>
       <TopNavigation>
-      <div className='wrapper'>
+        <div className='wrapper'>
           <Logo
             path='/test'
             vertical={false}
@@ -37,7 +37,7 @@ export const Basic = () => (
               }
             ]}
           />
-          
+
         </div>
         <div className='wrapper'>
           <Menu

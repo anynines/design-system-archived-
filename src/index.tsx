@@ -45,6 +45,7 @@ export * from './components/molecules/Modal/Modal'
 export * from './components/molecules/Notification/Notification'
 export * from './components/molecules/UserInfo/UserInfo'
 export * from './components/molecules/UserDropdown/UserDropdown'
+export * from './components/molecules/Menu/Menu'
 export * from './components/molecules/MenuItem/MenuItem'
 export * from './components/molecules/SpecialCategories/SpecialCategories'
 
@@ -57,7 +58,6 @@ export * from './components/molecules/inputs/Input/Input'
 
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'
-export * from './components/organisms/Menu/Menu'
 export * from './components/organisms/ProductItem/ProductItem'
 export * from './components/organisms/Table/Table'
 export * from './components/organisms/Table/SortableTable'
