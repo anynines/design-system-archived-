@@ -18,7 +18,7 @@ export const TFoot: React.FC<TFootProps> = (props) => {
 }
 
 // S T Y L E S
-const StyledTFoot = styled.tFoot`
+const StyledTFoot = styled.tfoot`
   td {
     font-weight: 900;
   }

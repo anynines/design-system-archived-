@@ -23,7 +23,7 @@ const StyledTCell = styled.td`
   border: none;
   background-color: var(--color-dark-50);
   padding: 10px;
-  text-align: right;
+  text-align: left;
   white-space: nowrap;
   font-size: 14px;
 

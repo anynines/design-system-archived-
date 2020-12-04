@@ -10,7 +10,7 @@ export interface TRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
 }
 
 // C O M P O N E N T
-const TRow: React.FC<TRowProps> = (props) => {
+export const TRow: React.FC<TRowProps> = (props) => {
   const { values, className, children, ...rest } = props
 
   const renderCells = (): React.ReactNode | JSX.Element[] => {
@@ -72,5 +72,3 @@ const StyledTRow = styled.tr`
     background-color: var(--color-error);
   }
 `
-
-export default TRow

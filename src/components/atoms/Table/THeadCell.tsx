@@ -8,7 +8,7 @@ export interface THeadCellProps {
 }
 
 // C O M P O N E N T
-const THeadCell: React.FC<THeadCellProps> = (props) => {
+export const THeadCell: React.FC<THeadCellProps> = (props) => {
   const { value, className, children } = props
 
   return (
@@ -26,5 +26,3 @@ const StyledTHeadCell = styled.th`
   text-align: left;
   font-size: 14px;
 `
-
-export default THeadCell

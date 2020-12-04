@@ -7,7 +7,7 @@ export interface TableProps {
 }
 
 // C O M P O N E N T
-const Table: React.FC<TableProps> = (props) => {
+export const Table: React.FC<TableProps> = (props) => {
   const { children, className } = props
 
   return (
@@ -28,5 +28,3 @@ const StyledTable = styled.table`
     overflow: auto;
   }
 `
-
-export default Table
