@@ -40,52 +40,58 @@ export const Basic = (args: SwitchProps) => {
 }
 
 export const Type = () => {
-  const [value, setValue] = React.useState(false)
+  const [valueBold, setValueBold] = React.useState(false)
+  const [valueSlim, setValueSlim] = React.useState(false)
 
   return (
     <Wrapper align='flex-start' direction='column' bgColor='none'  >
       <Wrapper justify='flex-start' bgColor='none'  >
         <Switch
+          checked={valueBold}
+          name='switch-1'
+          onChange={() => setValueBold(!valueBold)}
           type='bold'
-          checked={value}
-          onChange={() => setValue(!value)}
         />
-        {value ? 'Bold Switch Component' : 'Press me'}
+        {valueBold ? 'Bold Switch Component' : 'Press me'}
       </Wrapper>
       <Wrapper justify='flex-start' bgColor='none'  >
         <Switch
+          checked={valueSlim}
+          name='switch-2'
+          onChange={() => setValueSlim(!valueSlim)}
           type='slim'
-          checked={value}
-          onChange={() => setValue(!value)}
         />
-        {value ? 'Slim Switch Component' : 'Press me'}
+        {valueSlim ? 'Slim Switch Component' : 'Press me'}
       </Wrapper>
     </Wrapper>
   )
 }
 
 export const Border = () => {
-  const [value, setValue] = React.useState(false)
+  const [valueBorder, setValueBorder] = React.useState(false)
+  const [valueBorderless, setValueBorderless] = React.useState(false)
 
   return (
     <Wrapper align='flex-start' direction='column' bgColor='none'  >
       <Wrapper justify='flex-start' bgColor='none'  >
         <Switch
-          type='bold'
           border={true}
-          checked={value}
-          onChange={() => setValue(!value)}
+          checked={valueBorder}
+          name='switch-1'
+          onChange={() => setValueBorder(!valueBorder)}
+          type='bold'
         />
-        {value ? 'Bold Border Switch Component' : 'Press me'}
+        {valueBorder ? 'Bold Border Switch Component' : 'Press me'}
       </Wrapper>
       <Wrapper justify='flex-start' bgColor='none'  >
         <Switch
-          type='slim'
           border={true}
-          checked={value}
-          onChange={() => setValue(!value)}
+          checked={valueBorderless}
+          name='switch-2'
+          onChange={() => setValueBorderless(!valueBorderless)}
+          type='slim'
         />
-        {value ? 'Slim Border Switch Component' : 'Press me'}
+        {valueBorderless ? 'Slim Border Switch Component' : 'Press me'}
       </Wrapper>
     </Wrapper>
   )

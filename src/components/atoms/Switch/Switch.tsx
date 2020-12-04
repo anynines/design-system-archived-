@@ -6,7 +6,7 @@ export interface SwitchProps {
   border?: boolean
   checked?: boolean
   className?: string
-  label?: string
+  name?: string
   onChange?: () => void
   style?: React.CSSProperties
   type?: SwitchType
@@ -20,6 +20,7 @@ export const Switch: React.FC<SwitchProps> = ({
   checked,
   className,
   onChange,
+  name = 'switch-input',
   style,
   type = 'slim'
 }) => {
@@ -30,14 +31,14 @@ export const Switch: React.FC<SwitchProps> = ({
     >
       <input
         className='switch-checkbox'
-        id='switch-new'
+        id={name}
         checked={checked}
         onChange={(): void => { return (onChange && onChange()) }}
         type='checkbox'
       />
       <label
         className={`switch-label ${checked && 'checked'} ${type} ${border && 'border'}`}
-        htmlFor='switch-new'
+        htmlFor={name}
       >
         <span className={`switch-button ${type}`} />
       </label>
