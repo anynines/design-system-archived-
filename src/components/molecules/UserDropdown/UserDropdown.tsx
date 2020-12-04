@@ -26,18 +26,15 @@ export const UserDropdown: React.FC<UserDropdownProps> = ({
     setActive(!active)
   }
   return (
-    <StyledUserDropdown
-      style={style}
-      className={`${children && active && 'active'}`}
-    >
+    <StyledUserDropdown style={style}>
       <button
         type='button'
         className={`
           user-dropdown 
           ${className} 
-          ${children && active && 'active'}
+          ${active ? 'active' : ''}
         `}
-        onClick={(): void => { return (onClick()) }}
+        onClick={onClick}
       >
         <Avatar
           rounded
@@ -49,7 +46,7 @@ export const UserDropdown: React.FC<UserDropdownProps> = ({
       </button>
 
       {children && (
-        <div className='user-menu'>
+        <div className={`user-menu ${active ? 'active' : ''}`}>
           <div className='user-menu--header'>
             <Avatar
               rounded
@@ -78,7 +75,7 @@ const StyledUserDropdown = styled.div`
     align-items: center;
     margin: 0;
     margin-left: 20px;
-    border: none;
+    border: var(--border);
     background-color: var(--color-dark);
     cursor: pointer;
     padding: 0;
@@ -135,14 +132,6 @@ const StyledUserDropdown = styled.div`
       flex-direction: column;
       position: relative;
       width: 100%;
-
-      .toggle-mode {
-        background-color: var(--color-black-50);
-
-        &:hover {
-          background-color: var(--color-primary);
-        }
-      }
     }
 
     .avatar-wrapper {
@@ -171,6 +160,11 @@ const StyledUserDropdown = styled.div`
       top: 20px;
       right: 20px;
       border: var(--border);
+      background-color: var(--color-black-50);
+
+      &:hover {
+        background-color: var(--color-primary);
+      }
     }
 
     hr {
@@ -185,9 +179,11 @@ const StyledUserDropdown = styled.div`
         background-color: var(--color-primary);
       }
     }
+
+    &.active {
+      display: flex;
+    }
   }
 
-  &.active .user-menu {
-    display: flex;
-  }
+  
 `
