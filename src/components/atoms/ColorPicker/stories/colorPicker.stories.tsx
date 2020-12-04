@@ -11,8 +11,18 @@ export default {
   },
 }
 
-export const Basic = () => (
-  <Wrapper height='500'>
-    <ColorPicker style={{position: 'relative', top: 0}} />
-  </Wrapper>
-)
+export const Basic = () => {
+  const color = '#fff'
+  const [selectedColor, setSelectedColor] = React.useState(color)
+
+  return (
+    <Wrapper height='500'>
+      <ColorPicker style={{ position: 'relative', top: 0 }}
+        color={selectedColor}
+        onChangeComplete={(newColor): void => {
+          setSelectedColor(newColor.hex.toUpperCase())
+        }}
+      />
+    </Wrapper>
+  )
+}

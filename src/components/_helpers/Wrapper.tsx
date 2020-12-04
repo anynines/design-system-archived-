@@ -14,7 +14,7 @@ export interface WrapperProps {
 }
 
 // T Y P E S
-export type WrapperBgColor = 'light' | 'dark' | 'black'
+export type WrapperBgColor = 'light' | 'dark' | 'black' | 'none'
 export type WrapperDirection = 'row' | 'column'
 export type WrapperAlignment = 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'space-between' | 'space-around'
 export type WrapperFlexWrap = 'nowrap' | 'wrap'
