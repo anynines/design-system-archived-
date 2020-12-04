@@ -20,7 +20,7 @@ import {
   DesignSystemContextElements,
   Theme,
   PartialTheme,
-  Mode,
+  Mode
 } from './types/types'
 
 // C O M P O N E N T
@@ -40,7 +40,7 @@ export const createDesignSystemContext = <
       mode = 'dark',
       useFavicon = false,
       storagePrefix = 'ds_',
-      children,
+      children
     } = props
 
     const getMergedTheme = (partialTheme: T | Theme): T & Theme => {
@@ -88,7 +88,7 @@ export const createDesignSystemContext = <
       setTheme: setThemeState,
       mode: modeState,
       setMode,
-      resetTheme,
+      resetTheme
     }
 
     return (
@@ -103,6 +103,6 @@ export const createDesignSystemContext = <
 
   return {
     ThemeContext,
-    DesignSystemInstance,
+    DesignSystemInstance
   }
 }
