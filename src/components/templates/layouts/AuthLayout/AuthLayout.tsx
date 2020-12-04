@@ -2,13 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 export interface AuthLayoutProps {
-  authLayout?: AuthLayoutType
+  authLayout?: string
   bgImage?: string
   className?: string
   style?: React.CSSProperties
 }
-
-export type AuthLayoutType = '' | 'center-full-bg' | 'full-page-left' | 'full-page-right'
 
 export const AuthLayout: React.FC<AuthLayoutProps> = ({
   authLayout,
