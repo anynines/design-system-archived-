@@ -63,6 +63,10 @@ const StyledButton = styled.button`
   outline: none;
   transition: var(--transition);
 
+  i {
+    margin-right: var(--space-md);
+  }
+
   /* Width */
   &.block {
     width: 100%;
@@ -116,10 +120,6 @@ const StyledButton = styled.button`
     background-color: var(--color-primary-light);
     color: var(--color-white-fix);
     box-shadow: 0 0 6px var(--color-light-10);
-  }
-
-  i {
-    margin-right: var(--space-md);
   }
 `
 StyledButton.displayName = 'StyledButton'

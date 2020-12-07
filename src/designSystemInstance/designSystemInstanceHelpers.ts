@@ -25,8 +25,8 @@ export const getToggledTheme = <T extends Theme>(theme: T): T => {
         white: theme.globals.colors.black,
         light: theme.globals.colors.dark,
         dark: theme.globals.colors.light,
-        black: theme.globals.colors.white,
-      },
-    },
+        black: theme.globals.colors.white
+      }
+    }
   }
 }

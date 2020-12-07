@@ -13,7 +13,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
   bgImage = 'https://images.pexels.com/photos/266834/pexels-photo-266834.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
   children,
   className,
-  style,
+  style
 }) => {
   return (
     <StyledAuthLayout
@@ -68,9 +68,7 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
 
     .auth-image {
       background-color: rgba(0, 0, 0, 0.25);
-      background-image: url(${(props): string => {
-        return props.bgImage
-      }});
+      background-image: url(${(props): string => { return props.bgImage }});
       background-position: center center;
       background-size: cover;
       width: 50%;
@@ -78,9 +76,7 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
   }
 
   &.layout-center-full-bg {
-    background-image: url(${(props): string => {
-      return props.bgImage
-    }});
+    background-image: url(${(props): string => { return props.bgImage }});
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

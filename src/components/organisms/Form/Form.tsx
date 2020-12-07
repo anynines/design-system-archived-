@@ -12,7 +12,7 @@ export interface FormProps {
 export const Form: React.FC<FormProps> = ({
   children,
   className,
-  onSubmit: onSubmitCallback,
+  onSubmit: onSubmitCallback
 }) => {
   const {
     register,
@@ -20,13 +20,13 @@ export const Form: React.FC<FormProps> = ({
     errors,
     watch,
     getValues,
-    setValue,
+    setValue
   } = useForm()
   const formProps = { register, watch, getValues, errors, setValue }
   const childrenWithProps = Children.map(children, (child) => {
     const isReactComponent = child.type instanceof Function
     const clonedElement = cloneElement(child, {
-      ...(isReactComponent ? formProps : {}),
+      ...(isReactComponent ? formProps : {})
     })
     return clonedElement
   })
