@@ -68,6 +68,7 @@ export * from './components/molecules/inputs/Input/Input'
 export * from './components/organisms/Form/Form'
 export * from './components/organisms/Menu/Menu'
 export * from './components/organisms/ProductItem/ProductItem'
+// Will be enabled when Table components from Sabbir are finished
 // export * from './components/organisms/Table/Table'
 // export * from './components/organisms/Table/SortableTable'
 // export * from './components/organisms/Table/DraggableTable'
