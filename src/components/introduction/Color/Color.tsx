@@ -37,6 +37,7 @@ const StyledColor = styled.div`
   height: 100px;
   transition: var(--transition);
   border-radius: 0;
+  flex: 1;
   
   span {
     background-color: var(--color-black-20);

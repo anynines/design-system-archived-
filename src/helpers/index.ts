@@ -34,7 +34,3 @@ export const createFaviconNode = (): void => {
 
   document.getElementsByTagName('head')[0].appendChild(faviconNode)
 }
-
-export const isBrowserPreferenceModeDark = (): boolean => {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-}
