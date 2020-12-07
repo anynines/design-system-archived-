@@ -46,6 +46,8 @@ export const Form: React.FC<FormProps> = ({
 }
 
 const StyledForm = styled.form`
+  width: 100%;
+  
   .form-footer {
     display: flex;
     justify-content: space-between;
