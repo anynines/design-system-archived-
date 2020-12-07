@@ -10,17 +10,19 @@ export interface TabBarProps {
   tabs: {
     title: string
   }[]
+  type?: TabBarType
   vertical?: boolean
 }
 
 // T Y P E
-export type TabBarType = '' | ''
+export type TabBarType = 'border' | 'primary'
 
 // C O M P O N E N T
 export const TabBar: React.FC<TabBarProps> = ({
   className,
   style,
   tabs,
+  type = 'primary',
   vertical
 }) => {
   const [activeIndex, setActiveIndex] = React.useState(0)
@@ -29,7 +31,7 @@ export const TabBar: React.FC<TabBarProps> = ({
     <StyledTabBar
       tabs={tabs}
       style={style}
-      className={`tab-bar ${vertical && 'vertical'} ${className}`}
+      className={`tab-bar ${vertical && 'vertical'} ${type} ${className}`}
     >
       {tabs.map((tab, index): JSX.Element => {
         const isActive = activeIndex === index ? 'active' : '';
@@ -54,22 +56,6 @@ const StyledTabBar = styled.div`
   justify-content: center;
   align-items: center;
 
-  &.vertical {
-    flex-direction: column;
-    
-    button {
-      border-radius: 0;
-
-      &:first-child {
-        border-radius: var(--radius) var(--radius) 0 0;
-      }
-
-      &:last-child {
-        border-radius: 0 0 var(--radius) var(--radius);
-      }
-    }
-  }
-
   button {
     border-radius: 0;
 
@@ -86,6 +72,38 @@ const StyledTabBar = styled.div`
       border-radius: 0 var(--radius) var(--radius) 0;
     }
   }
+  
+  &.border {
+    button {
+      background: transparent;
+      border: var(--border);
+      color: var(--color-light);
 
+      &:hover{
+        box-shadow: 0 0 .4rem 0 var(--color-light-70);
+      }
+
+      &.active {
+        background: var(--color-primary-light);
+        color: var(--color-white-fix);
+      }
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+    
+    button {
+      border-radius: 0;
+
+      &:first-child {
+        border-radius: var(--radius) var(--radius) 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 var(--radius) var(--radius);
+      }
+    }
+  }
 `
 StyledTabBar.displayName = 'StyledTabBar'
