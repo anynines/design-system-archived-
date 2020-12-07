@@ -9,7 +9,7 @@ import { Foot } from "../Simple/Foot"
 import { Cell } from '../Simple/Cell'
 
 export default {
-  title: 'Organisms/SimpleTable',
+  title: '🌳 Organisms/SimpleTable',
   component: Table,
   argTypes: {
     sortData: {

@@ -3,12 +3,7 @@ import React from 'react'
 import { CustomTable as Table, TableAccessor, DraggableTableDataProps, SortableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, CustomTableRow as TableRow } from '../Custom/CustomTable'
 
 export default {
-<<<<<<< develop:src/components/organisms/Table/stories/table.stories.tsx
-  title: '🌳 Organisms/Table',
-=======
-  title: 'Organisms/CustomTable',
->>>>>>> Restructure all files and folders in Table and fix imports:src/components/organisms/Table/stories/custom.stories.tsx
-  component: Table,
+  title: '🌳 Organisms/CustomTable',
   argTypes: {
     tableHeaderData: {
       control: { type: 'TableColumn[]' }
@@ -251,3 +246,6 @@ export const Sortable: React.FC = () => {
     <Table {...tableProps} />
   )
 }
+
+  component: Table,
+>>>>>>> Restructure all files and folders in Table and fix imports:src/components/organisms/Table/stories/custom.stories.tsx

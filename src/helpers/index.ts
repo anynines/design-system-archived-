@@ -44,3 +44,11 @@ export const getChildrenWithNewProps = (children: any, props: any): ReactNode =>
     return clonedElement
   })
 }
+
+export const getChildrenWithNewProps = (children: any, props: any): ReactNode => { // eslint-disable-line
+  return Children.map(children, (child) => {
+    const isReactComponent = child && child.type instanceof Function
+    const clonedElement = cloneElement(child, { ...isReactComponent ? props : {} })
+    return clonedElement
+  })
+}

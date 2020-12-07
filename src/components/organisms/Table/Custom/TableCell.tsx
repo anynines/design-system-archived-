@@ -57,7 +57,7 @@ const TableCell = (props: TableCellProps): any => { // eslint-disable-line @type
       return (
         <a
           href={cell.row.original.slug}
-          style={{ position: 'relative' }}
+          className='cell-link'
         >
           <Icon data-tip data-for='default' icon={'link' as IconName} />
           <Tooltip>

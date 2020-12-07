@@ -3,7 +3,7 @@ import React from 'react'
 import { Badge } from '../Badge'
 
 export default {
-  title: 'Atoms/Badge',
+  title: '💧 Atoms/Badge',
   component: Badge,
   argTypes: {
     value: {
