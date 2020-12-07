@@ -194,6 +194,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 2;
     font-size: var(--text-lg);
     font-weight: 300;
+    padding-left: 20px;
   }
 
   .ol, .ol li {
@@ -201,12 +202,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .ul, .ul li {
-    list-style: circle;
+    list-style: disc;
   }
 
   code {
     margin: 0 2px;
-    background-color: var(--color-black);
     padding: 4px;
     font-size: var(--text-lg);
     border-radius: 2px;
@@ -229,7 +229,7 @@ export const GlobalStyle = createGlobalStyle`
   **  Storybook Overwrites  *************
   **************************************/
 
-  .sb-show-main.sb-main-padded {
+ .sb-show-main.sb-main-padded {
     background: #010f1b !important;
     padding: 0 !important;
   }

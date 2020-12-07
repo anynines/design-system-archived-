@@ -44,8 +44,8 @@ export const Type = () => {
   const [valueSlim, setValueSlim] = React.useState(false)
 
   return (
-    <Wrapper align='flex-start' direction='column' bgColor='none'  >
-      <Wrapper justify='flex-start' bgColor='none'  >
+    <Wrapper align='flex-start' direction='column' bgColor='transparent' >
+      <Wrapper justify='flex-start' bgColor='transparent' >
         <Switch
           checked={valueBold}
           name='switch-1'
@@ -54,7 +54,7 @@ export const Type = () => {
         />
         {valueBold ? 'Bold Switch Component' : 'Press me'}
       </Wrapper>
-      <Wrapper justify='flex-start' bgColor='none'  >
+      <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
           checked={valueSlim}
           name='switch-2'
@@ -72,8 +72,8 @@ export const Border = () => {
   const [valueBorderless, setValueBorderless] = React.useState(false)
 
   return (
-    <Wrapper align='flex-start' direction='column' bgColor='none'  >
-      <Wrapper justify='flex-start' bgColor='none'  >
+    <Wrapper align='flex-start' direction='column' bgColor='transparent'  >
+      <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
           border={true}
           checked={valueBorder}
@@ -83,7 +83,7 @@ export const Border = () => {
         />
         {valueBorder ? 'Bold Border Switch Component' : 'Press me'}
       </Wrapper>
-      <Wrapper justify='flex-start' bgColor='none'  >
+      <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
           border={true}
           checked={valueBorderless}

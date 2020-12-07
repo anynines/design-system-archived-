@@ -104,6 +104,7 @@ const StyledProductItem = styled.div`
   cursor: pointer;
   border-radius: var(--radius);
   color: var(--color-white);
+  min-width: 300px;
 
   svg {
     height: 1rem;

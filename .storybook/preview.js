@@ -119,7 +119,17 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['👋 Get started', ['Welcome'], '💧 Atoms', '🌱 Molecules', '🌳 Organisms'],
+      order: [
+        '👋 Get started', [
+          'Welcome', 
+          'Colors', 
+          'Type Scale',
+          'Layout',
+          'Changelog'
+        ],
+        '💧 Atoms', 
+        '🌱 Molecules', 
+        '🌳 Organisms'],
     },
   }
 }

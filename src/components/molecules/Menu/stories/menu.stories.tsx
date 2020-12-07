@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Menu, MenuItemObject, MenuProps } from '../Menu'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
   title: '🌱 Molecules/Menu',
@@ -28,7 +29,9 @@ const menuData: MenuItemObject[] = [
 ]
 
 export const MainMenu = (args: MenuProps) => (
-  <Menu {...args} items={menuData} />
+  <Wrapper>
+    <Menu {...args} items={menuData} />
+  </Wrapper>
 )
 
 const userMenuData: MenuItemObject[] = [
@@ -54,7 +57,11 @@ const userMenuData: MenuItemObject[] = [
   },
 ]
 
-export const UserMenu = () => <Menu items={userMenuData}></Menu>
+export const UserMenu = () => (
+  <Wrapper>
+    <Menu items={userMenuData}></Menu>
+  </Wrapper>
+)
 
 const adminMenuData: MenuItemObject[] = [
   {
@@ -83,4 +90,8 @@ const adminMenuData: MenuItemObject[] = [
   },
 ]
 
-export const AdminMenu = () => <Menu vertical items={adminMenuData}></Menu>
+export const AdminMenu = () => (
+  <Wrapper>
+    <Menu vertical items={adminMenuData}></Menu>
+  </Wrapper>
+)

@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 
 import { ProductItem, ProductItemProps } from '../ProductItem'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
   title: '🌳 Organisms/ProductItem',
@@ -76,15 +77,23 @@ const SampleProduct =
 
 
 export const Basic = (args: ProductItemProps) => (
-  <ProductItem {...args} deleteItem={action('delete-click')} move={action('move-click')} />
+  <Wrapper>
+    <ProductItem 
+      {...args} 
+      deleteItem={action('delete-click')} 
+      move={action('move-click')} 
+    />
+  </Wrapper>
 )
 
 export const Product = () => (
-  <ProductItem
-    deleteItem={action('delete-click')}
-    move={action('move-click')}
-    product={SampleProduct}
-    quantity={1}
-    moveIcon='heart'
-  />
+  <Wrapper>
+    <ProductItem
+      deleteItem={action('delete-click')}
+      move={action('move-click')}
+      product={SampleProduct}
+      quantity={1}
+      moveIcon='heart'
+    />
+  </Wrapper>
 )
