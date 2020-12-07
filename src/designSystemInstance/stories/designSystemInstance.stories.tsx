@@ -59,7 +59,7 @@ const HelperButton = () => {
 }
 
 export const Basic = <T extends Theme>(args: DesignSystemInstanceProps<T>) => (
-  <DesignSystemInstance persistantThemeStorage={false} {...args}>
+  <DesignSystemInstance {...args}>
     <Button type='primary'>
       <span>Button Primary</span>
     </Button>
