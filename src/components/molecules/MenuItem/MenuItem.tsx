@@ -8,6 +8,7 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 // I N T E R F A C E
 export interface MenuItemProps {
   active?: boolean
+  bgColor?: string
   children?: JSX.Element
   className?: string
   counter?: boolean
@@ -22,6 +23,7 @@ export interface MenuItemProps {
 // C O M P O N E N T
 export const MenuItem: React.FC<MenuItemProps> = ({
   active = false,
+  bgColor,
   children,
   className,
   counter = false,
@@ -38,15 +40,22 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           vertical={vertical}
           icon={icon}
           label={children}
-          className={`menu-item ${className}`}
+          className={`menu-item ${bgColor} ${className}`}
           id={icon}
           style={style}
         >
-          <NavLink exact to={`${path}`} className='wrapper' activeClassName='active'>
+          <NavLink
+            exact
+            to={`${path}`}
+            className='wrapper'
+            activeClassName='active'
+          >
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : <></>}
+            ) : (
+              <></>
+            )}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -56,7 +65,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           vertical={vertical}
           label={children}
           icon={icon}
-          className={`menu-item ${className}`}
+          className={`menu-item ${bgColor} ${className}`}
           id={icon}
           style={style}
         >
@@ -66,7 +75,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : <></>}
+            ) : (
+              <></>
+            )}
           </div>
         </StyledMenuItem>
       )}
@@ -85,7 +96,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-lg) 0' : '0 var(--space-sm)' }};
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
-  
+
   display: var(--display);
   position: relative;
   margin: var(--margin);
@@ -93,15 +104,6 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
 
   a {
     text-decoration: none;
-  }
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-    margin-bottom: var(--margin-bottom);
   }
 
   .label {
@@ -112,6 +114,15 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
 
   i {
     margin-right: var(--svg-margin-right);
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    margin-bottom: var(--margin-bottom);
   }
 
   .wrapper {
@@ -133,12 +144,12 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     &.counter {
       &::after {
         position: absolute;
-        top: -.45rem;
-        right: -.45rem;
+        top: -0.45rem;
+        right: -0.45rem;
         border: 2px solid var(--color-black);
         background-color: var(--color-primary);
-        width: .8rem;
-        height: .8rem;
+        width: 0.8rem;
+        height: 0.8rem;
         content: '';
         border-radius: 100%;
       }
@@ -150,6 +161,24 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
       color: var(--color-white-fix);
       .label {
         color: var(--color-white-fix);
+      }
+    }
+  }
+
+  &.black {
+    .wrapper {
+      background-color: var(--color-black);
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &.primary {
+    .wrapper {
+      background-color: var(--color-primary);
+      &:hover {
+        background-color: var(--color-primary-light);
       }
     }
   }

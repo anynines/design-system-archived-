@@ -1,20 +1,14 @@
 import { LocalStorage } from '../helpers/localStorage'
 import { Theme, Mode } from './types/types'
 
-export const getTheme = <T extends Theme>(
-  theme: T
-): T => {
+export const getTheme = <T extends Theme>(theme: T): T => {
   return theme
 }
 
-export const getMode = (
-  mode: Mode,
-  storagePrefix: string,
-  useLocalStorage: boolean
-): Mode => {
+export const getMode = (mode: Mode, storagePrefix: string): Mode => {
   const modeStoredInLocalStorage = LocalStorage.getItem(`${storagePrefix}mode`)
 
-  if (useLocalStorage && modeStoredInLocalStorage !== null) {
+  if (modeStoredInLocalStorage !== null) {
     return modeStoredInLocalStorage as Mode
   }
 

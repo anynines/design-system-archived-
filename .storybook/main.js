@@ -24,6 +24,7 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/theming',
     '@storybook/addon-viewport/register',
     '@storybook/preset-create-react-app',
     {

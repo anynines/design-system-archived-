@@ -6,7 +6,7 @@ import { Icon } from '../../../atoms/Icon/Icon'
 
 // T Y P E S
 export type CellType = 'head' | 'body'
-export type CellColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success' | 'blue' | 'white' | 'black' | 'yellow' | 'red' | 'green'
+export type CellColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success' | 'notice' | 'white' | 'black'
 
 export interface CellProps extends TableChildrenProps {
   type: CellType
@@ -131,6 +131,9 @@ const StyledBodyCell = styled.td`
         }
       }
     }
+  }
+  &.notice {
+    background-color: var(--color-notice);
   }
   &.success {
     background-color: var(--color-success);

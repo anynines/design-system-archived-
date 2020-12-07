@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 import { TopNavigation } from '../TopNavigation'
 import { Logo } from '../../../atoms/Logo/Logo'
-import { Menu } from '../../../organisms/Menu/Menu'
+import { Menu } from '../../../molecules/Menu/Menu'
 
 export default {
   title: '📄 Templates/TopNav',
@@ -36,7 +36,7 @@ export const Basic = () => (
             }
           ]}
         />
-        
+
       </div>
       <div className='wrapper'>
         <Menu

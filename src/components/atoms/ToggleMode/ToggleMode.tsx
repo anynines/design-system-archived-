@@ -12,6 +12,7 @@ export interface ToggleModeProps {
   mode: Mode
   setMode?: () => void
   size?: ToggleModeButtonSize
+  style?: React.CSSProperties
 }
 
 export type ToggleModeButtonSize = 'sm' | 'lg'
@@ -21,13 +22,15 @@ export const ToggleMode: React.FC<ToggleModeProps> = ({
   className,
   mode = 'dark',
   setMode,
-  size = 'lg'
+  size = 'lg',
+  style
 }) => {
   return (
     <StyledToggleMode
       className={`toggle-mode ${size} ${className}`}
       onClick={(): void => { return (setMode && setMode()) }}
       mode={mode}
+      style={style}
     >
       <div className='icons'>
         <div className='icon'>

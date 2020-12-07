@@ -4,7 +4,6 @@ import { CustomTable as Table, TableAccessor, DraggableTableDataProps, SortableT
 
 export default {
   title: '🌳 Organisms/CustomTable',
-  component: Table,
   argTypes: {
     tableHeaderData: {
       control: { type: 'TableColumn[]' }
@@ -240,7 +239,7 @@ export const Sortable: React.FC = () => {
     initialPages,
     type: 'sortable',
     pagesPerFolder: 2,
-    color: 'light'
+    color: 'warning'
   }
 
   return (

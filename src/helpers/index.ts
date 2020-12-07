@@ -37,8 +37,12 @@ export const createFaviconNode = (): void => {
   document.getElementsByTagName('head')[0].appendChild(faviconNode)
 }
 
-export const isBrowserPreferenceModeDark = (): boolean => {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+export const getChildrenWithNewProps = (children: any, props: any): ReactNode => { // eslint-disable-line
+  return Children.map(children, (child) => {
+    const isReactComponent = child && child.type instanceof Function
+    const clonedElement = cloneElement(child, { ...isReactComponent ? props : {} })
+    return clonedElement
+  })
 }
 
 export const getChildrenWithNewProps = (children: any, props: any): ReactNode => { // eslint-disable-line

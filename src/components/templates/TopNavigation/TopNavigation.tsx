@@ -41,8 +41,4 @@ const StyledTopNavigation = styled.div`
     display: flex;
     align-items: center;
   }
-  
-  .user-menu {
-    display: flex;
-  }
 `

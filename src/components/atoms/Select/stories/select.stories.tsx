@@ -65,7 +65,7 @@ const scrollableValues = [
 ]
 
 export const Basic = (args: SelectProps) => (
-  <Wrapper bgColor='black'>
+  <Wrapper>
     <Select
       {...args}
       values={defaultValues}
@@ -76,7 +76,7 @@ export const Basic = (args: SelectProps) => (
 )
 
 export const Example = () => (
-  <Wrapper bgColor='black'>
+  <Wrapper>
     <Select
       label='Font'
       name='fontFamily'
@@ -89,7 +89,7 @@ export const Example = () => (
 )
 
 export const Scrollable = () => (
-  <Wrapper bgColor='black'>
+  <Wrapper>
     <Select
       label='Font'
       name='fontFamily'
@@ -102,7 +102,7 @@ export const Scrollable = () => (
 )
 
 export const WithNumber = () => (
-  <Wrapper bgColor='black'>
+  <Wrapper>
     <Select
       label='Pick a number'
       name='number'

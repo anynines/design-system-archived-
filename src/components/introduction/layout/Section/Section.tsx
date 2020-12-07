@@ -12,7 +12,7 @@ export interface SectionProps {
   style?: React.CSSProperties
 }
 
-export type BgColorType = 'black' | 'dark' | 'primary' | 'light' | 'white'
+export type BgColorType = 'black' | 'dark' | 'primary' | 'light' | 'white' | 'transparent'
 
 // C O M P O N E N T
 export const Section: React.FC<SectionProps> = ({
@@ -61,6 +61,9 @@ const StyledSection = styled.div`
       color: var(--color-black);
     }
     background-color: var(--color-white);
+  }
+  &.section--transparent {
+    background-color: transparent;
   }
 `
 StyledSection.displayName = 'StyledSection'
