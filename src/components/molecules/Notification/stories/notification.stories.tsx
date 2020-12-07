@@ -80,19 +80,28 @@ const testItem = {
 }
 
 export const Basic = (args: NotificationProps) => (
-  <Wrapper bgColor='light'>
+  <Wrapper>
     <Notification {...args} />
   </Wrapper>
 )
 
 export const Inline = () => (
-  <Wrapper bgColor='light'>
-    <Notification icon={'notifications'} msg={testItem.msg} date={testItem.date} />
+  <Wrapper>
+    <Notification 
+      icon={'notifications'} 
+      msg={testItem.msg} 
+      date={testItem.date} 
+    />
   </Wrapper>
 )
 
 export const Block = () => (
-  <Wrapper bgColor='light'>
-    <Notification icon={'notifications'} msg={testItem.msg} date={testItem.date} width='block' />
+  <Wrapper>
+    <Notification 
+      icon={'notifications'} 
+      msg={testItem.msg} 
+      date={testItem.date} 
+      width='block' 
+    />
   </Wrapper>
 )
