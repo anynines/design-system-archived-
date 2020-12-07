@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // M O L E C U L E S
-import { MenuItem, MenuItemProps } from '../../molecules/MenuItem/MenuItem'
+import { MenuItem, MenuItemProps } from '../MenuItem/MenuItem'
 
 // I N T E R F A C E S
 export interface MenuItemObject extends MenuItemProps {
