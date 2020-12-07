@@ -246,6 +246,3 @@ export const Sortable: React.FC = () => {
     <Table {...tableProps} />
   )
 }
-
-  component: Table,
->>>>>>> Restructure all files and folders in Table and fix imports:src/components/organisms/Table/stories/custom.stories.tsx
