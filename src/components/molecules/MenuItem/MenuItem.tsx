@@ -106,15 +106,6 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     text-decoration: none;
   }
 
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-    margin-bottom: var(--margin-bottom);
-  }
-
   .label {
     font-size: var(--text-md);
     font-weight: var(--font-weight-bd);
@@ -123,6 +114,15 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
 
   i {
     margin-right: var(--svg-margin-right);
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    margin-bottom: var(--margin-bottom);
   }
 
   .wrapper {
