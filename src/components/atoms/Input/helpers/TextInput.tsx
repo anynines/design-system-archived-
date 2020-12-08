@@ -4,8 +4,8 @@ import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-h
 
 // C O M P O N E N T S
 import { Icon, IconName } from '../../Icon/Icon'
-import { InputLabel, InputLabelProps } from '../InputLabel/InputLabel'
-import { InputIcon, InputIconProps } from '../InputIcon/InputIcon'
+import { InputLabel, InputLabelProps } from './InputLabel'
+import { InputIcon, InputIconProps } from './InputIcon'
 
 // I N T E R F A C E S
 export interface TextInputProps {
@@ -26,6 +26,7 @@ export interface TextInputProps {
   register?: (validationRules: ValidationOptions) => void
   setValue?: any // eslint-disable-line
   style?: React.CSSProperties
+  type?: string
   value?: string
   watch?: any //eslint-disable-line
 }
@@ -50,6 +51,7 @@ export const TextInput: TextInput = ({
   register,
   setValue,
   style,
+  type,
   value = '',
   watch
 }) => {
@@ -128,6 +130,7 @@ export const TextInput: TextInput = ({
           autoFocus={isFocus}
           autoComplete={autoComplete}
           name={name}
+          type={type}
           id={name}
           ref={register ? register({ required: true, pattern }) as unknown as undefined : undefined}
           onFocus={(): void => { setIsFocus(true) }}

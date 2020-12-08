@@ -230,7 +230,7 @@ export const GlobalStyle = createGlobalStyle`
   **************************************/
 
   .sb-show-main.sb-main-padded {
-    background: #010f1b !important;
+    /* background: #010f1b !important; */
     padding: 0 !important;
   }
 

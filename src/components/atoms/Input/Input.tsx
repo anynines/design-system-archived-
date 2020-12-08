@@ -1,23 +1,25 @@
 import React from 'react'
 
 // C O M P O N E N T S
-import { InputLabelProps } from '../InputLabel/InputLabel'
-import { TextInput, TextInputProps } from '../Text/TextInput'
-import { ColorInput } from '../Color/ColorInput'
-import { DateInput, DateInputProps } from '../Date/DateInput'
+import { InputLabelProps } from './helpers/InputLabel'
+import { TextInput, TextInputProps } from './helpers/TextInput'
+import { ColorInput } from './helpers/ColorInput'
+import { DateInput, DateInputProps } from './helpers/DateInput'
 
 // I N T E R F A C E S
 interface DateInputRestrictedProps extends DateInputProps {
   type: 'date'
   value?: number
 }
+
+export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'date'
+
 export type InputProps = DateInputRestrictedProps | TextInputProps & {
   type: InputType
   onChange?: (newValue: string) => void
 }
 type Input = React.FC<InputProps>
   & { Label: React.FC<InputLabelProps> }
-export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'date'
 
 // C O M P O N E N T
 export const Input: Input = (props) => {
@@ -31,11 +33,11 @@ export const Input: Input = (props) => {
     pattern,
     register,
     setValue,
+    type,
     watch
   } = props
-
   const renderInput = (): JSX.Element => {
-    switch (props.type) {
+    switch (type) {
       case 'color':
         return (
           <ColorInput
@@ -45,7 +47,7 @@ export const Input: Input = (props) => {
             setValue={setValue}
             errors={errors}
             name={name}
-            color={props.value || '#000000'}
+            color={props.value as string || '#000000'}
             label={label}
             pattern={pattern || /^#(?:[0-9a-f]{3}){1,2}$/i}
             register={register}
@@ -70,6 +72,13 @@ export const Input: Input = (props) => {
             {...props}
             pattern={pattern || /^[0-9]{2,30}$/}
           >
+            {children}
+          </TextInput>
+        )
+
+      case 'password':
+        return (
+          <TextInput {...props}>
             {children}
           </TextInput>
         )

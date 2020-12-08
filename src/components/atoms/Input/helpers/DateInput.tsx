@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // C O M P O N E N T S
-import { TextInput, TextInputProps } from '../Text/TextInput'
+import { TextInput, TextInputProps } from './TextInput'
 import { DatePicker, DatePickerProps } from '../../../molecules/DatePicker/DatePicker'
 import { Icon } from '../../Icon/Icon'
 import { onClickOutsideHook } from '../../../../helpers/react'

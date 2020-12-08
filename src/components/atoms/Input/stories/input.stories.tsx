@@ -1,10 +1,10 @@
 import React from 'react'
 
 import { Input, InputProps } from '../Input'
-import Wrapper from '../../../../_helpers/Wrapper'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
-  title: '💧 Atoms/Inputs/Input',
+  title: '💧 Atoms/Input',
   component: Input,
   argTypes: {
     icon: {
@@ -75,9 +75,7 @@ export default {
 
 export const Basic = (args: InputProps) => (
   <Wrapper>
-    <Input
-      {...args}
-    />
+    <Input {...args} />
   </Wrapper>
 )
 
@@ -93,6 +91,17 @@ export const Text = () => (
   </Wrapper>
 )
 
+export const Color = () => (
+  <Wrapper>
+    <Input
+      name='color'
+      type='color'
+      label='Text'
+      value='#123456'
+    />
+  </Wrapper>
+)
+
 export const CustomRegexPattern = () => (
   <Wrapper>
     <Input
@@ -101,16 +110,6 @@ export const CustomRegexPattern = () => (
       icon='shop'
       label='I match 4 digits numbers'
       pattern={/^[0-9]{4}$/}
-    />
-  </Wrapper>
-)
-
-export const Color = () => (
-  <Wrapper>
-    <Input
-      name='Color'
-      type='color'
-      label='Color'
     />
   </Wrapper>
 )
