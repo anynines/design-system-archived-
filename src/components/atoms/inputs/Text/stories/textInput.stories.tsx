@@ -4,16 +4,20 @@ import { TextInput, TextInputProps } from '../TextInput'
 import Wrapper from '../../../../_helpers/Wrapper'
 
 export default {
-  title: '🌱 Molecules/Inputs/TextInput',
+  title: '💧 Atoms/Inputs/TextInput',
   component: TextInput,
   argTypes: {
     name: {
-      control: { type: 'text'},
+      control: { type: 'text' },
       defaultValue: 'Unique name used as ref'
     },
     label: {
-      control: { type: 'text'},
+      control: { type: 'text' },
       defaultValue: 'Input label',
+    },
+    value: {
+      control: { type: 'text' },
+      defaultValue: 'Fancy text input with icon',
     }
   },
 }

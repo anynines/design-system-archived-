@@ -102,9 +102,9 @@ const StyledProductItem = styled.div`
   margin-bottom: var(--space-md);
   background-color: var(--color-dark);
   cursor: pointer;
-  border-radius: var(--radius);
-  color: var(--color-white);
   min-width: 300px;
+  color: var(--color-white);
+  border-radius: var(--radius);
 
   svg {
     height: 1rem;

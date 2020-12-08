@@ -4,8 +4,8 @@ import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-h
 
 // C O M P O N E N T S
 import { Icon, IconName } from '../../Icon/Icon'
-import { InputLabel, InputLabelProps } from '../../InputLabel/InputLabel'
-import { InputIcon, InputIconProps } from '../../InputIcon/InputIcon'
+import { InputLabel, InputLabelProps } from '../InputLabel/InputLabel'
+import { InputIcon, InputIconProps } from '../InputIcon/InputIcon'
 
 // I N T E R F A C E S
 export interface TextInputProps {
@@ -160,9 +160,10 @@ const StyledInput = styled.div<StyledInputProps>`
   margin-bottom: var(--space-xl);
   border: var(--border);
   background-color: var(--color-dark);
+  width: 100%;
+  min-width: 240px;
   font-size: 1em;
   border-radius: var(--radius);
-  min-width: 240px;
 
   &.error {
     margin-bottom: var(--space-lgr);

@@ -80,18 +80,18 @@ export const ChangeLog: React.FC<ChangeLogProps> = ({
 }
 
 const StyledChangeLog = styled.div`
-  background-color: var(--color-black);
-  border-radius: var(--radius);
-  border: var(--border);
-  padding: 30px;
   margin-bottom: 30px;
+  border: var(--border);
+  background-color: var(--color-black);
+  padding: 30px;
+  border-radius: var(--radius);
 
   .change-log--header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    border-bottom: var(--border);
+    align-items: center;
     margin-bottom: 30px;
+    border-bottom: var(--border);
     padding-bottom: 15px;
 
     h3 {
@@ -103,12 +103,12 @@ const StyledChangeLog = styled.div`
     }
 
     span {
+      margin-left: 10px;
+      background: rgba(0,0,0,.5);
+      padding: 4px 8px;
       font-size: 12px;
       font-weight: var(--font-weight-rg);
-      padding: 4px 8px;
-      background: rgba(0,0,0,.5);
       border-radius: calc(var(--radius) / 2);
-      margin-left: 10px;
 
       &.notice {
         background-color: var(--color-notice);
