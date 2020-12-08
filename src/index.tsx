@@ -36,6 +36,12 @@ export * from './components/atoms/Table/THead'
 export * from './components/atoms/Table/THeadCell'
 export * from './components/atoms/Table/TRow'
 
+// A T O M S   -   I N P U T S
+export * from './components/atoms/inputs/Color/ColorInput'
+export * from './components/atoms/inputs/Date/DateInput'
+export * from './components/atoms/inputs/Text/TextInput'
+export * from './components/atoms/inputs/Input/Input'
+
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
 export * from './components/atoms/modal/ModalBody/ModalBody'
@@ -60,10 +66,6 @@ export * from './components/molecules/SpecialCategories/SpecialCategories'
 
 // M O L E C U L E S - I N P U T S
 export * from './components/molecules/DatePicker/DatePicker'
-export * from './components/molecules/inputs/Color/ColorInput'
-export * from './components/molecules/inputs/Date/DateInput'
-export * from './components/molecules/inputs/Text/TextInput'
-export * from './components/molecules/inputs/Input/Input'
 
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'

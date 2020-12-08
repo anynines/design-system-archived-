@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Form } from './Form'
-import { Input } from '../../molecules/inputs/Input/Input'
+import { Input } from '../../atoms/inputs/Input/Input'
 import { Button } from '../../atoms/Button/Button'
 import { Select } from '../../atoms/Select/Select'
 import Wrapper from '../../_helpers/Wrapper'

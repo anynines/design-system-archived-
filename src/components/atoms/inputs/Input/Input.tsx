@@ -1,7 +1,7 @@
 import React from 'react'
 
 // C O M P O N E N T S
-import { InputLabelProps } from '../../../atoms/InputLabel/InputLabel'
+import { InputLabelProps } from '../../InputLabel/InputLabel'
 import { TextInput, TextInputProps } from '../Text/TextInput'
 import { ColorInput } from '../Color/ColorInput'
 import { DateInput, DateInputProps } from '../Date/DateInput'

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 // C O M P O N E N T S
 import { TextInput, TextInputProps } from '../Text/TextInput'
-import { DatePicker, DatePickerProps } from '../../DatePicker/DatePicker'
-import { Icon } from '../../../atoms/Icon/Icon'
+import { DatePicker, DatePickerProps } from '../../../molecules/DatePicker/DatePicker'
+import { Icon } from '../../Icon/Icon'
 import { onClickOutsideHook } from '../../../../helpers/react'
 
 // I N T E R F A C E S

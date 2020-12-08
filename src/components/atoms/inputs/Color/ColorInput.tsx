@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 // C O M P O N E N T S
-import { Icon } from '../../../atoms/Icon/Icon'
+import { Icon } from '../../Icon/Icon'
 import { TextInput, TextInputProps } from '../Text/TextInput'
-import { ColorPicker } from '../../../atoms/ColorPicker/ColorPicker'
+import { ColorPicker } from '../../ColorPicker/ColorPicker'
 
 // I N T E R F A C E S
 export interface ColorInputProps extends Omit<TextInputProps, 'value' | 'pattern'> {

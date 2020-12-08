@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
 // C O M P O N E N T S
-import { Icon, IconName } from '../../../atoms/Icon/Icon'
-import { InputLabel, InputLabelProps } from '../../../atoms/InputLabel/InputLabel'
-import { InputIcon, InputIconProps } from '../../../atoms/InputIcon/InputIcon'
+import { Icon, IconName } from '../../Icon/Icon'
+import { InputLabel, InputLabelProps } from '../../InputLabel/InputLabel'
+import { InputIcon, InputIconProps } from '../../InputIcon/InputIcon'
 
 // I N T E R F A C E S
 export interface TextInputProps {
@@ -162,6 +162,7 @@ const StyledInput = styled.div<StyledInputProps>`
   background-color: var(--color-dark);
   font-size: 1em;
   border-radius: var(--radius);
+  min-width: 240px;
 
   &.error {
     margin-bottom: var(--space-lgr);

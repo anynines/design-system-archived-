@@ -2,7 +2,7 @@ import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 
 import { AuthLayout, AuthLayoutProps } from '../AuthLayout'
-import { TextInput } from '../../../../molecules/inputs/Text/TextInput'
+import { TextInput } from '../../../../atoms/inputs/Text/TextInput'
 import { Button } from '../../../../atoms/Button/Button'
 import { CaretLink } from '../../../../atoms/CaretLink/CaretLink'
 
