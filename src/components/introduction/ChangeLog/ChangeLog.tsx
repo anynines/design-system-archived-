@@ -7,10 +7,9 @@ export interface Change {
 }
 
 export type Category = 'Fixed' | 'Changed' | 'Added' | 'Removed'
-type Changelog = {[key in Category]?: Change[]}
 
 export interface ChangeLogProps {
-  changelog: Changelog
+  changelog: {[key in Category]?: Change[]}
   className?: string
   isPublished?: boolean
   date: string

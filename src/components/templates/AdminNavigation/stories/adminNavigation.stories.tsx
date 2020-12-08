@@ -5,7 +5,7 @@ import { AdminNavigation, AdminNavigationProps } from '../AdminNavigation'
 
 
 export default {
-  title: '🌳 Organisms/AdminNavigation',
+  title: '📄 Templates/AdminNavigation',
   component: AdminNavigation
 }
 

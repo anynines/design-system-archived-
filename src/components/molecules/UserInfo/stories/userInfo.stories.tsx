@@ -2,6 +2,7 @@ import React from 'react'
 
 import { UserInfo, UserInfoProps } from '../UserInfo'
 import { UserInfoWrapper } from './UserInfoWrapper'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
   title: '🌱 Molecules/UserInfo',
@@ -9,17 +10,21 @@ export default {
   argTypes: {
     userName: {
       control: { type: 'text' },
+      defaultValue: 'Johanna Doe'
     },
     userGroup: {
       control: { type: 'text' },
+      defaultValue: 'Admin'
     }
   }
 }
 
 export const Basic = (args: UserInfoProps) => (
-  <UserInfoWrapper>
-    <UserInfo {...args} />
-  </UserInfoWrapper>
+  <Wrapper>
+    <UserInfoWrapper>
+      <UserInfo {...args} />
+    </UserInfoWrapper>    
+  </Wrapper>
 )
 
 export const Small = () => (
