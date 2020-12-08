@@ -16,8 +16,8 @@ export const Welcome = () => (
       <h2 style={{ marginBottom: 30 }}>Changelog</h2>
       <ChangeLog
         version='0.1.37'
-        date='07. December 2020'
-        isPublished={false}
+        date='08. December 2020'
+        isPublished={true}
         changelog={v0_1_37}
       />
     </Container>

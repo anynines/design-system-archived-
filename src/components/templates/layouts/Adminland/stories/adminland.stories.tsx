@@ -2,7 +2,7 @@ import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 
 import { Adminland } from '../Adminland'
-import { AdminNavigation } from '../../../../organisms/AdminNavigation/AdminNavigation'
+import { AdminNavigation } from '../../../AdminNavigation/AdminNavigation'
 import { Section } from '../../../../introduction/layout/Section/Section'
 import { Page } from '../../../../introduction/layout/Page/Page'
 
