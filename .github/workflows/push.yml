@@ -1,8 +1,11 @@
 name: Node.js Package
 on:
   push:
-    tags:
-      - '*'
+    branches:    
+      - develop
+    tags:        
+      - v*.*.*
+
 jobs:
   build:
     runs-on: ubuntu-latest
