@@ -96,7 +96,7 @@ export const Color = () => (
     <Input
       name='color'
       type='color'
-      label='Text'
+      label='Pick a color'
       value='#123456'
     />
   </Wrapper>
@@ -127,12 +127,12 @@ export const Email = () => (
 
 export const Number = () => (
   <Wrapper>
-    <Input 
-    name='number' 
-    type="number" 
-    icon='euro' 
-    label="Number"  
-  />
+    <Input
+      name='number'
+      type="number"
+      icon='euro'
+      label="Number"
+    />
   </Wrapper>
 )
 
@@ -145,5 +145,5 @@ export const Password = () => (
       icon='lock'
     />
   </Wrapper>
-  
+
 )

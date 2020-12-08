@@ -33,11 +33,10 @@ export const Input: Input = (props) => {
     pattern,
     register,
     setValue,
-    type,
     watch
   } = props
   const renderInput = (): JSX.Element => {
-    switch (type) {
+    switch (props.type) {
       case 'color':
         return (
           <ColorInput
@@ -47,7 +46,7 @@ export const Input: Input = (props) => {
             setValue={setValue}
             errors={errors}
             name={name}
-            color={props.value as string || '#000000'}
+            color={props.value || '#000000'}
             label={label}
             pattern={pattern || /^#(?:[0-9a-f]{3}){1,2}$/i}
             register={register}
@@ -78,7 +77,10 @@ export const Input: Input = (props) => {
 
       case 'password':
         return (
-          <TextInput {...props}>
+          <TextInput
+            {...props}
+            pattern={pattern || /^.{8,30}$/}
+          >
             {children}
           </TextInput>
         )
