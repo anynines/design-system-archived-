@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // C O M P O N E N T S
 import { Icon } from '../../Icon/Icon'
-import { TextInput, TextInputProps } from '../Text/TextInput'
+import { TextInput, TextInputProps } from './TextInput'
 import { ColorPicker } from '../../ColorPicker/ColorPicker'
 
 // I N T E R F A C E S

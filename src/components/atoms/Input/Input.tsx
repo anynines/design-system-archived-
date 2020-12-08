@@ -1,23 +1,25 @@
 import React from 'react'
 
 // C O M P O N E N T S
-import { InputLabelProps } from '../InputLabel/InputLabel'
-import { TextInput, TextInputProps } from '../Text/TextInput'
-import { ColorInput } from '../Color/ColorInput'
-import { DateInput, DateInputProps } from '../Date/DateInput'
+import { InputLabelProps } from './helpers/InputLabel'
+import { TextInput, TextInputProps } from './helpers/TextInput'
+import { ColorInput } from './helpers/ColorInput'
+import { DateInput, DateInputProps } from './helpers/DateInput'
 
 // I N T E R F A C E S
 interface DateInputRestrictedProps extends DateInputProps {
   type: 'date'
   value?: number
 }
+
+export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'date'
+
 export type InputProps = DateInputRestrictedProps | TextInputProps & {
   type: InputType
   onChange?: (newValue: string) => void
 }
 type Input = React.FC<InputProps>
   & { Label: React.FC<InputLabelProps> }
-export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'date'
 
 // C O M P O N E N T
 export const Input: Input = (props) => {
@@ -33,7 +35,6 @@ export const Input: Input = (props) => {
     setValue,
     watch
   } = props
-
   const renderInput = (): JSX.Element => {
     switch (props.type) {
       case 'color':
@@ -69,6 +70,16 @@ export const Input: Input = (props) => {
           <TextInput
             {...props}
             pattern={pattern || /^[0-9]{2,30}$/}
+          >
+            {children}
+          </TextInput>
+        )
+
+      case 'password':
+        return (
+          <TextInput
+            {...props}
+            pattern={pattern || /^.{8,30}$/}
           >
             {children}
           </TextInput>

@@ -4,8 +4,9 @@ import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-h
 
 // C O M P O N E N T S
 import { Icon, IconName } from '../../Icon/Icon'
-import { InputLabel, InputLabelProps } from '../InputLabel/InputLabel'
-import { InputIcon, InputIconProps } from '../InputIcon/InputIcon'
+import { InputLabel, InputLabelProps } from './InputLabel'
+import { InputIcon, InputIconProps } from './InputIcon'
+import { InputType } from '../Input'
 
 // I N T E R F A C E S
 export interface TextInputProps {
@@ -26,6 +27,7 @@ export interface TextInputProps {
   register?: (validationRules: ValidationOptions) => void
   setValue?: any // eslint-disable-line
   style?: React.CSSProperties
+  type?: InputType
   value?: string
   watch?: any //eslint-disable-line
 }
@@ -50,10 +52,12 @@ export const TextInput: TextInput = ({
   register,
   setValue,
   style,
+  type,
   value = '',
   watch
 }) => {
   const [isFocus, setIsFocus] = React.useState(autoFocus)
+  const [passwordShown, setPasswordShown] = React.useState(false)
   const [localValue, setLocalValue] = React.useState<string>(value || '')
 
   const getValueFromHookForm = (): string => {
@@ -62,6 +66,10 @@ export const TextInput: TextInput = ({
   }
 
   const formValue = getValueFromHookForm()
+
+  const togglePasswordVisiblity = (): void => {
+    setPasswordShown(!passwordShown)
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const newValue = e.target.value
@@ -128,13 +136,23 @@ export const TextInput: TextInput = ({
           autoFocus={isFocus}
           autoComplete={autoComplete}
           name={name}
+          type={type === 'password' ? passwordShown ? 'text' : 'password' : type}
           id={name}
           ref={register ? register({ required: true, pattern }) as unknown as undefined : undefined}
           onFocus={(): void => { setIsFocus(true) }}
           onBlur={(): void => { setIsFocus(false) }}
-          className={className}
+          className={`input--${type} ${className}`}
           {...!register ? { onChange: handleChange, value: localValue } : {}}
         />
+        {name === 'password' && (
+          <button
+            onClick={(): void => { togglePasswordVisiblity() }}
+            className={`show-password ${passwordShown && 'active'}`}
+            type='button'
+          >
+            <Icon icon='eye' />
+          </button>
+        )}
       </StyledInputField>
       {renderErrorMessage()}
     </StyledInput>
@@ -167,6 +185,52 @@ const StyledInput = styled.div<StyledInputProps>`
 
   &.error {
     margin-bottom: var(--space-lgr);
+  }
+
+  .show-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    border: none;
+    background: transparent;
+    width: 44px;
+    height: 44px;
+    outline: none;
+
+    &:before {
+      position: absolute;
+      background-color: var(--color-white-50);
+      width: 2px;
+      height: 18px;
+      content: '';
+      border-radius: 5px;
+      transform: rotate(45deg);
+      transition: var(--transition);
+    }
+
+    svg {
+      color: var(--color-white-50);
+      transition: var(--transition);
+    }
+
+    &:hover {
+      svg {
+        color: var(--color-white);
+      }
+      &:before {
+        background-color: var(--color-white);
+      }
+    }
+
+    &.active {
+      &:before{
+        background-color: transparent;
+      }
+    }
   }
   
   .input-label {

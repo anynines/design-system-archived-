@@ -34,13 +34,7 @@ export * from './components/atoms/Table/TFoot'
 export * from './components/atoms/Table/THead'
 export * from './components/atoms/Table/THeadCell'
 export * from './components/atoms/Table/TRow'
-
-// A T O M S   -   I N P U T S
-export * from './components/atoms/inputs/Color/ColorInput'
-export * from './components/atoms/inputs/Date/DateInput'
-export * from './components/atoms/inputs/Text/TextInput'
-export * from './components/atoms/inputs/Input/Input'
-export * from './components/atoms/inputs/InputLabel/InputLabel'
+export * from './components/atoms/Input/Input'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
