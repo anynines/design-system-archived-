@@ -74,10 +74,10 @@ export * from './components/organisms/ProductItem/ProductItem'
 // export * from './components/organisms/Table/Table'
 // export * from './components/organisms/Table/SortableTable'
 // export * from './components/organisms/Table/DraggableTable'
-export * from './components/organisms/AdminNavigation/AdminNavigation'
 export * from './components/organisms/UserNav/UserNav'
 
 // T E M P L A T E S
+export * from './components/templates/AdminNavigation/AdminNavigation'
 export * from './components/templates/TopNavigation/TopNavigation'
 export * from './components/templates/layouts/AuthLayout/AuthLayout'
 export * from './components/templates/layouts/Adminland/Adminland'
