@@ -149,7 +149,7 @@ export const Sections = () => (
 )
 
 export const RowsAndColumns = () => (
-  <Section>
+  <Section bgColor='transparent'>
     <Row>
       <Col style={ColumnStyles}>
         <p style={{margin: 0}}>Content</p>

@@ -1,0 +1,30 @@
+{
+  "Fixed": [
+    {
+      "title": "👋 Get started/Your Component",
+      "description": "Some short description of your change."
+    }
+  ],
+  "Changed": [
+    {
+      "title": "💧 Atoms/Your Component",
+      "description": "Some short description of your change."
+    }
+  ],
+  "Added": [
+    {
+      "title": "🌱 Molecules/Your Component",
+      "description": "Some short description of your change."
+    },
+    {
+      "title": "🌱 Molecules/Your Component",
+      "description": "Some short description of your change."
+    }
+  ],
+  "Removed": [
+    {
+      "title": "🌳 Organisms/Your Component",
+      "description": "Some short description of your change."
+    }
+  ]
+}

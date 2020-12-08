@@ -3,7 +3,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import Wrapper from '../../../_helpers/Wrapper'
 import { UserDropdown, UserDropdownProps } from '../UserDropdown'
-import { Menu } from '../../../organisms/Menu/Menu'
+import { Menu } from '../../../molecules/Menu/Menu'
 import { MenuItem } from '../../MenuItem/MenuItem'
 
 const avatarUrl = 'https://images.pexels.com/photos/936559/pexels-photo-936559.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'

@@ -191,6 +191,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .ol, .ul {
+    padding-left: 20px;
     line-height: 2;
     font-size: var(--text-lg);
     font-weight: 300;
@@ -201,12 +202,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .ul, .ul li {
-    list-style: circle;
+    list-style: disc;
   }
 
   code {
     margin: 0 2px;
-    background-color: var(--color-black);
     padding: 4px;
     font-size: var(--text-lg);
     border-radius: 2px;

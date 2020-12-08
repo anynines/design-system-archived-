@@ -1,16 +1,26 @@
 import React from 'react'
 
 import { ColorInput, ColorInputProps } from '../ColorInput'
+import Wrapper from '../../../../_helpers/Wrapper'
 
 export default {
-  title: '🌱 Molecules/Inputs/ColorInput',
+  title: '💧 Atoms/Inputs/ColorInput',
   component: ColorInput,
   argTypes: {
     icon: {
       control: { type: 'disabled' },
     },
+    label: {
+      control: { type: 'disabled' },
+      defaultValue: 'Pick a color'
+    },
+    name: {
+      control: { type: 'text' },
+      defaultValue: 'color-input'
+    },
     color: {
       control: { type: 'text' },
+      defaultValue: '#062035'
     },
     pattern: {
       control: { type: 'text' },
@@ -19,7 +29,9 @@ export default {
 }
 
 export const Basic = (args: ColorInputProps) => (
-  <ColorInput 
-    {...args}
-  />
+  <Wrapper>
+    <ColorInput 
+      {...args}
+    />
+  </Wrapper>
 )

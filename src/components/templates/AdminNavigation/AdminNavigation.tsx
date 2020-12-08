@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { IconName } from '../../atoms/Icon/Icon'
 import { Logo } from '../../atoms/Logo/Logo'
 import { Menu } from '../../molecules/Menu/Menu'
-import { UserNav, UserNavProps } from '../UserNav/UserNav'
+import { UserNav, UserNavProps } from '../../organisms/UserNav/UserNav'
 import { Mode } from '../../../designSystemInstance/types/types'
 
 export interface AdminNavigationProps {

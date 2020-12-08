@@ -126,4 +126,3 @@ const StyledSwitchWrapper = styled.div`
   }
 
 `
-

@@ -1,7 +1,7 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { action } from '@storybook/addon-actions'
-
+import Wrapper from '../../../_helpers/Wrapper'
 import { SpecialCategories, SpecialCategory } from '../SpecialCategories'
 
 export default {
@@ -65,16 +65,12 @@ export const Basic = (args: SpecialCategory) => (
   <MemoryRouter
     initialEntries={['/shop/novelties']}
   >
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      <SpecialCategories specialCategories={[args]} onClick={action('Item clicked')} />
-    </div>
-  </MemoryRouter>
-)
-
-export const SampleCategories = () => (
-  <MemoryRouter>
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      <SpecialCategories specialCategories={SpecialItems} onClick={action('Item clicked')} />
-    </div>
+    <Wrapper>
+      <SpecialCategories
+        {...args}
+        specialCategories={SpecialItems}
+        onClick={action('Item clicked')}
+      />
+    </Wrapper>
   </MemoryRouter>
 )
