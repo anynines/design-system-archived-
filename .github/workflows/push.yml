@@ -14,9 +14,5 @@ jobs:
         node-version: '12.x'
         registry-url: 'https://npm.pkg.github.com'
     - run: yarn
-    - run: yarn build
-    - run: yarn publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: yarn build-storybook
     - run: yarn publish-storybook
