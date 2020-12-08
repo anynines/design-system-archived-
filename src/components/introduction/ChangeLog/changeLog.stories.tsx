@@ -18,7 +18,7 @@ export const Welcome = () => (
         version='0.1.37'
         date='07. December 2020'
         isPublished={false}
-        changelog={v0_1_37 as any}
+        changelog={v0_1_37}
       />
     </Container>
   </Section>
