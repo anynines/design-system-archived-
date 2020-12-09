@@ -38,7 +38,7 @@ const StyledTooltip = styled.div`
   color: var(--color-white);
 
   .tooltip-inner, &:before, &:after {
-    background-color: var(--color-black);
+    background-color: black;
   }
 
   .tooltip-inner {
