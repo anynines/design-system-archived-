@@ -14,7 +14,7 @@ export interface WrapperProps {
 }
 
 // T Y P E S
-export type WrapperBgColor = 'light' | 'dark' | 'black' | 'transparent'
+export type WrapperBgColor = 'light' | 'dark' | 'black' | 'transparent' | 'black-darker'
 export type WrapperDirection = 'row' | 'column'
 export type WrapperAlignment = 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'space-between' | 'space-around'
 export type WrapperFlexWrap = 'nowrap' | 'wrap'
@@ -63,6 +63,10 @@ const StyledWrapper = styled.div`
 
   &.black {
     background-color: var(--color-black);
+  }
+
+  &.black-darker {
+    background-color: var(--color-black-darker);
   }
 
   &.transparent {

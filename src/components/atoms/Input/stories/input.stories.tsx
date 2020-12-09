@@ -74,75 +74,103 @@ export default {
 }
 
 export const Basic = (args: InputProps) => (
-  <Wrapper>
-    <Input {...args} />
+  <Wrapper bgColor='black-darker'>
+    <Input {...args} style={{marginBottom: 0}}/>
   </Wrapper>
 )
 
 export const Text = () => (
-  <Wrapper>
+  <Wrapper bgColor='black-darker'>
     <Input
+      style={{marginBottom: 0}}
       name='Text'
       type='text'
       icon='shop'
       label='Text'
-      value='Default Value'
+      autoComplete='off'
+      autoFocus={true}
     />
   </Wrapper>
 )
 
-export const Color = () => (
-  <Wrapper>
+export const Date = () => (
+  <Wrapper bgColor='black-darker'>
     <Input
+      style={{marginBottom: 0}}
+      name='color'
+      type='date'
+      label='Pick a date'
+      autoComplete='off'
+      autoFocus={true}
+    />
+  </Wrapper>
+)
+export const Color = () => (
+  <Wrapper bgColor='black-darker'>
+    <Input
+      style={{marginBottom: 0}}
       name='color'
       type='color'
       label='Pick a color'
-      value='#123456'
+      autoComplete='off'
+      autoFocus={true}
     />
   </Wrapper>
 )
 
 export const CustomRegexPattern = () => (
-  <Wrapper>
+  <Wrapper bgColor='black-darker'>
     <Input
+      style={{marginBottom: 0}}
       name='CustomRegex'
       type='text'
       icon='shop'
       label='I match 4 digits numbers'
       pattern={/^[0-9]{4}$/}
+      autoComplete='off'
+      autoFocus={true}
     />
   </Wrapper>
 )
 
 export const Email = () => (
-  <Wrapper>
+  <Wrapper bgColor='black-darker'>
     <Input
+      style={{marginBottom: 0}}
       name='Email'
       type='email'
       icon='send'
       label='Email'
+      autoComplete='off'
+      autoFocus={true}
     />
   </Wrapper>
 )
 
 export const Number = () => (
-  <Wrapper>
+  <Wrapper bgColor='black-darker'>
     <Input
+      style={{marginBottom: 0}}
       name='number'
       type="number"
       icon='euro'
-      label="Number"
+      label='Number'
+      autoComplete='off'
+      autoFocus={true}
     />
   </Wrapper>
 )
 
 export const Password = () => (
-  <Wrapper>
+  <Wrapper bgColor='black-darker'>
     <Input
+      style={{marginBottom: 0}}
       name='password'
       label='Password'
       type='password'
       icon='lock'
+      autoComplete='off'
+      autoFocus={true}
     />
   </Wrapper>
 

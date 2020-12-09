@@ -3,6 +3,7 @@ import React from 'react'
 import { Form } from './Form'
 import { Input } from '../../atoms/Input/Input'
 import { Button } from '../../atoms/Button/Button'
+import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
 import { Select } from '../../atoms/Select/Select'
 import Wrapper from '../../_helpers/Wrapper'
 
@@ -20,7 +21,7 @@ export default {
 }
 
 export const Basic = () => (
-  <Wrapper>
+  <Wrapper bgColor='black-darker'>
     <Form onSubmit={(data: Record<string, string> | undefined, setValue: any): void => { // eslint-disable-line
       if (data) {
         console.log(data)
@@ -35,7 +36,10 @@ export const Basic = () => (
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
       <Input type='date' name='date' label='Enter a date' />
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
-      <Button type='submit'>Submit</Button>
+      <ButtonGroup>
+        <Button type='black' width='block'>Cancel</Button>
+        <Button type='submit' width='block'>Submit</Button>
+      </ButtonGroup>
     </Form>
   </Wrapper>
 )

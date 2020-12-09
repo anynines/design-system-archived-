@@ -14,6 +14,7 @@ export interface TextInputProps {
   autoFocus?: boolean
   color?: string
   className?: string
+  disabled?: boolean
   errorMessage?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
   getValues?: any // eslint-disable-line
@@ -41,6 +42,7 @@ export const TextInput: TextInput = ({
   autoFocus = false,
   children,
   className,
+  disabled = false,
   errorMessage,
   errors = {},
   icon,
@@ -135,6 +137,7 @@ export const TextInput: TextInput = ({
         <input
           autoFocus={isFocus}
           autoComplete={autoComplete}
+          disabled={disabled}
           name={name}
           type={type === 'password' ? passwordShown ? 'text' : 'password' : type}
           id={name}
@@ -177,15 +180,13 @@ const StyledInput = styled.div<StyledInputProps>`
   position: relative;
   margin-bottom: var(--space-xl);
   border: var(--border);
-  background-color: var(--color-dark);
+  background-color: var(--color-black);
   width: 100%;
   min-width: 240px;
   font-size: 1em;
   border-radius: var(--radius);
-
-  &.error {
-    margin-bottom: var(--space-lgr);
-  }
+  transition: all 200ms ease-in-out;
+  outline: none;
 
   .show-password {
     display: flex;
@@ -197,6 +198,7 @@ const StyledInput = styled.div<StyledInputProps>`
     z-index: 10;
     border: none;
     background: transparent;
+    cursor: pointer;
     width: 44px;
     height: 44px;
     outline: none;
@@ -235,62 +237,80 @@ const StyledInput = styled.div<StyledInputProps>`
   
   .input-label {
     position: absolute;
-    top: 0.25rem;
+    top: .1875rem;
     left: 12px;
     z-index: 1;
     opacity: 0.5;
     color: var(--color-white);
     font-size: 10px;
     font-weight: 800;
+    transform: scale(1);
+    transform-origin: left;
+    transition: all 200ms ease-in-out;
   }
   
   input {
     position: relative;
-    border: 0;
+    border: none;
     background: transparent;
     padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
     width: 100%;
     height: 2.75rem;
+    border-radius: var(--border-radius);
     color: var(--color-white);
     outline: none;
-    transition: var(--transition);
+    transition: top 200ms ease-in-out;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
-  
-  label {
-    color: var(--color-white);
+
+  .error {
+    position: absolute;
+    right: 0px;
+    bottom: -24px;
+    padding: 2px 4px;
+    text-align: right;
+    color: var(--color-error);
+    font-size: var(--text-md);
   }
 
   &.empty {
     label {
-      top: .875rem;
+      transform: scale(1.2);
+      top: 1rem;
+      left: 16px;
     }
   }
 
+  
+
   &:hover,
   &.focus {
-    input {
-      background-color: var(--color-dark);
-      border-radius: var(--border-radius);
-    }
-
     .input-prepend {
       background-color: var(--color-primary);
     }
 
     label {
+      transform: scale(1);
       top: .1875rem;
+      left: 12px;
     }
   }
-  
-  .error {
-    position: absolute;
-    right: 0px;
-    bottom: -22px;
-    padding: 2px 4px;
-    text-align: right;
-    color: rgb(234,29,37);
-    font-size: var(--text-md);
-    border-radius: 3px;
+
+  &:hover {
+    border: 1px solid var(--color-white-30);
+    .input-prepend {
+      background-color: var(--color-white-20);
+    }
+  }
+
+  &:focus-within {
+    border: 1px solid var(--color-primary) !important;
+    .input-prepend {
+      background-color: var(--color-primary) !important;
+    }
   }
 `
 

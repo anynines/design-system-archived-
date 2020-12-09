@@ -1,21 +1,19 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 
-import { AdminNavigation, AdminNavigationProps } from '../AdminNavigation'
+import { AdminNavigation } from '../AdminNavigation'
 import { Logo } from '../../../atoms/Logo/Logo'
 import { Menu } from '../../../molecules/Menu/Menu'
 import { UserNav } from '../../../organisms/UserNav/UserNav'
 
-export default {
-  title: '📄 Templates/AdminNavigation',
-  component: AdminNavigation
-}
+export const AdminNavigationExample: React.FC = () => {
+  const brandLogo = 'https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/light_vertical.svg?sanitize=true'
 
-export const Basic = (args: AdminNavigationProps) => (
-  <Router>
+  const userAvatar = 'https://www.anynines.com/assets/team/profiles/2x/fischer-dd47fbfc116c0069ffd414d3784f5895044aaef3e2411414c5f0fc637624f030.jpg'
+
+  return (
     <AdminNavigation>
       <Logo
-        src='https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/light_vertical.svg?sanitize=true'
+        src={brandLogo}
         vertical
       />
       <Menu
@@ -35,13 +33,13 @@ export const Basic = (args: AdminNavigationProps) => (
         vertical
       />
       <UserNav
-        avatar='https://www.anynines.com/assets/team/profiles/2x/fischer-dd47fbfc116c0069ffd414d3784f5895044aaef3e2411414c5f0fc637624f030.jpg'
+        avatar={userAvatar}
         name='Julian Fischer'
         description='CEO'
         mode='dark'
-        setMode={() => {}}
-        logoutUser={() => {}}
+        setMode={(): void => { console.log('setMode') }}
+        logoutUser={(): void => { console.log('logoutUser') }}
       />
     </AdminNavigation>
-  </Router>
-)
+  )
+}

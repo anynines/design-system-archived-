@@ -41,7 +41,7 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-dark);
+  background-color: var(--color-black);
   width: 100%;
   height: 100vh;
 
@@ -56,7 +56,7 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
     display: flex;
     align-items: stretch;
     overflow: hidden;
-    background-color: var(--color-black);
+    background-color: var(--color-black-darker);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     width: 900px;

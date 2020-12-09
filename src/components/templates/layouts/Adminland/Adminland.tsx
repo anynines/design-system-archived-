@@ -23,13 +23,20 @@ export const Adminland: React.FC<AdminlandProps> = ({
 
 const StyledAdminland = styled.div`
   padding: 20px;
-  padding-left: 320px;
+  padding-left: 300px;
   
   .page {
     margin-top: 0;
   }
 
   .section {
+    margin-bottom: 20px;
+    background-color: var(--color-black-darker);
+    padding: 30px;
     border-radius: var(--radius);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `
