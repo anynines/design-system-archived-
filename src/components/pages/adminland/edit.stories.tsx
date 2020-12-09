@@ -1,64 +1,32 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 
-import { Adminland } from '../../../templates/layouts/Adminland/Adminland'
-import { AdminNavigation } from '../../../templates/AdminNavigation/AdminNavigation'
-import { Container } from '../../../introduction/layout/Container/Container'
-import { Section } from '../../../introduction/layout/Section/Section'
-import { Row } from '../../../introduction/layout/Row/Row'
-import { Col } from '../../../introduction/layout/Col/Col'
-import { Page } from '../../../introduction/layout/Page/Page'
-import { Button } from '../../../atoms/Button/Button'
-import { ButtonGroup } from '../../../atoms/Button/ButtonGroup'
-import { Logo } from '../../../atoms/Logo/Logo'
-import { Input } from '../../../atoms/Input/Input'
-import { Tooltip } from '../../../atoms/Tooltip/Tooltip'
-import { Menu } from '../../../molecules/Menu/Menu'
-import { UserNav } from '../../../organisms/UserNav/UserNav'
-import { Form } from '../../../organisms/Form/Form'
-import { PageHeader } from '../../../atoms/PageHeader/PageHeader'
+import { Adminland } from '../../templates/layouts/Adminland/Adminland'
+import { AdminNavigationExample } from '../../templates/AdminNavigation/examples/AdminNavigationExample'
+import { Container } from '../../introduction/layout/Container/Container'
+import { Section } from '../../introduction/layout/Section/Section'
+import { Row } from '../../introduction/layout/Row/Row'
+import { Col } from '../../introduction/layout/Col/Col'
+import { Page } from '../../introduction/layout/Page/Page'
+import { Button } from '../../atoms/Button/Button'
+import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
+import { Input } from '../../atoms/Input/Input'
+import { Tooltip } from '../../atoms/Tooltip/Tooltip'
+import { Form } from '../../organisms/Form/Form'
+import { PageHeader } from '../../atoms/PageHeader/PageHeader'
 
 export default {
-  title: '📙 Pages/Adminland/Create',
+  title: '📙 Pages/Adminland',
 }
 
-export const Basic = () => (
+export const Edit = () => (
   <MemoryRouter>
     <Adminland>
-      <AdminNavigation>
-        <Logo
-          src='https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/light_vertical.svg?sanitize=true'
-          vertical
-        />
-        <Menu
-          selectedItem='/users'
-          items={[
-            {
-              children: <>Users</>,
-              icon: 'users',
-              id: '/users'
-            },
-            {
-              children: <>Pages</>,
-              icon: 'pages',
-              id: '/pages'
-            }
-          ]}
-          vertical
-        />
-        <UserNav
-          avatar='https://www.anynines.com/assets/team/profiles/2x/fischer-dd47fbfc116c0069ffd414d3784f5895044aaef3e2411414c5f0fc637624f030.jpg'
-          name='Julian Fischer'
-          description='CEO'
-          mode='dark'
-          setMode={() => {}}
-          logoutUser={() => {}}
-        />
-      </AdminNavigation>
+      <AdminNavigationExample />
       <Page>
         <Container containerSize='sm'>
           <PageHeader>
-            <h1>Create something</h1>
+            <h1>Edit something</h1>
             <Button
               iconOnly
               type='black'
@@ -116,7 +84,7 @@ export const Basic = () => (
               />
               <ButtonGroup>
                 <Button type='black' width='block'>Cancel</Button>
-                <Button type='submit' width='block'>Submit</Button>
+                <Button type='submit' width='block'>Edit Something</Button>
               </ButtonGroup>
             </Form>
           </Section>

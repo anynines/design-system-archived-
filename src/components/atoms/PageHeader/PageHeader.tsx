@@ -23,9 +23,14 @@ const StyledPageHeader = styled.header`
   background-color: var(--color-black-darker);
   padding: 20px 30px;
   border-radius: var(--radius);
+  height: 80px;
 
   h1 {
     margin-bottom: 0;
     font-size: var(--text-xl);
+  }
+
+  .page-header-toolbar {
+    display: flex;
   }
 `

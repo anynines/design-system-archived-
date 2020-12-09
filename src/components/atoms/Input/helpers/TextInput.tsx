@@ -14,6 +14,7 @@ export interface TextInputProps {
   autoFocus?: boolean
   color?: string
   className?: string
+  disabled?: boolean
   errorMessage?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
   getValues?: any // eslint-disable-line
@@ -41,6 +42,7 @@ export const TextInput: TextInput = ({
   autoFocus = false,
   children,
   className,
+  disabled = false,
   errorMessage,
   errors = {},
   icon,
@@ -135,6 +137,7 @@ export const TextInput: TextInput = ({
         <input
           autoFocus={isFocus}
           autoComplete={autoComplete}
+          disabled={disabled}
           name={name}
           type={type === 'password' ? passwordShown ? 'text' : 'password' : type}
           id={name}
@@ -183,10 +186,7 @@ const StyledInput = styled.div<StyledInputProps>`
   font-size: 1em;
   border-radius: var(--radius);
   transition: all 200ms ease-in-out;
-
-  &.error {
-    margin-bottom: var(--space-lgr);
-  }
+  outline: none;
 
   .show-password {
     display: flex;
@@ -260,6 +260,20 @@ const StyledInput = styled.div<StyledInputProps>`
     color: var(--color-white);
     outline: none;
     transition: top 200ms ease-in-out;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .error {
+    position: absolute;
+    right: 0px;
+    bottom: -24px;
+    padding: 2px 4px;
+    text-align: right;
+    color: var(--color-error);
+    font-size: var(--text-md);
   }
 
   &.empty {
@@ -270,10 +284,10 @@ const StyledInput = styled.div<StyledInputProps>`
     }
   }
 
+  
+
   &:hover,
   &.focus {
-    border: 1px solid var(--color-primary);
-
     .input-prepend {
       background-color: var(--color-primary);
     }
@@ -284,16 +298,19 @@ const StyledInput = styled.div<StyledInputProps>`
       left: 12px;
     }
   }
-  
-  .error {
-    position: absolute;
-    right: 0px;
-    bottom: -22px;
-    padding: 2px 4px;
-    text-align: right;
-    color: rgb(234,29,37);
-    font-size: var(--text-md);
-    border-radius: 3px;
+
+  &:hover {
+    border: 1px solid var(--color-white-30);
+    .input-prepend {
+      background-color: var(--color-white-20);
+    }
+  }
+
+  &:focus-within {
+    border: 1px solid var(--color-primary) !important;
+    .input-prepend {
+      background-color: var(--color-primary) !important;
+    }
   }
 `
 
