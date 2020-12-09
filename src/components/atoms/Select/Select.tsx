@@ -299,7 +299,8 @@ const StyledSelect = styled.div`
       left: 0;
       z-index: 2;
       overflow: hidden;
-      background-color: var(--color-dark);
+      border: var(--border);
+      background-color: var(--color-black);
       width: 100%;
       color: var(--color-white);
       appearance: none;
@@ -329,7 +330,7 @@ const StyledSelect = styled.div`
   select {
     position: relative;
     border: var(--border);
-    background-color: var(--color-dark);
+    background-color: var(--color-black);
     padding: 14px 0 0 calc(var(--icon-wrapper-size) + 12px);
     color: var(--color-white);
     appearance: none;

@@ -177,11 +177,12 @@ const StyledInput = styled.div<StyledInputProps>`
   position: relative;
   margin-bottom: var(--space-xl);
   border: var(--border);
-  background-color: var(--color-dark);
+  background-color: var(--color-black);
   width: 100%;
   min-width: 240px;
   font-size: 1em;
   border-radius: var(--radius);
+  transition: all 200ms ease-in-out;
 
   &.error {
     margin-bottom: var(--space-lgr);
@@ -197,6 +198,7 @@ const StyledInput = styled.div<StyledInputProps>`
     z-index: 10;
     border: none;
     background: transparent;
+    cursor: pointer;
     width: 44px;
     height: 44px;
     outline: none;
@@ -235,50 +237,51 @@ const StyledInput = styled.div<StyledInputProps>`
   
   .input-label {
     position: absolute;
-    top: 0.25rem;
+    top: .1875rem;
     left: 12px;
     z-index: 1;
     opacity: 0.5;
     color: var(--color-white);
     font-size: 10px;
     font-weight: 800;
+    transform: scale(1);
+    transform-origin: left;
+    transition: all 200ms ease-in-out;
   }
   
   input {
     position: relative;
-    border: 0;
+    border: none;
     background: transparent;
     padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
     width: 100%;
     height: 2.75rem;
+    border-radius: var(--border-radius);
     color: var(--color-white);
     outline: none;
-    transition: var(--transition);
-  }
-  
-  label {
-    color: var(--color-white);
+    transition: top 200ms ease-in-out;
   }
 
   &.empty {
     label {
-      top: .875rem;
+      transform: scale(1.2);
+      top: 1rem;
+      left: 16px;
     }
   }
 
   &:hover,
   &.focus {
-    input {
-      background-color: var(--color-dark);
-      border-radius: var(--border-radius);
-    }
+    border: 1px solid var(--color-primary);
 
     .input-prepend {
       background-color: var(--color-primary);
     }
 
     label {
+      transform: scale(1);
       top: .1875rem;
+      left: 12px;
     }
   }
   

@@ -49,7 +49,7 @@ const StyledInputIcon = styled.div<StyledInputIconProps>`
   min-width: 44px;
   min-height: 100%;
   color: var(--color-white);
-  border-radius: 10px 0 0 10px;
+  border-radius: 9px 0 0 9px;
   transition: var(--transition);
   
   svg {
