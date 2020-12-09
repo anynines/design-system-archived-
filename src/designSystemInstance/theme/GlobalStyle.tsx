@@ -43,6 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.black, 'Black') }}
 
     --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
+    --color-black-darker: #040B18;
     
     /* G L O B A L S */
     --radius: ${(props): string => { return props.theme.globals.radius }};
@@ -153,7 +154,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: var(--font-weight-lt);
   }
 
-  button, span {
+  button, span, input, select, blockquote {
     font-family: var(--font-family);
   }
 
@@ -214,6 +215,13 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus {
+    box-shadow: 0 0 0 30px var(--color-dark) inset !important;
+    -webkit-text-fill-color: white;
   }
 
   .tooltip-wrapper {
