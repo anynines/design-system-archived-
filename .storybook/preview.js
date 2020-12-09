@@ -123,7 +123,9 @@ export const parameters = {
         '👋 Get started', ['Welcome', 'Colors', 'Type Scale', 'Layout', 'Changelog'],
         '💧 Atoms', 
         '🌱 Molecules', 
-        '🌳 Organisms'
+        '🌳 Organisms',
+        '📄 Templates',
+        '📙 Pages'
       ],
     },
   }
