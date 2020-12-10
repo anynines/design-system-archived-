@@ -1,0 +1,42 @@
+{
+  "Fixed": [
+    {
+      "title": "🌱 Molecules/Menu",
+      "description": "Moved Menu from 🌳 Organisms to 🌱 Molecules."
+    }
+  ],
+  "Changed": [
+    {
+      "title": "🌱 Molecules/UserDropdown",
+      "description": "Extended the UserDropdown to optionally show a dropdown container onClick."
+    }
+  ],
+  "Added": [
+    {
+      "title": "👋 Get started/Changelog",
+      "description": "Added a Changelog to properly document the changes and highlight breaking changes like this one."
+    },
+    {
+      "title": "📄 Templates / layout / Authland",
+      "description": "Added a layout template for Authland to easily get started with pages like login or sign up."
+    },
+    {
+      "title": "📄 Templates / layout / Adminland",
+      "description": " Added a layout template for Adminland to easily get started with pages like create, read, update and delete."
+    },
+    {
+      "title": "📄 Templates / layout / Userland",
+      "description": "Added a layout template for Userland to easily get started with pages like home, product, blog."
+    },
+    {
+      "title": "💧 Atoms/Switch",
+      "description": "Added a switch component to toggle boolean values."
+    }
+  ],
+  "Removed": [
+    {
+      "title": "Design System Instance",
+      "description": "We removed the designSystemInstance because it was the cause of some local storage problems, that forced users to reset browser cache after visiting the story."
+    }
+  ]
+}

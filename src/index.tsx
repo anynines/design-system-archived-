@@ -15,11 +15,11 @@ export * from './components/introduction/layout/Section/Section'
 // A T O M S
 export * from './components/atoms/Avatar/Avatar'
 export * from './components/atoms/Button/Button'
+export * from './components/atoms/Button/ButtonGroup'
 export * from './components/atoms/Box/Box'
 export * from './components/atoms/CaretLink/CaretLink'
 export * from './components/atoms/Favicon/Favicon'
 export * from './components/atoms/Icon/Icon'
-export * from './components/atoms/InputLabel/InputLabel'
 export * from './components/atoms/Logo/Logo'
 export * from './components/atoms/Select/Select'
 export * from './components/atoms/Spinner/Spinner'
@@ -29,8 +29,6 @@ export * from './components/atoms/Badge/Badge'
 export * from './components/atoms/ToggleLayout/ToggleLayout'
 export * from './components/atoms/ColorPicker/ColorPicker'
 export * from './components/atoms/PageHeader/PageHeader'
-export * from './components/atoms/ToggleMode/ToggleMode'
-export * from './components/atoms/Badge/Badge'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
@@ -56,10 +54,6 @@ export * from './components/molecules/SpecialCategories/SpecialCategories'
 
 // M O L E C U L E S - I N P U T S
 export * from './components/molecules/DatePicker/DatePicker'
-export * from './components/molecules/inputs/Color/ColorInput'
-export * from './components/molecules/inputs/Date/DateInput'
-export * from './components/molecules/inputs/Text/TextInput'
-export * from './components/molecules/inputs/Input/Input'
 
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'
@@ -79,10 +73,10 @@ export * from './components/organisms/Table/Table/TFoot'
 export * from './components/organisms/Table/Table/THead'
 export * from './components/organisms/Table/Table/THeadCell'
 export * from './components/organisms/Table/Table/TRow'
-export * from './components/organisms/AdminNavigation/AdminNavigation'
 export * from './components/organisms/UserNav/UserNav'
 
 // T E M P L A T E S
+export * from './components/templates/AdminNavigation/AdminNavigation'
 export * from './components/templates/TopNavigation/TopNavigation'
 export * from './components/templates/layouts/AuthLayout/AuthLayout'
 export * from './components/templates/layouts/Adminland/Adminland'

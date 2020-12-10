@@ -8,6 +8,7 @@ import { Icon, IconName } from '../Icon/Icon'
 export interface ButtonProps {
   className?: string
   icon?: IconName
+  iconOnly?: boolean
   onClick?: () => void
   size?: ButtonSize
   style?: React.CSSProperties
@@ -26,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className,
   icon,
+  iconOnly = false,
   onClick,
   size = 'md',
   style,
@@ -35,12 +37,12 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <StyledButton
       style={style}
-      className={`btn ${type} ${size} ${width} ${className}`}
+      className={`btn ${type} ${size} ${width} ${iconOnly && 'icon-only'} ${className}`}
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={(): void => { return (onClick && onClick()) }}
       icon={icon}
     >
-      {icon && <Icon icon={icon} />}
+      {icon && <Icon icon={icon} className={`${iconOnly && 'icon-only'}`} />}
       {children}
     </StyledButton>
   )
@@ -62,6 +64,13 @@ const StyledButton = styled.button`
   border-radius: var(--radius);
   outline: none;
   transition: var(--transition);
+
+  &.icon-only {
+    padding: var(--space-lg);
+    i {
+      margin-right: 0;
+    }
+  }
 
   i {
     margin-right: var(--space-md);
@@ -116,7 +125,7 @@ const StyledButton = styled.button`
     color: var(--color-black);
   }
 
-  &:hover {
+  &:hover, &:focus {
     background-color: var(--color-primary-light);
     color: var(--color-white-fix);
     box-shadow: 0 0 6px var(--color-light-10);

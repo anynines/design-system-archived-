@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
 // C O M P O N E N T S
-import { Icon, IconName } from '../../../atoms/Icon/Icon'
-import { InputLabel, InputLabelProps } from '../../../atoms/InputLabel/InputLabel'
-import { InputIcon, InputIconProps } from '../../../atoms/InputIcon/InputIcon'
+import { Icon, IconName } from '../../Icon/Icon'
+import { InputLabel, InputLabelProps } from './InputLabel'
+import { InputIcon, InputIconProps } from './InputIcon'
+import { InputType } from '../Input'
 
 // I N T E R F A C E S
 export interface TextInputProps {
@@ -13,6 +14,7 @@ export interface TextInputProps {
   autoFocus?: boolean
   color?: string
   className?: string
+  disabled?: boolean
   errorMessage?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
   getValues?: any // eslint-disable-line
@@ -26,6 +28,7 @@ export interface TextInputProps {
   register?: (validationRules: ValidationOptions) => void
   setValue?: any // eslint-disable-line
   style?: React.CSSProperties
+  type?: InputType
   value?: string
   watch?: any //eslint-disable-line
 }
@@ -39,6 +42,7 @@ export const TextInput: TextInput = ({
   autoFocus = false,
   children,
   className,
+  disabled = false,
   errorMessage,
   errors = {},
   icon,
@@ -50,10 +54,12 @@ export const TextInput: TextInput = ({
   register,
   setValue,
   style,
+  type,
   value = '',
   watch
 }) => {
   const [isFocus, setIsFocus] = React.useState(autoFocus)
+  const [passwordShown, setPasswordShown] = React.useState(false)
   const [localValue, setLocalValue] = React.useState<string>(value || '')
 
   const getValueFromHookForm = (): string => {
@@ -62,6 +68,10 @@ export const TextInput: TextInput = ({
   }
 
   const formValue = getValueFromHookForm()
+
+  const togglePasswordVisiblity = (): void => {
+    setPasswordShown(!passwordShown)
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const newValue = e.target.value
@@ -127,14 +137,25 @@ export const TextInput: TextInput = ({
         <input
           autoFocus={isFocus}
           autoComplete={autoComplete}
+          disabled={disabled}
           name={name}
+          type={type === 'password' ? passwordShown ? 'text' : 'password' : type}
           id={name}
           ref={register ? register({ required: true, pattern }) as unknown as undefined : undefined}
           onFocus={(): void => { setIsFocus(true) }}
           onBlur={(): void => { setIsFocus(false) }}
-          className={className}
+          className={`input--${type} ${className}`}
           {...!register ? { onChange: handleChange, value: localValue } : {}}
         />
+        {name === 'password' && (
+          <button
+            onClick={(): void => { togglePasswordVisiblity() }}
+            className={`show-password ${passwordShown && 'active'}`}
+            type='button'
+          >
+            <Icon icon='eye' />
+          </button>
+        )}
       </StyledInputField>
       {renderErrorMessage()}
     </StyledInput>
@@ -159,72 +180,137 @@ const StyledInput = styled.div<StyledInputProps>`
   position: relative;
   margin-bottom: var(--space-xl);
   border: var(--border);
-  background-color: var(--color-dark);
+  background-color: var(--color-black);
+  width: 100%;
+  min-width: 240px;
   font-size: 1em;
   border-radius: var(--radius);
+  transition: all 200ms ease-in-out;
+  outline: none;
 
-  &.error {
-    margin-bottom: var(--space-lgr);
+  .show-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    outline: none;
+
+    &:before {
+      position: absolute;
+      background-color: var(--color-white-50);
+      width: 2px;
+      height: 18px;
+      content: '';
+      border-radius: 5px;
+      transform: rotate(45deg);
+      transition: var(--transition);
+    }
+
+    svg {
+      color: var(--color-white-50);
+      transition: var(--transition);
+    }
+
+    &:hover {
+      svg {
+        color: var(--color-white);
+      }
+      &:before {
+        background-color: var(--color-white);
+      }
+    }
+
+    &.active {
+      &:before{
+        background-color: transparent;
+      }
+    }
   }
   
   .input-label {
     position: absolute;
-    top: 0.25rem;
+    top: .1875rem;
     left: 12px;
     z-index: 1;
     opacity: 0.5;
     color: var(--color-white);
     font-size: 10px;
     font-weight: 800;
+    transform: scale(1);
+    transform-origin: left;
+    transition: all 200ms ease-in-out;
   }
   
   input {
     position: relative;
-    border: 0;
+    border: none;
     background: transparent;
     padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
     width: 100%;
     height: 2.75rem;
+    border-radius: var(--border-radius);
     color: var(--color-white);
     outline: none;
-    transition: var(--transition);
+    transition: top 200ms ease-in-out;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
-  
-  label {
-    color: var(--color-white);
+
+  .error {
+    position: absolute;
+    right: 0px;
+    bottom: -24px;
+    padding: 2px 4px;
+    text-align: right;
+    color: var(--color-error);
+    font-size: var(--text-md);
   }
 
   &.empty {
     label {
-      top: .875rem;
+      transform: scale(1.2);
+      top: 1rem;
+      left: 16px;
     }
   }
 
+  
+
   &:hover,
   &.focus {
-    input {
-      background-color: var(--color-dark);
-      border-radius: var(--border-radius);
-    }
-
     .input-prepend {
       background-color: var(--color-primary);
     }
 
     label {
+      transform: scale(1);
       top: .1875rem;
+      left: 12px;
     }
   }
-  
-  .error {
-    position: absolute;
-    right: 0px;
-    bottom: -22px;
-    padding: 2px 4px;
-    text-align: right;
-    color: rgb(234,29,37);
-    font-size: var(--text-md);
-    border-radius: 3px;
+
+  &:hover {
+    border: 1px solid var(--color-white-30);
+    .input-prepend {
+      background-color: var(--color-white-20);
+    }
+  }
+
+  &:focus-within {
+    border: 1px solid var(--color-primary) !important;
+    .input-prepend {
+      background-color: var(--color-primary) !important;
+    }
   }
 `
 

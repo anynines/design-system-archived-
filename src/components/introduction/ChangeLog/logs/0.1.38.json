@@ -1,0 +1,11 @@
+{
+  "Fixed": [],
+  "Changed": [
+    {
+      "title": "💧 Atoms/Input",
+      "description": "Moved Input Components from Molecules to Atoms. Simplified structure, improved types and also extend TextInput to display type password"
+    }
+  ],
+  "Added": [],
+  "Removed": []
+}
