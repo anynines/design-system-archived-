@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy Storybook
 on: 
   push:
     paths: ["src/components/**/stories/**", "src/components/**"]
@@ -13,7 +13,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           yarn install
-          yarn run build-storybook
+          yarn build-storybook
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
