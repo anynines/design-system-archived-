@@ -4,6 +4,7 @@ import { AdminNavigation } from '../AdminNavigation'
 import { Logo } from '../../../atoms/Logo/Logo'
 import { Menu } from '../../../molecules/Menu/Menu'
 import { UserNav } from '../../../organisms/UserNav/UserNav'
+import { ToggleLayout } from '../../../atoms/ToggleLayout/ToggleLayout'
 
 export const AdminNavigationExample: React.FC = () => {
   const brandLogo = 'https://raw.githubusercontent.com/anynines-johannchopin/happy-static/master/a9s/assets/logos/light_vertical.svg?sanitize=true'
@@ -12,6 +13,7 @@ export const AdminNavigationExample: React.FC = () => {
 
   return (
     <AdminNavigation>
+      <ToggleLayout to='/' />
       <Logo
         src={brandLogo}
         vertical

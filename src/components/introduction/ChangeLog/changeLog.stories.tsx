@@ -19,19 +19,19 @@ export const Welcome = () => (
       <ChangeLog
         version='0.1.41'
         date='09. December 2020'
-        isPublished={true}
+        isPublished
         changelog={v0_1_41}
       />
       <ChangeLog
         version='0.1.38'
         date='08. December 2020'
-        isPublished={true}
+        isPublished
         changelog={v0_1_38}
       />
       <ChangeLog
         version='0.1.37'
         date='08. December 2020'
-        isPublished={true}
+        isPublished
         changelog={v0_1_37}
       />
     </Container>

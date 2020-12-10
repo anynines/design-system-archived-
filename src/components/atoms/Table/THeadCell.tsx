@@ -21,7 +21,7 @@ export const THeadCell: React.FC<THeadCellProps> = (props) => {
 // S T Y L E S
 const StyledTHeadCell = styled.th`
   border: none;
-  background-color: var(--color-dark);
+  background-color: var(--color-black);
   padding: 10px;
   text-align: left;
   font-size: 14px;

@@ -88,7 +88,7 @@ export const Text = () => (
       icon='shop'
       label='Text'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -101,7 +101,7 @@ export const Date = () => (
       type='date'
       label='Pick a date'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -113,7 +113,7 @@ export const Color = () => (
       type='color'
       label='Pick a color'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -128,7 +128,7 @@ export const CustomRegexPattern = () => (
       label='I match 4 digits numbers'
       pattern={/^[0-9]{4}$/}
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -142,7 +142,7 @@ export const Email = () => (
       icon='send'
       label='Email'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -156,7 +156,7 @@ export const Number = () => (
       icon='euro'
       label='Number'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -170,7 +170,7 @@ export const Password = () => (
       type='password'
       icon='lock'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 

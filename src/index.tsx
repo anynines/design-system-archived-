@@ -35,6 +35,7 @@ export * from './components/atoms/Table/TFoot'
 export * from './components/atoms/Table/THead'
 export * from './components/atoms/Table/THeadCell'
 export * from './components/atoms/Table/TRow'
+export * from './components/atoms/Tooltip/Tooltip'
 export * from './components/atoms/Input/Input'
 
 // A T O M S - M O D A L

@@ -54,7 +54,7 @@ export const Edit = () => (
                     icon='user'
                     label='First Name'
                     value='John'
-                    autoFocus={true}
+                    autoFocus
                   />
                   
                 </Col>

@@ -44,7 +44,7 @@ export const Create = () => (
                     type='text'
                     icon='user'
                     label='First Name'
-                    autoFocus={true}
+                    autoFocus
                   />
                   
                 </Col>
