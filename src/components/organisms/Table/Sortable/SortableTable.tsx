@@ -1,119 +1,119 @@
-import React from 'react'
-import { Row, useTable, useSortBy } from 'react-table'
+import React, { Dispatch, SetStateAction } from 'react'
+import styled from 'styled-components'
 
-import { TableColumn, CustomTableRow as TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, RowsDataObject, TableData, TableRowColor } from '../Custom/CustomTable'
-import SortableTableHead from './SortableTableHead'
-import SortableTableBody from './SortableTableBody'
+import { getChildrenWithNewProps } from '../../../../helpers'
 
-export interface SortableTableProps {
-  color: TableRowColor
-  folderLimit: number
-  getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
-  getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
-  getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  pages: TableRow[]
-  pagesPerFolder: number
-  setPages: React.Dispatch<React.SetStateAction<TableRow[]>>
-  sortCategoryAlphabeticallyAndControlLimits: (pagesDataObject: TableData) => TableRow[]
-  tableHeaderData: TableColumn[]
+// T Y P E S
+export interface SortableTableRow {
+  [key: string]: string | boolean | number | string[] | number[]
 }
 
-// C O M P O N E N T
+export type SortableTableSortDirection = 'asc' | 'desc' | null
+
+export interface SortableTableProps {
+  sortData: SortableTableRow[]
+  originalData: SortableTableRow[]
+  setSortData: Dispatch<SetStateAction<SortableTableRow[]>>
+  onSort?: (sortArgs: SortableTableSortArgs) => void
+}
+
+export interface SortableTableChildrenProps {
+  sortData: SortableTableRow[]
+  sortDirection: SortableTableSortDirection
+  sortedBy: string
+  setSortDirection: Dispatch<SetStateAction<SortableTableSortDirection>>
+  setSortData: Dispatch<SetStateAction<SortableTableRow[]>>
+  setSortedBy: Dispatch<SetStateAction<string>>
+  onSort?: (sortArgs: SortableTableSortArgs) => void
+}
+
+export interface SortableTableSortArgs {
+  field: string
+  sortDirection: SortableTableSortDirection
+  setSortData: Dispatch<SetStateAction<SortableTableRow[]>>
+  originalData: SortableTableRow[]
+  sortData: SortableTableRow[]
+}
+
+// H E L P E R S
+export const getCellValue = (row: SortableTableRow, field: string): boolean | number | string => {
+  const value = row[field]
+  if (Array.isArray(value)) return ''
+  if (Number.isInteger(value)) return value
+  if (typeof value === 'string') return value.toLowerCase()
+  return ''
+}
+
+export const handleSort = (sortArgs: SortableTableSortArgs): void => {
+  const { field, sortDirection, setSortData, originalData, sortData } = sortArgs
+
+  if (sortDirection === null) {
+    setSortData(originalData)
+    return
+  }
+
+  const newData = [...sortData]
+  let sortedData: SortableTableRow[] = []
+
+  sortedData = newData.sort((firstItem, secondItem) => {
+    const firstValue: string | boolean | number = getCellValue(firstItem, field)
+    const secondValue: string | boolean | number = getCellValue(secondItem, field)
+
+    if (typeof firstValue === 'string' && typeof secondValue === 'string') return firstValue.charCodeAt(0) - secondValue.charCodeAt(0)
+    if (typeof firstValue === 'number' && typeof secondValue === 'number') return Number(firstValue) - Number(secondValue)
+    return 0
+  })
+
+  if (sortDirection === 'desc') sortedData.reverse()
+
+  setSortData(sortedData)
+}
+
+// C O M P O N E N T S
 export const SortableTable: React.FC<SortableTableProps> = (props) => {
   const {
-    color,
-    folderLimit,
-    getTableColumnColor,
-    getTableColumnType,
-    getTableColumnIconType,
-    pages,
-    pagesPerFolder,
-    setPages,
-    sortCategoryAlphabeticallyAndControlLimits,
-    tableHeaderData
+    sortData,
+    setSortData,
+    onSort,
+    originalData,
+    children
   } = props
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    prepareRow,
-    rows
-  } = useTable({ columns: tableHeaderData, data: pages }, useSortBy)
-  const rowsData = rows
-  const tableProps = getTableProps()
-  const tableBodyProps = getTableBodyProps()
 
-  const sortRowDataArrayAndControlLimits = (rowsDataObject: RowsDataObject): [string, Row<TableRow>[]][] => {
-    let rowsDataArray: [string, Row<TableRow>[]][] = Object.entries(rowsDataObject)
-      .sort((a, b) => {
-        const categoryA: string = a[0].toUpperCase()
-        const categoryB: string = b[0].toUpperCase()
-        return categoryA.charCodeAt(0) - categoryB.charCodeAt(0)
-      })
+  const [currentSortedBy, setCurrentSortedBy] = React.useState<string>('')
+  const [currentSortDirection, setCurrentSortDirection] = React.useState<SortableTableSortDirection>(null)
 
-    rowsDataArray = rowsDataArray.slice(0, folderLimit)
-    rowsDataArray = rowsDataArray.map((rowsArray) => {
-      const slicedArray = rowsArray[1].slice(0, pagesPerFolder)
-      rowsArray[1] = slicedArray
-      return rowsArray
-    })
-
-    return rowsDataArray
+  const childrenProps: SortableTableChildrenProps = {
+    sortData,
+    sortDirection: currentSortDirection,
+    sortedBy: currentSortedBy,
+    setSortDirection: setCurrentSortDirection,
+    setSortData,
+    setSortedBy: setCurrentSortedBy
   }
-
-  const getRowDataArray = (rowArray: Row<TableRow>[]): [string, Row<TableRow>[]][] => {
-    const rowsDataObject: RowsDataObject = {}
-
-    rowArray.forEach((row: Row<TableRow>): void => {
-      const { original } = row
-      let { category } = original
-      category = category.toLowerCase()
-
-      if (!rowsDataObject[category]) rowsDataObject[category] = []
-      rowsDataObject[category].push(row)
-    })
-
-    return sortRowDataArrayAndControlLimits(rowsDataObject)
-  }
-
-  const groupRowDataCategorically = (): void => {
-    const pagesDataObject: TableData = {}
-
-    pages.forEach((page: TableRow): void => {
-      const { category } = page
-      if (!pagesDataObject[category]) pagesDataObject[category] = []
-      pagesDataObject[category].push(page)
-    })
-
-    const sortedPages: TableRow[] = sortCategoryAlphabeticallyAndControlLimits(pagesDataObject)
-    setPages(sortedPages)
-  }
+  if (onSort) childrenProps.onSort = onSort
 
   React.useEffect(() => {
-    groupRowDataCategorically()
-  }, []) // eslint-disable-line
+    if (onSort) {
+      const args: SortableTableSortArgs = {
+        field: currentSortedBy,
+        sortDirection: currentSortDirection,
+        setSortData,
+        originalData,
+        sortData
+      }
+      onSort(args)
+    }
+  }, [onSort, currentSortDirection]) // eslint-disable-line
 
   return (
-    <table {...tableProps}>
-      <SortableTableHead headerGroups={headerGroups} />
-      {getRowDataArray(rowsData).map((rowsByCategory: [string, Row<TableRow>[]], rowIndex: number) => {
-        const rowCategory = rowsByCategory[0]
-        return (
-          <SortableTableBody
-            key={rowCategory}
-            index={rowIndex}
-            rows={rowsByCategory}
-            prepareRow={prepareRow}
-            tableBodyProps={tableBodyProps}
-            getTableColumnColor={getTableColumnColor}
-            getTableColumnType={getTableColumnType}
-            getTableColumnIconType={getTableColumnIconType}
-            color={color}
-          />
-        )
-      })}
-    </table>
+    <StyledTable>
+      {getChildrenWithNewProps(children, childrenProps)}
+    </StyledTable>
   )
 }
 
-export default SortableTable
+const StyledTable = styled.table`
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
+`

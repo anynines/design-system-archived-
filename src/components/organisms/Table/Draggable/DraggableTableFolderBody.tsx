@@ -5,9 +5,9 @@ import styled from 'styled-components'
 
 import { DraggableTableRowCategory, UndraggableTableRow } from './DraggableTableRow'
 import {
-  CustomTableRow as TableRow, TableAccessor, TableColumnCell,
+  DraggableTableWrapperRow as TableRow, TableAccessor, TableColumnCell,
   TableColumnCellColor, TableColumnIcon, TableRowColor
-} from '../Custom/CustomTable'
+} from './DraggableTableWrapper'
 
 interface DraggableTableFolderBodyProps {
   color?: TableRowColor

@@ -2,19 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable, useSortBy, Row } from 'react-table'
 
-import { SortableTable, SortableTableProps } from '../Sortable/SortableTable'
-import { DraggableTable, DraggableTableProps } from '../Draggable/DraggableTable'
+import { DraggableTable, DraggableTableProps } from './DraggableTable'
 
 // T Y P E S
 export interface RowsDataObject {
-  [key: string]: Row<CustomTableRow>[]
+  [key: string]: Row<DraggableTableWrapperRow>[]
 }
 
 export interface TableData {
-  [key: string]: CustomTableRow[]
+  [key: string]: DraggableTableWrapperRow[]
 }
 
-export interface CustomTableRow {
+export interface DraggableTableWrapperRow {
   authors: string[]
   category: string
   id?: number
@@ -30,7 +29,7 @@ export interface CustomTableRow {
   views: number
 }
 
-export type TableSortOption = 'draggable' | 'sortable'
+export type TableSortOption = 'draggable'
 
 export type TableRowColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success'
 
@@ -48,31 +47,27 @@ export type TableColumnCell = 'sticker' | 'icons' | 'icon' | 'link'
 
 export type TableColumnIcon = 'icon'
 
-export interface CustomTableProps {
+export interface DraggableTableWrapperProps {
   tableHeaderData: TableColumn[]
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
   type: TableSortOption
-  initialPages: CustomTableRow[]
+  initialPages: DraggableTableWrapperRow[]
   pagesPerFolder?: number
   color?: TableRowColor
   folderLimit?: number
 }
 
-export interface SortableTableDataProps extends CustomTableProps {
-  type: 'sortable'
-}
-
-export interface DraggableTableDataProps extends CustomTableProps {
+export interface DraggableTableDataProps extends DraggableTableWrapperProps {
   type: 'draggable'
   disabledCategories: string[]
-  setPages?: React.Dispatch<React.SetStateAction<CustomTableRow[]>>
-  pages?: CustomTableRow[]
+  setPages?: React.Dispatch<React.SetStateAction<DraggableTableWrapperRow[]>>
+  pages?: DraggableTableWrapperRow[]
 }
 
 // C O M P O N E N T
-export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataProps> = (props) => {
+export const DraggableTableWrapper: React.FC<DraggableTableDataProps> = (props) => {
   const {
     color = 'dark',
     folderLimit = 5,
@@ -85,15 +80,15 @@ export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataPr
     type
   } = props
 
-  const [localPages, setLocalPages] = React.useState<CustomTableRow[]>(
-    [] as CustomTableRow[]
+  const [localPages, setLocalPages] = React.useState<DraggableTableWrapperRow[]>(
+    [] as DraggableTableWrapperRow[]
   )
 
   React.useEffect(() => {
     if (initialPages.length) setLocalPages(initialPages)
   }, [props, initialPages])
 
-  const decideTableData = (): CustomTableRow[] => {
+  const decideTableData = (): DraggableTableWrapperRow[] => {
     if (type !== 'draggable') return localPages
 
     props = props as DraggableTableDataProps
@@ -102,8 +97,9 @@ export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataPr
     return localPages
   }
 
-  const sortCategoryAlphabeticallyAndControlLimits = (pagesDataObject: TableData): CustomTableRow[] => {
-    let pagesDataArray: [string, CustomTableRow[]][] = Object.entries(pagesDataObject)
+  const sortCategoryAlphabeticallyAndControlLimits = (pagesDataObject: TableData):
+  DraggableTableWrapperRow[] => {
+    let pagesDataArray: [string, DraggableTableWrapperRow[]][] = Object.entries(pagesDataObject)
       .sort((a, b) => {
         const categoryA: string = a[0].toUpperCase()
         const categoryB: string = b[0].toUpperCase()
@@ -117,7 +113,7 @@ export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataPr
       return pagesArray
     })
 
-    let sortedPages: CustomTableRow[] = []
+    let sortedPages: DraggableTableWrapperRow[] = []
     pagesDataArray.forEach((pages) => {
       sortedPages = [...sortedPages, ...pages[1]]
     })
@@ -133,41 +129,25 @@ export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataPr
     rows
   } = useTable({ columns: tableHeaderData, data: decideTableData() }, useSortBy)
 
-  let tableProps: SortableTableProps | DraggableTableProps
+  props = props as DraggableTableDataProps
+  const { disabledCategories, pages = [], setPages } = props
 
-  if (type === 'draggable') {
-    props = props as DraggableTableDataProps
-    const { disabledCategories, pages = [], setPages } = props
-    tableProps = {
-      rowsData: rows,
-      tableProps: getTableProps(),
-      prepareRow,
-      tableBodyProps: getTableBodyProps(),
-      headerGroups,
-      getTableColumnColor,
-      getTableColumnType,
-      getTableColumnIconType,
-      disabledCategories,
-      setPages: setPages || setLocalPages,
-      pages: pages.length > 0 ? pages : localPages,
-      pagesPerFolder,
-      folderLimit,
-      sortCategoryAlphabeticallyAndControlLimits,
-      color
-    }
-  } else {
-    tableProps = {
-      getTableColumnColor,
-      getTableColumnType,
-      getTableColumnIconType,
-      setPages: setLocalPages,
-      pages: localPages,
-      pagesPerFolder,
-      folderLimit,
-      tableHeaderData,
-      sortCategoryAlphabeticallyAndControlLimits,
-      color
-    }
+  const tableProps: DraggableTableProps = {
+    rowsData: rows,
+    tableProps: getTableProps(),
+    prepareRow,
+    tableBodyProps: getTableBodyProps(),
+    headerGroups,
+    getTableColumnColor,
+    getTableColumnType,
+    getTableColumnIconType,
+    disabledCategories,
+    setPages: setPages || setLocalPages,
+    pages: pages.length > 0 ? pages : localPages,
+    pagesPerFolder,
+    folderLimit,
+    sortCategoryAlphabeticallyAndControlLimits,
+    color
   }
 
   return (
@@ -179,7 +159,7 @@ export const CustomTable: React.FC<DraggableTableDataProps | SortableTableDataPr
               <h4>There is no data to display.</h4>
             </div>
           )
-          : type === 'draggable' ? <DraggableTable {...tableProps as DraggableTableProps} /> : <SortableTable {...tableProps as SortableTableProps} />
+          : type === 'draggable' ? <DraggableTable {...tableProps} /> : null
       }
     </StyledTable>
   )
@@ -236,32 +216,6 @@ const StyledTable = styled.div`
             padding-left: 1rem;
             border-top-left-radius: var(--radius);
             border-bottom-left-radius: var(--radius);
-          }
-
-          &.sortable {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0;
-            padding-right: 1rem;
-
-            .inverted {
-              display: flex;
-              transform: rotate(-180deg);
-            }
-            svg {
-              background-color: var(--color-black);
-              padding: 3px;
-              width: 20px;
-              height: 20px;
-              filter: brightness(70%);
-              border-radius: 5px;
-            }
-          }
-          &:last-child{
-            border-top-right-radius: var(--radius);
-            border-bottom-right-radius: var(--radius);
           }
         }
       }
@@ -484,4 +438,4 @@ const StyledTable = styled.div`
     }
   }`
 
-export default CustomTable
+export default DraggableTableWrapper

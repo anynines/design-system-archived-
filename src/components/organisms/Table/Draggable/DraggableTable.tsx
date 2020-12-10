@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, CustomTableProps as TableProps, TableBodyProps, HeaderGroup } from 'react-table'
 
-import { CustomTableRow as TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, TableData, TableRowColor } from '../Custom/CustomTable'
+import { DraggableTableWrapperRow as TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, TableData, TableRowColor } from './DraggableTableWrapper'
 import DraggableTableContainer from './DraggableTableContainer'
 
 export interface DraggableTableProps {

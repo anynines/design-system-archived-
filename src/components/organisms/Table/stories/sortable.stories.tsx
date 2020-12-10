@@ -1,33 +1,33 @@
 import React from 'react'
 
-import { Table, TableRow, getCellValue, handleSort } from '../Simple/Table'
+import { SortableTable, SortableTableRow, getCellValue, handleSort } from '../Sortable/SortableTable'
+import { SRow } from '../Sortable/SRow'
+import { SHead } from '../Sortable/SHead'
+import { SBody } from "../Sortable/SBody"
+import { SFoot } from "../Sortable/SFoot"
+import { SCell } from '../Sortable/SCell'
 import { Badge } from '../../../atoms/Badge/Badge'
-import { Row } from '../Simple/Row'
-import { Head } from '../Simple/Head'
-import { Body } from "../Simple/Body"
-import { Foot } from "../Simple/Foot"
-import { Cell } from '../Simple/Cell'
 
 export default {
-  title: '🌳 Organisms/SimpleTable',
-  component: Table,
+  title: '🌳 Organisms/SortableTable',
+  component: SortableTable,
   argTypes: {
     sortData: {
-      control: { type: 'TableRow[]' }
+      control: { type: 'SortableTableRow[]' }
     },
     sortedBy: {
       control: { type: 'string' }
     },
     sortDirection: {
-      control: { type: 'TableSortDirection' }
+      control: { type: 'SortableTableSortDirection' }
     },
     onSort: {
-      control: { type: '(sortArgs: TableSortArgs) => void' }
+      control: { type: '(sortArgs: SortableTableSortArgs) => void' }
     }
   }
 }
 
-const userData: TableRow[] = [
+const userData: SortableTableRow[] = [
   {
   "id": 1,
   "employee": "Eileen Sherrill",
@@ -237,73 +237,73 @@ const metaData = [
     }
 ]
 
-export const Simple: React.FC = () => {
-  const [currentData, setCurrentData] = React.useState<TableRow[]>(userData as TableRow[])
+export const Default: React.FC = () => {
+  const [currentData, setCurrentData] = React.useState<SortableTableRow[]>(userData as SortableTableRow[])
 
   return (
-    <Table sortData={currentData} originalData={userData} setSortData={setCurrentData} onSort={handleSort}>
-      <Head>
-        <Row>
-          <Cell type='head' value='full name' field='employee' sortable color='success' />
-          <Cell type='head' value='january' field='january' />
-          <Cell type='head' value='february' field='february' />
-          <Cell type='head' value='march' field='march' />
-          <Cell type='head' value='april' field='april' sortable />
-          <Cell type='head' value='may' field='may' />
-          <Cell type='head' value='june' field='june' />
-          <Cell type='head' value='july' field='july' />
-          <Cell type='head' value='august' field='august' />
-          <Cell type='head' value='september' field='september' />
-          <Cell type='head' value='october' field='october' />
-          <Cell type='head' value='november' field='november' />
-          <Cell type='head' value='december' field='december' />
-          <Cell type='head' value='average (2020)' field='average' color='warning' />
-        </Row>
-      </Head>
-      <Body>
-        {currentData.map((row: TableRow) => {
+    <SortableTable sortData={currentData} originalData={userData} setSortData={setCurrentData} onSort={handleSort}>
+      <SHead>
+        <SRow>
+          <SCell type='head' value='full name' field='employee' sortable color='success' />
+          <SCell type='head' value='january' field='january' />
+          <SCell type='head' value='february' field='february' />
+          <SCell type='head' value='march' field='march' />
+          <SCell type='head' value='april' field='april' sortable />
+          <SCell type='head' value='may' field='may' />
+          <SCell type='head' value='june' field='june' />
+          <SCell type='head' value='july' field='july' />
+          <SCell type='head' value='august' field='august' />
+          <SCell type='head' value='september' field='september' />
+          <SCell type='head' value='october' field='october' />
+          <SCell type='head' value='november' field='november' />
+          <SCell type='head' value='december' field='december' />
+          <SCell type='head' value='average (2020)' field='average' color='warning' />
+        </SRow>
+      </SHead>
+      <SBody>
+        {currentData.map((row: SortableTableRow) => {
           return (
-            <Row key={row.id.toString()}>
-              <Cell value={row['employee']} color='success' />
-              <Cell value={row['january']} />
-              <Cell value={row['february']} />
-              <Cell value={row['march']} />
-              <Cell value={row['april']}/>
-              <Cell value={row['may']}/>
-              <Cell value={row['june']} />
-              <Cell value={row['july']} />
-              <Cell value={row['august']} />
-              <Cell value={row['september']} />
-              <Cell value={row['october']} />
-              <Cell value={row['november']} />
-              <Cell><Badge value='n/a' /></Cell>
-              <Cell value={row['average']} color='warning' />
-            </Row>
+            <SRow key={row.id.toString()}>
+              <SCell value={row['employee']} color='success' />
+              <SCell value={row['january']} />
+              <SCell value={row['february']} />
+              <SCell value={row['march']} />
+              <SCell value={row['april']}/>
+              <SCell value={row['may']}/>
+              <SCell value={row['june']} />
+              <SCell value={row['july']} />
+              <SCell value={row['august']} />
+              <SCell value={row['september']} />
+              <SCell value={row['october']} />
+              <SCell value={row['november']} />
+              <SCell><Badge value='n/a' /></SCell>
+              <SCell value={row['average']} color='warning' />
+            </SRow>
           )
         })}
-      </Body>
-      <Foot>
-        {metaData.map((row: TableRow) => {
+      </SBody>
+      <SFoot>
+        {metaData.map((row: SortableTableRow) => {
           return (
-            <Row key={row.id.toString()}>
-              <Cell value={row['employee']} color='error' />
-              <Cell value={row['january']} color='light' />
-              <Cell value={row['february']} color='light' />
-              <Cell value={row['march']} color='light' />
-              <Cell value={row['april']} color='light' />
-              <Cell value={row['may']} color='light' />
-              <Cell value={row['june']} color='light' />
-              <Cell value={row['july']} color='light' />
-              <Cell value={row['august']} color='light' />
-              <Cell value={row['september']} color='light' />
-              <Cell value={row['october']} color='light' />
-              <Cell value={row['november']} color='light' />
-              <Cell color='light'><Badge value='n/a' /></Cell>
-              <Cell value={row['average']} color='dark' />
-            </Row>
+            <SRow key={row.id.toString()}>
+              <SCell value={row['employee']} color='error' />
+              <SCell value={row['january']} color='light' />
+              <SCell value={row['february']} color='light' />
+              <SCell value={row['march']} color='light' />
+              <SCell value={row['april']} color='light' />
+              <SCell value={row['may']} color='light' />
+              <SCell value={row['june']} color='light' />
+              <SCell value={row['july']} color='light' />
+              <SCell value={row['august']} color='light' />
+              <SCell value={row['september']} color='light' />
+              <SCell value={row['october']} color='light' />
+              <SCell value={row['november']} color='light' />
+              <SCell color='light'><Badge value='n/a' /></SCell>
+              <SCell value={row['average']} color='dark' />
+            </SRow>
           )
         })}
-      </Foot>
-    </Table>
+      </SFoot>
+    </SortableTable>
   )
 }

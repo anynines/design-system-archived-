@@ -4,7 +4,7 @@ import { Row, Cell } from 'react-table'
 import styled from 'styled-components'
 
 import { Icon } from '../../../atoms/Icon/Icon'
-import { CustomTableRow as TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon, TableRowColor } from '../Custom/CustomTable'
+import { DraggableTableWrapperRow as TableRow, TableColumnCell, TableAccessor, TableColumnCellColor, TableColumnIcon, TableRowColor } from './DraggableTableWrapper'
 import DraggableTableColumn from './DraggableTableColumn'
 
 interface DraggableTableRowProps {

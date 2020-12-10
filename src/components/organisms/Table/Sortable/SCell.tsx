@@ -1,25 +1,25 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { TableChildrenProps, TableSortDirection, TableSortArgs } from './Table'
+import { SortableTableChildrenProps, SortableTableSortDirection, SortableTableSortArgs } from './SortableTable'
 import { Icon } from '../../../atoms/Icon/Icon'
 
 // T Y P E S
-export type CellType = 'head' | 'body'
-export type CellColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success' | 'notice' | 'white' | 'black'
+export type SCellType = 'head' | 'body'
+export type SCellColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success' | 'notice'
 
-export interface CellProps extends TableChildrenProps {
-  type: CellType
+export interface SCellProps extends SortableTableChildrenProps {
+  type: SCellType
   value?: string | boolean | number
-  color?: CellColor
+  color?: SCellColor
   field?: string
   sortable?: boolean
-  onSort?: (sortArgs: TableSortArgs) => void
+  onSort?: (sortArgs: SortableTableSortArgs) => void
 }
 
 // C O M P O N E N T S
 
-export const Cell: FC<CellProps> = (props) => {
+export const SCell: FC<SCellProps> = (props) => {
   const {
     sortDirection,
     sortedBy = '',
@@ -45,10 +45,10 @@ export const Cell: FC<CellProps> = (props) => {
     if (sortable) {
       if (sortedBy !== field) {
         setSortedBy(field || '')
-        setSortDirection('asc' as TableSortDirection)
-      } else if (sortDirection === 'asc') setSortDirection('desc' as TableSortDirection)
+        setSortDirection('asc' as SortableTableSortDirection)
+      } else if (sortDirection === 'asc') setSortDirection('desc' as SortableTableSortDirection)
       else if (sortDirection === 'desc') {
-        setSortDirection(null as TableSortDirection)
+        setSortDirection(null as SortableTableSortDirection)
         setSortedBy('')
       }
     }

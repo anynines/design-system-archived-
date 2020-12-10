@@ -22,4 +22,17 @@ const StyledTBody = styled.tbody`
   tr:last-child td {
     border-bottom: 3px solid var(--color-black);
   }
+
+  &:last-child{
+    tr {
+      &:last-child {
+        td:first-child {
+          border-bottom-left-radius: var(--radius);
+        }
+        td:last-child {
+          border-bottom-right-radius: var(--radius);
+        }
+      } 
+    }
+  }
 `

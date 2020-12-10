@@ -1,9 +1,11 @@
 import React from 'react'
 
-import { CustomTable as Table, TableAccessor, DraggableTableDataProps, SortableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, CustomTableRow as TableRow } from '../Custom/CustomTable'
+import { 
+  DraggableTableWrapper as DraggableTable, TableAccessor, DraggableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, DraggableTableWrapperRow as TableRow
+} from '../Draggable/DraggableTableWrapper'
 
 export default {
-  title: '🌳 Organisms/CustomTable',
+  title: '🌳 Organisms/DraggableTable',
   argTypes: {
     tableHeaderData: {
       control: { type: 'TableColumn[]' }
@@ -21,7 +23,7 @@ export default {
       control: { type: 'string[]' }
     },
     type: {
-      control: { type: 'select', options: ['sortable', 'draggable'] }
+      control: { type: 'select', options: ['draggable'] }
     },
     pages: {
       control: { type: 'TableRow[]' }
@@ -212,7 +214,7 @@ const initialPages: TableRow[] = [
   }
 ]
 
-export const Draggable: React.FC = () => {
+export const Default: React.FC = () => {
   const tableProps: DraggableTableDataProps = {
     tableHeaderData,
     getTableColumnColor,
@@ -226,23 +228,6 @@ export const Draggable: React.FC = () => {
   }
 
   return (
-    <Table {...tableProps} />
-  )
-}
-
-export const Sortable: React.FC = () => {
-  const tableProps: SortableTableDataProps = {
-    tableHeaderData,
-    getTableColumnColor,
-    getTableColumnType,
-    getTableColumnIconType,
-    initialPages,
-    type: 'sortable',
-    pagesPerFolder: 2,
-    color: 'warning'
-  }
-
-  return (
-    <Table {...tableProps} />
+    <DraggableTable {...tableProps} />
   )
 }

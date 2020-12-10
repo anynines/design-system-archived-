@@ -19,5 +19,14 @@ export const THead: React.FC<THeadProps> = (props) => {
 
 // S T Y L E S
 const StyledTHead = styled.thead`
-
+  tr {
+    &:last-child {
+      td:first-child {
+        border-top-left-radius: 5px;
+      }
+      td:last-child {
+        border-top-right-radius: 5px;
+      }
+    } 
+  }
 `
