@@ -25,9 +25,10 @@ const StyledButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  flex-direction: column;
+
   .btn {
-    margin: 0 15px;
+    margin: var(--space-md) 0;
     
     &:first-child {
       margin-left: 0;
@@ -35,6 +36,14 @@ const StyledButtonGroup = styled.div`
     
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  @media (min-width: 40em) {
+    flex-direction: row;
+
+    .btn {
+      margin: 0 var(--space-md);
     }
   }
 `

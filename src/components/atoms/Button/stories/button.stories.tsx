@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 
 import Wrapper from '../../../_helpers/Wrapper'
 import { Button, ButtonProps } from '../Button'
+import { ButtonGroup } from '../ButtonGroup'
 
 export default {
   title: '💧 Atoms/Button',
@@ -160,5 +161,24 @@ export const Icon = () => (
     >
       Button with grid icon
     </Button>
+  </Wrapper>
+)
+
+export const Group = () => (
+  <Wrapper>
+    <ButtonGroup>
+      <Button
+        type='dark'
+        icon={'menu'}
+      >
+        Button with menu icon
+      </Button>
+      <Button
+        type='submit'
+        icon={'grid4'}
+      >
+        Button with grid icon
+    </Button>
+    </ButtonGroup>
   </Wrapper>
 )
