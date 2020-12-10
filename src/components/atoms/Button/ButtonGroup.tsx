@@ -23,9 +23,9 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
 
 const StyledButtonGroup = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
 
   .btn {
     margin: var(--space-md) 0;
