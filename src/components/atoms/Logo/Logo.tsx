@@ -61,7 +61,7 @@ const StyledLogoWrapper = styled.div`
   }
 
   &.vertical {
-    margin-bottom: var(--space-lgr);
+    margin-bottom: var(--space-xl);
     height: auto;
     max-width: auto;
 

@@ -32,7 +32,7 @@ export const Code: React.FC<CodeProps> = ({
 const StyledCode = styled.div`
   position: relative;
   overflow: hidden;
-  margin-bottom: var(--space-lgr);
+  margin-bottom: var(--space-xl);
   border: var(--border);
   background-color: var(--color-black);
   width: 100%;

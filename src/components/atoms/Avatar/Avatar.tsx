@@ -77,7 +77,7 @@ const StyledAvatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: var(--space-lgr);
+  margin-right: var(--space-xl);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--color-dark);

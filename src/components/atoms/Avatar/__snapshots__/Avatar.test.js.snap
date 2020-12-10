@@ -20,7 +20,7 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: var(--space-lgr);
+  margin-right: var(--space-xl);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--color-dark);
@@ -139,7 +139,7 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: var(--space-lgr);
+  margin-right: var(--space-xl);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--color-dark);
