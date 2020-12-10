@@ -19,7 +19,7 @@ export const Logo: FC<LogoProps> = ({
   path = '/',
   src: url,
   style,
-  vertical = true
+  vertical = false
 }: LogoProps) => {
   if (path) {
     return (

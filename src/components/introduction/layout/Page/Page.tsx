@@ -15,7 +15,7 @@ export const Page: React.FC<PageProps> = ({
 }) => {
   return (
     <StyledPage id={id} className={`page ${className}`}>
-      <div className='page'>{children}</div>
+      {children}
     </StyledPage>
   )
 }
@@ -27,10 +27,5 @@ const StyledPage = styled.div`
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  
-  @media (min-width: 60em) {
-    margin-top: var(--section-space);
-    height: calc(100vh - var(--section-space));
-  }
 `
 StyledPage.displayName = 'StyledPage'
