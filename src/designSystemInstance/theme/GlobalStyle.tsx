@@ -203,7 +203,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .ol, .ul {
     line-height: 2;
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     font-weight: 300;
   }
 
@@ -219,7 +219,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 2px;
     background-color: var(--color-black);
     padding: 4px;
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     border-radius: 2px;
   }
 
