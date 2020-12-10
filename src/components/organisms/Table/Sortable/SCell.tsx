@@ -1,38 +1,40 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
 
-import { SortableTableChildrenProps, SortableTableSortDirection, SortableTableSortArgs } from './SortableTable'
+import { SortableTableSortDirection, SortableTableContext } from './SortableTable'
 import { Icon } from '../../../atoms/Icon/Icon'
 
 // T Y P E S
 export type SCellType = 'head' | 'body'
 export type SCellColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success' | 'notice'
 
-export interface SCellProps extends SortableTableChildrenProps {
+export interface SCellProps {
   type: SCellType
   value?: string | boolean | number
   color?: SCellColor
   field?: string
   sortable?: boolean
-  onSort?: (sortArgs: SortableTableSortArgs) => void
 }
 
 // C O M P O N E N T S
 
 export const SCell: FC<SCellProps> = (props) => {
   const {
-    sortDirection,
-    sortedBy = '',
-    setSortDirection,
-    setSortedBy,
     sortable = false,
     field = '',
     type,
     value,
     color,
-    onSort,
     children
   } = props
+
+  const {
+    sortDirection,
+    sortedBy,
+    setSortDirection,
+    setSortedBy,
+    onSort
+  } = useContext(SortableTableContext)
 
   const renderValue = (): string | boolean | number | JSX.Element | React.ReactNode => {
     if (value) return value.toString()

@@ -1,8 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import styled from 'styled-components'
 
-import { getChildrenWithNewProps } from '../../../../helpers'
-
 // T Y P E S
 export interface SortableTableRow {
   [key: string]: string | boolean | number | string[] | number[]
@@ -17,7 +15,7 @@ export interface SortableTableProps {
   onSort?: (sortArgs: SortableTableSortArgs) => void
 }
 
-export interface SortableTableChildrenProps {
+export interface SortableTableContextProps {
   sortData: SortableTableRow[]
   sortDirection: SortableTableSortDirection
   sortedBy: string
@@ -35,39 +33,11 @@ export interface SortableTableSortArgs {
   sortData: SortableTableRow[]
 }
 
-// H E L P E R S
-export const getCellValue = (row: SortableTableRow, field: string): boolean | number | string => {
-  const value = row[field]
-  if (Array.isArray(value)) return ''
-  if (Number.isInteger(value)) return value
-  if (typeof value === 'string') return value.toLowerCase()
-  return ''
-}
+// C O N T E X T
 
-export const handleSort = (sortArgs: SortableTableSortArgs): void => {
-  const { field, sortDirection, setSortData, originalData, sortData } = sortArgs
-
-  if (sortDirection === null) {
-    setSortData(originalData)
-    return
-  }
-
-  const newData = [...sortData]
-  let sortedData: SortableTableRow[] = []
-
-  sortedData = newData.sort((firstItem, secondItem) => {
-    const firstValue: string | boolean | number = getCellValue(firstItem, field)
-    const secondValue: string | boolean | number = getCellValue(secondItem, field)
-
-    if (typeof firstValue === 'string' && typeof secondValue === 'string') return firstValue.charCodeAt(0) - secondValue.charCodeAt(0)
-    if (typeof firstValue === 'number' && typeof secondValue === 'number') return Number(firstValue) - Number(secondValue)
-    return 0
-  })
-
-  if (sortDirection === 'desc') sortedData.reverse()
-
-  setSortData(sortedData)
-}
+export const SortableTableContext = React.createContext<SortableTableContextProps>(
+  {} as SortableTableContextProps
+)
 
 // C O M P O N E N T S
 export const SortableTable: React.FC<SortableTableProps> = (props) => {
@@ -82,7 +52,7 @@ export const SortableTable: React.FC<SortableTableProps> = (props) => {
   const [currentSortedBy, setCurrentSortedBy] = React.useState<string>('')
   const [currentSortDirection, setCurrentSortDirection] = React.useState<SortableTableSortDirection>(null)
 
-  const childrenProps: SortableTableChildrenProps = {
+  const childrenProps: SortableTableContextProps = {
     sortData,
     sortDirection: currentSortDirection,
     sortedBy: currentSortedBy,
@@ -106,9 +76,11 @@ export const SortableTable: React.FC<SortableTableProps> = (props) => {
   }, [onSort, currentSortDirection]) // eslint-disable-line
 
   return (
-    <StyledTable>
-      {getChildrenWithNewProps(children, childrenProps)}
-    </StyledTable>
+    <SortableTableContext.Provider value={childrenProps}>
+      <StyledTable>
+        {children}
+      </StyledTable>
+    </SortableTableContext.Provider>
   )
 }
 

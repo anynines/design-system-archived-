@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { SortableTable, SortableTableRow, getCellValue, handleSort } from '../Sortable/SortableTable'
+import { SortableTable, SortableTableRow } from '../Sortable/SortableTable'
+import { getCellValue, handleSort } from '../Sortable/helpers'
 import { SRow } from '../Sortable/SRow'
 import { SHead } from '../Sortable/SHead'
 import { SBody } from "../Sortable/SBody"
