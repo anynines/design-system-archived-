@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.light, 'Light') }}
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.dark, 'Dark') }}
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.black, 'Black') }}
-
+    
     --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
     --color-black-darker: #040B18;
     
@@ -54,16 +54,19 @@ export const GlobalStyle = createGlobalStyle`
     --transition-ease-in-out-300: 0.3s ease-in-out;
 
     /* S P A C I N G */
-    --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }};
-    --space-xs:  calc(var(--space-unit) * 0.25);
-    --space-sm:  calc(var(--space-unit) * 0.5);
-    --space-md:  calc(var(--space-unit) * 0.75);
-    --space-lg:  calc(var(--space-unit));
-    --space-lgr: calc(var(--space-unit) * 1.5);
-    --space-xl:  calc(var(--space-unit) * 2);
-    --space-xxl: calc(var(--space-unit) * 3);
+    --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }}; // 16px
+    --space-xs:  calc(var(--space-unit) * 0.25);  // 4px
+    --space-sm:  calc(var(--space-unit) * 0.5);   // 8px
+    --space-md:  calc(var(--space-unit) * 0.75);  // 12px
+    --space-lg:  calc(var(--space-unit));         // 16px 
+    --space-lgr: calc(var(--space-unit) * 1.5);   // 20px
+    --space-lgr: calc(var(--space-unit) * 1.5);   // 24px
+    --space-xl:  calc(var(--space-unit) * 2);     // 32px
+    --space-xl:  calc(var(--space-unit) * 2);     // 40px
+    --space-xxl: calc(var(--space-unit) * 3);     // 64px
+    --space-xxl: calc(var(--space-unit) * 3);     // 128px
     
-    --space-unit-fixed: ${(props): string => { return props.theme.globals.spacing.fixedUnit }};
+    --space-unit-fixed: ${(props): string => { return props.theme.globals.spacing.fixedUnit }}; // 16px
     --space-fixed-xs:  calc(var(--space-unit-fixed) * 0.25);
     --space-fixed-sm:  calc(var(--space-unit-fixed) * 0.5);
     --space-fixed-md:  calc(var(--space-unit-fixed) * 0.75);
@@ -78,14 +81,18 @@ export const GlobalStyle = createGlobalStyle`
     --font-weight-rg: ${(props): string => { return props.theme.globals.font.regular }};
     --font-weight-bd: ${(props): string => { return props.theme.globals.font.bold }};
     --text-base-unit: ${(props): string => { return props.theme.globals.typography.baseUnit }};
-    --text-xs:  calc(var(--text-base-unit) * 0.5);
-    --text-sm:  calc(var(--text-base-unit) * 0.6);
-    --text-md:  calc(var(--text-base-unit) * 0.8);
-    --text-lg:  calc(var(--text-base-unit));
-    --text-lgr: calc(var(--text-base-unit) * 1.5);
-    --text-xl:  calc(var(--text-base-unit) * 2);
-    --text-xxl: calc(var(--text-base-unit) * 3);
-    --text-xxxl: calc(var(--text-base-unit) * 4);
+
+                                                      // 8px  xxxs
+                                                      // 10px xxs
+    --text-xs:  calc(var(--text-base-unit) * 0.5);    // 12px xs
+    --text-sm:  calc(var(--text-base-unit) * 0.6);    // 14px sm
+    --text-md:  calc(var(--text-base-unit) * 0.8);    // 16px md
+    --text-lg:  calc(var(--text-base-unit));          // 20px lg
+    --text-lgr: calc(var(--text-base-unit) * 1.5);    // 24px xl
+    --text-xl:  calc(var(--text-base-unit) * 2);      // 32px xxl
+    --text-xxl: calc(var(--text-base-unit) * 3);      // 40px xxxl
+    --text-xxxl: calc(var(--text-base-unit) * 4);     // 64px huge
+                                                      // 128px giant
 
     --body-line-height: ${(props): string => { return props.theme.globals.typography.bodyLineHeight }};
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};
@@ -154,7 +161,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: var(--font-weight-lt);
   }
 
-  button, span, input, select, blockquote {
+  button, span {
     font-family: var(--font-family);
   }
 
@@ -192,7 +199,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .ol, .ul {
-    padding-left: 20px;
     line-height: 2;
     font-size: var(--text-lg);
     font-weight: 300;
@@ -203,11 +209,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .ul, .ul li {
-    list-style: disc;
+    list-style: circle;
   }
 
   code {
     margin: 0 2px;
+    background-color: var(--color-black);
     padding: 4px;
     font-size: var(--text-lg);
     border-radius: 2px;
@@ -215,13 +222,6 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-  }
-
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
-  input:-webkit-autofill:focus {
-    box-shadow: 0 0 0 30px var(--color-dark) inset !important;
-    -webkit-text-fill-color: white;
   }
 
   .tooltip-wrapper {
@@ -238,7 +238,7 @@ export const GlobalStyle = createGlobalStyle`
   **************************************/
 
   .sb-show-main.sb-main-padded {
-    /* background: #010f1b !important; */
+    background: #010f1b !important;
     padding: 0 !important;
   }
 
