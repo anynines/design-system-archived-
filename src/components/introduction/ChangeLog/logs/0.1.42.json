@@ -1,0 +1,13 @@
+{
+  "Changed": [
+    {
+      "title": "Workflow / Storybook Deploy",
+      "description": "Fixed Workflow for Storybook deploy. It now deploys after every push of a tag to github-pages."
+    },
+    {
+      "title": "Theme / Global Styles",
+      "description": "Moved Global Styles for Storybook into separate Component which only loads for the storybook-preview."
+    }
+  ],
+  "Added": []
+}
