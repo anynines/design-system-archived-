@@ -75,20 +75,20 @@ export default {
 
 export const Basic = (args: InputProps) => (
   <Wrapper bgColor='black-darker'>
-    <Input {...args} style={{marginBottom: 0}}/>
+    <Input {...args} style={{ marginBottom: 0 }} />
   </Wrapper>
 )
 
 export const Text = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='Text'
       type='text'
       icon='shop'
       label='Text'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -96,24 +96,25 @@ export const Text = () => (
 export const Date = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='color'
       type='date'
       label='Pick a date'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
+
 export const Color = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='color'
       type='color'
       label='Pick a color'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -121,14 +122,14 @@ export const Color = () => (
 export const CustomRegexPattern = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='CustomRegex'
       type='text'
       icon='shop'
       label='I match 4 digits numbers'
       pattern={/^[0-9]{4}$/}
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -136,13 +137,13 @@ export const CustomRegexPattern = () => (
 export const Email = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='Email'
       type='email'
       icon='send'
       label='Email'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -150,13 +151,13 @@ export const Email = () => (
 export const Number = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='number'
       type="number"
       icon='euro'
       label='Number'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
 )
@@ -164,14 +165,13 @@ export const Number = () => (
 export const Password = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='password'
       label='Password'
       type='password'
       icon='lock'
       autoComplete='off'
-      autoFocus={true}
+      autoFocus
     />
   </Wrapper>
-
 )

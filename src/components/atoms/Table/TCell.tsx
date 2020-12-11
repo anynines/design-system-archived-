@@ -21,7 +21,7 @@ export const TCell: React.FC<TCellProps> = (props) => {
 // S T Y L E S
 const StyledTCell = styled.td`
   border: none;
-  background-color: var(--color-dark-50);
+  background-color: var(--color-black-50);
   padding: 10px;
   text-align: left;
   white-space: nowrap;
@@ -31,7 +31,6 @@ const StyledTCell = styled.td`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-dark);
     text-align: left;
 
     a {
@@ -39,10 +38,6 @@ const StyledTCell = styled.td`
       flex-direction: center;
       justify-content: center;
     }
-  }
-
-  &:last-child {
-    background-color: var(--color-dark);
   }
 
   &.highlight-primary {

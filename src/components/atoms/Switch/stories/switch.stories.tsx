@@ -75,7 +75,7 @@ export const Border = () => {
     <Wrapper align='flex-start' direction='column' bgColor='transparent'  >
       <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
-          border={true}
+          border
           checked={valueBorder}
           name='switch-1'
           onChange={() => setValueBorder(!valueBorder)}
@@ -85,7 +85,7 @@ export const Border = () => {
       </Wrapper>
       <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
-          border={true}
+          border
           checked={valueBorderless}
           name='switch-2'
           onChange={() => setValueBorderless(!valueBorderless)}

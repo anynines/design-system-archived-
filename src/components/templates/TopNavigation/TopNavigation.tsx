@@ -41,4 +41,10 @@ const StyledTopNavigation = styled.div`
     display: flex;
     align-items: center;
   }
+
+  .toggle-layout {
+    #toggle-layout-bg {
+      fill: var(--black-darker);
+    }
+  }
 `
