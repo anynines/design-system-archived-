@@ -52,12 +52,13 @@ export const Logo: FC<LogoProps> = ({
 
 // S T Y L E S
 const StyledLogoWrapper = styled.div`
-  --logo-height: 40px;
+  --logo-height: 2.5rem;
+
   height: var(--logo-height);
 
   img {
     height: var(--logo-height);
-    max-width: 180px;
+    max-width: 11.25rem;
   }
 
   &.vertical {
