@@ -83,7 +83,7 @@ const StyledButton = styled.button`
 
   /* Sizes */
   &.xs {
-    font-size: var(--text-xs);
+    font-size: var(--text-xxxs);
 
     i {
       --icon-size: .6rem;
@@ -91,7 +91,7 @@ const StyledButton = styled.button`
   }
 
   &.sm {
-    font-size: var(--text-sm);
+    font-size: var(--text-xxs);
 
     i {
       --icon-size: .75rem;
@@ -99,11 +99,11 @@ const StyledButton = styled.button`
   }
   
   &.md {
-    font-size: var(--text-md);
+    font-size: var(--text-xs);
   }
   
   &.lg {
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
   }
 
   /* Types */
