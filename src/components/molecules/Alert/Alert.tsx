@@ -56,7 +56,6 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   z-index: var(--z-index);
   width: var(--width);
   min-height: 4.5rem;
-  font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
 
@@ -98,7 +97,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     }
 
     span {
-      font-weight: 900;
+      font-weight: var(--font-weight-bd);
     }
 
     P {

@@ -62,9 +62,9 @@ export const GlobalStyle = createGlobalStyle`
     --space-lg: calc(var(--space-unit) * 1.25);   // 20px
     --space-xl: calc(var(--space-unit) * 1.5);    // 24px
     --space-xxl:  calc(var(--space-unit) * 2);    // 32px
-    --space-xxl:  calc(var(--space-unit) * 2,5);  // 40px
-    --space-xxxl: calc(var(--space-unit) * 4);    // 64px
-    --space-huge: calc(var(--space-unit) * 8);    // 128px
+    --space-xxxl:  calc(var(--space-unit) * 2.5); // 40px
+    --space-huge: calc(var(--space-unit) * 4);    // 64px
+    --space-giant: calc(var(--space-unit) * 8);   // 128px
     
     --space-unit-fixed: ${(props): string => { return props.theme.globals.spacing.fixedUnit }}; // 16px
     --space-fixed-xxs:  calc(var(--space-unit-fixed) * 0.25); // 4px
@@ -74,9 +74,9 @@ export const GlobalStyle = createGlobalStyle`
     --space-fixed-lg: calc(var(--space-unit-fixed) * 1.25);   // 20px
     --space-fixed-xl: calc(var(--space-unit-fixed) * 1.5);    // 24px
     --space-fixed-xxl:  calc(var(--space-unit-fixed) * 2);    // 32px
-    --space-fixed-xxl:  calc(var(--space-unit-fixed) * 2,5);  // 40px
-    --space-fixed-xxxl: calc(var(--space-unit-fixed) * 4);    // 64px
-    --space-fixed-huge: calc(var(--space-unit-fixed) * 8);    // 128px
+    --space-fixed-xxxl:  calc(var(--space-unit-fixed) * 2.5); // 40px
+    --space-fixed-huge: calc(var(--space-unit-fixed) * 4);    // 64px
+    --space-fixed-giant: calc(var(--space-unit-fixed) * 8);   // 128px
     
     /* T Y P O G R A P H Y */
     --font-family: ${(props): string => { return props.theme.globals.font.name }};
@@ -95,7 +95,7 @@ export const GlobalStyle = createGlobalStyle`
     --text-xxl:  calc(var(--text-base-unit) * 2);     // 32px
     --text-xxxl: calc(var(--text-base-unit) * 2.5);   // 40px
     --text-huge: calc(var(--text-base-unit) * 4);     // 64px
-    --text-huge: calc(var(--text-base-unit) * 8);     // 128px
+    --text-giant: calc(var(--text-base-unit) * 8);    // 128px
 
     --body-line-height: ${(props): string => { return props.theme.globals.typography.bodyLineHeight }};
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};

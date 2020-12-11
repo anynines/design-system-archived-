@@ -56,8 +56,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {children !== undefined ? (
               <span className='label'>{children}</span>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -78,8 +78,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {children !== undefined ? (
               <span className='label'>{children}</span>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
           </div>
         </StyledMenuItem>
       )}
@@ -95,7 +95,7 @@ interface StyledMenuItemProps {
 // S T Y L E S
 const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --display: ${(props): string => { return props.vertical ? 'inline-block' : 'block' }};
-  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-lg) 0' : '0 var(--space-sm)' }};
+  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-md) 0' : '0 var(--space-sm)' }};
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
 
@@ -109,7 +109,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   }
 
   .label {
-    font-size: var(--text-md);
+    font-size: var(--text-xs);
     font-weight: var(--font-weight-bd);
     transition: var(--transition);
   }
