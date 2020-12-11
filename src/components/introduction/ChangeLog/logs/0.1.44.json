@@ -9,5 +9,10 @@
       "description": "Moved Global Styles for Storybook into separate Component which only loads for the storybook-preview."
     }
   ],
-  "Added": []
+  "Added": [
+    {
+      "title": "🌳 Organisms / Slider",
+      "description": "Added Slider from happy_frontend."
+    }
+  ]
 }

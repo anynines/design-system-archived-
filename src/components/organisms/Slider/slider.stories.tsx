@@ -1,12 +1,11 @@
 import React from 'react'
-import { action } from '@storybook/addon-actions'
 
 import { Section } from '../../introduction/layout/Section/Section'
-import { SliderSection } from './Slider'
+import { Slider } from './Slider'
 
 export default {
   title: '🌳 Organisms/Slider',
-  component: SliderSection,
+  component: Slider,
   argTypes: {
   }
 }
@@ -31,7 +30,7 @@ const slides = [
 
 export const Basic = () => (
   <Section bgColor='transparent' style={{ padding: 20 }}>
-    <SliderSection
+    <Slider
       slides={slides}
     />
   </Section>
