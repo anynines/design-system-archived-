@@ -69,7 +69,6 @@ export const Avatar: React.FC<AvatarProps> = ({
 // S T Y L E S
 const StyledAvatar = styled.div`
   --size: 3rem;
-  --font-size: .8em;
   --initials-font-size: 2.4em;
   --level-position: -0.3em;
   --level-size: 2em;
@@ -77,7 +76,7 @@ const StyledAvatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: var(--space-xl);
+  margin-right: var(--space-md);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--color-dark);
@@ -85,7 +84,7 @@ const StyledAvatar = styled.div`
   background-size: cover;
   width: calc(var(--size) * 0.75);
   height: calc(var(--size) * 0.75);
-  font-size: var(--text-sm);
+  font-size: var(--text-xxxs);
 
   &:hover {
     box-shadow: var(--shadow);
@@ -102,13 +101,13 @@ const StyledAvatar = styled.div`
   &.md {
     width: var(--size);
     height: var(--size);
-    font-size: var(--text-sm);
+    font-size: var(--text-xxs);
   }
 
   &.lg {
     width: calc(var(--size) * 2);
     height: calc(var(--size) * 2);
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
   }
 
   &.level {
@@ -125,7 +124,6 @@ const StyledAvatar = styled.div`
       width: var(--level-size);
       height: var(--level-size);
       color: var(--color-white-fix);
-      font-size: var(--font-size);
       font-weight: var(--font-weight-bd);
       border-radius: 100%;
     }
