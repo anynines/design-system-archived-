@@ -43,7 +43,7 @@ const StyledCode = styled.div`
     margin: 0;
     padding: var(--space-lg);
     width: 100%;
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     max-width: 100%;
     overflow-x: auto;
   }
@@ -53,10 +53,10 @@ const StyledCode = styled.div`
     right: 0;
     bottom: 0;
     background-color: var(--color-white-10);
-    padding: 8px;
+    padding: var(--space-fixed-xs);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: var(--text-sm);
+    font-size: var(--text-xxs);
     font-weight: var(--font-weight-bd);
     border-radius: var(--radius) 0 0 0;
   }
