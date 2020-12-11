@@ -37,7 +37,7 @@ const StyledModuleHeader = styled.div`
 
   span {
     color: var(--color-white-fix);
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
     font-weight: var(--font-weight-bd);
   }
   
