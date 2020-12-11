@@ -66,6 +66,7 @@ export * from './components/molecules/DatePicker/DatePicker'
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'
 export * from './components/organisms/ProductItem/ProductItem'
+export * from './components/organisms/Slider/Slider'
 // Will be enabled when Table components from Sabbir are finished
 // export * from './components/organisms/Table/Table'
 // export * from './components/organisms/Table/SortableTable'

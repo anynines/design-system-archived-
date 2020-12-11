@@ -56,6 +56,10 @@ const StyledTRow = styled.tr`
     }
   }
 
+  &.clickable {
+    cursor: pointer;
+  }
+
   &.green td {
     background-color: var(--color-success-dark);
   }
