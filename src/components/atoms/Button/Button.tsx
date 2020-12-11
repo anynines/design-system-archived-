@@ -107,7 +107,8 @@ const StyledButton = styled.button`
   }
 
   /* Types */
-  &.primary, &.submit {
+  &.primary,
+  &.submit {
     background-color: var(--color-primary);
     color: var(--color-white-fix);
   }
