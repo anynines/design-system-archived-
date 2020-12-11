@@ -199,8 +199,8 @@ const StyledInput = styled.div<StyledInputProps>`
     border: none;
     background: transparent;
     cursor: pointer;
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     outline: none;
 
     &:before {
@@ -209,7 +209,7 @@ const StyledInput = styled.div<StyledInputProps>`
       width: 2px;
       height: 18px;
       content: '';
-      border-radius: 5px;
+      border-radius: calc(var(--radius) / 2);
       transform: rotate(45deg);
       transition: var(--transition);
     }
@@ -238,12 +238,12 @@ const StyledInput = styled.div<StyledInputProps>`
   .input-label {
     position: absolute;
     top: .1875rem;
-    left: 12px;
+    left: .75rem;
     z-index: 1;
     opacity: 0.5;
     color: var(--color-white);
-    font-size: 10px;
-    font-weight: 800;
+    font-size: var(--text-xxs);
+    font-weight: var(--font-weight-bd);
     transform: scale(1);
     transform-origin: left;
     transition: all 200ms ease-in-out;
@@ -268,19 +268,19 @@ const StyledInput = styled.div<StyledInputProps>`
 
   .error {
     position: absolute;
-    right: 0px;
-    bottom: -24px;
-    padding: 2px 4px;
+    right: 0;
+    bottom: -1.5rem;
+    padding: 0.125rem 0.25rem;
     text-align: right;
     color: var(--color-error);
-    font-size: var(--text-md);
+    font-size: var(--text-xs);
   }
 
   &.empty {
     label {
       transform: scale(1.2);
       top: 1rem;
-      left: 16px;
+      left: 1rem;
     }
   }
 
@@ -295,12 +295,13 @@ const StyledInput = styled.div<StyledInputProps>`
     label {
       transform: scale(1);
       top: .1875rem;
-      left: 12px;
+      left: .75rem;
     }
   }
 
   &:hover {
     border: 1px solid var(--color-white-30);
+
     .input-prepend {
       background-color: var(--color-white-20);
     }
@@ -308,6 +309,7 @@ const StyledInput = styled.div<StyledInputProps>`
 
   &:focus-within {
     border: 1px solid var(--color-primary) !important;
+
     .input-prepend {
       background-color: var(--color-primary) !important;
     }
