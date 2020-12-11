@@ -75,14 +75,14 @@ export default {
 
 export const Basic = (args: InputProps) => (
   <Wrapper bgColor='black-darker'>
-    <Input {...args} style={{marginBottom: 0}}/>
+    <Input {...args} style={{ marginBottom: 0 }} />
   </Wrapper>
 )
 
 export const Text = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='Text'
       type='text'
       icon='shop'
@@ -96,7 +96,7 @@ export const Text = () => (
 export const Date = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='color'
       type='date'
       label='Pick a date'
@@ -105,10 +105,11 @@ export const Date = () => (
     />
   </Wrapper>
 )
+
 export const Color = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='color'
       type='color'
       label='Pick a color'
@@ -121,7 +122,7 @@ export const Color = () => (
 export const CustomRegexPattern = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='CustomRegex'
       type='text'
       icon='shop'
@@ -136,7 +137,7 @@ export const CustomRegexPattern = () => (
 export const Email = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='Email'
       type='email'
       icon='send'
@@ -150,7 +151,7 @@ export const Email = () => (
 export const Number = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='number'
       type="number"
       icon='euro'
@@ -164,7 +165,7 @@ export const Number = () => (
 export const Password = () => (
   <Wrapper bgColor='black-darker'>
     <Input
-      style={{marginBottom: 0}}
+      style={{ marginBottom: 0 }}
       name='password'
       label='Password'
       type='password'
@@ -173,5 +174,4 @@ export const Password = () => (
       autoFocus
     />
   </Wrapper>
-
 )
