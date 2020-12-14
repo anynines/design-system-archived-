@@ -86,7 +86,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     align-items: flex-start;
     position: relative;
     background-color: var(--bg-color);
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
     flex: 3;
