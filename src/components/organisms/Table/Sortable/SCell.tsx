@@ -5,12 +5,12 @@ import { SortableTableSortDirection, SortableTableContext } from './SortableTabl
 import { Icon } from '../../../atoms/Icon/Icon'
 
 // T Y P E S
-export type SCellType = 'head' | 'body'
+export type SCellType = 'head' | 'data'
 export type SCellColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success' | 'notice'
 
 export interface SCellProps {
-  type: SCellType
-  value?: string | boolean | number
+  type?: SCellType
+  value?: string | number
   color?: SCellColor
   field?: string
   sortable?: boolean
@@ -22,7 +22,7 @@ export const SCell: FC<SCellProps> = (props) => {
   const {
     sortable = false,
     field = '',
-    type,
+    type = 'data',
     value,
     color = null,
     children
