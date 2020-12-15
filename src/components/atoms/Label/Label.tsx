@@ -40,11 +40,9 @@ export const Label: React.FC<LabelProps> = ({
 // S T Y L E S
 const StyledLabel = styled.span`
   z-index: 10;
-  font-size: var(--text-md);
-  border-radius: var(--radius);
   margin-left: 10px;
   padding: 4px 8px;
-  font-size: 12px;
+  font-size: var(--text-md);
   font-weight: var(--font-weight-rg);
   border-radius: calc(var(--radius) / 2);
 
