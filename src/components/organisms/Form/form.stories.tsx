@@ -34,7 +34,6 @@ export const Basic = () => (
       <Input name='userEmail' type='email' label='Email' autoComplete='off' />
       <Input name='Text' type='text' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} errorMessage='Please enter a 4 digits number' />
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
-      <Input type='date' name='date' label='Enter a date' />
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
       <ButtonGroup>
         <Button type='black' width='block'>Cancel</Button>

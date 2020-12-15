@@ -30,7 +30,7 @@ export const Overview = () => (
         <Color
           color='var(--color-primary)'
           colorLabel='Primary'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-primary-dark)'
@@ -46,7 +46,7 @@ export const Overview = () => (
         <Color
           color='var(--color-black)'
           colorLabel='Black'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-black-90)'
@@ -90,7 +90,7 @@ export const Overview = () => (
         <Color
           color='var(--color-dark)'
           colorLabel='Dark'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-dark-90)'
@@ -135,7 +135,7 @@ export const Overview = () => (
           color='var(--color-light)'
           colorLabel='Light'
           textColor='var(--color-black)'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-light-90)'
@@ -189,7 +189,7 @@ export const Overview = () => (
           color='var(--color-white)'
           colorLabel='White'
           textColor='var(--color-black)'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-white-90)'
@@ -250,7 +250,7 @@ export const Overview = () => (
         <Color
           color='var(--color-success)'
           colorLabel='Success'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-success-dark)'
@@ -274,7 +274,7 @@ export const Overview = () => (
         <Color
           color='var(--color-notice)'
           colorLabel='Notice'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-notice-dark)'
@@ -298,7 +298,7 @@ export const Overview = () => (
         <Color
           color='var(--color-warning)'
           colorLabel='Warning'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-warning-dark)'
@@ -322,7 +322,7 @@ export const Overview = () => (
         <Color
           color='var(--color-error)'
           colorLabel='Error'
-          mainColor={true}
+          mainColor
         />
         <Color
           color='var(--color-error-dark)'

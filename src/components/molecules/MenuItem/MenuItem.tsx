@@ -9,6 +9,7 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 export interface MenuItemProps {
   active?: boolean
   bgColor?: string
+  exact?: boolean
   children?: JSX.Element
   className?: string
   counter?: boolean
@@ -24,6 +25,7 @@ export interface MenuItemProps {
 export const MenuItem: React.FC<MenuItemProps> = ({
   active = false,
   bgColor,
+  exact = false,
   children,
   className,
   counter = false,
@@ -45,7 +47,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           style={style}
         >
           <NavLink
-            exact
+            exact={exact}
             to={`${path}`}
             className='wrapper'
             activeClassName='active'

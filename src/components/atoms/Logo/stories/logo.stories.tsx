@@ -31,7 +31,7 @@ export const Vertical = (args: LogoProps) => (
     <Wrapper>
       <Logo
         path='/test'
-        vertical={true}
+        vertical
         src={globals.logos.vertical.light}
         onClick={action('button-click')}
       />
@@ -39,7 +39,7 @@ export const Vertical = (args: LogoProps) => (
     <Wrapper bgColor='light'>
       <Logo
         path='/test'
-        vertical={true}
+        vertical
         src={globals.logos.vertical.dark}
         onClick={action('button-click')}
       />

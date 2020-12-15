@@ -94,7 +94,7 @@ export const Input: Input = (props) => {
         return (
           <TextInput
             {...props}
-            pattern={pattern || /^.{2,30}$/}
+            pattern={pattern || /^.{2,100}$/}
           >
             {children}
           </TextInput>

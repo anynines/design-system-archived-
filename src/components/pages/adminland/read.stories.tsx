@@ -52,7 +52,7 @@ export const Read = () => (
               <Row style={{flexWrap: 'nowrap'}}>
                 <Col>
                   <Input
-                    disabled={true}
+                    disabled
                     icon='user'
                     label='First Name'
                     name='firstName'
@@ -63,7 +63,7 @@ export const Read = () => (
                 </Col>
                 <Col>
                   <Input
-                    disabled={true}
+                    disabled
                     icon='user'
                     label='Last Name'
                     name='lastName'
@@ -73,7 +73,7 @@ export const Read = () => (
                 </Col>
               </Row>
               <Input
-                disabled={true}
+                disabled
                 icon='send'
                 label='Email'
                 name='email'
@@ -81,7 +81,7 @@ export const Read = () => (
                 value='johndoe@gmail.com'
               />
               <Input
-                disabled={true}
+                disabled
                 icon='home'
                 label='Address'
                 name='address'
