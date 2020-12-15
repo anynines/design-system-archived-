@@ -73,9 +73,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             className={`wrapper ${active && 'active'} ${counter && 'counter'}`}
           >
             {icon && <Icon icon={icon} />}
-            {children !== undefined ? (
-              <span className='label'>{children}</span>
-            ) : (<></>)}
+            {children !== undefined
+              ? <span className='label'>{children}</span>
+              : <></>}
           </div>
         </StyledMenuItem>
       )}
