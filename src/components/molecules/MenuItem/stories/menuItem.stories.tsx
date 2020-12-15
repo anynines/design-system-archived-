@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { action } from '@storybook/addon-actions'
 
 import { MenuItem, MenuItemProps } from '../MenuItem'
@@ -78,21 +79,21 @@ export const Label = () => (
 
 export const LabelInline = () => (
   <Wrapper>
-    <MenuItem 
-      vertical 
+    <MenuItem
+      vertical
       onClick={action('label clicked')}
     >
       <>Label inline</>
     </MenuItem>
   </Wrapper>
 )
-  
+
 
 export const Icon = () => (
   <Wrapper>
-    <MenuItem 
-      icon={'menu'} 
-      vertical 
+    <MenuItem
+      icon={'menu'}
+      vertical
       onClick={action('label clicked')}
     />
   </Wrapper>
@@ -100,12 +101,27 @@ export const Icon = () => (
 
 export const IconAndLabel = () => (
   <Wrapper>
-    <MenuItem 
-      icon={'menu'} 
-      vertical 
+    <MenuItem
+      icon={'menu'}
+      vertical
       onClick={action('label clicked')}
     >
       <>Icon and Label</>
     </MenuItem>
+  </Wrapper>
+)
+
+export const Active = () => (
+  <Wrapper>
+    <BrowserRouter>
+      <MenuItem
+        active
+        icon={'users'}
+        vertical
+        onClick={action('label clicked')}
+      >
+        <>Users</>
+      </MenuItem>
+    </BrowserRouter>
   </Wrapper>
 )
