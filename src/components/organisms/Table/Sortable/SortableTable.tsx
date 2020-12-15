@@ -11,7 +11,7 @@ export type SortableTableSortDirection = 'asc' | 'desc' | null
 export interface SortableTableProps {
   sortData: SortableTableRow[]
   originalData: SortableTableRow[]
-  setSortData: Dispatch<SetStateAction<SortableTableRow[]>>
+  setSortData: (data: SortableTableRow[]) => void
   onSort?: (sortArgs: SortableTableSortArgs) => void
 }
 
@@ -20,7 +20,7 @@ export interface SortableTableContextProps {
   sortDirection: SortableTableSortDirection
   sortedBy: string
   setSortDirection: Dispatch<SetStateAction<SortableTableSortDirection>>
-  setSortData: Dispatch<SetStateAction<SortableTableRow[]>>
+  setSortData: (data: SortableTableRow[]) => void
   setSortedBy: Dispatch<SetStateAction<string>>
   onSort?: (sortArgs: SortableTableSortArgs) => void
 }
@@ -28,7 +28,7 @@ export interface SortableTableContextProps {
 export interface SortableTableSortArgs {
   field: string
   sortDirection: SortableTableSortDirection
-  setSortData: Dispatch<SetStateAction<SortableTableRow[]>>
+  setSortData: (data: SortableTableRow[]) => void
   originalData: SortableTableRow[]
   sortData: SortableTableRow[]
 }
@@ -43,11 +43,15 @@ export const SortableTableContext = React.createContext<SortableTableContextProp
 export const SortableTable: React.FC<SortableTableProps> = (props) => {
   const {
     sortData,
-    setSortData,
+    setSortData: setSortDataProps,
     onSort,
     originalData,
     children
   } = props
+
+  const setSortData = React.useCallback((data: SortableTableRow[]) => {
+    setSortDataProps(data)
+  }, [setSortDataProps])
 
   const [currentSortedBy, setCurrentSortedBy] = React.useState<string>('')
   const [currentSortDirection, setCurrentSortDirection] = React.useState<SortableTableSortDirection>(null)
@@ -73,7 +77,10 @@ export const SortableTable: React.FC<SortableTableProps> = (props) => {
       }
       onSort(args)
     }
-  }, [onSort, currentSortDirection]) // eslint-disable-line
+
+    // sortData is missing in the dependency because it produce an infinite rerender loop
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onSort, currentSortDirection, currentSortedBy, setSortData, originalData])
 
   return (
     <SortableTableContext.Provider value={childrenProps}>
