@@ -22,8 +22,8 @@ export const handleSort = (sortArgs: SortableTableSortArgs): void => {
   let sortedData: SortableTableRow[] = []
 
   sortedData = newData.sort((firstItem, secondItem) => {
-    const firstValue: string | boolean | number = getCellValue(firstItem, field)
-    const secondValue: string | boolean | number = getCellValue(secondItem, field)
+    const firstValue = getCellValue(firstItem, field)
+    const secondValue = getCellValue(secondItem, field)
 
     if (typeof firstValue === 'string' && typeof secondValue === 'string') return firstValue.charCodeAt(0) - secondValue.charCodeAt(0)
     if (typeof firstValue === 'number' && typeof secondValue === 'number') return Number(firstValue) - Number(secondValue)

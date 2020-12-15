@@ -24,7 +24,7 @@ export const SCell: FC<SCellProps> = (props) => {
     field = '',
     type,
     value,
-    color,
+    color = null,
     children
   } = props
 
@@ -58,7 +58,7 @@ export const SCell: FC<SCellProps> = (props) => {
 
   const renderSortableIcon = (): JSX.Element | null => {
     if (onSort && sortable && sortedBy === field) {
-      if (sortDirection === 'desc') return <Icon className='inverted' icon='caretDown' />
+      if (sortDirection === 'desc') return <Icon className='reverted' icon='caretDown' />
       if (sortDirection === 'asc') return <Icon icon='caretDown' />
     }
     if (onSort && sortable && (sortDirection === null || sortedBy !== field)) return <Icon icon='unorderedList' />
@@ -80,7 +80,7 @@ export const SCell: FC<SCellProps> = (props) => {
   }
 
   return (
-    <StyledBodyCell className={color || null}>
+    <StyledBodyCell className={color}>
       <div>
         {renderValue()}
       </div>
@@ -150,7 +150,7 @@ const StyledBodyCell = styled.td`
     background-color: var(--color-primary);
   }
 
-  .inverted {
+  .reverted {
     display: flex;
     transform: rotate(-180deg);
   }

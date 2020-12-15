@@ -22,10 +22,10 @@ const StyledTHead = styled.thead`
   tr {
     &:last-child {
       td:first-child {
-        border-top-left-radius: 5px;
+        border-top-left-radius: var(--radius);
       }
       td:last-child {
-        border-top-right-radius: 5px;
+        border-top-right-radius: var(--radius);
       }
     } 
   }
