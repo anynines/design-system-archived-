@@ -65,6 +65,12 @@ const StyledCheckbox = styled.div`
     font-size: var(--text-md);
     cursor: pointer;
 
+    &:hover {
+      &::before {
+        border-color: var(--color-white-20);
+      }
+    }
+
     &::before,
     &::after {
       display: flex;
