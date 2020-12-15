@@ -1,5 +1,3 @@
-import { ReactNode, cloneElement, Children } from 'react'
-
 export const getStylePropVal = (elem: HTMLElement, prop: string): string => {
   return getComputedStyle(elem).getPropertyValue(prop)
 }
