@@ -56,7 +56,7 @@ const StyledButton = styled.button`
   border: none;
   border: var(--border);
   cursor: pointer;
-  padding: var(--space-lg) var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
   width: auto;
   color: var(--color-white);
   font-family: var(--font-family);

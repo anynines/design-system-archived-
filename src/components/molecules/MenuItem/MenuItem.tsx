@@ -95,7 +95,7 @@ interface StyledMenuItemProps {
 // S T Y L E S
 const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --display: ${(props): string => { return props.vertical ? 'inline-block' : 'block' }};
-  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-md) 0' : '0 var(--space-sm)' }};
+  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-md) 0' : '0 var(--space-xs)' }};
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
 

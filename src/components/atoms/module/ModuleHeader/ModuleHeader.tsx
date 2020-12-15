@@ -32,7 +32,7 @@ const StyledModuleHeader = styled.div`
   color: var(--color-white-fix);
 
   i {
-    margin-right: var(--space-sm);
+    margin-right: var(--space-xs);
   }
 
   span {
