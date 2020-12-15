@@ -49,7 +49,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           <NavLink
             exact={exact}
             to={`${path}`}
-            className='wrapper'
+            className={`wrapper ${active && 'active'}`}
             activeClassName='active'
           >
             {icon && <Icon icon={icon} />}
