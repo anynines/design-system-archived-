@@ -26,7 +26,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       className={`checkbox ${className}`}
       value={value}
     >
-      <input type="checkbox" id={id} checked={value} />
+      <input type='checkbox' id={id} checked={value} />
       <label htmlFor={id} onClick={(): void => { return (onClick && onClick()) }}>
         {label}
       </label>
