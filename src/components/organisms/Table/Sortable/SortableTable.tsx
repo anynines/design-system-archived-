@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // T Y P E S
 export interface SortableTableRow {
-  [key: string]: string | boolean | number | string[] | number[]
+  [key: string]: string | number
 }
 
 export type SortableTableSortDirection = 'asc' | 'desc' | null
