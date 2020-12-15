@@ -31,6 +31,12 @@ export default {
     onClose: {
       control: { type: 'disabled' },
     },
+    withTimeout: {
+      control: { type: 'boolean' },
+    },
+    timerCount: {
+      control: { type: 'number' },
+    },
     size: {
       name: 'IconSize',
       control: {
@@ -53,44 +59,61 @@ export const Basic = (args: AlertProps) => (
 
 export const Success = () => (
   <Wrapper>
-    <Alert 
-      title={'Success'} 
-      description={'Place your success message here.'} 
-      type={'success'} 
-      onClose={action('label clicked')} 
-      />
+    <Alert
+      title={'Success'}
+      description={'Place your success message here.'}
+      type={'success'}
+      onClose={action('label clicked')}
+      withTimeout={false}
+    />
   </Wrapper>
 )
 
 export const Notice = () => (
   <Wrapper>
-    <Alert 
-      title={'Notice'} 
-      description={'Place your notice message here.'} 
-      type={'notice'} 
-      onClose={action('label clicked')} 
-      />
+    <Alert
+      title={'Notice'}
+      description={'Place your notice message here.'}
+      type={'notice'}
+      onClose={action('label clicked')}
+      withTimeout={false}
+    />
   </Wrapper>
 )
 
 export const Warning = () => (
   <Wrapper>
-    <Alert 
-      title={'Warning'} 
-      description={'Place your warning message here.'} 
-      type={'warning'} 
-      onClose={action('label clicked')} 
-      />
+    <Alert
+      title={'Warning'}
+      description={'Place your warning message here.'}
+      type={'warning'}
+      onClose={action('label clicked')}
+      withTimeout={false}
+    />
   </Wrapper>
 )
 
 export const Error = () => (
   <Wrapper>
-    <Alert 
-      title={'Error'} 
-      description={'Place your error message here.'} 
-      type={'error'} 
-      onClose={action('label clicked')} 
+    <Alert
+      title={'Error'}
+      description={'Place your error message here.'}
+      type={'error'}
+      onClose={action('label clicked')}
+      withTimeout={false}
+    />
+  </Wrapper>
+)
+
+export const withTimeout = () => (
+  <Wrapper>
+    <Alert
+      withTimeout
+      timerCount={2000}
+      title={'With Timeout'}
+      description={'Place your error message here.'}
+      type={'error'}
+      onClose={action('label clicked')}
     />
   </Wrapper>
 )

@@ -12,7 +12,9 @@ export interface AlertProps {
   size?: IconSize
   style?: React.CSSProperties
   title: string
+  timerCount?: number
   type: AlertType
+  withTimeout?: boolean
 }
 
 interface AlertStyledProps {
@@ -26,12 +28,26 @@ export const Alert: React.FC<AlertProps> = ({
   size = 'md',
   style,
   title,
-  type = 'success'
+  timerCount = 2000,
+  type = 'success',
+  withTimeout = 'true'
 }) => {
+  const [hideAlert, setHideAlert] = React.useState(false)
+
+  React.useEffect(() => {
+    if (withTimeout) {
+      let timer = setTimeout(() => setHideAlert(true), timerCount)
+
+      return () => {
+        clearTimeout(timer)
+      }
+    }
+  }, [])
+
   if (!title || !description) return null
   return (
     <AlertWrapper
-      className={`alert-wrapper ${className} ${type}`}
+      className={`alert-wrapper ${className} ${type} ${hideAlert && 'hidden'}`}
       style={style}
     >
       <div className='alert-icon'>
@@ -59,6 +75,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
+  transition: var(--transition);
 
   .alert-icon {
     display: flex;
@@ -127,6 +144,10 @@ const AlertWrapper = styled.div<AlertStyledProps>`
       width: 1em;
       height: 1em;
     }
+  }
+
+  &.hidden {
+    opacity: 0;
   }
 
   &.notice {
