@@ -58,18 +58,18 @@ export const Sizes = () => (
 export const Level = () => (
   <Wrapper justify='space-around'>
     <Avatar size={'md'} avatar={sampleAvatarUrl} level={46} />
-    <Avatar size={'md'} avatar={sampleAvatarUrl} level={46} rounded={true} />
+    <Avatar size={'md'} avatar={sampleAvatarUrl} level={46} rounded />
   </Wrapper>
 )
 
 export const Rounded = () => (
   <Wrapper>
-    <Avatar size={'md'} avatar={sampleAvatarUrl} rounded={true} />
+    <Avatar size={'md'} avatar={sampleAvatarUrl} rounded />
   </Wrapper>
 )
 
 export const WithoutAvatar = () => (
   <Wrapper>
-    <Avatar size={'md'} userName={sampleUserName} level={46} rounded={true} />
+    <Avatar size={'md'} userName={sampleUserName} level={46} rounded />
   </Wrapper>
 )

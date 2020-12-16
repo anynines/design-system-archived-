@@ -30,7 +30,7 @@ const StyledTopNavigation = styled.div`
   left: 0;
   z-index: 100;
   border-bottom: 1px solid var(--color-white-10);
-  background: var(--color-darker);
+  background: var(--color-black-darker);
   padding: 20px;
   width: 100%;
   height: 80px;
@@ -40,5 +40,11 @@ const StyledTopNavigation = styled.div`
   .wrapper {
     display: flex;
     align-items: center;
+  }
+
+  .toggle-layout {
+    #toggle-layout-bg {
+      fill: var(--black-darker);
+    }
   }
 `

@@ -17,13 +17,17 @@
       "description": "Some short description of your change."
     },
     {
-      "title": "🌱 Molecules/Your Component",
+      "title": "🌳 Organisms/Your Component",
       "description": "Some short description of your change."
     }
   ],
   "Removed": [
     {
-      "title": "🌳 Organisms/Your Component",
+      "title": "📄 Templates/Your Component",
+      "description": "Some short description of your change."
+    },
+    {
+      "title": "📙 Pages/Your Component",
       "description": "Some short description of your change."
     }
   ]

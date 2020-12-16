@@ -45,6 +45,7 @@ const StyledCaretLink = styled.div`
     text-decoration: none;
     color: var(--color-white);
     transition: var(--transition);
+    outline: none;
 
     i {
       position: absolute;
@@ -62,7 +63,7 @@ const StyledCaretLink = styled.div`
       transition: var(--transition);
     }
 
-    &:hover {
+    &:hover, &:focus {
       padding-left: 0;
 
       i {

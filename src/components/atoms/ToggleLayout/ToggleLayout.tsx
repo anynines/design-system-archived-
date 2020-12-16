@@ -14,24 +14,23 @@ export const ToggleLayout: React.FC<ToggleLayoutProps> = ({
       <NavLink to={to}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          width='59.963'
+          width='59.967'
           height='59.716'
-          viewBox='0 0 59.963 59.716'
-          className='toggle-layout'
+          viewBox='0 0 59.967 59.716'
         >
           <g
-            id='Gruppe_3068'
-            data-name='Gruppe 3068'
-            transform='translate(0.002)'
+            id='Gruppe_17157'
+            data-name='Gruppe 17157'
+            transform='translate(0.002 0.001)'
           >
             <path
-              id='Vereinigungsmenge_20'
+              id='toggle-layout-bg'
               data-name='Vereinigungsmenge 20'
-              d='M6074,9391.716V9352h0v-10a10,10,0,0,1,10-10h30v0h19.961A19.979,19.979,0,0,0,6114,9351.462v.54a20,20,0,0,1-20,20l-.007,0a19.979,19.979,0,0,0-19.99,19.712Z'
+              d='M6074,9391.716V9352h0v-20h9.791c.07,0,.141,0,.209,0h30v0h19.964A19.979,19.979,0,0,0,6114,9351.462v.54a20,20,0,0,1-20,20l-.007,0a19.979,19.979,0,0,0-19.99,19.712Z'
               transform='translate(-6074.002 -9332.001)'
-              fill='var(--color-white-10)'
+              fill='var(--color-black)'
             />
-            <g id='awdawdawdaw' transform='translate(12.854 13.944)'>
+            <g id='icon' transform='translate(12.854 13.944)'>
               <path
                 id='Pfad_296'
                 data-name='Pfad 296'
@@ -51,4 +50,13 @@ const StyledToggleLayout = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  #toggle-layout-bg {
+    transition: var(--transition);
+  }
+  &:hover {
+    #toggle-layout-bg {
+      fill: var(--color-primary);
+      box-shadow: var(--box-shadow);
+    }
+  }
 `
