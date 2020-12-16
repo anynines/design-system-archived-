@@ -6,6 +6,7 @@ import { Button } from '../../atoms/Button/Button'
 import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
 import { Select } from '../../atoms/Select/Select'
 import Wrapper from '../../_helpers/Wrapper'
+import { Checkbox } from '../../atoms/Checkbox/Checkbox'
 
 export default {
   title: '🌳 Organisms/Form',

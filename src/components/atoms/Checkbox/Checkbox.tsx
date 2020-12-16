@@ -1,42 +1,87 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
 // I N T E R F A C E
 export interface CheckboxProps {
+  checked?: boolean
   className?: string
   label: string
-  id: string
-  onClick?: () => void
+  errors?: NestDataObject<Record<string, string>, FieldError>
+  errorMessage?: string
+  name: string
+  onChange?: (value: boolean) => void
+  register?: (validationRules: ValidationOptions) => void
   style?: React.CSSProperties
-  value: boolean
+  setValue?: any
+  required?: boolean
+  watch?: any
 }
 
 // C O M P O N E N T
 export const Checkbox: React.FC<CheckboxProps> = ({
+  checked = false,
   className,
-  onClick,
-  id = 'checkbox-id',
   label,
-  value = false,
+  name,
+  onChange,
+  errors = {},
+  errorMessage,
+  watch,
+  setValue,
+  register,
+  required = false,
   style
 }) => {
+
+  const getDefaultValue = (): boolean => {
+    if (register) return watch(name) || false
+    return checked
+  }
+
+  const [valueState, setValueState] = React.useState(getDefaultValue())
+
+  React.useEffect(() => {
+    if (register) setValue(name, valueState)
+    else if (onChange) onChange(valueState)
+  }, [register, setValue, name, valueState, onChange])
+
+  const renderErrorMessage = (): JSX.Element | null => {
+    if (errors[name] !== undefined) {
+      return (
+        <span className='error'>
+          {errorMessage || `${name.toLowerCase()} must be checked`}
+        </span>
+      )
+    }
+
+    return null
+  }
+
   return (
     <StyledCheckbox
       style={style}
       className={`checkbox ${className}`}
-      value={value}
     >
-      <input type='checkbox' id={id} checked={value} />
-      <label htmlFor={id} onClick={(): void => { return (onClick && onClick()) }}>
+      <input
+        type='checkbox'
+        checked={valueState}
+        ref={register ? register({ required }) as unknown as undefined : undefined}
+        id={name}
+        name={name}
+        onChange={(): void => { return setValueState(!valueState) }}
+      />
+      <label htmlFor={name}>
         {label}
       </label>
+      {renderErrorMessage()}
     </StyledCheckbox>
   )
 }
 
 // S T Y L E S
 const StyledCheckbox = styled.div`
-  --size: 1.875rem;
+  --size: 1.5rem;
 
   input[type] {
     display: none;
@@ -47,11 +92,11 @@ const StyledCheckbox = styled.div`
       }
 
       &::after {
-        margin: .375rem;
+        margin: .3125rem;
         border-radius: calc(var(--radius) / 4);
         background-color: var(--color-primary);
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 1rem;
+        height: 1rem;
         opacity: 1;
       }
     }

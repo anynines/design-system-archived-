@@ -31,18 +31,18 @@ export default {
 export const Basic = (args: AuthLayoutProps) => (
   <MemoryRouter>
     <AuthLayout {...args}>
-      <h2 style={{marginBottom: 30}}>Headline</h2>
-      <Input 
-        type='email' 
-        label='Email' 
-        icon='send' 
-        name='email'/>
-      <Input 
-        type='password' 
-        label='Password' 
-        icon='lock' 
-        name='password'/>
-      <Button style={{marginBottom: 30}} width='block'>Login</Button>
+      <h2 style={{ marginBottom: 30 }}>Headline</h2>
+      <Input
+        type='email'
+        label='Email'
+        icon='send'
+        name='email' />
+      <Input
+        type='password'
+        label='Password'
+        icon='lock'
+        name='password' />
+      <Button style={{ marginBottom: 30 }} width='block'>Login</Button>
       <CaretLink
         path='/forgot-password'
         text='Forgot your password?'
