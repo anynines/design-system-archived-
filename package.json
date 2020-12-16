@@ -20,6 +20,7 @@
     "react-dates": "^21.8.0",
     "react-dom": "^16.6.3",
     "react-grid-system": "^6.3.0",
+    "react-highlight.js": "^1.0.7",
     "react-hook-form": "^5.2.0",
     "react-is": "^16.13.1",
     "react-router-dom": "^5.1.2",
