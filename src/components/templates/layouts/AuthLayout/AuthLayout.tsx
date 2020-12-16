@@ -25,9 +25,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
         <div className='auth-form'>{children}</div>
         {authLayout !== 'center-full-bg' ? (
           <div className='auth-image' />
-        ) : (
-            <></>
-          )}
+        ) : (<></>)}
       </div>
     </StyledAuthLayout>
   )

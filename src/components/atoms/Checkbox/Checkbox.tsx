@@ -6,34 +6,31 @@ import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 export interface CheckboxProps {
   checked?: boolean
   className?: string
-  label: string
   errors?: NestDataObject<Record<string, string>, FieldError>
-  errorMessage?: string
+  label: string
   name: string
   onChange?: (value: boolean) => void
   register?: (validationRules: ValidationOptions) => void
-  style?: React.CSSProperties
-  setValue?: any
   required?: boolean
-  watch?: any
+  setValue?: any // eslint-disable-line
+  style?: React.CSSProperties
+  watch?: any // eslint-disable-line
 }
 
 // C O M P O N E N T
 export const Checkbox: React.FC<CheckboxProps> = ({
   checked = false,
   className,
+  errors = {},
   label,
   name,
   onChange,
-  errors = {},
-  errorMessage,
-  watch,
-  setValue,
   register,
   required = false,
-  style
+  setValue,
+  style,
+  watch
 }) => {
-
   const getDefaultValue = (): boolean => {
     if (register) return watch(name) || false
     return checked
@@ -46,22 +43,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     else if (onChange) onChange(valueState)
   }, [register, setValue, name, valueState, onChange])
 
-  const renderErrorMessage = (): JSX.Element | null => {
-    if (errors[name] !== undefined) {
-      return (
-        <span className='error'>
-          {errorMessage || `${name.toLowerCase()} must be checked`}
-        </span>
-      )
-    }
-
-    return null
-  }
-
   return (
     <StyledCheckbox
       style={style}
-      className={`checkbox ${className}`}
+      className={`checkbox ${className} ${errors && errors[name] !== undefined ? 'error' : ''}`}
     >
       <input
         type='checkbox'
@@ -74,7 +59,6 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <label htmlFor={name}>
         {label}
       </label>
-      {renderErrorMessage()}
     </StyledCheckbox>
   )
 }
@@ -82,6 +66,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 // S T Y L E S
 const StyledCheckbox = styled.div`
   --size: 1.5rem;
+
+  margin-bottom: var(--space-xl);
 
   input[type] {
     display: none;
@@ -137,6 +123,14 @@ const StyledCheckbox = styled.div`
 
     &::after {
       opacity: 0;
+    }
+  }
+
+  &.error {
+    label {
+      &::before {
+        border-color: var(--color-error);
+      }
     }
   }
 `

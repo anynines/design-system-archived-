@@ -36,6 +36,7 @@ export const Basic = () => (
       <Input name='Text' type='text' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} errorMessage='Please enter a 4 digits number' />
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
+      <Checkbox name='userTermsCheckbox' label='Please agree to our terms of use' required />
       <ButtonGroup>
         <Button type='black' width='block'>Cancel</Button>
         <Button type='submit' width='block'>Submit</Button>
