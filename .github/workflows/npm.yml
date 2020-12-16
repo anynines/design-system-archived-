@@ -8,13 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build and Deploy 🚀
-        # Setup .npmrc file to publish to npm
-        - uses: actions/setup-node@v1
+        uses: actions/setup-node@v1
           with:
             node-version: '12.x'
             registry-url: 'https://npm.pkg.github.com'
-        - run: yarn
-        - run: yarn build
-        - run: yarn publish
+        run: yarn
+        run: yarn build
+        run: yarn publish
           env:
             NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
