@@ -69,38 +69,13 @@ const StyledCheckbox = styled.div`
 
   margin-bottom: var(--space-xl);
 
-  input[type] {
-    display: none;
-
-    &:checked + label {
-      &::before {
-        border-color: var(--color-white-30);
-      }
-
-      &::after {
-        margin: .3125rem;
-        border-radius: calc(var(--radius) / 4);
-        background-color: var(--color-primary);
-        width: 1rem;
-        height: 1rem;
-        opacity: 1;
-      }
-    }
-  }
-
   label {
     display: flex;
     align-items: center;
     position: relative;
+    cursor: pointer;
     padding-left: calc(var(--size) + var(--space-fixed-md));
     font-size: var(--text-md);
-    cursor: pointer;
-
-    &:hover {
-      &::before {
-        border-color: var(--color-white-20);
-      }
-    }
 
     &::before,
     &::after {
@@ -123,6 +98,31 @@ const StyledCheckbox = styled.div`
 
     &::after {
       opacity: 0;
+    }
+
+    &:hover {
+      &::before {
+        border-color: var(--color-white-20);
+      }
+    }
+  }
+
+  input[type] {
+    display: none;
+
+    &:checked + label {
+      &::before {
+        border-color: var(--color-white-30);
+      }
+
+      &::after {
+        opacity: 1;
+        margin: .3125rem;
+        border-radius: calc(var(--radius) / 4);
+        background-color: var(--color-primary);
+        width: 1rem;
+        height: 1rem;
+      }
     }
   }
 
