@@ -42,7 +42,6 @@ export const Alert: React.FC<AlertProps> = ({
 
     return (): void => {
       if (withTimeout) {
-        console.log('timer closed')
         clearTimeout(timer)
       }
     }
