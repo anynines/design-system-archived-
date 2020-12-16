@@ -14,7 +14,7 @@ export interface AlertProps {
   title: string
   timerCount?: number
   type: AlertType
-  withTimeout?: boolean
+  stay?: boolean
 }
 
 interface AlertStyledProps {
@@ -30,22 +30,22 @@ export const Alert: React.FC<AlertProps> = ({
   title,
   timerCount = 2000,
   type = 'success',
-  withTimeout = true
+  stay = false
 }) => {
   const [hideAlert, setHideAlert] = React.useState(false)
 
   React.useEffect(() => {
     let timer
-    if (withTimeout) {
+    if (!stay) {
       timer = setTimeout(() => { setHideAlert(true) }, timerCount)
     }
 
     return (): void => {
-      if (withTimeout) {
+      if (!stay) {
         clearTimeout(timer)
       }
     }
-  }, [timerCount, withTimeout])
+  }, [timerCount, stay])
 
   if (!title || !description) return null
   return (

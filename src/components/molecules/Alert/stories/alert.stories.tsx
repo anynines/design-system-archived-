@@ -31,7 +31,7 @@ export default {
     onClose: {
       control: { type: 'disabled' },
     },
-    withTimeout: {
+    stay: {
       control: { type: 'boolean' },
     },
     timerCount: {
@@ -64,7 +64,7 @@ export const Success = () => (
       description={'Place your success message here.'}
       type={'success'}
       onClose={action('label clicked')}
-      withTimeout={false}
+      stay={true}
     />
   </Wrapper>
 )
@@ -76,7 +76,7 @@ export const Notice = () => (
       description={'Place your notice message here.'}
       type={'notice'}
       onClose={action('label clicked')}
-      withTimeout={false}
+      stay={true}
     />
   </Wrapper>
 )
@@ -88,7 +88,7 @@ export const Warning = () => (
       description={'Place your warning message here.'}
       type={'warning'}
       onClose={action('label clicked')}
-      withTimeout={false}
+      stay={true}
     />
   </Wrapper>
 )
@@ -100,18 +100,24 @@ export const Error = () => (
       description={'Place your error message here.'}
       type={'error'}
       onClose={action('label clicked')}
-      withTimeout={false}
+      stay={true}
     />
   </Wrapper>
 )
 
-export const withTimeout = () => (
-  <Wrapper>
+export const stay = () => (
+  <Wrapper direction='column' justify='space-between' height='250px' >
     <Alert
-      withTimeout
+      stay={true}
+      title={'Without Timeout'}
+      description={'Set Stay to true.'}
+      type={'success'}
+      onClose={action('label clicked')}
+    />
+    <Alert
       timerCount={2000}
       title={'With Timeout'}
-      description={'Place your error message here.'}
+      description={'Stay is default set to false'}
       type={'error'}
       onClose={action('label clicked')}
     />
