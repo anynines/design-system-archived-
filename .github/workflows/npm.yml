@@ -4,16 +4,17 @@ on:
     tags:
       - v*.*.*
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build and Deploy 🚀
-        uses: actions/setup-node@v1
-          with:
-            node-version: '12.x'
-            registry-url: 'https://npm.pkg.github.com'
-        run: yarn
-        run: yarn build
-        run: yarn publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v2
+    # Setup .npmrc file to publish to npm
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://npm.pkg.github.com'
+    - run: yarn
+    - run: yarn build
+    - run: yarn publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
