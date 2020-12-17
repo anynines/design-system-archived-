@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 // I N T E R F A C E
 export interface SlideProps {
   src: string
