@@ -55,9 +55,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : (
-                <></>
-              )}
+            ) : (<></>)}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -77,9 +75,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : (
-                <></>
-              )}
+            ) : (<></>)}
           </div>
         </StyledMenuItem>
       )}
@@ -146,12 +142,12 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     &.counter {
       &::after {
         position: absolute;
-        top: -0.45rem;
-        right: -0.45rem;
+        top: -.45rem;
+        right: -.45rem;
         border: 2px solid var(--color-black);
         background-color: var(--color-primary);
-        width: 0.8rem;
-        height: 0.8rem;
+        width: .8rem;
+        height: .8rem;
         content: '';
         border-radius: 100%;
       }
@@ -161,6 +157,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     &:hover {
       background-color: var(--color-primary);
       color: var(--color-white-fix);
+      
       .label {
         color: var(--color-white-fix);
       }
@@ -170,6 +167,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   &.black {
     .wrapper {
       background-color: var(--color-black);
+
       &:hover {
         background-color: var(--color-primary);
       }
@@ -179,6 +177,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   &.primary {
     .wrapper {
       background-color: var(--color-primary);
+      
       &:hover {
         background-color: var(--color-primary-light);
       }

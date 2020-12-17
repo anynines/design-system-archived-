@@ -47,10 +47,10 @@ const StyledTooltip = styled.div`
     position: relative;
     z-index: 990;
     border: var(--border);
-    padding: 8px;
+    padding: var(--space-xs);
     white-space: nowrap;
     font-family: var(--font-family);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     max-width: 13.75rem;

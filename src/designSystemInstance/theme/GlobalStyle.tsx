@@ -54,29 +54,29 @@ export const GlobalStyle = createGlobalStyle`
     --transition-ease-in-out-300: 0.3s ease-in-out;
 
     /* S P A C I N G */
-    --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }}; // 16px
-    --space-xxs:  calc(var(--space-unit) * 0.25); // 4px
-    --space-xs:  calc(var(--space-unit) * 0.5);   // 8px
-    --space-sm:  calc(var(--space-unit) * 0.75);  // 12px
-    --space-md:  calc(var(--space-unit));         // 16px 
-    --space-lg: calc(var(--space-unit) * 1.25);   // 20px
-    --space-xl: calc(var(--space-unit) * 1.5);    // 24px
-    --space-xxl:  calc(var(--space-unit) * 2);    // 32px
-    --space-xxxl:  calc(var(--space-unit) * 2.5); // 40px
-    --space-huge: calc(var(--space-unit) * 4);    // 64px
-    --space-giant: calc(var(--space-unit) * 8);   // 128px
+    --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }}; /* 16px */
+    --space-xxs:  calc(var(--space-unit) * 0.25); /* 4px */
+    --space-xs:  calc(var(--space-unit) * 0.5);   /* 8px */
+    --space-sm:  calc(var(--space-unit) * 0.75);  /* 12px */
+    --space-md:  calc(var(--space-unit));         /* 16px */
+    --space-lg: calc(var(--space-unit) * 1.25);   /* 20px */
+    --space-xl: calc(var(--space-unit) * 1.5);    /* 24px */
+    --space-xxl:  calc(var(--space-unit) * 2);    /* 32px */
+    --space-xxxl:  calc(var(--space-unit) * 2.5); /* 40px */
+    --space-huge: calc(var(--space-unit) * 4);    /* 64px */
+    --space-giant: calc(var(--space-unit) * 8);   /* 128px */
     
-    --space-unit-fixed: ${(props): string => { return props.theme.globals.spacing.fixedUnit }}; // 16px
-    --space-fixed-xxs:  calc(var(--space-unit-fixed) * 0.25); // 4px
-    --space-fixed-xs:  calc(var(--space-unit-fixed) * 0.5);   // 8px
-    --space-fixed-sm:  calc(var(--space-unit-fixed) * 0.75);  // 12px
-    --space-fixed-md:  calc(var(--space-unit-fixed));         // 16px 
-    --space-fixed-lg: calc(var(--space-unit-fixed) * 1.25);   // 20px
-    --space-fixed-xl: calc(var(--space-unit-fixed) * 1.5);    // 24px
-    --space-fixed-xxl:  calc(var(--space-unit-fixed) * 2);    // 32px
-    --space-fixed-xxxl:  calc(var(--space-unit-fixed) * 2.5); // 40px
-    --space-fixed-huge: calc(var(--space-unit-fixed) * 4);    // 64px
-    --space-fixed-giant: calc(var(--space-unit-fixed) * 8);   // 128px
+    --space-unit-fixed: ${(props): string => { return props.theme.globals.spacing.fixedUnit }}; /* 16px */
+    --space-fixed-xxs:  calc(var(--space-unit-fixed) * 0.25); /* 4px */
+    --space-fixed-xs:  calc(var(--space-unit-fixed) * 0.5);   /* 8px */
+    --space-fixed-sm:  calc(var(--space-unit-fixed) * 0.75);  /* 12px */
+    --space-fixed-md:  calc(var(--space-unit-fixed));         /* 16px  */
+    --space-fixed-lg: calc(var(--space-unit-fixed) * 1.25);   /* 20px */
+    --space-fixed-xl: calc(var(--space-unit-fixed) * 1.5);    /* 24px */
+    --space-fixed-xxl:  calc(var(--space-unit-fixed) * 2);    /* 32px */
+    --space-fixed-xxxl:  calc(var(--space-unit-fixed) * 2.5); /* 40px */
+    --space-fixed-huge: calc(var(--space-unit-fixed) * 4);    /* 64px */
+    --space-fixed-giant: calc(var(--space-unit-fixed) * 8);   /* 128px */
     
     /* T Y P O G R A P H Y */
     --font-family: ${(props): string => { return props.theme.globals.font.name }};
@@ -85,17 +85,17 @@ export const GlobalStyle = createGlobalStyle`
     --font-weight-bd: ${(props): string => { return props.theme.globals.font.bold }};
     --text-base-unit: ${(props): string => { return props.theme.globals.typography.baseUnit }};
 
-    --text-xxxs:  calc(var(--text-base-unit) * 0.5);  // 8px
-    --text-xxs:  calc(var(--text-base-unit) * 0.625); // 10px
-    --text-xs:  calc(var(--text-base-unit) * 0.75);   // 12px
-    --text-sm:  calc(var(--text-base-unit) * 0.875);  // 14px
-    --text-md:  calc(var(--text-base-unit));          // 16px
-    --text-lg:  calc(var(--text-base-unit) * 1.25);   // 20px
-    --text-xl: calc(var(--text-base-unit) * 1.5);     // 24px
-    --text-xxl:  calc(var(--text-base-unit) * 2);     // 32px
-    --text-xxxl: calc(var(--text-base-unit) * 2.5);   // 40px
-    --text-huge: calc(var(--text-base-unit) * 4);     // 64px
-    --text-giant: calc(var(--text-base-unit) * 8);    // 128px
+    --text-xxxs:  calc(var(--text-base-unit) * 0.5);  /* 8px */
+    --text-xxs:  calc(var(--text-base-unit) * 0.625); /* 10px */
+    --text-xs:  calc(var(--text-base-unit) * 0.75);   /* 12px */
+    --text-sm:  calc(var(--text-base-unit) * 0.875);  /* 14px */
+    --text-md:  calc(var(--text-base-unit));          /* 16px */
+    --text-lg:  calc(var(--text-base-unit) * 1.25);   /* 20px */
+    --text-xl: calc(var(--text-base-unit) * 1.5);     /* 24px */
+    --text-xxl:  calc(var(--text-base-unit) * 2);     /* 32px */
+    --text-xxxl: calc(var(--text-base-unit) * 2.5);   /* 40px */
+    --text-huge: calc(var(--text-base-unit) * 4);     /* 64px */
+    --text-giant: calc(var(--text-base-unit) * 8);    /* 128px */
 
     --body-line-height: ${(props): string => { return props.theme.globals.typography.bodyLineHeight }};
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};
@@ -123,36 +123,36 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin-bottom: 0.1em;
-    font-size: var(--text-xxxl);
+    font-size: var(--text-huge);
   }
 
   h2 {
     margin-bottom: 0.2em;
-    font-size: var(--text-xxl);
+    font-size: var(--text-xxxl);
   }
 
   h3 {
     margin-bottom: 0.25em;
-    font-size: var(--text-xl);
+    font-size: var(--text-xxl);
   }
 
   h4 {
     margin-bottom: 0.25em;
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
   }
 
   h5 {
     margin-bottom: 0.25em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
   }
 
   h6 {
     margin-bottom: 0.25em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: var(--text-sm);
+    font-size: var(--text-md);
   }
 
   p {

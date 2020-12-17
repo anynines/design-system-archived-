@@ -37,7 +37,7 @@
     "fixedUnit": "1rem"
   },
   "typography": {
-    "baseUnit": "1em",
+    "baseUnit": "1rem",
     "headingLineHeight": "1.2",
     "bodyLineHeight": "1.5"
   }

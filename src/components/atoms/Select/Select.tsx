@@ -208,7 +208,7 @@ const StyledSelect = styled.div`
   --icon-wrapper-size: 2.75rem;
   
   position: relative;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-fixed-xxl);
   border-radius: var(--radius);
   width: 100%;
   

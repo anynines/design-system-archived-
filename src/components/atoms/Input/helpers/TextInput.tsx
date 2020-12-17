@@ -178,7 +178,7 @@ const StyledInput = styled.div<StyledInputProps>`
   
   display: flex;
   position: relative;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-xxl);
   border: var(--border);
   background-color: var(--color-black);
   width: 100%;

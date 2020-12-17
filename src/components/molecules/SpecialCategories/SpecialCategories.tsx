@@ -81,12 +81,12 @@ export const StyledSpecialCategories = styled.div`
     }
 
     .special-category {
-      font-size: var(--text-md);
+      font-size: var(--text-sm);
       font-weight: var(--font-weight-bd);
       transition: var(--transition);
       
       @media (min-width: 60em) {
-        font-size: var(--text-sm);
+        font-size: var(--text-md);
       }
     }
 
