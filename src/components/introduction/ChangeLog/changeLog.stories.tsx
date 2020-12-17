@@ -7,7 +7,7 @@ import { ChangeLog } from './ChangeLog'
 import v0_1_37 from './logs/0.1.37.json'
 import v0_1_38 from './logs/0.1.38.json'
 import v0_1_41 from './logs/0.1.41.json'
-import v0_1_42 from './logs/0.1.42.json'
+import v0_1_44 from './logs/0.1.44.json'
 
 export default {
   title: '👋 Get started/Changelog',
@@ -18,10 +18,10 @@ export const Welcome = () => (
     <Container style={{ marginTop: 50, width: 800 }}>
       <h2 style={{ marginBottom: 30 }}>Changelog</h2>
       <ChangeLog
-        version='0.1.42'
+        version='0.1.44'
         date='11. December 2020'
-        isPublished={false}
-        changelog={v0_1_42}
+        isPublished={true}
+        changelog={v0_1_44}
       />
       <ChangeLog
         version='0.1.41'

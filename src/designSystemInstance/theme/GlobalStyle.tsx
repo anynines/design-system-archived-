@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.light, 'Light') }}
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.dark, 'Dark') }}
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.black, 'Black') }}
-    
+
     --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
     --color-black-darker: #040B18;
     

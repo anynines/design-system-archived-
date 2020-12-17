@@ -1,8 +1,10 @@
 import React from 'react'
 import { SortableContainer } from 'react-sortable-hoc'
-import { Row, HeaderGroup, TableBodyProps, TableProps } from 'react-table'
-
-import { TableRow, TableAccessor, TableColumnCellColor, TableColumnIcon, TableColumnCell, TableRowColor } from './Table'
+import { Row, HeaderGroup, TableBodyProps, CustomTableProps as TableProps } from 'react-table'
+import {
+  DraggableTableWrapperRow as TableRow,
+  TableAccessor, TableColumnCellColor, TableColumnIcon, TableColumnCell, TableRowColor
+} from './DraggableTableWrapper'
 import DraggableTableHead from './DraggableTableHead'
 import DraggableTableRowBody from './DraggableTableRowBody'
 import DraggableTableFolderBody from './DraggableTableFolderBody'

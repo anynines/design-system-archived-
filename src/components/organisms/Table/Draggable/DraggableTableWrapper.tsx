@@ -2,19 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable, useSortBy, Row } from 'react-table'
 
-import { SortableTable, SortableTableProps } from './SortableTable'
 import { DraggableTable, DraggableTableProps } from './DraggableTable'
 
 // T Y P E S
 export interface RowsDataObject {
-  [key: string]: Row<TableRow>[]
+  [key: string]: Row<DraggableTableWrapperRow>[]
 }
 
 export interface TableData {
-  [key: string]: TableRow[]
+  [key: string]: DraggableTableWrapperRow[]
 }
 
-export interface TableRow {
+export interface DraggableTableWrapperRow {
   authors: string[]
   category: string
   id?: number
@@ -30,7 +29,7 @@ export interface TableRow {
   views: number
 }
 
-export type TableSortOption = 'draggable' | 'sortable'
+export type TableSortOption = 'draggable'
 
 export type TableRowColor = 'primary' | 'light' | 'dark' | 'warning' | 'error' | 'success'
 
@@ -48,31 +47,27 @@ export type TableColumnCell = 'sticker' | 'icons' | 'icon' | 'link'
 
 export type TableColumnIcon = 'icon'
 
-export interface TableProps {
-  color?: TableRowColor
-  folderLimit?: number
+export interface DraggableTableWrapperProps {
+  tableHeaderData: TableColumn[]
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  initialPages: TableRow[]
-  pagesPerFolder?: number
-  tableHeaderData: TableColumn[]
   type: TableSortOption
+  initialPages: DraggableTableWrapperRow[]
+  pagesPerFolder?: number
+  color?: TableRowColor
+  folderLimit?: number
 }
 
-export interface SortableTableDataProps extends TableProps {
-  type: 'sortable'
-}
-
-export interface DraggableTableDataProps extends TableProps {
-  disabledCategories: string[]
-  pages?: TableRow[]
-  setPages?: React.Dispatch<React.SetStateAction<TableRow[]>>
+export interface DraggableTableDataProps extends DraggableTableWrapperProps {
   type: 'draggable'
+  disabledCategories: string[]
+  setPages?: React.Dispatch<React.SetStateAction<DraggableTableWrapperRow[]>>
+  pages?: DraggableTableWrapperRow[]
 }
 
 // C O M P O N E N T
-export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> = (props) => {
+export const DraggableTableWrapper: React.FC<DraggableTableDataProps> = (props) => {
   const {
     color = 'dark',
     folderLimit = 5,
@@ -85,15 +80,15 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
     type
   } = props
 
-  const [localPages, setLocalPages] = React.useState<TableRow[]>(
-    [] as TableRow[]
+  const [localPages, setLocalPages] = React.useState<DraggableTableWrapperRow[]>(
+    [] as DraggableTableWrapperRow[]
   )
 
   React.useEffect(() => {
     if (initialPages.length) setLocalPages(initialPages)
   }, [props, initialPages])
 
-  const decideTableData = (): TableRow[] => {
+  const decideTableData = (): DraggableTableWrapperRow[] => {
     if (type !== 'draggable') return localPages
 
     props = props as DraggableTableDataProps
@@ -102,8 +97,9 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
     return localPages
   }
 
-  const sortCategoryAlphabeticallyAndControlLimits = (pagesDataObject: TableData): TableRow[] => {
-    let pagesDataArray: [string, TableRow[]][] = Object.entries(pagesDataObject)
+  const sortCategoryAlphabeticallyAndControlLimits = (pagesDataObject: TableData):
+  DraggableTableWrapperRow[] => {
+    let pagesDataArray: [string, DraggableTableWrapperRow[]][] = Object.entries(pagesDataObject)
       .sort((a, b) => {
         const categoryA: string = a[0].toUpperCase()
         const categoryB: string = b[0].toUpperCase()
@@ -117,7 +113,7 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
       return pagesArray
     })
 
-    let sortedPages: TableRow[] = []
+    let sortedPages: DraggableTableWrapperRow[] = []
     pagesDataArray.forEach((pages) => {
       sortedPages = [...sortedPages, ...pages[1]]
     })
@@ -133,41 +129,25 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
     rows
   } = useTable({ columns: tableHeaderData, data: decideTableData() }, useSortBy)
 
-  let tableProps: SortableTableProps | DraggableTableProps
+  props = props as DraggableTableDataProps
+  const { disabledCategories, pages = [], setPages } = props
 
-  if (type === 'draggable') {
-    props = props as DraggableTableDataProps
-    const { disabledCategories, pages = [], setPages } = props
-    tableProps = {
-      rowsData: rows,
-      tableProps: getTableProps(),
-      prepareRow,
-      tableBodyProps: getTableBodyProps(),
-      headerGroups,
-      getTableColumnColor,
-      getTableColumnType,
-      getTableColumnIconType,
-      disabledCategories,
-      setPages: setPages || setLocalPages,
-      pages: pages.length > 0 ? pages : localPages,
-      pagesPerFolder,
-      folderLimit,
-      sortCategoryAlphabeticallyAndControlLimits,
-      color
-    }
-  } else {
-    tableProps = {
-      getTableColumnColor,
-      getTableColumnType,
-      getTableColumnIconType,
-      setPages: setLocalPages,
-      pages: localPages,
-      pagesPerFolder,
-      folderLimit,
-      tableHeaderData,
-      sortCategoryAlphabeticallyAndControlLimits,
-      color
-    }
+  const tableProps: DraggableTableProps = {
+    rowsData: rows,
+    tableProps: getTableProps(),
+    prepareRow,
+    tableBodyProps: getTableBodyProps(),
+    headerGroups,
+    getTableColumnColor,
+    getTableColumnType,
+    getTableColumnIconType,
+    disabledCategories,
+    setPages: setPages || setLocalPages,
+    pages: pages.length > 0 ? pages : localPages,
+    pagesPerFolder,
+    folderLimit,
+    sortCategoryAlphabeticallyAndControlLimits,
+    color
   }
 
   return (
@@ -179,7 +159,7 @@ export const Table: React.FC<DraggableTableDataProps | SortableTableDataProps> =
               <h4>There is no data to display.</h4>
             </div>
           )
-          : type === 'draggable' ? <DraggableTable {...tableProps as DraggableTableProps} /> : <SortableTable {...tableProps as SortableTableProps} />
+          : type === 'draggable' ? <DraggableTable {...tableProps} /> : null
       }
     </StyledTable>
   )
@@ -234,41 +214,15 @@ const StyledTable = styled.div`
 
           &:first-child {
             padding-left: 1rem;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-          }
-
-          &.sortable {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0;
-            padding-right: 1rem;
-
-            .inverted {
-              display: flex;
-              transform: rotate(-180deg);
-            }
-            svg {
-              background-color: var(--color-black);
-              padding: 5px;
-              width: 20px;
-              height: 20px;
-              filter: brightness(70%);
-              border-radius: 5px;
-            }
-          }
-          &:last-child{
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-left-radius: var(--radius);
+            border-bottom-left-radius: var(--radius);
           }
         }
       }
     }
 
     tbody {
-      border-radius: 5px;
+      border-radius: var(--radius);
 
       &:before {
         display:block;
@@ -287,7 +241,7 @@ const StyledTable = styled.div`
       }
 
       tr {
-        border-radius: 5px;
+        border-radius: var(--radius);
 
         td {
           border-top: 0;
@@ -297,26 +251,77 @@ const StyledTable = styled.div`
 
           &:first-child {
             padding-left: 1rem;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius: var(--radius);
+            border-bottom-left-radius: var(--radius);
           }
           &:last-child {
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
           }
           &:last-child.table-row-link {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
             padding-right: 1rem;
 
             a {
               display: flex;
               justify-content: center;
               align-items: center;
+            }
+          }
+
+          a.cell-link {
+            position: relative;
+            color: var(--color-dark);
+          }
+          
+          span.blue, span.black {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(59, 185, 255);
+            padding: 2px var(--space-sm);
+            width: 60%;
+            font-size: var(--text-md);
+            font-weight: var(--font-weight-bd);
+            border-radius: var(--radius);
+
+            svg {
+              margin-right: var(--space-sm);
+            }
+          }
+          span.black {
+            background-color: var(--color-dark);
+          }
+
+          div.icon-wrapper{
+            display: flex;
+            flex-direction: row;
+
+            span {
+              margin-right: var(--space-sm);
+              
+              svg {
+                background-color: var(--color-dark);
+                padding: 3px;
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+              }
+              
+            }
+
+            img.icon {
+              display: block;
+              margin-right: 2px;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
             }
           }
 
@@ -384,6 +389,7 @@ const StyledTable = styled.div`
               border: 2px solid var(--color-black);
               background-color: var(--color-dark);
               cursor: pointer;
+              padding: var(--space-sm);
               width: 25px;
               height: 25px;
               border-radius: 50%;
@@ -396,48 +402,6 @@ const StyledTable = styled.div`
               &.active {
                 background-color: var(--color-primary);
               }
-            }
-          }
-
-          span.blue, span.black {
-            background-color: rgb(59, 185, 255);
-            padding: 2px 5px;
-            font-size: var(--text-md);
-            font-weight: var(--font-weight-bd);
-            border-radius: 5px;
-
-            svg {
-              margin-right: 5px;
-            }
-          }
-          span.black {
-            background-color: var(--color-black);
-          }
-
-          div.icon-wrapper{
-            display: flex;
-            flex-direction: row;
-
-            span {
-              margin-right: 5px;
-              width: 20px;
-              height: 20px;
-              
-              svg {
-                background-color: var(--color-black);
-                padding: 5px;
-                width: 20px;
-                height: 20px;
-                border-radius: 5px;
-              }
-            }
-
-            img.icon {
-              display: block;
-              margin-right: 2px;
-              width: 20px;
-              height: 20px;
-              border-radius: 50%;
             }
           }
         }
@@ -474,4 +438,4 @@ const StyledTable = styled.div`
     }
   }`
 
-export default Table
+export default DraggableTableWrapper
