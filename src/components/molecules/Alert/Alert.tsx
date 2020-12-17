@@ -75,7 +75,6 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   z-index: var(--z-index);
   width: var(--width);
   min-height: 4.5rem;
-  font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
   transition: var(--transition);
@@ -107,7 +106,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     align-items: flex-start;
     position: relative;
     background-color: var(--bg-color);
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
     flex: 3;
@@ -118,7 +117,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     }
 
     span {
-      font-weight: 900;
+      font-weight: var(--font-weight-bd);
     }
 
     P {

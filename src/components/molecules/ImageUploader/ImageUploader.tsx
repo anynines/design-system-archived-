@@ -103,7 +103,7 @@ const StyledImageInput = styled.div`
   }
 
   svg, img {
-    margin: var(--space-xl) var(--space-lgr);
+    margin: var(--space-xl) var(--space-xl);
     width: auto;
     height: 3.75rem;
     max-width: 15.625rem;

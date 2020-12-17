@@ -71,7 +71,7 @@ export const StyledSpecialCategories = styled.div`
     transition: var(--transition);
     background-color: var(--color-black);
     cursor: pointer;
-    padding: 1.4em;
+    padding: var(--space-lg);
     min-height: 8rem;
     text-decoration: none;
     color: var(--color-white);
@@ -81,12 +81,12 @@ export const StyledSpecialCategories = styled.div`
     }
 
     .special-category {
-      font-size: var(--text-md);
+      font-size: var(--text-sm);
       font-weight: var(--font-weight-bd);
       transition: var(--transition);
       
       @media (min-width: 60em) {
-        font-size: var(--text-lg);
+        font-size: var(--text-md);
       }
     }
 

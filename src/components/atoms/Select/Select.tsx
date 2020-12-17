@@ -208,7 +208,7 @@ const StyledSelect = styled.div`
   --icon-wrapper-size: 2.75rem;
   
   position: relative;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-fixed-xxl);
   border-radius: var(--radius);
   width: 100%;
   
@@ -242,8 +242,8 @@ const StyledSelect = styled.div`
     z-index: 1;
     opacity: 0.5;
     color: var(--color-white);
-    font-size: 10px;
-    font-weight: 800;
+    font-size: var(--text-xxs);
+    font-weight: var(--font-weight-bd);
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
 
@@ -258,7 +258,11 @@ const StyledSelect = styled.div`
     }
   }
 
-  &:hover, &.focus, &:active, &:focus, &.is-active{
+  &:hover,
+  &.focus,
+  &:active,
+  &:focus,
+  &.is-active{
     input {
       background-color: var(--color-dark);
       color: rgba(255,255,255,1);
@@ -266,6 +270,7 @@ const StyledSelect = styled.div`
 
     .icon-wrapper {
       background-color: var(--color-primary);
+
       svg {
         color: var(--color-white-fix);
       }
@@ -276,7 +281,7 @@ const StyledSelect = styled.div`
   .select-custom {
     width: 100%;
     height: var(--icon-wrapper-size);
-    font-size: var(--text-md);
+    font-size: var(--text-xs);
   }
 
   .select-custom {
@@ -288,7 +293,7 @@ const StyledSelect = styled.div`
     cursor: pointer;
 
     &__inner-option-container {
-      max-height: 160px;
+      max-height: 10rem;
       overflow-y: auto;
     }
 

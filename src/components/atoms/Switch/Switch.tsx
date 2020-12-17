@@ -92,7 +92,7 @@ const StyledSwitchWrapper = styled.div`
     background: var(--color-white-fix);
     content: '';
     border-radius: 1rem;
-    transition: 0.2s;
+    transition: .2s;
     box-shadow: 0 0 .4rem 0 var(--color-light-70);
     transform: translateY(-50%);
 

@@ -50,9 +50,11 @@ const StyledToggleLayout = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+
   #toggle-layout-bg {
     transition: var(--transition);
   }
+  
   &:hover {
     #toggle-layout-bg {
       fill: var(--color-primary);

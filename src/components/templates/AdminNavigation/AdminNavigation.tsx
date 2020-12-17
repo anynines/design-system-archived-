@@ -26,14 +26,14 @@ const StyledAdminNavigation = styled.div`
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 1.25rem;
+  left: 1.25rem;
   overflow: hidden;
   background-color: var(--color-black-darker);
   padding: var(--space-lg);
-  padding-top: 30px;
-  width: 260px;
-  height: calc(100vh - 40px);
+  padding-top: var(--space-xxl);
+  width: 16.25rem;
+  height: calc(100vh - 2.5rem);
   color: var(--color-white);
   border-radius: var(--radius);
 
@@ -51,7 +51,8 @@ const StyledAdminNavigation = styled.div`
   }
 
   .logo-wrapper {
-    margin-bottom: 30px;
+    margin-bottom: var(--space-fixed-xxl);
+
     img {
       margin-top: 0;
     }
@@ -59,7 +60,7 @@ const StyledAdminNavigation = styled.div`
 
   li {
     margin: 0;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-fixed-md);
 
     &:last-child {
       margin-bottom: 0;

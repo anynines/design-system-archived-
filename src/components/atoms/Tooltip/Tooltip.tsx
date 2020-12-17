@@ -37,41 +37,44 @@ const StyledTooltip = styled.div`
   position: absolute;
   color: var(--color-white);
 
-  .tooltip-inner, &:before, &:after {
+  .tooltip-inner,
+  &::before,
+  &::after {
     background-color: black;
   }
 
   .tooltip-inner {
     position: relative;
-    z-index: 999;
+    z-index: 990;
     border: var(--border);
-    padding: 8px;
+    padding: var(--space-xs);
     white-space: nowrap;
     font-family: var(--font-family);
-    font-size: 12px;
+    font-size: var(--text-xs);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    max-width: 220px;
+    max-width: 13.75rem;
   }
 
-  &:before, &:after {
+  &::before,
+  &::after {
     position: absolute;
     top: -3px;
     left: 50%;
-    width: 10px;
-    height: 10px;
+    width: .625rem;
+    height: .625rem;
     content: '';
     transform: translateX(-50%) rotate(45deg);
     border-radius: 3px;
   }
 
-  &:before {
-    z-index: 998;
+  &::before {
+    z-index: 980;
     box-shadow: var(--shadow);
     border: var(--border);
   }
 
-  &:after {
+  &::after {
     z-index: 1000;
   }
 

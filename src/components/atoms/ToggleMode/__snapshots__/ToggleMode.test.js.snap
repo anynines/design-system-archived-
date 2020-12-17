@@ -76,8 +76,8 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 }
 
 .c0 .icons {
-  --pos-top: -40px;
-  --pos-top--sm: -30px;
+  --pos-top: -2.5rem;
+  --pos-top--sm: -1.875rem;
   position: absolute;
   top: var(--pos-top);
   -webkit-transition: top 0.3s ease-in-out;
@@ -102,7 +102,7 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 }
 
 .c0 svg {
-  height: 18px;
+  height: 1.125rem;
   color: var(--color-white);
 }
 
@@ -116,13 +116,13 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 }
 
 .c0.sm {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 .c0.sm img,
 .c0.sm svg {
-  height: 15px;
+  height: .9375rem;
 }
 
 .c0.sm .icons {
@@ -130,8 +130,8 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
 }
 
 .c0.sm .icon {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 @media (max-width:60em) {
@@ -355,7 +355,7 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 }
 
 .c0 .icons {
-  --pos-top: 0;
+  --pos-top: -2.5rem;
   --pos-top--sm: 0;
   position: absolute;
   top: var(--pos-top);
@@ -381,7 +381,7 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 }
 
 .c0 svg {
-  height: 18px;
+  height: 1.125rem;
   color: var(--color-white);
 }
 
@@ -395,13 +395,13 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 }
 
 .c0.sm {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 .c0.sm img,
 .c0.sm svg {
-  height: 15px;
+  height: .9375rem;
 }
 
 .c0.sm .icons {
@@ -409,8 +409,8 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
 }
 
 .c0.sm .icon {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 @media (max-width:60em) {
