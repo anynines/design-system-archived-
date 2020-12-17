@@ -4,6 +4,10 @@
     {
       "title": "💧 Atoms / Label",
       "description": "Added Label (not for Form-Inputs)."
+    },
+    {
+      "title": "🌱 Molecules / Alert",
+      "description": "Added Hide Function for Alert Component."
     }
   ]
 }
