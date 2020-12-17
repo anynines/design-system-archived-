@@ -23,7 +23,7 @@ export type LabelType =
 // C O M P O N E N T
 export const Label: React.FC<LabelProps> = ({
   children,
-  className,
+  className = '',
   style,
   type = 'primary'
 }) => {
