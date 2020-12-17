@@ -1,13 +1,26 @@
 {
-  "Changed": [],
+  "Changed": [
+    {
+      "title": "Global spacing and font-size update",
+      "description": "Replace all spacing and font-size variables + adjust all components."
+    }
+  ],
   "Added": [
     {
       "title": "💧 Atoms / Label",
-      "description": "Added Label (not for Form-Inputs)."
+      "description": "Add Label (not for Form-Inputs)."
+    },
+    {
+      "title": "💧 Atoms / Checkbox",
+      "description": "Add checkbox component."
     },
     {
       "title": "🌱 Molecules / Alert",
-      "description": "Added Hide Function for Alert Component."
+      "description": "Add Hide Function for Alert Component."
+    },
+    {
+      "title": "🌳 Organism / Form",
+      "description": "Add new checkbox component to basic form."
     }
   ]
 }
