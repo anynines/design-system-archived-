@@ -1,15 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
 // I N T E R F A C E
 export interface SwitchProps {
   border?: boolean
   checked?: boolean
   className?: string
-  name?: string
-  onChange?: () => void
+  errors?: NestDataObject<Record<string, string>, FieldError>
+  name: string
+  onChange?: (value: boolean) => void
+  register?: (validationRules: ValidationOptions) => void
+  required?: boolean
+  setValue?: any // eslint-disable-line
   style?: React.CSSProperties
   type?: SwitchType
+  watch?: any // eslint-disable-line
 }
 
 // T Y P E S
@@ -17,27 +23,46 @@ export type SwitchType = 'slim' | 'bold'
 
 export const Switch: React.FC<SwitchProps> = ({
   border = false,
-  checked,
+  checked = false,
   className,
+  errors = {},
+  name,
   onChange,
-  name = 'switch-input',
+  register,
+  required = false,
+  setValue,
   style,
-  type = 'slim'
+  type = 'slim',
+  watch
 }) => {
+  const getDefaultValue = (): boolean => {
+    if (register) return watch(name) || false
+    return checked
+  }
+
+  const [valueState, setValueState] = React.useState(getDefaultValue())
+
+  React.useEffect(() => {
+    if (register) setValue(name, valueState)
+    else if (onChange) onChange(valueState)
+  }, [register, setValue, name, valueState, onChange])
+
   return (
     <StyledSwitchWrapper
-      className={`switch ${className}`}
+      className={`switch ${className} ${errors && errors[name] !== undefined ? 'error' : ''}`}
       style={style}
     >
       <input
-        className='switch-checkbox'
-        id={name}
-        checked={checked}
-        onChange={(): void => { return (onChange && onChange()) }}
         type='checkbox'
+        checked={valueState}
+        ref={register ? register({ required }) as unknown as undefined : undefined}
+        id={name}
+        name={name}
+        className='switch-checkbox'
       />
       <label
-        className={`switch-label ${checked && 'checked'} ${type} ${border && 'border'}`}
+        className={`switch-label ${valueState && 'checked'} ${type} ${border && 'border'}`}
+        onClick={(): void => { return setValueState(!valueState) }}
         htmlFor={name}
       >
         <span className={`switch-button ${type}`} />
@@ -83,6 +108,14 @@ const StyledSwitchWrapper = styled.div`
 
     &.checked{
       background: var(--color-primary);
+    }
+
+    &.error {
+      label {
+        &::before {
+          border-color: var(--color-error);
+        }
+      }
     }
   }
 
