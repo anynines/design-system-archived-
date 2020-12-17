@@ -4,7 +4,6 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
 <DocumentFragment>
   .c0 {
   --size: 3rem;
-  --font-size: .8em;
   --initials-font-size: 2.4em;
   --level-position: -0.3em;
   --level-size: 2em;
@@ -20,7 +19,7 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: var(--space-xl);
+  margin-right: var(--space-fixed-sm);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--color-dark);
@@ -28,7 +27,7 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
   background-size: cover;
   width: calc(var(--size) * 0.75);
   height: calc(var(--size) * 0.75);
-  font-size: var(--text-sm);
+  font-size: var(--text-xxxs);
 }
 
 .c0:hover {
@@ -46,13 +45,13 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
 .c0.md {
   width: var(--size);
   height: var(--size);
-  font-size: var(--text-sm);
+  font-size: var(--text-xxs);
 }
 
 .c0.lg {
   width: calc(var(--size) * 2);
   height: calc(var(--size) * 2);
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
 }
 
 .c0.level {
@@ -79,7 +78,6 @@ exports[`Avatar component snapshots should match snapshot with image 1`] = `
   width: var(--level-size);
   height: var(--level-size);
   color: var(--color-white-fix);
-  font-size: var(--font-size);
   font-weight: var(--font-weight-bd);
   border-radius: 100%;
 }
@@ -123,7 +121,6 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
 <DocumentFragment>
   .c0 {
   --size: 3rem;
-  --font-size: .8em;
   --initials-font-size: 2.4em;
   --level-position: -0.3em;
   --level-size: 2em;
@@ -139,7 +136,7 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: var(--space-xl);
+  margin-right: var(--space-fixed-sm);
   border-radius: var(--radius);
   border: var(--border);
   background-color: var(--color-dark);
@@ -147,7 +144,7 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
   background-size: cover;
   width: calc(var(--size) * 0.75);
   height: calc(var(--size) * 0.75);
-  font-size: var(--text-sm);
+  font-size: var(--text-xxxs);
 }
 
 .c0:hover {
@@ -165,13 +162,13 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
 .c0.md {
   width: var(--size);
   height: var(--size);
-  font-size: var(--text-sm);
+  font-size: var(--text-xxs);
 }
 
 .c0.lg {
   width: calc(var(--size) * 2);
   height: calc(var(--size) * 2);
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
 }
 
 .c0.level {
@@ -198,7 +195,6 @@ exports[`Avatar component snapshots should match snapshot with username 1`] = `
   width: var(--level-size);
   height: var(--level-size);
   color: var(--color-white-fix);
-  font-size: var(--font-size);
   font-weight: var(--font-weight-bd);
   border-radius: 100%;
 }
