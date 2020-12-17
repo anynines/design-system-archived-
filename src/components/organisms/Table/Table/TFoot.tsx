@@ -22,4 +22,17 @@ const StyledTFoot = styled.tfoot`
   td {
     font-weight: 900;
   }
+  
+  &:last-child{
+    tr {
+      &:last-child {
+        td:first-child {
+          border-bottom-left-radius: var(--radius);
+        }
+        td:last-child {
+          border-bottom-right-radius: var(--radius);
+        }
+      } 
+    }
+  }
 `

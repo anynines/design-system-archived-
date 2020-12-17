@@ -1,49 +1,39 @@
 import React from 'react'
 import { Cell } from 'react-table'
 
-import { TableRow, TableAccessor, TableColumnCell, TableColumnCellColor, TableColumnIcon, TableRowColor } from './Table'
-import TableCell from './TableCell'
+import { DraggableTableWrapperRow as TableRow, TableAccessor, TableColumnCell, TableColumnIcon, TableColumnCellColor, TableRowColor } from './DraggableTableWrapper'
+import TableCell from './DraggableTableCell'
 
-interface SortableTableColumnProps {
-  bodyIndex: number
+interface DraggableTableColumnProps {
   cell: Cell<TableRow, any> // eslint-disable-line @typescript-eslint/no-explicit-any
   cellIndex: number
-  color: TableRowColor
+  color?: TableRowColor
   getTableColumnColor: (type: TableAccessor | null) => TableColumnCellColor | null
   getTableColumnType: (type: TableAccessor | null) => TableColumnCell | null
   getTableColumnIconType: (type: TableAccessor | null) => TableColumnIcon | null
-  isLastColumn?: boolean
-  rowIndex: number
+  isLastColumn: boolean
 }
 
-const SortableTableColumn: React.FC<SortableTableColumnProps> = (props) => {
+const DraggableTableColumn: React.FC<DraggableTableColumnProps> = (props) => {
   const {
-    bodyIndex,
     cell,
-    cellIndex,
     color,
-    getTableColumnColor,
-    getTableColumnType,
-    getTableColumnIconType,
-    isLastColumn = false,
-    rowIndex
+    getTableColumnColor, getTableColumnType, getTableColumnIconType, isLastColumn = false
   } = props
 
-  const header: TableAccessor | null = cell.column.Header as TableAccessor
+  let header: TableAccessor | null = cell.column.Header as TableAccessor
+  if (header === undefined || Object.keys(header).length === 0) header = null
+
   const className: TableColumnCellColor | null = getTableColumnColor(header)
   const cellType: TableColumnCell | null = getTableColumnType(header)
   const iconType: TableColumnIcon | null = getTableColumnIconType(header)
 
   return (
-    <td
-      {...cell.getCellProps()}
-      key={`${bodyIndex.toString()}.${rowIndex.toString()}.${cellIndex.toString()}`}
-      className={`${isLastColumn ? 'table-row-link' : ''} ${color}`}
-    >
+    <td role='cell' className={`${isLastColumn ? 'table-row-link' : ''} ${color}`}>
       <TableCell className={className} cellType={cellType} cell={cell} iconType={iconType} />
       {isLastColumn && <TableCell cellType='link' cell={cell} />}
     </td>
   )
 }
 
-export default SortableTableColumn
+export default DraggableTableColumn
