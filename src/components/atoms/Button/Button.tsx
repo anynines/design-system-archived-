@@ -8,6 +8,7 @@ import { Icon, IconName } from '../Icon/Icon'
 export interface ButtonProps {
   className?: string
   icon?: IconName
+  iconOnly?: boolean
   onClick?: () => void
   size?: ButtonSize
   style?: React.CSSProperties
@@ -26,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className,
   icon,
+  iconOnly = false,
   onClick,
   size = 'md',
   style,
@@ -35,12 +37,12 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <StyledButton
       style={style}
-      className={`btn ${type} ${size} ${width} ${className}`}
+      className={`btn ${type} ${size} ${width} ${iconOnly && 'icon-only'} ${className}`}
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={(): void => { return (onClick && onClick()) }}
       icon={icon}
     >
-      {icon && <Icon icon={icon} />}
+      {icon && <Icon icon={icon} className={`${iconOnly && 'icon-only'}`} />}
       {children}
     </StyledButton>
   )
@@ -54,7 +56,7 @@ const StyledButton = styled.button`
   border: none;
   border: var(--border);
   cursor: pointer;
-  padding: var(--space-lg) var(--space-lgr);
+  padding: var(--space-md) var(--space-lg);
   width: auto;
   color: var(--color-white);
   font-family: var(--font-family);
@@ -63,6 +65,18 @@ const StyledButton = styled.button`
   outline: none;
   transition: var(--transition);
 
+  i {
+    margin-right: var(--space-md);
+  }
+
+  &.icon-only {
+    padding: var(--space-lg);
+    
+    i {
+      margin-right: 0;
+    }
+  }
+
   /* Width */
   &.block {
     width: 100%;
@@ -70,7 +84,7 @@ const StyledButton = styled.button`
 
   /* Sizes */
   &.xs {
-    font-size: var(--text-xs);
+    font-size: var(--text-xxxs);
 
     i {
       --icon-size: .6rem;
@@ -78,7 +92,7 @@ const StyledButton = styled.button`
   }
 
   &.sm {
-    font-size: var(--text-sm);
+    font-size: var(--text-xxs);
 
     i {
       --icon-size: .75rem;
@@ -86,15 +100,16 @@ const StyledButton = styled.button`
   }
   
   &.md {
-    font-size: var(--text-md);
+    font-size: var(--text-xs);
   }
   
   &.lg {
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
   }
 
   /* Types */
-  &.primary, &.submit {
+  &.primary,
+  &.submit {
     background-color: var(--color-primary);
     color: var(--color-white-fix);
   }
@@ -112,14 +127,10 @@ const StyledButton = styled.button`
     color: var(--color-black);
   }
 
-  &:hover {
+  &:hover, &:focus {
     background-color: var(--color-primary-light);
     color: var(--color-white-fix);
     box-shadow: 0 0 6px var(--color-light-10);
-  }
-
-  i {
-    margin-right: var(--space-md);
   }
 `
 StyledButton.displayName = 'StyledButton'

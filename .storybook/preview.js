@@ -2,6 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { GlobalStyle } from '../src/designSystemInstance/theme/GlobalStyle'
+import { GlobalStorybookStyle } from '../src/designSystemInstance/theme/GlobalStorybookStyle'
 import { getToggledTheme } from '../src/designSystemInstance/designSystemInstanceHelpers'
 
 // V A R I A B L E S
@@ -35,6 +36,7 @@ const withThemeProvider = (Story, context) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <GlobalStorybookStyle />
       <Story {...context} />
     </ThemeProvider>
   )
@@ -119,7 +121,14 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['👋 Get started', ['Welcome'], '💧 Atoms', '🌱 Molecules', '🌳 Organisms'],
+      order: [
+        '👋 Get started', ['Welcome', 'Colors', 'Type Scale', 'Layout', 'Changelog'],
+        '💧 Atoms',
+        '🌱 Molecules',
+        '🌳 Organisms',
+        '📄 Templates',
+        '📙 Pages'
+      ],
     },
   }
 }

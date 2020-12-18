@@ -2,13 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 export interface AuthLayoutProps {
-  authLayout?: AuthLayoutType
+  authLayout?: string
   bgImage?: string
   className?: string
   style?: React.CSSProperties
 }
-
-export type AuthLayoutType = '' | 'center-full-bg' | 'full-page-left' | 'full-page-right'
 
 export const AuthLayout: React.FC<AuthLayoutProps> = ({
   authLayout,
@@ -25,11 +23,9 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
     >
       <div className='auth-container'>
         <div className='auth-form'>{children}</div>
-        {
-          authLayout !== 'center-full-bg'
-            ? <div className='auth-image' />
-            : <></>
-        }
+        {authLayout !== 'center-full-bg' ? (
+          <div className='auth-image' />
+        ) : (<></>)}
       </div>
     </StyledAuthLayout>
   )
@@ -43,15 +39,22 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-dark);
+  background-color: var(--color-black);
   width: 100%;
   height: 100vh;
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
 
   .auth-container {
     display: flex;
     align-items: stretch;
     overflow: hidden;
-    background-color: var(--color-black);
+    background-color: var(--color-black-darker);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     width: 900px;
@@ -62,7 +65,7 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
     }
 
     .auth-image {
-      background-color: rgba(0,0,0,.25);
+      background-color: rgba(0, 0, 0, 0.25);
       background-image: url(${(props): string => { return props.bgImage }});
       background-position: center center;
       background-size: cover;
@@ -70,13 +73,13 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
     }
   }
 
-  &.layout-center-full-bg { 
+  &.layout-center-full-bg {
     background-image: url(${(props): string => { return props.bgImage }});
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    
+
     .auth-image {
       display: none;
     }
@@ -91,7 +94,8 @@ const StyledAuthLayout = styled.div<StyledAuthLayoutProps>`
     }
   }
 
-  &.layout-full-page-left, &.layout-full-page-right {
+  &.layout-full-page-left,
+  &.layout-full-page-right {
     .auth-container {
       width: 100%;
       height: 100vh;

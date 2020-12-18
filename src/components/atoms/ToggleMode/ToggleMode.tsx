@@ -12,6 +12,7 @@ export interface ToggleModeProps {
   mode: Mode
   setMode?: () => void
   size?: ToggleModeButtonSize
+  style?: React.CSSProperties
 }
 
 export type ToggleModeButtonSize = 'sm' | 'lg'
@@ -21,13 +22,15 @@ export const ToggleMode: React.FC<ToggleModeProps> = ({
   className,
   mode = 'dark',
   setMode,
-  size = 'lg'
+  size = 'lg',
+  style
 }) => {
   return (
     <StyledToggleMode
       className={`toggle-mode ${size} ${className}`}
       onClick={(): void => { return (setMode && setMode()) }}
       mode={mode}
+      style={style}
     >
       <div className='icons'>
         <div className='icon'>
@@ -64,8 +67,8 @@ const StyledToggleMode = styled.div<StyledToggleModeProps>`
   transition: var(--transition);
 
   .icons {
-    --pos-top: ${(props): string => { return (props.mode === 'dark' ? '0' : '-40px') }};
-    --pos-top--sm: ${(props): string => { return (props.mode === 'dark' ? '0' : '-30px') }};
+    --pos-top: ${(props): string => { return (props.mode === 'dark' ? '-2.5rem' : '-2.5rem') }};
+    --pos-top--sm: ${(props): string => { return (props.mode === 'dark' ? '0' : '-1.875rem') }};
 
     position: absolute;
     top: var(--pos-top);
@@ -81,7 +84,7 @@ const StyledToggleMode = styled.div<StyledToggleModeProps>`
   } 
   
   svg {
-    height: 18px;
+    height: 1.125rem;
     color: var(--color-white);
   }
 
@@ -95,20 +98,24 @@ const StyledToggleMode = styled.div<StyledToggleModeProps>`
   }
 
   &.sm {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
+
     img,
     svg {
-      height: 15px;
+      height: .9375rem;
     }
+
     .icons {
       top: var(--pos-top--sm);
     }
+
     .icon {
-      width: 30px;
-      height: 30px;
+      width: 1.875rem;
+      height: 1.875rem;
     }
   }
+  
   @media (max-width: 60em) {
     background-color: var(--color-black);
   }

@@ -44,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.black, 'Black') }}
 
     --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
+    --color-black-darker: #040B18;
     
     /* G L O B A L S */
     --radius: ${(props): string => { return props.theme.globals.radius }};
@@ -54,23 +55,29 @@ export const GlobalStyle = createGlobalStyle`
     --transition-ease-in-out-300: 0.3s ease-in-out;
 
     /* S P A C I N G */
-    --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }};
-    --space-xs:  calc(var(--space-unit) * 0.25);
-    --space-sm:  calc(var(--space-unit) * 0.5);
-    --space-md:  calc(var(--space-unit) * 0.75);
-    --space-lg:  calc(var(--space-unit));
-    --space-lgr: calc(var(--space-unit) * 1.5);
-    --space-xl:  calc(var(--space-unit) * 2);
-    --space-xxl: calc(var(--space-unit) * 3);
+    --space-unit: ${(props): string => { return props.theme.globals.spacing.baseUnit }}; /* 16px */
+    --space-xxs:  calc(var(--space-unit) * 0.25); /* 4px */
+    --space-xs:  calc(var(--space-unit) * 0.5);   /* 8px */
+    --space-sm:  calc(var(--space-unit) * 0.75);  /* 12px */
+    --space-md:  calc(var(--space-unit));         /* 16px */
+    --space-lg: calc(var(--space-unit) * 1.25);   /* 20px */
+    --space-xl: calc(var(--space-unit) * 1.5);    /* 24px */
+    --space-xxl:  calc(var(--space-unit) * 2);    /* 32px */
+    --space-xxxl:  calc(var(--space-unit) * 2.5); /* 40px */
+    --space-huge: calc(var(--space-unit) * 4);    /* 64px */
+    --space-giant: calc(var(--space-unit) * 8);   /* 128px */
     
-    --space-unit-fixed: ${(props): string => { return props.theme.globals.spacing.fixedUnit }};
-    --space-fixed-xs:  calc(var(--space-unit-fixed) * 0.25);
-    --space-fixed-sm:  calc(var(--space-unit-fixed) * 0.5);
-    --space-fixed-md:  calc(var(--space-unit-fixed) * 0.75);
-    --space-fixed-lg:  calc(var(--space-unit-fixed));
-    --space-fixed-lgr: calc(var(--space-unit-fixed) * 1.5);
-    --space-fixed-xl:  calc(var(--space-unit-fixed) * 2);
-    --space-fixed-xxl: calc(var(--space-unit-fixed) * 3);
+    --space-unit-fixed: ${(props): string => { return props.theme.globals.spacing.fixedUnit }}; /* 16px */
+    --space-fixed-xxs:  calc(var(--space-unit-fixed) * 0.25); /* 4px */
+    --space-fixed-xs:  calc(var(--space-unit-fixed) * 0.5);   /* 8px */
+    --space-fixed-sm:  calc(var(--space-unit-fixed) * 0.75);  /* 12px */
+    --space-fixed-md:  calc(var(--space-unit-fixed));         /* 16px  */
+    --space-fixed-lg: calc(var(--space-unit-fixed) * 1.25);   /* 20px */
+    --space-fixed-xl: calc(var(--space-unit-fixed) * 1.5);    /* 24px */
+    --space-fixed-xxl:  calc(var(--space-unit-fixed) * 2);    /* 32px */
+    --space-fixed-xxxl:  calc(var(--space-unit-fixed) * 2.5); /* 40px */
+    --space-fixed-huge: calc(var(--space-unit-fixed) * 4);    /* 64px */
+    --space-fixed-giant: calc(var(--space-unit-fixed) * 8);   /* 128px */
     
     /* T Y P O G R A P H Y */
     --font-family: ${(props): string => { return props.theme.globals.font.name }};
@@ -78,14 +85,18 @@ export const GlobalStyle = createGlobalStyle`
     --font-weight-rg: ${(props): string => { return props.theme.globals.font.regular }};
     --font-weight-bd: ${(props): string => { return props.theme.globals.font.bold }};
     --text-base-unit: ${(props): string => { return props.theme.globals.typography.baseUnit }};
-    --text-xs:  calc(var(--text-base-unit) * 0.5);
-    --text-sm:  calc(var(--text-base-unit) * 0.6);
-    --text-md:  calc(var(--text-base-unit) * 0.8);
-    --text-lg:  calc(var(--text-base-unit));
-    --text-lgr: calc(var(--text-base-unit) * 1.5);
-    --text-xl:  calc(var(--text-base-unit) * 2);
-    --text-xxl: calc(var(--text-base-unit) * 3);
-    --text-xxxl: calc(var(--text-base-unit) * 4);
+
+    --text-xxxs:  calc(var(--text-base-unit) * 0.5);  /* 8px */
+    --text-xxs:  calc(var(--text-base-unit) * 0.625); /* 10px */
+    --text-xs:  calc(var(--text-base-unit) * 0.75);   /* 12px */
+    --text-sm:  calc(var(--text-base-unit) * 0.875);  /* 14px */
+    --text-md:  calc(var(--text-base-unit));          /* 16px */
+    --text-lg:  calc(var(--text-base-unit) * 1.25);   /* 20px */
+    --text-xl: calc(var(--text-base-unit) * 1.5);     /* 24px */
+    --text-xxl:  calc(var(--text-base-unit) * 2);     /* 32px */
+    --text-xxxl: calc(var(--text-base-unit) * 2.5);   /* 40px */
+    --text-huge: calc(var(--text-base-unit) * 4);     /* 64px */
+    --text-giant: calc(var(--text-base-unit) * 8);    /* 128px */
 
     --body-line-height: ${(props): string => { return props.theme.globals.typography.bodyLineHeight }};
     --heading-line-height: ${(props): string => { return props.theme.globals.typography.headingLineHeight }};
@@ -94,10 +105,6 @@ export const GlobalStyle = createGlobalStyle`
   /**************************************
   **  Global Styles  ********************
   **************************************/
-
-  .sb-show-main.sb-main-padded {
-    padding: 0 !important;
-  }
 
   body {
     margin: 0;
@@ -117,22 +124,22 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin-bottom: 0.1em;
-    font-size: var(--text-xxxl);
+    font-size: var(--text-huge);
   }
 
   h2 {
     margin-bottom: 0.2em;
-    font-size: var(--text-xxl);
+    font-size: var(--text-xxxl);
   }
 
   h3 {
     margin-bottom: 0.25em;
-    font-size: var(--text-xl);
+    font-size: var(--text-xxl);
   }
 
   h4 {
     margin-bottom: 0.25em;
-    font-size: var(--text-lgr);
+    font-size: var(--text-xl);
   }
 
   h5 {
@@ -154,8 +161,12 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 0.75em;
     letter-spacing: 1.5;
     color: var(--color-white-80);
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     font-weight: var(--font-weight-lt);
+  }
+
+  button, span {
+    font-family: var(--font-family);
   }
 
   blockquote {
@@ -193,7 +204,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .ol, .ul {
     line-height: 2;
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     font-weight: 300;
   }
 
@@ -209,7 +220,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 2px;
     background-color: var(--color-black);
     padding: 4px;
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     border-radius: 2px;
   }
 

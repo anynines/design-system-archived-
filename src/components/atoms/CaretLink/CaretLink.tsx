@@ -41,10 +41,11 @@ const StyledCaretLink = styled.div`
     display: flex;
     align-items: center;
     position: relative;
-    padding-left: 25px;
+    padding-left: var(--space-xl);
     text-decoration: none;
     color: var(--color-white);
     transition: var(--transition);
+    outline: none;
 
     i {
       position: absolute;
@@ -57,12 +58,12 @@ const StyledCaretLink = styled.div`
       opacity: 0.5;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      font-size: 12px;
+      font-size: var(--text-xs);
       font-weight: var(--font-weight-bd);
       transition: var(--transition);
     }
 
-    &:hover {
+    &:hover, &:focus {
       padding-left: 0;
 
       i {

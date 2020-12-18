@@ -19,36 +19,52 @@ export const Logo: FC<LogoProps> = ({
   path = '/',
   src: url,
   style,
-  vertical = true
+  vertical = false
 }: LogoProps) => {
+  if (path) {
+    return (
+      <NavLink
+        to={path}
+        onClick={(): void => {
+          return onClick && onClick()
+        }}
+        className={vertical ? 'vertical' : ''}
+        style={style}
+      >
+        <StyledLogoWrapper
+          className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}
+        >
+          <img src={url} alt='logo' />
+        </StyledLogoWrapper>
+      </NavLink>
+    )
+  }
   return (
-    <NavLink
-      to={path}
-      onClick={(): void => {
-        return onClick && onClick()
-      }}
-      className={vertical ? 'vertical' : ''}
-      style={style}
-    >
-      <StyledLogoWrapper className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}>
+    <div className={vertical ? 'vertical' : ''} style={style}>
+      <StyledLogoWrapper
+        className={`logo-wrapper ${vertical ? 'vertical' : ''} ${className}`}
+      >
         <img src={url} alt='logo' />
       </StyledLogoWrapper>
-    </NavLink>
+    </div>
   )
 }
 
 // S T Y L E S
 const StyledLogoWrapper = styled.div`
-  --logo-height: 40px;
+  --logo-height: 2.5rem;
+
   height: var(--logo-height);
 
   img {
     height: var(--logo-height);
+    max-width: 11.25rem;
   }
 
   &.vertical {
-    margin-bottom: var(--space-lgr);
+    margin-bottom: var(--space-xl);
     height: auto;
+    max-width: auto;
 
     img {
       height: calc(var(--logo-height) * 2);

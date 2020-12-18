@@ -86,7 +86,7 @@ const StyledNotification = styled.div`
   display: flex;
   margin-bottom: var(--space-fixed-sm);
   background-color: var(--color-black);
-  padding: var(--space-lg);
+  padding: var(--space-sm);
   color: var(--color-white);
   font-size: var(--text-md);
   border-radius: var(--radius);
@@ -109,6 +109,7 @@ const StyledNotification = styled.div`
   .text {
     display: flex;
     flex-direction: column;
+    font-size: var(--text-xs);
 
     .msg {
       font-weight: var(--font-weight-bd);

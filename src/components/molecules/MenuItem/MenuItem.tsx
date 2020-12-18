@@ -8,6 +8,8 @@ import { Icon, IconName } from '../../atoms/Icon/Icon'
 // I N T E R F A C E
 export interface MenuItemProps {
   active?: boolean
+  bgColor?: string
+  exact?: boolean
   children?: JSX.Element
   className?: string
   counter?: boolean
@@ -22,6 +24,8 @@ export interface MenuItemProps {
 // C O M P O N E N T
 export const MenuItem: React.FC<MenuItemProps> = ({
   active = false,
+  bgColor,
+  exact = false,
   children,
   className,
   counter = false,
@@ -38,15 +42,20 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           vertical={vertical}
           icon={icon}
           label={children}
-          className={`menu-item ${className}`}
+          className={`menu-item ${bgColor} ${className}`}
           id={icon}
           style={style}
         >
-          <NavLink exact to={`${path}`} className='wrapper' activeClassName='active'>
+          <NavLink
+            exact={exact}
+            to={`${path}`}
+            className='wrapper'
+            activeClassName='active'
+          >
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : <></>}
+            ) : (<></>)}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -56,7 +65,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           vertical={vertical}
           label={children}
           icon={icon}
-          className={`menu-item ${className}`}
+          className={`menu-item ${bgColor} ${className}`}
           id={icon}
           style={style}
         >
@@ -66,7 +75,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : <></>}
+            ) : (<></>)}
           </div>
         </StyledMenuItem>
       )}
@@ -82,10 +91,10 @@ interface StyledMenuItemProps {
 // S T Y L E S
 const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --display: ${(props): string => { return props.vertical ? 'inline-block' : 'block' }};
-  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-lg) 0' : '0 var(--space-sm)' }};
+  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-md) 0' : '0 var(--space-xs)' }};
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
-  
+
   display: var(--display);
   position: relative;
   margin: var(--margin);
@@ -95,6 +104,16 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     text-decoration: none;
   }
 
+  .label {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-bd);
+    transition: var(--transition);
+  }
+
+  i {
+    margin-right: var(--svg-margin-right);
+  }
+
   &:first-child {
     margin-left: 0;
   }
@@ -102,16 +121,6 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   &:last-child {
     margin-right: 0;
     margin-bottom: var(--margin-bottom);
-  }
-
-  .label {
-    font-size: var(--text-md);
-    font-weight: var(--font-weight-bd);
-    transition: var(--transition);
-  }
-
-  i {
-    margin-right: var(--svg-margin-right);
   }
 
   .wrapper {
@@ -148,8 +157,29 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     &:hover {
       background-color: var(--color-primary);
       color: var(--color-white-fix);
+      
       .label {
         color: var(--color-white-fix);
+      }
+    }
+  }
+
+  &.black {
+    .wrapper {
+      background-color: var(--color-black);
+
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &.primary {
+    .wrapper {
+      background-color: var(--color-primary);
+      
+      &:hover {
+        background-color: var(--color-primary-light);
       }
     }
   }

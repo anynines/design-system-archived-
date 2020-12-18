@@ -74,7 +74,7 @@ const YourComponent: React.FC = () => {
 }`
 
 export const Welcome = () => (
-  <Section>
+  <Section bgColor='transparent'>
     <Container style={{ marginTop: 50, width: 800 }}>
       <h2>👋 Get started</h2>
       <p>Welcome to the <a className='link' target='_blank' href='https://github.com/anynines/design-system'>design-system for react.js</a> from <a className='link' target='_blank' href='https://anynines.com'>anynines</a>. We provide flavoured products and services to make the cloud a better place for Organisations, DevOps, Developers and Users. This design-system helps you to easily scaffold reliable user interfaces. To get started we will guide you through installation and key features like theming, light and dark mode and customization.</p>

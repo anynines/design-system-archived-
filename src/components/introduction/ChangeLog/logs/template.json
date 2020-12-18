@@ -1,0 +1,34 @@
+{
+  "Fixed": [
+    {
+      "title": "👋 Get started/Your Component",
+      "description": "Some short description of your change."
+    }
+  ],
+  "Changed": [
+    {
+      "title": "💧 Atoms/Your Component",
+      "description": "Some short description of your change."
+    }
+  ],
+  "Added": [
+    {
+      "title": "🌱 Molecules/Your Component",
+      "description": "Some short description of your change."
+    },
+    {
+      "title": "🌳 Organisms/Your Component",
+      "description": "Some short description of your change."
+    }
+  ],
+  "Removed": [
+    {
+      "title": "📄 Templates/Your Component",
+      "description": "Some short description of your change."
+    },
+    {
+      "title": "📙 Pages/Your Component",
+      "description": "Some short description of your change."
+    }
+  ]
+}

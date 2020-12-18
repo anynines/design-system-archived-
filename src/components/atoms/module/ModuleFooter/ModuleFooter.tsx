@@ -80,13 +80,13 @@ const StyledModuleFooter = styled.div`
       flex-direction: column;
 
       .number {
-        font-size: var(--text-lgr);
+        font-size: var(--text-xl);
         font-weight: var(--font-weight-bd);
       }
 
       .label {
         opacity: 0.5;
-        font-size: var(--text-md);
+        font-size: var(--text-sm);
         font-weight: var(--font-weight-bd);
       }
 

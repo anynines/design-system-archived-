@@ -9,7 +9,7 @@ export interface ContainerProps {
   style?: React.CSSProperties
 }
 
-export type containerSizeType = 'sm' | 'md' | 'lg'
+export type containerSizeType = 'xs' | 'sm' | 'md' | 'lg'
 
 // C O M P O N E N T
 export const Container: React.FC<ContainerProps> = ({
@@ -35,6 +35,10 @@ const StyledContainer = styled.div`
   width: 100%;
   max-width: var(--content-max-width);
   
+  &.xs {
+    max-width: 600px;
+  }
+
   &.sm {
     max-width: 900px;
   }

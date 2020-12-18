@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 
 import { MenuItem, MenuItemProps } from '../MenuItem'
+import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
   title: '🌱 Molecules/MenuItem',
@@ -59,24 +60,52 @@ export default {
   }
 }
 export const Base = (args: MenuItemProps) => (
-  <MenuItem {...args} onClick={action('label clicked')}>
-    <>Label</>
-  </MenuItem>
+  <Wrapper>
+    <MenuItem {...args} onClick={action('label clicked')}>
+      <>Label</>
+    </MenuItem>
+  </Wrapper>
 )
 
 
 export const Label = () => (
-  <MenuItem onClick={action('label clicked')}>
-    <>Label</>
-  </MenuItem>
+  <Wrapper>
+    <MenuItem onClick={action('label clicked')}>
+      <>Label</>
+    </MenuItem>
+  </Wrapper>
 )
 
-export const LabelInline = () => <MenuItem vertical onClick={action('label clicked')}><>Label inline</></MenuItem>
+export const LabelInline = () => (
+  <Wrapper>
+    <MenuItem 
+      vertical 
+      onClick={action('label clicked')}
+    >
+      <>Label inline</>
+    </MenuItem>
+  </Wrapper>
+)
+  
 
-export const Icon = () => <MenuItem icon={'menu'} vertical onClick={action('label clicked')}></MenuItem>
+export const Icon = () => (
+  <Wrapper>
+    <MenuItem 
+      icon={'menu'} 
+      vertical 
+      onClick={action('label clicked')}
+    />
+  </Wrapper>
+)
 
 export const IconAndLabel = () => (
-  <MenuItem icon={'menu'} vertical onClick={action('label clicked')}>
-    <>Icon and Label</>
-  </MenuItem>
+  <Wrapper>
+    <MenuItem 
+      icon={'menu'} 
+      vertical 
+      onClick={action('label clicked')}
+    >
+      <>Icon and Label</>
+    </MenuItem>
+  </Wrapper>
 )

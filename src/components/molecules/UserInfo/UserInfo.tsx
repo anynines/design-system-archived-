@@ -40,13 +40,13 @@ const StyledUserInfo = styled.div<StyledUserInfoProps>`
 
   .user-name {
     line-height: 1.2;
-    font-size: 1em;
+    font-size: var(--text-xs);
     font-weight: var(--font-weight-bd);
   }
   
   .user-group {
     opacity: 0.5;
-    font-size: .85em;
+    font-size: var(--text-xxs);
   }
 `
 StyledUserInfo.displayName = 'StyledUserInfo'

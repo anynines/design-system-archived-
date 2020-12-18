@@ -59,9 +59,10 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   z-index: var(--z-index);
   width: var(--width);
   min-height: 4.5rem;
-  font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .c0 .alert-icon {
@@ -113,7 +114,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   align-items: flex-start;
   position: relative;
   background-color: var(--bg-color);
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
   border-bottom-right-radius: .5em;
   border-top-right-radius: .5em;
   -webkit-flex: 3;
@@ -127,7 +128,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 }
 
 .c0 .alert-info span {
-  font-weight: 900;
+  font-weight: var(--font-weight-bd);
 }
 
 .c0 .alert-info P {
@@ -166,6 +167,10 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   height: 1em;
 }
 
+.c0.hidden {
+  opacity: 0;
+}
+
 .c0.notice {
   background-color: var(--color-notice);
 }
@@ -199,7 +204,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
 }
 
 <div
-    class="c0 alert-wrapper undefined success"
+    class="c0 alert-wrapper undefined success false"
   >
     <div
       class="alert-icon"

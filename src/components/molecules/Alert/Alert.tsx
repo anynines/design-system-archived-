@@ -12,7 +12,9 @@ export interface AlertProps {
   size?: IconSize
   style?: React.CSSProperties
   title: string
+  timerCount?: number
   type: AlertType
+  stay?: boolean
 }
 
 interface AlertStyledProps {
@@ -26,12 +28,29 @@ export const Alert: React.FC<AlertProps> = ({
   size = 'md',
   style,
   title,
-  type = 'success'
+  timerCount = 2000,
+  type = 'success',
+  stay = false
 }) => {
+  const [hideAlert, setHideAlert] = React.useState(false)
+
+  React.useEffect(() => {
+    let timer
+    if (!stay) {
+      timer = setTimeout(() => { setHideAlert(true) }, timerCount)
+    }
+
+    return (): void => {
+      if (!stay) {
+        clearTimeout(timer)
+      }
+    }
+  }, [timerCount, stay])
+
   if (!title || !description) return null
   return (
     <AlertWrapper
-      className={`alert-wrapper ${className} ${type}`}
+      className={`alert-wrapper ${className} ${type} ${hideAlert && 'hidden'}`}
       style={style}
     >
       <div className='alert-icon'>
@@ -56,9 +75,9 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   z-index: var(--z-index);
   width: var(--width);
   min-height: 4.5rem;
-  font-size: var(--text-lg);
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
+  transition: var(--transition);
 
   .alert-icon {
     display: flex;
@@ -87,7 +106,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     align-items: flex-start;
     position: relative;
     background-color: var(--bg-color);
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
     flex: 3;
@@ -98,7 +117,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     }
 
     span {
-      font-weight: 900;
+      font-weight: var(--font-weight-bd);
     }
 
     P {
@@ -127,6 +146,10 @@ const AlertWrapper = styled.div<AlertStyledProps>`
       width: 1em;
       height: 1em;
     }
+  }
+
+  &.hidden {
+    opacity: 0;
   }
 
   &.notice {
