@@ -1,4 +1,10 @@
 {
+  "Fixed": [
+    {
+      "title": "💧 Atoms / Switch",
+      "description": "Fixed Switch for Hook Forms."
+    }
+  ],
   "Changed": [
     {
       "title": "Global spacing and font-size update",
@@ -15,12 +21,20 @@
       "description": "Add checkbox component."
     },
     {
+      "title": "Git Flow",
+      "description": "Add Functionality for Git Flow."
+    },
+    {
       "title": "🌱 Molecules / Alert",
       "description": "Add Hide Function for Alert Component."
     },
     {
       "title": "🌳 Organism / Form",
       "description": "Add new checkbox component to basic form."
+    },
+    {
+      "title": "Workflow / NPM Build and Deploy",
+      "description": "Add new Github-Actions Workflow to automatically deploy the Design-System when creating a release."
     }
   ]
 }
