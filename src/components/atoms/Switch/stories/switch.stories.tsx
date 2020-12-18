@@ -12,6 +12,23 @@ export default {
         type: 'disabled'
       },
     },
+    label: {
+      control: {
+        type: 'text'
+      },
+      defaultValue: 'Basic Switch'
+    },
+    labelPosition: {
+      control: {
+        type: 'select',
+        options: {
+          top: 'top',
+          right: 'right',
+          bottom: 'bottom',
+          left: 'left'
+        }
+      },
+    },
     type: {
       control: {
         type: 'select',
@@ -30,7 +47,6 @@ export const Basic = (args: SwitchProps) => {
       <Switch
         {...args}
       />
-      Basic Switch
     </Wrapper>
   )
 }
@@ -42,45 +58,82 @@ export const Type = () => {
         <Switch
           name='switch-1'
           type='bold'
+          label='Bold Switch Component'
         />
-        Bold Switch Component
+
       </Wrapper>
       <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
           name='switch-2'
           type='slim'
+          label='Slim Switch Component'
         />
-        Slim Switch Component
       </Wrapper>
     </Wrapper>
   )
 }
 
 export const Border = () => {
-  const [valueBorder, setValueBorder] = React.useState(false)
-  const [valueBorderless, setValueBorderless] = React.useState(false)
-
   return (
     <Wrapper align='flex-start' direction='column' bgColor='transparent'  >
       <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
           border
-          checked={valueBorder}
           name='switch-1'
-          onChange={() => setValueBorder(!valueBorder)}
           type='bold'
+          label='Bold Border Switch Component'
         />
-        {valueBorder ? 'Bold Border Switch Component' : 'Press me'}
       </Wrapper>
       <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
           border
-          checked={valueBorderless}
           name='switch-2'
-          onChange={() => setValueBorderless(!valueBorderless)}
           type='slim'
+          label='Slim Border Switch Component'
         />
-        {valueBorderless ? 'Slim Border Switch Component' : 'Press me'}
+      </Wrapper>
+    </Wrapper>
+  )
+}
+
+export const LabelPosition = () => {
+  return (
+    <Wrapper align='flex-start' direction='column' bgColor='transparent'  >
+      <Wrapper justify='flex-start' bgColor='transparent'  >
+        <Switch
+          border
+          name='switch-1'
+          type='bold'
+          label='Label Top'
+          labelPosition='top'
+        />
+      </Wrapper>
+      <Wrapper justify='flex-start' bgColor='transparent'  >
+        <Switch
+          border
+          name='switch-2'
+          type='slim'
+          label='Label Right'
+          labelPosition='right'
+        />
+      </Wrapper>
+      <Wrapper justify='flex-start' bgColor='transparent'  >
+        <Switch
+          border
+          name='switch-3'
+          type='bold'
+          label='Label Bottom'
+          labelPosition='bottom'
+        />
+      </Wrapper>
+      <Wrapper justify='flex-start' bgColor='transparent'  >
+        <Switch
+          border
+          name='switch-4'
+          type='slim'
+          label='Label Left'
+          labelPosition='left'
+        />
       </Wrapper>
     </Wrapper>
   )

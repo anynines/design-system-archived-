@@ -8,6 +8,8 @@ export interface SwitchProps {
   checked?: boolean
   className?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
+  label?: string
+  labelPosition?: LabelPositionType
   name: string
   onChange?: (value: boolean) => void
   register?: (validationRules: ValidationOptions) => void
@@ -20,12 +22,15 @@ export interface SwitchProps {
 
 // T Y P E S
 export type SwitchType = 'slim' | 'bold'
+export type LabelPositionType = 'top' | 'right' | 'bottom' | 'left'
 
 export const Switch: React.FC<SwitchProps> = ({
   border = false,
   checked = false,
   className,
   errors = {},
+  label,
+  labelPosition = 'right',
   name,
   onChange,
   register,
@@ -49,7 +54,7 @@ export const Switch: React.FC<SwitchProps> = ({
 
   return (
     <StyledSwitchWrapper
-      className={`switch ${className} ${errors && errors[name] !== undefined ? 'error' : ''}`}
+      className={`switch ${className} text-${labelPosition} ${errors && errors[name] !== undefined ? 'error' : ''}`}
       style={style}
     >
       <input
@@ -61,19 +66,61 @@ export const Switch: React.FC<SwitchProps> = ({
         className='switch-checkbox'
       />
       <label
-        className={`switch-label ${valueState && 'checked'} ${type} ${border && 'border'}`}
+        className={`switch-background ${valueState && 'checked'} ${type} ${border && 'border'}`}
         onClick={(): void => { return setValueState(!valueState) }}
         htmlFor={name}
       >
         <span className={`switch-button ${type}`} />
       </label>
+      {label && <span className='switch-label'>
+        {label}
+      </span>}
     </StyledSwitchWrapper>
   )
 }
 
 // S T Y L E S
 const StyledSwitchWrapper = styled.div`
-  margin-right: 1rem;
+  --label-margin: var(--space-fixed-sm);
+
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--space-fixed-xxl);
+
+  &.text-top {
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    .switch-label {
+      margin-bottom: calc(var(--label-margin) * .6);
+    }
+  }
+
+  &.text-right {
+    align-items: center;
+
+    .switch-label {
+      margin-left: var(--label-margin);
+    }
+  }
+
+  &.text-bottom {
+    flex-direction: column;
+    justify-content: center;
+
+    .switch-label {
+      margin-top: calc(var(--label-margin) * .6);
+    }
+  }
+
+  &.text-left {
+    flex-direction: row-reverse;
+    align-items: center;
+
+    .switch-label {
+      margin-right: var(--label-margin);
+    }
+  }
 
   .switch-checkbox {
     display: none;
@@ -82,7 +129,7 @@ const StyledSwitchWrapper = styled.div`
     height: 0;
   }
 
-  .switch-label {
+  .switch-background {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,6 +137,7 @@ const StyledSwitchWrapper = styled.div`
     background: var(--color-light-50);
     cursor: pointer;
     width: 2.4rem;
+    border: 1px solid transparent;
     border-radius: 3rem;
     transition: background-color .5s;
 
@@ -102,7 +150,7 @@ const StyledSwitchWrapper = styled.div`
     }
 
     &.border {
-      border: 1px solid var(--color-light-50);
+      border-color: var(--color-light-50);
       background: none;
     }
 
@@ -111,15 +159,16 @@ const StyledSwitchWrapper = styled.div`
     }
 
     &.error {
-      label {
-        &::before {
-          border-color: var(--color-error);
-        }
-      }
+      border-color: var(--color-error);
     }
   }
 
-  .switch-label .switch-button {
+  .switch-label {
+    color: var(--color-white);
+    font-size: var(--text-sm);
+  }
+
+  .switch-background .switch-button {
     position: absolute;
     top: 50%;
     background: var(--color-white-fix);
@@ -143,10 +192,10 @@ const StyledSwitchWrapper = styled.div`
 
   }
 
-  .switch-checkbox:checked + .switch-label {
+  .switch-checkbox:checked + .switch-background {
     border: none;
   }
-  .switch-checkbox:checked + .switch-label .switch-button {
+  .switch-checkbox:checked + .switch-background .switch-button {
     transform: translate(-100%, -50%);
 
     &.bold {
