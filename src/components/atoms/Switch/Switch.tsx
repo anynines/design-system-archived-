@@ -72,9 +72,7 @@ export const Switch: React.FC<SwitchProps> = ({
       >
         <span className={`switch-button ${type}`} />
       </label>
-      {label && <span className='switch-label'>
-        {label}
-      </span>}
+      {label && <span className='switch-label'>{label}</span>}
     </StyledSwitchWrapper>
   )
 }
@@ -134,11 +132,11 @@ const StyledSwitchWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     position: relative;
+    border: 1px solid transparent;
+    border-radius: 3rem;
     background: var(--color-light-50);
     cursor: pointer;
     width: 2.4rem;
-    border: 1px solid transparent;
-    border-radius: 3rem;
     transition: background-color .5s;
 
     &.bold {
