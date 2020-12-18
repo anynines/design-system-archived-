@@ -7,6 +7,7 @@ import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
 import { Select } from '../../atoms/Select/Select'
 import Wrapper from '../../_helpers/Wrapper'
 import { Checkbox } from '../../atoms/Checkbox/Checkbox'
+import { Switch } from '../../atoms/Switch/Switch'
 
 export default {
   title: '🌳 Organisms/Form',
@@ -37,6 +38,7 @@ export const Basic = () => (
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
       <Checkbox name='userTermsCheckbox' label='Please agree to our terms of use' required />
+      <Switch name='switch' required />
       <ButtonGroup>
         <Button type='black' width='block'>Cancel</Button>
         <Button type='submit' width='block'>Submit</Button>

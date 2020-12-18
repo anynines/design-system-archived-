@@ -25,43 +25,32 @@ export default {
 }
 
 export const Basic = (args: SwitchProps) => {
-  const [value, setValue] = React.useState(false)
-
   return (
     <Wrapper justify='flex-start' bgColor={undefined} >
       <Switch
         {...args}
-        checked={value}
-        onChange={() => setValue(!value)}
       />
-      { value ? 'Switch Component' : 'Press me'}
+      Basic Switch
     </Wrapper>
   )
 }
 
 export const Type = () => {
-  const [valueBold, setValueBold] = React.useState(false)
-  const [valueSlim, setValueSlim] = React.useState(false)
-
   return (
     <Wrapper align='flex-start' direction='column' bgColor='transparent' >
       <Wrapper justify='flex-start' bgColor='transparent' >
         <Switch
-          checked={valueBold}
           name='switch-1'
-          onChange={() => setValueBold(!valueBold)}
           type='bold'
         />
-        {valueBold ? 'Bold Switch Component' : 'Press me'}
+        Bold Switch Component
       </Wrapper>
       <Wrapper justify='flex-start' bgColor='transparent'  >
         <Switch
-          checked={valueSlim}
           name='switch-2'
-          onChange={() => setValueSlim(!valueSlim)}
           type='slim'
         />
-        {valueSlim ? 'Slim Switch Component' : 'Press me'}
+        Slim Switch Component
       </Wrapper>
     </Wrapper>
   )
