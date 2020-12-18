@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Highlight from 'react-highlight.js'
-import hljs from "highlight.js"
-import typescript from "highlight.js/lib/languages/typescript"
-import cli from "highlight.js/lib/languages/vim"
+import hljs from 'highlight.js'
+import typescript from 'highlight.js/lib/languages/typescript'
+import cli from 'highlight.js/lib/languages/vim'
 
 export interface CodeProps {
   className?: string
