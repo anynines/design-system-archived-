@@ -12,9 +12,9 @@ export interface CodeProps {
   style?: React.CSSProperties
 }
 
-hljs.registerLanguage("ts", typescript)
-hljs.registerLanguage("tsx", typescript)
-hljs.registerLanguage("cli", cli)
+hljs.registerLanguage('ts', typescript)
+hljs.registerLanguage('tsx', typescript)
+hljs.registerLanguage('cli', cli)
 hljs.initHighlightingOnLoad()
 
 export const Code: React.FC<CodeProps> = ({
