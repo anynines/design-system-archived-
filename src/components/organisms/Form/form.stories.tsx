@@ -38,7 +38,7 @@ export const Basic = () => (
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
       <Checkbox name='userTermsCheckbox' label='Please agree to our terms of use' required />
-      <Switch name='switch' required />
+      <Switch name='switch' label='Switchable Option' />
       <ButtonGroup>
         <Button type='black' width='block'>Cancel</Button>
         <Button type='submit' width='block'>Submit</Button>
