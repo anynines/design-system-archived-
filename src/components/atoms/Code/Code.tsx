@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Highlight from 'react-highlight.js'
+import hljs from "highlight.js"
+import typescript from "highlight.js/lib/languages/typescript"
+import cli from "highlight.js/lib/languages/vim"
 
 export interface CodeProps {
   className?: string
@@ -9,10 +12,15 @@ export interface CodeProps {
   style?: React.CSSProperties
 }
 
+hljs.registerLanguage("ts", typescript)
+hljs.registerLanguage("tsx", typescript)
+hljs.registerLanguage("cli", cli)
+hljs.initHighlightingOnLoad()
+
 export const Code: React.FC<CodeProps> = ({
   children,
   className,
-  code,
+  code = '',
   language = 'html',
   style
 }) => {
