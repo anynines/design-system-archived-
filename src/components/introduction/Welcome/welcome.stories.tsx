@@ -84,13 +84,10 @@ export const Welcome = () => (
 
       <h3>🔌 Installation</h3>
       <p>Install from the root directory with</p>
-      <Code language='cli'>
-        yarn install @anynines/design-system
-      </Code>
+      <Code language='cli' code='yarn install @anynines/design-system' />
+
       <p>Alternatively add this line to your package.json</p>
-      <Code language='json'>
-        "@anynines/design-system": "^0.1.0"
-      </Code>
+      <Code language='json' code='"@anynines/design-system": "^0.1.0"' />
 
       <hr />
 
