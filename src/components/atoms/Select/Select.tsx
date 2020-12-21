@@ -7,6 +7,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { ValidationOptions } from 'react-hook-form'
 
+import { onClickOutsideHook } from '../../../helpers/react'
+
 // D E S I G N   S Y S T E M
 import { Icon, IconName } from '../Icon/Icon'
 
@@ -36,6 +38,8 @@ export const Select: React.FC<SelectProps> = ({
 }) => {
   const [valueState, setValueState] = React.useState(defaultValue)
   const [isActive, setIsActive] = React.useState(false)
+
+  const selectRef = React.useRef<HTMLDivElement | null>(null)
   let optionHoveredIndex = -1
 
   const setOptionHover = (): void => {
@@ -88,7 +92,7 @@ export const Select: React.FC<SelectProps> = ({
     setIsActive(!isActive)
   }
 
-  const keyboardNavigation = (event: KeyboardEvent): void => {
+  const keyboardNavigation = React.useCallback((event: KeyboardEvent): void => {
     if (isActive) {
       event.preventDefault()
       if (event.key === 'ArrowDown' && optionHoveredIndex < values.length - 1) {
@@ -112,25 +116,12 @@ export const Select: React.FC<SelectProps> = ({
         closeCustomSelectOptions()
       }
     }
-  }
+  }, [])
 
-  const clickedOutside = (event: MouseEvent): void => {
-    const el = event.target
-    const domNode = document.getElementsByClassName('StyledSelect')[0]
-    /*
-     * NOTE: we have to check the type of el before doing the contains, otherwise
-     * typescript will break
-     */
-    if (!(domNode && el instanceof Node && domNode.contains(el))) {
-      closeCustomSelectOptions()
-    }
-  }
-
-  const closeCustomSelectOptions = (): void => {
+  const closeCustomSelectOptions = React.useCallback((): void => {
     setIsActive(false)
-    document.removeEventListener('click', clickedOutside, false)
     document.removeEventListener('keydown', keyboardNavigation, false)
-  }
+  }, [keyboardNavigation])
 
   React.useEffect((): void => {
     if (onChange !== undefined) {
@@ -140,16 +131,24 @@ export const Select: React.FC<SelectProps> = ({
 
   React.useEffect((): void => {
     if (isActive) {
-      document.addEventListener('click', clickedOutside, false)
       document.addEventListener('keydown', keyboardNavigation, false)
     }
   })
+
+  React.useEffect(() => {
+    const cleanOnClickOutsideHook = onClickOutsideHook(selectRef, closeCustomSelectOptions)
+
+    return ((): void => {
+      cleanOnClickOutsideHook()
+    })
+  }, [closeCustomSelectOptions])
 
   return (
     <StyledSelect
       className={`select-wrapper ${className} 
       ${isActive ? 'is-active' : ''}`}
       style={style}
+      ref={selectRef}
     >
       <span className='select-label' id={name}>
         {label}
