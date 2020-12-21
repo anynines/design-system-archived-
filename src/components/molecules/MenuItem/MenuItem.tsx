@@ -49,7 +49,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           <NavLink
             exact={exact}
             to={`${path}`}
-            className='wrapper'
+            className={`wrapper ${active && 'active'}`}
             activeClassName='active'
           >
             {icon && <Icon icon={icon} />}
@@ -73,9 +73,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             className={`wrapper ${active && 'active'} ${counter && 'counter'}`}
           >
             {icon && <Icon icon={icon} />}
-            {children !== undefined ? (
-              <span className='label'>{children}</span>
-            ) : (<></>)}
+            {children !== undefined
+              ? <span className='label'>{children}</span>
+              : <></>}
           </div>
         </StyledMenuItem>
       )}
