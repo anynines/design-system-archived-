@@ -10,7 +10,7 @@ export interface FormProps {
 
 const recursiveMap = (
   children: React.ReactNode,
-  fn: (child: React.ReactNode) => React.ReactNode
+  executerFunction: (child: React.ReactNode) => React.ReactNode
 ): React.ReactNode => {
   return React.Children.map(children, (child) => {
     if (!React.isValidElement(child)) {
@@ -19,11 +19,11 @@ const recursiveMap = (
 
     if (child.props.children) {
       child = React.cloneElement(child, {
-        children: recursiveMap(child.props.children, fn)
+        children: recursiveMap(child.props.children, executerFunction)
       })
     }
 
-    return fn(child)
+    return executerFunction(child)
   })
 }
 
