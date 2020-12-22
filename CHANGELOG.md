@@ -1,3 +1,46 @@
+### 0.3.0 -  2020-12-22
+* add basic Label
+* add Label as atoms
+* update Index
+* fix linter issues
+* add timeout function for Alert-Component
+* v0.1.46
+* fix some linter issues
+* fix linter issues
+* fix linter issues
+* add workflow for publish on push-tag
+* adjust workflow
+* fix syntax-error
+* fix workflow
+* update tag-number for package
+* 📸 Alert
+* adjust prop to automatically hide alert
+* add new checkbox component CHAP-1000 (#51)
+* add defaut classname as empty string to avoid undefined class in DOM
+* add HookForm Functionality for Switch Component
+* Merge pull request #52 from anynines/featureCHAP-910-atoms/label
+* update package-version-number, update changelog
+* Merge pull request #54 from anynines/featureCHAP-972-disappear_function_for_alert
+* update changelog
+* Feature/chap 925 spacing variable meeting (#50)
+* update changelog
+* adjust form-stories
+* Merge pull request #56 from anynines/feature/CHAP-969-git_flow
+* Merge pull request #57 from anynines/feature/CHAP-1005-switch_hookform_functionality
+* update changelog
+* Feature/chap 988 switch label (#59)
+* ♻️ fn -> executerFunction
+* 🔀 Merge pull request #55 from anynines/feature/CHAP-986_refactor-Form-Component-to-also-allow-inputs-nested-deeper-than-one-level
+* 🐛 Add active className if needed in MenuItem with path props
+* 📝 Add MenuItem active to story
+* 🚨 Fix indentation
+* 🔀 Merge pull request #53 from anynines/feature/CHAP-1002_MenuItem-active-doesn't-work-with-path-prop
+* add react-syntax-highlighter
+* add new CheckboxGroup component CHAP-1030 (#60)
+* Merge pull request #61 from anynines/feature/CHAP-977-highlight_fix
+* update changelog
+* update package.json
+
 ### 0.2.0 -  2020-12-16
 * Add overall components for new tables and basic functionalities
 * Update stories on table
