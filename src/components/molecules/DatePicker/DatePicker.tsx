@@ -5,6 +5,9 @@ import moment, { Moment } from 'moment'
 
 import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css'
+import ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet'
+import DefaultTheme from 'react-dates/lib/theme/DefaultTheme'
+
 import { DayPickerSingleDateController, DayPickerSingleDateControllerShape } from 'react-dates'
 
 // I N T E R F A C E S
@@ -35,6 +38,16 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 
     return null
   }
+
+  ThemedStyleSheet.registerTheme({
+    reactDates: {
+      ...DefaultTheme.reactDates,
+      color: {
+        ...DefaultTheme.reactDates.color,
+        background: '#000',
+      },
+    },
+  })
 
   return (
     <StyledDatePicker
