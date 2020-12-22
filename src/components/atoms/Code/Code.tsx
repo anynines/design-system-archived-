@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import SyntaxHighlighter from 'react-syntax-highlighter'
 
 export interface CodeProps {
   className?: string
   code?: string
   language?: string
+  showLineNumbers?: boolean
   style?: React.CSSProperties
 }
 
@@ -13,6 +15,7 @@ export const Code: React.FC<CodeProps> = ({
   className,
   code,
   language = 'html',
+  showLineNumbers = false,
   style
 }) => {
   return (
@@ -20,11 +23,14 @@ export const Code: React.FC<CodeProps> = ({
       <div className='language-label'>
         <span>{language}</span>
       </div>
-      <pre>
-        <code>
-          {code || children}
-        </code>
-      </pre>
+      <SyntaxHighlighter
+        language={language}
+        useInlineStyles={false}
+        wrapLines
+        showLineNumbers={showLineNumbers}
+      >
+        {code || children}
+      </SyntaxHighlighter>
     </StyledCode>
   )
 }
