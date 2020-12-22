@@ -45,15 +45,15 @@ export const Basic = () => (
           name='Julian Fischer'
           description='CEO'
           mode='dark'
-          setMode={function noRefCheck() {}}
-          logoutUser={() => {}}
+          setMode={function noRefCheck() { }}
+          logoutUser={() => { }}
         />
       </AdminNavigation>
       <Page>
         <Container>
           <PageHeader>
             <h1>Feature Name</h1>
-            <Button>
+            <Button size='md'>
               Do something
             </Button>
           </PageHeader>

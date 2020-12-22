@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import SyntaxHighlighter from 'react-syntax-highlighter'
 
 export interface CodeProps {
   className?: string
   code?: string
   language?: string
+  showLineNumbers?: boolean
   style?: React.CSSProperties
 }
 
@@ -13,6 +15,7 @@ export const Code: React.FC<CodeProps> = ({
   className,
   code,
   language = 'html',
+  showLineNumbers = false,
   style
 }) => {
   return (
@@ -20,11 +23,14 @@ export const Code: React.FC<CodeProps> = ({
       <div className='language-label'>
         <span>{language}</span>
       </div>
-      <pre>
-        <code>
-          {code || children}
-        </code>
-      </pre>
+      <SyntaxHighlighter
+        language={language}
+        useInlineStyles={false}
+        wrapLines
+        showLineNumbers={showLineNumbers}
+      >
+        {code || children}
+      </SyntaxHighlighter>
     </StyledCode>
   )
 }
@@ -32,7 +38,7 @@ export const Code: React.FC<CodeProps> = ({
 const StyledCode = styled.div`
   position: relative;
   overflow: hidden;
-  margin-bottom: var(--space-lgr);
+  margin-bottom: var(--space-xl);
   border: var(--border);
   background-color: var(--color-black);
   width: 100%;
@@ -43,7 +49,7 @@ const StyledCode = styled.div`
     margin: 0;
     padding: var(--space-lg);
     width: 100%;
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     max-width: 100%;
     overflow-x: auto;
   }
@@ -53,10 +59,10 @@ const StyledCode = styled.div`
     right: 0;
     bottom: 0;
     background-color: var(--color-white-10);
-    padding: 8px;
+    padding: var(--space-fixed-xs);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: var(--text-sm);
+    font-size: var(--text-xxs);
     font-weight: var(--font-weight-bd);
     border-radius: var(--radius) 0 0 0;
   }

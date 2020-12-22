@@ -56,7 +56,7 @@ const StyledButton = styled.button`
   border: none;
   border: var(--border);
   cursor: pointer;
-  padding: var(--space-lg) var(--space-lgr);
+  padding: var(--space-md) var(--space-lg);
   width: auto;
   color: var(--color-white);
   font-family: var(--font-family);
@@ -65,15 +65,16 @@ const StyledButton = styled.button`
   outline: none;
   transition: var(--transition);
 
+  i {
+    margin-right: var(--space-md);
+  }
+
   &.icon-only {
     padding: var(--space-lg);
+    
     i {
       margin-right: 0;
     }
-  }
-
-  i {
-    margin-right: var(--space-md);
   }
 
   /* Width */
@@ -83,7 +84,7 @@ const StyledButton = styled.button`
 
   /* Sizes */
   &.xs {
-    font-size: var(--text-xs);
+    font-size: var(--text-xxxs);
 
     i {
       --icon-size: .6rem;
@@ -91,7 +92,7 @@ const StyledButton = styled.button`
   }
 
   &.sm {
-    font-size: var(--text-sm);
+    font-size: var(--text-xxs);
 
     i {
       --icon-size: .75rem;
@@ -99,15 +100,16 @@ const StyledButton = styled.button`
   }
   
   &.md {
-    font-size: var(--text-md);
+    font-size: var(--text-xs);
   }
   
   &.lg {
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
   }
 
   /* Types */
-  &.primary, &.submit {
+  &.primary,
+  &.submit {
     background-color: var(--color-primary);
     color: var(--color-white-fix);
   }

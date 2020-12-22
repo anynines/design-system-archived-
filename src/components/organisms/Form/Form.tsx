@@ -1,12 +1,30 @@
-import React, { Children, cloneElement } from 'react'
+import React, { cloneElement } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 
 export interface FormProps {
   // 'react-hook-form' does not provide a useable TS definition for 'setValue' function
   onSubmit?: (data: Record<string, string>, setValue?: any) => void // eslint-disable-line
-  children
   className?: string
+}
+
+const recursiveMap = (
+  children: React.ReactNode,
+  executerFunction: (child: React.ReactNode) => React.ReactNode
+): React.ReactNode => {
+  return React.Children.map(children, (child) => {
+    if (!React.isValidElement(child)) {
+      return child
+    }
+
+    if (child.props.children) {
+      child = React.cloneElement(child, {
+        children: recursiveMap(child.props.children, executerFunction)
+      })
+    }
+
+    return executerFunction(child)
+  })
 }
 
 export const Form: React.FC<FormProps> = ({
@@ -23,13 +41,6 @@ export const Form: React.FC<FormProps> = ({
     setValue
   } = useForm()
   const formProps = { register, watch, getValues, errors, setValue }
-  const childrenWithProps = Children.map(children, (child) => {
-    const isReactComponent = child.type instanceof Function
-    const clonedElement = cloneElement(child, {
-      ...(isReactComponent ? formProps : {})
-    })
-    return clonedElement
-  })
 
   const onSubmit = (data: Record<string, string> | undefined): void => {
     if (onSubmitCallback && data !== undefined) onSubmitCallback(data, setValue)
@@ -40,7 +51,27 @@ export const Form: React.FC<FormProps> = ({
       onSubmit={handleSubmit(onSubmit)}
       className={`form-wrapper ${className}`}
     >
-      {childrenWithProps}
+      {recursiveMap(children, (child) => {
+        const isComponent = typeof child !== 'string'
+          && typeof child !== 'boolean'
+          && typeof child !== 'number'
+          && child !== undefined
+          && child !== null
+          && Object.keys(child).length > 0
+          // ignore last check because TypeScript don't get that `child`
+          // can't be equal to `{}` thanks to previous test
+          // @ts-ignore
+          && child.type instanceof Function
+
+        if (isComponent) {
+          // TypeScript don't link the `isComponent` boolean to the fact
+          // that `child` can't be of type undefined or null or ...
+          // @ts-ignore
+          return cloneElement(child, { ...child.props, ...formProps })
+        }
+
+        return child
+      })}
     </StyledForm>
   )
 }

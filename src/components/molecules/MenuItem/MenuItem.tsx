@@ -49,15 +49,13 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           <NavLink
             exact={exact}
             to={`${path}`}
-            className='wrapper'
+            className={`wrapper ${active && 'active'}`}
             activeClassName='active'
           >
             {icon && <Icon icon={icon} />}
             {children !== undefined ? (
               <span className='label'>{children}</span>
-            ) : (
-              <></>
-            )}
+            ) : (<></>)}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -75,11 +73,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             className={`wrapper ${active && 'active'} ${counter && 'counter'}`}
           >
             {icon && <Icon icon={icon} />}
-            {children !== undefined ? (
-              <span className='label'>{children}</span>
-            ) : (
-              <></>
-            )}
+            {children !== undefined
+              ? <span className='label'>{children}</span>
+              : <></>}
           </div>
         </StyledMenuItem>
       )}
@@ -95,7 +91,7 @@ interface StyledMenuItemProps {
 // S T Y L E S
 const StyledMenuItem = styled.li<StyledMenuItemProps>`
   --display: ${(props): string => { return props.vertical ? 'inline-block' : 'block' }};
-  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-lg) 0' : '0 var(--space-sm)' }};
+  --margin: ${(props): string => { return props.vertical ? '0 0 var(--space-md) 0' : '0 var(--space-xs)' }};
   --margin-bottom: ${(props): string => { return props.vertical ? '0' : '' }};
   --svg-margin-right: ${(props): string => { return props.label ? '8px' : '0' }};
 
@@ -109,7 +105,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   }
 
   .label {
-    font-size: var(--text-md);
+    font-size: var(--text-xs);
     font-weight: var(--font-weight-bd);
     transition: var(--transition);
   }
@@ -146,12 +142,12 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     &.counter {
       &::after {
         position: absolute;
-        top: -0.45rem;
-        right: -0.45rem;
+        top: -.45rem;
+        right: -.45rem;
         border: 2px solid var(--color-black);
         background-color: var(--color-primary);
-        width: 0.8rem;
-        height: 0.8rem;
+        width: .8rem;
+        height: .8rem;
         content: '';
         border-radius: 100%;
       }
@@ -161,6 +157,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     &:hover {
       background-color: var(--color-primary);
       color: var(--color-white-fix);
+      
       .label {
         color: var(--color-white-fix);
       }
@@ -170,6 +167,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   &.black {
     .wrapper {
       background-color: var(--color-black);
+
       &:hover {
         background-color: var(--color-primary);
       }
@@ -179,6 +177,7 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
   &.primary {
     .wrapper {
       background-color: var(--color-primary);
+      
       &:hover {
         background-color: var(--color-primary-light);
       }

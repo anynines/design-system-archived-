@@ -6,6 +6,8 @@ import { Button } from '../../atoms/Button/Button'
 import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
 import { Select } from '../../atoms/Select/Select'
 import Wrapper from '../../_helpers/Wrapper'
+import { Checkbox } from '../../atoms/Checkbox/Checkbox'
+import { Switch } from '../../atoms/Switch/Switch'
 
 export default {
   title: '🌳 Organisms/Form',
@@ -35,6 +37,8 @@ export const Basic = () => (
       <Input name='Text' type='text' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} errorMessage='Please enter a 4 digits number' />
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
+      <Checkbox name='userTermsCheckbox' label='Please agree to our terms of use' required />
+      <Switch name='switch' label='Switchable Option' />
       <ButtonGroup>
         <Button type='black' width='block'>Cancel</Button>
         <Button type='submit' width='block'>Submit</Button>

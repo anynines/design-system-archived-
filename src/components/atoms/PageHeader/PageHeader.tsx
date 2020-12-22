@@ -19,15 +19,15 @@ const StyledPageHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-fixed-lg);
   background-color: var(--color-black-darker);
-  padding: 20px 30px;
+  padding: var(--space-lg) var(--space-xxl);
   border-radius: var(--radius);
-  height: 80px;
+  height: 5rem;
 
   h1 {
     margin-bottom: 0;
-    font-size: var(--text-xl);
+    font-size: var(--text-xxl);
   }
 
   .page-header-toolbar {

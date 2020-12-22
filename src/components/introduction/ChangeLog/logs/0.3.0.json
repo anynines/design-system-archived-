@@ -1,0 +1,48 @@
+{
+  "Fixed": [
+    {
+      "title": "💧 Atoms / Code",
+      "description": "Fix Code Highlighting for Code Component."
+    },
+    {
+      "title": "💧 Atoms / Switch",
+      "description": "Fix Switch for Hook Forms."
+    }
+  ],
+  "Changed": [
+    {
+      "title": "Global spacing and font-size update",
+      "description": "Replace all spacing and font-size variables + adjust all components."
+    }
+  ],
+  "Added": [
+    {
+      "title": "💧 Atoms / Label",
+      "description": "Add Label (not for Form-Inputs)."
+    },
+    {
+      "title": "💧 Atoms / Checkbox",
+      "description": "Add checkbox component."
+    },
+    {
+      "title": "🌱 Molecules / Alert",
+      "description": "Add Hide Function for Alert Component."
+    },
+    {
+      "title": "🌱 Molecules / CheckboxGroup",
+      "description": "Add Checkbox Group component."
+    },
+    {
+      "title": "🌳 Organism / Form",
+      "description": "Add new checkbox component to basic form."
+    },
+    {
+      "title": "Git Flow",
+      "description": "Add Functionality for Git Flow."
+    },
+    {
+      "title": "Workflow / NPM Build and Deploy",
+      "description": "Add new Github-Actions Workflow to automatically deploy the Design-System when creating a release."
+    }
+  ]
+}
