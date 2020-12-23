@@ -56,6 +56,30 @@ export const Select: React.FC<SelectProps> = ({
     setIsActive(!isActive)
   }
 
+  const onSelectKeyDown = (event: KeyboardEvent): void => {
+    switch (event.key) {
+      case 'ArrowDown':
+        setHoveredValueIndex(hoveredValueIndex < values.length - 1
+          ? hoveredValueIndex + 1
+          : hoveredValueIndex)
+        break
+
+      case 'ArrowUp':
+        setHoveredValueIndex(hoveredValueIndex > 0
+          ? hoveredValueIndex - 1
+          : hoveredValueIndex)
+        break
+
+      case 'Enter': case 'Spacebar':
+        setValueState(values[hoveredValueIndex])
+        setIsActive(false)
+        break
+
+      default:
+        break
+    }
+  }
+
   React.useEffect(() => {
     if (!isActive) {
       setHoveredValueIndex(values.indexOf(valueState))
@@ -82,20 +106,7 @@ export const Select: React.FC<SelectProps> = ({
       ${isActive ? 'is-active' : ''}`}
       style={style}
       ref={selectRef}
-      onKeyDown={(event): void => {
-        if (event.key === 'ArrowDown') {
-          setHoveredValueIndex(hoveredValueIndex < values.length - 1
-            ? hoveredValueIndex + 1
-            : hoveredValueIndex)
-        } else if (event.key === 'ArrowUp') {
-          setHoveredValueIndex(hoveredValueIndex > 0
-            ? hoveredValueIndex - 1
-            : hoveredValueIndex)
-        } else if (event.key === 'Enter' || event.key === 'Spacebar') {
-          setValueState(values[hoveredValueIndex])
-          setIsActive(false)
-        }
-      }}
+      onKeyDown={onSelectKeyDown}
       tabIndex='0'
     >
       <span className='select-label' id={name}>
