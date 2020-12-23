@@ -1,7 +1,5 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable @typescript-eslint/no-use-before-define */
+// Disable it to use onClick on divs
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-restricted-syntax */
 
 import React from 'react'
 import styled from 'styled-components'
@@ -15,7 +13,7 @@ import { Icon, IconName } from '../Icon/Icon'
 // I N T E R F A C E
 export interface SelectProps {
   className?: string
-  defaultValue?: string
+  defaultValue?: string | number
   icon?: IconName
   label: string
   name: string
@@ -37,91 +35,32 @@ export const Select: React.FC<SelectProps> = ({
   defaultValue = values[0]
 }) => {
   const [valueState, setValueState] = React.useState(defaultValue)
+  const [hoveredValueIndex, setHoveredValueIndex] = React.useState<number>(values.indexOf(defaultValue))
   const [isActive, setIsActive] = React.useState(false)
 
   const selectRef = React.useRef<HTMLDivElement | null>(null)
-  let optionHoveredIndex = -1
-
-  const setOptionHover = (): void => {
-    const options = document.getElementsByClassName('select-custom__option')
-    for (const o of options) {
-      o.classList.remove('is-hovered')
-    }
-    if (optionHoveredIndex >= 0) {
-      options[optionHoveredIndex].classList.add('is-hovered')
-    }
-  }
-
-  const updateOptionElement = (element: Element): void => {
-    const options = document.getElementsByClassName('select-custom__option')
-
-    // @TODO set correct hover start position when using keyboard, it seems to reset, could be development only
-
-    for (const o of options) {
-      o.classList.remove('is-active')
-    }
-    element.classList.remove('is-hovered')
-    element.classList.add('is-active')
-
-    // set the next hover start index
-    optionHoveredIndex = Array.prototype.slice.call(options).indexOf(element)
-    setOptionHover()
-  }
 
   const onValueChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const newValue = event.target.value
 
     setValueState(newValue)
-
-    // update the custom select selected option to be synchronized
-    for (const option of document.getElementsByClassName('select-custom__option')) {
-      if (option.getAttribute('data-value') === newValue) {
-        updateOptionElement(option)
-      }
-    }
   }
 
   const onCustomSelectOptionClick = (event: React.MouseEvent<HTMLDivElement>): void => {
     const newValue = event.currentTarget.dataset.value || ''
 
     setValueState(newValue)
-    updateOptionElement(event.currentTarget)
   }
 
   const onCustomSelectClick = (): void => {
     setIsActive(!isActive)
   }
 
-  const keyboardNavigation = React.useCallback((event: KeyboardEvent): void => {
-    if (isActive) {
-      event.preventDefault()
-      if (event.key === 'ArrowDown' && optionHoveredIndex < values.length - 1) {
-        optionHoveredIndex += 1
-        setOptionHover()
-      }
-      if (event.key === 'ArrowUp' && optionHoveredIndex > 0) {
-        optionHoveredIndex -= 1
-        setOptionHover()
-      }
-      if (event.key === ' ' || event.key === 'Enter' || event.key === 'Spacebar') {
-        const option = document.getElementsByClassName('select-custom__option')[optionHoveredIndex]
-        if (typeof option !== 'undefined') {
-          const newValue = option.getAttribute('data-value') || ''
-          setValueState(newValue)
-          updateOptionElement(option)
-          closeCustomSelectOptions()
-        }
-      }
-      if (event.key === 'Escape') {
-        closeCustomSelectOptions()
-      }
+  React.useEffect(() => {
+    if (!isActive) {
+      setHoveredValueIndex(values.indexOf(valueState))
     }
-  }, [])
-
-  const closeCustomSelectOptions = React.useCallback((): void => {
-    setIsActive(false)
-    document.removeEventListener('keydown', keyboardNavigation, false)
-  }, [keyboardNavigation])
+  }, [isActive, valueState, values])
 
   React.useEffect((): void => {
     if (onChange !== undefined) {
@@ -129,19 +68,13 @@ export const Select: React.FC<SelectProps> = ({
     }
   }, [onChange, valueState])
 
-  React.useEffect((): void => {
-    if (isActive) {
-      document.addEventListener('keydown', keyboardNavigation, false)
-    }
-  })
-
   React.useEffect(() => {
-    const cleanOnClickOutsideHook = onClickOutsideHook(selectRef, closeCustomSelectOptions)
+    const cleanOnClickOutsideHook = onClickOutsideHook(selectRef, () => { setIsActive(false) })
 
     return ((): void => {
       cleanOnClickOutsideHook()
     })
-  }, [closeCustomSelectOptions])
+  }, [])
 
   return (
     <StyledSelect
@@ -149,6 +82,21 @@ export const Select: React.FC<SelectProps> = ({
       ${isActive ? 'is-active' : ''}`}
       style={style}
       ref={selectRef}
+      onKeyDown={(event): void => {
+        if (event.key === 'ArrowDown') {
+          setHoveredValueIndex(hoveredValueIndex < values.length - 1
+            ? hoveredValueIndex + 1
+            : hoveredValueIndex)
+        } else if (event.key === 'ArrowUp') {
+          setHoveredValueIndex(hoveredValueIndex > 0
+            ? hoveredValueIndex - 1
+            : hoveredValueIndex)
+        } else if (event.key === 'Enter' || event.key === 'Spacebar') {
+          setValueState(values[hoveredValueIndex])
+          setIsActive(false)
+        }
+      }}
+      tabIndex='0'
     >
       <span className='select-label' id={name}>
         {label}
@@ -160,7 +108,6 @@ export const Select: React.FC<SelectProps> = ({
       */}
       <div className='selectWrapper'>
         <select
-          // id={name}
           aria-labelledby={name}
           value={valueState}
           onChange={onValueChange}
@@ -174,18 +121,18 @@ export const Select: React.FC<SelectProps> = ({
 
         <div
           className='select-custom'
-          aria-hidden={!isActive}
           onClick={onCustomSelectClick}
         >
           <div className='select-custom__option-container'>
             <div className='select-custom__inner-option-container'>
-              {values.map((value): JSX.Element => {
+              {values.map((value, i): JSX.Element => {
                 return (
                   <div
-                    className='select-custom__option'
+                    className={`select-custom__option ${i === hoveredValueIndex ? 'is-hovered' : ''}`}
                     data-value={value}
                     key={value}
                     onClick={onCustomSelectOptionClick}
+                    tabIndex={i}
                   >
                     {value}
                   </div>
