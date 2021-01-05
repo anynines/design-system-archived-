@@ -14,23 +14,20 @@ export const ButtonGroupPicker: React.FC = (props) => {
 // S T Y L E S
 const StyledButtonGroupPicker = styled.div`
   display: flex;
-  border-radius: var(--radius);
-  overflow: hidden;
 
-  .btn {
+  > .btn {
     position: relative;
     border-radius: 0;
+    border-radius: none;
 
-    &:not(:last-child)::after {
-      position: absolute;
-      right: 0;
-      z-index: 1;
-      background-color: var(--color-darker);
-      width: 4px;
-      height: 80%;
-      border-radius: var(--radius);
-      transform: translateX(50%);
-      content: "";
+    &:first-child {
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
     }
   }
 `
