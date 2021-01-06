@@ -1,11 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// I N T E R F A C E S
+export interface ButtonGroupPicker {
+  className?: string
+  style?: React.CSSProperties
+}
+
 // C O M P O N E N T
-export const ButtonGroupPicker: React.FC = (props) => {
-  const { children } = props
+export const ButtonGroupPicker: React.FC<ButtonGroupPicker> = ({
+  className = '',
+  style,
+  children
+}) => {
   return (
-    <StyledButtonGroupPicker className='button-group-picker'>
+    <StyledButtonGroupPicker
+      className={`button-group-picker ${className}`}
+      style={style}
+    >
       {children}
     </StyledButtonGroupPicker>
   )
@@ -17,7 +29,6 @@ const StyledButtonGroupPicker = styled.div`
 
   > .btn {
     position: relative;
-    border-radius: 0;
     border-radius: none;
 
     &:first-child {
