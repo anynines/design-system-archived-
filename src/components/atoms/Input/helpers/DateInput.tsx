@@ -13,11 +13,6 @@ export interface DateInputProps extends Omit<TextInputProps, 'value' | 'pattern'
   date?: number
   pattern?: RegExp
   onDateChange?: (date: number) => void
-  datePickerOptions?: Omit<DatePickerProps, 'date' | 'onDateChange' | 'focused' | 'onFocusChange' | 'initialVisibleMonth'> & {
-    focused?: boolean
-    onFocusChange?: (arg: { focused: boolean }) => void
-    initialVisibleMonth?: (() => moment.Moment) | null
-  }
 }
 
 // match dd/mm/yyyy format
@@ -29,7 +24,6 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     children,
     className,
     date,
-    datePickerOptions,
     getValues,
     name,
     onDateChange,
@@ -70,7 +64,6 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     if (isDatePickerOpen) {
       return (
         <StyledDatePicker
-          {...datePickerOptions}
           date={getDateValue()}
           onDateChange={(updatedDate): void => {
             setSelectedDate(updatedDate)

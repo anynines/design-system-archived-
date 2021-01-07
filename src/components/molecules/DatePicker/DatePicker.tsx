@@ -1,52 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import moment, { Moment } from 'moment'
+import 'react-modern-calendar-datepicker/lib/DatePicker.css'
+import DayPicker, { Day } from 'react-modern-calendar-datepicker'
 
-import 'react-dates/initialize'
-import 'react-dates/lib/css/_datepicker.css'
-import { DayPickerSingleDateController, DayPickerSingleDateControllerShape } from 'react-dates'
+import caretLeft from '../../atoms/Icon/assets/caretLeft'
 
 // I N T E R F A C E S
-export type DatePickerProps = Omit<DayPickerSingleDateControllerShape, 'onDateChange' | 'renderMonthText' | 'date'> & {
+export type DatePickerProps = {
   className?: string
-  date?: number
-  onDateChange: (dateAsTimestamp: number) => void
+  date: Day
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
   className,
-  date,
-  focused = true,
-  numberOfMonths = 1,
-  onDateChange: onDateChangeProps,
-  ...rest
 }) => {
-  const onDateChange = (updatedDate: Moment | null): void => {
-    if (updatedDate !== null) {
-      onDateChangeProps(updatedDate.unix())
-    }
+  const defaultValue = {
+    year: 2019,
+    month: 10,
+    day: 5,
   }
 
-  const getDate = (): Moment | null => {
-    if (date) {
-      return moment.unix(date)
-    }
+  const [selectedDay, setSelectedDay] = React.useState(defaultValue)
 
-    return null
-  }
+  const renderCustomInput = ({ ref }) => (
+    <input />
+  )
 
   return (
     <StyledDatePicker
       className={`date-picker ${className}`}
+      arrow={caretLeft}
     >
-
-      <DayPickerSingleDateController
-        {...rest}
-        focused={focused}
-        numberOfMonths={numberOfMonths}
-        onDateChange={onDateChange}
-        date={getDate()}
+      <DayPicker
+        value={selectedDay}
+        onChange={(date: Day) => setSelectedDay(date)}
+        // renderInput={renderCustomInput}
+        shouldHighlightWeekends
       />
     </StyledDatePicker>
   )
@@ -54,30 +44,89 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 
 // S T Y L E S
 const StyledDatePicker = styled.div`
-  .DayPicker, 
-  .DayPicker_transitionContainer, 
-  .DayPickerNavigation_button {
-    border-radius: var(--radius);
-  }
+  .Calendar {
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius:  var(--radius);
 
-  .CalendarDay__default {
-    border: 1px solid var(--color-dark-50);
+    // General Color
+    &__day,
+    &__monthText,
+    &__monthSelectorItemText,
+    &__yearText,
+    &__yearSelectorText {
+      color: var(--color-white) !important;
+      
+      &:hover{
+        background-color: var(--color-light-20) !important;
+        color: var(--color-black);
+      }
+    }
 
-    &:hover {
-      border: 1px double var(--color-black);
-      background: var(--color-dark-50);
+    // Header Arrows
+    &__monthArrow {
+      background-image: url(${(props): string => { return props.arrow }});
+    }
+
+    // Week Days
+    &__weekDay{
+      color: var(--color-white-50) !important;
+    }
+
+    // Day Selector
+    &__day {
+      &.-selected {
+        background: var(--color-primary);
+      }
+
+      &.-weekend {
+        color: var(--color-primary-light) !important;
+
+        &.-selected {
+          color: var(--color-white) !important;
+        }
+      }
+    }
+
+    // Month Selector
+    &__monthSelector {
+      background-color: var(--color-dark);
+    }
+
+    &__monthSelectorItem {
+      &.-active {
+        .Calendar__monthSelectorItemText{
+          background-color: var(--color-primary);
+        }
+      }
+    }
+
+    // Year Selector
+    &__yearSelector {
+      background-color: var(--color-dark);
+    }
+
+    &__yearSelectorWrapper {
+      &:after{
+        background-image: linear-gradient(var(--color-dark) ,var(--color-dark) 20%,rgba(245,245,245,0));
+      }
+
+      &:before{
+        background-image: linear-gradient(to top,var(--color-dark) ,var(--color-dark) 20%,rgba(245,245,245,0));
+      }
+    }
+
+    &__yearSelectorItem {
+      &.-active {
+        .Calendar__yearSelectorText {
+          background-color: var(--color-primary);
+        }
+      }
     }
   }
 
-  .CalendarDay__selected, 
-  .CalendarDay__selected:active, 
-  .CalendarDay__selected:hover {
-    border: 1px double var(--color-primary);
-    background: var(--color-primary);
-    color: var(--color-white);
-  }
-
-  .DayPickerKeyboardShortcuts_show {
-    display: none!important;
+  .DatePicker__calendarArrow{
+    border-color: transparent transparent var(--color-dark);
+    color: var(--color-dark);
   }
 `
