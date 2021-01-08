@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // A T O M S
-import { Icon, IconName } from '../../atoms/Icon/Icon'
+import { Icon } from '../../atoms/Icon/Icon'
 import { Button } from '../../atoms/Button/Button'
 import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
 
@@ -79,6 +79,7 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
         <ol>
           {steps.map((step, index) => {
             return (
+              // TODO: add step items to it's own component
               <li
                 key={step.name}
                 className={stepStateClassNames(index)}
