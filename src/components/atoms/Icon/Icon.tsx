@@ -130,7 +130,7 @@ export interface IconProps {
 }
 
 // T Y P E S
-export type IconSize = 'sm' | 'md' | 'lg'
+export type IconSize = 'xs' | 'sm' | 'md' | 'lg'
 
 export type IconName = 'arrowUpRight'
   | 'bestseller'
@@ -329,6 +329,16 @@ const StyledIcon = styled.i`
     height: 100%;
     max-width: var(--icon-size);
     max-height: var(--icon-size);
+  }
+
+  &.xs {
+    width: calc(var(--icon-size) * .8);
+    height: calc(var(--icon-size) * .8);
+
+    svg {
+      max-width: calc(var(--icon-size) * .8);
+      max-height: calc(var(--icon-size) * .8);
+    }
   }
 
   &.md {

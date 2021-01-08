@@ -10,15 +10,18 @@ export default {
 
 export const Basic = (args: ProgressIndicatorProps) => {
   const steps = [{ "name": "step_1", "title": "Step 1" }, { "name": "step_2", "title": "Step 2" }, { "name": "step_3", "title": "Step 3" }, { "name": "step_4", "title": "Step 4" }]
+  const [currentStepIndex, setCurrentStepIndex] = React.useState(0)
 
   return (
-    <Wrapper>
-      <ProgressIndicator
-        {...args}
-        steps={steps}
-      >
-
-      </ProgressIndicator>
-    </Wrapper>
+    <ProgressIndicator
+      {...args}
+      steps={steps}
+      currentStepIndex={currentStepIndex}
+      setCurrentStepIndex={setCurrentStepIndex}
+    >
+      <Wrapper>
+        This is step {currentStepIndex}.
+      </Wrapper>
+    </ProgressIndicator>
   )
 }
