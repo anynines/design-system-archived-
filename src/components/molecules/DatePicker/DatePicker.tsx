@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import 'react-modern-calendar-datepicker/lib/DatePicker.css'
 import DayPicker, { Day } from 'react-modern-calendar-datepicker'
 
-import caretLeft from '../../atoms/Icon/assets/caretLeft'
-
 // I N T E R F A C E S
 export type DatePickerProps = {
   className?: string
@@ -16,7 +14,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   className,
 }) => {
   const defaultValue = {
-    year: 2019,
+    year: 2021,
     month: 10,
     day: 5,
   }
@@ -30,7 +28,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   return (
     <StyledDatePicker
       className={`date-picker ${className}`}
-      arrow={caretLeft}
     >
       <DayPicker
         value={selectedDay}
@@ -56,7 +53,7 @@ const StyledDatePicker = styled.div`
     &__yearText,
     &__yearSelectorText {
       color: var(--color-white) !important;
-      
+
       &:hover{
         background-color: var(--color-light-20) !important;
         color: var(--color-black);
@@ -65,11 +62,27 @@ const StyledDatePicker = styled.div`
 
     // Header Arrows
     &__monthArrow {
-      background-image: url(${(props): string => { return props.arrow }});
+      background-image: none;
+      display: inline-block;
+      width: var(--space-md);
+      height: var(--space-md);
+      border-top: 2px solid var(--color-white);
+      border-right: 2px solid var(--color-white);
+      border-radius: 0;  
+      transform: rotate(-45deg);
+      transition-property: none;
+    }
+
+    &__monthArrowWrapper{
+      height: 1.7em;
+
+      &:active .Calendar__monthArrow {
+        transform: rotate(-45deg) scale(0.8);
+      }
     }
 
     // Week Days
-    &__weekDay{
+    &__weekDay {
       color: var(--color-white-50) !important;
     }
 
