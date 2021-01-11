@@ -2,23 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 // A T O M S
-import { Icon } from '../../atoms/Icon/Icon'
 import { Button } from '../../atoms/Button/Button'
 import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
+import { ProgressIndicatorStep } from './ProgressIndicatorStep'
 
-// I N T E R F A C E
-export interface ProgressIndicatorProps {
-  className?: string
-  currentStepIndex: number
-  setCurrentStepIndex: (stepIndex: number) => void
-  steps: Step[]
-  style?: React.CSSProperties
-}
-
-export interface Step {
-  name: string
-  title?: string
-}
+// T Y P E S
+import { ProgressIndicatorProps } from './types'
 
 // C O M P O N E N T
 export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
@@ -79,30 +68,24 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
         <ol>
           {steps.map((step, index) => {
             return (
-              // TODO: add step items to it's own component
-              <li
+              <ProgressIndicatorStep
                 key={step.name}
+                index={index}
                 className={stepStateClassNames(index)}
-              >
-                <div className="progress-indicator__step">
-                  <div className="progress-indicator__step__inner">
-                    {currentStepIndex > index ? <Icon icon="remove" size="xs" /> : ""}
-                  </div>
-                </div>
-                <span>{step.title}</span>
-              </li>
+                title={step.title}
+                currentStepIndex={currentStepIndex}
+              />
             )
           })}
         </ol>
         <div className="progress-indicator__bar"></div>
-
       </StyledProgressIndicator>
 
       {children}
 
       <ButtonGroup
         alignment="center"
-        style={{ marginTop: 60 }}
+        style={{ marginTop: 50 }}
       >
         <Button
           onClick={() => handleBackClick()}
@@ -136,33 +119,6 @@ const StyledProgressIndicator = styled.div`
     padding: 0;
   }
 
-  li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &.current-step,
-    &.visited-step {
-      .progress-indicator__step {
-        background-color: var(--color-primary);
-      }
-    }
-
-    &.visited-step {
-      .progress-indicator__step__inner {
-        background-color: transparent;
-      }
-    }
-  }
-
-  span {
-    position: absolute;
-    top: 100%;
-    margin-top: var(--space-xs);
-    min-width: 6.25rem;
-    text-align: center;
-  }
-
   .progress-indicator {
     &__bar {
       display: block;
@@ -173,25 +129,6 @@ const StyledProgressIndicator = styled.div`
       height: 1px;
       transform: translate(-50%, 50%);
       background-color: var(--color-white-50);
-    }
-
-    &__step {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.25rem;
-      height: 1.25rem;
-      background-color: var(--color-dark-60);
-      border-radius: 100%;
-
-      &__inner {
-        display: flex;
-        align-items: center;
-        background-color: var(--color-white);
-        border-radius: 100%;
-        width: 50%;
-        height: 50%;
-      }
     }
   }
 `
