@@ -18,6 +18,7 @@ export const Basic = (args) => {
       steps={steps}
       currentStepIndex={currentStepIndex}
       setCurrentStepIndex={setCurrentStepIndex}
+      style={{ marginTop: 50 }}
     >
       <Wrapper>
         This is step {currentStepIndex}.
