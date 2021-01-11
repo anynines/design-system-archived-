@@ -18,6 +18,7 @@ import CaretDown from './assets/caretDown'
 import CaretLeft from './assets/caretLeft'
 import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
+import Check from './assets/check'
 import Close from './assets/close'
 import Color from './assets/color'
 import ColorTransparent from './assets/colorTransparent'
@@ -142,6 +143,7 @@ export type IconName = 'arrowUpRight'
   | 'caretLeft'
   | 'caretRight'
   | 'cart'
+  | 'check'
   | 'close'
   | 'color'
   | 'customer'
@@ -226,6 +228,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   caretLeft: <CaretLeft />,
   caretRight: <CaretRight />,
   cart: <Cart />,
+  check: <Check />,
   close: <Close />,
   color: <Color />,
   customer: <Customer />,
