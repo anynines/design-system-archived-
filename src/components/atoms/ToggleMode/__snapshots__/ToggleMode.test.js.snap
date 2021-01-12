@@ -27,6 +27,16 @@ exports[`<ToggleMode /> should match non default snapshot 1`] = `
   max-height: var(--icon-size);
 }
 
+.c1.xs {
+  width: calc(var(--icon-size) * .8);
+  height: calc(var(--icon-size) * .8);
+}
+
+.c1.xs svg {
+  max-width: calc(var(--icon-size) * .8);
+  max-height: calc(var(--icon-size) * .8);
+}
+
 .c1.md {
   width: calc(var(--icon-size) * 2);
   height: calc(var(--icon-size) * 2);
@@ -304,6 +314,16 @@ exports[`<ToggleMode /> snapshot should match default snapshot 1`] = `
   height: 100%;
   max-width: var(--icon-size);
   max-height: var(--icon-size);
+}
+
+.c1.xs {
+  width: calc(var(--icon-size) * .8);
+  height: calc(var(--icon-size) * .8);
+}
+
+.c1.xs svg {
+  max-width: calc(var(--icon-size) * .8);
+  max-height: calc(var(--icon-size) * .8);
 }
 
 .c1.md {

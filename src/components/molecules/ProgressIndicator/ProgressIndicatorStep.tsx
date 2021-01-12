@@ -16,8 +16,8 @@ export const ProgressIndicatorStep: React.FC<ProgressIndicatorStepProps> = (prop
       style={style}
       title={title}
     >
-      <div className="progress-indicator__step__inner">
-        {currentStepIndex > index ? <Icon icon="check" size="xs" /> : ""}
+      <div className='progress-indicator__step__inner'>
+        {currentStepIndex > index ? <Icon icon='check' size='xs' /> : ''}
       </div>
       <span>{title}</span>
     </StyledProgressIndicatorStep>

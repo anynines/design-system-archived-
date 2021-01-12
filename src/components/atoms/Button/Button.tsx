@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={(): void => { return (onClick && onClick()) }}
       icon={icon}
-      disabled={type === 'disabled' ? true : false}
+      disabled={type === 'disabled'}
     >
       {icon && <Icon icon={icon} className={`${iconOnly && 'icon-only'}`} />}
       {children}

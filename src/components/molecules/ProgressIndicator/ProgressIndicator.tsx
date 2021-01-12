@@ -32,27 +32,27 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
 
   const isNextDisabled = () => {
     if (currentStepIndex < steps.length - 1 && currentStepIndex >= 0) {
-      return false;
+      return false
     }
-    return true;
+    return true
   }
 
   const isBackDisabled = () => {
     if (currentStepIndex > 0 && currentStepIndex < steps.length) {
-      return false;
+      return false
     }
-    return true;
+    return true
   }
 
   const stepStateClassNames = (index): string => {
-    let classNames = ""
+    let classNames = ''
 
     if (index === currentStepIndex) {
-      classNames += "current-step"
+      classNames += 'current-step'
     }
 
     if (currentStepIndex > index) {
-      classNames += "visited-step"
+      classNames += 'visited-step'
     }
 
     return classNames
@@ -78,24 +78,24 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
             )
           })}
         </ol>
-        <div className="progress-indicator__bar"></div>
+        <div className='progress-indicator__bar' />
       </StyledProgressIndicator>
 
       {children}
 
       <ButtonGroup
-        alignment="center"
+        alignment='center'
         style={{ marginTop: 50 }}
       >
         <Button
-          onClick={() => handleBackClick()}
-          type={isBackDisabled() ? "disabled" : "primary"}
+          onClick={() => { return handleBackClick() }}
+          type={isBackDisabled() ? 'disabled' : 'primary'}
         >
           Back
         </Button>
         <Button
-          onClick={() => handleNextClick()}
-          type={isNextDisabled() ? "disabled" : "primary"}
+          onClick={() => { return handleNextClick() }}
+          type={isNextDisabled() ? 'disabled' : 'primary'}
         >
           Next
         </Button>
