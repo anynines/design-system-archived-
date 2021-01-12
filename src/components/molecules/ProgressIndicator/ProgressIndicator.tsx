@@ -18,26 +18,26 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
   steps,
   style
 }) => {
-  const handleNextClick = () => {
+  const handleNextClick = (): void => {
     if (currentStepIndex < steps.length - 1) {
       setCurrentStepIndex(currentStepIndex + 1)
     }
   }
 
-  const handleBackClick = () => {
+  const handleBackClick = (): void => {
     if (currentStepIndex > 0) {
       setCurrentStepIndex(currentStepIndex - 1)
     }
   }
 
-  const isNextDisabled = () => {
+  const isNextDisabled = (): boolean => {
     if (currentStepIndex < steps.length - 1 && currentStepIndex >= 0) {
       return false
     }
     return true
   }
 
-  const isBackDisabled = () => {
+  const isBackDisabled = (): boolean => {
     if (currentStepIndex > 0 && currentStepIndex < steps.length) {
       return false
     }
@@ -88,13 +88,13 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
         style={{ marginTop: 50 }}
       >
         <Button
-          onClick={() => { return handleBackClick() }}
+          onClick={(): void => { handleBackClick() }}
           type={isBackDisabled() ? 'disabled' : 'primary'}
         >
           Back
         </Button>
         <Button
-          onClick={() => { return handleNextClick() }}
+          onClick={(): void => { handleNextClick() }}
           type={isNextDisabled() ? 'disabled' : 'primary'}
         >
           Next
