@@ -60,22 +60,23 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     return selectedDate
   }
 
-  const renderDatePicker = (): JSX.Element => {
-    if (isDatePickerOpen) {
-      return (
-        <StyledDatePicker
-          date={getDateValue()}
-          onDateChange={(updatedDate): void => {
-            setSelectedDate(updatedDate)
-            if (!register) setInputValue(timestampToDDMMYYY(updatedDate))
-            else setValue(name, timestampToDDMMYYY(updatedDate))
-          }}
-        />
-      )
-    }
-
-    return <></>
-  }
+  const renderInputField = () => (
+    <TextInput
+      {...props}
+      register={register}
+      errorMessage='Please provide a date following the DD/MM/YYYY format'
+      pattern={pattern}
+      value={register ? formInputValue : inputValue}
+      onChange={(value): void => {
+        if (!register) setInputValue(value)
+      }}
+      autoComplete='off'
+    >
+      <TextInput.Prepend>
+        <Icon icon='calendar' />
+      </TextInput.Prepend>
+    </TextInput>
+  )
 
   React.useEffect(() => {
     const inputValueIsDate = isDateValid(inputValue)
@@ -103,41 +104,22 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
 
   return (
     <StyledDateInput className={`date-input ${className}`} ref={dateInputRef}>
-      <TextInput
-        {...props}
-        errorMessage='Please provide a date following the DD/MM/YYYY format'
-        pattern={pattern}
-        value={register ? formInputValue : inputValue}
-        onChange={(value): void => {
-          if (!register) setInputValue(value)
+      <StyledDatePicker
+        date={getDateValue()}
+        onDateChange={(updatedDate): void => {
+          setSelectedDate(updatedDate)
+          if (!register) setInputValue(timestampToDDMMYYY(updatedDate))
+          else setValue(name, timestampToDDMMYYY(updatedDate))
         }}
-        autoComplete='off'
-      >
-        <TextInput.Prepend
-          onClick={(): void => { setIsDatePickerOpen(!isDatePickerOpen) }}
-          clickable
-        >
-          <Icon icon='calendar' />
-        </TextInput.Prepend>
-        {renderDatePicker()}
-        {children}
-      </TextInput>
+        renderInput={renderInputField}
+      />
+      {children}
     </StyledDateInput>
   )
 }
 
 // S T Y L E S
 const StyledDateInput = styled.div`
-  display: flex;
-  background: none;
-  width: 100%;
-
-  & > div {
-    width: 100%;
-  }
 `
 const StyledDatePicker = styled(DatePicker)`
-  position: absolute;
-  top: 100%;
-  z-index: 2;
 `
