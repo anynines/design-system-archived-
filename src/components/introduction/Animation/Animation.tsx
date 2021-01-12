@@ -59,7 +59,7 @@ export const Animation: React.FC<AnimationProps> = ({
     <StyledAnimation
       className={`animation animate__animated ${active ? `animate__${type}` : ''} ${className}`}
       style={style}
-      onClick={() => toggleAnimation()}
+      onClick={(): void => { toggleAnimation() }}
     >
       {children}
     </StyledAnimation>
@@ -72,8 +72,8 @@ const StyledAnimation = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 .5rem;
-  width: 6.875rem;
   cursor: pointer;
+  width: 6.875rem;
 
   &:first-child {
     margin-left: 0;

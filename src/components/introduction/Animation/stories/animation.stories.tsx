@@ -274,14 +274,14 @@ export const Usage = () => (
 // S T Y L E S
 const StyledAnimatedDiv = styled.div`
   margin-bottom: .5rem;
+  background-color: var(--color-primary);
   width: 5rem;
   height: 5rem;
-  background-color: var(--color-primary);
 `
 
 const StyledAnimationList = styled.div`
-  position: relative;
   display: flex;
+  position: relative;
   margin-top: var(--space-lg);
 
   span {
