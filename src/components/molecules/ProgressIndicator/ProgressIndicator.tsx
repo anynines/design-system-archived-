@@ -107,13 +107,13 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
 // S T Y L E S
 const StyledProgressIndicator = styled.div`
   position: relative;
-  padding: 0 var(--space-fixed-lg);
   margin-bottom: var(--space-fixed-xxxl);
+  padding: 0 var(--space-fixed-lg);
 
   ol {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     z-index: 1;
     padding: 0;
@@ -123,12 +123,12 @@ const StyledProgressIndicator = styled.div`
     &__bar {
       display: block;
       position: absolute;
-      width: calc(100% - 50px);
       top: 50%;
       left: 50%;
-      height: 1px;
       transform: translate(-50%, 50%);
       background-color: var(--color-white-50);
+      width: calc(100% - 50px);
+      height: 1px;
     }
   }
 `

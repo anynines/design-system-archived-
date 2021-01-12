@@ -129,9 +129,9 @@ const StyledButton = styled.button`
   }
 
   &.disabled {
+    opacity: .75;
     background-color: var(--color-dark);
     cursor: not-allowed;
-    opacity: .75;
 
     &:hover,
     &:focus {

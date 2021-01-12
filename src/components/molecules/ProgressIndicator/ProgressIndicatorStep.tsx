@@ -27,12 +27,12 @@ export const ProgressIndicatorStep: React.FC<ProgressIndicatorStepProps> = (prop
 // S T Y L E S
 const StyledProgressIndicatorStep = styled.li`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: relative;
+  background-color: var(--color-dark-60);
   width: 1.25rem;
   height: 1.25rem;
-  background-color: var(--color-dark-60);
   border-radius: 100%;
 
   &.current-step,
