@@ -8,6 +8,7 @@
     "dist"
   ],
   "dependencies": {
+    "animate.css": "^4.1.1",
     "array-move": "3.0.1",
     "lodash.merge": "^4.6.2",
     "moment": "^2.29.1",

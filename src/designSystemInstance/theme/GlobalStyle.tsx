@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import * as builder from './PaletteBuilder'
+import 'animate.css/animate.css'
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
