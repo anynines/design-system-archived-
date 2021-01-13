@@ -1,6 +1,10 @@
 {
   "Added": [
     {
+      "title": "👋  / Getting started",
+      "description": "Add overview for animations from animate.css"
+    },
+    {
       "title": "🌱  / Molecules",
       "description": "Add ProgressIndicator component."
     }
