@@ -1,6 +1,6 @@
 {
   "name": "@anynines/design-system",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "private": false,
   "main": "dist/index",
   "types": "dist/index.d.ts",
@@ -8,12 +8,8 @@
     "dist"
   ],
   "dependencies": {
-    "@storybook/preset-create-react-app": "2.1.1",
-    "@types/moment": "^2.13.0",
-    "@types/react-dates": "^21.8.0",
     "animate.css": "^4.1.1",
     "array-move": "3.0.1",
-    "babel-plugin-inline-json-import": "^0.3.2",
     "lodash.merge": "^4.6.2",
     "moment": "^2.29.1",
     "react": "^16.12.0",
@@ -27,10 +23,11 @@
     "react-scripts": "3.4.0",
     "react-sortable-hoc": "1.11.0",
     "react-svg-loader": "^3.0.3",
+    "react-syntax-highlighter": "^15.4.3",
     "react-table": "7.5.0",
     "react-tooltip": "4.2.10",
     "regenerator-runtime": "^0.13.7",
-    "rx": "^4.1.0"
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -85,6 +82,7 @@
     "@storybook/addon-knobs": "^6.1.6",
     "@storybook/addon-links": "^6.1.6",
     "@storybook/addons": "^6.1.6",
+    "@storybook/preset-create-react-app": "2.1.1",
     "@storybook/react": "^6.1.6",
     "@storybook/storybook-deployer": "^2.8.7",
     "@storybook/theming": "^6.1.6",
@@ -96,7 +94,9 @@
     "@types/lodash.merge": "^4.6.6",
     "@types/node": "^13.13.5",
     "@types/react": "^16.9.34",
+    "@types/react-dates": "^21.8.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-inline-json-import": "^0.3.2",
     "babel-plugin-styled-components": "^1.10.7",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -108,7 +108,6 @@
     "eslint-plugin-react-hooks": "^4.0.2",
     "jest-styled-components": "^7.0.2",
     "react-docgen-typescript-loader": "^3.7.2",
-    "styled-components": "^5.0.1",
     "stylelint": "^13.6.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",

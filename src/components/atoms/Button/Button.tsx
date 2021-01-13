@@ -18,7 +18,7 @@ export interface ButtonProps {
 
 // T Y P E S
 // @Note They will only be extracted in the props table if the param is optional...
-export type ButtonType = 'primary' | 'dark' | 'black' | 'submit' | 'white'
+export type ButtonType = 'primary' | 'dark' | 'black' | 'submit' | 'white' | 'disabled'
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonWidth = 'block' | 'inline'
 
@@ -41,6 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={(): void => { return (onClick && onClick()) }}
       icon={icon}
+      disabled={type === 'disabled'}
     >
       {icon && <Icon icon={icon} className={`${iconOnly && 'icon-only'}`} />}
       {children}
@@ -125,6 +126,17 @@ const StyledButton = styled.button`
   &.white {
     background-color: var(--color-white);
     color: var(--color-black);
+  }
+
+  &.disabled {
+    opacity: .75;
+    background-color: var(--color-dark);
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-dark);
+    }
   }
 
   &:hover, &:focus {
