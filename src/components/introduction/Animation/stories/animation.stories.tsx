@@ -11,7 +11,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'These are our five base colors: primary, black, dark, light and white. Additionally we got four colours for different events: success, notice, warning and error. Both base and event colors can be customized by providing a custom theme and will automatically create all these different shades.'
+        component: 'These are some examples for animations which can be used in all components.'
       }
     },
   }
@@ -242,31 +242,20 @@ export const Usage = () => (
     </p>
     <section style={{ marginTop: 20, marginBottom: 20 }}>
       <h5 style={{ marginBottom: 10 }}>Hover via CSS</h5>
-      <Code language='css'>
-        <pre>
-          <code>
-            {codeSnippetHover}
-          </code>
-        </pre>
-      </Code>
+      <Code language='css' code={codeSnippetHover} />
     </section>
 
     <section style={{ marginTop: 20, marginBottom: 20 }}>
       <h5 style={{ marginBottom: 10 }}>Using CSS classes</h5>
-      <Code language='html'>
-        <pre>
-          <code>
-            {codeSnippetHtml}
-          </code>
-        </pre>
-      </Code>
+      <Code language='html' code={codeSnippetHtml} />
     </section>
 
     <section style={{ marginTop: 20, marginBottom: 20 }}>
       <h5 style={{ marginBottom: 10 }}>Events</h5>
       <p>You can also use js events (e.g. onClick) to render these classes.
         <br />
-        You can see the result for onClick events at the overview page.</p>
+        You can see the result for onClick events at the overview page.
+      </p>
     </section>
   </Wrapper>
 )
