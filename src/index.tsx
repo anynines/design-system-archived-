@@ -76,10 +76,10 @@ export * from './components/organisms/Table/Table/THead'
 export * from './components/organisms/Table/Table/THeadCell'
 export * from './components/organisms/Table/Table/TRow'
 export * from './components/organisms/Slider/Slider'
-export * from './components/organisms/UserNav/UserNav'
 
 // T E M P L A T E S
 export * from './components/templates/AdminNavigation/AdminNavigation'
+export * from './components/templates/AdminNavigation/helpers/UserNav'
 export * from './components/templates/TopNavigation/TopNavigation'
 export * from './components/templates/layouts/AuthLayout/AuthLayout'
 export * from './components/templates/layouts/Adminland/Adminland'

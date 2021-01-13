@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Icon } from '../../atoms/Icon/Icon'
-import { Avatar } from '../../atoms/Avatar/Avatar'
-import { UserInfo } from '../../molecules/UserInfo/UserInfo'
-import { ToggleMode } from '../../atoms/ToggleMode/ToggleMode'
-import { Mode } from '../../../designSystemInstance/types/types'
+import { Icon } from '../../../atoms/Icon/Icon'
+import { Avatar } from '../../../atoms/Avatar/Avatar'
+import { UserInfo } from '../../../molecules/UserInfo/UserInfo'
+import { ToggleMode } from '../../../atoms/ToggleMode/ToggleMode'
+import { Mode } from '../../../../designSystemInstance/types/types'
 
 export interface UserNavProps {
   avatar: string
