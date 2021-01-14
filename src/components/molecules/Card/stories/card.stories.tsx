@@ -142,3 +142,56 @@ export const Grid = () => {
     </MemoryRouter>
   )
 }
+
+export const CustomGrid = () => {
+  return (
+    <MemoryRouter>
+      <Wrapper>
+        <CardGrid
+          gridColumnsMobile={3}
+          gridColumnsDesktop={5}
+        >
+          <Card
+            title="Card with Icon"
+            icon="remove"
+            iconSize='lg'
+            linkUrl="https://youtube.com"
+          >
+            Lorem Ipsum dolor bla blub
+          </Card>
+          <Card
+            title="Card with Icon"
+            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            linkUrl="https://youtube.com"
+            footer={<CartFooter />}
+          >
+            Lorem Ipsum dolor bla blub
+          </Card>
+          <Card
+            title="Card with Icon"
+            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            linkUrl="https://youtube.com"
+          >
+            Lorem Ipsum dolor bla blub
+          </Card>
+          <Card
+            title="Card with Icon"
+            icon="remove"
+            iconSize='lg'
+            linkUrl="https://youtube.com"
+          >
+            Lorem Ipsum dolor bla blub
+          </Card>
+          <Card
+            title="Card with Icon"
+            icon="remove"
+            iconSize='lg'
+            linkUrl="https://youtube.com"
+          >
+            Lorem Ipsum dolor bla blub
+          </Card>
+        </CardGrid>
+      </Wrapper>
+    </MemoryRouter>
+  )
+}
