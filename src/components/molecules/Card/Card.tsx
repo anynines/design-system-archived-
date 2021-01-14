@@ -30,7 +30,6 @@ export const Card: React.FC<CardProps> = ({
   style,
   title
 }) => {
-
   return (
     <StyledCard
       className={`card ${className}`}
@@ -41,27 +40,30 @@ export const Card: React.FC<CardProps> = ({
       style={style}
     >
       <a href={linkUrl}>
-        {imageUrl && !icon &&
-          <div
-            className={`card-image ${imageMargin && 'card-image--margin'}`}
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
-        }
-        {icon && !imageUrl &&
-          <div className="card-icon">
-            <Icon icon={icon} size={iconSize} />
-          </div>
-        }
+        {imageUrl && !icon
+          && (
+            <div
+              className={`card-image ${imageMargin && 'card-image--margin'}`}
+              style={{ backgroundImage: `url(${imageUrl})` }}
+            />
+          )}
+        {icon && !imageUrl
+          && (
+            <div className='card-icon'>
+              <Icon icon={icon} size={iconSize} />
+            </div>
+          )}
       </a>
-      <div className="card-content">
-        {title && <h5 className="card-title">{title}</h5>}
+      <div className='card-content'>
+        {title && <h5 className='card-title'>{title}</h5>}
         {children}
       </div>
-      {footer &&
-        <div className='card-footer'>
-          {footer}
-        </div>
-      }
+      {footer
+        && (
+          <div className='card-footer'>
+            {footer}
+          </div>
+        )}
     </StyledCard>
   )
 }
