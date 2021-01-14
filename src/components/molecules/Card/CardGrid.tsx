@@ -15,7 +15,6 @@ export const CardGrid: React.FC<CardGridProps> = ({
   gridColumnsDesktop = 4,
   style
 }) => {
-
   return (
     <StyledCardGrid
       className={`card-grid ${className}`}
