@@ -5,7 +5,6 @@ import { MemoryRouter } from 'react-router-dom'
 import { Card, CardProps } from '../Card'
 import { CardGrid } from '../CardGrid'
 import { Button } from '../../../atoms/Button/Button'
-import { render } from '@testing-library/react'
 
 export default {
   title: '🌱 Molecules/Card',
