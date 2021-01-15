@@ -73,7 +73,7 @@ const StyledCard = styled.div`
 
   border-radius: var(--radius);
   background-color: var(--color-dark);
-  min-width: 200px;
+  min-width: 12.5rem;
 
   .card-image,
   .card-icon {
@@ -82,16 +82,16 @@ const StyledCard = styled.div`
 
   .card-icon {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: var(--space-md);
     color: var(--color-light);
   }
 
   .card-image {
     border-radius: var(--radius) var(--radius) 0 0;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     
     &--margin {
