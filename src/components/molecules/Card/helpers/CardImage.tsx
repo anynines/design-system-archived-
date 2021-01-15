@@ -30,19 +30,22 @@ export const CardImage: React.FC<CardImageProps> = ({
       style={style}
     >
       <a href={linkUrl} className="card-link-container">
-        {imageUrl && !icon && (
-          <div
-            className={`card-image ${imageMargin && 'card-image--margin'}`}
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
-        )
+        {
+          imageUrl && !icon && (
+            <div
+              className={`card-image ${imageMargin && 'card-image--margin'}`}
+              style={{ backgroundImage: `url(${imageUrl})` }}
+            />
+          )
         }
-        {icon && !imageUrl
+        {
+          icon && !imageUrl
           && (
             <div className='card-icon'>
               <Icon icon={icon} size={iconSize} />
             </div>
-          )}
+          )
+        }
       </a>
     </StyledCardImage>
   )
