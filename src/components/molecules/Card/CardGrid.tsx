@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// I N T E R F A C E
 export interface CardGridProps {
   className?: string
   gridColumnsMobile?: number
@@ -10,7 +11,7 @@ export interface CardGridProps {
 
 export const CardGrid: React.FC<CardGridProps> = ({
   children,
-  className,
+  className = '',
   gridColumnsMobile = 2,
   gridColumnsDesktop = 4,
   style
@@ -37,11 +38,11 @@ const StyledCardGrid = styled.div`
   width: 100%;
   max-width: var(--content-max-width);
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 40em) {
     grid-template-columns: repeat(var(--columns-mobile), 1fr);
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 62em) {
     grid-template-columns: repeat(var(--columns-desktop), 1fr);
   }
 `

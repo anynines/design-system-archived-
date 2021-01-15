@@ -64,6 +64,10 @@ export default {
       control: { type: 'text' },
       defaultValue: '/'
     },
+    description: {
+      control: { type: 'text' },
+      defaultValue: 'Card example description.'
+    },
     title: {
       control: { type: 'text' },
       defaultValue: 'card example title'
@@ -77,28 +81,33 @@ export default {
 
 export const Basic = (args: CardProps) => (
   <Wrapper>
-    <Card {...args}>
-      Lorem Ipsum dolor bla blub
-    </Card>
+    <Card {...args} />
   </Wrapper>
 )
 
-export const Icon = () => (
+export const Image = () => (
   <Wrapper>
-    <Card
-      title="Card with Icon"
-      icon="remove"
-      iconSize='lg'
-      linkUrl="https://youtube.com"
-    />
+    <CardGrid>
+      <Card
+        title='Card with Icon'
+        icon='customer'
+        iconSize='xl'
+        linkUrl='https://youtube.com'
+      />
+      <Card
+        title='Card with image'
+        imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+        linkUrl='https://youtube.com'
+      />
+      <Card
+        title='Card with image margin'
+        imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+        linkUrl='https://youtube.com'
+        imageMargin={true}
+      />
+    </CardGrid>
   </Wrapper>
 )
-
-const CartFooter: React.FC = (): any => {
-  return (
-    <Button width='block'>Button</Button>
-  )
-}
 
 export const Grid = () => {
   return (
@@ -106,39 +115,115 @@ export const Grid = () => {
       <Wrapper>
         <CardGrid>
           <Card
-            title="Card with Icon"
-            icon="remove"
-            iconSize='lg'
-            linkUrl="https://youtube.com"
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
-          <Card
-            title="Card with Icon"
+            description='Lorem ipsum dolor.'
+            title='Card with image'
             imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
-            linkUrl="https://youtube.com"
-            footer={<CartFooter />}
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
+            linkUrl='https://youtube.com'
+          />
           <Card
-            title="Card with Icon"
+            description='Lorem ipsum dolor.'
+            title='Card with image'
             imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
-            linkUrl="https://youtube.com"
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
+            linkUrl='https://youtube.com'
+          />
           <Card
-            title="Card with Icon"
-            icon="remove"
+            description='Lorem ipsum dolor.'
+            title='Card with icon'
+            icon='remove'
             iconSize='lg'
-            linkUrl="https://youtube.com"
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
+            linkUrl='https://youtube.com'
+          />
+          <Card
+            description='Lorem ipsum dolor.'
+            title='Card with icon'
+            icon='remove'
+            iconSize='lg'
+            linkUrl='https://youtube.com'
+          />
         </CardGrid>
       </Wrapper>
     </MemoryRouter>
+  )
+}
+
+export const CustomTitles = () => {
+  return (
+    <Wrapper>
+      <CardGrid>
+        <Card
+          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          linkUrl='https://youtube.com'
+        >
+          <Card.Title>
+            <h2>Card h2 title</h2>
+          </Card.Title>
+          <Card.Body>
+            Card h2 Body
+          </Card.Body>
+        </Card>
+        <Card
+          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          linkUrl='https://youtube.com'
+        >
+          <Card.Title>
+            <h3>Card h3 title</h3>
+          </Card.Title>
+          <Card.Body>
+            Card h3 Body
+          </Card.Body>
+        </Card>
+        <Card
+          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          linkUrl='https://youtube.com'
+        >
+          <Card.Title>
+            <h4>Card h4 title</h4>
+          </Card.Title>
+          <Card.Body>
+            Card h4 Body
+          </Card.Body>
+        </Card>
+        <Card
+          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          linkUrl='https://youtube.com'
+        >
+          <Card.Title>
+            <h5>Card h5 title</h5>
+          </Card.Title>
+          <Card.Body>
+            Card h5 Body
+          </Card.Body>
+        </Card>
+      </CardGrid>
+    </Wrapper>
+  )
+}
+
+export const CustomFooter = () => {
+  return (
+    <Wrapper>
+      <CardGrid>
+        <Card
+          title='Card with custom footer'
+          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          linkUrl='https://youtube.com'
+        >
+          <Card.Footer>
+            <Button width='block'>Custom Button</Button>
+          </Card.Footer>
+        </Card>
+        <Card
+          title='Card with custom footer'
+          description='Card with custom footer description'
+          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          linkUrl='https://youtube.com'
+        >
+          <Card.Footer>
+            <Button width='block'>Custom Button</Button>
+          </Card.Footer>
+        </Card>
+      </CardGrid>
+    </Wrapper>
   )
 }
 
@@ -151,44 +236,38 @@ export const CustomGrid = () => {
           gridColumnsDesktop={5}
         >
           <Card
-            title="Card with Icon"
-            icon="remove"
-            iconSize='lg'
-            linkUrl="https://youtube.com"
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
-          <Card
-            title="Card with Icon"
+            description='Lorem ipsum dolor.'
+            title='Card with image'
             imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
-            linkUrl="https://youtube.com"
-            footer={<CartFooter />}
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
+            linkUrl='https://youtube.com'
+          />
           <Card
-            title="Card with Icon"
+            description='Lorem ipsum dolor.'
+            title='Card with image'
             imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
-            linkUrl="https://youtube.com"
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
+            linkUrl='https://youtube.com'
+          />
           <Card
-            title="Card with Icon"
-            icon="remove"
+            description='Lorem ipsum dolor.'
+            title='Card with icon'
+            icon='remove'
             iconSize='lg'
-            linkUrl="https://youtube.com"
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
+            linkUrl='https://youtube.com'
+          />
           <Card
-            title="Card with Icon"
-            icon="remove"
+            description='Lorem ipsum dolor.'
+            title='Card with icon'
+            icon='camera'
             iconSize='lg'
-            linkUrl="https://youtube.com"
-          >
-            Lorem Ipsum dolor bla blub
-          </Card>
+            linkUrl='https://youtube.com'
+          />
+          <Card
+            description='Lorem ipsum dolor.'
+            title='Card with icon'
+            icon='customer'
+            iconSize='lg'
+            linkUrl='https://youtube.com'
+          />
         </CardGrid>
       </Wrapper>
     </MemoryRouter>
