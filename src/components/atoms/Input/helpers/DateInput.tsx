@@ -3,16 +3,17 @@ import styled from 'styled-components'
 
 // C O M P O N E N T S
 import { TextInput, TextInputProps } from './TextInput'
-import { DatePicker, DatePickerProps } from '../../../molecules/DatePicker/DatePicker'
+import { DatePicker } from '../../../molecules/DatePicker/DatePicker'
+import { Day, RenderInputProps } from 'react-modern-calendar-datepicker'
 import { Icon } from '../../Icon/Icon'
-import { onClickOutsideHook } from '../../../../helpers/react'
 
 // I N T E R F A C E S
 export interface DateInputProps extends Omit<TextInputProps, 'value' | 'pattern'> {
   className?: string
-  date?: number
+  date?: Day
   pattern?: RegExp
-  onDateChange?: (date: number) => void
+  renderInput?: React.FC<RenderInputProps>
+  onDateChange?: (date: Day) => Day
 }
 
 // match dd/mm/yyyy format
@@ -28,37 +29,29 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     name,
     onDateChange,
     pattern = DATE_REGEX,
-    setValue,
     register
   } = props
-
-  const timestampToDDMMYYY = (timestamp: number): string => {
-    return new Date(timestamp * 1000).toLocaleString().split(',')[0]
-  }
-
-  const [inputValue, setInputValue] = React.useState(date ? timestampToDDMMYYY(date) : '')
-  const [selectedDate, setSelectedDate] = React.useState(date)
-  const formInputValue = register ? getValues()[name] : ''
-  const [isDatePickerOpen, setIsDatePickerOpen] = React.useState(false)
+  // const [inputValue, setInputValue] = React.useState(date ? date : '')
+  // const formInputValue = register ? getValues()[name] : ''
   const dateInputRef = React.useRef<HTMLDivElement | null>(null)
+  // console.log(register)
 
-  const DDMMYYYToTimestamp = (ddmmyyyyDate: string): number => {
-    const dateParts = ddmmyyyyDate.split('/')
 
-    // month is 0-based, that's why we need dataParts[1] - 1
-    return new Date(+dateParts[2], Number(dateParts[1]) - 1, +dateParts[0]).getTime() / 1000
-  }
+  const [selectedDate, setSelectedDate] = React.useState(date)
 
-  const isDateValid = (dateString: string): boolean => {
-    return DATE_REGEX.exec(dateString) !== null
-  }
-
-  const getDateValue = (): number | undefined => {
-    if (register && isDateValid(formInputValue)) {
-      return DDMMYYYToTimestamp(formInputValue)
+  React.useEffect(() => {
+    if (onDateChange !== undefined) {
+      onDateChange(selectedDate as Day)
     }
-    return selectedDate
-  }
+  }, [onDateChange, selectedDate])
+
+
+  // const getDateValue = (): Day | undefined => {
+  //   if (register) {
+  //     return formInputValue
+  //   }
+  //   return selectedDate
+  // }
 
   const renderInputField = () => (
     <TextInput
@@ -66,10 +59,8 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
       register={register}
       errorMessage='Please provide a date following the DD/MM/YYYY format'
       pattern={pattern}
-      value={register ? formInputValue : inputValue}
-      onChange={(value): void => {
-        if (!register) setInputValue(value)
-      }}
+      // value={selectedDate}
+      // onChange={(newDate: Day): void => { setSelectedDate(newDate) }}
       autoComplete='off'
     >
       <TextInput.Prepend>
@@ -78,40 +69,14 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     </TextInput>
   )
 
-  React.useEffect(() => {
-    const inputValueIsDate = isDateValid(inputValue)
-
-    if (inputValueIsDate) {
-      setSelectedDate(DDMMYYYToTimestamp(inputValue))
-    }
-  }, [inputValue])
-
-  React.useEffect(() => {
-    if (onDateChange !== undefined) {
-      if (selectedDate) {
-        onDateChange(selectedDate)
-      }
-    }
-  }, [onDateChange, selectedDate])
-
-  React.useEffect(() => {
-    const cleanOnClickOutsideHook = onClickOutsideHook(dateInputRef, () => { setIsDatePickerOpen(false) })
-
-    return ((): void => {
-      cleanOnClickOutsideHook()
-    })
-  }, [])
-
   return (
     <StyledDateInput className={`date-input ${className}`} ref={dateInputRef}>
-      <StyledDatePicker
-        date={getDateValue()}
-        onDateChange={(updatedDate): void => {
+      <DatePicker
+        selectedDay={selectedDate}
+        setSelectedDay={(updatedDate: Day): void => {
           setSelectedDate(updatedDate)
-          if (!register) setInputValue(timestampToDDMMYYY(updatedDate))
-          else setValue(name, timestampToDDMMYYY(updatedDate))
         }}
-        renderInput={renderInputField}
+      // renderInput={renderInputField}
       />
       {children}
     </StyledDateInput>
@@ -120,6 +85,4 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
 
 // S T Y L E S
 const StyledDateInput = styled.div`
-`
-const StyledDatePicker = styled(DatePicker)`
 `

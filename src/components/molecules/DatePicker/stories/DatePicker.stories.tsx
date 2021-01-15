@@ -2,6 +2,7 @@ import React from 'react'
 
 import Wrapper from '../../../_helpers/Wrapper'
 import { DatePicker, DatePickerProps } from '../DatePicker'
+import { Day, utils } from 'react-modern-calendar-datepicker'
 
 
 export default {
@@ -12,10 +13,15 @@ export default {
 }
 
 export const Basic = (args: DatePickerProps) => {
+  const defaultDayValue = utils('en').getToday()
+  const [selectedDay, setSelectedDay] = React.useState(defaultDayValue)
+
   return (
     <Wrapper>
       <DatePicker
         {...args}
+        selectedDay={selectedDay}
+        setSelectedDay={(date: Day) => setSelectedDay && setSelectedDay(date)}
       />
     </Wrapper>
   )
@@ -27,10 +33,13 @@ export const WithDefaultDayValue = () => {
     month: 10,
     day: 21,
   }
+
+  const [selectedDay, setSelectedDay] = React.useState(defaultValue)
   return (
     <Wrapper>
       <DatePicker
-        defaultDayValue={defaultValue}
+        selectedDay={selectedDay}
+        setSelectedDay={(date: Day) => setSelectedDay && setSelectedDay(date)}
       />
     </Wrapper>
   )

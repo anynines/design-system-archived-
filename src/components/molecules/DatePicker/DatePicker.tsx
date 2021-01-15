@@ -2,25 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 
 import 'react-modern-calendar-datepicker/lib/DatePicker.css'
-import DayPicker, { Day, RenderInputProps, utils } from 'react-modern-calendar-datepicker'
+import DayPicker, { Day, RenderInputProps } from 'react-modern-calendar-datepicker'
 
 // I N T E R F A C E S
 export type DatePickerProps = {
   className?: string
-  defaultDayValue?: Day
   renderCustomInput?: React.FC<RenderInputProps>
+  selectedDay: Day
+  setSelectedDay: (date: Day) => void
   style?: React.CSSProperties
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
   className,
-  defaultDayValue,
   renderCustomInput,
+  selectedDay,
+  setSelectedDay,
   style
 }) => {
-  const today = utils('en').getToday()
-  const [selectedDay, setSelectedDay] = React.useState(defaultDayValue ? defaultDayValue : today)
-
   return (
     <StyledDatePicker
       className={`date-picker ${className}`}
@@ -28,7 +27,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     >
       <DayPicker
         value={selectedDay}
-        onChange={(date: Day) => setSelectedDay(date)}
+        onChange={(date: Day): void => { return (setSelectedDay && setSelectedDay(date)) }}
         renderInput={renderCustomInput}
         shouldHighlightWeekends
       />
