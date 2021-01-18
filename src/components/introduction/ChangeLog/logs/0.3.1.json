@@ -1,12 +1,16 @@
 {
   "Added": [
     {
-      "title": "👋  / Getting started",
+      "title": "👋 Getting started / Animations",
       "description": "Add overview for animations from animate.css"
     },
     {
-      "title": "🌱  / Molecules",
+      "title": "🌱 Molecules / Progress Indicator",
       "description": "Add ProgressIndicator component."
+    },
+    {
+      "title": "🌱 Molecules / Card",
+      "description": "Add card component."
     }
   ]
 }
