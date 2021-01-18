@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { AdminNavigation, AdminNavigationProps } from '../AdminNavigation'
 import { Logo } from '../../../atoms/Logo/Logo'
 import { Menu } from '../../../molecules/Menu/Menu'
-import { UserNav } from '../../../organisms/UserNav/UserNav'
+import { UserNav } from '../helpers/UserNav'
 
 export default {
   title: '📄 Templates/AdminNavigation',
@@ -39,8 +39,8 @@ export const Basic = (args: AdminNavigationProps) => (
         name='Julian Fischer'
         description='CEO'
         mode='dark'
-        setMode={() => {}}
-        logoutUser={() => {}}
+        setMode={() => { }}
+        logoutUser={() => { }}
       />
     </AdminNavigation>
   </Router>
