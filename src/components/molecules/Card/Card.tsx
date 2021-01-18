@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 // H E L P E R S
-import { CardBody, CardBodyProps } from './helpers/CardBody'
-import { CardFooter, CardFooterProps } from './helpers/CardFooter'
-import { CardImage, CardImageProps } from './helpers/CardImage'
-import { CardTitle, CardTitleProps } from './helpers/CardTitle'
+import { CardBody, CardBodyProps } from './components/CardBody'
+import { CardFooter, CardFooterProps } from './components/CardFooter'
+import { CardImage, CardImageProps } from './components/CardImage'
+import { CardTitle, CardTitleProps } from './components/CardTitle'
 import { IconName, IconSize } from '../../atoms/Icon/Icon'
 
-// I N T E R F A C E
+// I N T E R F A C E S
 type Card = React.FC<CardProps>
   & { Body: React.FC<CardBodyProps> }
   & { Footer: React.FC<CardFooterProps> }
