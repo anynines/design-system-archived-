@@ -51,7 +51,7 @@ export const CardImage: React.FC<CardImageProps> = ({
         {
           componentIcon && !imageUrl && !icon && (
             <div className='card-icon'>
-              <ComponentIcon icon={icon} />
+              <ComponentIcon icon={componentIcon} />
             </div>
           )
         }

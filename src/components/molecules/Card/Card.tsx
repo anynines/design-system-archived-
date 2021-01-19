@@ -62,7 +62,7 @@ export const Card: Card = ({
       imageUrl={imageUrl}
       style={style}
     >
-      {(imageUrl || icon) && imageOutput}
+      {(imageUrl || icon || componentIcon) && imageOutput}
       {title && titleOutput}
       {description && bodyOutput}
       {children}
