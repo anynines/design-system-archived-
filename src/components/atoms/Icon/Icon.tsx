@@ -123,6 +123,8 @@ import WidthIncrease from './assets/widthIncrease'
 import Wishlist from './assets/wishlist'
 
 // C O M P O N E N T  O V E R V I E W
+import ButtonIcon from './assets/components/buttonIcon'
+import ButtonGroupPickerIcon from './assets/components/buttonGroupPickerIcon'
 import SwitchIcon from './assets/components/switchIcon'
 
 
@@ -220,6 +222,8 @@ export type IconName = 'arrowUpRight'
   | 'titleDisabled'
   | 'unorderedList'
   | 'widthIncrease'
+  | 'buttonIcon'
+  | 'buttonGroupPickerIcon'
   | 'switchIcon'
 
 const ICONS: { [key in IconName]: JSX.Element } = {
@@ -306,6 +310,8 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   titleDisabled: <TitleDisabled />,
   unorderedList: <UnorderedList />,
   widthIncrease: <WidthIncrease />,
+  buttonIcon: <ButtonIcon />,
+  buttonGroupPickerIcon: <ButtonGroupPickerIcon />,
   switchIcon: <SwitchIcon />
 }
 

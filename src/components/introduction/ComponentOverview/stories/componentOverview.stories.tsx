@@ -24,8 +24,8 @@ export const Overview = () => (
       <CardGrid gridColumnsDesktop={4}>
         <Card title='Avatar' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
         <Card title='Badge' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
-        <Card title='Button' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
-        <Card title='ButtonGroup Picker' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
+        <Card title='Button' linkUrl='/?path=/story/💧-atoms-button--basic' icon='buttonIcon' iconSize='xl' />
+        <Card title='ButtonGroup Picker' linkUrl='/?path=/story/💧-atoms-buttongrouppicker--basic' icon='buttonGroupPickerIcon' iconSize='xl' />
         <Card title='CaretLink' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
         <Card title='Checkbox' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
         <Card title='Code' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
