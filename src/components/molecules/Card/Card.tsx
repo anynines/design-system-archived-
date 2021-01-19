@@ -7,6 +7,7 @@ import { CardFooter, CardFooterProps } from './components/CardFooter'
 import { CardImage, CardImageProps } from './components/CardImage'
 import { CardTitle, CardTitleProps } from './components/CardTitle'
 import { IconName, IconSize } from '../../atoms/Icon/Icon'
+import { ComponentIconName } from '../../introduction/ComponentOverview/ComponentIcon'
 
 // I N T E R F A C E S
 type Card = React.FC<CardProps>
@@ -18,6 +19,7 @@ type Card = React.FC<CardProps>
 export interface CardProps {
   className?: string
   description?: string
+  componentIcon?: ComponentIconName
   icon?: IconName
   iconSize?: IconSize
   imageUrl?: string
@@ -30,6 +32,7 @@ export interface CardProps {
 export const Card: Card = ({
   children,
   className = '',
+  componentIcon,
   description,
   icon,
   iconSize,
@@ -41,6 +44,7 @@ export const Card: Card = ({
 }) => {
   const imageOutput = (
     <CardImage
+      componentIcon={componentIcon}
       icon={icon}
       iconSize={iconSize}
       imageMargin={imageMargin}

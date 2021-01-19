@@ -122,12 +122,6 @@ import WidthSM from './assets/widthSM'
 import WidthIncrease from './assets/widthIncrease'
 import Wishlist from './assets/wishlist'
 
-// C O M P O N E N T  O V E R V I E W
-import ButtonIcon from './assets/components/buttonIcon'
-import ButtonGroupPickerIcon from './assets/components/buttonGroupPickerIcon'
-import SwitchIcon from './assets/components/switchIcon'
-
-
 // I N T E R F A C E S
 export interface IconProps {
   className?: string
@@ -222,9 +216,6 @@ export type IconName = 'arrowUpRight'
   | 'titleDisabled'
   | 'unorderedList'
   | 'widthIncrease'
-  | 'buttonIcon'
-  | 'buttonGroupPickerIcon'
-  | 'switchIcon'
 
 const ICONS: { [key in IconName]: JSX.Element } = {
   arrowUpRight: <ArrowUpRight />,
@@ -309,10 +300,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   telescope: <Telescope />,
   titleDisabled: <TitleDisabled />,
   unorderedList: <UnorderedList />,
-  widthIncrease: <WidthIncrease />,
-  buttonIcon: <ButtonIcon />,
-  buttonGroupPickerIcon: <ButtonGroupPickerIcon />,
-  switchIcon: <SwitchIcon />
+  widthIncrease: <WidthIncrease />
 }
 
 // C O M P O N E N T

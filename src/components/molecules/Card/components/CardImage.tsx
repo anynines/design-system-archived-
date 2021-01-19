@@ -3,10 +3,12 @@ import styled from 'styled-components'
 
 // A T O M S
 import { Icon, IconName, IconSize } from '../../../atoms/Icon/Icon'
+import { ComponentIcon, ComponentIconName } from '../../../introduction/ComponentOverview/ComponentIcon'
 
 // I N T E R F A C E
 export interface CardImageProps {
   className?: string
+  componentIcon?: ComponentIconName
   icon?: IconName
   iconSize?: IconSize
   imageUrl?: string
@@ -17,6 +19,7 @@ export interface CardImageProps {
 
 export const CardImage: React.FC<CardImageProps> = ({
   className = '',
+  componentIcon,
   icon,
   iconSize,
   imageMargin = false,
@@ -31,7 +34,7 @@ export const CardImage: React.FC<CardImageProps> = ({
     >
       <a href={linkUrl} className="card-link-container">
         {
-          imageUrl && !icon && (
+          imageUrl && !icon && !componentIcon && (
             <div
               className={`card-image ${imageMargin && 'card-image--margin'}`}
               style={{ backgroundImage: `url(${imageUrl})` }}
@@ -39,10 +42,16 @@ export const CardImage: React.FC<CardImageProps> = ({
           )
         }
         {
-          icon && !imageUrl
-          && (
+          icon && !imageUrl && !componentIcon && (
             <div className='card-icon'>
               <Icon icon={icon} size={iconSize} />
+            </div>
+          )
+        }
+        {
+          componentIcon && !imageUrl && !icon && (
+            <div className='card-icon'>
+              <ComponentIcon icon={icon} />
             </div>
           )
         }
