@@ -2,12 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 // C O M P O N E N T  O V E R V I E W
+import AvatarIcon from './assets/avatarIcon'
 import ButtonIcon from './assets/buttonIcon'
 import ButtonGroupPickerIcon from './assets/buttonGroupPickerIcon'
 import CaretLinkIcon from './assets/caretLinkIcon'
 import CheckboxIcon from './assets/checkboxIcon'
 import CodeIcon from './assets/codeIcon'
+import ColorPickerIcon from './assets/colorPickerIcon'
+import InputIcon from './assets/inputIcon'
+import LabelIcon from './assets/labelIcon'
+import SelectIcon from './assets/selectIcon'
+import SpinnerIcon from './assets/spinnerIcon'
 import SwitchIcon from './assets/switchIcon'
+import ToggleModeIcon from './assets/toggleModeIcon'
 
 // I N T E R F A C E S
 export interface ComponentIconProps {
@@ -20,20 +27,34 @@ export interface ComponentIconProps {
 // T Y P E S
 export type ComponentIconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
-export type ComponentIconName = 'buttonComponent'
+export type ComponentIconName = 'avatarComponent'
+  | 'buttonComponent'
   | 'buttonGroupPickerComponent'
   | 'caretLinkComponent'
   | 'checkboxComponent'
   | 'codeComponent'
+  | 'colorPickerComponent'
+  | 'inputComponent'
+  | 'labelComponent'
+  | 'selectComponent'
+  | 'spinnerComponent'
   | 'switchComponent'
+  | 'toggleModeComponent'
 
 const ICONS: { [key in ComponentIconName]: JSX.Element } = {
+  avatarComponent: <AvatarIcon />,
   buttonComponent: <ButtonIcon />,
   buttonGroupPickerComponent: <ButtonGroupPickerIcon />,
   caretLinkComponent: <CaretLinkIcon />,
   checkboxComponent: <CheckboxIcon />,
   codeComponent: <CodeIcon />,
-  switchComponent: <SwitchIcon />
+  colorPickerComponent: <ColorPickerIcon />,
+  inputComponent: <InputIcon />,
+  labelComponent: <LabelIcon />,
+  selectComponent: <SelectIcon />,
+  spinnerComponent: <SpinnerIcon />,
+  switchComponent: <SwitchIcon />,
+  toggleModeComponent: <ToggleModeIcon />
 }
 
 // C O M P O N E N T

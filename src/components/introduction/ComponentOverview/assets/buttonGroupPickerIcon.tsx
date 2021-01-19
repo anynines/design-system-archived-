@@ -8,11 +8,6 @@ const ButtonGroupPickerIcon = () => {
       height="200"
       viewBox="0 0 240 200"
     >
-      <defs>
-        <clipPath id="clip-custom_1">
-          <rect width="240" height="200" />
-        </clipPath>
-      </defs>
       <g id="custom_1" data-name="custom – 1" clip-path="url(#clip-custom_1)">
         <g id="Komponente_1_1" data-name="Komponente 1 – 1" transform="translate(14 67)">
           <rect id="Rechteck_1" data-name="Rechteck 1" width="69" height="67" rx="17" fill="#e4833e" />

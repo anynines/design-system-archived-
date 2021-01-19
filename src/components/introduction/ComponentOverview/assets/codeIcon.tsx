@@ -1,6 +1,6 @@
 import React from 'react'
 
-const codeIcon = () => {
+const CodeIcon = () => {
   return (
     <svg
       width="240px"
@@ -19,4 +19,4 @@ const codeIcon = () => {
   )
 }
 
-export default codeIcon
+export default CodeIcon

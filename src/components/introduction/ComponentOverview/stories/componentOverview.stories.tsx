@@ -22,24 +22,24 @@ export const Overview = () => (
     <Wrapper align='flex-start' direction='column'>
       <h3>💧 Atoms</h3>
       <CardGrid gridColumnsDesktop={4}>
-        <Card title='Avatar' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
+        <Card title='Avatar' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='avatarComponent' />
         <Card title='Badge' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
         <Card title='Button' linkUrl='/?path=/story/💧-atoms-button--basic' componentIcon='buttonComponent' />
         <Card title='ButtonGroup Picker' linkUrl='/?path=/story/💧-atoms-buttongrouppicker--basic' componentIcon='buttonGroupPickerComponent' />
         <Card title='CaretLink' linkUrl='/?path=/story/💧-atoms-caretlink--basic' componentIcon='caretLinkComponent' />
         <Card title='Checkbox' linkUrl='/?path=/story/💧-atoms-checkbox--basic' componentIcon='checkboxComponent' />
         <Card title='Code' linkUrl='/?path=/story/💧-atoms-code--basic' componentIcon='codeComponent' />
-        <Card title='ColorPicker' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='Icon' linkUrl='/?path=/story/💧-atoms-icon--menu' icon='points' />
-        <Card title='Input' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='Label' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
+        <Card title='ColorPicker' linkUrl='/?path=/story/💧-atoms-colorpicker--basic' componentIcon='colorPickerComponent' />
+        <Card title='Icon' linkUrl='/?path=/story/💧-atoms-icon--menu' icon='points' iconSize='xl' />
+        <Card title='Input' linkUrl='/?path=/story/💧-atoms-input--basic' componentIcon='inputComponent' />
+        <Card title='Label' linkUrl='/?path=/story/💧-atoms-label--basic' componentIcon='labelComponent' />
         <Card title='Logo' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='Select' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='Spinner' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='Switch' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='ToggleMode' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='Tooltip' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
-        <Card title='Module' linkUrl='/?path=/story/💧-atoms-avatar--basic' componentIcon='switchComponent' />
+        <Card title='Select' linkUrl='/?path=/story/💧-atoms-select--basic' componentIcon='selectComponent' />
+        <Card title='Spinner' linkUrl='/?path=/story/💧-atoms-spinner--basic' componentIcon='spinnerComponent' />
+        <Card title='Switch' linkUrl='/?path=/story/💧-atoms-switch--basic' componentIcon='switchComponent' />
+        <Card title='ToggleMode' linkUrl='/?path=/story/💧-atoms-togglemode--basic' componentIcon='toggleModeComponent' />
+        <Card title='Tooltip' linkUrl='/?path=/story/💧-atoms-tooltip--basic' componentIcon='switchComponent' />
+        <Card title='Module' linkUrl='/?path=/story/💧-atoms-module--basic' componentIcon='switchComponent' />
       </CardGrid>
     </Wrapper>
 
