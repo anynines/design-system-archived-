@@ -134,13 +134,13 @@ const StyledSwitchWrapper = styled.div`
     position: relative;
     border: 1px solid transparent;
     border-radius: 3rem;
-    background: var(--color-light-50);
+    background: var(--color-light-30);
     cursor: pointer;
     width: 2.4rem;
     transition: background-color .5s;
 
     &.bold {
-      height: 1.2rem;
+      height: 1.25rem;
     }
 
     &.slim {
@@ -173,7 +173,7 @@ const StyledSwitchWrapper = styled.div`
     content: '';
     border-radius: 1rem;
     transition: .2s;
-    box-shadow: 0 0 .4rem 0 var(--color-light-70);
+    box-shadow: 0 0 .4rem 0 rgba(0,0,0, .5);
     transform: translateY(-50%);
 
     &.bold {
@@ -184,8 +184,8 @@ const StyledSwitchWrapper = styled.div`
 
     &.slim {
       left: -.2rem;
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 1.25rem;
+      height: 1.25rem;
     }
 
   }

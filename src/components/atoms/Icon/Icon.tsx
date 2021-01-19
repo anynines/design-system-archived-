@@ -122,6 +122,10 @@ import WidthSM from './assets/widthSM'
 import WidthIncrease from './assets/widthIncrease'
 import Wishlist from './assets/wishlist'
 
+// C O M P O N E N T  O V E R V I E W
+import SwitchIcon from './assets/components/switchIcon'
+
+
 // I N T E R F A C E S
 export interface IconProps {
   className?: string
@@ -216,6 +220,7 @@ export type IconName = 'arrowUpRight'
   | 'titleDisabled'
   | 'unorderedList'
   | 'widthIncrease'
+  | 'switchIcon'
 
 const ICONS: { [key in IconName]: JSX.Element } = {
   arrowUpRight: <ArrowUpRight />,
@@ -300,7 +305,8 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   telescope: <Telescope />,
   titleDisabled: <TitleDisabled />,
   unorderedList: <UnorderedList />,
-  widthIncrease: <WidthIncrease />
+  widthIncrease: <WidthIncrease />,
+  switchIcon: <SwitchIcon />
 }
 
 // C O M P O N E N T
@@ -365,12 +371,12 @@ const StyledIcon = styled.i`
   }
 
   &.xl {
-    width: calc(var(--icon-size) * 6);
-    height: calc(var(--icon-size) * 6);
+    width: calc(var(--icon-size) * 8);
+    height: calc(var(--icon-size) * 8);
 
     svg {
-      max-width: calc(var(--icon-size) * 6);
-      max-height: calc(var(--icon-size) * 6);
+      max-width: calc(var(--icon-size) * 8);
+      max-height: calc(var(--icon-size) * 8);
     }
   }
 `
