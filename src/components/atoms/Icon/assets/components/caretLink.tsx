@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CaretLink = () => {
+const CaretLinkComponent = () => {
   return (
     <svg
       width="240px"
@@ -18,4 +18,4 @@ const CaretLink = () => {
   )
 }
 
-export default CaretLink
+export default CaretLinkComponent

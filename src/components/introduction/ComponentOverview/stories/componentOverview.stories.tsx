@@ -26,8 +26,8 @@ export const Overview = () => (
         <Card title='Badge' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
         <Card title='Button' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
         <Card title='ButtonGroup Picker' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
-        <Card title='CaretLink' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='caretLink' iconSize='xl' />
-        <Card title='Checkbox' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
+        <Card title='CaretLink' linkUrl='/?path=/story/💧-atoms-caretlink--basic' icon='CaretLinkComponent' iconSize='xl' />
+        <Card title='Checkbox' linkUrl='/?path=/story/💧-atoms-checkbox--basic' icon='checkboxComponent' iconSize='xl' />
         <Card title='Code' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
         <Card title='ColorPicker' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
         <Card title='Icon' linkUrl='/?path=/story/💧-atoms-avatar--basic' icon='switchIcon' iconSize='xl' />
