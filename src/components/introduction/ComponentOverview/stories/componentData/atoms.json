@@ -1,109 +1,109 @@
 {
   "avatar": {
     "title": "Avatar",
-    "link": "avatar--basic",
+    "link": "💧-atoms-avatar--basic",
     "icon": "avatarComponent",
     "type": "component"
   },
   "badge": {
     "title": "Badge",
-    "link": "badge--basic",
+    "link": "💧-atoms-badge--basic",
     "icon": "badgeComponent",
     "type": "component"
   },
   "button": {
     "title": "Button",
-    "link": "button--basic",
+    "link": "💧-atoms-button--basic",
     "icon": "buttonComponent",
     "type": "component"
   },
   "buttonGroupPicker": {
     "title": "Buttongroup Picker",
-    "link": "buttonGroupPicker--basic",
+    "link": "💧-atoms-buttonGroupPicker--basic",
     "icon": "buttonGroupPickerComponent",
     "type": "component"
   },
   "caretLink": {
     "title": "CaretLink",
-    "link": "caretLink--basic",
+    "link": "💧-atoms-caretLink--basic",
     "icon": "caretLinkComponent",
     "type": "component"
   },
   "checkbox": {
     "title": "Checkbox",
-    "link": "checkbox--basic",
+    "link": "💧-atoms-checkbox--basic",
     "icon": "checkboxComponent",
     "type": "component"
   },
   "code": {
     "title": "Code",
-    "link": "code--basic",
+    "link": "💧-atoms-code--basic",
     "icon": "codeComponent",
     "type": "component"
   },
   "colorPicker": {
     "title": "Color Picker",
-    "link": "colorPicker--basic",
+    "link": "💧-atoms-colorPicker--basic",
     "icon": "colorPickerComponent",
     "type": "component"
   },
   "icon": {
     "title": "icon",
-    "link": "icon--icon--menu",
+    "link": "💧-atoms-icon--icon--menu",
     "icon": "points",
     "type": "icon"
   },
   "input": {
     "title": "Input",
-    "link": "input--basic",
+    "link": "💧-atoms-input--basic",
     "icon": "inputComponent",
     "type": "component"
   },
   "label": {
     "title": "Label",
-    "link": "label--basic",
+    "link": "💧-atoms-label--basic",
     "icon": "labelComponent",
     "type": "component"
   },
   "logo": {
     "title": "Logo",
-    "link": "logo--basic",
+    "link": "💧-atoms-logo--basic",
     "icon": "logoComponent",
     "type": "component"
   },
   "module": {
     "title": "Module",
-    "link": "module--basic",
+    "link": "💧-atoms-module--basic",
     "icon": "moduleComponent",
     "type": "component"
   },
   "select": {
     "title": "Select",
-    "link": "select--basic",
+    "link": "💧-atoms-select--basic",
     "icon": "selectComponent",
     "type": "component"
   },
   "spinner": {
     "title": "Spinner",
-    "link": "spinner--basic",
+    "link": "💧-atoms-spinner--basic",
     "icon": "spinnerComponent",
     "type": "component"
   },
   "switch": {
     "title": "Switch",
-    "link": "switch--basic",
+    "link": "💧-atoms-switch--basic",
     "icon": "switchComponent",
     "type": "component"
   },
   "toggleMode": {
     "title": "ToggleMode",
-    "link": "toggleMode--basic",
+    "link": "💧-atoms-toggleMode--basic",
     "icon": "toggleModeComponent",
     "type": "component"
   },
   "tooltip": {
     "title": "Tooltip",
-    "link": "tooltip--basic",
+    "link": "💧-atoms-tooltip--basic",
     "icon": "tooltipComponent",
     "type": "component"
   }

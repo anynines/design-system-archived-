@@ -15,10 +15,12 @@ import ColorPickerIcon from './assets/colorPickerIcon'
 import DatePickerIcon from './assets/datePickerIcon'
 import InputIcon from './assets/inputIcon'
 import LabelIcon from './assets/labelIcon'
+import ModuleIcon from './assets/moduleIcon'
 import SelectIcon from './assets/selectIcon'
 import SpinnerIcon from './assets/spinnerIcon'
 import SwitchIcon from './assets/switchIcon'
 import ToggleModeIcon from './assets/toggleModeIcon'
+import TooltipIcon from './assets/tooltipIcon'
 
 // I N T E R F A C E S
 export interface ComponentIconProps {
@@ -41,10 +43,12 @@ export type ComponentIconName = 'avatarComponent'
   | 'datePickerComponent'
   | 'inputComponent'
   | 'labelComponent'
+  | 'moduleComponent'
   | 'selectComponent'
   | 'spinnerComponent'
   | 'switchComponent'
   | 'toggleModeComponent'
+  | 'tooltipComponent'
 
 const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   alertComponent: <AlertIcon />,
@@ -60,10 +64,12 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   datePickerComponent: <DatePickerIcon />,
   inputComponent: <InputIcon />,
   labelComponent: <LabelIcon />,
+  moduleComponent: <ModuleIcon />,
   selectComponent: <SelectIcon />,
   spinnerComponent: <SpinnerIcon />,
   switchComponent: <SwitchIcon />,
-  toggleModeComponent: <ToggleModeIcon />
+  toggleModeComponent: <ToggleModeIcon />,
+  tooltipComponent: <TooltipIcon />
 }
 
 // C O M P O N E N T

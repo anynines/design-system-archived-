@@ -8,6 +8,7 @@ import { CardGrid } from '../../../molecules/Card/CardGrid'
 
 // L I S T  O F  C O M P O N E N T S
 import atoms from './componentData/atoms.json'
+import molecules from './componentData/molecules.json'
 
 // T Y P E S
 import { ComponentIconName } from '../../../introduction/ComponentOverview/ComponentIcon'
@@ -36,7 +37,7 @@ export const Overview = () => {
                 return (
                   <Card title={`${item.title}`} >
                     <Card.Image
-                      linkUrl={`/?path=/story/💧-atoms-${item.link}`}
+                      linkUrl={`/?path=/story/${item.link}`}
                       icon={`${item.icon}` as IconName}
                       iconSize='xl'
                       type='icon'
@@ -47,7 +48,7 @@ export const Overview = () => {
                 return (
                   <Card title={`${item.title}`} >
                     <Card.Image
-                      linkUrl={`/?path=/story/💧-atoms-${item.link}`}
+                      linkUrl={`/?path=/story/${item.link}`}
                       imageUrl={`${item.icon}`}
                       type='image'
                     />
@@ -57,7 +58,7 @@ export const Overview = () => {
                 return (
                   <Card title={`${item.title}`} >
                     <Card.Image
-                      linkUrl={`/?path=/story/💧-atoms-${item.link}`}
+                      linkUrl={`/?path=/story/${item.link}`}
                       componentIcon={`${item.icon}` as ComponentIconName}
                       type='component'
                     />
@@ -86,35 +87,7 @@ export const Overview = () => {
       <Wrapper align='flex-start' direction='column'>
         <h3>🌱 Molecules</h3>
         <CardGrid gridColumnsDesktop={4}>
-          <Card title='Alert'>
-            <Card.Image
-              linkUrl='?path=/story/🌱-molecules-alert--basic'
-              componentIcon='alertComponent'
-              type='component'
-            />
-          </Card>
-          <Card title='Card'>
-            <Card.Image
-              linkUrl='?path=/story/🌱-molecules-card--basic'
-              componentIcon='cardComponent'
-              type='component'
-            />
-          </Card>
-          <Card title='Checkbox Group'>
-            <Card.Image
-              linkUrl='?path=/story/🌱-molecules-checkboxgroup--basic'
-              componentIcon='checkboxGroupComponent'
-              type='component'
-            />
-          </Card>
-          <Card title='DatePicker'>
-            <Card.Image
-              linkUrl='?path=/story/🌱-molecules-checkboxgroup--basic'
-              componentIcon='datePickerComponent'
-              type='component'
-            />
-          </Card>
-          <Card title='DatePicker' />
+          {renderCards(molecules)}
           <Card title='ImageUploader' />
           <Card title='Menu' />
           <Card title='MenuItem' />
