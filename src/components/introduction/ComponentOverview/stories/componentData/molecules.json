@@ -1,0 +1,26 @@
+{
+  "Alert": {
+    "title": "Alert",
+    "link": "🌱-molecules-alert--basic",
+    "icon": "alertComponent",
+    "type": "component"
+  },
+  "Card": {
+    "title": "Card",
+    "link": "🌱-molecules-card--basic",
+    "icon": "cardComponent",
+    "type": "component"
+  },
+  "Checkbox": {
+    "title": "Checkbox Group",
+    "link": "🌱-molecules-checkboxgroup--basic",
+    "icon": "checkboxGroupComponent",
+    "type": "component"
+  },
+  "DatePicker": {
+    "title": "Datepicker",
+    "link": "🌱-molecules-checkboxgroup--basic",
+    "icon": "datePickerComponent",
+    "type": "component"
+  }
+}
