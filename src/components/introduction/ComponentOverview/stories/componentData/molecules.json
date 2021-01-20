@@ -22,5 +22,23 @@
     "link": "🌱-molecules-checkboxgroup--basic",
     "icon": "datePickerComponent",
     "type": "component"
+  },
+  "ImageUploader": {
+    "title": "Image Uploader",
+    "link": "🌱-molecules-imageuploader--basic",
+    "icon": "datePickerComponent",
+    "type": "component"
+  },
+  "Menu": {
+    "title": "Menu",
+    "link": "🌱-molecules-menu--main-menu",
+    "icon": "menuComponent",
+    "type": "component"
+  },
+  "MenuItem": {
+    "title": "Menu Item",
+    "link": "🌱-molecules-menuitem--base",
+    "icon": "menuItemComponent",
+    "type": "component"
   }
 }

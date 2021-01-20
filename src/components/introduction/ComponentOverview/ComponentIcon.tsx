@@ -16,6 +16,8 @@ import DatePickerIcon from './assets/datePickerIcon'
 import InputIcon from './assets/inputIcon'
 import LabelIcon from './assets/labelIcon'
 import ModuleIcon from './assets/moduleIcon'
+import MenuIcon from './assets/menuIcon'
+import MenuItemIcon from './assets/menuItemIcon'
 import SelectIcon from './assets/selectIcon'
 import SpinnerIcon from './assets/spinnerIcon'
 import SwitchIcon from './assets/switchIcon'
@@ -44,6 +46,8 @@ export type ComponentIconName = 'avatarComponent'
   | 'inputComponent'
   | 'labelComponent'
   | 'moduleComponent'
+  | 'menuComponent'
+  | 'menuItemComponent'
   | 'selectComponent'
   | 'spinnerComponent'
   | 'switchComponent'
@@ -65,6 +69,8 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   inputComponent: <InputIcon />,
   labelComponent: <LabelIcon />,
   moduleComponent: <ModuleIcon />,
+  menuComponent: <MenuIcon />,
+  menuItemComponent: <MenuItemIcon />,
   selectComponent: <SelectIcon />,
   spinnerComponent: <SpinnerIcon />,
   switchComponent: <SwitchIcon />,
