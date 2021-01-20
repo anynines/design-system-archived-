@@ -1,0 +1,110 @@
+{
+  "avatar": {
+    "title": "Avatar",
+    "link": "avatar--basic",
+    "icon": "avatarComponent",
+    "type": "component"
+  },
+  "badge": {
+    "title": "Badge",
+    "link": "badge--basic",
+    "icon": "badgeComponent",
+    "type": "component"
+  },
+  "button": {
+    "title": "Button",
+    "link": "button--basic",
+    "icon": "buttonComponent",
+    "type": "component"
+  },
+  "buttonGroupPicker": {
+    "title": "Buttongroup Picker",
+    "link": "buttonGroupPicker--basic",
+    "icon": "buttonGroupPickerComponent",
+    "type": "component"
+  },
+  "caretLink": {
+    "title": "CaretLink",
+    "link": "caretLink--basic",
+    "icon": "caretLinkComponent",
+    "type": "component"
+  },
+  "checkbox": {
+    "title": "Checkbox",
+    "link": "checkbox--basic",
+    "icon": "checkboxComponent",
+    "type": "component"
+  },
+  "code": {
+    "title": "Code",
+    "link": "code--basic",
+    "icon": "codeComponent",
+    "type": "component"
+  },
+  "colorPicker": {
+    "title": "Color Picker",
+    "link": "colorPicker--basic",
+    "icon": "colorPickerComponent",
+    "type": "component"
+  },
+  "icon": {
+    "title": "icon",
+    "link": "icon--icon--menu",
+    "icon": "points",
+    "type": "icon"
+  },
+  "input": {
+    "title": "Input",
+    "link": "input--basic",
+    "icon": "inputComponent",
+    "type": "component"
+  },
+  "label": {
+    "title": "Label",
+    "link": "label--basic",
+    "icon": "labelComponent",
+    "type": "component"
+  },
+  "logo": {
+    "title": "Logo",
+    "link": "logo--basic",
+    "icon": "logoComponent",
+    "type": "component"
+  },
+  "module": {
+    "title": "Module",
+    "link": "module--basic",
+    "icon": "moduleComponent",
+    "type": "component"
+  },
+  "select": {
+    "title": "Select",
+    "link": "select--basic",
+    "icon": "selectComponent",
+    "type": "component"
+  },
+  "spinner": {
+    "title": "Spinner",
+    "link": "spinner--basic",
+    "icon": "spinnerComponent",
+    "type": "component"
+  },
+  "switch": {
+    "title": "Switch",
+    "link": "switch--basic",
+    "icon": "switchComponent",
+    "type": "component"
+  },
+  "toggleMode": {
+    "title": "ToggleMode",
+    "link": "toggleMode--basic",
+    "icon": "toggleModeComponent",
+    "type": "component"
+  },
+  "tooltip": {
+    "title": "Tooltip",
+    "link": "tooltip--basic",
+    "icon": "tooltipComponent",
+    "type": "component"
+  }
+}
