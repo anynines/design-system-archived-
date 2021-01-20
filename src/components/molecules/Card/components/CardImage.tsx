@@ -2,8 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 // A T O M S
-import { Icon, IconName, IconSize } from '../../../atoms/Icon/Icon'
 import { ComponentIcon, ComponentIconName } from '../../../introduction/ComponentOverview/ComponentIcon'
+import { Icon, IconName, IconSize } from '../../../atoms/Icon/Icon'
+
+// T Y P E S
+export type CardHeaderType = 'icon' | 'image' | 'component'
 
 // I N T E R F A C E
 export interface CardImageProps {
@@ -15,46 +18,58 @@ export interface CardImageProps {
   imageMargin?: boolean
   linkUrl?: string
   style?: React.CSSProperties
+  type?: CardHeaderType
 }
 
-export const CardImage: React.FC<CardImageProps> = ({
-  className = '',
-  componentIcon,
-  icon,
-  iconSize,
-  imageMargin = false,
-  imageUrl,
-  linkUrl,
-  style
-}) => {
+export const CardImage: React.FC<CardImageProps> = (props) => {
+  const {
+    className = '',
+    componentIcon,
+    icon,
+    iconSize,
+    imageMargin = false,
+    imageUrl,
+    linkUrl,
+    style,
+    type
+  } = props
+
+  const renderInput = (): JSX.Element => {
+    switch (type) {
+      case 'icon':
+        return (
+          <div className='card-icon'>
+            <Icon icon={icon} size={iconSize} />
+          </div>
+        )
+      case 'image':
+        return (
+          <div
+            className={`card-image ${imageMargin && 'card-image--margin'}`}
+            style={{ backgroundImage: `url(${imageUrl})` }}
+          />
+        )
+      case 'component':
+        return (
+          <div className='card-icon'>
+            <ComponentIcon icon={componentIcon} />
+          </div>
+        )
+      default:
+        return (
+          <></>
+        )
+    }
+  }
+
+
   return (
     <StyledCardImage
       className={`card-image-wrapper ${className}`}
       style={style}
     >
       <a href={linkUrl} className="card-link-container">
-        {
-          imageUrl && !icon && !componentIcon && (
-            <div
-              className={`card-image ${imageMargin && 'card-image--margin'}`}
-              style={{ backgroundImage: `url(${imageUrl})` }}
-            />
-          )
-        }
-        {
-          icon && !imageUrl && !componentIcon && (
-            <div className='card-icon'>
-              <Icon icon={icon} size={iconSize} />
-            </div>
-          )
-        }
-        {
-          componentIcon && !imageUrl && !icon && (
-            <div className='card-icon'>
-              <ComponentIcon icon={componentIcon} />
-            </div>
-          )
-        }
+        {renderInput()}
       </a>
     </StyledCardImage>
   )
