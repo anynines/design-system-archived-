@@ -8,7 +8,7 @@ const ButtonGroupPickerIcon = () => {
       height="200"
       viewBox="0 0 240 200"
     >
-      <g id="custom_1" data-name="custom – 1" clip-path="url(#clip-custom_1)">
+      <g id="buttonGroupPicker" data-name="custom – 1" clip-path="url(#clip-custom_1)">
         <g id="Komponente_1_1" data-name="Komponente 1 – 1" transform="translate(14 67)">
           <rect id="Rechteck_1" data-name="Rechteck 1" width="69" height="67" rx="17" fill="#e4833e" />
           <rect id="Rechteck_2" data-name="Rechteck 2" width="19" height="19" rx="9.5" transform="translate(26 24)" fill="#fff" />

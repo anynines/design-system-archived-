@@ -365,12 +365,12 @@ const StyledIcon = styled.i`
   }
 
   &.xl {
-    width: calc(var(--icon-size) * 8);
-    height: calc(var(--icon-size) * 8);
+    width: calc(var(--icon-size) * 7);
+    height: calc(var(--icon-size) * 7);
 
     svg {
-      max-width: calc(var(--icon-size) * 8);
-      max-height: calc(var(--icon-size) * 8);
+      max-width: calc(var(--icon-size) * 7);
+      max-height: calc(var(--icon-size) * 7);
     }
   }
 `

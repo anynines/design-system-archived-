@@ -8,7 +8,7 @@ const SwitchIcon = () => {
       viewBox="0 0 240 200"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id='switch' stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group" transform="translate(34.000000, 32.000000)" fill="#FFFFFF">
           <rect id="Rectangle" fill-opacity="0.3" x="0" y="0" width="96" height="48" rx="24"></rect>
           <circle id="Oval" cx="24" cy="24" r="17"></circle>

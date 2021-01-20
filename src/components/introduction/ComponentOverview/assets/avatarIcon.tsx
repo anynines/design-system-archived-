@@ -8,7 +8,7 @@ const AvatarIcon = () => {
       height="200"
       viewBox="0 0 240 200"
     >
-      <g id="Avatar" clip-path="url(#clip-Avatar)">
+      <g id="avatar" clip-path="url(#clip-Avatar)">
         <g id="Komponente_1_4" data-name="Komponente 1 – 4" transform="translate(32 14)">
           <rect id="Rechteck_1" data-name="Rechteck 1" width="177" height="171" rx="85.5" fill="#062035" />
         </g>
