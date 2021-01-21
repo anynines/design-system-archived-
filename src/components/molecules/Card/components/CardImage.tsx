@@ -62,13 +62,12 @@ export const CardImage: React.FC<CardImageProps> = (props) => {
     }
   }
 
-
   return (
     <StyledCardImage
       className={`card-image-wrapper ${className}`}
       style={style}
     >
-      <a href={linkUrl} className="card-link-container">
+      <a href={linkUrl} className='card-link-container'>
         {renderInput()}
       </a>
     </StyledCardImage>

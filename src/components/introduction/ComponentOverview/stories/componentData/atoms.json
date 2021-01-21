@@ -67,7 +67,7 @@
   },
   "logo": {
     "title": "Logo",
-    "link": "💧-atoms-logo--basic",
+    "link": "💧-atoms-logo--vertical",
     "icon": "logoComponent",
     "type": "component"
   },
