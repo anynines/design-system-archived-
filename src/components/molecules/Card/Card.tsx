@@ -18,6 +18,7 @@ export interface CardProps {
   className?: string
   description?: string
   style?: React.CSSProperties
+  textCenter?: boolean
   title?: string
 }
 
@@ -26,6 +27,7 @@ export const Card: Card = ({
   className = '',
   description,
   style,
+  textCenter = true,
   title
 }) => {
   const titleOutput = <CardTitle><h5>{title && title}</h5></CardTitle>
@@ -33,7 +35,7 @@ export const Card: Card = ({
 
   return (
     <StyledCard
-      className={`card ${className}`}
+      className={`card ${className} ${textCenter && 'text-center'}`}
       style={style}
     >
       {children}
@@ -47,6 +49,10 @@ const StyledCard = styled.div`
   border-radius: var(--radius);
   background-color: var(--color-dark);
   min-width: 12.5rem;
+
+  &.text-center {
+    text-align: center;
+  }
 `
 
 Card.Body = CardBody
