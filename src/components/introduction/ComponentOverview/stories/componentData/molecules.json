@@ -46,5 +46,11 @@
     "link": "🌱-molecules-modal--base",
     "icon": "modalComponent",
     "type": "component"
+  },
+  "Notification": {
+    "title": "Notification",
+    "link": "🌱-molecules-notification--base",
+    "icon": "notificationComponent",
+    "type": "component"
   }
 }
