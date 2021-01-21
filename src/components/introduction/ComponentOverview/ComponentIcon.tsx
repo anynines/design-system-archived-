@@ -15,6 +15,7 @@ import ColorPickerIcon from './assets/colorPickerIcon'
 import DatePickerIcon from './assets/datePickerIcon'
 import InputIcon from './assets/inputIcon'
 import LabelIcon from './assets/labelIcon'
+import LogoIcon from './assets/logoIcon'
 import ModuleIcon from './assets/moduleIcon'
 import MenuIcon from './assets/menuIcon'
 import MenuItemIcon from './assets/menuItemIcon'
@@ -45,6 +46,7 @@ export type ComponentIconName = 'avatarComponent'
   | 'datePickerComponent'
   | 'inputComponent'
   | 'labelComponent'
+  | 'logoComponent'
   | 'moduleComponent'
   | 'menuComponent'
   | 'menuItemComponent'
@@ -68,6 +70,7 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   datePickerComponent: <DatePickerIcon />,
   inputComponent: <InputIcon />,
   labelComponent: <LabelIcon />,
+  logoComponent: <LogoIcon />,
   moduleComponent: <ModuleIcon />,
   menuComponent: <MenuIcon />,
   menuItemComponent: <MenuItemIcon />,
