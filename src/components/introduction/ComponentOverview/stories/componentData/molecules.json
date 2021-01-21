@@ -23,12 +23,6 @@
     "icon": "datePickerComponent",
     "type": "component"
   },
-  "ImageUploader": {
-    "title": "Image Uploader",
-    "link": "🌱-molecules-imageuploader--basic",
-    "icon": "datePickerComponent",
-    "type": "component"
-  },
   "Menu": {
     "title": "Menu",
     "link": "🌱-molecules-menu--main-menu",

@@ -58,7 +58,7 @@ export default {
     },
     imageUrl: {
       control: { type: 'text' },
-      defaultValue: 'http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+      defaultValue: 'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
     },
     linkUrl: {
       control: { type: 'text' },
@@ -81,7 +81,12 @@ export default {
 
 export const Basic = (args: CardProps) => (
   <Wrapper>
-    <Card {...args} />
+    <Card {...args}>
+      <Card.Image
+        imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
+        type='image'
+      />
+    </Card>
   </Wrapper>
 )
 
@@ -90,24 +95,27 @@ export const Image = () => (
     <CardGrid>
       <Card title='Card with Icon'>
         <Card.Image
-          icon='customer'
-          iconSize='xl'
+          type='image'
+          imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
           linkUrl='https://youtube.com' />
       </Card>
       <Card title='Card with image'>
         <Card.Image
-          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          type='image'
+          imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
           linkUrl='https://youtube.com' />
       </Card>
       <Card>
         <Card.Image
-          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          type='image'
+          imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
           linkUrl='https://youtube.com'
         />
       </Card>
       <Card title='Card with image margin'>
         <Card.Image
-          imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+          type='image'
+          imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
           linkUrl='https://youtube.com'
           imageMargin={true}
         />
@@ -126,7 +134,8 @@ export const Grid = () => {
             title='Card with image'
           >
             <Card.Image
-              imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+              type='image'
+              imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
               linkUrl='https://youtube.com'
             />
           </Card>
@@ -135,7 +144,8 @@ export const Grid = () => {
             title='Card with image'
           >
             <Card.Image
-              imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+              type='image'
+              imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
               linkUrl='https://youtube.com'
             />
           </Card>
@@ -144,6 +154,7 @@ export const Grid = () => {
             title='Card with icon'
           >
             <Card.Image
+              type='icon'
               icon='remove'
               iconSize='lg'
               linkUrl='https://youtube.com'
@@ -154,7 +165,8 @@ export const Grid = () => {
             title='Card with icon'
           >
             <Card.Image
-              icon='remove'
+              type='icon'
+              icon='sale'
               iconSize='lg'
               linkUrl='https://youtube.com'
             />
@@ -171,7 +183,8 @@ export const CustomTitles = () => {
       <CardGrid>
         <Card>
           <Card.Image
-            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            type='image'
+            imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
           />
           <Card.Title>
@@ -183,7 +196,8 @@ export const CustomTitles = () => {
         </Card>
         <Card>
           <Card.Image
-            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            type='image'
+            imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
           />
           <Card.Title>
@@ -195,7 +209,8 @@ export const CustomTitles = () => {
         </Card>
         <Card>
           <Card.Image
-            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            type='image'
+            imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
           />
           <Card.Title>
@@ -207,7 +222,8 @@ export const CustomTitles = () => {
         </Card>
         <Card>
           <Card.Image
-            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            type='image'
+            imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
           />
           <Card.Title>
@@ -228,7 +244,8 @@ export const CustomFooter = () => {
       <CardGrid>
         <Card>
           <Card.Image
-            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            type='image'
+            imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
           />
           <Card.Title>
@@ -243,7 +260,8 @@ export const CustomFooter = () => {
           description='Card with custom footer description'
         >
           <Card.Image
-            imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+            type='image'
+            imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
           />
           <Card.Title>Card with custom Footer</Card.Title>
@@ -270,7 +288,8 @@ export const CustomGrid = () => {
             title='Card with image'
           >
             <Card.Image
-              imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+              type='image'
+              imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
               linkUrl='https://youtube.com'
             />
           </Card>
@@ -279,7 +298,8 @@ export const CustomGrid = () => {
             title='Card with image'
           >
             <Card.Image
-              imageUrl='http://www.artofmtg.com/wp-content/uploads/2021/01/Egon-God-of-Death-Variant-Kaldheim-MtG-Art.jpg'
+              type='image'
+              imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
               linkUrl='https://youtube.com'
             />
           </Card>
@@ -288,6 +308,7 @@ export const CustomGrid = () => {
             title='Card with icon'
           >
             <Card.Image
+              type='icon'
               icon='remove'
               iconSize='lg'
               linkUrl='https://youtube.com'
@@ -298,6 +319,7 @@ export const CustomGrid = () => {
             title='Card with icon'
           >
             <Card.Image
+              type='icon'
               icon='camera'
               iconSize='lg'
               linkUrl='https://youtube.com'
@@ -308,6 +330,7 @@ export const CustomGrid = () => {
             title='Card with icon'
           >
             <Card.Image
+              type='icon'
               icon='customer'
               iconSize='lg'
               linkUrl='https://youtube.com'
