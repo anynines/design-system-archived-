@@ -40,5 +40,11 @@
     "link": "🌱-molecules-menuitem--base",
     "icon": "menuItemComponent",
     "type": "component"
+  },
+  "Modal": {
+    "title": "Modal",
+    "link": "🌱-molecules-modal--base",
+    "icon": "modalComponent",
+    "type": "component"
   }
 }

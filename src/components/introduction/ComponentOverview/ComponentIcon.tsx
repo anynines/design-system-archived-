@@ -16,6 +16,7 @@ import DatePickerIcon from './assets/datePickerIcon'
 import InputIcon from './assets/inputIcon'
 import LabelIcon from './assets/labelIcon'
 import LogoIcon from './assets/logoIcon'
+import ModalIcon from './assets/modalIcon'
 import ModuleIcon from './assets/moduleIcon'
 import MenuIcon from './assets/menuIcon'
 import MenuItemIcon from './assets/menuItemIcon'
@@ -47,6 +48,7 @@ export type ComponentIconName = 'avatarComponent'
   | 'inputComponent'
   | 'labelComponent'
   | 'logoComponent'
+  | 'modalComponent'
   | 'moduleComponent'
   | 'menuComponent'
   | 'menuItemComponent'
@@ -71,6 +73,7 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   inputComponent: <InputIcon />,
   labelComponent: <LabelIcon />,
   logoComponent: <LogoIcon />,
+  modalComponent: <ModalIcon />,
   moduleComponent: <ModuleIcon />,
   menuComponent: <MenuIcon />,
   menuItemComponent: <MenuItemIcon />,
@@ -96,8 +99,6 @@ export const ComponentIcon: React.FC<ComponentIconProps> = ({
 
 // S T Y L E S
 const StyledComponentIcon = styled.i`
-  --icon-size: 1rem;
-
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -108,6 +109,6 @@ const StyledComponentIcon = styled.i`
     width: 100%;
     height: 100%;
     max-width: 80%;
-    max-height: 160px;
+    max-height: 10rem;
   }
 `
