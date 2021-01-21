@@ -5,6 +5,17 @@ import { MemoryRouter } from 'react-router-dom'
 import { Card, CardProps } from '../Card'
 import { CardGrid } from '../CardGrid'
 import { Button } from '../../../atoms/Button/Button'
+import { CardImageProps, CardHeaderType } from '../components/CardImage'
+import { IconName, IconSize } from '../../../atoms/Icon/Icon'
+
+export interface CardStoryProps {
+  icon?: IconName
+  iconSize?: IconSize
+  imageUrl?: string
+  imageMargin?: boolean
+  linkUrl?: string
+  type?: CardHeaderType
+}
 
 export default {
   title: '🌱 Molecules/Card',
@@ -75,16 +86,42 @@ export default {
     footer: {
       control: { type: 'disabled' },
       description: 'You can put another component (e.g. Button) inside this property'
+    },
+    iconSize: {
+      control: {
+        type: 'select',
+        options: {
+          xs: 'xs',
+          sm: 'sm',
+          md: 'md',
+          lg: 'lg',
+          xl: 'xl'
+        }
+      },
+      defaultValue: 'xl'
+    },
+    type: {
+      control: {
+        type: 'select',
+        options: {
+          image: 'image',
+          icon: 'icon'
+        }
+      },
+      defaultValue: 'image'
     }
   }
 }
 
-export const Basic = (args: CardProps) => (
+export const Basic = (args: CardStoryProps) => (
   <Wrapper>
     <Card {...args}>
       <Card.Image
-        imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
-        type='image'
+        type={args.type}
+        icon={args.icon}
+        iconSize={args.iconSize}
+        imageUrl={args.imageUrl}
+        imageMargin={args.imageMargin}
       />
     </Card>
   </Wrapper>
