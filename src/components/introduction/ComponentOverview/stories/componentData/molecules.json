@@ -58,5 +58,11 @@
     "link": "🌱-molecules-progressindicator--basic",
     "icon": "progressIndicatorComponent",
     "type": "component"
+  },
+  "SpecialCategories": {
+    "title": "Special Categories",
+    "link": "🌱-molecules-specialcategories--basic",
+    "icon": "specialCategoriesComponent",
+    "type": "component"
   }
 }
