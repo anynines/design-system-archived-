@@ -19,7 +19,7 @@
   },
   "DatePicker": {
     "title": "Datepicker",
-    "link": "🌱-molecules-checkboxgroup--basic",
+    "link": "🌱-molecules-datepicker--basic",
     "icon": "datePickerComponent",
     "type": "component"
   },
@@ -37,20 +37,26 @@
   },
   "MenuItem": {
     "title": "Menu Item",
-    "link": "🌱-molecules-menuitem--base",
+    "link": "🌱-molecules-menuitem--basic",
     "icon": "menuItemComponent",
     "type": "component"
   },
   "Modal": {
     "title": "Modal",
-    "link": "🌱-molecules-modal--base",
+    "link": "🌱-molecules-modal--basic",
     "icon": "modalComponent",
     "type": "component"
   },
   "Notification": {
     "title": "Notification",
-    "link": "🌱-molecules-notification--base",
+    "link": "🌱-molecules-notification--basic",
     "icon": "notificationComponent",
+    "type": "component"
+  },
+  "ProgressIndicator": {
+    "title": "Progress Indicator",
+    "link": "🌱-molecules-progressindicator--basic",
+    "icon": "progressIndicatorComponent",
     "type": "component"
   }
 }
