@@ -64,5 +64,17 @@
     "link": "🌱-molecules-specialcategories--basic",
     "icon": "specialCategoriesComponent",
     "type": "component"
+  },
+  "UserInfo": {
+    "title": "UserInfo",
+    "link": "🌱-molecules-userinfo--basic",
+    "icon": "userInfoComponent",
+    "type": "component"
+  },
+  "UserInfoDropdown": {
+    "title": "UserInfo Dropdown",
+    "link": "🌱-molecules-userdropdown--basic",
+    "icon": "userInfoDropdownComponent",
+    "type": "component"
   }
 }

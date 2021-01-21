@@ -28,6 +28,8 @@ import SpinnerIcon from './assets/spinnerIcon'
 import SwitchIcon from './assets/switchIcon'
 import ToggleModeIcon from './assets/toggleModeIcon'
 import TooltipIcon from './assets/tooltipIcon'
+import UserInfoIcon from './assets/userInfoIcon'
+import UserInfoDropdownIcon from './assets/userInfoDropdownIcon'
 
 // I N T E R F A C E S
 export interface ComponentIconProps {
@@ -63,6 +65,8 @@ export type ComponentIconName = 'avatarComponent'
   | 'switchComponent'
   | 'toggleModeComponent'
   | 'tooltipComponent'
+  | 'userInfoComponent'
+  | 'userInfoDropdownComponent'
 
 const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   alertComponent: <AlertIcon />,
@@ -90,7 +94,9 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   spinnerComponent: <SpinnerIcon />,
   switchComponent: <SwitchIcon />,
   toggleModeComponent: <ToggleModeIcon />,
-  tooltipComponent: <TooltipIcon />
+  tooltipComponent: <TooltipIcon />,
+  userInfoComponent: <UserInfoIcon />,
+  userInfoDropdownComponent: <UserInfoDropdownIcon />
 }
 
 // C O M P O N E N T

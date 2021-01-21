@@ -88,8 +88,6 @@ export const Overview = () => {
         <h3>🌱 Molecules</h3>
         <CardGrid gridColumnsDesktop={4}>
           {renderCards(molecules)}
-          <Card title='UserDropDown' />
-          <Card title='UserInfo' />
         </CardGrid>
       </Wrapper>
 
