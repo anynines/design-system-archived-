@@ -16,5 +16,11 @@
     "link": "🌳-organisms-slider--basic",
     "icon": "sliderComponent",
     "type": "component"
+  },
+  "Table": {
+    "title": "Table",
+    "link": "🌳-organisms-table--basic",
+    "icon": "tableComponent",
+    "type": "component"
   }
 }
