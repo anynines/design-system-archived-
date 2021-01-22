@@ -13,6 +13,7 @@ import CheckboxGroupIcon from './assets/checkboxGroupIcon'
 import CodeIcon from './assets/codeIcon'
 import ColorPickerIcon from './assets/colorPickerIcon'
 import DatePickerIcon from './assets/datePickerIcon'
+import FormIcon from './assets/formIcon'
 import InputIcon from './assets/inputIcon'
 import LabelIcon from './assets/labelIcon'
 import LogoIcon from './assets/logoIcon'
@@ -50,6 +51,7 @@ export type ComponentIconName = 'avatarComponent'
   | 'codeComponent'
   | 'colorPickerComponent'
   | 'datePickerComponent'
+  | 'formComponent'
   | 'inputComponent'
   | 'labelComponent'
   | 'logoComponent'
@@ -80,6 +82,7 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   codeComponent: <CodeIcon />,
   colorPickerComponent: <ColorPickerIcon />,
   datePickerComponent: <DatePickerIcon />,
+  formComponent: <FormIcon />,
   inputComponent: <InputIcon />,
   labelComponent: <LabelIcon />,
   logoComponent: <LogoIcon />,

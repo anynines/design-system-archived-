@@ -9,6 +9,7 @@ import { CardGrid } from '../../../molecules/Card/CardGrid'
 // L I S T  O F  C O M P O N E N T S
 import atoms from './componentData/atoms.json'
 import molecules from './componentData/molecules.json'
+import organisms from './componentData/organisms.json'
 
 // T Y P E S
 import { ComponentIconName } from '../../../introduction/ComponentOverview/ComponentIcon'
@@ -94,7 +95,7 @@ export const Overview = () => {
       <Wrapper align='flex-start' direction='column'>
         <h3>🌳 Organisms</h3>
         <CardGrid gridColumnsDesktop={4}>
-          <Card title='Form' />
+          {renderCards(organisms)}
           <Card title='ProductItem' />
           <Card title='Slider' />
           <Card title='DraggableTable' />
