@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MenuItemIcon = () => {
+const MenuItemIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

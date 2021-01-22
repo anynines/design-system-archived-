@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SelectIcon = () => {
+const SelectIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

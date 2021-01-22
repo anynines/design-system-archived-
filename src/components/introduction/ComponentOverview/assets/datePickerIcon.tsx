@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DatePickerIcon = () => {
+const DatePickerIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

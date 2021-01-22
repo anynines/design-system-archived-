@@ -8,6 +8,7 @@ import ButtonIcon from './assets/buttonIcon'
 import ButtonGroupPickerIcon from './assets/buttonGroupPickerIcon'
 import CardIcon from './assets/cardIcon'
 import CaretLinkIcon from './assets/caretLinkIcon'
+import CartItemIcon from './assets/cartItemIcon'
 import CheckboxIcon from './assets/checkboxIcon'
 import CheckboxGroupIcon from './assets/checkboxGroupIcon'
 import CodeIcon from './assets/codeIcon'
@@ -46,6 +47,7 @@ export type ComponentIconName = 'avatarComponent'
   | 'buttonComponent'
   | 'buttonGroupPickerComponent'
   | 'caretLinkComponent'
+  | 'cartItemComponent'
   | 'checkboxComponent'
   | 'checkboxGroupComponent'
   | 'codeComponent'
@@ -77,6 +79,7 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   buttonGroupPickerComponent: <ButtonGroupPickerIcon />,
   cardComponent: <CardIcon />,
   caretLinkComponent: <CaretLinkIcon />,
+  cartItemComponent: <CartItemIcon />,
   checkboxComponent: <CheckboxIcon />,
   checkboxGroupComponent: <CheckboxGroupIcon />,
   codeComponent: <CodeIcon />,

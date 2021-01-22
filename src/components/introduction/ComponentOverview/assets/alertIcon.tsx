@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AlertIcon = () => {
+const AlertIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

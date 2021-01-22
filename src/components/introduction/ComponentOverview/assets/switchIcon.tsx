@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SwitchIcon = () => {
+const SwitchIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

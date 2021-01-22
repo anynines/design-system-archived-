@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CheckboxGroupIcon = () => {
+const CheckboxGroupIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

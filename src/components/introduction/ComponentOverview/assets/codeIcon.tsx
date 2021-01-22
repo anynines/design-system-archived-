@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CodeIcon = () => {
+const CodeIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

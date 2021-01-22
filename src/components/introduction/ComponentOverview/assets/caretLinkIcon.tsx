@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CaretLinkIcon = () => {
+const CaretLinkIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

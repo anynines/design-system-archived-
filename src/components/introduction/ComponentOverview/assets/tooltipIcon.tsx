@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TooltipIcon = () => {
+const TooltipIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

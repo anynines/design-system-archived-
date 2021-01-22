@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ColorPickerIcon = () => {
+const ColorPickerIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'

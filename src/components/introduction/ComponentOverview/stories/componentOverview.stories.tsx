@@ -96,22 +96,10 @@ export const Overview = () => {
         <h3>🌳 Organisms</h3>
         <CardGrid gridColumnsDesktop={4}>
           {renderCards(organisms)}
-          <Card title='ProductItem' />
           <Card title='Slider' />
           <Card title='DraggableTable' />
           <Card title='SortableTable' />
           <Card title='Table' />
-        </CardGrid>
-      </Wrapper>
-
-      <Wrapper align='flex-start' direction='column'>
-        <h3>📄 Templates</h3>
-        <CardGrid gridColumnsDesktop={4}>
-          <Card title='Admin Navigation' />
-          <Card title='TopNav' />
-          <Card title='Adminland' />
-          <Card title='Auth' />
-          <Card title='Userland' />
         </CardGrid>
       </Wrapper>
     </>

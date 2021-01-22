@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ToggleModeIcon = () => {
+const ToggleModeIcon = (): JSX.Element => {
   return (
     <svg
       width='240px'
