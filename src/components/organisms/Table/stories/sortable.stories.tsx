@@ -238,7 +238,7 @@ const metaData = [
   }
 ]
 
-export const Default: React.FC = () => {
+export const Basic: React.FC = () => {
   const [currentData, setCurrentData] = React.useState<SortableTableRow[]>(userData as SortableTableRow[])
 
   return (
