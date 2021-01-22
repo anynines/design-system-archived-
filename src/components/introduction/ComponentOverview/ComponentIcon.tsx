@@ -25,6 +25,7 @@ import MenuItemIcon from './assets/menuItemIcon'
 import NotificationIcon from './assets/notificationIcon'
 import ProgressIndicatorIcon from './assets/progressIndicatorIcon'
 import SelectIcon from './assets/selectIcon'
+import SliderIcon from './assets/sliderIcon'
 import SpecialCategoriesIcon from './assets/specialCategoriesIcon'
 import SpinnerIcon from './assets/spinnerIcon'
 import SwitchIcon from './assets/switchIcon'
@@ -64,6 +65,7 @@ export type ComponentIconName = 'avatarComponent'
   | 'notificationComponent'
   | 'progressIndicatorComponent'
   | 'selectComponent'
+  | 'sliderComponent'
   | 'specialCategoriesComponent'
   | 'spinnerComponent'
   | 'switchComponent'
@@ -96,6 +98,7 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   notificationComponent: <NotificationIcon />,
   progressIndicatorComponent: <ProgressIndicatorIcon />,
   selectComponent: <SelectIcon />,
+  sliderComponent: <SliderIcon />,
   specialCategoriesComponent: <SpecialCategoriesIcon />,
   spinnerComponent: <SpinnerIcon />,
   switchComponent: <SwitchIcon />,

@@ -8,7 +8,7 @@ const CartItemIcon = (): JSX.Element => {
       viewBox='0 0 240 200'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g id='Pixel-2' stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
+      <g stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
         <g id='cart-item' transform='translate(8.000000, 73.000000)'>
           <rect id='cart-item-bg' fill='#062035' x='1' y='0' width='225' height='62' rx='6' />
           <path d='M6,0 L62,0 L62,0 L62,62 L6,62 C2.6862915,62 4.05812251e-16,59.3137085 0,56 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z' id='cart-image-bg' fill='#E4833E' />

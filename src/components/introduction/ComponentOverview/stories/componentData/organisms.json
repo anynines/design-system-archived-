@@ -1,7 +1,7 @@
 {
   "CartItem": {
     "title": "Cart Item",
-    "link": "🌳-organisms-form--basic",
+    "link": "🌳-organisms-cartitem--basic",
     "icon": "cartItemComponent",
     "type": "component"
   },
@@ -9,6 +9,12 @@
     "title": "Form",
     "link": "🌳-organisms-form--basic",
     "icon": "formComponent",
+    "type": "component"
+  },
+  "Slider": {
+    "title": "Slider",
+    "link": "🌳-organisms-slider--basic",
+    "icon": "sliderComponent",
     "type": "component"
   }
 }
