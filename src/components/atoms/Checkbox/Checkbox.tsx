@@ -76,6 +76,7 @@ const StyledCheckbox = styled.div`
     cursor: pointer;
     padding-left: calc(var(--size) + var(--space-fixed-md));
     font-size: var(--text-sm);
+    color: var(--text-color);
 
     &::before,
     &::after {
@@ -90,7 +91,7 @@ const StyledCheckbox = styled.div`
 
     &::before {
       border: var(--border);
-      background: var(--color-black);
+      background: var(--element-bg-color);
       border-radius: calc(var(--radius) / 2);
       width: var(--size);
       height: var(--size);

@@ -18,7 +18,7 @@ export interface ButtonProps {
 
 // T Y P E S
 // @Note They will only be extracted in the props table if the param is optional...
-export type ButtonType = 'primary' | 'dark' | 'black' | 'submit' | 'white' | 'disabled'
+export type ButtonType = 'primary' | 'dark' | 'black' | 'submit' | 'white' | 'light' | 'transparent' | 'disabled'
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonWidth = 'block' | 'inline'
 
@@ -59,7 +59,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   padding: var(--space-md) var(--space-lg);
   width: auto;
-  color: var(--color-white);
+  color: var(--text-color);
   font-family: var(--font-family);
   font-weight: var(--font-weight-bd);
   border-radius: var(--radius);
@@ -115,6 +115,10 @@ const StyledButton = styled.button`
     color: var(--color-white-fix);
   }
 
+  &.transparent {
+    background-color: transparent;
+  }
+
   &.dark {
     background-color: var(--color-dark);
   }
@@ -125,6 +129,11 @@ const StyledButton = styled.button`
 
   &.white {
     background-color: var(--color-white);
+    color: var(--color-black);
+  }
+
+  &.light {
+    background-color: var(--color-light);
     color: var(--color-black);
   }
 
