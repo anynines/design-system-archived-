@@ -17,5 +17,8 @@ export default {
 export const Basic = (args: ImageUploaderProps) => (
   <ImageUploader
     {...args}
+    id="avatar-upload"
+    label="Avatar"
+    addToFormData={action('Item clicked')}
   />
 )
