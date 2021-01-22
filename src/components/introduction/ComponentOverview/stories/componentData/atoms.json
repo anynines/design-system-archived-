@@ -5,12 +5,6 @@
     "icon": "avatarComponent",
     "type": "component"
   },
-  "badge": {
-    "title": "Badge",
-    "link": "💧-atoms-badge--basic",
-    "icon": "badgeComponent",
-    "type": "component"
-  },
   "button": {
     "title": "Button",
     "link": "💧-atoms-button--basic",
