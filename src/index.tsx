@@ -59,7 +59,7 @@ export * from './components/molecules/DatePicker/DatePicker'
 
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'
-export * from './components/organisms/ProductItem/ProductItem'
+export * from './components/organisms/CartItem/CartItem'
 export * from './components/organisms/Table/Draggable/DraggableTableWrapper'
 export * from './components/organisms/Table/Sortable/SortableTable'
 export * from './components/organisms/Table/Sortable/SBody'
