@@ -30,6 +30,7 @@ import SpecialCategoriesIcon from './assets/specialCategoriesIcon'
 import SpinnerIcon from './assets/spinnerIcon'
 import SwitchIcon from './assets/switchIcon'
 import TableIcon from './assets/tableIcon'
+import TableDraggableIcon from './assets/tableDraggableIcon'
 import ToggleModeIcon from './assets/toggleModeIcon'
 import TooltipIcon from './assets/tooltipIcon'
 import UserInfoIcon from './assets/userInfoIcon'
@@ -71,6 +72,7 @@ export type ComponentIconName = 'avatarComponent'
   | 'spinnerComponent'
   | 'switchComponent'
   | 'tableComponent'
+  | 'tableDraggableComponent'
   | 'toggleModeComponent'
   | 'tooltipComponent'
   | 'userInfoComponent'
@@ -105,6 +107,7 @@ const ICONS: { [key in ComponentIconName]: JSX.Element } = {
   spinnerComponent: <SpinnerIcon />,
   switchComponent: <SwitchIcon />,
   tableComponent: <TableIcon />,
+  tableDraggableComponent: <TableDraggableIcon />,
   toggleModeComponent: <ToggleModeIcon />,
   tooltipComponent: <TooltipIcon />,
   userInfoComponent: <UserInfoIcon />,

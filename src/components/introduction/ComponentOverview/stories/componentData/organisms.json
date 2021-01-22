@@ -22,5 +22,11 @@
     "link": "🌳-organisms-table--basic",
     "icon": "tableComponent",
     "type": "component"
+  },
+  "TableDraggable": {
+    "title": "Table Draggable",
+    "link": "🌳-organisms-draggabletable--basic",
+    "icon": "tableDraggableComponent",
+    "type": "component"
   }
 }
