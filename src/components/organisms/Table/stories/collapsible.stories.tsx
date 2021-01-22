@@ -1,10 +1,10 @@
 import React from 'react'
 
-import DashboardTable, { YearDivision as YearDivisionType, CustomerOverview, GetAnnualCostResponse } from '../Collapsible/DashboardTable'
+import CollapsibleTable, { YearDivision as YearDivisionType, CustomerOverview, GetAnnualCostResponse } from '../Collapsible/CollapsibleTable'
 
 export default {
   title: '🌳 Organisms/CollapsibleTable',
-  component: DashboardTable,
+  component: CollapsibleTable,
   argTypes: {
     className: {
       control: { type: 'string' }
@@ -74,7 +74,7 @@ export const Default: React.FC = () => {
   const [costsOverview, setCostsOverview] = React.useState<GetAnnualCostResponse | null>(costsOverviewData)
 
   return (
-    <DashboardTable
+    <CollapsibleTable
       division={yearDivision}
       year={2021}
       customersData={customersOverview}

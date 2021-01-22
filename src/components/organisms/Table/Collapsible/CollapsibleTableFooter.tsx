@@ -12,7 +12,7 @@ import {
   getTeamsCosts,
   roundNString
 } from '../helpers/index'
-import { CustomerOverview, AnnualCosts, YearDivision } from './DashboardTable'
+import { CustomerOverview, AnnualCosts, YearDivision } from './CollapsibleTable'
 
 // C O M P O N E N T S
 import Symbol from './Symbol'
@@ -21,14 +21,14 @@ import { TRow } from '../Table/TRow'
 import { TCell } from '../Table/TCell'
 
 // I N T E R F A C E
-export interface DashboardTableFooterProps {
+export interface CollapsibleTableFooterProps {
   division: YearDivision
   customersData: CustomerOverview[]
   costsData: Partial<AnnualCosts>
 }
 
 // C O M P O N E N T
-const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
+const CollapsibleTableFooter: React.FC<CollapsibleTableFooterProps> = (props) => {
   const { division, customersData, costsData } = props
 
   const renderTurnoverCells = (): JSX.Element[] => {
@@ -193,4 +193,4 @@ const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
   )
 }
 
-export default DashboardTableFooter
+export default CollapsibleTableFooter

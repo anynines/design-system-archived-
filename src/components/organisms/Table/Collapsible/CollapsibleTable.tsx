@@ -1,9 +1,9 @@
 import React from 'react'
 
 // C O M P O N E N T S
-import DashboardTableHeader from './DashboardTableHeader'
-import DashboardTableBody from './DashboardTableBody'
-import DashboardTableFooter from './DashboardTableFooter'
+import CollapsibleTableHeader from './CollapsibleTableHeader'
+import CollapsibleTableBody from './CollapsibleTableBody'
+import CollapsibleTableFooter from './CollapsibleTableFooter'
 import { Table } from '../Table/Table'
 
 import { Quarter, Team } from '../helpers/index'
@@ -27,7 +27,8 @@ export type AnnualCosts = {
 }
 export type GetAnnualCostResponse = Partial<AnnualCosts>
 export type YearDivision = 'quarters' | 'months'
-export interface DashboardTableProps {
+
+export interface CollapsibleTableProps {
   year: number
   division: YearDivision
   customersData: CustomerOverview[]
@@ -35,16 +36,16 @@ export interface DashboardTableProps {
 }
 
 // C O M P O N E N T
-const DashboardTable: React.FC<DashboardTableProps> = (props) => {
+const CollapsibleTable: React.FC<CollapsibleTableProps> = (props) => {
   const { division, year, customersData, costsData } = props
 
   return (
     <Table className='scrollable'>
-      <DashboardTableHeader year={year} division={division} />
-      <DashboardTableBody customersData={customersData} division={division} />
-      <DashboardTableFooter division={division} customersData={customersData} costsData={costsData} />
+      <CollapsibleTableHeader year={year} division={division} />
+      <CollapsibleTableBody customersData={customersData} division={division} />
+      <CollapsibleTableFooter division={division} customersData={customersData} costsData={costsData} />
     </Table>
   )
 }
 
-export default DashboardTable
+export default CollapsibleTable

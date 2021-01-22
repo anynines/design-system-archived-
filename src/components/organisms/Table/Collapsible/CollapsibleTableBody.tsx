@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CustomerOverview, ProjectOverview, YearDivision } from './DashboardTable'
+import { CustomerOverview, ProjectOverview, YearDivision } from './CollapsibleTable'
 import { getMonthId, MONTHS, QUARTERS } from '../helpers/date'
 import { roundN } from '../helpers/utils'
 import { getCustomerQuarterCosts, getProjectQuarterCosts, getCustomerMonthCosts, getCustomerAnnualCosts, roundNString } from '../helpers/internal'
@@ -14,13 +14,13 @@ import { TRow } from '../Table/TRow'
 import { TCell } from '../Table/TCell'
 
 // I N T E R F A C E
-export interface DashboardTableBodyProps {
+export interface CollapsibleTableBodyProps {
   customersData: CustomerOverview[]
   division: YearDivision
 }
 
 // C O M P O N E N T
-const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
+const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
   const { division, customersData } = props
 
   const [customersToShowProjects, setCustomersToShowProjects] = React.useState<string[]>([])
@@ -194,4 +194,4 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
   )
 }
 
-export default DashboardTableBody
+export default CollapsibleTableBody

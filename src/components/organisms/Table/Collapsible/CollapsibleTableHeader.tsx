@@ -3,20 +3,20 @@ import React from 'react'
 import { getShortenedMonth, MONTHS, QUARTERS } from '../helpers/index'
 
 // C O M P O N E N T S
-import { YearDivision } from './DashboardTable'
+import { YearDivision } from './CollapsibleTable'
 import Symbol from './Symbol'
 import { THead } from '../Table/THead'
 import { THeadCell } from '../Table/THeadCell'
 import { TRow } from '../Table/TRow'
 
 // I N T E R F A C E
-export interface DashboardTableHeaderProps {
+export interface CollapsibleTableHeaderProps {
   year: number
   division: YearDivision
 }
 
 // C O M P O N E N T
-const DashboardTableHeader: React.FC<DashboardTableHeaderProps> = (props) => {
+const CollapsibleTableHeader: React.FC<CollapsibleTableHeaderProps> = (props) => {
   const { division, year } = props
 
   const renderTableHeaderDivision = (): JSX.Element[] => {
@@ -51,4 +51,4 @@ const DashboardTableHeader: React.FC<DashboardTableHeaderProps> = (props) => {
   )
 }
 
-export default DashboardTableHeader
+export default CollapsibleTableHeader
