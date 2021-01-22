@@ -4,6 +4,7 @@ import styled from 'styled-components'
 // L I B R A R Y
 import { Button } from '../../atoms/Button/Button'
 import { Icon } from '../../atoms/Icon/Icon'
+import { useDropzone } from 'react-dropzone'
 
 // I N T E R F A C E S
 export interface ImageProps {
@@ -44,36 +45,39 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
     })
   }
 
-  const handleChange = async (e: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
-    const target = e.target as HTMLInputElement
+  const onDrop = React.useCallback(async (acceptedFiles) => {
     let url = ''
-    if (target.files !== null) {
-      const [file] = target.files
+    if (acceptedFiles !== null) {
+      const [file] = acceptedFiles
       url = await getUrl(file) as string
     }
     addToFormData(url, id)
     setCurrentImage(url)
-  }
+  }, [addToFormData, id])
 
-  const handleUploadClick = (): void => {
-    const elem = document.getElementById(id)
-    if (elem !== null) elem.click()
-  }
+  const { isDragActive, getRootProps, getInputProps } = useDropzone({ onDrop })
+
   React.useEffect(() => {
     addToFormData(defaultValue || '', id)
     setCurrentImage(defaultValue)
   }, [addToFormData, defaultValue, id])
 
   return (
-    <StyledImageInput className={`image-uploader ${className}`}>
+    <StyledImageInput className={`image-uploader ${className}`} {...getRootProps({ className: 'dropzone' })}>
       <span>{label}</span>
       {currentImage ? <img src={currentImage} alt={alt} /> : <Icon icon='placeholder' />}
-      <input type='file' id={id} onChange={handleChange} />
-      <Button type='primary' onClick={handleUploadClick}>
-        <span>
-          Upload
-        </span>
-      </Button>
+      <div>
+        <input type='file' id={id} {...getInputProps()} />
+        {
+          isDragActive
+            ? <p>Drop file here</p>
+            : (
+              <Button type='primary'>
+                <span>Upload</span>
+              </Button>
+            )
+        }
+      </div>
     </StyledImageInput>
   )
 }
@@ -86,10 +90,12 @@ const StyledImageInput = styled.div`
   align-items: center;
   margin: 0 var(--space-lg);
   margin-bottom: var(--space-xl);
+
+  border: 4px dashed var(--color-dark-80);
   background-color: var(--color-dark-50);
+  padding: var(--space-md);
   border-radius: var(--radius);
   flex: 1;
-  padding: var(--space-md);
 
   &:not(:last-child){
     margin-right: var(--space-md);
@@ -102,15 +108,15 @@ const StyledImageInput = styled.div`
     font-weight: var(--font-weight-bd);
   }
 
-  svg, img {
+  .icon {
+    --icon-size: 3rem;
     margin: var(--space-xl) var(--space-xl);
-    width: auto;
-    height: 3.75rem;
     max-width: 15.625rem;
   }
 
   img {
     display: block;
+    margin: var(--space-xl) var(--space-xl);
   }
 
   input[type=file] {
