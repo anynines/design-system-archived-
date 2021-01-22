@@ -1,19 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-import { CustomerOverview, ProjectOverview } from '@types'
-import { getMonthId, MONTHS, QUARTERS } from '@helpers/date'
-import { roundN } from '@helpers/utils'
-import { getCustomerQuarterCosts, getProjectQuarterCosts, getCustomerMonthCosts, getCustomerAnnualCosts, roundNString } from '@helpers/internal'
+import { CustomerOverview, ProjectOverview, YearDivision } from './DashboardTable'
+import { getMonthId, MONTHS, QUARTERS } from '../helpers/date'
+import { roundN } from '../helpers/utils'
+import { getCustomerQuarterCosts, getProjectQuarterCosts, getCustomerMonthCosts, getCustomerAnnualCosts, roundNString } from '../helpers/internal'
 
 // C O M P O N E N T S
-import { Icon } from '@anynines/design-system'
-import { YearDivision } from './YearDivision'
-import ButtonNaked from '@components/atoms/ButtonNaked'
-import Symbol from '@components/atoms/Symbol'
-import TableBody from '@components/atoms/Table/Body'
-import TableRow from '@components/atoms/Table/Row'
-import TableCell from '@components/atoms/Table/Cell'
+import { Icon } from '../../../atoms/Icon/Icon'
+import ButtonNaked from './ButtonNaked'
+import Symbol from './Symbol'
+import { TBody } from '../Table/TBody'
+import { TRow } from '../Table/TRow'
+import { TCell } from '../Table/TCell'
 
 // I N T E R F A C E
 export interface DashboardTableBodyProps {
@@ -63,10 +61,10 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
 
   const renderCustomerNameCell = (customer: CustomerOverview): JSX.Element => {
     return (
-      <TableCell className={areCustomerProjectsHidden(customer) ? '' : 'highlight-primary'}>
+      <TCell className={areCustomerProjectsHidden(customer) ? '' : 'highlight-primary'}>
         {customer.name}
         {renderToggleCustomerBtn(customer)}
-      </TableCell>
+      </TCell>
     )
   }
 
@@ -74,29 +72,29 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
     if (division === 'quarters') {
       return QUARTERS.map((quarter) => {
         return (
-          <TableCell key={`customer-costs-${customer.id}-${quarter}`}>
+          <TCell key={`customer-costs-${customer.id}-${quarter}`}>
             {roundNString(getCustomerQuarterCosts(customer, quarter))}
             {' '}
             <Symbol entity='euro' />
-          </TableCell>
+          </TCell>
         )
       })
     }
 
     return MONTHS.map((month) => {
       return (
-        <TableCell key={`customer-costs-${customer.id}-${month}`}>
+        <TCell key={`customer-costs-${customer.id}-${month}`}>
           {roundNString(getCustomerMonthCosts(customer, month))}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
+        </TCell>
       )
     })
   }
 
   const renderCustomerRow = (customer: CustomerOverview): JSX.Element => {
     return (
-      <TableRow
+      <TRow
         key={`customer-${customer.id}`}
         className={areCustomerProjectsHidden(customer) ? '' : 'opened'}
       >
@@ -104,12 +102,12 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
 
         {renderCustomerRowCosts(customer)}
 
-        <TableCell>
+        <TCell>
           {roundNString(getCustomerAnnualCosts(customer))}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
-      </TableRow>
+        </TCell>
+      </TRow>
     )
   }
 
@@ -125,12 +123,10 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
 
   const renderProjectNameCell = (project: ProjectOverview): JSX.Element => {
     return (
-      <TableCell className='highlight-primary'>
+      <TCell className='highlight-primary'>
         {project.name}
-        <Link to={`/projects/${project.id}`}>
-          <Icon icon='link' />
-        </Link>
-      </TableCell>
+        <Icon icon='link' />
+      </TCell>
     )
   }
 
@@ -138,36 +134,36 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
     if (division === 'quarters') {
       return QUARTERS.map((quarter) => {
         return (
-          <TableCell key={`project-costs-${customerId}-${project.id}-${quarter}`}>
+          <TCell key={`project-costs-${customerId}-${project.id}-${quarter}`}>
             {roundNString(getProjectQuarterCosts(project, quarter))}
             {' '}
             <Symbol entity='euro' />
-          </TableCell>
+          </TCell>
         )
       })
     }
 
     return MONTHS.map((month) => {
       return (
-        <TableCell key={`project-costs-${customerId}-${project.id}-${month}`}>
+        <TCell key={`project-costs-${customerId}-${project.id}-${month}`}>
           {roundNString(project.entries[getMonthId(month)])}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
+        </TCell>
       )
     })
   }
 
   const renderCustomerProjectRow = (customerId: string, project: ProjectOverview): JSX.Element => {
     return (
-      <TableRow key={`project-${customerId}-${project.id}`}>
+      <TRow key={`project-${customerId}-${project.id}`}>
         {renderProjectNameCell(project)}
         {renderCustomerProjectCosts(project, customerId)}
 
-        <TableCell>
+        <TCell>
           {getProjectAnnualCosts(project)}
-        </TableCell>
-      </TableRow>
+        </TCell>
+      </TRow>
     )
   }
   const renderCustomerProjects = (customer: CustomerOverview): JSX.Element | null => {
@@ -185,7 +181,7 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
   }
 
   return (
-    <TableBody>
+    <TBody>
       {customersData.map((customer) => {
         return (
           <React.Fragment key={`customer-${customer.id}`}>
@@ -194,7 +190,7 @@ const DashboardTableBody: React.FC<DashboardTableBodyProps> = (props) => {
           </React.Fragment>
         )
       })}
-    </TableBody>
+    </TBody>
   )
 }
 

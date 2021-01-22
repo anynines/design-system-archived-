@@ -4,7 +4,9 @@ import React from 'react'
 import DashboardTableHeader from './DashboardTableHeader'
 import DashboardTableBody from './DashboardTableBody'
 import DashboardTableFooter from './DashboardTableFooter'
-import Table from './Table'
+import { Table } from '../Table/Table'
+
+import { Quarter, Team } from '../helpers/index'
 
 // I N T E R F A C E
 export interface ProjectOverview {
@@ -17,16 +19,17 @@ export interface CustomerOverview {
   id: string
   projects: ProjectOverview[]
 }
-export type Quarter = 'Q1' | 'Q2' | 'Q3' | 'Q4'
 export type QuarterCosts = {
   [team in Team]: number
 }
 export type AnnualCosts = {
   [quarter in Quarter]: QuarterCosts
 }
+export type GetAnnualCostResponse = Partial<AnnualCosts>
+export type YearDivision = 'quarters' | 'months'
 export interface DashboardTableProps {
   year: number
-  division: 'quarters' | 'months'
+  division: YearDivision
   customersData: CustomerOverview[]
   costsData: Partial<AnnualCosts>
 }

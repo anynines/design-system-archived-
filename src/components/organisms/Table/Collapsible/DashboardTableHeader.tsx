@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { getShortenedMonth, MONTHS, QUARTERS } from '@helpers/index'
+import { getShortenedMonth, MONTHS, QUARTERS } from '../helpers/index'
 
 // C O M P O N E N T S
-import { YearDivision } from './YearDivision'
-import Symbol from '@components/atoms/Symbol'
-import TableHead from '@components/atoms/Table/Head'
-import TableHeadCell from '@components/atoms/Table/HeadCell'
-import TableRow from '@components/atoms/Table/Row'
+import { YearDivision } from './DashboardTable'
+import Symbol from './Symbol'
+import { THead } from '../Table/THead'
+import { THeadCell } from '../Table/THeadCell'
+import { TRow } from '../Table/TRow'
 
 // I N T E R F A C E
 export interface DashboardTableHeaderProps {
@@ -23,31 +23,31 @@ const DashboardTableHeader: React.FC<DashboardTableHeaderProps> = (props) => {
     if (division === 'quarters') {
       return QUARTERS.map((quarter) => {
         return (
-          <TableHeadCell key={`quarter-${quarter}`}>{quarter}</TableHeadCell>
+          <THeadCell key={`quarter-${quarter}`}>{quarter}</THeadCell>
         )
       })
     }
 
     return MONTHS.map((month) => {
       return (
-        <TableHeadCell key={`month-${month}`} className='capitalized'>{getShortenedMonth(month)}</TableHeadCell>
+        <THeadCell key={`month-${month}`} className='capitalized'>{getShortenedMonth(month)}</THeadCell>
       )
     })
   }
 
   return (
-    <TableHead>
-      <TableRow>
-        <TableHeadCell>Customers</TableHeadCell>
+    <THead>
+      <TRow>
+        <THeadCell>Customers</THeadCell>
         {renderTableHeaderDivision()}
 
-        <TableHeadCell>
+        <THeadCell>
           <Symbol entity='sum' />
           {' '}
           {year}
-        </TableHeadCell>
-      </TableRow>
-    </TableHead>
+        </THeadCell>
+      </TRow>
+    </THead>
   )
 }
 

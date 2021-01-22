@@ -11,15 +11,14 @@ import {
   getAnnualCosts,
   getTeamsCosts,
   roundNString
-} from '@helpers/index'
-import { CustomerOverview, AnnualCosts } from '@types'
+} from '../helpers/index'
+import { CustomerOverview, AnnualCosts, YearDivision } from './DashboardTable'
 
 // C O M P O N E N T S
-import { YearDivision } from './YearDivision'
-import Symbol from '@components/atoms/Symbol'
-import TableFoot from '@components/atoms/Table/Foot'
-import TableRow from '@components/atoms/Table/Row'
-import TableCell from '@components/atoms/Table/Cell'
+import Symbol from './Symbol'
+import { TFoot } from '../Table/TFoot'
+import { TRow } from '../Table/TRow'
+import { TCell } from '../Table/TCell'
 
 // I N T E R F A C E
 export interface DashboardTableFooterProps {
@@ -36,22 +35,22 @@ const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
     if (division === 'quarters') {
       return QUARTERS.map((quarter) => {
         return (
-          <TableCell key={`turnover-${quarter}`}>
+          <TCell key={`turnover-${quarter}`}>
             {roundNString(getCustomersQuarterTurnover(customersData, quarter))}
             {' '}
             <Symbol entity='euro' />
-          </TableCell>
+          </TCell>
         )
       })
     }
 
     return MONTHS.map((month) => {
       return (
-        <TableCell key={`turnover-${month}`}>
+        <TCell key={`turnover-${month}`}>
           {roundNString(getCustomersMonthTurnover(customersData, month))}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
+        </TCell>
       )
     })
   }
@@ -72,15 +71,15 @@ const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
 
   const renderTurnoverRow = (): JSX.Element => {
     return (
-      <TableRow className='green'>
-        <TableCell>Turnover</TableCell>
+      <TRow className='green'>
+        <TCell>Turnover</TCell>
         {renderTurnoverCells()}
-        <TableCell>
+        <TCell>
           {roundNString(getAnnualTurnover())}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
-      </TableRow>
+        </TCell>
+      </TRow>
     )
   }
 
@@ -90,11 +89,11 @@ const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
         const quarterCosts = costsData[quarter]
 
         return (
-          <TableCell key={`costs-${quarter}`}>
+          <TCell key={`costs-${quarter}`}>
             {quarterCosts ? roundNString(getTeamsCosts(quarterCosts)) : roundNString(0)}
             {' '}
             <Symbol entity='euro' />
-          </TableCell>
+          </TCell>
         )
       })
     }
@@ -103,13 +102,13 @@ const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
       const quarterCosts = costsData[getMonthsQuarter(month)]
 
       return (
-        <TableCell key={`costs-${month}`}>
+        <TCell key={`costs-${month}`}>
           {quarterCosts
             ? roundNString(roundN(getTeamsCosts(quarterCosts) / 3, 2), 2)
             : roundNString(0)}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
+        </TCell>
       )
     })
   }
@@ -124,14 +123,14 @@ const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
         const isDifferenceNegative = difference < 0
 
         return (
-          <TableCell
+          <TCell
             key={`difference-${quarter}`}
             className={isDifferenceNegative ? 'red' : 'green'}
           >
             {roundNString(difference)}
             {' '}
             <Symbol entity='euro' />
-          </TableCell>
+          </TCell>
         )
       })
     }
@@ -144,53 +143,53 @@ const DashboardTableFooter: React.FC<DashboardTableFooterProps> = (props) => {
       const isDifferenceNegative = difference < 0
 
       return (
-        <TableCell
+        <TCell
           key={`difference-${month}`}
           className={isDifferenceNegative ? 'red' : 'green'}
         >
           {roundNString(difference)}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
+        </TCell>
       )
     })
   }
 
   const renderCostsRow = (): JSX.Element => {
     return (
-      <TableRow className='red'>
-        <TableCell>Costs</TableCell>
+      <TRow className='red'>
+        <TCell>Costs</TCell>
         {renderCostsCells()}
-        <TableCell>
+        <TCell>
           {roundNString(getAnnualCosts(costsData))}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
-      </TableRow>
+        </TCell>
+      </TRow>
     )
   }
 
   const renderDifferenceRow = (): JSX.Element => {
     const annualDifference = getAnnualDifference()
     return (
-      <TableRow className='green'>
-        <TableCell>Difference</TableCell>
+      <TRow className='green'>
+        <TCell>Difference</TCell>
         {renderDifferenceCells()}
-        <TableCell className={annualDifference < 0 ? 'red' : 'green'}>
+        <TCell className={annualDifference < 0 ? 'red' : 'green'}>
           {roundNString(annualDifference)}
           {' '}
           <Symbol entity='euro' />
-        </TableCell>
-      </TableRow>
+        </TCell>
+      </TRow>
     )
   }
 
   return (
-    <TableFoot>
+    <TFoot>
       {renderTurnoverRow()}
       {renderCostsRow()}
       {renderDifferenceRow()}
-    </TableFoot>
+    </TFoot>
   )
 }
 
