@@ -17,8 +17,15 @@ export interface ButtonProps {
 }
 
 // T Y P E S
-// @Note They will only be extracted in the props table if the param is optional...
-export type ButtonType = 'primary' | 'dark' | 'black' | 'submit' | 'white' | 'light' | 'transparent' | 'disabled'
+export type ButtonType =
+  'primary' |
+  'dark' |
+  'black' |
+  'submit' |
+  'white' |
+  'light' |
+  'transparent' |
+  'disabled'
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonWidth = 'block' | 'inline'
 
@@ -37,14 +44,20 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <StyledButton
       style={style}
-      className={`btn ${type} ${size} ${width} ${iconOnly && 'icon-only'} ${className}`}
+      className={`btn 
+        ${type} 
+        ${size} 
+        ${width} 
+        ${iconOnly && 'icon-only'} 
+        ${className}
+      `}
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={(): void => { return (onClick && onClick()) }}
       icon={icon}
       disabled={type === 'disabled'}
     >
-      {icon && <Icon icon={icon} className={`${iconOnly && 'icon-only'}`} />}
-      {children}
+      { icon && <Icon icon={icon} className={`${iconOnly && 'icon-only'}`} /> }
+      { children }
     </StyledButton>
   )
 }
@@ -59,7 +72,6 @@ const StyledButton = styled.button`
   cursor: pointer;
   padding: var(--space-md) var(--space-lg);
   width: auto;
-  color: var(--text-color);
   font-family: var(--font-family);
   font-weight: var(--font-weight-bd);
   border-radius: var(--radius);
@@ -115,7 +127,15 @@ const StyledButton = styled.button`
     color: var(--color-white-fix);
   }
 
+  &.primary,
+  &.submit,
+  &.dark,
+  &.black {
+    color: var(--color-white);
+  }
+
   &.transparent {
+    color: var(--text-color);
     background-color: transparent;
   }
 
@@ -127,14 +147,17 @@ const StyledButton = styled.button`
     background-color: var(--color-black);
   }
 
+  &.white,
+  &.light {
+    color: var(--color-black);
+  }
+
   &.white {
     background-color: var(--color-white);
-    color: var(--color-black);
   }
 
   &.light {
     background-color: var(--color-light);
-    color: var(--color-black);
   }
 
   &.disabled {
@@ -154,4 +177,3 @@ const StyledButton = styled.button`
     box-shadow: 0 0 6px var(--color-light-10);
   }
 `
-StyledButton.displayName = 'StyledButton'
