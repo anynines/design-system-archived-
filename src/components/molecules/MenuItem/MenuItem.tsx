@@ -12,7 +12,7 @@ export interface MenuItemProps {
   exact?: boolean
   children?: JSX.Element
   className?: string
-  counter?: boolean
+  counter?: number
   icon?: IconName
   id?: string
   onClick?: () => void
@@ -56,6 +56,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {children !== undefined ? (
               <span className='label'>{children}</span>
             ) : (<></>)}
+            {counter && <span className='counter'>{counter}</span>}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -69,13 +70,12 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           id={icon}
           style={style}
         >
-          <div
-            className={`wrapper ${active && 'active'} ${counter && 'counter'}`}
-          >
+          <div className={`wrapper ${active && 'active'}`}>
             {icon && <Icon icon={icon} />}
             {children !== undefined
               ? <span className='label'>{children}</span>
               : <></>}
+            {counter && <span className='counter'>{counter}</span>}
           </div>
         </StyledMenuItem>
       )}
@@ -139,18 +139,19 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     border-radius: var(--radius);
     transition: var(--transition);
 
-    &.counter {
-      &::after {
-        position: absolute;
-        top: -.45rem;
-        right: -.45rem;
-        border: 2px solid var(--color-black);
-        background-color: var(--color-primary);
-        width: .8rem;
-        height: .8rem;
-        content: '';
-        border-radius: 100%;
-      }
+    .counter {
+      position: absolute;
+      right: 8px;
+      top: 7px;
+      min-width: 25px;
+      padding: 4px 8px;
+      border-radius: 20px;
+      background-color: var(--color-primary-light);
+      border: var(--border);
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--color-white);
     }
 
     &.active,
