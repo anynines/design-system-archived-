@@ -135,8 +135,8 @@ const StyledButton = styled.button`
   }
 
   &.transparent {
-    color: var(--text-color);
     background-color: transparent;
+    color: var(--text-color);
   }
 
   &.dark {

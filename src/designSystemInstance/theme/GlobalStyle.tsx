@@ -44,10 +44,10 @@ export const GlobalStyle = createGlobalStyle`
 
     /* C O M P O N E N T   C O L O R S */
     --page-bg-color: ${(props): string => { return props.theme.globals.colors.pageBgColor }};
-    --layout-bg-color: ${(props): string => { return props.theme.globals.colors.layoutBgColor }};;
-    --box-bg-color: ${(props): string => { return props.theme.globals.colors.boxBgColor }};;
-    --element-bg-color: ${(props): string => { return props.theme.globals.colors.elementBgColor }};;
-    --text-color: ${(props): string => { return props.theme.globals.colors.textColor }};;
+    --layout-bg-color: ${(props): string => { return props.theme.globals.colors.layoutBgColor }};
+    --box-bg-color: ${(props): string => { return props.theme.globals.colors.boxBgColor }};
+    --element-bg-color: ${(props): string => { return props.theme.globals.colors.elementBgColor }};
+    --text-color: ${(props): string => { return props.theme.globals.colors.textColor }};
 
     --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
     

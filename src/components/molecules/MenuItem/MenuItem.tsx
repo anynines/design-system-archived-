@@ -141,17 +141,17 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
 
     .counter {
       position: absolute;
-      right: 8px;
       top: 7px;
-      min-width: 25px;
-      padding: 4px 8px;
-      border-radius: 20px;
-      background-color: var(--color-primary-light);
+      right: 8px;
       border: var(--border);
-      font-size: 10px;
-      font-weight: 900;
+      background-color: var(--color-primary-light);
+      padding: 4px 8px;
+      min-width: 25px;
       text-align: center;
       color: var(--color-white);
+      font-size: 10px;
+      font-weight: 900;
+      border-radius: 20px;
     }
 
     &.active,

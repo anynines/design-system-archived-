@@ -75,26 +75,26 @@ const StyledCheckbox = styled.div`
     position: relative;
     cursor: pointer;
     padding-left: calc(var(--size) + var(--space-fixed-md));
-    font-size: var(--text-sm);
     color: var(--text-color);
+    font-size: var(--text-sm);
 
     &::before,
     &::after {
       display: flex;
       position: absolute;
       left: 0;
+      content: '';
       transition-property: opacity, border;
       transition-duration: .25s;
       transition-timing-function: ease-in-out;
-      content: '';
     }
 
     &::before {
       border: var(--border);
       background: var(--element-bg-color);
-      border-radius: calc(var(--radius) / 2);
       width: var(--size);
       height: var(--size);
+      border-radius: calc(var(--radius) / 2);
     }
 
     &::after {
