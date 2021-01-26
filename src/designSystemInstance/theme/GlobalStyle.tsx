@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 import * as builder from './PaletteBuilder'
-import 'animate.css/animate.css'
 
 // G L O B A L   S T Y L E S
 export const GlobalStyle = createGlobalStyle`
@@ -32,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
   **  Global Variables  *****************
   **************************************/
   :root {
-    /* C O L O R S */
+    /* C I   C O L O R S */
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.primary, 'Primary') }}
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.success, 'Success') }}
     ${(props): string => { return builder.buildPrimaryPaletteFromHexColor(props.theme.globals.colors.notice, 'Notice') }}
@@ -43,8 +42,14 @@ export const GlobalStyle = createGlobalStyle`
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.dark, 'Dark') }}
     ${(props): string => { return builder.buildContrastPaletteFromHexColor(props.theme.globals.colors.black, 'Black') }}
 
+    /* C O M P O N E N T   C O L O R S */
+    --page-bg-color: ${(props): string => { return props.theme.globals.colors.pageBgColor }};
+    --layout-bg-color: ${(props): string => { return props.theme.globals.colors.layoutBgColor }};
+    --box-bg-color: ${(props): string => { return props.theme.globals.colors.boxBgColor }};
+    --element-bg-color: ${(props): string => { return props.theme.globals.colors.elementBgColor }};
+    --text-color: ${(props): string => { return props.theme.globals.colors.textColor }};
+
     --color-white-fix: ${(props): string => { return props.theme.globals.colors.whiteFix }};
-    --color-black-darker: #040B18;
     
     /* G L O B A L S */
     --radius: ${(props): string => { return props.theme.globals.radius }};
