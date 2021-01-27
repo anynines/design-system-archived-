@@ -1,197 +1,133 @@
 import React from 'react'
-
-import { CustomerOverview, ProjectOverview, YearDivision } from './CollapsibleTable'
-import { getMonthId, MONTHS, QUARTERS } from '../helpers/date'
-import { roundN } from '../helpers/utils'
-import { getCustomerQuarterCosts, getProjectQuarterCosts, getCustomerMonthCosts, getCustomerAnnualCosts, roundNString } from '../helpers/internal'
+import styled from 'styled-components'
 
 // C O M P O N E N T S
 import { Icon } from '../../../atoms/Icon/Icon'
 import ButtonNaked from './ButtonNaked'
-import Symbol from './Symbol'
 import { TBody } from '../Table/TBody'
 import { TRow } from '../Table/TRow'
 import { TCell } from '../Table/TCell'
 
 // I N T E R F A C E
+export interface CollapsibleRow {
+  id: string
+  values: string[]
+}
+export interface CollapsibleTableRow extends CollapsibleRow {
+  rows?: CollapsibleRow[]
+}
 export interface CollapsibleTableBodyProps {
-  customersData: CustomerOverview[]
-  division: YearDivision
+  bodyData: CollapsibleTableRow[]
 }
 
 // C O M P O N E N T
 const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
-  const { division, customersData } = props
+  const { bodyData } = props
 
-  const [customersToShowProjects, setCustomersToShowProjects] = React.useState<string[]>([])
+  const [collapsedRowIds, setCollapsedRowIds] = React.useState<string[]>([])
 
-  const areCustomerProjectsHidden = (customer: CustomerOverview): boolean => {
-    return !customersToShowProjects.includes(customer.id)
+  const isRowCollapsed = (row: CollapsibleTableRow): boolean => {
+    return !collapsedRowIds.includes(row.id)
   }
 
-  const renderToggleCustomerBtn = (customer: CustomerOverview): JSX.Element => {
-    const areProjectsHidden = areCustomerProjectsHidden(customer)
+  const renderToggleRowBtn = (row: CollapsibleTableRow): JSX.Element => {
+    const areRowsHidden = isRowCollapsed(row)
 
-    const removeCustomerFromCustomersToShowProjects = (): void => {
-      const arrayWithoutCustomer = customersToShowProjects.filter((customerId) => {
-        return customerId !== customer.id
+    const hideCollapsibleRows = (): void => {
+      const arrayWithoutRowId = collapsedRowIds.filter((rowId) => {
+        return rowId !== row.id
       })
 
-      setCustomersToShowProjects(arrayWithoutCustomer)
+      setCollapsedRowIds(arrayWithoutRowId)
     }
 
-    if (areProjectsHidden) {
+    if (areRowsHidden) {
       return (
         <ButtonNaked
-          onClick={(): void => { setCustomersToShowProjects([...customersToShowProjects, customer.id]) }}
+          onClick={(): void => { setCollapsedRowIds([...collapsedRowIds, row.id]) }}
         >
-          <Icon icon='plus' />
+          <Icon icon='minus' />
         </ButtonNaked>
       )
     }
 
     return (
       <ButtonNaked
-        onClick={removeCustomerFromCustomersToShowProjects}
+        onClick={hideCollapsibleRows}
       >
-        <Icon icon='minus' />
+        <Icon icon='plus' />
       </ButtonNaked>
     )
   }
 
-  const renderCustomerNameCell = (customer: CustomerOverview): JSX.Element => {
+  const renderRowFirstColumnCell = (row: CollapsibleTableRow): JSX.Element => {
+    const value = row.values[0]
     return (
-      <TCell className={areCustomerProjectsHidden(customer) ? '' : 'highlight-primary'}>
-        {customer.name}
-        {renderToggleCustomerBtn(customer)}
+      <TCell className={isRowCollapsed(row) ? '' : 'highlight-primary'}>
+        {value}
+        {renderToggleRowBtn(row)}
       </TCell>
     )
   }
 
-  const renderCustomerRowCosts = (customer: CustomerOverview): JSX.Element[] => {
-    if (division === 'quarters') {
-      return QUARTERS.map((quarter) => {
-        return (
-          <TCell key={`customer-costs-${customer.id}-${quarter}`}>
-            {roundNString(getCustomerQuarterCosts(customer, quarter))}
-            {' '}
-            <Symbol entity='euro' />
-          </TCell>
-        )
-      })
-    }
-
-    return MONTHS.map((month) => {
-      return (
-        <TCell key={`customer-costs-${customer.id}-${month}`}>
-          {roundNString(getCustomerMonthCosts(customer, month))}
-          {' '}
-          <Symbol entity='euro' />
-        </TCell>
-      )
-    })
-  }
-
-  const renderCustomerRow = (customer: CustomerOverview): JSX.Element => {
-    return (
-      <TRow
-        key={`customer-${customer.id}`}
-        className={areCustomerProjectsHidden(customer) ? '' : 'opened'}
-      >
-        {renderCustomerNameCell(customer)}
-
-        {renderCustomerRowCosts(customer)}
-
-        <TCell>
-          {roundNString(getCustomerAnnualCosts(customer))}
-          {' '}
-          <Symbol entity='euro' />
-        </TCell>
-      </TRow>
-    )
-  }
-
-  const getProjectAnnualCosts = (project: ProjectOverview): number => {
-    let costs = 0
-
-    MONTHS.forEach((month) => {
-      costs += project.entries[getMonthId(month)]
-    })
-
-    return roundN(costs, 2)
-  }
-
-  const renderProjectNameCell = (project: ProjectOverview): JSX.Element => {
-    return (
-      <TCell className='highlight-primary'>
-        {project.name}
-        <Icon icon='link' />
-      </TCell>
-    )
-  }
-
-  const renderCustomerProjectCosts = (project: ProjectOverview, customerId: string): JSX.Element[] => {
-    if (division === 'quarters') {
-      return QUARTERS.map((quarter) => {
-        return (
-          <TCell key={`project-costs-${customerId}-${project.id}-${quarter}`}>
-            {roundNString(getProjectQuarterCosts(project, quarter))}
-            {' '}
-            <Symbol entity='euro' />
-          </TCell>
-        )
-      })
-    }
-
-    return MONTHS.map((month) => {
-      return (
-        <TCell key={`project-costs-${customerId}-${project.id}-${month}`}>
-          {roundNString(project.entries[getMonthId(month)])}
-          {' '}
-          <Symbol entity='euro' />
-        </TCell>
-      )
-    })
-  }
-
-  const renderCustomerProjectRow = (customerId: string, project: ProjectOverview): JSX.Element => {
-    return (
-      <TRow key={`project-${customerId}-${project.id}`}>
-        {renderProjectNameCell(project)}
-        {renderCustomerProjectCosts(project, customerId)}
-
-        <TCell>
-          {getProjectAnnualCosts(project)}
-        </TCell>
-      </TRow>
-    )
-  }
-  const renderCustomerProjects = (customer: CustomerOverview): JSX.Element | null => {
-    if (areCustomerProjectsHidden(customer)) {
-      return null
-    }
-
+  const renderCollapsedRows = (rows: CollapsibleRow[]): JSX.Element => {
     return (
       <>
-        {customer.projects.map((project) => {
-          return renderCustomerProjectRow(customer.id, project)
-        })}
+        {
+          rows.map((innerRow) => {
+            const innerRowId = innerRow.id
+            return (
+              <StyledCollapsedRow
+                key={`inner-row-${innerRowId}`}
+              >
+                {innerRow.values.map((value, index) => {
+                  return (
+                    <TCell key={`${innerRowId}-cell-${index.toString()}`}>
+                      {value}
+                    </TCell>
+                  )
+                })}
+              </StyledCollapsedRow>
+            )
+          })
+        }
+      </>
+    )
+  }
+
+  const renderCollapsibleRow = (row: CollapsibleTableRow): JSX.Element => {
+    const rowId = `row-${row.id}`
+    return (
+      <>
+        <TRow
+          key={rowId}
+          className={isRowCollapsed(row) ? '' : 'opened'}
+        >
+          {renderRowFirstColumnCell(row)}
+          {row.values.slice(1).map((value, index) => {
+            return (
+              <TCell key={`${rowId}-cell-${index.toString()}`}>
+                {value}
+              </TCell>
+            )
+          })}
+        </TRow>
+        {isRowCollapsed(row) && row.rows && renderCollapsedRows(row.rows)}
       </>
     )
   }
 
   return (
     <TBody>
-      {customersData.map((customer) => {
-        return (
-          <React.Fragment key={`customer-${customer.id}`}>
-            {renderCustomerRow(customer)}
-            {renderCustomerProjects(customer)}
-          </React.Fragment>
-        )
+      {bodyData.map((row) => {
+        return renderCollapsibleRow(row)
       })}
     </TBody>
   )
 }
+
+const StyledCollapsedRow = styled(TRow)`
+  background-color: var(--color-darker)
+`
 
 export default CollapsibleTableBody
