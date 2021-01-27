@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // A T O M S
 import { ComponentIcon, ComponentIconName } from '../../../introduction/ComponentOverview/ComponentIcon'
 import { Icon, IconName, IconSize } from '../../../atoms/Icon/Icon'
@@ -9,15 +11,13 @@ import { Icon, IconName, IconSize } from '../../../atoms/Icon/Icon'
 export type CardHeaderType = 'icon' | 'image' | 'component'
 
 // I N T E R F A C E
-export interface CardImageProps {
-  className?: string
+export interface CardImageProps extends DefaultComponentProps {
   componentIcon?: ComponentIconName
   icon?: IconName
   iconSize?: IconSize
   imageUrl?: string
   imageMargin?: boolean
   linkUrl?: string
-  style?: React.CSSProperties
   type?: CardHeaderType
 }
 

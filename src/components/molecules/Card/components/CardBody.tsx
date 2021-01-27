@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface CardBodyProps {
-  className?: string
-  style?: React.CSSProperties
-}
+export type CardBodyProps = DefaultComponentProps
 
 export const CardBody: React.FC<CardBodyProps> = ({
   children,

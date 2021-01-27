@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 import { Container, containerSizeType } from '../Container/Container'
 
 // I N T E R F A C E S
-export interface SectionProps {
+export interface SectionProps extends DefaultComponentProps {
   bgColor?: BgColorType
-  className?: string
   containerSize?: containerSizeType
   id?: string
-  style?: React.CSSProperties
 }
 
 export type BgColorType = 'black' | 'dark' | 'primary' | 'light' | 'white' | 'transparent' | 'black-darker'

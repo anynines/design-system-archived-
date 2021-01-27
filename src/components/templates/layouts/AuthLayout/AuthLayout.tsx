@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export interface AuthLayoutProps {
+import { DefaultComponentProps } from '@types'
+
+export interface AuthLayoutProps extends DefaultComponentProps {
   authLayout?: string
   bgImage?: string
-  className?: string
-  style?: React.CSSProperties
 }
 
 export const AuthLayout: React.FC<AuthLayoutProps> = ({

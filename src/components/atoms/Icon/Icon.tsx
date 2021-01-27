@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // A
 import ArrowUpRight from './assets/arrowUpRight'
 
@@ -123,11 +125,9 @@ import WidthIncrease from './assets/widthIncrease'
 import Wishlist from './assets/wishlist'
 
 // I N T E R F A C E S
-export interface IconProps {
-  className?: string
+export interface IconProps extends DefaultComponentProps {
   icon?: IconName
   size?: IconSize
-  style?: React.CSSProperties
 }
 
 // T Y P E S

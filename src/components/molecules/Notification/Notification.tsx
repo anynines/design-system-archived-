@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 import { timestamp, getDaysInTimestamp, getHoursInTimestamp } from './date'
 
 // A T O M S
 import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
-export interface NotificationProps {
-  className?: string
+export interface NotificationProps extends DefaultComponentProps {
   date: number
   icon?: IconName
   msg?: string
-  style?: React.CSSProperties
   width?: NotificationWidth
 }
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E S
-export interface ModuleWrapperProps {
-  className?: string
+export interface ModuleWrapperProps extends DefaultComponentProps {
   customWidth?: boolean // TODO: Check type definition
-  style?: React.CSSProperties
   width?: number
 }
 

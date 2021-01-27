@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 import { WrapperAlignment } from '../../_helpers/Wrapper'
 
-export interface ButtonGroupProps {
+export interface ButtonGroupProps extends DefaultComponentProps {
   alignment?: WrapperAlignment
-  className?: string
-  style?: React.CSSProperties
 }
 
 export const ButtonGroup: React.FC<ButtonGroupProps> = ({

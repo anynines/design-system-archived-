@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export interface AdminNavigationProps {
-  className?: string
-  style?: React.CSSProperties
-}
+import { DefaultComponentProps } from '@types'
+
+export type AdminNavigationProps = DefaultComponentProps
 
 export const AdminNavigation: React.FC<AdminNavigationProps> = ({
   className,

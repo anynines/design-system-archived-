@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface CardTitleProps {
-  className?: string
-  style?: React.CSSProperties
-}
+export type CardTitleProps = DefaultComponentProps
 
 export const CardTitle: React.FC<CardTitleProps> = ({
   children,
