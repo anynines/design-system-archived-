@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 // C O M P O N E N T
 import { THead } from '../Table/THead'
@@ -17,7 +18,7 @@ const CollapsibleTableHeader: React.FC<CollapsibleTableHeaderProps> = (props) =>
   const renderTableHeaderColumns = (): JSX.Element[] => {
     return headerData.map((col) => {
       return (
-        <THeadCell key={`col-${col}`}>{col}</THeadCell>
+        <StyledCell key={`col-${col}`}>{col}</StyledCell>
       )
     })
   }
@@ -30,5 +31,9 @@ const CollapsibleTableHeader: React.FC<CollapsibleTableHeaderProps> = (props) =>
     </THead>
   )
 }
+
+const StyledCell = styled(THeadCell)`
+  background-color: var(--color-dark)
+`
 
 export default CollapsibleTableHeader

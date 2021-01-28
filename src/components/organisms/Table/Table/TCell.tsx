@@ -42,6 +42,7 @@ const StyledTCell = styled.td`
 
   &.highlight-primary {
     border-left: 5px solid var(--color-primary);
+    background-color: var(--color-dark-80);
   }
 
   &.green {

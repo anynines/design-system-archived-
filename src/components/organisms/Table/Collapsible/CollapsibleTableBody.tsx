@@ -60,12 +60,12 @@ const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
     )
   }
 
-  const renderRowFirstColumnCell = (row: CollapsibleTableRow): JSX.Element => {
+  const renderRowFirstColumnCell = (row: CollapsibleTableRow, isCollapsible = true, id): JSX.Element => {
     const value = row.values[0]
     return (
-      <TCell className={isRowCollapsed(row) ? '' : 'highlight-primary'}>
+      <TCell key={`${id}-cell-0`} className={isCollapsible ? '' : 'highlight-primary'}>
         {value}
-        {renderToggleRowBtn(row)}
+        {isCollapsible && renderToggleRowBtn(row)}
       </TCell>
     )
   }
@@ -77,17 +77,18 @@ const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
           rows.map((innerRow) => {
             const innerRowId = innerRow.id
             return (
-              <StyledCollapsedRow
+              <TRow
                 key={`inner-row-${innerRowId}`}
               >
-                {innerRow.values.map((value, index) => {
+                {renderRowFirstColumnCell(innerRow, false, innerRowId)}
+                {innerRow.values.slice(1).map((value, index) => {
                   return (
-                    <TCell key={`${innerRowId}-cell-${index.toString()}`}>
+                    <StyledCollapsedCell key={`${innerRowId}-cell-${index.toString()}`}>
                       {value}
-                    </TCell>
+                    </StyledCollapsedCell>
                   )
                 })}
-              </StyledCollapsedRow>
+              </TRow>
             )
           })
         }
@@ -103,7 +104,7 @@ const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
           key={rowId}
           className={isRowCollapsed(row) ? '' : 'opened'}
         >
-          {renderRowFirstColumnCell(row)}
+          {renderRowFirstColumnCell(row, true, rowId)}
           {row.values.slice(1).map((value, index) => {
             return (
               <TCell key={`${rowId}-cell-${index.toString()}`}>
@@ -126,8 +127,8 @@ const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
   )
 }
 
-const StyledCollapsedRow = styled(TRow)`
-  background-color: var(--color-darker)
+const StyledCollapsedCell = styled(TCell)`
+  background-color: var(--color-dark-80);
 `
 
 export default CollapsibleTableBody
