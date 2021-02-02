@@ -70,29 +70,25 @@ const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
     )
   }
 
-  const renderCollapsedRows = (rows: CollapsibleRow[]): JSX.Element => {
+  const renderCollapsedRows = (rows: CollapsibleRow[]): JSX.Element[] => {
     return (
-      <>
-        {
-          rows.map((innerRow) => {
-            const innerRowId = innerRow.id
-            return (
-              <TRow
-                key={`inner-row-${innerRowId}`}
-              >
-                {renderRowFirstColumnCell(innerRow, false, innerRowId)}
-                {innerRow.values.slice(1).map((value, index) => {
-                  return (
-                    <StyledCollapsedCell key={`${innerRowId}-cell-${index.toString()}`}>
-                      {value}
-                    </StyledCollapsedCell>
-                  )
-                })}
-              </TRow>
-            )
-          })
-        }
-      </>
+      rows.map((innerRow) => {
+        const innerRowId = innerRow.id
+        return (
+          <TRow
+            key={`inner-row-${innerRowId}`}
+          >
+            {renderRowFirstColumnCell(innerRow, false, innerRowId)}
+            {innerRow.values.slice(1).map((value, index) => {
+              return (
+                <StyledCollapsedCell key={`${innerRowId}-cell-${index.toString()}`}>
+                  {value}
+                </StyledCollapsedCell>
+              )
+            })}
+          </TRow>
+        )
+      })
     )
   }
 
