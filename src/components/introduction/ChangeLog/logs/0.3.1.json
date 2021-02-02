@@ -11,6 +11,10 @@
     {
       "title": "🌱 Molecules / Card",
       "description": "Add card component."
+    },
+    {
+      "title": "🌳 Organisms / Table / Collapsbile",
+      "description": "Add collapsible table as part of the Table components."
     }
   ]
 }

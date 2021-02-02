@@ -1,4 +1,4 @@
-import { SortableTableRow, SortableTableSortArgs } from './SortableTable'
+import { SortableTableRow, SortableTableSortArgs } from '../Sortable/SortableTable'
 
 // H E L P E R S
 
