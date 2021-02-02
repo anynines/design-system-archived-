@@ -99,9 +99,8 @@ const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
   const renderCollapsibleRow = (row: CollapsibleTableRow): JSX.Element => {
     const rowId = `row-${row.id}`
     return (
-      <>
+      <React.Fragment key={rowId}>
         <TRow
-          key={rowId}
           className={isRowCollapsed(row) ? '' : 'opened'}
         >
           {renderRowFirstColumnCell(row, true, rowId)}
@@ -114,7 +113,7 @@ const CollapsibleTableBody: React.FC<CollapsibleTableBodyProps> = (props) => {
           })}
         </TRow>
         {isRowCollapsed(row) && row.rows && renderCollapsedRows(row.rows)}
-      </>
+      </React.Fragment>
     )
   }
 

@@ -79,7 +79,6 @@ export * from './components/organisms/Table/Table/TRow'
 export * from './components/organisms/Table/Collapsible/CollapsibleTable'
 export * from './components/organisms/Table/Collapsible/CollapsibleTableBody'
 export * from './components/organisms/Table/Collapsible/CollapsibleTableHeader'
-export * from './components/organisms/Table/Collapsible/Symbol'
 export * from './components/organisms/Table/Collapsible/ButtonNaked'
 
 // T E M P L A T E S
