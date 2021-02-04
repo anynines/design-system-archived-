@@ -9,7 +9,12 @@
     {
       "title": "💧 Atoms/Your Component",
       "description": "Some short description of your change."
+    },
+    {
+      "title": "🎨 Theme - Breaking Changes",
+      "description": "We added five new colors to the theme. These colors like pageBgColor are applied to all mobile relevant components, but still needs to be added properly to all the others. All existing consumer applications need to update their theme to provide these five new colors."
     }
+
   ],
   "Added": [
     {
