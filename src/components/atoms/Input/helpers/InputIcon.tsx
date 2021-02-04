@@ -23,7 +23,7 @@ export const InputIcon: React.FC<InputIconProps> = ({
 
   return (
     <StyledInputIcon
-      className={`input-prepend ${className}`}
+      className={`input-icon ${className}`}
       onClick={onPrependClick}
       clickable={clickable}
     >
@@ -43,13 +43,13 @@ const StyledInputIcon = styled.div<StyledInputIconProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-white-10);
+  background-color: rgba(0,0,0,.02);
   cursor: var(--cursor);
   width: 44px;
   min-width: 44px;
   min-height: 100%;
-  color: var(--color-white);
-  border-radius: 9px 0 0 9px;
+  color: var(--text-color);
+  border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px);
   transition: var(--transition);
   
   svg {

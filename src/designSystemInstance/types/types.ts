@@ -20,6 +20,11 @@ export interface Globals {
     light: string
     dark: string
     black: string
+    pageBgColor: string
+    layoutBgColor: string
+    boxBgColor: string
+    elementBgColor: string
+    textColor: string
   }
   radius: string
   contentMaxWidth: string

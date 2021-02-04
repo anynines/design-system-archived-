@@ -3,7 +3,7 @@ import React from 'react'
 import { AdminNavigation } from '../AdminNavigation'
 import { Logo } from '../../../atoms/Logo/Logo'
 import { Menu } from '../../../molecules/Menu/Menu'
-import { UserNav } from '../../../organisms/UserNav/UserNav'
+import { UserNav } from '../helpers/UserNav'
 import { ToggleLayout } from '../../../atoms/ToggleLayout/ToggleLayout'
 
 export const AdminNavigationExample: React.FC = () => {

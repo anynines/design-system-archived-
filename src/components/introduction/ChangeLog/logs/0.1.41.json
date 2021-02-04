@@ -1,11 +1,11 @@
 {
   "Changed": [
     {
-      "title": "💧 Atoms/Input",
+      "title": "💧 Atoms / Input",
       "description": "Added disabled prop to to have proper read-only experience. Improved :hover and :focus styling"
     },
     {
-      "title": "💧 Atoms/PageHeader",
+      "title": "💧 Atoms / PageHeader",
       "description": "Added styling for PageHeader toolbar - a container to handle multiple buttons in the PageHeader component"
     }
   ],

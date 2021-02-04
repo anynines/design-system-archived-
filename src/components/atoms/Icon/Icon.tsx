@@ -18,6 +18,7 @@ import CaretDown from './assets/caretDown'
 import CaretLeft from './assets/caretLeft'
 import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
+import Check from './assets/check'
 import Close from './assets/close'
 import Color from './assets/color'
 import ColorTransparent from './assets/colorTransparent'
@@ -130,7 +131,7 @@ export interface IconProps {
 }
 
 // T Y P E S
-export type IconSize = 'sm' | 'md' | 'lg'
+export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export type IconName = 'arrowUpRight'
   | 'bestseller'
@@ -142,6 +143,7 @@ export type IconName = 'arrowUpRight'
   | 'caretLeft'
   | 'caretRight'
   | 'cart'
+  | 'check'
   | 'close'
   | 'color'
   | 'customer'
@@ -226,6 +228,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   caretLeft: <CaretLeft />,
   caretRight: <CaretRight />,
   cart: <Cart />,
+  check: <Check />,
   close: <Close />,
   color: <Color />,
   customer: <Customer />,
@@ -331,6 +334,16 @@ const StyledIcon = styled.i`
     max-height: var(--icon-size);
   }
 
+  &.xs {
+    width: calc(var(--icon-size) * .8);
+    height: calc(var(--icon-size) * .8);
+
+    svg {
+      max-width: calc(var(--icon-size) * .8);
+      max-height: calc(var(--icon-size) * .8);
+    }
+  }
+
   &.md {
     width: calc(var(--icon-size) * 2);
     height: calc(var(--icon-size) * 2);
@@ -348,6 +361,16 @@ const StyledIcon = styled.i`
     svg {
       max-width: calc(var(--icon-size) * 4);
       max-height: calc(var(--icon-size) * 4);
+    }
+  }
+
+  &.xl {
+    width: calc(var(--icon-size) * 6);
+    height: calc(var(--icon-size) * 6);
+
+    svg {
+      max-width: calc(var(--icon-size) * 6);
+      max-height: calc(var(--icon-size) * 6);
     }
   }
 `
