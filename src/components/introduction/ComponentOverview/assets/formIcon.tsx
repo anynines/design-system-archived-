@@ -4,8 +4,8 @@ const FormIcon = (): JSX.Element => {
   return (
 
     <svg
-      width='200px'
-      height='187px'
+      width='200'
+      height='187'
       viewBox='0 0 200 187'
       xmlns='http://www.w3.org/2000/svg'
     >

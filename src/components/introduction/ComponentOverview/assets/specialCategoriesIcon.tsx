@@ -3,8 +3,8 @@ import React from 'react'
 const SpecialCategoriesIcon = (): JSX.Element => {
   return (
     <svg
-      width='230px'
-      height='110px'
+      width='230'
+      height='110'
       viewBox='0 0 230 110'
       xmlns='http://www.w3.org/2000/svg'
     >

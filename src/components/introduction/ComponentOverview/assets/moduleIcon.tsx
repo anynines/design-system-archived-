@@ -3,8 +3,8 @@ import React from 'react'
 const ModuleIcon = (): JSX.Element => {
   return (
     <svg
-      width='240px'
-      height='200px'
+      width='240'
+      height='200'
       viewBox='0 0 240 200'
       xmlns='http://www.w3.org/2000/svg'
     >
