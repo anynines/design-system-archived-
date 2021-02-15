@@ -6,7 +6,6 @@ import { CardBody, CardBodyProps } from './components/CardBody'
 import { CardFooter, CardFooterProps } from './components/CardFooter'
 import { CardImage, CardImageProps } from './components/CardImage'
 import { CardTitle, CardTitleProps } from './components/CardTitle'
-import { IconName, IconSize } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E S
 type Card = React.FC<CardProps>
@@ -18,12 +17,8 @@ type Card = React.FC<CardProps>
 export interface CardProps {
   className?: string
   description?: string
-  icon?: IconName
-  iconSize?: IconSize
-  imageUrl?: string
-  imageMargin?: boolean
-  linkUrl?: string
   style?: React.CSSProperties
+  textCenter?: boolean
   title?: string
 }
 
@@ -31,37 +26,21 @@ export const Card: Card = ({
   children,
   className = '',
   description,
-  icon,
-  iconSize,
-  imageUrl,
-  imageMargin = false,
-  linkUrl,
   style,
+  textCenter = true,
   title
 }) => {
-  const imageOutput = (
-    <CardImage
-      icon={icon}
-      iconSize={iconSize}
-      imageMargin={imageMargin}
-      imageUrl={imageUrl}
-      linkUrl={linkUrl}
-    />
-  )
   const titleOutput = <CardTitle><h5>{title && title}</h5></CardTitle>
   const bodyOutput = <CardBody>{description && description}</CardBody>
 
   return (
     <StyledCard
-      className={`card ${className}`}
-      linkUrl={linkUrl}
-      imageUrl={imageUrl}
+      className={`card ${className} ${textCenter && 'text-center'}`}
       style={style}
     >
-      {(imageUrl || icon) && imageOutput}
+      {children}
       {title && titleOutput}
       {description && bodyOutput}
-      {children}
     </StyledCard>
   )
 }
@@ -70,6 +49,10 @@ const StyledCard = styled.div`
   border-radius: var(--radius);
   background-color: var(--color-dark);
   min-width: 12.5rem;
+
+  &.text-center {
+    text-align: center;
+  }
 `
 
 Card.Body = CardBody

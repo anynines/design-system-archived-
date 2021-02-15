@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
-export interface ProductItemProps {
+export interface CartItemProps {
   className?: string
   deleteItem: () => void
   move?: () => void
@@ -21,7 +21,7 @@ export interface ProductItemProps {
 }
 
 // C O M P O N E N T
-export const ProductItem: React.FC<ProductItemProps> = ({
+export const CartItem: React.FC<CartItemProps> = ({
   className,
   deleteItem,
   move,
@@ -43,7 +43,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   }
 
   return (
-    <StyledProductItem className={`product-item ${className}`}>
+    <StyledCartItem className={`cart-item ${className}`}>
       <div className='image'>
         <div
           className='image-container'
@@ -87,12 +87,12 @@ export const ProductItem: React.FC<ProductItemProps> = ({
         </button>
       </div>
       <div />
-    </StyledProductItem>
+    </StyledCartItem>
   )
 }
 
 // S T Y L E S
-const StyledProductItem = styled.div`
+const StyledCartItem = styled.div`
   --image-size: 5rem;
   
   display: flex;
@@ -303,4 +303,4 @@ const StyledProductItem = styled.div`
     }
   }
 `
-StyledProductItem.displayName = 'StyledProductItem'
+StyledCartItem.displayName = 'StyledCartItem'

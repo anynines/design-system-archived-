@@ -1,12 +1,12 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 
-import { ProductItem, ProductItemProps } from '../ProductItem'
+import { CartItem, CartItemProps } from '../CartItem'
 import Wrapper from '../../../_helpers/Wrapper'
 
 export default {
-  title: '🌳 Organisms/ProductItem',
-  component: ProductItem,
+  title: '🌳 Organisms/CartItem',
+  component: CartItem,
   argTypes: {
     product: {
       title: {
@@ -76,19 +76,19 @@ const SampleProduct =
 }
 
 
-export const Basic = (args: ProductItemProps) => (
+export const Basic = (args: CartItemProps) => (
   <Wrapper>
-    <ProductItem 
-      {...args} 
-      deleteItem={action('delete-click')} 
-      move={action('move-click')} 
+    <CartItem
+      {...args}
+      deleteItem={action('delete-click')}
+      move={action('move-click')}
     />
   </Wrapper>
 )
 
 export const Product = () => (
   <Wrapper>
-    <ProductItem
+    <CartItem
       deleteItem={action('delete-click')}
       move={action('move-click')}
       product={SampleProduct}

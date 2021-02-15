@@ -2,13 +2,13 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 
 import Wrapper from '../../../_helpers/Wrapper'
-import { Icon } from '../../Icon/Icon'
 import { Button } from '../../Button/Button'
+import { CartItem } from '../../../organisms/CartItem/CartItem'
+import { Icon } from '../../Icon/Icon'
 import { ModuleWrapper, ModuleWrapperProps } from '../ModuleWrapper/ModuleWrapper'
 import { ModuleHeader } from '../ModuleHeader/ModuleHeader'
 import { ModuleContent } from '../ModuleContent/ModuleContent'
 import { ModuleFooter } from '../ModuleFooter/ModuleFooter'
-import { ProductItem } from '../../../organisms/ProductItem/ProductItem'
 
 export default {
   title: '💧 Atoms/Module',
@@ -69,14 +69,14 @@ export const CartExample = (args: ModuleWrapperProps) => (
       </ModuleHeader>
 
       <ModuleContent>
-        <ProductItem
+        <CartItem
           moveIcon={'pipette'}
           deleteItem={action('delete-click')}
           move={action('move-click')}
           product={SampleProduct}
           quantity={1}
         />
-        <ProductItem
+        <CartItem
           moveIcon={'pipette'}
           deleteItem={action('delete-click')}
           move={action('move-click')}

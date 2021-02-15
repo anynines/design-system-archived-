@@ -60,7 +60,7 @@ export default {
     children: { control: null }
   }
 }
-export const Base = (args: MenuItemProps) => (
+export const Basic = (args: MenuItemProps) => (
   <Wrapper>
     <MenuItem {...args} onClick={action('label clicked')}>
       <>Label</>

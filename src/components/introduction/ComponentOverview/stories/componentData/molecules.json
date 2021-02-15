@@ -1,0 +1,74 @@
+{
+  "Alert": {
+    "title": "Alert",
+    "link": "🌱-molecules-alert--basic",
+    "icon": "alertComponent",
+    "type": "component"
+  },
+  "Card": {
+    "title": "Card",
+    "link": "🌱-molecules-card--basic",
+    "icon": "cardComponent",
+    "type": "component"
+  },
+  "Checkbox": {
+    "title": "Checkbox Group",
+    "link": "🌱-molecules-checkboxgroup--basic",
+    "icon": "checkboxGroupComponent",
+    "type": "component"
+  },
+  "DatePicker": {
+    "title": "Datepicker",
+    "link": "🌱-molecules-datepicker--basic",
+    "icon": "datePickerComponent",
+    "type": "component"
+  },
+  "Menu": {
+    "title": "Menu",
+    "link": "🌱-molecules-menu--main-menu",
+    "icon": "menuComponent",
+    "type": "component"
+  },
+  "MenuItem": {
+    "title": "Menu Item",
+    "link": "🌱-molecules-menuitem--basic",
+    "icon": "menuItemComponent",
+    "type": "component"
+  },
+  "Modal": {
+    "title": "Modal",
+    "link": "🌱-molecules-modal--basic",
+    "icon": "modalComponent",
+    "type": "component"
+  },
+  "Notification": {
+    "title": "Notification",
+    "link": "🌱-molecules-notification--basic",
+    "icon": "notificationComponent",
+    "type": "component"
+  },
+  "ProgressIndicator": {
+    "title": "Progress Indicator",
+    "link": "🌱-molecules-progressindicator--basic",
+    "icon": "progressIndicatorComponent",
+    "type": "component"
+  },
+  "SpecialCategories": {
+    "title": "Special Categories",
+    "link": "🌱-molecules-specialcategories--basic",
+    "icon": "specialCategoriesComponent",
+    "type": "component"
+  },
+  "UserInfo": {
+    "title": "UserInfo",
+    "link": "🌱-molecules-userinfo--basic",
+    "icon": "userInfoComponent",
+    "type": "component"
+  },
+  "UserInfoDropdown": {
+    "title": "UserInfo Dropdown",
+    "link": "🌱-molecules-userdropdown--basic",
+    "icon": "userInfoDropdownComponent",
+    "type": "component"
+  }
+}

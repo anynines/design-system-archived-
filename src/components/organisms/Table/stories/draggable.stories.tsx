@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { 
+import {
   DraggableTableWrapper as DraggableTable, TableAccessor, DraggableTableDataProps, TableColumn, TableColumnCell, TableColumnCellColor, TableColumnIcon, DraggableTableWrapperRow as TableRow
 } from '../Draggable/DraggableTableWrapper'
 
@@ -214,7 +214,7 @@ const initialPages: TableRow[] = [
   }
 ]
 
-export const Default: React.FC = () => {
+export const Basic: React.FC = () => {
   const tableProps: DraggableTableDataProps = {
     tableHeaderData,
     getTableColumnColor,
