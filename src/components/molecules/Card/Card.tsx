@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // H E L P E R S
 import { CardBody, CardBodyProps } from './components/CardBody'
 import { CardFooter, CardFooterProps } from './components/CardFooter'
@@ -14,10 +16,8 @@ type Card = React.FC<CardProps>
   & { Image: React.FC<CardImageProps> }
   & { Title: React.FC<CardTitleProps> }
 
-export interface CardProps {
-  className?: string
+export interface CardProps extends DefaultComponentProps {
   description?: string
-  style?: React.CSSProperties
   textCenter?: boolean
   title?: string
 }

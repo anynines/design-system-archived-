@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 import SpinnerIcon from './assets/spinner'
 
 // I N T E R F A C E S
-export interface SpinnerProps {
-  className?: string
+export interface SpinnerProps extends DefaultComponentProps {
   color?: string
   hidden?: boolean
   size?: SpinnerSize
-  style?: React.CSSProperties
 }
 interface StyledSpinnerProps extends SpinnerProps {
   sizeInPx: number

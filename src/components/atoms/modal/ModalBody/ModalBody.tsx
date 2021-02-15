@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface ModalBodyProps {
-  className?: string
+export interface ModalBodyProps extends DefaultComponentProps {
   description?: string
-  style?: React.CSSProperties
 }
 
 // C O M P O N E N T

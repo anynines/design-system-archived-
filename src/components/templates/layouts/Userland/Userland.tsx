@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export interface UserlandProps {
-  style?: React.CSSProperties
-  className?: 'string'
-}
+import { DefaultComponentProps } from '@types'
+
+export type UserlandProps = DefaultComponentProps
 
 export const Userland: React.FC<UserlandProps> = ({
   children,

@@ -27,6 +27,10 @@
       "alias": {
         "map": [
           [
+            "@types",
+            "./src/types/index.ts"
+          ],
+          [
             "@context",
             "./src/context"
           ]

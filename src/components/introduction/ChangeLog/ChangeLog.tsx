@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 export interface Change {
   title: string
   description: string
@@ -8,12 +10,10 @@ export interface Change {
 
 export type Category = 'Fixed' | 'Changed' | 'Added' | 'Removed'
 
-export interface ChangeLogProps {
+export interface ChangeLogProps extends DefaultComponentProps {
   changelog: {[key in Category]?: Change[]}
-  className?: string
   isPublished?: boolean
   date: string
-  style?: React.CSSProperties
   version: string
 }
 

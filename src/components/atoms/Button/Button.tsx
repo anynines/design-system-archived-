@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // A T O M S
 import { Icon, IconName } from '../Icon/Icon'
 
 // I N T E R F A C E
-export interface ButtonProps {
-  className?: string
+export interface ButtonProps extends DefaultComponentProps {
   icon?: IconName
   iconOnly?: boolean
   onClick?: () => void
   size?: ButtonSize
-  style?: React.CSSProperties
   type?: ButtonType
   width?: ButtonWidth
 }

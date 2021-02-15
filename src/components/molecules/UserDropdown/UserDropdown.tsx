@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import { Avatar } from '../../atoms/Avatar/Avatar'
 import { UserInfo } from '../UserInfo/UserInfo'
 
-export interface UserDropdownProps {
+import { DefaultComponentProps } from '@types'
+
+export interface UserDropdownProps extends DefaultComponentProps {
   avatarImg: string
-  className?: string
   level?: number
   name: string
   role: string
-  style?: React.CSSProperties
 }
 
 export const UserDropdown: React.FC<UserDropdownProps> = ({

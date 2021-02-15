@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
+import { DefaultComponentProps } from '@types'
+
 // C O M P O N E N T S
 import { Icon } from '../Icon/Icon'
 
 // I N T E R F A C E S
-export interface CaretLinkProps {
-  className?: string
+export interface CaretLinkProps extends DefaultComponentProps {
   path: string
-  style?: React.CSSProperties
   text: string
 }
 

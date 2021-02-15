@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface CheckboxProps {
+export interface CheckboxProps extends DefaultComponentProps {
   checked?: boolean
-  className?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
   label: string
   name: string
@@ -13,7 +14,6 @@ export interface CheckboxProps {
   register?: (validationRules: ValidationOptions) => void
   required?: boolean
   setValue?: any // eslint-disable-line
-  style?: React.CSSProperties
   watch?: any // eslint-disable-line
 }
 

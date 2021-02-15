@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface WrapperProps {
+export interface WrapperProps extends DefaultComponentProps {
   align?: WrapperAlignment
   bgColor?: WrapperBgColor
-  className?: string
   direction?: WrapperDirection
   flexWrap?: WrapperFlexWrap
   height?: string
   justify?: WrapperAlignment
-  style?: React.CSSProperties
 }
 
 // T Y P E S
