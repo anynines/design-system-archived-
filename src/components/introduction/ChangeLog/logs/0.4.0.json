@@ -3,6 +3,10 @@
     {
       "title": "👋 Getting started / Component Overview",
       "description": "Add overview for all design-system components"
+    },
+    {
+      "title": "💧 Atoms / Icon",
+      "description": "Added three icons letter, trophy and gift."
     }
   ],
   "Changed": [
