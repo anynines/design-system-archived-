@@ -6,6 +6,7 @@ import { DefaultComponentProps } from '@types'
 // I N T E R F A C E S
 export interface ContainerProps extends DefaultComponentProps {
   containerSize?: containerSizeType
+  style?: React.CSSProperties
   id?: string
 }
 
