@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 import { Mode } from '../../../designSystemInstance/types/types'
 
 // L I B R A R Y
 import { Icon } from '../Icon/Icon'
 
 // I N T E R F A C E S
-export interface ToggleModeProps {
-  className?: string
+export interface ToggleModeProps extends DefaultComponentProps {
   mode: Mode
   setMode?: () => void
   size?: ToggleModeButtonSize
-  style?: React.CSSProperties
 }
 
 export type ToggleModeButtonSize = 'sm' | 'lg'

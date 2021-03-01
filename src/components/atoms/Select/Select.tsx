@@ -5,21 +5,21 @@ import React from 'react'
 import styled from 'styled-components'
 import { ValidationOptions } from 'react-hook-form'
 
+import { DefaultComponentProps } from '@types'
+
 import { onClickOutsideHook } from '../../../helpers/react'
 
 // D E S I G N   S Y S T E M
 import { Icon, IconName } from '../Icon/Icon'
 
 // I N T E R F A C E
-export interface SelectProps {
-  className?: string
+export interface SelectProps extends DefaultComponentProps {
   defaultValue?: string | number
   icon?: IconName
   label: string
   name: string
   onChange?: (value: string) => void
   register?: (validationRules: ValidationOptions) => void
-  style?: React.CSSProperties
   values: (string | number)[]
 }
 

@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E S
-export interface ModalHeaderProps {
-  className?: string
-  style?: React.CSSProperties
-}
+export type ModalHeaderProps = DefaultComponentProps
 
 // C O M P O N E N T
 export const ModalHeader: React.FC<ModalHeaderProps> = ({

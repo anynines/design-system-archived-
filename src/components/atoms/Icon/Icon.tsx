@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // A
 import ArrowUpRight from './assets/arrowUpRight'
 
@@ -41,6 +43,7 @@ import Font from './assets/font'
 import Frequency from './assets/frequency'
 
 // G
+import Gift from './assets/gift'
 import Globe from './assets/globe'
 import Grid1 from './assets/grid1'
 import Grid2 from './assets/grid2'
@@ -62,6 +65,7 @@ import LangEN from './assets/languages/en'
 import LangSP from './assets/languages/sp'
 import LangIT from './assets/languages/it'
 import Layout from './assets/layout'
+import Letter from './assets/letter'
 import Light from './assets/light'
 import LinkIcon from './assets/link'
 import Lock from './assets/lock'
@@ -107,9 +111,10 @@ import Slider from './assets/slider'
 // T
 import Tag from './assets/tag'
 import Text from './assets/text'
-import TitleDisabled from './assets/titleDisabled'
-import TurnAround from './assets/turnAround'
 import Telescope from './assets/telescope'
+import TitleDisabled from './assets/titleDisabled'
+import Trophy from './assets/trophy'
+import TurnAround from './assets/turnAround'
 
 // U
 import User from './assets/user'
@@ -123,11 +128,9 @@ import WidthIncrease from './assets/widthIncrease'
 import Wishlist from './assets/wishlist'
 
 // I N T E R F A C E S
-export interface IconProps {
-  className?: string
+export interface IconProps extends DefaultComponentProps {
   icon?: IconName
   size?: IconSize
-  style?: React.CSSProperties
 }
 
 // T Y P E S
@@ -156,6 +159,7 @@ export type IconName = 'arrowUpRight'
   | 'folder'
   | 'font'
   | 'frequency'
+  | 'gift'
   | 'globe'
   | 'grid1'
   | 'grid2'
@@ -170,6 +174,7 @@ export type IconName = 'arrowUpRight'
   | 'LangSP'
   | 'LangIT'
   | 'layout'
+  | 'letter'
   | 'light'
   | 'lock'
   | 'logout'
@@ -198,6 +203,7 @@ export type IconName = 'arrowUpRight'
   | 'tag'
   | 'telescope'
   | 'text'
+  | 'trophy'
   | 'turnAround'
   | 'unit'
   | 'user'
@@ -241,6 +247,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   folder: <Folder />,
   frequency: <Frequency />,
   font: <Font />,
+  gift: <Gift />,
   globe: <Globe />,
   grid1: <Grid1 />,
   grid2: <Grid2 />,
@@ -255,6 +262,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   LangSP: <LangSP />,
   LangIT: <LangIT />,
   layout: <Layout />,
+  letter: <Letter />,
   light: <Light />,
   lock: <Lock />,
   logout: <Logout />,
@@ -298,6 +306,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   paragraph: <Paragraph />,
   photo: <Photo />,
   telescope: <Telescope />,
+  trophy: <Trophy />,
   titleDisabled: <TitleDisabled />,
   unorderedList: <UnorderedList />,
   widthIncrease: <WidthIncrease />
@@ -365,12 +374,12 @@ const StyledIcon = styled.i`
   }
 
   &.xl {
-    width: calc(var(--icon-size) * 6);
-    height: calc(var(--icon-size) * 6);
+    width: calc(var(--icon-size) * 7);
+    height: calc(var(--icon-size) * 7);
 
     svg {
-      max-width: calc(var(--icon-size) * 6);
-      max-height: calc(var(--icon-size) * 6);
+      max-width: calc(var(--icon-size) * 7);
+      max-height: calc(var(--icon-size) * 7);
     }
   }
 `

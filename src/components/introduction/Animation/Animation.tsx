@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E S
-export interface AnimationProps {
-  className?: string
-  style?: React.CSSProperties
+export interface AnimationProps extends DefaultComponentProps {
   type: AnimationName
 }
 

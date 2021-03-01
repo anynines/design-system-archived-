@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 import { Icon, IconSize } from '../../atoms/Icon/Icon'
 
 export type AlertType = 'success' | 'notice' | 'error' | 'warning'
 
-export interface AlertProps {
-  className?: string
+export interface AlertProps extends DefaultComponentProps{
   description: string
   onClose: () => void
   size?: IconSize
-  style?: React.CSSProperties
   title: string
   timerCount?: number
   type: AlertType

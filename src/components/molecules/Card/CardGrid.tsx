@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface CardGridProps {
-  className?: string
+export interface CardGridProps extends DefaultComponentProps {
   gridColumnsMobile?: number
   gridColumnsDesktop?: number
-  style?: React.CSSProperties
 }
 
 export const CardGrid: React.FC<CardGridProps> = ({

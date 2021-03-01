@@ -1,10 +1,10 @@
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface ProgressIndicatorProps {
-  className?: string
+export interface ProgressIndicatorProps extends DefaultComponentProps {
   currentStepIndex: number
   setCurrentStepIndex: (stepIndex: number) => void
   steps: Step[]
-  style?: React.CSSProperties
 }
 
 export interface Step {
@@ -12,10 +12,8 @@ export interface Step {
   title?: string
 }
 
-export interface ProgressIndicatorStepProps {
-  className?: string
+export interface ProgressIndicatorStepProps extends DefaultComponentProps {
   currentStepIndex: number
   index: number
   title?: string
-  style?: React.CSSProperties
 }

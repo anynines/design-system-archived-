@@ -1,0 +1,18 @@
+{
+  "Added": [
+    {
+      "title": "👋 Getting started / Component Overview",
+      "description": "Add overview for all design-system components"
+    },
+    {
+      "title": "💧 Atoms / Icon",
+      "description": "Added three icons letter, trophy and gift."
+    }
+  ],
+  "Changed": [
+    {
+      "title": "🌳 Organisms / Product Item -- Breaking Changes",
+      "description": "Renamed Product Item to Card Item"
+    }
+  ]
+}

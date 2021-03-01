@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E S
-export interface RowProps {
-  className?: string
+export interface RowProps extends DefaultComponentProps {
   id?: string
-  style?: React.CSSProperties
 }
 
 // C O M P O N E N T

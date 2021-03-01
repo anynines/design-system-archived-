@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
+import { DefaultComponentProps } from '@types'
+
 // C O M P O N E N T S
 import { Icon, IconName } from '../../Icon/Icon'
 import { InputLabel, InputLabelProps } from './InputLabel'
@@ -9,11 +11,10 @@ import { InputIcon, InputIconProps } from './InputIcon'
 import { InputType } from '../Input'
 
 // I N T E R F A C E S
-export interface TextInputProps {
+export interface TextInputProps extends DefaultComponentProps {
   autoComplete?: 'on' | 'off'
   autoFocus?: boolean
   color?: string
-  className?: string
   disabled?: boolean
   errorMessage?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
@@ -27,7 +28,6 @@ export interface TextInputProps {
   pattern?: RegExp
   register?: (validationRules: ValidationOptions) => void
   setValue?: any // eslint-disable-line
-  style?: React.CSSProperties
   type?: InputType
   value?: string
   watch?: any //eslint-disable-line

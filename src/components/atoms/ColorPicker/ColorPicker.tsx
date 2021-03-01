@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { ChromePicker, ChromePickerProps } from 'react-color'
 
-interface ColorPickerProps extends ChromePickerProps {
-  className?: string
-  style?: React.CSSProperties
-}
+import { DefaultComponentProps } from '@types'
+
+// I N T E R F A C E S
+interface ColorPickerProps extends ChromePickerProps, DefaultComponentProps {}
 
 // C O M P O N E N T
 export const ColorPicker: React.FC<ColorPickerProps> = ({

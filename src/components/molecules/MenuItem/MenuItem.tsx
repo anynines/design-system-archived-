@@ -2,22 +2,22 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // A T O M S
 import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
-export interface MenuItemProps {
+export interface MenuItemProps extends DefaultComponentProps {
   active?: boolean
   bgColor?: string
   exact?: boolean
   children?: JSX.Element
-  className?: string
   counter?: number
   icon?: IconName
   id?: string
   onClick?: () => void
   path?: string
-  style?: React.CSSProperties
   vertical?: boolean
 }
 

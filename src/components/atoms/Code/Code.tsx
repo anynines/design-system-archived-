@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 
-export interface CodeProps {
-  className?: string
+import { DefaultComponentProps } from '@types'
+
+export interface CodeProps extends DefaultComponentProps {
   code?: string
   language?: string
   showLineNumbers?: boolean
-  style?: React.CSSProperties
 }
 
 export const Code: React.FC<CodeProps> = ({
