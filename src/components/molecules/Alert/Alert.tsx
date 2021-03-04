@@ -37,7 +37,10 @@ export const Alert: React.FC<AlertProps> = ({
   React.useEffect(() => {
     let timer
     if (!stay) {
-      timer = setTimeout(() => { setHideAlert(true) }, timerCount)
+      timer = setTimeout(() => {
+        setHideAlert(true)
+        onClose()
+      }, timerCount)
     }
 
     return (): void => {
