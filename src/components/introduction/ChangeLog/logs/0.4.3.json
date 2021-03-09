@@ -1,0 +1,14 @@
+{
+  "Added": [
+    {
+      "title": "💧 Atoms / Icon",
+      "description": "Added coin icon."
+    }
+  ],
+  "Changed": [
+    {
+      "title": "💧 Atoms / Input",
+      "description": "Slightly changed / fixed inner spacing."
+    }
+  ]
+}
