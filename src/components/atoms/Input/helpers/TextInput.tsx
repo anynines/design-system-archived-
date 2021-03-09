@@ -190,8 +190,8 @@ const StyledInput = styled.div<StyledInputProps>`
   
   .input-label {
     position: absolute;
-    top: .1875rem;
-    left: .75rem;
+    top: .3rem;
+    left: 1rem;
     z-index: 1;
     opacity: 0.5;
     color: var(--text-color);
@@ -298,8 +298,8 @@ const StyledInput = styled.div<StyledInputProps>`
     
     label {
       transform: scale(1);
-      top: .1875rem;
-      left: .75rem;
+      top: .3rem;
+      left: 1rem;
     }
   }
 `
