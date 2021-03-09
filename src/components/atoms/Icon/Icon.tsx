@@ -22,6 +22,7 @@ import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
 import Check from './assets/check'
 import Close from './assets/close'
+import Coin from './assets/coin'
 import Color from './assets/color'
 import ColorTransparent from './assets/colorTransparent'
 import Customer from './assets/customer'
@@ -148,6 +149,7 @@ export type IconName = 'arrowUpRight'
   | 'cart'
   | 'check'
   | 'close'
+  | 'coin'
   | 'color'
   | 'customer'
   | 'dashboard'
@@ -236,6 +238,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   cart: <Cart />,
   check: <Check />,
   close: <Close />,
+  coin: <Coin />,
   color: <Color />,
   customer: <Customer />,
   dashboard: <Dashboard />,

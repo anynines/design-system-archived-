@@ -191,7 +191,7 @@ const StyledInput = styled.div<StyledInputProps>`
   .input-label {
     position: absolute;
     top: .3rem;
-    left: 1rem;
+    left: 0.8rem;
     z-index: 1;
     opacity: 0.5;
     color: var(--text-color);
@@ -299,7 +299,7 @@ const StyledInput = styled.div<StyledInputProps>`
     label {
       transform: scale(1);
       top: .3rem;
-      left: 1rem;
+      left: 0.8rem;
     }
   }
 `
