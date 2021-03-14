@@ -24,6 +24,7 @@ export const Basic = (args: CaretLinkProps) => (
     <Wrapper>
       <CaretLink
         {...args}
+        animated
       />
     </Wrapper>
   </MemoryRouter>
