@@ -1,0 +1,18 @@
+{
+  "Added": [
+    {
+      "title": "💧 Atoms / TextArea",
+      "description": "Added textarea component."
+    }
+  ],
+  "Changed": [
+    {
+      "title": "💧 Atoms / Input",
+      "description": "Input now supports iconColor prop."
+    },
+    {
+      "title": "💧 Molecules / MenuItem",
+      "description": "Counter prop in MenuItem now also supports string type."
+    }
+  ]
+}
