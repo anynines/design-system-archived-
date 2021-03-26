@@ -31,6 +31,7 @@ export * from './components/atoms/ToggleMode/ToggleMode'
 export * from './components/atoms/ToggleLayout/ToggleLayout'
 export * from './components/atoms/ColorPicker/ColorPicker'
 export * from './components/atoms/PageHeader/PageHeader'
+export * from './components/atoms/TextArea/TextArea'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
