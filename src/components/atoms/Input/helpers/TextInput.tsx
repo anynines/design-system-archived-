@@ -269,9 +269,6 @@ const StyledInput = styled.div<StyledInputProps>`
       color: var(--color-white-50);
       transition: var(--transition);
     }
-    &.dark svg {
-      color: var(--color-dark-50);
-    }
 
     &:hover {
       svg {
@@ -281,6 +278,16 @@ const StyledInput = styled.div<StyledInputProps>`
         background-color: var(--color-white);
       }
     }
+
+    &.dark {
+      svg {
+        color: var(--color-black-50);
+      }
+      &:before {
+        background-color: var(--color-black-50);
+      }
+    }
+
     &.dark:hover {
       svg {
         color: var(--color-black);
@@ -293,6 +300,11 @@ const StyledInput = styled.div<StyledInputProps>`
     &.active {
       &:before {
         background-color: transparent;
+      }
+    }
+    &.dark.active {
+      &:before {
+        background-color: inherit;
       }
     }
   }

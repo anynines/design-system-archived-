@@ -173,7 +173,7 @@ export const Number = () => (
 )
 
 export const Password = (args: InputProps) => (
-  <Wrapper bgColor='black-darker'>
+  <Wrapper bgColor='dark'>
     <Input
       {...args}
       style={{ marginBottom: 0 }}
@@ -183,6 +183,7 @@ export const Password = (args: InputProps) => (
       icon='lock'
       autoComplete='off'
       autoFocus
+      iconColor='dark'
     />
   </Wrapper>
 )
