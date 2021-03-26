@@ -69,6 +69,16 @@ export default {
     },
     onFocusChange: {
       control: { type: 'disabled' }
+    },
+    iconColor: {
+      control: {
+        type: 'select',
+        options: [
+          'dark',
+          'light'
+        ],
+        defaultValue: 'light'
+      }
     }
   }
 }
@@ -162,9 +172,10 @@ export const Number = () => (
   </Wrapper>
 )
 
-export const Password = () => (
+export const Password = (args: InputProps) => (
   <Wrapper bgColor='black-darker'>
     <Input
+      {...args}
       style={{ marginBottom: 0 }}
       name='password'
       label='Password'

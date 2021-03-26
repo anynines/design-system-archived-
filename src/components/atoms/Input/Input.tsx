@@ -14,9 +14,12 @@ interface DateInputRestrictedProps extends DateInputProps {
 
 export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'date'
 
+export type InputIconColor = 'dark' | 'light'
+
 export type InputProps = DateInputRestrictedProps | TextInputProps & {
   type: InputType
   onChange?: (newValue: string) => void
+  iconColor?: InputIconColor
 }
 type Input = React.FC<InputProps>
   & { Label: React.FC<InputLabelProps> }
