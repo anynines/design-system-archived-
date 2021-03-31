@@ -25,9 +25,9 @@ export default {
 
 export const Basic = () => (
   <Wrapper bgColor='black-darker'>
-    <Form onSubmit={(data: Record<string, string> | undefined, setValue: any): void => { // eslint-disable-line
+    <Form onSubmit={(data: Record<string, string> | undefined, setValue: (key: string, value: string) => void): void => {
       if (data) {
-        console.log(data)
+        // console.log(data)
         setValue('firstName', '')
         setValue('lastName', '')
       }
