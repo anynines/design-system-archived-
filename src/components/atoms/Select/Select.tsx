@@ -20,6 +20,7 @@ export interface SelectProps extends DefaultComponentProps {
   name: string
   onChange?: (value: string) => void
   register?: (validationRules: ValidationOptions) => void
+  setValue?: (key: string, value: string) => void
   values: (string | number)[]
 }
 
@@ -32,6 +33,7 @@ export const Select: React.FC<SelectProps> = ({
   register,
   style,
   values,
+  setValue,
   defaultValue = values[0]
 }) => {
   const [valueState, setValueState] = React.useState(defaultValue)
@@ -49,7 +51,9 @@ export const Select: React.FC<SelectProps> = ({
   const onCustomSelectOptionClick = (event: React.MouseEvent<HTMLDivElement>): void => {
     const newValue = event.currentTarget.dataset.value || ''
 
-    setValueState(newValue)
+    if (!register) {
+      setValueState(newValue)
+    } else if (setValue) setValue(name, newValue)
   }
 
   const onCustomSelectClick = (): void => {
@@ -120,8 +124,8 @@ export const Select: React.FC<SelectProps> = ({
       <div className='selectWrapper'>
         <select
           aria-labelledby={name}
-          value={valueState}
-          onChange={onValueChange}
+          {...!register ? { value: valueState, onChange: onValueChange } : null}
+          defaultValue={defaultValue}
           name={name}
           ref={register as unknown as undefined}
         >
