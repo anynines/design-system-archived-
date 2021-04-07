@@ -8,7 +8,7 @@ import { DefaultComponentProps } from '@types'
 import { Icon, IconName } from '../../Icon/Icon'
 import { InputLabel, InputLabelProps } from './InputLabel'
 import { InputIcon, InputIconProps } from './InputIcon'
-import { InputType } from '../Input'
+import { InputType, InputIconColor } from '../Input'
 
 // I N T E R F A C E S
 export interface TextInputProps extends DefaultComponentProps {
@@ -31,6 +31,7 @@ export interface TextInputProps extends DefaultComponentProps {
   type?: InputType
   value?: string
   watch?: any //eslint-disable-line
+  iconColor?: InputIconColor
 }
 type TextInput = React.FC<TextInputProps>
   & { Prepend: React.FC<InputIconProps> }
@@ -56,7 +57,8 @@ export const TextInput: TextInput = ({
   style,
   type,
   value = '',
-  watch
+  watch,
+  iconColor = 'light'
 }) => {
   const [isFocus, setIsFocus] = React.useState(autoFocus)
   const [passwordShown, setPasswordShown] = React.useState(false)
@@ -150,7 +152,7 @@ export const TextInput: TextInput = ({
         {name === 'password' && (
           <button
             onClick={(): void => { togglePasswordVisiblity() }}
-            className={`show-password ${passwordShown && 'active'}`}
+            className={`show-password ${passwordShown && 'active'} ${iconColor}`}
             type='button'
           >
             <Icon icon='eye' />
@@ -190,8 +192,8 @@ const StyledInput = styled.div<StyledInputProps>`
   
   .input-label {
     position: absolute;
-    top: .1875rem;
-    left: .75rem;
+    top: .3rem;
+    left: 0.8rem;
     z-index: 1;
     opacity: 0.5;
     color: var(--text-color);
@@ -277,9 +279,32 @@ const StyledInput = styled.div<StyledInputProps>`
       }
     }
 
+    &.dark {
+      svg {
+        color: var(--color-black-50);
+      }
+      &:before {
+        background-color: var(--color-black-50);
+      }
+    }
+
+    &.dark:hover {
+      svg {
+        color: var(--color-black);
+      }
+      &:before {
+        background-color: var(--color-black);
+      }
+    }
+
     &.active {
       &:before {
         background-color: transparent;
+      }
+    }
+    &.dark.active {
+      &:before {
+        background-color: inherit;
       }
     }
   }
@@ -298,8 +323,8 @@ const StyledInput = styled.div<StyledInputProps>`
     
     label {
       transform: scale(1);
-      top: .1875rem;
-      left: .75rem;
+      top: .3rem;
+      left: 0.8rem;
     }
   }
 `

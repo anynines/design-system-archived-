@@ -13,7 +13,7 @@ export interface MenuItemProps extends DefaultComponentProps {
   bgColor?: string
   exact?: boolean
   children?: JSX.Element
-  counter?: number
+  counter?: number | string
   icon?: IconName
   id?: string
   onClick?: () => void

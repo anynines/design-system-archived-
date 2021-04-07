@@ -31,6 +31,7 @@ export * from './components/atoms/ToggleMode/ToggleMode'
 export * from './components/atoms/ToggleLayout/ToggleLayout'
 export * from './components/atoms/ColorPicker/ColorPicker'
 export * from './components/atoms/PageHeader/PageHeader'
+export * from './components/atoms/TextArea/TextArea'
 
 // A T O M S - M O D A L
 export * from './components/atoms/modal/ModalHeader/ModalHeader'
@@ -53,9 +54,6 @@ export * from './components/molecules/UserDropdown/UserDropdown'
 export * from './components/molecules/Menu/Menu'
 export * from './components/molecules/MenuItem/MenuItem'
 export * from './components/molecules/SpecialCategories/SpecialCategories'
-
-// M O L E C U L E S - I N P U T S
-export * from './components/molecules/DatePicker/DatePicker'
 
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'

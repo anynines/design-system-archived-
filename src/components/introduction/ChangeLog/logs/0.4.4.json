@@ -1,0 +1,8 @@
+{
+  "Changed": [
+    {
+      "title": "💧 Atoms / CaretLink",
+      "description": "Transition on focus/hover is now optional."
+    }
+  ]
+}

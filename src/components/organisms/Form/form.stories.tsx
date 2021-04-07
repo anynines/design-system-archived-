@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Form } from './Form'
 import { Input } from '../../atoms/Input/Input'
+import { TextArea } from '../../atoms/TextArea/TextArea'
 import { Button } from '../../atoms/Button/Button'
 import { ButtonGroup } from '../../atoms/Button/ButtonGroup'
 import { Select } from '../../atoms/Select/Select'
@@ -39,6 +40,7 @@ export const Basic = () => (
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
       <Checkbox name='userTermsCheckbox' label='Please agree to our terms of use' required />
       <Switch name='switch' label='Switchable Option' />
+      <TextArea placeholder='Sample placeholder' name='textArea' />
       <ButtonGroup>
         <Button type='black' width='block'>Cancel</Button>
         <Button type='submit' width='block'>Submit</Button>
