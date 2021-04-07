@@ -2,22 +2,22 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // A T O M S
 import { Icon, IconName } from '../../atoms/Icon/Icon'
 
 // I N T E R F A C E
-export interface MenuItemProps {
+export interface MenuItemProps extends DefaultComponentProps {
   active?: boolean
   bgColor?: string
   exact?: boolean
   children?: JSX.Element
-  className?: string
-  counter?: boolean
+  counter?: number | string
   icon?: IconName
   id?: string
   onClick?: () => void
   path?: string
-  style?: React.CSSProperties
   vertical?: boolean
 }
 
@@ -56,6 +56,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
             {children !== undefined ? (
               <span className='label'>{children}</span>
             ) : (<></>)}
+            {counter && <span className='counter'>{counter}</span>}
           </NavLink>
         </StyledMenuItem>
       )}
@@ -69,13 +70,12 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           id={icon}
           style={style}
         >
-          <div
-            className={`wrapper ${active && 'active'} ${counter && 'counter'}`}
-          >
+          <div className={`wrapper ${active && 'active'}`}>
             {icon && <Icon icon={icon} />}
             {children !== undefined
               ? <span className='label'>{children}</span>
               : <></>}
+            {counter && <span className='counter'>{counter}</span>}
           </div>
         </StyledMenuItem>
       )}
@@ -139,18 +139,19 @@ const StyledMenuItem = styled.li<StyledMenuItemProps>`
     border-radius: var(--radius);
     transition: var(--transition);
 
-    &.counter {
-      &::after {
-        position: absolute;
-        top: -.45rem;
-        right: -.45rem;
-        border: 2px solid var(--color-black);
-        background-color: var(--color-primary);
-        width: .8rem;
-        height: .8rem;
-        content: '';
-        border-radius: 100%;
-      }
+    .counter {
+      position: absolute;
+      top: 7px;
+      right: 8px;
+      border: var(--border);
+      background-color: var(--color-primary-light);
+      padding: 4px 8px;
+      min-width: 25px;
+      text-align: center;
+      color: var(--color-white);
+      font-size: 10px;
+      font-weight: 900;
+      border-radius: 20px;
     }
 
     &.active,

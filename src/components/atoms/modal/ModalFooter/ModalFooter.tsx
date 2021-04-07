@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E S
-export interface ModalFooterProps {
-  className?: string
-  style?: React.CSSProperties
-}
+export type ModalFooterProps = DefaultComponentProps
 
 // C O M P O N E N T
 export const ModalFooter: React.FC<ModalFooterProps> = ({

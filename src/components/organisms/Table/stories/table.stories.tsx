@@ -19,32 +19,32 @@ export default {
 
 const data = [
   {
-  "id": 1,
-  "employee": "Eileen Sherrill",
-  "age": 30,
-  "gender": "female"
+    "id": 1,
+    "employee": "Eileen Sherrill",
+    "age": 30,
+    "gender": "female"
   },
   {
-  "id": 2,
-  "employee": "Deborah Kelley",
-  "age": 20,
-  "gender": "female"
+    "id": 2,
+    "employee": "Deborah Kelley",
+    "age": 20,
+    "gender": "female"
   },
   {
-  "id": 3,
-  "employee": "Kay Rich",
-  "age": 50,
-  "gender": "male"
+    "id": 3,
+    "employee": "Kay Rich",
+    "age": 50,
+    "gender": "male"
   },
   {
-  "id": 4,
-  "employee": "Frances Douglas",
-  "age": 40,
-  "gender": "male"
+    "id": 4,
+    "employee": "Frances Douglas",
+    "age": 40,
+    "gender": "male"
   }
 ]
 
-export const Default: React.FC = () => {
+export const Basic: React.FC = () => {
   return (
     <Table>
       <THead>

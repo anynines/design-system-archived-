@@ -9,7 +9,7 @@ import { Page } from '../../../../introduction/layout/Page/Page'
 import { Logo } from '../../../../atoms/Logo/Logo'
 import { Button } from '../../../../atoms/Button/Button'
 import { Menu } from '../../../../molecules/Menu/Menu'
-import { UserNav } from '../../../../organisms/UserNav/UserNav'
+import { UserNav } from '../../../AdminNavigation/helpers/UserNav'
 import { PageHeader } from '../../../../atoms/PageHeader/PageHeader'
 
 export default {

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface TooltipProps {
-  className?: string
+export interface TooltipProps extends DefaultComponentProps {
   position?: string
-  style?: React.CSSProperties
   text?: string
 }
 

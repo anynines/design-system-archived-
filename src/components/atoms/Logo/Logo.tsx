@@ -2,13 +2,13 @@ import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E S
-export interface LogoProps {
-  className?: string
+export interface LogoProps extends DefaultComponentProps {
   onClick?: () => void
   path?: string
   src: string
-  style?: React.CSSProperties
   vertical?: boolean
 }
 

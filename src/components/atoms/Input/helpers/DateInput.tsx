@@ -72,7 +72,7 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
   return (
     <StyledDateInput className={`date-input ${className}`} ref={dateInputRef}>
       <DatePicker
-        selectedDay={selectedDate}
+        selectedDay={selectedDate as Day}
         setSelectedDay={(updatedDate: Day): void => {
           setSelectedDate(updatedDate)
         }}

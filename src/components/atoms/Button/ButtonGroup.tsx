@@ -1,19 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export interface ButtonGroupProps {
-  className?: string
-  style?: React.CSSProperties
+import { DefaultComponentProps } from '@types'
+
+import { WrapperAlignment } from '../../_helpers/Wrapper'
+
+export interface ButtonGroupProps extends DefaultComponentProps {
+  alignment?: WrapperAlignment
 }
 
 export const ButtonGroup: React.FC<ButtonGroupProps> = ({
+  alignment,
   className,
   children,
   style
 }) => {
   return (
     <StyledButtonGroup
-      className={`button-group ${className}`}
+      className={`button-group ${className} ${alignment}`}
       style={style}
     >
       {children}
@@ -26,6 +30,10 @@ const StyledButtonGroup = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  &.center {
+    justify-content: center;
+  }
 
   .btn {
     margin: var(--space-md) 0;

@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E
-export interface CheckboxProps {
+export interface CheckboxProps extends DefaultComponentProps {
   checked?: boolean
-  className?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
   label: string
   name: string
@@ -13,7 +14,6 @@ export interface CheckboxProps {
   register?: (validationRules: ValidationOptions) => void
   required?: boolean
   setValue?: any // eslint-disable-line
-  style?: React.CSSProperties
   watch?: any // eslint-disable-line
 }
 
@@ -75,6 +75,7 @@ const StyledCheckbox = styled.div`
     position: relative;
     cursor: pointer;
     padding-left: calc(var(--size) + var(--space-fixed-md));
+    color: var(--text-color);
     font-size: var(--text-sm);
 
     &::before,
@@ -82,18 +83,18 @@ const StyledCheckbox = styled.div`
       display: flex;
       position: absolute;
       left: 0;
+      content: '';
       transition-property: opacity, border;
       transition-duration: .25s;
       transition-timing-function: ease-in-out;
-      content: '';
     }
 
     &::before {
       border: var(--border);
-      background: var(--color-black);
-      border-radius: calc(var(--radius) / 2);
+      background: var(--element-bg-color);
       width: var(--size);
       height: var(--size);
+      border-radius: calc(var(--radius) / 2);
     }
 
     &::after {

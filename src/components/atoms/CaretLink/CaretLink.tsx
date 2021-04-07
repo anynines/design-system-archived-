@@ -2,15 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
+import { DefaultComponentProps } from '@types'
+
 // C O M P O N E N T S
 import { Icon } from '../Icon/Icon'
 
 // I N T E R F A C E S
-export interface CaretLinkProps {
-  className?: string
+export interface CaretLinkProps extends DefaultComponentProps {
   path: string
-  style?: React.CSSProperties
   text: string
+  animated?: boolean
 }
 
 // C O M P O N E N T
@@ -19,14 +20,15 @@ export const CaretLink: React.FC<CaretLinkProps> = ({
   className,
   path,
   style,
-  text
+  text,
+  animated = false
 }) => {
   return (
     <StyledCaretLink
       className={`caret-link ${className}`}
       style={style}
     >
-      <NavLink to={path}>
+      <NavLink to={path} className={!animated ? '' : 'animated'}>
         <Icon icon='caretRight' />
         <span>{children || text}</span>
       </NavLink>
@@ -63,7 +65,7 @@ const StyledCaretLink = styled.div`
       transition: var(--transition);
     }
 
-    &:hover, &:focus {
+    &.animated:hover, &.animated:focus {
       padding-left: 0;
 
       i {

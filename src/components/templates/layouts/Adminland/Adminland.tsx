@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export interface AdminlandProps {
-  style?: React.CSSProperties
-  className?: 'string'
-}
+import { DefaultComponentProps } from '@types'
+
+// I N T E R F A C E S
+export type AdminlandProps = DefaultComponentProps
 
 export const Adminland: React.FC<AdminlandProps> = ({
   children,

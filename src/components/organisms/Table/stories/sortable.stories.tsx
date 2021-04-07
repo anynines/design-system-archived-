@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { SortableTable, SortableTableRow } from '../Sortable/SortableTable'
-import { getCellValue, handleSort } from '../Sortable/helpers'
+import { getCellValue, handleSort } from '../helpers/sortable'
 import { SRow } from '../Sortable/SRow'
 import { SHead } from '../Sortable/SHead'
 import { SBody } from "../Sortable/SBody"
 import { SFoot } from "../Sortable/SFoot"
 import { SCell } from '../Sortable/SCell'
-import { Badge } from '../../../atoms/Badge/Badge'
+import { Label } from '../../../atoms/Label/Label'
 
 export default {
   title: '🌳 Organisms/SortableTable',
@@ -238,7 +238,7 @@ const metaData = [
   }
 ]
 
-export const Default: React.FC = () => {
+export const Basic: React.FC = () => {
   const [currentData, setCurrentData] = React.useState<SortableTableRow[]>(userData as SortableTableRow[])
 
   return (
@@ -277,7 +277,7 @@ export const Default: React.FC = () => {
               <SCell value={row['september']} />
               <SCell value={row['october']} />
               <SCell value={row['november']} />
-              <SCell><Badge value='n/a' /></SCell>
+              <SCell><Label type='notice'>n/a</Label></SCell>
               <SCell value={row['average']} color='warning' />
             </SRow>
           )
@@ -299,7 +299,7 @@ export const Default: React.FC = () => {
               <SCell value={row['september']} color='light' />
               <SCell value={row['october']} color='light' />
               <SCell value={row['november']} color='light' />
-              <SCell color='light'><Badge value='n/a' /></SCell>
+              <SCell color='light'><Label type='notice'>n/a</Label></SCell>
               <SCell value={row['average']} color='dark' />
             </SRow>
           )

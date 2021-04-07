@@ -2,18 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
+import { DefaultComponentProps } from '@types'
+
 // C O M P O N E N T S
 import { Icon, IconName } from '../../Icon/Icon'
 import { InputLabel, InputLabelProps } from './InputLabel'
 import { InputIcon, InputIconProps } from './InputIcon'
-import { InputType } from '../Input'
+import { InputType, InputIconColor } from '../Input'
 
 // I N T E R F A C E S
-export interface TextInputProps {
+export interface TextInputProps extends DefaultComponentProps {
   autoComplete?: 'on' | 'off'
   autoFocus?: boolean
   color?: string
-  className?: string
   disabled?: boolean
   errorMessage?: string
   errors?: NestDataObject<Record<string, string>, FieldError>
@@ -27,10 +28,10 @@ export interface TextInputProps {
   pattern?: RegExp
   register?: (validationRules: ValidationOptions) => void
   setValue?: any // eslint-disable-line
-  style?: React.CSSProperties
   type?: InputType
   value?: string
   watch?: any //eslint-disable-line
+  iconColor?: InputIconColor
 }
 type TextInput = React.FC<TextInputProps>
   & { Prepend: React.FC<InputIconProps> }
@@ -56,7 +57,8 @@ export const TextInput: TextInput = ({
   style,
   type,
   value = '',
-  watch
+  watch,
+  iconColor = 'light'
 }) => {
   const [isFocus, setIsFocus] = React.useState(autoFocus)
   const [passwordShown, setPasswordShown] = React.useState(false)
@@ -150,7 +152,7 @@ export const TextInput: TextInput = ({
         {name === 'password' && (
           <button
             onClick={(): void => { togglePasswordVisiblity() }}
-            className={`show-password ${passwordShown && 'active'}`}
+            className={`show-password ${passwordShown && 'active'} ${iconColor}`}
             type='button'
           >
             <Icon icon='eye' />
@@ -180,13 +182,62 @@ const StyledInput = styled.div<StyledInputProps>`
   position: relative;
   margin-bottom: var(--space-xxl);
   border: var(--border);
-  background-color: var(--color-black);
+  background-color: var(--element-bg-color);
   width: 100%;
   min-width: 240px;
   font-size: 1em;
   border-radius: var(--radius);
   transition: all 200ms ease-in-out;
   outline: none;
+  
+  .input-label {
+    position: absolute;
+    top: .3rem;
+    left: 0.8rem;
+    z-index: 1;
+    opacity: 0.5;
+    color: var(--text-color);
+    font-size: var(--text-xxs);
+    font-weight: var(--font-weight-bd);
+    transform: scale(1);
+    transform-origin: left;
+    transition: all 200ms ease-in-out;
+  }
+  
+  input {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
+    width: 100%;
+    height: 2.75rem;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    outline: none;
+    transition: top 200ms ease-in-out;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .error {
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+    padding: 0.125rem 0.25rem;
+    text-align: right;
+    color: var(--color-error);
+    font-size: var(--text-xs);
+  }
+
+  &.empty {
+    label {
+      transform: scale(1.2);
+      top: 1rem;
+      left: 1rem;
+    }
+  }
 
   .show-password {
     display: flex;
@@ -228,90 +279,52 @@ const StyledInput = styled.div<StyledInputProps>`
       }
     }
 
+    &.dark {
+      svg {
+        color: var(--color-black-50);
+      }
+      &:before {
+        background-color: var(--color-black-50);
+      }
+    }
+
+    &.dark:hover {
+      svg {
+        color: var(--color-black);
+      }
+      &:before {
+        background-color: var(--color-black);
+      }
+    }
+
     &.active {
-      &:before{
+      &:before {
         background-color: transparent;
       }
     }
-  }
-  
-  .input-label {
-    position: absolute;
-    top: .1875rem;
-    left: .75rem;
-    z-index: 1;
-    opacity: 0.5;
-    color: var(--color-white);
-    font-size: var(--text-xxs);
-    font-weight: var(--font-weight-bd);
-    transform: scale(1);
-    transform-origin: left;
-    transition: all 200ms ease-in-out;
-  }
-  
-  input {
-    position: relative;
-    border: none;
-    background: transparent;
-    padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
-    width: 100%;
-    height: 2.75rem;
-    border-radius: var(--border-radius);
-    color: var(--color-white);
-    outline: none;
-    transition: top 200ms ease-in-out;
-
-    &:disabled {
-      cursor: not-allowed;
+    &.dark.active {
+      &:before {
+        background-color: inherit;
+      }
     }
   }
-
-  .error {
-    position: absolute;
-    right: 0;
-    bottom: -1.5rem;
-    padding: 0.125rem 0.25rem;
-    text-align: right;
-    color: var(--color-error);
-    font-size: var(--text-xs);
-  }
-
-  &.empty {
-    label {
-      transform: scale(1.2);
-      top: 1rem;
-      left: 1rem;
-    }
-  }
-
-  
 
   &:hover,
-  &.focus {
-    .input-prepend {
+  &.focus,
+  &:focus-within {
+    .input-icon {
       background-color: var(--color-primary);
-    }
-
-    label {
-      transform: scale(1);
-      top: .1875rem;
-      left: .75rem;
-    }
-  }
-
-  &:hover {
-    border: 1px solid var(--color-white-30);
-
-    .input-prepend {
-      background-color: var(--color-white-20);
+      color: var(--color-white-fix);
     }
   }
 
   &:focus-within {
-    border: 1px solid var(--color-primary) !important;
-
-    .input-prepend {
-      background-color: var(--color-primary) !important;
+    border-color: var(--color-primary);
+    
+    label {
+      transform: scale(1);
+      top: .3rem;
+      left: 0.8rem;
     }
   }
 `

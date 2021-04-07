@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactDOM from 'react-dom'
+
+import { DefaultComponentProps } from '@types'
 
 // L I B R A R Y
 import { Icon } from '../../atoms/Icon/Icon'
 import { Button } from '../../atoms/Button/Button'
-import ReactDOM from 'react-dom'
 import { ModalHeader, ModalHeaderProps } from '../../atoms/modal/ModalHeader/ModalHeader'
 import { ModalBody, ModalBodyProps } from '../../atoms/modal/ModalBody/ModalBody'
 import { ModalFooter, ModalFooterProps } from '../../atoms/modal/ModalFooter/ModalFooter'
@@ -16,14 +18,12 @@ type Modal = React.FC<ModalProps>
   & { Body: React.FC<ModalBodyProps> }
   & { Footer: React.FC<ModalFooterProps> }
 
-export interface ModalProps {
-  className?: string
+export interface ModalProps extends DefaultComponentProps {
   confirmationText?: string
   description?: string
   onConfirm?: () => void
   onHide: () => void
   show: boolean
-  style?: React.CSSProperties
   title?: string
 }
 

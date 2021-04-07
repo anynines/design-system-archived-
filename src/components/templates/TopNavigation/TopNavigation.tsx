@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export interface TopNavigationProps {
-  className?: string
-  style?: React.CSSProperties
-}
+import { DefaultComponentProps } from '@types'
+
+export type TopNavigationProps = DefaultComponentProps
 
 export const TopNavigation: React.FC<TopNavigationProps> = ({
   children,
