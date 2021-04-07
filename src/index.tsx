@@ -55,9 +55,6 @@ export * from './components/molecules/Menu/Menu'
 export * from './components/molecules/MenuItem/MenuItem'
 export * from './components/molecules/SpecialCategories/SpecialCategories'
 
-// M O L E C U L E S - I N P U T S
-export * from './components/molecules/DatePicker/DatePicker'
-
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'
 export * from './components/organisms/CartItem/CartItem'
