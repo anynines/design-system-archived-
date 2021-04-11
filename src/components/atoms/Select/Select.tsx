@@ -104,6 +104,8 @@ export const Select: React.FC<SelectProps> = ({
     })
   }, [])
 
+  const props = !register ? { value: valueState, onChange: onValueChange } : {}
+
   return (
     <StyledSelect
       className={`select-wrapper ${className} 
@@ -124,10 +126,10 @@ export const Select: React.FC<SelectProps> = ({
       <div className='selectWrapper'>
         <select
           aria-labelledby={name}
-          {...!register ? { value: valueState, onChange: onValueChange } : null}
           defaultValue={defaultValue}
           name={name}
           ref={register as unknown as undefined}
+          {...props}
         >
           {values.map((value): JSX.Element => {
             return (<option value={value} key={value}>{value}</option>)
