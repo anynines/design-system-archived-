@@ -76,12 +76,12 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   display: flex;
   flex-direction: row;
   z-index: var(--z-index);
+  overflow: hidden;
   width: var(--width);
   min-height: 4.5rem;
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
   transition: var(--transition);
-  overflow: hidden;
 
   .alert-icon {
     display: flex;
