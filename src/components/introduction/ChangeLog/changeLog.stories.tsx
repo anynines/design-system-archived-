@@ -15,7 +15,7 @@ import v0_4_3 from './logs/0.4.3.json'
 import v0_4_4 from './logs/0.4.4.json'
 import v0_4_6 from './logs/0.4.6.json'
 import v0_5_0 from './logs/0.5.0.json'
-import v0_5_1 from './logs/0.5.1.json'
+import v0_5_8 from './logs/0.5.8.json'
 
 export default {
   title: '👋 Get started/Changelog',
@@ -29,7 +29,7 @@ export const Welcome = () => (
         version='0.5.1'
         date='13. April 2021'
         isPublished={false}
-        changelog={v0_5_1}
+        changelog={v0_5_8}
       />
       <ChangeLog
         version='0.5.0'
