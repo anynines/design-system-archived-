@@ -102,8 +102,6 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   background-color: var(--bg-color);
   padding: var(--space-md);
   color: var(--color-white-fix);
-  border-bottom-left-radius: .5em;
-  border-top-left-radius: .5em;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
