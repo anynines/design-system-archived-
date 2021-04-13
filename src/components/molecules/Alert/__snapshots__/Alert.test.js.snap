@@ -83,6 +83,7 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  overflow: hidden;
 }
 
 .c0 .alert-icon {
@@ -135,8 +136,6 @@ exports[`Alert component snapshot should match snapshot 1`] = `
   position: relative;
   background-color: var(--bg-color);
   padding: var(--space-sm) var(--space-md);
-  border-bottom-right-radius: .5em;
-  border-top-right-radius: .5em;
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 3;
