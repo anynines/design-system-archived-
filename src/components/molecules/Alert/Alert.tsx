@@ -81,6 +81,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   border-radius: var(--radius);
   box-shadow: 0 0 .5em rgba(0,0,0,0.15);
   transition: var(--transition);
+  overflow: hidden;
 
   .alert-icon {
     display: flex;
@@ -110,8 +111,6 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     position: relative;
     background-color: var(--bg-color);
     padding: var(--space-sm) var(--space-md);
-    border-bottom-right-radius: .5em;
-    border-top-right-radius: .5em;
     flex: 3;
 
     h4,
