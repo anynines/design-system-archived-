@@ -1,8 +1,8 @@
 {
-  "Removed": [
+  "Changed": [
     {
-      "title": "🌱 Molecules / Datepicker",
-      "description": "Removes date picker as well as react-dates and moment.js dependencies, due to build compatibility issues."
+      "title": "💧 Atoms / TextArea",
+      "description": "Changed styled to look similar to Input atoms."
     }
   ]
 }
