@@ -14,6 +14,7 @@ import v0_4_0 from './logs/0.4.0.json'
 import v0_4_3 from './logs/0.4.3.json'
 import v0_4_4 from './logs/0.4.4.json'
 import v0_4_6 from './logs/0.4.6.json'
+import v0_5_0 from './logs/0.5.0.json'
 
 export default {
   title: '👋 Get started/Changelog',
@@ -23,6 +24,12 @@ export const Welcome = () => (
   <Section bgColor='transparent'>
     <Container style={{ marginTop: 50, width: 800 }}>
       <h2 style={{ marginBottom: 30 }}>Changelog</h2>
+      <ChangeLog
+        version='0.5.0'
+        date='07. April 2021'
+        isPublished={true}
+        changelog={v0_5_0}
+      />
       <ChangeLog
         version='0.4.6'
         date='26. March 2021'

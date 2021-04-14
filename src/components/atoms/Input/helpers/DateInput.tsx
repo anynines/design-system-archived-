@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 // C O M P O N E N T S
 import { TextInput, TextInputProps } from './TextInput'
-import { DatePicker, DatePickerProps } from '../../../molecules/DatePicker/DatePicker'
 import { Icon } from '../../Icon/Icon'
 import { onClickOutsideHook } from '../../../../helpers/react'
 
@@ -13,11 +12,6 @@ export interface DateInputProps extends Omit<TextInputProps, 'value' | 'pattern'
   date?: number
   pattern?: RegExp
   onDateChange?: (date: number) => void
-  datePickerOptions?: Omit<DatePickerProps, 'date' | 'onDateChange' | 'focused' | 'onFocusChange' | 'initialVisibleMonth'> & {
-    focused?: boolean
-    onFocusChange?: (arg: { focused: boolean }) => void
-    initialVisibleMonth?: (() => moment.Moment) | null
-  }
 }
 
 // match dd/mm/yyyy format
@@ -29,12 +23,10 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
     children,
     className,
     date,
-    datePickerOptions,
     getValues,
     name,
     onDateChange,
     pattern = DATE_REGEX,
-    setValue,
     register
   } = props
 
@@ -57,31 +49,6 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
 
   const isDateValid = (dateString: string): boolean => {
     return DATE_REGEX.exec(dateString) !== null
-  }
-
-  const getDateValue = (): number | undefined => {
-    if (register && isDateValid(formInputValue)) {
-      return DDMMYYYToTimestamp(formInputValue)
-    }
-    return selectedDate
-  }
-
-  const renderDatePicker = (): JSX.Element => {
-    if (isDatePickerOpen) {
-      return (
-        <StyledDatePicker
-          {...datePickerOptions}
-          date={getDateValue()}
-          onDateChange={(updatedDate): void => {
-            setSelectedDate(updatedDate)
-            if (!register) setInputValue(timestampToDDMMYYY(updatedDate))
-            else setValue(name, timestampToDDMMYYY(updatedDate))
-          }}
-        />
-      )
-    }
-
-    return <></>
   }
 
   React.useEffect(() => {
@@ -126,7 +93,6 @@ export const DateInput: React.FC<DateInputProps> = (props) => {
         >
           <Icon icon='calendar' />
         </TextInput.Prepend>
-        {renderDatePicker()}
         {children}
       </TextInput>
     </StyledDateInput>
@@ -142,9 +108,4 @@ const StyledDateInput = styled.div`
   & > div {
     width: 100%;
   }
-`
-const StyledDatePicker = styled(DatePicker)`
-  position: absolute;
-  top: 100%;
-  z-index: 2;
 `
