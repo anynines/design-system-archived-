@@ -25,11 +25,12 @@ export default {
 
 export const Basic = () => (
   <Wrapper bgColor='black-darker'>
-    <Form onSubmit={(data: Record<string, string> | undefined, setValue: any): void => { // eslint-disable-line
+    <Form onSubmit={(data: Record<string, string> | undefined, setValue: (key: string, value: string) => void): void => {
       if (data) {
-        console.log(data)
+        // console.log(data)
         setValue('firstName', '')
         setValue('lastName', '')
+        setValue('select', 'option2')
       }
     }}>
       <Input name='firstName' type='text' label='First Name' autoComplete='off' value='Dummy' />
@@ -37,7 +38,7 @@ export const Basic = () => (
       <Input name='userEmail' type='email' label='Email' autoComplete='off' />
       <Input name='Text' type='text' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} errorMessage='Please enter a 4 digits number' />
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
-      <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' />
+      <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' defaultValue='option2' />
       <Checkbox name='userTermsCheckbox' label='Please agree to our terms of use' required />
       <Switch name='switch' label='Switchable Option' />
       <TextArea placeholder='Sample placeholder' name='textArea' />
