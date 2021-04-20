@@ -14,6 +14,7 @@ export interface ButtonProps extends DefaultComponentProps {
   size?: ButtonSize
   type?: ButtonType
   width?: ButtonWidth
+  disabled?: boolean
 }
 
 // T Y P E S
@@ -39,8 +40,13 @@ export const Button: React.FC<ButtonProps> = ({
   size = 'md',
   style,
   type = 'primary',
-  width = 'inline'
+  width = 'inline',
+  disabled = false
 }) => {
+  if (type === 'disabled') {
+    console.warn('WARNING! Using type `disabled` as prop for this compoenent is deprecated! Please use the `disabled` boolean prop')
+  }
+
   return (
     <StyledButton
       style={style}
@@ -54,7 +60,7 @@ export const Button: React.FC<ButtonProps> = ({
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={(): void => { return (onClick && onClick()) }}
       icon={icon}
-      disabled={type === 'disabled'}
+      disabled={type === 'disabled' || disabled}
     >
       { icon && <Icon icon={icon} className={`${iconOnly && 'icon-only'}`} /> }
       { children }
