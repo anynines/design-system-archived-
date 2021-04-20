@@ -1,0 +1,8 @@
+{
+  "Changed": [
+    {
+      "title": "💧 Atoms / Button",
+      "description": "Deprecate type prop `disabled`"
+    }
+  ]
+}
