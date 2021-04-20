@@ -166,7 +166,8 @@ const StyledButton = styled.button`
     background-color: var(--color-light);
   }
 
-  &.disabled {
+  &:disabled,
+  &[disabled] {
     opacity: .75;
     background-color: var(--color-dark);
     cursor: not-allowed;
