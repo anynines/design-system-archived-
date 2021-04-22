@@ -1,6 +1,7 @@
 {
   "name": "@anynines/design-system",
   "version": "0.5.9",
+  "version": "0.6.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -40,6 +41,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "yarn rm:build && build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages",
+    "check:types": "yarn tsc --noEmit",
     "test": "jest --verbose --passWithNoTests",
     "test:watch": "jest --verbose --watch --passWithNoTests",
     "test:coverage": "jest --verbose --coverage --maxWorkers=4 --passWithNoTests",
