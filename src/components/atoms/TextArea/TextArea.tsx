@@ -24,14 +24,13 @@ export const TextArea: React.FC<TextAreaProps> = ({ name = '', placeholder = '',
 
 const StyledTextArea = styled.textarea`
   border: var(--border);
-  background: transparent;
+  background-color: var(--element-bg-color);
   padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
   width: 100%;
   height: 5rem;
   color: var(--text-color);
   font-family: var(--font-family);
-  font-size: var(--text-xxs);
-  font-weight: var(--font-weight-bd);
+  font-size: var(--text-xs);
   resize: none;
   border-radius: var(--radius);
   outline: none;

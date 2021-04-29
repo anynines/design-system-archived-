@@ -1,0 +1,8 @@
+{
+  "Removed": [
+    {
+      "title": "🌱 Molecules / Datepicker",
+      "description": "Removes date picker as well as react-dates and moment.js dependencies, due to build compatibility issues."
+    }
+  ]
+}

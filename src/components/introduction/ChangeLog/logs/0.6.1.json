@@ -2,7 +2,7 @@
   "Changed": [
     {
       "title": "💧 Atoms / TextArea",
-      "description": "Changed styled to look similar to Input atoms."
+      "description": "Changed styling and synchronized with Input styles"
     }
   ]
 }
