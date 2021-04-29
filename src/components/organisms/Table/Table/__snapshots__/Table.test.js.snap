@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Table snapshot should match default snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  overflow: hidden;
+  width: 100%;
+  border-radius: calc(var(--radius) * 2);
+}
+
+.c0.scrollable {
+  display: block;
+  overflow: auto;
+}
+
+.c5 {
+  border: none;
+  background-color: var(--color-black-50);
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.c5:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: left;
+}
+
+.c5:first-child a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: center;
+  -ms-flex-direction: center;
+  flex-direction: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5.highlight-primary {
+  border-left: 5px solid var(--color-primary);
+  background-color: var(--color-dark-80);
+}
+
+.c5.green {
+  background-color: var(--color-success) !important;
+}
+
+.c5.red {
+  background-color: var(--color-error) !important;
+}
+
+.c2 td {
+  border-left: 5px solid transparent;
+  color: var(--color-white-70);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c2 td:first-child,
+.c2 td:last-child {
+  color: var(--color-white);
+}
+
+.c2:hover td {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.c2.opened td {
+  background-color: var(--color-dark);
+}
+
+.c2.clickable {
+  cursor: pointer;
+}
+
+.c2.green td {
+  background-color: var(--color-success-dark);
+}
+
+.c2.red td {
+  background-color: var(--color-error-dark);
+}
+
+.c2.green td:first-child,
+.c2.green td:last-child {
+  background-color: var(--color-success);
+}
+
+.c2.red td:first-child,
+.c2.red td:last-child {
+  background-color: var(--color-error);
+}
+
+.c1 tr:last-child td:first-child {
+  border-top-left-radius: var(--radius);
+}
+
+.c1 tr:last-child td:last-child {
+  border-top-right-radius: var(--radius);
+}
+
+.c4 tr:last-child td {
+  border-bottom: 3px solid var(--color-black);
+}
+
+.c4:last-child tr:last-child td:first-child {
+  border-bottom-left-radius: var(--radius);
+}
+
+.c4:last-child tr:last-child td:last-child {
+  border-bottom-right-radius: var(--radius);
+}
+
+.c3 {
+  border: none;
+  background-color: var(--color-black);
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+<table
+    class="c0"
+    data-testid="basic-table"
+  >
+    <thead
+      class="c1"
+      data-testid="basic-table-head"
+    >
+      <tr
+        class="c2"
+      >
+        <th
+          class="c3"
+        >
+          ID
+        </th>
+        <th
+          class="c3"
+        >
+          Name
+        </th>
+        <th
+          class="c3"
+        >
+          Age
+        </th>
+        <th
+          class="c3"
+        >
+          Gender
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c4"
+    >
+      <tr
+        class="c2"
+      >
+        <td
+          class="c5"
+        >
+          1
+        </td>
+        <td
+          class="c5"
+        >
+          Eileen Sherrill
+        </td>
+        <td
+          class="c5"
+        >
+          30
+        </td>
+        <td
+          class="c5"
+        >
+          female
+        </td>
+      </tr>
+      <tr
+        class="c2"
+      >
+        <td
+          class="c5"
+        >
+          2
+        </td>
+        <td
+          class="c5"
+        >
+          Deborah Kelley
+        </td>
+        <td
+          class="c5"
+        >
+          20
+        </td>
+        <td
+          class="c5"
+        >
+          female
+        </td>
+      </tr>
+      <tr
+        class="c2"
+      >
+        <td
+          class="c5"
+        >
+          3
+        </td>
+        <td
+          class="c5"
+        >
+          Kay Rich
+        </td>
+        <td
+          class="c5"
+        >
+          50
+        </td>
+        <td
+          class="c5"
+        >
+          male
+        </td>
+      </tr>
+      <tr
+        class="c2"
+      >
+        <td
+          class="c5"
+        >
+          4
+        </td>
+        <td
+          class="c5"
+        >
+          Frances Douglas
+        </td>
+        <td
+          class="c5"
+        >
+          40
+        </td>
+        <td
+          class="c5"
+        >
+          male
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
