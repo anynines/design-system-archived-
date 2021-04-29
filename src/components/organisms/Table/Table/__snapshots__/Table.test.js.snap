@@ -171,6 +171,7 @@ exports[`Basic Table snapshot should match default snapshot 1`] = `
     </thead>
     <tbody
       class="c4"
+      data-testid="basic-table-body"
     >
       <tr
         class="c2"

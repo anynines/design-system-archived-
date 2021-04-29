@@ -70,6 +70,7 @@ describe('Basic Table', () => {
   describe('snapshot', () => {
     it('should match default snapshot', () => {
       const { asFragment } = component
+
       expect(asFragment()).toMatchSnapshot()
     })
   })
@@ -79,6 +80,7 @@ describe('Basic Table', () => {
       it('should have only 1 table element', () => {
         const { queryAllByTestId } = component
         const table = queryAllByTestId('basic-table')
+
         expect(table).toHaveLength(1)
       })
     })
@@ -87,30 +89,71 @@ describe('Basic Table', () => {
       it('should have only 1 thead element', () => {
         const { queryAllByTestId } = component
         const tHead = queryAllByTestId('basic-table-head')
+
         expect(tHead).toHaveLength(1)
       })
 
       it('should have correct number of th elements', () => {
         const { container } = component
         const headCols = container.querySelectorAll('th')
+
         expect(headCols).toHaveLength(tBodyData.length)
       })
 
       it('should have correct names on th elements', () => {
         const { container } = component
         const headCols = container.querySelectorAll('th')
+
         headCols.forEach((th, index) => {
           expect(th.innerHTML).toEqual(tHeadData[index])
         })
       })
     })
 
-    // // The table should have ONLY 1 tbody tag
-    // const tbody = table.find('tbody')
-    // expect(tbody).toHaveLength(1)
-    // // tbody tag should have the same number of tr tags as data rows
-    // const rows = tbody.find('tr')
-    // expect(rows).toHaveLength(data.length)
+    describe('tBody', () => {
+      it('should have only 1 tBody element', () => {
+        const { queryAllByTestId } = component
+        const tBody = queryAllByTestId('basic-table-body')
+
+        expect(tBody).toHaveLength(1)
+      })
+
+      it('should have correct number of tr elements', () => {
+        const { queryByTestId } = component
+        const tBody = queryByTestId('basic-table-body')
+        const bodyRows = tBody.querySelectorAll('tr')
+
+        expect(bodyRows).toHaveLength(tBodyData.length)
+      })
+
+      it('should have correct number of td elements', () => {
+        const { queryByTestId } = component
+        const body = queryByTestId('basic-table-body')
+        const rows = body.querySelectorAll('tr')
+
+        rows.forEach((tr) => {
+          const cells = tr.querySelectorAll('td')
+
+          expect(cells).toHaveLength(tHeadData.length)
+        })
+      })
+
+      it('should have correct values on td elements', () => {
+        const { queryByTestId } = component
+        const body = queryByTestId('basic-table-body')
+        const rows = body.querySelectorAll('tr')
+
+        rows.forEach((tr, trIndex) => {
+          const cells = tr.querySelectorAll('td')
+
+          expect(cells[0].innerHTML).toEqual(tBodyData[trIndex].id.toString())
+          expect(cells[1].innerHTML).toEqual(tBodyData[trIndex].employee)
+          expect(cells[2].innerHTML).toEqual(tBodyData[trIndex].age.toString())
+          expect(cells[3].innerHTML).toEqual(tBodyData[trIndex].gender)
+        })
+      })
+    })
+
     // // Loop through each row and check the content
     // rows.forEach((tr, rowIndex) => {
     //   const cells = tr.find('td')
