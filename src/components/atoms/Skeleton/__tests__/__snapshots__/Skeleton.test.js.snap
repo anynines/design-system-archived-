@@ -1,0 +1,706 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeletons component snapshot should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c0.width-lg {
+  width: 100%;
+}
+
+.c0.width-md {
+  width: 50%;
+}
+
+.c0.width-sm {
+  width: 25%;
+}
+
+.c1 {
+  position: absolute;
+  top: 0;
+}
+
+<h1
+    class="title-skeleton "
+    style="width: 100%; position: relative;"
+  >
+      
+    <span
+      class="c0 line-skeleton c1 width-lg"
+    />
+  </h1>
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c0.width-lg {
+  width: 100%;
+}
+
+.c0.width-md {
+  width: 50%;
+}
+
+.c0.width-sm {
+  width: 25%;
+}
+
+.c1 {
+  position: absolute;
+  top: 0;
+}
+
+<h3
+    class="title-skeleton "
+    style="width: 100%; position: relative;"
+  >
+      
+    <span
+      class="c0 line-skeleton c1 width-lg"
+    />
+  </h3>
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  margin-bottom: 20px;
+  background-color: var(--text-color);
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius);
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 500px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+}
+
+<div
+    class="c0 line-skeleton "
+  />
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  margin-bottom: 20px;
+  background-color: var(--text-color);
+  width: 100%;
+  height: 250px;
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 500px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+}
+
+<div
+    class="c0 line-skeleton "
+  />
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c0.width-lg {
+  width: 100%;
+}
+
+.c0.width-md {
+  width: 50%;
+}
+
+.c0.width-sm {
+  width: 25%;
+}
+
+<span
+    class="c0 line-skeleton  width-lg"
+  />
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c0.width-lg {
+  width: 100%;
+}
+
+.c0.width-md {
+  width: 50%;
+}
+
+.c0.width-sm {
+  width: 25%;
+}
+
+<span
+    class="c0 line-skeleton  width-sm"
+  />
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c0.width-lg {
+  width: 100%;
+}
+
+.c0.width-md {
+  width: 50%;
+}
+
+.c0.width-sm {
+  width: 25%;
+}
+
+<span
+    class="c0 line-skeleton  width-md"
+  />
+  .c1 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c1:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c1.width-lg {
+  width: 100%;
+}
+
+.c1.width-md {
+  width: 50%;
+}
+
+.c1.width-sm {
+  width: 25%;
+}
+
+.c0 {
+  margin-bottom: 25px;
+}
+
+.c0 p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  margin-bottom: 0;
+}
+
+<div
+    class="c0 text-skeleton "
+  >
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-lg"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-lg"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-sm"
+      />
+    </p>
+  </div>
+  .c1 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c1:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c1.width-lg {
+  width: 100%;
+}
+
+.c1.width-md {
+  width: 50%;
+}
+
+.c1.width-sm {
+  width: 25%;
+}
+
+.c0 {
+  margin-bottom: 25px;
+}
+
+.c0 p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  margin-bottom: 0;
+}
+
+<div
+    class="c0 text-skeleton "
+  >
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-sm"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-sm"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-sm"
+      />
+    </p>
+  </div>
+  .c1 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c1:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c1.width-lg {
+  width: 100%;
+}
+
+.c1.width-md {
+  width: 50%;
+}
+
+.c1.width-sm {
+  width: 25%;
+}
+
+.c0 {
+  margin-bottom: 25px;
+}
+
+.c0 p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  margin-bottom: 0;
+}
+
+<div
+    class="c0 text-skeleton "
+  >
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-md"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-md"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-sm"
+      />
+    </p>
+  </div>
+  .c1 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c1:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c1.width-lg {
+  width: 100%;
+}
+
+.c1.width-md {
+  width: 50%;
+}
+
+.c1.width-sm {
+  width: 25%;
+}
+
+.c0 {
+  margin-bottom: 25px;
+}
+
+.c0 p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  margin-bottom: 0;
+}
+
+<div
+    class="c0 text-skeleton "
+  >
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-lg"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-lg"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-lg"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-lg"
+      />
+    </p>
+    <p
+      style="position: relative;"
+    >
+       
+      <span
+        class="c1 line-skeleton c2 width-sm"
+      />
+    </p>
+  </div>
+  .c0 {
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  height: 100%;
+  border-radius: var(--radius);
+}
+
+.c0:before {
+  position: absolute;
+  top: 0;
+  left: -150px;
+  opacity: .75;
+  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
+  width: 200px;
+  height: 50px;
+  color: transparent;
+  content: 'lorem ipsum';
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: shine 1.5s ease infinite;
+  animation: shine 1.5s ease infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.c0.width-lg {
+  width: 100%;
+}
+
+.c0.width-md {
+  width: 50%;
+}
+
+.c0.width-sm {
+  width: 25%;
+}
+
+.c1 {
+  position: absolute;
+  top: 0;
+}
+
+<span
+    class=""
+    style="position: relative;"
+  >
+      
+    <span
+      class="c0 line-skeleton c1 width-lg"
+    />
+  </span>
+</DocumentFragment>
+`;
