@@ -21,7 +21,7 @@ export const WordSkeleton: React.FC<WordSkeletonProps> = ({
       className={className}
     >
       {' '}
-&nbsp;
+      &nbsp;
       <StyledLineSkeleton />
     </span>
   )

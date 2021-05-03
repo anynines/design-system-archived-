@@ -24,7 +24,7 @@ export const TitleSkeleton: React.FC<TitleSkeletonProps> = ({
     },
     <>
       {' '}
-&nbsp;
+      &nbsp;
       <StyledLineSkeleton width={width} type='title' />
     </>
   )
