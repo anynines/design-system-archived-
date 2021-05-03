@@ -27,28 +27,16 @@ const StyledCardSkeleton = styled.div`
   width: 100%;
   height: 250px; 
 
-  &:before {
-    position: absolute;
-    top: 0;
-    left: -150px;
-    opacity: .75;
-    background-image: linear-gradient(
-      0deg, 
-      rgba(230, 230, 230, 0), 
-      var(--box-bg-color),
-      rgba(230, 230, 230, 0)
-    );
-    width: 200px;
-    height: 500px;
-    color: transparent;
-    content: 'lorem ipsum';
-    transform: rotate(45deg);
-    animation: shine 1.5s ease infinite;
-  }
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: placeHolderShimmer;
+  background: linear-gradient(to right, var(--color-white) 8%, var(--color-white-70) 18%, var(--color-white) 33%);
+  background-size: 1200px 104px;
 
-  @keyframes shine {
-    to {
-      left: 100%;
-    }
+  @keyframes placeHolderShimmer {
+    0%{ background-position: -600px 0; }
+    100%{ background-position: 600px 0; }
   }
 `

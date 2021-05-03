@@ -8,7 +8,7 @@ export interface TextSkeletonProps extends LineSkeletonProps {
 }
 
 // C O M P O N E N T
-const TextSkeleton: React.FC<TextSkeletonProps> = ({
+export const TextSkeleton: React.FC<TextSkeletonProps> = ({
   lines = 3,
   width,
   className = '',
@@ -53,7 +53,9 @@ const TextSkeleton: React.FC<TextSkeletonProps> = ({
 
 // S T Y L E S
 const StyledTextSkeleton = styled.div`
+  width: 100%;
   margin-bottom: 25px;
+
   p {
     margin-top: 0;
     margin-bottom: 5px;
@@ -65,5 +67,3 @@ const StyledLineSkeleton = styled(LineSkeleton)`
   top: 0;
   margin-bottom: 0;
 `
-
-export default TextSkeleton

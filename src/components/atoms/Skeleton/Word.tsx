@@ -6,13 +6,18 @@ import { LineSkeleton, LineSkeletonProps } from './Line'
 export type WordSkeletonProps = LineSkeletonProps
 
 // C O M P O N E N T
-const WordSkeleton: React.FC<WordSkeletonProps> = ({
+export const WordSkeleton: React.FC<WordSkeletonProps> = ({
   className = '',
   style
 }) => {
   return (
     <span
-      style={{ ...style, position: 'relative' }}
+      style={{
+        ...style,
+        display: 'block',
+        position: 'relative',
+        marginBottom: '5px'
+      }}
       className={className}
     >
       {' '}
@@ -25,7 +30,6 @@ const WordSkeleton: React.FC<WordSkeletonProps> = ({
 // S T Y L E S
 const StyledLineSkeleton = styled(LineSkeleton)`
   position: absolute;
+  min-width: 12px;
   top: 0;
 `
-
-export default WordSkeleton

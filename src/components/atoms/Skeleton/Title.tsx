@@ -10,7 +10,7 @@ export interface TitleSkeletonProps extends LineSkeletonProps {
 }
 
 // C O M P O N E N T
-const TitleSkeleton: React.FC<TitleSkeletonProps> = ({
+export const TitleSkeleton: React.FC<TitleSkeletonProps> = ({
   title = 'h1',
   width,
   className = '',
@@ -25,7 +25,7 @@ const TitleSkeleton: React.FC<TitleSkeletonProps> = ({
     <>
       {' '}
 &nbsp;
-      <StyledLineSkeleton width={width} />
+      <StyledLineSkeleton width={width} type='title' />
     </>
   )
 }
@@ -35,5 +35,3 @@ const StyledLineSkeleton = styled(LineSkeleton)`
   position: absolute;
   top: 0;
 `
-
-export default TitleSkeleton

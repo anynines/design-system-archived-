@@ -3,69 +3,69 @@ import styled from 'styled-components'
 
 // I N T E R F A C E S
 export type LineWidth = 'sm' | 'md' | 'lg'
+export type LineType = 'text' | 'title'
 export interface LineSkeletonProps {
   width?: LineWidth
   className?: string
   style?: React.CSSProperties
+  type?: LineType
 }
 
 // C O M P O N E N T
 export const LineSkeleton: React.FC<LineSkeletonProps> = ({
   width = 'lg',
   className = '',
-  style
+  style,
+  type = 'text'
 }) => {
   return (
-    <StyledLineSkeleton style={style} className={`line-skeleton ${className} width-${width}`} />
+    <StyledLineSkeleton style={style} className={`line-skeleton ${className} width-${width} type-${type}`} />
   )
 }
 
 // S T Y L E S
 const StyledLineSkeleton = styled.span`
-position: relative;
-overflow: hidden;
-opacity: .25;
-background-color: var(--text-color);
-height: 100%;
-border-radius: var(--radius);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  opacity: .25;
+  background-color: var(--text-color);
+  border-radius: var(--radius);
 
-&:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient(
-    0deg, 
-    rgba(230, 230, 230, 0), 
-    var(--box-bg-color),
-    rgba(230, 230, 230, 0)
-  );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  transform: rotate(45deg);
-  animation: shine 1.5s ease infinite;
-  animation-delay: 1s;
-}
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: placeHolderShimmer;
+  background: linear-gradient(to right, var(--color-white) 8%, var(--color-white-70) 18%, var(--color-white) 33%);
+  background-size: 1200px 104px;
 
-&.width {
-  &-lg {
-    width: 100%;
+  @keyframes placeHolderShimmer {
+    0%{ background-position: -600px 0; }
+    100%{ background-position: 600px 0; }
   }
 
-  &-md {
-    width: 50%;
+  &.type {
+    &-text {
+      min-height: var(--body-line-height);
+    }
+
+    &-title {
+      min-height: var(--heading-line-height);
+    }
   }
 
-  &-sm {
-    width: 25%;
-  }
-}
+  &.width {
+    &-lg {
+      width: 100%;
+    }
 
-@keyframes shine {
-  to {
-    left: 100%;
+    &-md {
+      width: 50%;
+    }
+
+    &-sm {
+      width: 25%;
+    }
   }
-}
 `
