@@ -23,17 +23,15 @@ const StyledCardSkeleton = styled.div`
   overflow: hidden;
   opacity: .25;
   margin-bottom: 20px;
-  background-color: var(--text-color);
+  background: linear-gradient(to right, var(--color-white) 8%, var(--color-white-70) 18%, var(--color-white) 33%);
+  background-size: 1200px 104px;
   width: 100%;
   height: 250px; 
-
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: placeHolderShimmer;
-  background: linear-gradient(to right, var(--color-white) 8%, var(--color-white-70) 18%, var(--color-white) 33%);
-  background-size: 1200px 104px;
 
   @keyframes placeHolderShimmer {
     0%{ background-position: -600px 0; }

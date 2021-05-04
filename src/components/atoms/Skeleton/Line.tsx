@@ -29,16 +29,14 @@ const StyledLineSkeleton = styled.span`
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
+  background: linear-gradient(to right, var(--color-white) 8%, var(--color-white-70) 18%, var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
-
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: placeHolderShimmer;
-  background: linear-gradient(to right, var(--color-white) 8%, var(--color-white-70) 18%, var(--color-white) 33%);
-  background-size: 1200px 104px;
 
   @keyframes placeHolderShimmer {
     0%{ background-position: -600px 0; }

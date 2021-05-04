@@ -30,6 +30,6 @@ export const WordSkeleton: React.FC<WordSkeletonProps> = ({
 // S T Y L E S
 const StyledLineSkeleton = styled(LineSkeleton)`
   position: absolute;
-  min-width: 12px;
   top: 0;
+  min-width: 12px;
 `

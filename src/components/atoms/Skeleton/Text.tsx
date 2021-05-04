@@ -53,8 +53,8 @@ export const TextSkeleton: React.FC<TextSkeletonProps> = ({
 
 // S T Y L E S
 const StyledTextSkeleton = styled.div`
-  width: 100%;
   margin-bottom: 25px;
+  width: 100%;
 
   p {
     margin-top: 0;
