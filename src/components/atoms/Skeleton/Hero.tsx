@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 // I N T E R F A C E S
-export interface CardSkeletonProps {
+export interface HeroSkeletonProps {
   className?: string
   style?: React.CSSProperties
 }
 
 // C O M P O N E N T
-export const HeroSkeleton: React.FC<CardSkeletonProps> = ({
+export const HeroSkeleton: React.FC<HeroSkeletonProps> = ({
   className = '',
   style
 }) => {

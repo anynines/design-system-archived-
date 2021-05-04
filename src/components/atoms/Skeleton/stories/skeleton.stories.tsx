@@ -7,7 +7,7 @@ import { Section } from '../../../introduction/layout/Section/Section'
 
 // Skeleton Atoms
 import { CardSkeleton, CardSkeletonProps } from '../Card'
-import { HeroSkeleton } from '../Hero'
+import { HeroSkeleton, HeroSkeletonProps } from '../Hero'
 import { LineSkeleton, LineSkeletonProps } from '../Line'
 import { TextSkeleton, TextSkeletonProps } from '../Text'
 import { TitleSkeleton, TitleSkeletonProps } from '../Title'
@@ -72,7 +72,7 @@ export const Card = (args: CardSkeletonProps) => (
   </Wrapper>
 )
 
-export const Hero = (args: CardSkeletonProps) => (
+export const Hero = (args: HeroSkeletonProps) => (
   <Wrapper>
     <HeroSkeleton
       {...args}
