@@ -3,31 +3,34 @@
 exports[`Skeletons component snapshot should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c0.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c0.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c0.width-lg {
@@ -53,35 +56,38 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
   >
       
     <span
-      class="c0 line-skeleton c1 width-lg"
+      class="c0 line-skeleton c1 width-lg type-title"
     />
   </h1>
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c0.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c0.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c0.width-lg {
@@ -107,7 +113,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
   >
       
     <span
-      class="c0 line-skeleton c1 width-lg"
+      class="c0 line-skeleton c1 width-lg type-title"
     />
   </h3>
   .c0 {
@@ -115,27 +121,21 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
   overflow: hidden;
   opacity: .25;
   margin-bottom: 20px;
-  background-color: var(--text-color);
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   width: 100%;
   height: 200px;
   border-radius: var(--radius);
-}
-
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 500px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
 <div
@@ -146,57 +146,54 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
   overflow: hidden;
   opacity: .25;
   margin-bottom: 20px;
-  background-color: var(--text-color);
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   width: 100%;
   height: 250px;
-}
-
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 500px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
 <div
     class="c0 line-skeleton "
   />
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c0.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c0.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c0.width-lg {
@@ -212,34 +209,37 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 }
 
 <span
-    class="c0 line-skeleton  width-lg"
+    class="c0 line-skeleton  width-lg type-text"
   />
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c0.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c0.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c0.width-lg {
@@ -255,34 +255,37 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 }
 
 <span
-    class="c0 line-skeleton  width-sm"
+    class="c0 line-skeleton  width-sm type-text"
   />
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c0.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c0.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c0.width-lg {
@@ -298,34 +301,37 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 }
 
 <span
-    class="c0 line-skeleton  width-md"
+    class="c0 line-skeleton  width-md type-text"
   />
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c1:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c1.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c1.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c1.width-lg {
@@ -342,6 +348,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 
 .c0 {
   margin-bottom: 25px;
+  width: 100%;
 }
 
 .c0 p {
@@ -363,7 +370,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-lg"
+        class="c1 line-skeleton c2 width-lg type-text"
       />
     </p>
     <p
@@ -371,7 +378,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-lg"
+        class="c1 line-skeleton c2 width-lg type-text"
       />
     </p>
     <p
@@ -379,36 +386,39 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-sm"
+        class="c1 line-skeleton c2 width-sm type-text"
       />
     </p>
   </div>
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c1:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c1.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c1.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c1.width-lg {
@@ -425,6 +435,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 
 .c0 {
   margin-bottom: 25px;
+  width: 100%;
 }
 
 .c0 p {
@@ -446,7 +457,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-sm"
+        class="c1 line-skeleton c2 width-sm type-text"
       />
     </p>
     <p
@@ -454,7 +465,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-sm"
+        class="c1 line-skeleton c2 width-sm type-text"
       />
     </p>
     <p
@@ -462,36 +473,39 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-sm"
+        class="c1 line-skeleton c2 width-sm type-text"
       />
     </p>
   </div>
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c1:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c1.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c1.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c1.width-lg {
@@ -508,6 +522,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 
 .c0 {
   margin-bottom: 25px;
+  width: 100%;
 }
 
 .c0 p {
@@ -529,7 +544,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-md"
+        class="c1 line-skeleton c2 width-md type-text"
       />
     </p>
     <p
@@ -537,7 +552,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-md"
+        class="c1 line-skeleton c2 width-md type-text"
       />
     </p>
     <p
@@ -545,36 +560,39 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-sm"
+        class="c1 line-skeleton c2 width-sm type-text"
       />
     </p>
   </div>
   .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c1:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c1.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c1.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c1.width-lg {
@@ -591,6 +609,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 
 .c0 {
   margin-bottom: 25px;
+  width: 100%;
 }
 
 .c0 p {
@@ -612,7 +631,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-lg"
+        class="c1 line-skeleton c2 width-lg type-text"
       />
     </p>
     <p
@@ -620,7 +639,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-lg"
+        class="c1 line-skeleton c2 width-lg type-text"
       />
     </p>
     <p
@@ -628,7 +647,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-lg"
+        class="c1 line-skeleton c2 width-lg type-text"
       />
     </p>
     <p
@@ -636,7 +655,7 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-lg"
+        class="c1 line-skeleton c2 width-lg type-text"
       />
     </p>
     <p
@@ -644,36 +663,39 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
     >
        
       <span
-        class="c1 line-skeleton c2 width-sm"
+        class="c1 line-skeleton c2 width-sm type-text"
       />
     </p>
   </div>
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background-color: var(--text-color);
-  height: 100%;
+  background: linear-gradient(to right,var(--color-white) 8%,var(--color-white-70) 18%,var(--color-white) 33%);
+  background-size: 1200px 104px;
   border-radius: var(--radius);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
 }
 
-.c0:before {
-  position: absolute;
-  top: 0;
-  left: -150px;
-  opacity: .75;
-  background-image: linear-gradient( 0deg, rgba(230,230,230,0), var(--box-bg-color), rgba(230,230,230,0) );
-  width: 200px;
-  height: 50px;
-  color: transparent;
-  content: 'lorem ipsum';
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-animation: shine 1.5s ease infinite;
-  animation: shine 1.5s ease infinite;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.c0.type-text {
+  min-height: var(--body-line-height);
+}
+
+.c0.type-title {
+  min-height: var(--heading-line-height);
 }
 
 .c0.width-lg {
@@ -691,15 +713,16 @@ exports[`Skeletons component snapshot should match snapshot 1`] = `
 .c1 {
   position: absolute;
   top: 0;
+  min-width: 12px;
 }
 
 <span
     class=""
-    style="position: relative;"
+    style="display: block; position: relative; margin-bottom: 5px;"
   >
       
     <span
-      class="c0 line-skeleton c1 width-lg"
+      class="c0 line-skeleton c1 width-lg type-text"
     />
   </span>
 </DocumentFragment>

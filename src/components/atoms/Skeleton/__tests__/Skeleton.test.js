@@ -2,12 +2,12 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import 'jest-styled-components'
 
-import TitleSkeleton from '../Title'
-import CardSkeleton from '../Card'
-import HeroSkeleton from '../Hero'
-import LineSkeleton from '../Line'
-import TextSkeleton from '../Text'
-import WordSkeleton from '../Word'
+import { TitleSkeleton } from '../Title'
+import { CardSkeleton } from '../Card'
+import { HeroSkeleton } from '../Hero'
+import { LineSkeleton } from '../Line'
+import { TextSkeleton } from '../Text'
+import { WordSkeleton } from '../Word'
 
 const Skeletons = (
   <>
