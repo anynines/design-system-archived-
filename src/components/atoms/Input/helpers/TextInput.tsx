@@ -63,6 +63,7 @@ export const TextInput: TextInput = ({
   const [isFocus, setIsFocus] = React.useState(autoFocus)
   const [passwordShown, setPasswordShown] = React.useState(false)
   const [localValue, setLocalValue] = React.useState<string>(value || '')
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
   const getValueFromHookForm = (): string => {
     if (register) return watch(name) || ''
@@ -71,8 +72,23 @@ export const TextInput: TextInput = ({
 
   const formValue = getValueFromHookForm()
 
+  const focusInput = (): void => {
+    let current: HTMLInputElement | null = null
+    if (inputRef.current) current = inputRef.current
+    if (current) {
+      current.focus()
+
+      // clear the value and set it back to move cursor at the end
+      const inputValue = localValue
+      setLocalValue('')
+      setTimeout(() => {
+        setLocalValue(inputValue)
+      }, 0)
+    }
+  }
   const togglePasswordVisiblity = (): void => {
     setPasswordShown(!passwordShown)
+    focusInput()
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -143,7 +159,7 @@ export const TextInput: TextInput = ({
           name={name}
           type={type === 'password' ? passwordShown ? 'text' : 'password' : type}
           id={name}
-          ref={register ? register({ required: true, pattern }) as unknown as undefined : undefined}
+          ref={register ? register({ required: true, pattern }) as unknown as undefined : inputRef}
           onFocus={(): void => { setIsFocus(true) }}
           onBlur={(): void => { setIsFocus(false) }}
           className={`input--${type} ${className}`}
