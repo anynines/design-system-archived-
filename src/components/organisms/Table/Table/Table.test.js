@@ -153,14 +153,5 @@ describe('Basic Table', () => {
         })
       })
     })
-
-    // // Loop through each row and check the content
-    // rows.forEach((tr, rowIndex) => {
-    //   const cells = tr.find('td')
-    //   expect(cells).toHaveLength(cols.length)
-    //   expect(cells.at(0).text()).toEqual(data[rowIndex].id)
-    //   expect(cells.at(1).text()).toEqual(data[rowIndex].name)
-    //   expect(cells.at(2).text()).toEqual(data[rowIndex].email)
-    // })
   })
 })

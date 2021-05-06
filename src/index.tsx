@@ -54,6 +54,8 @@ export * from './components/molecules/UserDropdown/UserDropdown'
 export * from './components/molecules/Menu/Menu'
 export * from './components/molecules/MenuItem/MenuItem'
 export * from './components/molecules/SpecialCategories/SpecialCategories'
+export * from './components/molecules/Card/Card'
+export * from './components/molecules/Card/CardGrid'
 
 // O R G A N I S M S
 export * from './components/organisms/Form/Form'
