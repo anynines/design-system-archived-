@@ -5,8 +5,6 @@ import { LineSkeleton, LineSkeletonProps } from './Line'
 // I N T E R F A C E S
 export interface TitleSkeletonProps extends LineSkeletonProps {
   title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-  className?: string
-  style?: React.CSSProperties
 }
 
 // C O M P O N E N T

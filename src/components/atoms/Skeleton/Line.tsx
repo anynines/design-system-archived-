@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { DefaultComponentProps } from '@types'
+
 // I N T E R F A C E S
 export type LineWidth = 'sm' | 'md' | 'lg'
 export type LineType = 'text' | 'title'
-export interface LineSkeletonProps {
+export interface LineSkeletonProps extends DefaultComponentProps {
   width?: LineWidth
-  className?: string
-  style?: React.CSSProperties
   type?: LineType
 }
 
