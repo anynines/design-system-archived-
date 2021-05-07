@@ -8,10 +8,10 @@ export interface TableProps {
 
 // C O M P O N E N T
 export const Table: React.FC<TableProps> = (props) => {
-  const { children, className } = props
+  const { children, className, ...rest } = props
 
   return (
-    <StyledTable className={className}>
+    <StyledTable className={className} {...rest}>
       {children}
     </StyledTable>
   )
