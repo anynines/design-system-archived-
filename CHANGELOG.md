@@ -1,3 +1,56 @@
+### 0.7.0 -  2021-05-11
+* Update form stories
+* Fix issue with register fucntion in Select component
+* v0.5.3
+* v0.5.4
+* 🚑 Specify package's main file extension
+* v0.5.5
+* Fix props in Select component
+* 💄 Alert border-radius
+* 📸 Alert
+* 🚨 fix stylelint order
+* 📸 Alert
+* v0.5.6
+* 🩹 additional border-radius
+* v0.5.7
+* changes textarea styles
+* updates Changelog
+* fixes changlog version
+* v0.5.8
+* v0.5.9
+* Merge pull request #82 from anynines/feature/CHAP-1232-fix-hook-form-integration-on-select-component
+* Bump version to 0.5.8
+* v0.5.10
+* ✨ Add disabled prop to Button
+* 📦 generate yarn.lock
+* 📝 Update CHANGELOG
+* ♻️ Use disabled css selector
+* 📝 Add Disabled story
+* 🔀 Merge pull request #85 from feature/CHAP-1288_button-should-have-a-disabled-props
+* v0.6.0
+* 🔧 Add check:types command
+* 👷 Add GitHub Action test
+* 🔥 Travis config
+* 🔀 Merge pull request #86 from anynines/feature/CHAP-1289_use-GitHub-action-for-CI
+* Merge pull request #84 from anynines/feature/CHAP-1256-Text-Area-Style-Changes
+* v0.6.1
+* publishing 0.6.1 - changed TextArea styles
+* Update test cases for basic table components
+* Finish tests on Basic Table
+* WIP: add skeleton for atoms
+* Add: Skeleton Components to Atoms and add stories, adjust loading animation to display in background not as separate pseudo-element
+* Fix: intendation for Title and Word
+* Fix: Lint Issues
+* Update: Snapshot for Skeleton
+* Add: Skeleton to Index File
+* export card components
+* Merge pull request #87 from anynines/feature/CHAP-1296_write-test-cases-for-tables
+* Adjust: Props for Skeleton Atoms
+* Fix: Animation Story and Component
+* Merge pull request #88 from anynines/feature/CHAP-1166-skeleton
+* Merge pull request #89 from anynines/feature/CHAP-1298-clean_up
+* Update: Changelog
+
 ### 0.3.0 -  2020-12-22
 * add basic Label
 * add Label as atoms
