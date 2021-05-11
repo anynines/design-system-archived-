@@ -43,7 +43,7 @@
   },
   "typography": {
     "baseUnit": "1rem",
-    "headingLineHeight": "1.2",
-    "bodyLineHeight": "1.5"
+    "headingLineHeight": "1.8rem",
+    "bodyLineHeight": "1.2rem"
   }
 }
