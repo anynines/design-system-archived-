@@ -8,10 +8,10 @@ export interface TBodyProps {
 
 // C O M P O N E N T
 export const TBody: React.FC<TBodyProps> = (props) => {
-  const { children, className } = props
+  const { children, className, ...rest } = props
 
   return (
-    <StyledTBody className={className}>
+    <StyledTBody className={className} {...rest}>
       {children}
     </StyledTBody>
   )

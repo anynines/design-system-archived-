@@ -1,0 +1,14 @@
+{
+  "Fixed": [
+    {
+      "title": "👋 Get started/ Animation",
+      "description": "Fix missing include for animate-css in Animation Component."
+    }
+  ],
+  "Added": [
+    {
+      "title": "💧 Atoms / Skeleton",
+      "description": "Added Skeleton Components to Atoms."
+    }
+  ]
+}

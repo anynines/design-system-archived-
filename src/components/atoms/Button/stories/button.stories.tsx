@@ -117,6 +117,14 @@ export const Sizes = () => (
   </Wrapper>
 )
 
+export const Disabled = () => (
+  <Wrapper justify='space-around'>
+    <Button disabled>
+      Disabled Button
+    </Button>
+  </Wrapper>
+)
+
 export const Block = () => (
   <Wrapper>
     <Button width='block'>

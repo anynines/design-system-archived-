@@ -76,6 +76,7 @@ const AlertWrapper = styled.div<AlertStyledProps>`
   display: flex;
   flex-direction: row;
   z-index: var(--z-index);
+  overflow: hidden;
   width: var(--width);
   min-height: 4.5rem;
   border-radius: var(--radius);
@@ -89,8 +90,6 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     background-color: var(--bg-color);
     padding: var(--space-md);
     color: var(--color-white-fix);
-    border-bottom-left-radius: .5em;
-    border-top-left-radius: .5em;
     flex: 1;
     max-width: 4.5rem;
 
@@ -110,8 +109,6 @@ const AlertWrapper = styled.div<AlertStyledProps>`
     position: relative;
     background-color: var(--bg-color);
     padding: var(--space-sm) var(--space-md);
-    border-bottom-right-radius: .5em;
-    border-top-right-radius: .5em;
     flex: 3;
 
     h4,
