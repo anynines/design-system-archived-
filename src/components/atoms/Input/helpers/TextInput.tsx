@@ -112,14 +112,21 @@ export const TextInput: TextInput = ({
     else setLocalValue(value)
   }, [register, setValue, name, value])
 
-  React.useEffect(() => {
+  // eslint-disable-next-line consistent-return
+  React.useEffect((): (() => void) | void => {
     const button = document.querySelector('.show-password')
     const input: HTMLInputElement = document.querySelector(`#${name}`) as HTMLInputElement
+
     if (button) {
-      button.addEventListener('click', (): void => {
+      const focusInput = (): void => {
         if (input) input.focus()
-      })
+      }
+      button.addEventListener('click', focusInput)
+      return (): void => {
+        button.removeEventListener('click', focusInput)
+      }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const renderErrorMessage = (): JSX.Element | null => {
