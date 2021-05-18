@@ -95,8 +95,8 @@ const StyledProductCard = styled.div`
   .product-card--header {
     position: relative;
     margin: -20px -20px 15px;
-    background-position: center;
     background-color: var(--color-black-50);
+    background-position: center;
     height: 140px;
     background-size: cover;
 
