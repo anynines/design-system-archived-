@@ -1,9 +1,9 @@
 import React from 'react'
-import { IonReactRouter } from '@ionic/react-router'
+import { MemoryRouter } from 'react-router-dom'
 import { render } from '@testing-library/react'
 import 'jest-styled-components'
 
-import ProductSlider from '../ProductSlider'
+import { ProductSlider } from '../ProductSlider'
 
 const PRODUCTS = [
   {
@@ -41,7 +41,7 @@ const PRODUCTS = [
 describe('ProductSlider component', () => {
   describe('snapshot', () => {
     it('should match snapshot', () => {
-      const component = render(<IonReactRouter><ProductSlider products={PRODUCTS} /></IonReactRouter>)
+      const component = render(<MemoryRouter><ProductSlider products={PRODUCTS} /></MemoryRouter>)
       const { asFragment } = component
       expect(asFragment()).toMatchSnapshot()
     })

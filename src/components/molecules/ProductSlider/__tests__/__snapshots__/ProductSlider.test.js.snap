@@ -194,40 +194,60 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
 }
 
 .c2 {
-  overflow: hidden;
-  border: var(--border);
-  background: var(--box-bg-color);
-  padding: 15px;
   border-radius: var(--radius);
+  background-color: var(--color-dark);
+  min-width: 12.5rem;
+}
+
+.c2.text-center {
+  text-align: center;
 }
 
 .c4 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  background-color: var(--box-bg-color);
-  padding: 2px 6px;
-  font-size: 10px;
-  font-weight: var(--font-weight-bd);
-  border-radius: 5px;
-}
-
-.c4 i {
-  margin-left: -2px;
-}
-
-.c4 svg {
-  max-height: 11px;
+  z-index: 10;
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-rg);
+  border-radius: calc(var(--radius) / 2);
 }
 
 .c4.primary {
-  background: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-primary);
 }
 
-.c4.primary span {
-  color: var(--color-white);
+.c4.success {
+  background-color: var(--color-success);
+}
+
+.c4.notice {
+  background-color: var(--color-notice);
+}
+
+.c4.warning {
+  background-color: var(--color-warning);
+  color: var(--color-black);
+}
+
+.c4.error {
+  background-color: var(--color-error);
+}
+
+.c4.white {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.c4.ligth {
+  background-color: var(--color-ligth);
+}
+
+.c4.dark {
+  background-color: var(--color-dark);
+}
+
+.c4.black {
+  background-color: var(--color-black);
 }
 
 .c1 {
@@ -247,6 +267,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
   width: 200px;
   height: 100%;
 }
@@ -259,6 +280,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
 .c1 .product-card--header {
   position: relative;
   margin: -20px -20px 15px;
+  background-color: var(--color-black-50);
   background-position: center;
   height: 140px;
   background-size: cover;
@@ -281,6 +303,11 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  color: var(--color-white);
+}
+
+.c1 .product-card--content .primary {
+  margin-left: 0;
 }
 
 .c1 .product-card--buttons {
@@ -288,7 +315,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 15px -10px 0;
+  margin: 15px 0;
 }
 
 .c1 .product-card--buttons .btn {
@@ -324,7 +351,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
         href="/shop/product"
       >
         <div
-          class="c2 card "
+          class="c2 card  text-center"
         >
           <div
             class="product-card--header"
@@ -374,7 +401,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
               foobar
             </h4>
             <span
-              class="c4 label primary"
+              class="c4 label primary primary"
             >
               <i
                 class="c3 icon undefined sm"
@@ -489,7 +516,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
         href="/shop/product"
       >
         <div
-          class="c2 card "
+          class="c2 card  text-center"
         >
           <div
             class="product-card--header"
@@ -539,7 +566,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
               foobar
             </h4>
             <span
-              class="c4 label primary"
+              class="c4 label primary primary"
             >
               <i
                 class="c3 icon undefined sm"
@@ -654,7 +681,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
         href="/shop/product"
       >
         <div
-          class="c2 card "
+          class="c2 card  text-center"
         >
           <div
             class="product-card--header"
@@ -704,7 +731,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
               foobar
             </h4>
             <span
-              class="c4 label primary"
+              class="c4 label primary primary"
             >
               <i
                 class="c3 icon undefined sm"
