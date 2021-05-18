@@ -14,6 +14,9 @@ export interface ProductCardProps {
   description?: string
   id: string
   imageUrl: string
+  onAddToCartClick?: () => void
+  onWishlistClick?: () => void
+  productLink?: string
   points: number
   tags: string
   title: string
@@ -21,12 +24,15 @@ export interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   imageUrl,
+  onAddToCartClick,
+  onWishlistClick,
+  productLink = '/shop/product',
   points,
   title
 }) => {
   return (
     <StyledProductCard>
-      <NavLink to='/shop/product'>
+      <NavLink to={productLink}>
         <Card>
           <div
             className='product-card--header'
@@ -45,11 +51,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <Button
               size='sm'
               type='transparent'
+              onClick={(): void => { return (onWishlistClick && onWishlistClick()) }}
               iconOnly
             >
               <Icon icon='heart' />
             </Button>
-            <Button size='sm' type='primary' width='block'>
+            <Button
+              size='sm'
+              type='primary'
+              width='block'
+              onClick={(): void => { return (onAddToCartClick && onAddToCartClick()) }}
+            >
               <Icon icon='cart' />
               <>Add to cart</>
             </Button>

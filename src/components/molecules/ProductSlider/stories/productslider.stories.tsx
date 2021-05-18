@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { MemoryRouter } from 'react-router-dom'
 import Wrapper from '../../../_helpers/Wrapper'
 
@@ -21,6 +22,12 @@ export default {
     imageUrl: {
       control: { type: 'text' },
       defaultValue: ''
+    },
+    onAddToCartClick: {
+      control: { type: 'disabled' }
+    },
+    onWishlistClick: {
+      control: { type: 'disabled' }
     },
     points: {
       control: { type: 'number' },
@@ -105,7 +112,11 @@ export const Basic = (args: ProductCardProps) => {
   return (
     <MemoryRouter>
       <Wrapper>
-        <ProductCard {...args} />
+        <ProductCard
+          {...args}
+          onAddToCartClick={action('add-to-cart-button-clicked')}
+          onWishlistClick={action('wishlist-button-clicked')}
+        />
       </Wrapper>
     </MemoryRouter>
   )
