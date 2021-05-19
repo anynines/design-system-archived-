@@ -1,0 +1,844 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductSlider component snapshot should match snapshot 1`] = `
+<DocumentFragment>
+  .c3 {
+  --icon-size: 1rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.c3 svg {
+  width: 100%;
+  height: 100%;
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
+}
+
+.c3.xs {
+  width: calc(var(--icon-size) * .8);
+  height: calc(var(--icon-size) * .8);
+}
+
+.c3.xs svg {
+  max-width: calc(var(--icon-size) * .8);
+  max-height: calc(var(--icon-size) * .8);
+}
+
+.c3.md {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+}
+
+.c3.md svg {
+  max-width: calc(var(--icon-size) * 2);
+  max-height: calc(var(--icon-size) * 2);
+}
+
+.c3.lg {
+  width: calc(var(--icon-size) * 4);
+  height: calc(var(--icon-size) * 4);
+}
+
+.c3.lg svg {
+  max-width: calc(var(--icon-size) * 4);
+  max-height: calc(var(--icon-size) * 4);
+}
+
+.c3.xl {
+  width: calc(var(--icon-size) * 7);
+  height: calc(var(--icon-size) * 7);
+}
+
+.c3.xl svg {
+  max-width: calc(var(--icon-size) * 7);
+  max-height: calc(var(--icon-size) * 7);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  border: var(--border);
+  cursor: pointer;
+  padding: var(--space-md) var(--space-lg);
+  width: auto;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bd);
+  border-radius: var(--radius);
+  outline: none;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c5 i {
+  margin-right: var(--space-md);
+}
+
+.c5.icon-only {
+  padding: var(--space-lg);
+}
+
+.c5.icon-only i {
+  margin-right: 0;
+}
+
+.c5.block {
+  width: 100%;
+}
+
+.c5.xs {
+  font-size: var(--text-xxxs);
+}
+
+.c5.xs i {
+  --icon-size: .6rem;
+}
+
+.c5.sm {
+  font-size: var(--text-xxs);
+}
+
+.c5.sm i {
+  --icon-size: .75rem;
+}
+
+.c5.md {
+  font-size: var(--text-xs);
+}
+
+.c5.lg {
+  font-size: var(--text-md);
+}
+
+.c5.primary,
+.c5.submit {
+  background-color: var(--color-primary);
+  color: var(--color-white-fix);
+}
+
+.c5.primary,
+.c5.submit,
+.c5.dark,
+.c5.black {
+  color: var(--color-white);
+}
+
+.c5.transparent {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.c5.dark {
+  background-color: var(--color-dark);
+}
+
+.c5.black {
+  background-color: var(--color-black);
+}
+
+.c5.white,
+.c5.light {
+  color: var(--color-black);
+}
+
+.c5.white {
+  background-color: var(--color-white);
+}
+
+.c5.light {
+  background-color: var(--color-light);
+}
+
+.c5:disabled,
+.c5[disabled] {
+  opacity: .75;
+  background-color: var(--color-dark);
+  cursor: not-allowed;
+}
+
+.c5:disabled:hover,
+.c5[disabled]:hover,
+.c5:disabled:focus,
+.c5[disabled]:focus {
+  background-color: var(--color-dark);
+}
+
+.c5:hover,
+.c5:focus {
+  background-color: var(--color-primary-light);
+  color: var(--color-white-fix);
+  box-shadow: 0 0 6px var(--color-light-10);
+}
+
+.c2 {
+  border-radius: var(--radius);
+  background-color: var(--color-dark);
+  min-width: 12.5rem;
+}
+
+.c2.text-center {
+  text-align: center;
+}
+
+.c4 {
+  z-index: 10;
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-rg);
+  border-radius: calc(var(--radius) / 2);
+}
+
+.c4.primary {
+  background-color: var(--color-primary);
+}
+
+.c4.success {
+  background-color: var(--color-success);
+}
+
+.c4.notice {
+  background-color: var(--color-notice);
+}
+
+.c4.warning {
+  background-color: var(--color-warning);
+  color: var(--color-black);
+}
+
+.c4.error {
+  background-color: var(--color-error);
+}
+
+.c4.white {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.c4.ligth {
+  background-color: var(--color-ligth);
+}
+
+.c4.dark {
+  background-color: var(--color-dark);
+}
+
+.c4.black {
+  background-color: var(--color-black);
+}
+
+.c1 {
+  margin-right: 20px;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1 .card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  width: 200px;
+  height: 100%;
+}
+
+.c1 h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.c1 .product-card--header {
+  position: relative;
+  margin: -20px -20px 15px;
+  background-color: var(--color-black-50);
+  background-position: center;
+  height: 140px;
+  background-size: cover;
+}
+
+.c1 .product-card--header i {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--color-primary);
+  padding: 4px;
+  height: 20px;
+  max-height: auto;
+  color: var(--color-white);
+  border-radius: 4px;
+  max-width: auto;
+}
+
+.c1 .product-card--content {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: var(--color-white);
+}
+
+.c1 .product-card--content .primary {
+  margin-left: 0;
+}
+
+.c1 .product-card--buttons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px 0;
+}
+
+.c1 .product-card--buttons .btn {
+  margin: 0 10px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  margin-left: -20px;
+  background-color: var(--color-black-dark);
+  padding: 20px;
+  width: calc(100% + 40px);
+  overflow-x: auto;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <a
+        href="/shop/product"
+      >
+        <div
+          class="c2 card  text-center"
+        >
+          <div
+            class="product-card--header"
+            style="background-image: url(foobar);"
+          >
+            <i
+              class="c3 icon undefined sm"
+            >
+              <svg
+                height="195.92"
+                viewBox="0 0 156.9 195.92"
+                width="156.9"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="sale"
+                  transform="translate(-50.94)"
+                >
+                  <path
+                    d="M300.906,338.724c-1.658,0-3.316,1.507-3.316,6.557s1.658,6.557,3.316,6.557,3.316-1.507,3.316-6.557S302.564,338.724,300.906,338.724Z"
+                    data-name="Pfad 309"
+                    fill="currentColor"
+                    id="Pfad_309"
+                    transform="translate(-152.184 -208.995)"
+                  />
+                  <path
+                    d="M199.959,273.787c-1.658,0-3.316,1.507-3.316,6.557s1.658,6.557,3.316,6.557,3.316-1.507,3.316-6.557S201.617,273.787,199.959,273.787Z"
+                    data-name="Pfad 310"
+                    fill="currentColor"
+                    id="Pfad_310"
+                    transform="translate(-89.899 -168.928)"
+                  />
+                  <path
+                    d="M186.758,69.506c-16.611-18.347-26.483-34.5-31.84-44.815-5.8-11.176-7.7-18.106-7.717-18.162L145.474,0l-6.168,2.751A61.632,61.632,0,0,0,112,29.94c-4.793,9.587-5.752,20.26-5.712,27.526a8.861,8.861,0,0,1-15.127,6.306L79.669,52.283l-3.952,5.45c-.41.566-10.069,13.886-11.827,16.547a78.453,78.453,0,1,0,143.95,43.19C207.841,101.786,200.156,84.3,186.758,69.506Zm-38.036,81.476c-7.988,0-14.018-5.275-14.018-14.7,0-9.345,6.029-14.7,14.018-14.7s14.018,5.351,14.018,14.7C162.74,145.707,156.71,150.982,148.722,150.982Zm-7.687-53.509h12.736l-36.024,52.755H105.01ZM96.042,111.416c0-9.345,6.029-14.7,14.018-14.7s14.018,5.351,14.018,14.7c0,9.421-6.029,14.7-14.018,14.7S96.042,120.836,96.042,111.416Z"
+                    data-name="Pfad 311"
+                    fill="currentColor"
+                    id="Pfad_311"
+                  />
+                </g>
+              </svg>
+            </i>
+          </div>
+          <div
+            class="product-card--content"
+          >
+            <h4>
+              foobar
+            </h4>
+            <span
+              class="c4 label primary primary"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="18.966"
+                  viewBox="0 0 13.067 18.966"
+                  width="13.067"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    data-name="Gruppe 790"
+                    id="Gruppe_790"
+                    transform="translate(-1298.889 -30.967)"
+                  >
+                    <path
+                      d="M13767.77,1406.228a.633.633,0,0,1-.291,0l-3.68-1.575s-.129-.023-.15-.1.064-.2.064-.2l5.85-8.4s.088-.137.178-.137.181.137.181.137l3.015,4.535a.581.581,0,0,1,.172.384.761.761,0,0,1-.254.384l-4.83,4.806A.687.687,0,0,1,13767.77,1406.228Z"
+                      data-name="Pfad 1"
+                      fill="currentColor"
+                      id="Pfad_1"
+                      transform="translate(-12464.601 -1364.855)"
+                    />
+                    <path
+                      d="M13782.93,1415.691c-.086-.006-.185.1-.185.1l-4.587,4.49s-.1.08-.09.146.121.118.121.118l4.346,2.025s.076.063.139.048.111-.111.111-.111l2.652-3.657-2.348-3.035S13783.016,1415.7,13782.93,1415.691Z"
+                      data-name="Pfad 2"
+                      fill="currentColor"
+                      id="Pfad_2"
+                      transform="translate(-12473.481 -1378.44)"
+                    />
+                    <path
+                      d="M13764.095,1421.057a.094.094,0,0,1,.124,0l9.273,4.274s.109.036.126.1-.061.167-.061.167l-3.1,4.259s-.049.081-.1.081-.1-.081-.1-.081l-6.165-8.693a.077.077,0,0,1,0-.111Z"
+                      data-name="Pfad 3"
+                      fill="currentColor"
+                      id="Pfad_3"
+                      transform="translate(-12465.183 -1380.009)"
+                    />
+                  </g>
+                </svg>
+              </i>
+              <span>
+                42
+              </span>
+            </span>
+          </div>
+          <div
+            class="product-card--buttons"
+          >
+            <button
+              class="c5 btn 
+        transparent 
+        sm 
+        inline 
+        icon-only 
+        undefined
+      "
+              type="button"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="15.05"
+                  viewBox="0 0 16.916 15.05"
+                  width="16.916"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.574,1.473A4.549,4.549,0,0,0,12.191,0,4.256,4.256,0,0,0,9.533.917,5.438,5.438,0,0,0,8.458,2.04,5.435,5.435,0,0,0,7.383.917,4.255,4.255,0,0,0,4.726,0,4.549,4.549,0,0,0,1.342,1.473,5.288,5.288,0,0,0,0,5.084,6.3,6.3,0,0,0,1.678,9.205a35.775,35.775,0,0,0,4.2,3.942c.582.5,1.242,1.058,1.926,1.657a.993.993,0,0,0,1.308,0c.685-.6,1.345-1.161,1.927-1.658a35.758,35.758,0,0,0,4.2-3.942,6.3,6.3,0,0,0,1.678-4.121A5.287,5.287,0,0,0,15.574,1.473Zm0,0"
+                    fill="currentColor"
+                    id="hearttest"
+                  />
+                </svg>
+              </i>
+            </button>
+            <button
+              class="c5 btn 
+        primary 
+        sm 
+        block 
+        false 
+        undefined
+      "
+              type="button"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="15.701"
+                  viewBox="0 0 17.13 15.701"
+                  width="17.13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.981,24.463a.7.7,0,0,0-.555-.271H3.033l-.2-2.218a.7.7,0,0,0-.7-.641H.7a.7.7,0,1,0,0,1.407H1.49l.771,8.591c0,.01,0,.02,0,.03a.708.708,0,0,0,.01.079l.028.314,0,.018A2.708,2.708,0,0,0,3.312,33.59,2.132,2.132,0,1,0,7,34.176h3.851a2.133,2.133,0,1,0,2.006-1.407H5a1.307,1.307,0,0,1-1.2-.792l11.243-.661a.7.7,0,0,0,.641-.532l1.43-5.718A.7.7,0,0,0,16.981,24.463Z"
+                    fill="currentColor"
+                    id="buy"
+                    transform="translate(0 -21.334)"
+                  />
+                </svg>
+              </i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        href="/shop/product"
+      >
+        <div
+          class="c2 card  text-center"
+        >
+          <div
+            class="product-card--header"
+            style="background-image: url(foobar);"
+          >
+            <i
+              class="c3 icon undefined sm"
+            >
+              <svg
+                height="195.92"
+                viewBox="0 0 156.9 195.92"
+                width="156.9"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="sale"
+                  transform="translate(-50.94)"
+                >
+                  <path
+                    d="M300.906,338.724c-1.658,0-3.316,1.507-3.316,6.557s1.658,6.557,3.316,6.557,3.316-1.507,3.316-6.557S302.564,338.724,300.906,338.724Z"
+                    data-name="Pfad 309"
+                    fill="currentColor"
+                    id="Pfad_309"
+                    transform="translate(-152.184 -208.995)"
+                  />
+                  <path
+                    d="M199.959,273.787c-1.658,0-3.316,1.507-3.316,6.557s1.658,6.557,3.316,6.557,3.316-1.507,3.316-6.557S201.617,273.787,199.959,273.787Z"
+                    data-name="Pfad 310"
+                    fill="currentColor"
+                    id="Pfad_310"
+                    transform="translate(-89.899 -168.928)"
+                  />
+                  <path
+                    d="M186.758,69.506c-16.611-18.347-26.483-34.5-31.84-44.815-5.8-11.176-7.7-18.106-7.717-18.162L145.474,0l-6.168,2.751A61.632,61.632,0,0,0,112,29.94c-4.793,9.587-5.752,20.26-5.712,27.526a8.861,8.861,0,0,1-15.127,6.306L79.669,52.283l-3.952,5.45c-.41.566-10.069,13.886-11.827,16.547a78.453,78.453,0,1,0,143.95,43.19C207.841,101.786,200.156,84.3,186.758,69.506Zm-38.036,81.476c-7.988,0-14.018-5.275-14.018-14.7,0-9.345,6.029-14.7,14.018-14.7s14.018,5.351,14.018,14.7C162.74,145.707,156.71,150.982,148.722,150.982Zm-7.687-53.509h12.736l-36.024,52.755H105.01ZM96.042,111.416c0-9.345,6.029-14.7,14.018-14.7s14.018,5.351,14.018,14.7c0,9.421-6.029,14.7-14.018,14.7S96.042,120.836,96.042,111.416Z"
+                    data-name="Pfad 311"
+                    fill="currentColor"
+                    id="Pfad_311"
+                  />
+                </g>
+              </svg>
+            </i>
+          </div>
+          <div
+            class="product-card--content"
+          >
+            <h4>
+              foobar
+            </h4>
+            <span
+              class="c4 label primary primary"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="18.966"
+                  viewBox="0 0 13.067 18.966"
+                  width="13.067"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    data-name="Gruppe 790"
+                    id="Gruppe_790"
+                    transform="translate(-1298.889 -30.967)"
+                  >
+                    <path
+                      d="M13767.77,1406.228a.633.633,0,0,1-.291,0l-3.68-1.575s-.129-.023-.15-.1.064-.2.064-.2l5.85-8.4s.088-.137.178-.137.181.137.181.137l3.015,4.535a.581.581,0,0,1,.172.384.761.761,0,0,1-.254.384l-4.83,4.806A.687.687,0,0,1,13767.77,1406.228Z"
+                      data-name="Pfad 1"
+                      fill="currentColor"
+                      id="Pfad_1"
+                      transform="translate(-12464.601 -1364.855)"
+                    />
+                    <path
+                      d="M13782.93,1415.691c-.086-.006-.185.1-.185.1l-4.587,4.49s-.1.08-.09.146.121.118.121.118l4.346,2.025s.076.063.139.048.111-.111.111-.111l2.652-3.657-2.348-3.035S13783.016,1415.7,13782.93,1415.691Z"
+                      data-name="Pfad 2"
+                      fill="currentColor"
+                      id="Pfad_2"
+                      transform="translate(-12473.481 -1378.44)"
+                    />
+                    <path
+                      d="M13764.095,1421.057a.094.094,0,0,1,.124,0l9.273,4.274s.109.036.126.1-.061.167-.061.167l-3.1,4.259s-.049.081-.1.081-.1-.081-.1-.081l-6.165-8.693a.077.077,0,0,1,0-.111Z"
+                      data-name="Pfad 3"
+                      fill="currentColor"
+                      id="Pfad_3"
+                      transform="translate(-12465.183 -1380.009)"
+                    />
+                  </g>
+                </svg>
+              </i>
+              <span>
+                42
+              </span>
+            </span>
+          </div>
+          <div
+            class="product-card--buttons"
+          >
+            <button
+              class="c5 btn 
+        transparent 
+        sm 
+        inline 
+        icon-only 
+        undefined
+      "
+              type="button"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="15.05"
+                  viewBox="0 0 16.916 15.05"
+                  width="16.916"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.574,1.473A4.549,4.549,0,0,0,12.191,0,4.256,4.256,0,0,0,9.533.917,5.438,5.438,0,0,0,8.458,2.04,5.435,5.435,0,0,0,7.383.917,4.255,4.255,0,0,0,4.726,0,4.549,4.549,0,0,0,1.342,1.473,5.288,5.288,0,0,0,0,5.084,6.3,6.3,0,0,0,1.678,9.205a35.775,35.775,0,0,0,4.2,3.942c.582.5,1.242,1.058,1.926,1.657a.993.993,0,0,0,1.308,0c.685-.6,1.345-1.161,1.927-1.658a35.758,35.758,0,0,0,4.2-3.942,6.3,6.3,0,0,0,1.678-4.121A5.287,5.287,0,0,0,15.574,1.473Zm0,0"
+                    fill="currentColor"
+                    id="hearttest"
+                  />
+                </svg>
+              </i>
+            </button>
+            <button
+              class="c5 btn 
+        primary 
+        sm 
+        block 
+        false 
+        undefined
+      "
+              type="button"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="15.701"
+                  viewBox="0 0 17.13 15.701"
+                  width="17.13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.981,24.463a.7.7,0,0,0-.555-.271H3.033l-.2-2.218a.7.7,0,0,0-.7-.641H.7a.7.7,0,1,0,0,1.407H1.49l.771,8.591c0,.01,0,.02,0,.03a.708.708,0,0,0,.01.079l.028.314,0,.018A2.708,2.708,0,0,0,3.312,33.59,2.132,2.132,0,1,0,7,34.176h3.851a2.133,2.133,0,1,0,2.006-1.407H5a1.307,1.307,0,0,1-1.2-.792l11.243-.661a.7.7,0,0,0,.641-.532l1.43-5.718A.7.7,0,0,0,16.981,24.463Z"
+                    fill="currentColor"
+                    id="buy"
+                    transform="translate(0 -21.334)"
+                  />
+                </svg>
+              </i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        href="/shop/product"
+      >
+        <div
+          class="c2 card  text-center"
+        >
+          <div
+            class="product-card--header"
+            style="background-image: url(foobar);"
+          >
+            <i
+              class="c3 icon undefined sm"
+            >
+              <svg
+                height="195.92"
+                viewBox="0 0 156.9 195.92"
+                width="156.9"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="sale"
+                  transform="translate(-50.94)"
+                >
+                  <path
+                    d="M300.906,338.724c-1.658,0-3.316,1.507-3.316,6.557s1.658,6.557,3.316,6.557,3.316-1.507,3.316-6.557S302.564,338.724,300.906,338.724Z"
+                    data-name="Pfad 309"
+                    fill="currentColor"
+                    id="Pfad_309"
+                    transform="translate(-152.184 -208.995)"
+                  />
+                  <path
+                    d="M199.959,273.787c-1.658,0-3.316,1.507-3.316,6.557s1.658,6.557,3.316,6.557,3.316-1.507,3.316-6.557S201.617,273.787,199.959,273.787Z"
+                    data-name="Pfad 310"
+                    fill="currentColor"
+                    id="Pfad_310"
+                    transform="translate(-89.899 -168.928)"
+                  />
+                  <path
+                    d="M186.758,69.506c-16.611-18.347-26.483-34.5-31.84-44.815-5.8-11.176-7.7-18.106-7.717-18.162L145.474,0l-6.168,2.751A61.632,61.632,0,0,0,112,29.94c-4.793,9.587-5.752,20.26-5.712,27.526a8.861,8.861,0,0,1-15.127,6.306L79.669,52.283l-3.952,5.45c-.41.566-10.069,13.886-11.827,16.547a78.453,78.453,0,1,0,143.95,43.19C207.841,101.786,200.156,84.3,186.758,69.506Zm-38.036,81.476c-7.988,0-14.018-5.275-14.018-14.7,0-9.345,6.029-14.7,14.018-14.7s14.018,5.351,14.018,14.7C162.74,145.707,156.71,150.982,148.722,150.982Zm-7.687-53.509h12.736l-36.024,52.755H105.01ZM96.042,111.416c0-9.345,6.029-14.7,14.018-14.7s14.018,5.351,14.018,14.7c0,9.421-6.029,14.7-14.018,14.7S96.042,120.836,96.042,111.416Z"
+                    data-name="Pfad 311"
+                    fill="currentColor"
+                    id="Pfad_311"
+                  />
+                </g>
+              </svg>
+            </i>
+          </div>
+          <div
+            class="product-card--content"
+          >
+            <h4>
+              foobar
+            </h4>
+            <span
+              class="c4 label primary primary"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="18.966"
+                  viewBox="0 0 13.067 18.966"
+                  width="13.067"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    data-name="Gruppe 790"
+                    id="Gruppe_790"
+                    transform="translate(-1298.889 -30.967)"
+                  >
+                    <path
+                      d="M13767.77,1406.228a.633.633,0,0,1-.291,0l-3.68-1.575s-.129-.023-.15-.1.064-.2.064-.2l5.85-8.4s.088-.137.178-.137.181.137.181.137l3.015,4.535a.581.581,0,0,1,.172.384.761.761,0,0,1-.254.384l-4.83,4.806A.687.687,0,0,1,13767.77,1406.228Z"
+                      data-name="Pfad 1"
+                      fill="currentColor"
+                      id="Pfad_1"
+                      transform="translate(-12464.601 -1364.855)"
+                    />
+                    <path
+                      d="M13782.93,1415.691c-.086-.006-.185.1-.185.1l-4.587,4.49s-.1.08-.09.146.121.118.121.118l4.346,2.025s.076.063.139.048.111-.111.111-.111l2.652-3.657-2.348-3.035S13783.016,1415.7,13782.93,1415.691Z"
+                      data-name="Pfad 2"
+                      fill="currentColor"
+                      id="Pfad_2"
+                      transform="translate(-12473.481 -1378.44)"
+                    />
+                    <path
+                      d="M13764.095,1421.057a.094.094,0,0,1,.124,0l9.273,4.274s.109.036.126.1-.061.167-.061.167l-3.1,4.259s-.049.081-.1.081-.1-.081-.1-.081l-6.165-8.693a.077.077,0,0,1,0-.111Z"
+                      data-name="Pfad 3"
+                      fill="currentColor"
+                      id="Pfad_3"
+                      transform="translate(-12465.183 -1380.009)"
+                    />
+                  </g>
+                </svg>
+              </i>
+              <span>
+                42
+              </span>
+            </span>
+          </div>
+          <div
+            class="product-card--buttons"
+          >
+            <button
+              class="c5 btn 
+        transparent 
+        sm 
+        inline 
+        icon-only 
+        undefined
+      "
+              type="button"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="15.05"
+                  viewBox="0 0 16.916 15.05"
+                  width="16.916"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.574,1.473A4.549,4.549,0,0,0,12.191,0,4.256,4.256,0,0,0,9.533.917,5.438,5.438,0,0,0,8.458,2.04,5.435,5.435,0,0,0,7.383.917,4.255,4.255,0,0,0,4.726,0,4.549,4.549,0,0,0,1.342,1.473,5.288,5.288,0,0,0,0,5.084,6.3,6.3,0,0,0,1.678,9.205a35.775,35.775,0,0,0,4.2,3.942c.582.5,1.242,1.058,1.926,1.657a.993.993,0,0,0,1.308,0c.685-.6,1.345-1.161,1.927-1.658a35.758,35.758,0,0,0,4.2-3.942,6.3,6.3,0,0,0,1.678-4.121A5.287,5.287,0,0,0,15.574,1.473Zm0,0"
+                    fill="currentColor"
+                    id="hearttest"
+                  />
+                </svg>
+              </i>
+            </button>
+            <button
+              class="c5 btn 
+        primary 
+        sm 
+        block 
+        false 
+        undefined
+      "
+              type="button"
+            >
+              <i
+                class="c3 icon undefined sm"
+              >
+                <svg
+                  height="15.701"
+                  viewBox="0 0 17.13 15.701"
+                  width="17.13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.981,24.463a.7.7,0,0,0-.555-.271H3.033l-.2-2.218a.7.7,0,0,0-.7-.641H.7a.7.7,0,1,0,0,1.407H1.49l.771,8.591c0,.01,0,.02,0,.03a.708.708,0,0,0,.01.079l.028.314,0,.018A2.708,2.708,0,0,0,3.312,33.59,2.132,2.132,0,1,0,7,34.176h3.851a2.133,2.133,0,1,0,2.006-1.407H5a1.307,1.307,0,0,1-1.2-.792l11.243-.661a.7.7,0,0,0,.641-.532l1.43-5.718A.7.7,0,0,0,16.981,24.463Z"
+                    fill="currentColor"
+                    id="buy"
+                    transform="translate(0 -21.334)"
+                  />
+                </svg>
+              </i>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
