@@ -503,7 +503,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
                   />
                 </svg>
               </i>
-              Add to cart
+              Add to Cart
             </button>
           </div>
         </div>
@@ -668,7 +668,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
                   />
                 </svg>
               </i>
-              Add to cart
+              Add to Cart
             </button>
           </div>
         </div>
@@ -833,7 +833,7 @@ exports[`ProductSlider component snapshot should match snapshot 1`] = `
                   />
                 </svg>
               </i>
-              Add to cart
+              Add to Cart
             </button>
           </div>
         </div>
