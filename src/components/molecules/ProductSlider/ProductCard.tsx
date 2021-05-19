@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import { DefaultComponentProps } from '@types'
 
 // C O M P O N E N T S
 import { Button } from '../../atoms/Button/Button'
@@ -8,7 +9,8 @@ import { Card } from '../Card/Card'
 import { Icon } from '../../atoms/Icon/Icon'
 import { Label } from '../../atoms/Label/Label'
 
-export interface ProductCardProps {
+export interface ProductCardProps extends DefaultComponentProps {
+  addToCartWording?: string
   category?: string
   deliveryDays?: number
   description?: string
@@ -23,15 +25,18 @@ export interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
+  addToCartWording = 'Add to Cart',
+  className,
   imageUrl,
   onAddToCartClick,
   onWishlistClick,
   productLink = '/shop/product',
   points,
+  style,
   title
 }) => {
   return (
-    <StyledProductCard>
+    <StyledProductCard className={className} style={style}>
       <NavLink to={productLink}>
         <Card>
           <div
@@ -63,7 +68,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               onClick={(): void => { return (onAddToCartClick && onAddToCartClick()) }}
             >
               <Icon icon='cart' />
-              <>Add to cart</>
+              <>{addToCartWording}</>
             </Button>
           </div>
         </Card>
