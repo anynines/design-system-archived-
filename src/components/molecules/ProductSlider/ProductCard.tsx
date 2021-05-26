@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { DefaultComponentProps } from '@types'
+import { formatPoints } from '../../../helpers'
 
 // C O M P O N E N T S
 import { Button } from '../../atoms/Button/Button'
@@ -49,7 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <h4>{title}</h4>
             <Label className='primary'>
               <Icon icon='points' />
-              <span>{points}</span>
+              <span>{formatPoints(points)}</span>
             </Label>
           </div>
           <div className='product-card--buttons'>
@@ -125,6 +126,7 @@ const StyledProductCard = styled.div`
 
     .primary {
       margin-left: 0;
+      font-size: var(--text-sm);
     }
   }
 

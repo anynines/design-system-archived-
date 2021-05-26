@@ -125,7 +125,7 @@ export const Basic = (args: ProductCardProps) => {
 export const Slider = (args: ProductSliderProps) => {
   return (
     <MemoryRouter>
-      <Wrapper>
+      <Wrapper style={{ maxWidth: '58rem' }}>
         <ProductSlider products={sampleproducts} />
       </Wrapper>
     </MemoryRouter>
