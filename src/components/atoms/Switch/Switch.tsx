@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
+import { FieldError, DeepMap, RegisterOptions } from 'react-hook-form'
 
 import { DefaultComponentProps } from '@types'
 
@@ -8,12 +8,12 @@ import { DefaultComponentProps } from '@types'
 export interface SwitchProps extends DefaultComponentProps {
   border?: boolean
   checked?: boolean
-  errors?: NestDataObject<Record<string, string>, FieldError>
+  errors?: DeepMap<Record<string, string>, FieldError>
   label?: string
   labelPosition?: LabelPositionType
   name: string
   onChange?: (value: boolean) => void
-  register?: (validationRules: ValidationOptions) => void
+  register?: (validationRules: RegisterOptions) => void
   required?: boolean
   setValue?: any // eslint-disable-line
   type?: SwitchType

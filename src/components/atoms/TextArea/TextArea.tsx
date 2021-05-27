@@ -1,11 +1,11 @@
 import React from 'react'
-import { ValidationOptions } from 'react-hook-form'
+import { RegisterOptions } from 'react-hook-form'
 import styled from 'styled-components'
 
 export interface TextAreaProps {
   name: string
   placeholder: string
-  register?: (validationRules: ValidationOptions) => void
+  register?: (validationRules: RegisterOptions) => void
   setValue?: any // eslint-disable-line
   watch?: any //eslint-disable-line
   style?: React.CSSProperties

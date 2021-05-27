@@ -35,11 +35,12 @@ export const Form: React.FC<FormProps> = ({
   const {
     register,
     handleSubmit,
-    errors,
+    formState,
     watch,
     getValues,
     setValue
   } = useForm()
+  const { errors } = formState
   const formProps = { register, watch, getValues, errors, setValue }
 
   const onSubmit = (data: Record<string, string> | undefined): void => {

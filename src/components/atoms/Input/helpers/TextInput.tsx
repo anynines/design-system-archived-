@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { OnSubmit, FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
+import { FieldError, DeepMap, RegisterOptions, UseFormHandleSubmit, FieldValue } from 'react-hook-form'
 
 import { DefaultComponentProps } from '@types'
 
@@ -17,16 +17,17 @@ export interface TextInputProps extends DefaultComponentProps {
   color?: string
   disabled?: boolean
   errorMessage?: string
-  errors?: NestDataObject<Record<string, string>, FieldError>
+  errors?: DeepMap<Record<string, string>, FieldError>
   getValues?: any // eslint-disable-line
-  handleSubmit?: (callback: OnSubmit<any>) => (e?: React.BaseSyntheticEvent) => Promise<void> // eslint-disable-line
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  handleSubmit?: UseFormHandleSubmit<FieldValue<{[x: string]: any}>>
   icon?: IconName
   label: string
   name: string
   onChange?: (newValue: string) => void
   onFocusChange?: (isFocus: boolean) => void
   pattern?: RegExp
-  register?: (validationRules: ValidationOptions) => void
+  register?: (validationRules: RegisterOptions) => void
   setValue?: any // eslint-disable-line
   type?: InputType
   value?: string
