@@ -31,7 +31,7 @@ export const Welcome = () => (
       <h2 style={{ marginBottom: 30 }}>Changelog</h2>
       <ChangeLog
         version='0.8.0'
-        date='19. Mai 2021'
+        date='28. Mai 2021'
         isPublished={false}
         changelog={v0_8_0}
       />
