@@ -1,6 +1,12 @@
-import { toLowerCasedHyphenSeparatedString, replaceUmlautsFromString, rgbaToRgb, getStylePropVal, getCSSVarVal } from './index'
+import { formatPoints, toLowerCasedHyphenSeparatedString, replaceUmlautsFromString, rgbaToRgb, getStylePropVal, getCSSVarVal } from './index'
 
 describe('Helper functions', () => {
+  describe('Numbers', () => {
+    it('should format a number with digit grouping', () => {
+      expect(formatPoints(10200)).toBe('10.200')
+    })
+  })
+
   describe('Strings', () => {
     it('should generate lower cased string seperated by hyphens', () => {
       expect(toLowerCasedHyphenSeparatedString('String to be tested')).toBe('string-to-be-tested')

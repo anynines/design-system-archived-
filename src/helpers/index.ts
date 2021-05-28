@@ -21,6 +21,13 @@ export const replaceUmlautsFromString = (str: string): string => {
     .replace(/ß/g, 'ss')
 }
 
+export const formatPoints = (num: number): string => {
+  return num
+    .toString()
+    .replace('.', ',')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+}
+
 export const rgbaToRgb = (rgba: string): string => {
   return rgba.replace('a', '').replace(/,[.0-9]{1,2}\)$/, ')').replace(/,/g, ', ')
 }
