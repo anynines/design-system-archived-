@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { FieldError, DeepMap, RegisterOptions, UseFormHandleSubmit, FieldValue } from 'react-hook-form'
 
@@ -20,7 +20,7 @@ export interface TextInputProps extends DefaultComponentProps {
   errors?: DeepMap<Record<string, string>, FieldError>
   getValues?: any // eslint-disable-line
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  handleSubmit?: UseFormHandleSubmit<FieldValue<{[x: string]: any}>>
+  handleSubmit?: UseFormHandleSubmit<FieldValue<{ [x: string]: any }>>
   icon?: IconName
   label: string
   name: string
@@ -64,6 +64,8 @@ export const TextInput: TextInput = ({
   const [isFocus, setIsFocus] = React.useState(autoFocus)
   const [passwordShown, setPasswordShown] = React.useState(false)
   const [localValue, setLocalValue] = React.useState<string>(value || '')
+  const inputRef = useRef(null)
+  const { ref, ...rest } = register ? register(name, { required: true, pattern }) : {}
 
   const getValueFromHookForm = (): string => {
     if (register) return watch(name) || ''
@@ -75,6 +77,7 @@ export const TextInput: TextInput = ({
   const togglePasswordVisiblity = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
     e.preventDefault()
     setPasswordShown(!passwordShown)
+    if (inputRef.current) inputRef.current.focus()
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -113,23 +116,6 @@ export const TextInput: TextInput = ({
     else setLocalValue(value)
   }, [register, setValue, name, value])
 
-  // eslint-disable-next-line consistent-return
-  React.useEffect((): (() => void) | void => {
-    const button = document.querySelector('.show-password')
-    const input: HTMLInputElement = document.querySelector(`#${name}`) as HTMLInputElement
-
-    if (button) {
-      const focusInput = (): void => {
-        if (input) input.focus()
-      }
-      button.addEventListener('click', focusInput)
-      return (): void => {
-        button.removeEventListener('click', focusInput)
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   const renderErrorMessage = (): JSX.Element | null => {
     if (errors[name] !== undefined) {
       return (
@@ -162,11 +148,16 @@ export const TextInput: TextInput = ({
           name={name}
           type={type === 'password' ? passwordShown ? 'text' : 'password' : type}
           id={name}
-          ref={register ? register({ required: true, pattern }) as unknown as undefined : undefined}
+          ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
+            if (ref) {
+              ref(e)
+              inputRef.current = e
+            }
+          }}
           onFocus={(): void => { setIsFocus(true) }}
           onBlur={(): void => { setIsFocus(false) }}
           className={`input--${type} ${className}`}
-          {...!register ? { onChange: handleChange, value: localValue } : {}}
+          {...!register ? { onChange: handleChange, value: localValue } : { ...rest }}
         />
         {name === 'password' && (
           <button
@@ -198,7 +189,7 @@ const StyledInputField = styled.div`
 // S T Y L E S
 const StyledInput = styled.div<StyledInputProps>`
   --border-radius: ${(props): string => { return (props.withPrepend ? '0 var(--radius) var(--radius) 0' : 'var(--radius)') }};
-  
+
   display: flex;
   position: relative;
   margin-bottom: var(--space-xxl);
@@ -210,7 +201,7 @@ const StyledInput = styled.div<StyledInputProps>`
   border-radius: var(--radius);
   transition: all 200ms ease-in-out;
   outline: none;
-  
+
   .input-label {
     position: absolute;
     top: .3rem;
@@ -224,7 +215,7 @@ const StyledInput = styled.div<StyledInputProps>`
     transform-origin: left;
     transition: all 200ms ease-in-out;
   }
-  
+
   input {
     position: relative;
     border: none;
@@ -341,7 +332,7 @@ const StyledInput = styled.div<StyledInputProps>`
 
   &:focus-within {
     border-color: var(--color-primary);
-    
+
     label {
       transform: scale(1);
       top: .3rem;

@@ -12,12 +12,19 @@ export interface TextAreaProps {
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({ name = '', placeholder = '', register, style = {} }) => {
+  const { ref, ...rest } = register ? register(name, { required: true }) : {}
   return (
     <StyledTextArea
-      ref={register ? register({ required: true }) as unknown as undefined : undefined}
+      ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
+        if (ref) {
+          ref(e)
+        }
+      }}
+      {...rest}
       name={name}
       placeholder={placeholder}
       style={style}
+
     />
   )
 }
