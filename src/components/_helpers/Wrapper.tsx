@@ -28,7 +28,8 @@ const Wrapper: React.FC<WrapperProps> = ({
   direction = 'row',
   flexWrap = 'nowrap',
   height = 'auto',
-  justify = 'center'
+  justify = 'center',
+  style
 }) => {
   return (
     <StyledWrapper
@@ -37,7 +38,8 @@ const Wrapper: React.FC<WrapperProps> = ({
         flexDirection: direction,
         alignItems: align,
         flexWrap,
-        justifyContent: justify
+        justifyContent: justify,
+        ...style
       }}
       className={`styled-wrapper ${bgColor} ${className}`}
     >

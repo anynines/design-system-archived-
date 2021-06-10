@@ -1,6 +1,6 @@
 {
   "name": "@anynines/design-system",
-  "version": "0.7.0",
+  "version": "0.7.3",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
     "animate.css": "^4.1.1",
     "array-move": "3.0.1",
     "lodash.merge": "^4.6.2",
-    "react": "^16.12.0",
+    "react": ">= 16.12.0",
     "react-color": "^2.18.1",
     "react-dom": "^16.6.3",
     "react-grid-system": "^6.3.0",
@@ -22,16 +22,16 @@
     "react-sortable-hoc": "1.11.0",
     "react-svg-loader": "^3.0.3",
     "react-syntax-highlighter": "^15.4.3",
-    "react-table": "7.5.0",
+    "react-table": "7.7.0",
     "react-tooltip": "4.2.10",
     "regenerator-runtime": "^0.13.7",
-    "styled-components": "^5.0.1"
+    "styled-components": ">= 5"
   },
   "scripts": {
     "start": "react-scripts start",
     "type-check": "tsc --noEmit",
     "build": "yarn rm:build && npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly && tsc-alias",
+    "build:types": "tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
     "build:js": "babel --config-file ./_.babelrc src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "yarn eslint src/ --ext .ts,.tsx",
@@ -113,7 +113,8 @@
     "ts-jest": "24.1.0",
     "ts-loader": "^7.0.2",
     "tsc-alias": "^1.2.6",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "typescript-transform-paths": "^2.2.4"
   },
   "author": "",
   "license": "ISC"
