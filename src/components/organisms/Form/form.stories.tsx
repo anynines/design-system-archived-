@@ -38,6 +38,16 @@ export const Basic = () => (
       <Input name='userEmail' type='email' label='Email' autoComplete='off' />
       <Input name='Text' type='text' label='I match 4 digits numbers' pattern={/^[0-9]{4}$/} errorMessage='Please enter a 4 digits number' />
       <Input type='color' name='lightColor' label='Light Color' value='#999999' />
+      <Input
+        value={'default password'}
+        name='password'
+        label='Password'
+        type='password'
+        icon='lock'
+        autoComplete='off'
+        autoFocus
+        iconColor='dark'
+      />
       <Select name='select' label='Select your option' values={['option1', 'option2', 'option3']} icon='bestseller' defaultValue='option2' />
       <Checkbox name='userTermsCheckbox' label='Please agree to our terms of use' required />
       <Switch name='switch' label='Switchable Option' />

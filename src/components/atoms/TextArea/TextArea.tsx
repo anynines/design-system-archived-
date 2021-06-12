@@ -1,23 +1,30 @@
 import React from 'react'
-import { ValidationOptions } from 'react-hook-form'
+import { RegisterOptions } from 'react-hook-form'
 import styled from 'styled-components'
 
 export interface TextAreaProps {
   name: string
   placeholder: string
-  register?: (validationRules: ValidationOptions) => void
+  register?: (validationRules: RegisterOptions) => void
   setValue?: any // eslint-disable-line
   watch?: any //eslint-disable-line
   style?: React.CSSProperties
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({ name = '', placeholder = '', register, style = {} }) => {
+  const { ref, ...rest } = register ? register(name, { required: true }) : {}
   return (
     <StyledTextArea
-      ref={register ? register({ required: true }) as unknown as undefined : undefined}
+      ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
+        if (ref) {
+          ref(e)
+        }
+      }}
+      {...rest}
       name={name}
       placeholder={placeholder}
       style={style}
+
     />
   )
 }

@@ -176,6 +176,7 @@ export const Password = (args: InputProps) => (
   <Wrapper bgColor='dark'>
     <Input
       {...args}
+      value={args.value ? typeof args.value === 'number' ? args.value.toString(): args.value : undefined}
       style={{ marginBottom: 0 }}
       name='password'
       label='Password'

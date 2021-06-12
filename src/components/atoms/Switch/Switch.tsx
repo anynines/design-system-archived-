@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
+import { FieldError, DeepMap, RegisterOptions } from 'react-hook-form'
 
 import { DefaultComponentProps } from '@types'
 
@@ -8,12 +8,12 @@ import { DefaultComponentProps } from '@types'
 export interface SwitchProps extends DefaultComponentProps {
   border?: boolean
   checked?: boolean
-  errors?: NestDataObject<Record<string, string>, FieldError>
+  errors?: DeepMap<Record<string, string>, FieldError>
   label?: string
   labelPosition?: LabelPositionType
   name: string
   onChange?: (value: boolean) => void
-  register?: (validationRules: ValidationOptions) => void
+  register?: (validationRules: RegisterOptions) => void
   required?: boolean
   setValue?: any // eslint-disable-line
   type?: SwitchType
@@ -47,6 +47,9 @@ export const Switch: React.FC<SwitchProps> = ({
 
   const [valueState, setValueState] = React.useState(getDefaultValue())
 
+  const inputRef = useRef(null)
+  const { ref, ...rest } = register ? register(name, { required }) : {}
+
   React.useEffect(() => {
     if (register) setValue(name, valueState)
     else if (onChange) onChange(valueState)
@@ -60,10 +63,16 @@ export const Switch: React.FC<SwitchProps> = ({
       <input
         type='checkbox'
         checked={valueState}
-        ref={register ? register({ required }) as unknown as undefined : undefined}
+        ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
+          if (ref) {
+            ref(e)
+            inputRef.current = e
+          }
+        }}
         id={name}
         name={name}
         className='switch-checkbox'
+        {...!register ? {} : { ...rest }}
       />
       <label
         className={`switch-background ${valueState && 'checked'} ${type} ${border && 'border'}`}

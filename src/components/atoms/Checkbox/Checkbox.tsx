@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
+import { FieldError, DeepMap, RegisterOptions } from 'react-hook-form'
 
 import { DefaultComponentProps } from '@types'
 
 // I N T E R F A C E
 export interface CheckboxProps extends DefaultComponentProps {
   checked?: boolean
-  errors?: NestDataObject<Record<string, string>, FieldError>
+  errors?: DeepMap<Record<string, string>, FieldError>
   label: string
   name: string
   onChange?: (value: boolean) => void
-  register?: (validationRules: ValidationOptions) => void
+  register?: (validationRules: RegisterOptions) => void
   required?: boolean
   setValue?: any // eslint-disable-line
   watch?: any // eslint-disable-line
@@ -31,12 +31,19 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   style,
   watch
 }) => {
+  const { ref, ...rest } = register ? register(name, { required }) : {}
+  const checkboxRef = React.useRef(null)
+
   const getDefaultValue = (): boolean => {
     if (register) return watch(name) || false
     return checked
   }
 
   const [valueState, setValueState] = React.useState(getDefaultValue())
+
+  const handleChange = (): void => {
+    if (!register) setValueState(!valueState)
+  }
 
   React.useEffect(() => {
     if (register) setValue(name, valueState)
@@ -50,11 +57,15 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     >
       <input
         type='checkbox'
-        checked={valueState}
-        ref={register ? register({ required }) as unknown as undefined : undefined}
+        ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
+          if (ref) {
+            ref(e)
+            checkboxRef.current = e
+          }
+        }}
         id={name}
         name={name}
-        onChange={(): void => { return setValueState(!valueState) }}
+        {...!register ? { onChange: handleChange, checked: valueState } : { ...rest }}
       />
       <label htmlFor={name}>
         {label}
