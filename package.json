@@ -40,7 +40,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "yarn rm:build && build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages",
-    "check:types": "yarn tsc --noEmit",
+    "check:types": "yarn tsc --noEmit src/**/*.tsx --esModuleInterop --resolveJsonModule --jsx react --skipLibCheck",
     "test": "jest --verbose --passWithNoTests",
     "test:watch": "jest --verbose --watch --passWithNoTests",
     "test:coverage": "jest --verbose --coverage --maxWorkers=4 --passWithNoTests",
