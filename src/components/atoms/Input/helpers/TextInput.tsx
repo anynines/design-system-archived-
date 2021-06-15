@@ -27,7 +27,7 @@ export interface TextInputProps extends DefaultComponentProps {
   onChange?: (newValue: string) => void
   onFocusChange?: (isFocus: boolean) => void
   pattern?: RegExp
-  register?: (validationRules: RegisterOptions) => void
+  register?: (name: string, validationRules: RegisterOptions) => void
   setValue?: any // eslint-disable-line
   type?: InputType
   value?: string
@@ -65,7 +65,7 @@ export const TextInput: TextInput = ({
   const [passwordShown, setPasswordShown] = React.useState(false)
   const [localValue, setLocalValue] = React.useState<string>(value || '')
   const inputRef = useRef(null)
-  const { ref, ...rest } = register ? register(name, { required: true, pattern }) : {}
+  const { ref = {}, ...rest } = register ? register(name, { required: true, pattern }) : {}
 
   const getValueFromHookForm = (): string => {
     if (register) return watch(name) || ''

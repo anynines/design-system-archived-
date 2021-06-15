@@ -19,7 +19,7 @@ export interface SelectProps extends DefaultComponentProps {
   label: string
   name: string
   onChange?: (value: string) => void
-  register?: (validationRules: RegisterOptions) => void
+  register?: (name: string, validationRules: RegisterOptions) => void
   setValue?: (key: string, value: string) => void
   values: (string | number)[]
 }
@@ -39,7 +39,7 @@ export const Select: React.FC<SelectProps> = ({
   const [valueState, setValueState] = React.useState(defaultValue)
   const [hoveredValueIndex, setHoveredValueIndex] = React.useState<number>(values.indexOf(defaultValue))
   const [isActive, setIsActive] = React.useState(false)
-  const { ref, ...rest } = register ? register(name, {}) : {}
+  const { ref = {}, ...rest } = register ? register(name, {}) : {}
   const selectRef = React.useRef<HTMLDivElement | null>(null)
   const selectWrapperRef = React.useRef<HTMLDivElement | null>(null)
 

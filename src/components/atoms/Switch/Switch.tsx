@@ -13,7 +13,7 @@ export interface SwitchProps extends DefaultComponentProps {
   labelPosition?: LabelPositionType
   name: string
   onChange?: (value: boolean) => void
-  register?: (validationRules: RegisterOptions) => void
+  register?: (name: string, validationRules: RegisterOptions) => void
   required?: boolean
   setValue?: any // eslint-disable-line
   type?: SwitchType
@@ -48,7 +48,7 @@ export const Switch: React.FC<SwitchProps> = ({
   const [valueState, setValueState] = React.useState(getDefaultValue())
 
   const inputRef = useRef(null)
-  const { ref, ...rest } = register ? register(name, { required }) : {}
+  const { ref = {}, ...rest } = register ? register(name, { required }) : {}
 
   React.useEffect(() => {
     if (register) setValue(name, valueState)

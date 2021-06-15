@@ -5,14 +5,14 @@ import styled from 'styled-components'
 export interface TextAreaProps {
   name: string
   placeholder: string
-  register?: (validationRules: RegisterOptions) => void
+  register?: (name: string, validationRules: RegisterOptions) => void
   setValue?: any // eslint-disable-line
   watch?: any //eslint-disable-line
   style?: React.CSSProperties
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({ name = '', placeholder = '', register, style = {} }) => {
-  const { ref, ...rest } = register ? register(name, { required: true }) : {}
+  const { ref = {}, ...rest } = register ? register(name, { required: true }) : {}
   return (
     <StyledTextArea
       ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
