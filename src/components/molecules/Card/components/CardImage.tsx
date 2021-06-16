@@ -6,6 +6,7 @@ import { DefaultComponentProps } from '@types'
 // A T O M S
 import { ComponentIcon, ComponentIconName } from '../../../introduction/ComponentOverview/ComponentIcon'
 import { Icon, IconName, IconSize } from '../../../atoms/Icon/Icon'
+import { Button } from '../../../atoms/Button/Button'
 
 // T Y P E S
 export type CardHeaderType = 'icon' | 'image' | 'component'
@@ -19,6 +20,10 @@ export interface CardImageProps extends DefaultComponentProps {
   imageMargin?: boolean
   linkUrl?: string
   type?: CardHeaderType
+  tag?: string
+  contentTypeIconStyle?: React.CSSProperties | undefined
+  contentTypeIcon?: IconName
+  tagStyle?: React.CSSProperties | undefined
 }
 
 export const CardImage: React.FC<CardImageProps> = (props) => {
@@ -31,7 +36,11 @@ export const CardImage: React.FC<CardImageProps> = (props) => {
     imageUrl,
     linkUrl,
     style,
-    type
+    type,
+    tag,
+    contentTypeIcon,
+    contentTypeIconStyle,
+    tagStyle
   } = props
 
   const renderInput = (): JSX.Element => {
@@ -47,7 +56,14 @@ export const CardImage: React.FC<CardImageProps> = (props) => {
           <div
             className={`card-image ${imageMargin && 'card-image--margin'}`}
             style={{ backgroundImage: `url(${imageUrl})` }}
-          />
+          >
+            {contentTypeIcon && <div className='content-type-icon' style={contentTypeIconStyle}><Icon icon={contentTypeIcon} size='sm' /></div>}
+            {tag && (
+              <Button className='tag-button' size='xs' style={tagStyle}>
+                {tag}
+              </Button>
+            )}
+          </div>
         )
       case 'component':
         return (
@@ -77,9 +93,24 @@ export const CardImage: React.FC<CardImageProps> = (props) => {
 const StyledCardImage = styled.div`
   .card-image {
     border-radius: var(--radius) var(--radius) 0 0;
+    position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    .content-type-icon {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      padding: var(--space-xs);
+      border-radius: var(--radius);
+    }
+
+    .tag-button {
+      position: absolute;
+      bottom: var(--space-lg);
+      left: var(--space-lg);
+    }
     
     &--margin {
       margin: var(--space-md) var(--space-md) 0 var(--space-md);

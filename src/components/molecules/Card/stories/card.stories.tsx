@@ -174,6 +174,7 @@ export const Grid = () => {
               type='image'
               imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
               linkUrl='https://youtube.com'
+
             />
           </Card>
           <Card
@@ -223,6 +224,10 @@ export const CustomTitles = () => {
             type='image'
             imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
+            tag='tag'
+            tagStyle={{ backgroundColor: 'var(--color-primary)' }}
+            contentTypeIconStyle={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-white-90)' }}
+            contentTypeIcon='camera'
           />
           <Card.Title>
             <h2>Card h2 title</h2>
