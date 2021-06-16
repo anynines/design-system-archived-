@@ -1,6 +1,6 @@
 {
   "name": "@anynines/design-system",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,7 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "type-check": "tsc --noEmit",
-    "build": "yarn rm:build && npm run build:types && npm run build:js",
+    "build": "yarn rm:build && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
     "build:js": "babel --config-file ./_.babelrc src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "lint": "yarn lint:js && yarn lint:css",
