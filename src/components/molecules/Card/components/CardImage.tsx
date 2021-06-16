@@ -104,6 +104,7 @@ const StyledCardImage = styled.div`
       right: var(--space-sm);
       padding: var(--space-xs);
       border-radius: var(--radius);
+      color: var(--color-white-90)
     }
 
     .tag-button {
