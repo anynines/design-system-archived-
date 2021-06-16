@@ -226,7 +226,7 @@ export const CustomTitles = () => {
             linkUrl='https://youtube.com'
             tag='tag'
             tagStyle={{ backgroundColor: 'var(--color-primary)' }}
-            contentTypeIconStyle={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-white-90)' }}
+            contentTypeIconStyle={{ backgroundColor: 'var(--color-primary)' }}
             contentTypeIcon='camera'
           />
           <Card.Title>
