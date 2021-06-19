@@ -11,7 +11,7 @@ export interface CheckboxProps extends DefaultComponentProps {
   label: string
   name: string
   onChange?: (value: boolean) => void
-  register?: (name: string, validationRules: RegisterOptions) => void
+  register?: (validationRules: RegisterOptions) => void
   required?: boolean
   setValue?: any // eslint-disable-line
   watch?: any // eslint-disable-line
@@ -31,9 +31,6 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   style,
   watch
 }) => {
-  const { ref = {}, ...rest } = register ? register(name, { required }) : {}
-  const checkboxRef = React.useRef(null)
-
   const getDefaultValue = (): boolean => {
     if (register) return watch(name) || false
     return checked
@@ -57,15 +54,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     >
       <input
         type='checkbox'
-        ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
-          if (ref) {
-            ref(e)
-            checkboxRef.current = e
-          }
-        }}
         id={name}
         name={name}
-        {...!register ? { onChange: handleChange, checked: valueState } : { ...rest }}
+        ref={register ? register({ required }) as unknown as undefined : undefined}
+        {...!register ? { onChange: handleChange, checked: valueState } : {}}
       />
       <label htmlFor={name}>
         {label}
