@@ -21,9 +21,9 @@ export interface CardImageProps extends DefaultComponentProps {
   linkUrl?: string
   type?: CardHeaderType
   tag?: string
-  contentTypeIconStyle?: React.CSSProperties | undefined
+  contentTypeIconClassName?: string
   contentTypeIcon?: IconName
-  tagStyle?: React.CSSProperties | undefined
+  tagClassName?: string
 }
 
 export const CardImage: React.FC<CardImageProps> = (props) => {
@@ -39,8 +39,8 @@ export const CardImage: React.FC<CardImageProps> = (props) => {
     type,
     tag,
     contentTypeIcon,
-    contentTypeIconStyle,
-    tagStyle
+    contentTypeIconClassName,
+    tagClassName
   } = props
 
   const renderInput = (): JSX.Element => {
@@ -57,9 +57,9 @@ export const CardImage: React.FC<CardImageProps> = (props) => {
             className={`card-image ${imageMargin && 'card-image--margin'}`}
             style={{ backgroundImage: `url(${imageUrl})` }}
           >
-            {contentTypeIcon && <div className='content-type-icon' style={contentTypeIconStyle}><Icon icon={contentTypeIcon} size='sm' /></div>}
+            {contentTypeIcon && <div className={`content-type-icon ${contentTypeIconClassName}`}><Icon icon={contentTypeIcon} size='sm' /></div>}
             {tag && (
-              <Button className='tag-button' size='xs' style={tagStyle}>
+              <Button className={`tag-button ${tagClassName}`} size='xs'>
                 {tag}
               </Button>
             )}
