@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FieldError, DeepMap, ValidationOptions } from 'react-hook-form'
+import { FieldError, NestDataObject, ValidationOptions } from 'react-hook-form'
 
 import { DefaultComponentProps } from '@types'
 
@@ -8,7 +8,7 @@ import { DefaultComponentProps } from '@types'
 export interface SwitchProps extends DefaultComponentProps {
   border?: boolean
   checked?: boolean
-  errors?: DeepMap<Record<string, string>, FieldError>
+  errors?: NestDataObject<Record<string, string>, FieldError>
   label?: string
   labelPosition?: LabelPositionType
   name: string
