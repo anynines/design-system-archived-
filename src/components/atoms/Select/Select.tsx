@@ -3,7 +3,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import { RegisterOptions } from 'react-hook-form'
+import { ValidationOptions } from 'react-hook-form'
 
 import { DefaultComponentProps } from '@types'
 
@@ -19,7 +19,7 @@ export interface SelectProps extends DefaultComponentProps {
   label: string
   name: string
   onChange?: (value: string) => void
-  register?: (validationRules: RegisterOptions) => void
+  register?: (validationRules: ValidationOptions) => void
   setValue?: (key: string, value: string) => void
   values: (string | number)[]
 }
