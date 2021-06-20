@@ -109,6 +109,18 @@ export default {
         }
       },
       defaultValue: 'image'
+    },
+    tagClassName: {
+      control: {
+        type: 'string'
+      },
+      defaultValue: ''
+    },
+    contentTypeIconClassName: {
+      control: {
+        type: 'string'
+      },
+      defaultValue: ''
     }
   }
 }
@@ -224,8 +236,8 @@ export const CustomTitles = () => {
             imageUrl='https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg'
             linkUrl='https://youtube.com'
             tag='tag'
-            tagClassName={'tag-styles'}
-            contentTypeIconClassName={'content-type-icon-styles'}
+            tagClassName='tag-styles'
+            contentTypeIconClassName='content-type-icon-styles'
             contentTypeIcon='camera'
           />
           <Card.Title>
