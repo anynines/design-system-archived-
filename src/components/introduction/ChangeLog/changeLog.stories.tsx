@@ -20,6 +20,7 @@ import v0_6_0 from './logs/0.6.0.json'
 import v0_6_1 from './logs/0.6.1.json'
 import v0_7_0 from './logs/0.7.0.json'
 import v0_7_6 from './logs/0.7.6.json'
+import v0_7_7 from './logs/0.7.7.json'
 import v0_8_0 from './logs/0.8.0.json'
 
 export default {
@@ -35,6 +36,12 @@ export const Welcome = () => (
         date='28. Mai 2021'
         isPublished={false}
         changelog={v0_8_0}
+      />
+      <ChangeLog
+        version='0.7.7'
+        date='21. June 2021'
+        isPublished={true}
+        changelog={v0_7_7}
       />
       <ChangeLog
         version='0.7.6'
