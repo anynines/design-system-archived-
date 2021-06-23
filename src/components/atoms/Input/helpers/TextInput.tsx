@@ -197,7 +197,7 @@ const StyledInputField = styled.div`
 // S T Y L E S
 const StyledInput = styled.div<StyledInputProps>`
   --border-radius: ${(props): string => { return (props.withPrepend ? '0 var(--radius) var(--radius) 0' : 'var(--radius)') }};
-  
+
   display: flex;
   position: relative;
   margin-bottom: var(--space-xxl);
@@ -209,7 +209,7 @@ const StyledInput = styled.div<StyledInputProps>`
   border-radius: var(--radius);
   transition: all 200ms ease-in-out;
   outline: none;
-  
+
   .input-label {
     position: absolute;
     top: .3rem;
@@ -223,7 +223,7 @@ const StyledInput = styled.div<StyledInputProps>`
     transform-origin: left;
     transition: all 200ms ease-in-out;
   }
-  
+
   input {
     position: relative;
     border: none;
@@ -340,7 +340,7 @@ const StyledInput = styled.div<StyledInputProps>`
 
   &:focus-within {
     border-color: var(--color-primary);
-    
+
     label {
       transform: scale(1);
       top: .3rem;
