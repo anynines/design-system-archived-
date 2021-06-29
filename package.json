@@ -113,7 +113,10 @@
     "ts-jest": "24.1.0",
     "ts-loader": "^7.0.2",
     "tsc-alias": "^1.2.6",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "@types/react-sortable-hoc": "0.7.1",
+    "@types/react-table": "7.7.1",
+    "@types/styled-components": "5.1.10"
   },
   "author": "",
   "license": "ISC"

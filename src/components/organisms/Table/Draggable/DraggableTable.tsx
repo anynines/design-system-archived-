@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, CustomTableProps as TableProps, TableBodyProps, HeaderGroup } from 'react-table'
+import { Row, TableProps, TableBodyProps, HeaderGroup } from 'react-table'
 
 import { DraggableTableWrapperRow as TableRow, TableAccessor, TableColumnCellColor, TableColumnCell, TableColumnIcon, TableData, TableRowColor } from './DraggableTableWrapper'
 import DraggableTableContainer from './DraggableTableContainer'

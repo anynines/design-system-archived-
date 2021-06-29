@@ -118,7 +118,7 @@ const StyledRow = styled.tr`
       border-top: 1px solid rgba(0,0,0,0.5);
       border-bottom: 1px solid rgba(0,0,0,0.5);
       background-color: var(--color-dark);
-      padding: 0.6rem 1rem;
+      padding: var(--space-xs) 1rem;
       width: 100%;
       text-align: left;
       text-transform: capitalize;
