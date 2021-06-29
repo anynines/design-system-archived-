@@ -3,7 +3,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import { RegisterOptions } from 'react-hook-form'
+import { ValidationOptions } from 'react-hook-form'
 
 import { DefaultComponentProps } from '@types'
 
@@ -19,7 +19,7 @@ export interface SelectProps extends DefaultComponentProps {
   label: string
   name: string
   onChange?: (value: string) => void
-  register?: (validationRules: RegisterOptions) => void
+  register?: (validationRules: ValidationOptions) => void
   setValue?: (key: string, value: string) => void
   values: (string | number)[]
 }
@@ -39,9 +39,7 @@ export const Select: React.FC<SelectProps> = ({
   const [valueState, setValueState] = React.useState(defaultValue)
   const [hoveredValueIndex, setHoveredValueIndex] = React.useState<number>(values.indexOf(defaultValue))
   const [isActive, setIsActive] = React.useState(false)
-  const { ref, ...rest } = register ? register(name, {}) : {}
   const selectRef = React.useRef<HTMLDivElement | null>(null)
-  const selectWrapperRef = React.useRef<HTMLDivElement | null>(null)
 
   const onValueChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const newValue = event.target.value
@@ -132,13 +130,8 @@ export const Select: React.FC<SelectProps> = ({
           aria-labelledby={name}
           defaultValue={defaultValue}
           name={name}
-          ref={(e: React.ChangeEvent<HTMLInputElement>): void => {
-            if (ref) {
-              ref(e)
-              selectWrapperRef.current = e
-            }
-          }}
-          {...!register ? { ...props } : { ...rest }}
+          ref={register ? register({ required: true }) as unknown as undefined : undefined}
+          {...!register ? { ...props } : {}}
         >
           {values.map((value): JSX.Element => {
             return (<option value={value} key={value}>{value}</option>)

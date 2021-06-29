@@ -1,0 +1,8 @@
+{
+  "Fixed": [
+    {
+      "title": "🌱 Atoms / Input",
+      "description": "Fix input cursor bug while clicking show-password button and revert to old react-hook-form implementation."
+    }
+  ]
+}
