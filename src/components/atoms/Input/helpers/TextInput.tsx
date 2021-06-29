@@ -115,7 +115,7 @@ export const TextInput: TextInput = ({
   // eslint-disable-next-line consistent-return
   React.useEffect((): (() => void) | void => {
     const button = document.querySelector('.show-password')
-    const input: HTMLInputElement = document.querySelector(`#${name}`) as HTMLInputElement
+    const input: HTMLInputElement = document.getElementById(name) as HTMLInputElement
 
     if (button) {
       const focusInput = (): void => {
