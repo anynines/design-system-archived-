@@ -224,7 +224,7 @@ export const Basic: React.FC = () => {
     initialPages,
     type: 'draggable',
     pagesPerFolder: 2,
-    color: 'success'
+    color: 'secondary'
   }
 
   return (
