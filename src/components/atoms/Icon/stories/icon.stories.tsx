@@ -81,6 +81,7 @@ export const Collection = (args: IconProps) => (
     <IconWrapper icon='caretRight' size={args.size} />
     <IconWrapper icon='cart' size={args.size} />
     <IconWrapper icon='close' size={args.size} />
+    <IconWrapper icon='club' size={args.size} />
     <IconWrapper icon='color' size={args.size} />
     <IconWrapper icon='customer' size={args.size} />
 
