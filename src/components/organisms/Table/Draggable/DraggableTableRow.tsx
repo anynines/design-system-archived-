@@ -152,8 +152,12 @@ const StyledRow = styled.tr`
         font-weight: var(--font-weight-bd);
         border-radius: var(--radius);
 
-        svg {
-          margin-right: var(--space-sm);
+        .icon {
+          --icon-size: none;
+          svg {
+            margin-right: var(--space-sm);
+            
+          }
         }
       }
 
@@ -167,8 +171,6 @@ const StyledRow = styled.tr`
 
         span {
           margin-right: var(--space-sm);
-          
-          
             
           svg {
             background-color: var(--color-black);

@@ -156,13 +156,16 @@ const StyledBody = styled.tbody`
         align-items: center;
         background-color: rgb(59, 185, 255);
         padding: 2px var(--space-sm);
-        width: 60%;
+        width: 100px;
         font-size: var(--text-md);
         font-weight: var(--font-weight-bd);
         border-radius: var(--radius);
 
-        svg {
-          margin-right: var(--space-sm);
+        .icon {
+          --icon-size: none;
+          svg {
+            margin-right: var(--space-sm);
+          }
         }
       }
       span.black {
