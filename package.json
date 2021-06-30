@@ -1,6 +1,6 @@
 {
   "name": "@anynines/design-system",
-  "version": "0.7.7",
+  "version": "0.7.6",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,7 +31,7 @@
     "start": "react-scripts start",
     "type-check": "tsc --noEmit",
     "build": "yarn rm:build && npm run build:types && npm run build:js",
-    "build:types": "yarn tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
+    "build:types": "tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
     "build:js": "babel --config-file ./_.babelrc src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "yarn eslint src/ --ext .ts,.tsx",
@@ -115,7 +115,7 @@
     "ts-jest": "24.1.0",
     "ts-loader": "^7.0.2",
     "tsc-alias": "^1.2.6",
-    "typescript": "^4.1.2"
+    "typescript": "^3.8.3"
   },
   "author": "",
   "license": "ISC"
