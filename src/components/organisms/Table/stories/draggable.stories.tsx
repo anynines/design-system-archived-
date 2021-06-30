@@ -214,20 +214,20 @@ const initialPages: TableRow[] = [
   }
 ]
 
-// export const Basic: React.FC = () => {
-//   const tableProps: DraggableTableDataProps = {
-//     tableHeaderData,
-//     getTableColumnColor,
-//     getTableColumnType,
-//     getTableColumnIconType,
-//     disabledCategories: ['A'],
-//     initialPages,
-//     type: 'draggable',
-//     pagesPerFolder: 2,
-//     color: 'success'
-//   }
+export const Basic: React.FC = () => {
+  const tableProps: DraggableTableDataProps = {
+    tableHeaderData,
+    getTableColumnColor,
+    getTableColumnType,
+    getTableColumnIconType,
+    disabledCategories: ['A'],
+    initialPages,
+    type: 'draggable',
+    pagesPerFolder: 2,
+    color: 'secondary'
+  }
 
-//   return (
-//     <DraggableTable {...tableProps} />
-//   )
-// }
+  return (
+    <DraggableTable {...tableProps} />
+  )
+}

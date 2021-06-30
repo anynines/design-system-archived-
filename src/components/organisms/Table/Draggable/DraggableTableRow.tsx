@@ -118,7 +118,7 @@ const StyledRow = styled.tr`
       border-top: 1px solid rgba(0,0,0,0.5);
       border-bottom: 1px solid rgba(0,0,0,0.5);
       background-color: var(--color-dark);
-      padding: 0.6rem 1rem;
+      padding: var(--space-xs) 1rem;
       width: 100%;
       text-align: left;
       text-transform: capitalize;
@@ -152,8 +152,12 @@ const StyledRow = styled.tr`
         font-weight: var(--font-weight-bd);
         border-radius: var(--radius);
 
-        svg {
-          margin-right: var(--space-sm);
+        .icon {
+          --icon-size: none;
+          svg {
+            margin-right: var(--space-sm);
+            
+          }
         }
       }
 
@@ -167,8 +171,6 @@ const StyledRow = styled.tr`
 
         span {
           margin-right: var(--space-sm);
-          
-          
             
           svg {
             background-color: var(--color-black);
