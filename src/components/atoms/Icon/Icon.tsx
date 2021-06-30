@@ -22,6 +22,7 @@ import CaretRight from './assets/caretRight'
 import Cart from './assets/cart'
 import Check from './assets/check'
 import Close from './assets/close'
+import Club from './assets/club'
 import Coin from './assets/coin'
 import Color from './assets/color'
 import ColorTransparent from './assets/colorTransparent'
@@ -30,6 +31,7 @@ import Customer from './assets/customer'
 // D
 import Dashboard from './assets/dashboard'
 import Delivery from './assets/delivery'
+import Diamond from './assets/diamond'
 import Drop from './assets/drop'
 
 // E
@@ -65,6 +67,7 @@ import LangDE from './assets/languages/de'
 import LangEN from './assets/languages/en'
 import LangSP from './assets/languages/sp'
 import LangIT from './assets/languages/it'
+import LaurelWreath from './assets/laurel-wreath'
 import Layout from './assets/layout'
 import Letter from './assets/letter'
 import Light from './assets/light'
@@ -115,6 +118,7 @@ import Text from './assets/text'
 import Telescope from './assets/telescope'
 import TitleDisabled from './assets/titleDisabled'
 import Trophy from './assets/trophy'
+import Trophy2 from './assets/trophy-2'
 import TurnAround from './assets/turnAround'
 
 // U
@@ -149,11 +153,13 @@ export type IconName = 'arrowUpRight'
   | 'cart'
   | 'check'
   | 'close'
+  | 'club'
   | 'coin'
   | 'color'
   | 'customer'
   | 'dashboard'
   | 'delivery'
+  | 'diamond'
   | 'drop'
   | 'edit'
   | 'euro'
@@ -175,6 +181,7 @@ export type IconName = 'arrowUpRight'
   | 'LangEN'
   | 'LangSP'
   | 'LangIT'
+  | 'laurel-wreath'
   | 'layout'
   | 'letter'
   | 'light'
@@ -206,6 +213,7 @@ export type IconName = 'arrowUpRight'
   | 'telescope'
   | 'text'
   | 'trophy'
+  | 'trophy2'
   | 'turnAround'
   | 'unit'
   | 'user'
@@ -238,11 +246,13 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   cart: <Cart />,
   check: <Check />,
   close: <Close />,
+  club: <Club />,
   coin: <Coin />,
   color: <Color />,
   customer: <Customer />,
   dashboard: <Dashboard />,
   delivery: <Delivery />,
+  diamond: <Diamond />,
   drop: <Drop />,
   edit: <Edit />,
   euro: <Euro />,
@@ -264,6 +274,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   LangEN: <LangEN />,
   LangSP: <LangSP />,
   LangIT: <LangIT />,
+  'laurel-wreath': <LaurelWreath />,
   layout: <Layout />,
   letter: <Letter />,
   light: <Light />,
@@ -310,6 +321,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   photo: <Photo />,
   telescope: <Telescope />,
   trophy: <Trophy />,
+  trophy2: <Trophy2 />,
   titleDisabled: <TitleDisabled />,
   unorderedList: <UnorderedList />,
   widthIncrease: <WidthIncrease />
