@@ -1,0 +1,8 @@
+{
+  "Fixed": [
+    {
+      "title": "🌳 Organisms / Table / Draggable",
+      "description": "Fix issues with TS definitions and improve styles in Draggable Table components."
+    }
+  ]
+}
