@@ -81,11 +81,13 @@ export const Collection = (args: IconProps) => (
     <IconWrapper icon='caretRight' size={args.size} />
     <IconWrapper icon='cart' size={args.size} />
     <IconWrapper icon='close' size={args.size} />
+    <IconWrapper icon='club' size={args.size} />
     <IconWrapper icon='color' size={args.size} />
     <IconWrapper icon='customer' size={args.size} />
 
     <IconWrapper icon='dashboard' size={args.size} />
     <IconWrapper icon='delivery' size={args.size} />
+    <IconWrapper icon='diamond' size={args.size} />
     <IconWrapper icon='drop' size={args.size} />
 
     <IconWrapper icon='edit' size={args.size} />
@@ -111,6 +113,7 @@ export const Collection = (args: IconProps) => (
     <IconWrapper icon='LangEN' size={args.size} />
     <IconWrapper icon='LangSP' size={args.size} />
     <IconWrapper icon='LangIT' size={args.size} />
+    <IconWrapper icon='laurel-wreath' size={args.size} />
     <IconWrapper icon='layout' size={args.size} />
     <IconWrapper icon='light' size={args.size} />
     <IconWrapper icon='logout' size={args.size} />
@@ -146,6 +149,8 @@ export const Collection = (args: IconProps) => (
     <IconWrapper icon='tag' size={args.size} />
     <IconWrapper icon='text' size={args.size} />
     <IconWrapper icon='telescope' size={args.size} />
+    <IconWrapper icon='trophy' size={args.size} />
+    <IconWrapper icon='trophy2' size={args.size} />
     <IconWrapper icon='turnAround' size={args.size} />
 
     <IconWrapper icon='unit' size={args.size} />

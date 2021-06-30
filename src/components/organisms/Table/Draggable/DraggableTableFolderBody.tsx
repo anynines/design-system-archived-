@@ -127,7 +127,7 @@ const StyledBody = styled.tbody`
   td {
     margin: 0;
     border: 0;
-    padding: 0.6rem 0;
+    padding: var(--space-xs) 0;
     text-align: left;
     text-transform: capitalize;
     color: var(--color-white);
@@ -142,7 +142,7 @@ const StyledBody = styled.tbody`
       border-top: 0;
       border-bottom: 1px solid rgba(0,0,0,0.5);
       background-color: var(--color-dark);
-      padding: .6rem 0;
+      padding: var(--space-xs) 0;
 
       a.cell-link {
         position: relative;
@@ -156,13 +156,16 @@ const StyledBody = styled.tbody`
         align-items: center;
         background-color: rgb(59, 185, 255);
         padding: 2px var(--space-sm);
-        width: 60%;
+        width: 100px;
         font-size: var(--text-md);
         font-weight: var(--font-weight-bd);
         border-radius: var(--radius);
 
-        svg {
-          margin-right: var(--space-sm);
+        .icon {
+          --icon-size: none;
+          svg {
+            margin-right: var(--space-sm);
+          }
         }
       }
       span.black {
@@ -174,10 +177,11 @@ const StyledBody = styled.tbody`
         flex-direction: row;
 
         span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           margin-right: var(--space-sm);
 
-         
-          
           svg {
             background-color: var(--color-black);
             padding: 3px;
@@ -185,7 +189,6 @@ const StyledBody = styled.tbody`
             height: 20px;
             border-radius: 5px;
           }
-          
         }
 
         img.icon {
@@ -276,6 +279,11 @@ const StyledBody = styled.tbody`
           height: 25px;
           border-radius: 50%;
           outline: none;
+
+          svg {
+            width: 10px;
+            height: 10px;
+          }
 
           &:hover {
             filter: brightness(90%);

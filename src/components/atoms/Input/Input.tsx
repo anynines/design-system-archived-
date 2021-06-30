@@ -7,8 +7,21 @@ import { ColorInput } from './helpers/ColorInput'
 import { DateInput, DateInputProps } from './helpers/DateInput'
 
 // I N T E R F A C E S
+type DefaultInputProps = TextInputProps & {
+  type: InputType
+  onChange?: (newValue: string) => void
+  iconColor?: InputIconColor
+  value?: string
+}
+interface DefaultRestrictedProps extends DefaultInputProps {
+  type: 'password' | 'color' | 'email' | 'text'
+}
 interface DateInputRestrictedProps extends DateInputProps {
   type: 'date'
+  value?: number
+}
+interface NumberInputRestrictedProps extends Omit<DefaultInputProps, 'value'> {
+  type: 'number'
   value?: number
 }
 
@@ -16,11 +29,7 @@ export type InputType = 'text' | 'color' | 'email' | 'number' | 'password' | 'da
 
 export type InputIconColor = 'dark' | 'light'
 
-export type InputProps = DateInputRestrictedProps | TextInputProps & {
-  type: InputType
-  onChange?: (newValue: string) => void
-  iconColor?: InputIconColor
-}
+export type InputProps = DateInputRestrictedProps | DefaultRestrictedProps | NumberInputRestrictedProps
 type Input = React.FC<InputProps>
   & { Label: React.FC<InputLabelProps> }
 
@@ -72,6 +81,7 @@ export const Input: Input = (props) => {
         return (
           <TextInput
             {...props}
+            value={props.value ? props.value?.toString() : undefined}
             pattern={pattern || /^[0-9]{2,30}$/}
           >
             {children}

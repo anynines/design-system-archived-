@@ -71,7 +71,8 @@ export const TextInput: TextInput = ({
 
   const formValue = getValueFromHookForm()
 
-  const togglePasswordVisiblity = (): void => {
+  const togglePasswordVisiblity = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+    e.preventDefault()
     setPasswordShown(!passwordShown)
   }
 
@@ -110,6 +111,23 @@ export const TextInput: TextInput = ({
     if (register) setValue(name, value)
     else setLocalValue(value)
   }, [register, setValue, name, value])
+
+  // eslint-disable-next-line consistent-return
+  React.useEffect((): (() => void) | void => {
+    const button = document.querySelector('.show-password')
+    const input: HTMLInputElement = document.querySelector(`#${name}`) as HTMLInputElement
+
+    if (button) {
+      const focusInput = (): void => {
+        if (input) input.focus()
+      }
+      button.addEventListener('click', focusInput)
+      return (): void => {
+        button.removeEventListener('click', focusInput)
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const renderErrorMessage = (): JSX.Element | null => {
     if (errors[name] !== undefined) {
@@ -151,7 +169,9 @@ export const TextInput: TextInput = ({
         />
         {name === 'password' && (
           <button
-            onClick={(): void => { togglePasswordVisiblity() }}
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+              togglePasswordVisiblity(e)
+            }}
             className={`show-password ${passwordShown && 'active'} ${iconColor}`}
             type='button'
           >

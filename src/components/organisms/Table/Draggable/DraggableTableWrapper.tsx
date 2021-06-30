@@ -192,7 +192,7 @@ const StyledTable = styled.div`
     td {
       margin: 0;
       border: 0;
-      padding: 0.6rem 0;
+      padding: var(--space-sm) 0;
       text-align: left;
       text-transform: capitalize;
       color: var(--color-white);
@@ -247,7 +247,7 @@ const StyledTable = styled.div`
           border-top: 0;
           border-bottom: 1px solid rgba(0,0,0,0.5);
           background-color: var(--color-dark);
-          padding: .6rem 0;
+          padding: var(--space-xs) 0;
 
           &:first-child {
             padding-left: 1rem;
@@ -265,13 +265,28 @@ const StyledTable = styled.div`
             align-items: center;
             border-top-right-radius: var(--radius);
             border-bottom-right-radius: var(--radius);
+            padding: var(--space-sm) 0;
             padding-right: 1rem;
+
 
             a {
               display: flex;
               justify-content: center;
               align-items: center;
             }
+
+            div.icon-wrapper{
+              display: flex;
+              flex-direction: row;
+
+              span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: var(--space-sm);
+              }
+            }
+
           }
 
           a.cell-link {
@@ -286,13 +301,17 @@ const StyledTable = styled.div`
             align-items: center;
             background-color: rgb(59, 185, 255);
             padding: 2px var(--space-sm);
-            width: 60%;
+            width: 100px;
             font-size: var(--text-md);
             font-weight: var(--font-weight-bd);
             border-radius: var(--radius);
 
-            svg {
-              margin-right: var(--space-sm);
+            .icon {
+              --icon-size: none;
+              svg {
+                margin-right: var(--space-sm);
+                
+              }
             }
           }
           span.black {
@@ -394,6 +413,11 @@ const StyledTable = styled.div`
               height: 25px;
               border-radius: 50%;
               outline: none;
+
+              svg {
+                width: 10px;
+                height: 10px;
+              }
 
               &:hover {
                 filter: brightness(90%);

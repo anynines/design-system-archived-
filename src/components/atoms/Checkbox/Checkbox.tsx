@@ -38,6 +38,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 
   const [valueState, setValueState] = React.useState(getDefaultValue())
 
+  const handleChange = (): void => {
+    if (!register) setValueState(!valueState)
+  }
+
   React.useEffect(() => {
     if (register) setValue(name, valueState)
     else if (onChange) onChange(valueState)
@@ -50,11 +54,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     >
       <input
         type='checkbox'
-        checked={valueState}
-        ref={register ? register({ required }) as unknown as undefined : undefined}
         id={name}
         name={name}
-        onChange={(): void => { return setValueState(!valueState) }}
+        ref={register ? register({ required }) as unknown as undefined : undefined}
+        {...!register ? { onChange: handleChange, checked: valueState } : {}}
       />
       <label htmlFor={name}>
         {label}

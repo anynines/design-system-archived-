@@ -45,12 +45,12 @@ export const Basic = () => (
               {
                 id: 'wishlist',
                 icon: 'wishlist',
-                counter: true,
+                counter: 42,
               },
               {
                 id: 'cart',
                 icon: 'cart',
-                counter: true,
+                counter: 42,
               }
             ]}
           />
