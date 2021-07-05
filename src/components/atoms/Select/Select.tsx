@@ -39,7 +39,6 @@ export const Select: React.FC<SelectProps> = ({
   const [valueState, setValueState] = React.useState(defaultValue)
   const [hoveredValueIndex, setHoveredValueIndex] = React.useState<number>(values.indexOf(defaultValue))
   const [isActive, setIsActive] = React.useState(false)
-
   const selectRef = React.useRef<HTMLDivElement | null>(null)
 
   const onValueChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -53,7 +52,9 @@ export const Select: React.FC<SelectProps> = ({
 
     if (!register) {
       setValueState(newValue)
-    } else if (setValue) setValue(name, newValue)
+    } else if (setValue) {
+      setValue(name, newValue)
+    }
   }
 
   const onCustomSelectClick = (): void => {
@@ -123,13 +124,14 @@ export const Select: React.FC<SelectProps> = ({
       * There is a type incoherence between register() and ref attribute
       * The trick 'as unknown as undefined' is used to not use @ts-ignore
       */}
+
       <div className='selectWrapper'>
         <select
           aria-labelledby={name}
           defaultValue={defaultValue}
           name={name}
-          ref={register as unknown as undefined}
-          {...props}
+          ref={register ? register({ required: true }) as unknown as undefined : undefined}
+          {...!register ? { ...props } : {}}
         >
           {values.map((value): JSX.Element => {
             return (<option value={value} key={value}>{value}</option>)

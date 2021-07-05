@@ -8,10 +8,10 @@ export interface THeadProps {
 
 // C O M P O N E N T
 export const THead: React.FC<THeadProps> = (props) => {
-  const { children, className } = props
+  const { children, className, ...rest } = props
 
   return (
-    <StyledTHead className={className}>
+    <StyledTHead className={className} {...rest}>
       {children}
     </StyledTHead>
   )

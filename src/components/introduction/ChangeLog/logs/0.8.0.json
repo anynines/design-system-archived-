@@ -1,0 +1,14 @@
+{
+  "Fixed": [
+    {
+      "title": "🌱 Molecules / ProductSlider",
+      "description": "Add formatPoints Helper, fix Label Alignment, fix ProductSlider Stories."
+    }
+  ],
+  "Added": [
+    {
+      "title": "🌱 Molecules / Skeleton",
+      "description": "Added Product Card and Slider Components to Molecules."
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import { ChromePicker, ChromePickerProps } from 'react-color'
 import { DefaultComponentProps } from '@types'
 
 // I N T E R F A C E S
-interface ColorPickerProps extends ChromePickerProps, DefaultComponentProps {}
+export type ColorPickerProps = ChromePickerProps & DefaultComponentProps
 
 // C O M P O N E N T
 export const ColorPicker: React.FC<ColorPickerProps> = ({

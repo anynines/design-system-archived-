@@ -18,6 +18,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ name = '', placeholder = '',
       name={name}
       placeholder={placeholder}
       style={style}
+
     />
   )
 }

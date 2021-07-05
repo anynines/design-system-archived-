@@ -39,6 +39,9 @@ export const Label: React.FC<LabelProps> = ({
 
 // S T Y L E S
 const StyledLabel = styled.span`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   z-index: 10;
   margin-left: 10px;
   padding: 4px 8px;

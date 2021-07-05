@@ -71,7 +71,8 @@ export const TextInput: TextInput = ({
 
   const formValue = getValueFromHookForm()
 
-  const togglePasswordVisiblity = (): void => {
+  const togglePasswordVisiblity = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+    e.preventDefault()
     setPasswordShown(!passwordShown)
   }
 
@@ -110,6 +111,23 @@ export const TextInput: TextInput = ({
     if (register) setValue(name, value)
     else setLocalValue(value)
   }, [register, setValue, name, value])
+
+  // eslint-disable-next-line consistent-return
+  React.useEffect((): (() => void) | void => {
+    const button = document.querySelector('.show-password')
+    const input: HTMLInputElement = document.getElementById(name) as HTMLInputElement
+
+    if (button) {
+      const focusInput = (): void => {
+        if (input) input.focus()
+      }
+      button.addEventListener('click', focusInput)
+      return (): void => {
+        button.removeEventListener('click', focusInput)
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const renderErrorMessage = (): JSX.Element | null => {
     if (errors[name] !== undefined) {
@@ -151,7 +169,9 @@ export const TextInput: TextInput = ({
         />
         {name === 'password' && (
           <button
-            onClick={(): void => { togglePasswordVisiblity() }}
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+              togglePasswordVisiblity(e)
+            }}
             className={`show-password ${passwordShown && 'active'} ${iconColor}`}
             type='button'
           >
@@ -177,7 +197,7 @@ const StyledInputField = styled.div`
 // S T Y L E S
 const StyledInput = styled.div<StyledInputProps>`
   --border-radius: ${(props): string => { return (props.withPrepend ? '0 var(--radius) var(--radius) 0' : 'var(--radius)') }};
-  
+
   display: flex;
   position: relative;
   margin-bottom: var(--space-xxl);
@@ -189,7 +209,7 @@ const StyledInput = styled.div<StyledInputProps>`
   border-radius: var(--radius);
   transition: all 200ms ease-in-out;
   outline: none;
-  
+
   .input-label {
     position: absolute;
     top: .3rem;
@@ -203,7 +223,7 @@ const StyledInput = styled.div<StyledInputProps>`
     transform-origin: left;
     transition: all 200ms ease-in-out;
   }
-  
+
   input {
     position: relative;
     border: none;
@@ -320,7 +340,7 @@ const StyledInput = styled.div<StyledInputProps>`
 
   &:focus-within {
     border-color: var(--color-primary);
-    
+
     label {
       transform: scale(1);
       top: .3rem;

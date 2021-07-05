@@ -18,6 +18,12 @@ import v0_5_0 from './logs/0.5.0.json'
 import v0_5_8 from './logs/0.5.8.json'
 import v0_6_0 from './logs/0.6.0.json'
 import v0_6_1 from './logs/0.6.1.json'
+import v0_7_0 from './logs/0.7.0.json'
+import v0_7_6 from './logs/0.7.6.json'
+import v0_7_8 from './logs/0.7.8.json'
+import v0_7_9 from './logs/0.7.9.json'
+import v0_8_0 from './logs/0.8.0.json'
+import v0_8_1 from './logs/0.8.1.json'
 
 export default {
   title: '👋 Get started/Changelog',
@@ -27,6 +33,42 @@ export const Welcome = () => (
   <Section bgColor='transparent'>
     <Container style={{ marginTop: 50, width: 800 }}>
       <h2 style={{ marginBottom: 30 }}>Changelog</h2>
+      <ChangeLog
+        version='0.8.1'
+        date='5. July 2021'
+        isPublished={true}
+        changelog={v0_8_1}
+      />
+      <ChangeLog
+        version='0.8.0'
+        date='28. Mai 2021'
+        isPublished={false}
+        changelog={v0_8_0}
+      />
+      <ChangeLog
+        version='0.7.9'
+        date='30. June 2021'
+        isPublished={true}
+        changelog={v0_7_9}
+      />
+      <ChangeLog
+        version='0.7.8'
+        date='30. June 2021'
+        isPublished={true}
+        changelog={v0_7_8}
+      />
+      <ChangeLog
+        version='0.7.6'
+        date='20. June 2021'
+        isPublished={true}
+        changelog={v0_7_6}
+      />
+      <ChangeLog
+        version='0.7.0'
+        date='11. Mai 2021'
+        isPublished={true}
+        changelog={v0_7_0}
+      />
       <ChangeLog
         version='0.6.1'
         date='22. April 2021'
