@@ -41,21 +41,21 @@ export const SlideItemContent: React.FC<SlideItemContentProps> = (props) => {
 // S T Y L E S
 const StyledSliderContent = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   opacity: 0.80;
   background-color: var(--color-dark);
   padding: var(--space-lg);
-  width: 80%;
+  width: 100%;
   height: 100%;
+  clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 20% 100%);
   
   .card-content-wrapper {
-    margin: var(--space-lg);
+    width: 60%;
 
     h1 {
       margin-bottom: var(--space-xs);
-      line-height: calc(var(--heading-line-height) * 1.5);
+      line-height: calc(var(--heading-line-height) * 2);
     }
 
     .card-author-wrapper {
