@@ -39,7 +39,9 @@ export const Slider: React.FC<SliderProps> = (props) => {
                 key={slide.title}
                 src={slide.src}
                 link={slide.link}
-              />
+              >
+                {slide.children}
+              </Slide>
             )
           })}
         </div>
