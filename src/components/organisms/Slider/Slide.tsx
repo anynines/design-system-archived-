@@ -9,26 +9,27 @@ export interface SlideProps {
 
 // C O M P O N E N T
 export const Slide: React.FC<SlideProps> = (props) => {
-  const { src, link } = props
+  const { src, link, children } = props
 
   const renderSlide = (): JSX.Element => {
     return (
       <StyledSlide
         style={{ backgroundImage: `url(${src})` }}
-      />
+      >
+        {children && <div className='overlay'>{children}</div>}
+      </StyledSlide>
     )
   }
 
   if (link !== undefined) {
     return (
-      <a
+      <StyledLink
         href={link}
         target='_blank'
         rel='noreferrer'
-        style={{ minWidth: '100%' }}
       >
         {renderSlide()}
-      </a>
+      </StyledLink>
     )
   }
 
@@ -40,5 +41,24 @@ const StyledSlide = styled.div`
   background-position: center;
   min-width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: cover;  
+
+  .overlay {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+  }
+`
+
+const StyledLink = styled.a`
+  min-width: 100%;
+  text-decoration: none;
+  color: var(--color-white);
+
+  &:hover {
+    cursor:pointer;  
+  }
 `

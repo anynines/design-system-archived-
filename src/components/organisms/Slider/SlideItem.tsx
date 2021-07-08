@@ -32,7 +32,7 @@ const StyledSliderItem = styled.div`
   flex-direction: column;
   opacity: 0.5;
   margin-bottom: 30px;
-  background-color: var(--color-black-darker);
+  background-color: var(--color-dark);
   cursor: pointer;
   padding: 20px;
   width: 300px;
