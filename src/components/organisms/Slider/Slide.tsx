@@ -45,7 +45,7 @@ const StyledSlide = styled.div`
 
   .overlay {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, .7);
     width: 100%;
