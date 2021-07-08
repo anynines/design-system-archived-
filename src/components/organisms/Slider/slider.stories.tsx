@@ -3,14 +3,19 @@ import React from 'react'
 import { Section } from '../../introduction/layout/Section/Section'
 import { Slider } from './Slider'
 
+import { Slide } from "./types"
+
 export default {
   title: '🌳 Organisms/Slider',
   component: Slider,
   argTypes: {
+    slides: {
+      control: { type: 'Slide[]' }
+    }
   }
 }
 
-const slides = [
+const slides: Slide[]  = [
   {
     "title": "Kind of universe",
     "subtitle": "Mystic galaxy somewhere else",
