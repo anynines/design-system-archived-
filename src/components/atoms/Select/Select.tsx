@@ -29,7 +29,7 @@ export const Select: React.FC<SelectProps> = ({
   icon,
   label,
   name,
-  onChange,
+  onChange: onChangeProp,
   register,
   style,
   values,
@@ -41,17 +41,22 @@ export const Select: React.FC<SelectProps> = ({
   const [isActive, setIsActive] = React.useState(false)
   const selectRef = React.useRef<HTMLDivElement | null>(null)
 
+  const onChange = (value: string): void => {
+    setValueState(value)
+    if (onChangeProp) onChangeProp(value)
+  }
+
   const onValueChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const newValue = event.target.value
 
-    setValueState(newValue)
+    onChange(newValue)
   }
 
   const onCustomSelectOptionClick = (event: React.MouseEvent<HTMLDivElement>): void => {
     const newValue = event.currentTarget.dataset.value || ''
 
     if (!register) {
-      setValueState(newValue)
+      onChange(newValue)
     } else if (setValue) {
       setValue(name, newValue)
     }
@@ -76,7 +81,7 @@ export const Select: React.FC<SelectProps> = ({
         break
 
       case 'Enter': case 'Spacebar':
-        setValueState(values[hoveredValueIndex])
+        onChange(values[hoveredValueIndex].toString())
         setIsActive(false)
         break
 
@@ -90,12 +95,6 @@ export const Select: React.FC<SelectProps> = ({
       setHoveredValueIndex(values.indexOf(valueState))
     }
   }, [isActive, valueState, values])
-
-  React.useEffect((): void => {
-    if (onChange !== undefined) {
-      onChange(valueState.toString())
-    }
-  }, [onChange, valueState])
 
   React.useEffect(() => {
     const cleanOnClickOutsideHook = onClickOutsideHook(selectRef, () => { setIsActive(false) })
