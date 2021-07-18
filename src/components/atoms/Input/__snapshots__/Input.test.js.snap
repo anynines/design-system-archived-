@@ -1,0 +1,1498 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input components Email should match snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  --icon-size: 1rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.c2 svg {
+  width: 100%;
+  height: 100%;
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
+}
+
+.c2.xs {
+  width: calc(var(--icon-size) * .8);
+  height: calc(var(--icon-size) * .8);
+}
+
+.c2.xs svg {
+  max-width: calc(var(--icon-size) * .8);
+  max-height: calc(var(--icon-size) * .8);
+}
+
+.c2.md {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+}
+
+.c2.md svg {
+  max-width: calc(var(--icon-size) * 2);
+  max-height: calc(var(--icon-size) * 2);
+}
+
+.c2.lg {
+  width: calc(var(--icon-size) * 4);
+  height: calc(var(--icon-size) * 4);
+}
+
+.c2.lg svg {
+  max-width: calc(var(--icon-size) * 4);
+  max-height: calc(var(--icon-size) * 4);
+}
+
+.c2.xl {
+  width: calc(var(--icon-size) * 7);
+  height: calc(var(--icon-size) * 7);
+}
+
+.c2.xl svg {
+  max-width: calc(var(--icon-size) * 7);
+  max-height: calc(var(--icon-size) * 7);
+}
+
+.c4 {
+  position: absolute;
+  top: 6px;
+  z-index: 10;
+  opacity: .5;
+  font-size: var(--text-md);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 {
+  --cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.02);
+  cursor: var(--cursor);
+  width: 44px;
+  min-width: 44px;
+  min-height: 100%;
+  color: var(--text-color);
+  border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 svg {
+  width: 16px;
+  height: 100%;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  --border-radius: 0 var(--radius) var(--radius) 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: var(--space-xxl);
+  border: var(--border);
+  background-color: var(--element-bg-color);
+  width: 100%;
+  min-width: 240px;
+  font-size: 1em;
+  border-radius: var(--radius);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  outline: none;
+}
+
+.c0 .input-label {
+  position: absolute;
+  top: .3rem;
+  left: 0.8rem;
+  z-index: 1;
+  opacity: 0.5;
+  color: var(--text-color);
+  font-size: var(--text-xxs);
+  font-weight: var(--font-weight-bd);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.c0 input {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
+  width: 100%;
+  height: 2.75rem;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  outline: none;
+  -webkit-transition: top 200ms ease-in-out;
+  transition: top 200ms ease-in-out;
+}
+
+.c0 input:disabled {
+  cursor: not-allowed;
+}
+
+.c0 .error {
+  position: absolute;
+  right: 0;
+  bottom: -1.5rem;
+  padding: 0.125rem 0.25rem;
+  text-align: right;
+  color: var(--color-error);
+  font-size: var(--text-xs);
+}
+
+.c0.empty label {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  top: 1rem;
+  left: 1rem;
+}
+
+.c0 .show-password {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+  outline: none;
+}
+
+.c0 .show-password:before {
+  position: absolute;
+  background-color: var(--color-white-50);
+  width: 2px;
+  height: 18px;
+  content: '';
+  border-radius: calc(var(--radius) / 2);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password svg {
+  color: var(--color-white-50);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password:hover svg {
+  color: var(--color-white);
+}
+
+.c0 .show-password:hover:before {
+  background-color: var(--color-white);
+}
+
+.c0 .show-password.dark svg {
+  color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:before {
+  background-color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:hover svg {
+  color: var(--color-black);
+}
+
+.c0 .show-password.dark:hover:before {
+  background-color: var(--color-black);
+}
+
+.c0 .show-password.active:before {
+  background-color: transparent;
+}
+
+.c0 .show-password.dark.active:before {
+  background-color: inherit;
+}
+
+.c0:hover .input-icon,
+.c0.focus .input-icon,
+.c0:focus-within .input-icon {
+  background-color: var(--color-primary);
+  color: var(--color-white-fix);
+}
+
+.c0:focus-within {
+  border-color: var(--color-primary);
+}
+
+.c0:focus-within label {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  top: .3rem;
+  left: 0.8rem;
+}
+
+<div
+    class="c0 text-input focus empty "
+    id="inputWrapper"
+    style="margin-bottom: 0px;"
+  >
+    <div
+      class="c1 input-icon undefined"
+    >
+      <i
+        class="c2 icon undefined sm"
+      >
+        <svg
+          height="12.647"
+          viewBox="0 0 14.154 12.647"
+          width="14.154"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="tag"
+            transform="translate(0 -23.224)"
+          >
+            <g
+              data-name="Gruppe 529"
+              id="Gruppe_529"
+              transform="translate(0 23.224)"
+            >
+              <g
+                data-name="Gruppe 528"
+                id="Gruppe_528"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M11.04,23.224H6.694a1.038,1.038,0,0,0-.734.3L.3,29.184a1.038,1.038,0,0,0,0,1.468L4.65,35a1.038,1.038,0,0,0,1.468,0l5.657-5.656a1.041,1.041,0,0,0,.3-.735V24.262A1.038,1.038,0,0,0,11.04,23.224ZM9.224,26.857A.778.778,0,1,1,10,26.078.779.779,0,0,1,9.224,26.857Z"
+                  data-name="Pfad 300"
+                  fill="currentColor"
+                  id="Pfad_300"
+                  transform="translate(0 -23.224)"
+                />
+              </g>
+            </g>
+            <g
+              data-name="Gruppe 531"
+              id="Gruppe_531"
+              transform="translate(7.103 24.262)"
+            >
+              <g
+                data-name="Gruppe 530"
+                id="Gruppe_530"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M225,55.224v4.831a.9.9,0,0,1-.265.638l-5.748,5.748.088.088a1.038,1.038,0,0,0,1.468,0l5.191-5.19a1.037,1.037,0,0,0,.3-.734V56.262A1.038,1.038,0,0,0,225,55.224Z"
+                  data-name="Pfad 301"
+                  fill="currentColor"
+                  id="Pfad_301"
+                  transform="translate(-218.988 -55.224)"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </i>
+    </div>
+    <div
+      class="c3"
+    >
+      <label
+        class="c4 input-label undefined"
+        for="input"
+      >
+        Label
+      </label>
+      <input
+        autocomplete="off"
+        class="input--email undefined"
+        id="input"
+        name="input"
+        type="email"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input components Number should match snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  --icon-size: 1rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.c2 svg {
+  width: 100%;
+  height: 100%;
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
+}
+
+.c2.xs {
+  width: calc(var(--icon-size) * .8);
+  height: calc(var(--icon-size) * .8);
+}
+
+.c2.xs svg {
+  max-width: calc(var(--icon-size) * .8);
+  max-height: calc(var(--icon-size) * .8);
+}
+
+.c2.md {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+}
+
+.c2.md svg {
+  max-width: calc(var(--icon-size) * 2);
+  max-height: calc(var(--icon-size) * 2);
+}
+
+.c2.lg {
+  width: calc(var(--icon-size) * 4);
+  height: calc(var(--icon-size) * 4);
+}
+
+.c2.lg svg {
+  max-width: calc(var(--icon-size) * 4);
+  max-height: calc(var(--icon-size) * 4);
+}
+
+.c2.xl {
+  width: calc(var(--icon-size) * 7);
+  height: calc(var(--icon-size) * 7);
+}
+
+.c2.xl svg {
+  max-width: calc(var(--icon-size) * 7);
+  max-height: calc(var(--icon-size) * 7);
+}
+
+.c4 {
+  position: absolute;
+  top: 6px;
+  z-index: 10;
+  opacity: .5;
+  font-size: var(--text-md);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 {
+  --cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.02);
+  cursor: var(--cursor);
+  width: 44px;
+  min-width: 44px;
+  min-height: 100%;
+  color: var(--text-color);
+  border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 svg {
+  width: 16px;
+  height: 100%;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  --border-radius: 0 var(--radius) var(--radius) 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: var(--space-xxl);
+  border: var(--border);
+  background-color: var(--element-bg-color);
+  width: 100%;
+  min-width: 240px;
+  font-size: 1em;
+  border-radius: var(--radius);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  outline: none;
+}
+
+.c0 .input-label {
+  position: absolute;
+  top: .3rem;
+  left: 0.8rem;
+  z-index: 1;
+  opacity: 0.5;
+  color: var(--text-color);
+  font-size: var(--text-xxs);
+  font-weight: var(--font-weight-bd);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.c0 input {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
+  width: 100%;
+  height: 2.75rem;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  outline: none;
+  -webkit-transition: top 200ms ease-in-out;
+  transition: top 200ms ease-in-out;
+}
+
+.c0 input:disabled {
+  cursor: not-allowed;
+}
+
+.c0 .error {
+  position: absolute;
+  right: 0;
+  bottom: -1.5rem;
+  padding: 0.125rem 0.25rem;
+  text-align: right;
+  color: var(--color-error);
+  font-size: var(--text-xs);
+}
+
+.c0.empty label {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  top: 1rem;
+  left: 1rem;
+}
+
+.c0 .show-password {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+  outline: none;
+}
+
+.c0 .show-password:before {
+  position: absolute;
+  background-color: var(--color-white-50);
+  width: 2px;
+  height: 18px;
+  content: '';
+  border-radius: calc(var(--radius) / 2);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password svg {
+  color: var(--color-white-50);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password:hover svg {
+  color: var(--color-white);
+}
+
+.c0 .show-password:hover:before {
+  background-color: var(--color-white);
+}
+
+.c0 .show-password.dark svg {
+  color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:before {
+  background-color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:hover svg {
+  color: var(--color-black);
+}
+
+.c0 .show-password.dark:hover:before {
+  background-color: var(--color-black);
+}
+
+.c0 .show-password.active:before {
+  background-color: transparent;
+}
+
+.c0 .show-password.dark.active:before {
+  background-color: inherit;
+}
+
+.c0:hover .input-icon,
+.c0.focus .input-icon,
+.c0:focus-within .input-icon {
+  background-color: var(--color-primary);
+  color: var(--color-white-fix);
+}
+
+.c0:focus-within {
+  border-color: var(--color-primary);
+}
+
+.c0:focus-within label {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  top: .3rem;
+  left: 0.8rem;
+}
+
+<div
+    class="c0 text-input focus empty "
+    id="inputWrapper"
+    style="margin-bottom: 0px;"
+  >
+    <div
+      class="c1 input-icon undefined"
+    >
+      <i
+        class="c2 icon undefined sm"
+      >
+        <svg
+          height="12.647"
+          viewBox="0 0 14.154 12.647"
+          width="14.154"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="tag"
+            transform="translate(0 -23.224)"
+          >
+            <g
+              data-name="Gruppe 529"
+              id="Gruppe_529"
+              transform="translate(0 23.224)"
+            >
+              <g
+                data-name="Gruppe 528"
+                id="Gruppe_528"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M11.04,23.224H6.694a1.038,1.038,0,0,0-.734.3L.3,29.184a1.038,1.038,0,0,0,0,1.468L4.65,35a1.038,1.038,0,0,0,1.468,0l5.657-5.656a1.041,1.041,0,0,0,.3-.735V24.262A1.038,1.038,0,0,0,11.04,23.224ZM9.224,26.857A.778.778,0,1,1,10,26.078.779.779,0,0,1,9.224,26.857Z"
+                  data-name="Pfad 300"
+                  fill="currentColor"
+                  id="Pfad_300"
+                  transform="translate(0 -23.224)"
+                />
+              </g>
+            </g>
+            <g
+              data-name="Gruppe 531"
+              id="Gruppe_531"
+              transform="translate(7.103 24.262)"
+            >
+              <g
+                data-name="Gruppe 530"
+                id="Gruppe_530"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M225,55.224v4.831a.9.9,0,0,1-.265.638l-5.748,5.748.088.088a1.038,1.038,0,0,0,1.468,0l5.191-5.19a1.037,1.037,0,0,0,.3-.734V56.262A1.038,1.038,0,0,0,225,55.224Z"
+                  data-name="Pfad 301"
+                  fill="currentColor"
+                  id="Pfad_301"
+                  transform="translate(-218.988 -55.224)"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </i>
+    </div>
+    <div
+      class="c3"
+    >
+      <label
+        class="c4 input-label undefined"
+        for="input"
+      >
+        Label
+      </label>
+      <input
+        autocomplete="off"
+        class="input--number undefined"
+        id="input"
+        name="input"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input components Password should match snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  --icon-size: 1rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.c2 svg {
+  width: 100%;
+  height: 100%;
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
+}
+
+.c2.xs {
+  width: calc(var(--icon-size) * .8);
+  height: calc(var(--icon-size) * .8);
+}
+
+.c2.xs svg {
+  max-width: calc(var(--icon-size) * .8);
+  max-height: calc(var(--icon-size) * .8);
+}
+
+.c2.md {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+}
+
+.c2.md svg {
+  max-width: calc(var(--icon-size) * 2);
+  max-height: calc(var(--icon-size) * 2);
+}
+
+.c2.lg {
+  width: calc(var(--icon-size) * 4);
+  height: calc(var(--icon-size) * 4);
+}
+
+.c2.lg svg {
+  max-width: calc(var(--icon-size) * 4);
+  max-height: calc(var(--icon-size) * 4);
+}
+
+.c2.xl {
+  width: calc(var(--icon-size) * 7);
+  height: calc(var(--icon-size) * 7);
+}
+
+.c2.xl svg {
+  max-width: calc(var(--icon-size) * 7);
+  max-height: calc(var(--icon-size) * 7);
+}
+
+.c4 {
+  position: absolute;
+  top: 6px;
+  z-index: 10;
+  opacity: .5;
+  font-size: var(--text-md);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 {
+  --cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.02);
+  cursor: var(--cursor);
+  width: 44px;
+  min-width: 44px;
+  min-height: 100%;
+  color: var(--text-color);
+  border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 svg {
+  width: 16px;
+  height: 100%;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  --border-radius: 0 var(--radius) var(--radius) 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: var(--space-xxl);
+  border: var(--border);
+  background-color: var(--element-bg-color);
+  width: 100%;
+  min-width: 240px;
+  font-size: 1em;
+  border-radius: var(--radius);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  outline: none;
+}
+
+.c0 .input-label {
+  position: absolute;
+  top: .3rem;
+  left: 0.8rem;
+  z-index: 1;
+  opacity: 0.5;
+  color: var(--text-color);
+  font-size: var(--text-xxs);
+  font-weight: var(--font-weight-bd);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.c0 input {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
+  width: 100%;
+  height: 2.75rem;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  outline: none;
+  -webkit-transition: top 200ms ease-in-out;
+  transition: top 200ms ease-in-out;
+}
+
+.c0 input:disabled {
+  cursor: not-allowed;
+}
+
+.c0 .error {
+  position: absolute;
+  right: 0;
+  bottom: -1.5rem;
+  padding: 0.125rem 0.25rem;
+  text-align: right;
+  color: var(--color-error);
+  font-size: var(--text-xs);
+}
+
+.c0.empty label {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  top: 1rem;
+  left: 1rem;
+}
+
+.c0 .show-password {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+  outline: none;
+}
+
+.c0 .show-password:before {
+  position: absolute;
+  background-color: var(--color-white-50);
+  width: 2px;
+  height: 18px;
+  content: '';
+  border-radius: calc(var(--radius) / 2);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password svg {
+  color: var(--color-white-50);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password:hover svg {
+  color: var(--color-white);
+}
+
+.c0 .show-password:hover:before {
+  background-color: var(--color-white);
+}
+
+.c0 .show-password.dark svg {
+  color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:before {
+  background-color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:hover svg {
+  color: var(--color-black);
+}
+
+.c0 .show-password.dark:hover:before {
+  background-color: var(--color-black);
+}
+
+.c0 .show-password.active:before {
+  background-color: transparent;
+}
+
+.c0 .show-password.dark.active:before {
+  background-color: inherit;
+}
+
+.c0:hover .input-icon,
+.c0.focus .input-icon,
+.c0:focus-within .input-icon {
+  background-color: var(--color-primary);
+  color: var(--color-white-fix);
+}
+
+.c0:focus-within {
+  border-color: var(--color-primary);
+}
+
+.c0:focus-within label {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  top: .3rem;
+  left: 0.8rem;
+}
+
+<div
+    class="c0 text-input focus empty "
+    id="passwordWrapper"
+    style="margin-bottom: 0px;"
+  >
+    <div
+      class="c1 input-icon undefined"
+    >
+      <i
+        class="c2 icon undefined sm"
+      >
+        <svg
+          height="12.647"
+          viewBox="0 0 14.154 12.647"
+          width="14.154"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="tag"
+            transform="translate(0 -23.224)"
+          >
+            <g
+              data-name="Gruppe 529"
+              id="Gruppe_529"
+              transform="translate(0 23.224)"
+            >
+              <g
+                data-name="Gruppe 528"
+                id="Gruppe_528"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M11.04,23.224H6.694a1.038,1.038,0,0,0-.734.3L.3,29.184a1.038,1.038,0,0,0,0,1.468L4.65,35a1.038,1.038,0,0,0,1.468,0l5.657-5.656a1.041,1.041,0,0,0,.3-.735V24.262A1.038,1.038,0,0,0,11.04,23.224ZM9.224,26.857A.778.778,0,1,1,10,26.078.779.779,0,0,1,9.224,26.857Z"
+                  data-name="Pfad 300"
+                  fill="currentColor"
+                  id="Pfad_300"
+                  transform="translate(0 -23.224)"
+                />
+              </g>
+            </g>
+            <g
+              data-name="Gruppe 531"
+              id="Gruppe_531"
+              transform="translate(7.103 24.262)"
+            >
+              <g
+                data-name="Gruppe 530"
+                id="Gruppe_530"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M225,55.224v4.831a.9.9,0,0,1-.265.638l-5.748,5.748.088.088a1.038,1.038,0,0,0,1.468,0l5.191-5.19a1.037,1.037,0,0,0,.3-.734V56.262A1.038,1.038,0,0,0,225,55.224Z"
+                  data-name="Pfad 301"
+                  fill="currentColor"
+                  id="Pfad_301"
+                  transform="translate(-218.988 -55.224)"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </i>
+    </div>
+    <div
+      class="c3"
+    >
+      <label
+        class="c4 input-label undefined"
+        for="password"
+      >
+        Label
+      </label>
+      <input
+        autocomplete="off"
+        class="input--password undefined"
+        id="password"
+        name="password"
+        type="password"
+        value=""
+      />
+      <button
+        class="show-password false light"
+        type="button"
+      >
+        <i
+          class="c2 icon undefined sm"
+        >
+          <svg
+            height="6.653"
+            viewBox="0 0 11.161 6.653"
+            width="11.161"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              data-name="eye (2)"
+              id="eye_2_"
+              transform="translate(0 -98.725)"
+            >
+              <path
+                d="M5.58,98.725a6.962,6.962,0,0,0-5.493,3.062.442.442,0,0,0,0,.527,6.959,6.959,0,0,0,5.493,3.064,6.962,6.962,0,0,0,5.493-3.062.442.442,0,0,0,0-.527A6.959,6.959,0,0,0,5.58,98.725Zm.153,5.669A2.347,2.347,0,1,1,7.923,102.2,2.349,2.349,0,0,1,5.733,104.394Zm-.071-1.082a1.264,1.264,0,1,1,1.18-1.18A1.262,1.262,0,0,1,5.663,103.312Z"
+                data-name="Pfad 531"
+                fill="currentColor"
+                id="Pfad_531"
+                transform="translate(0 0)"
+              />
+            </g>
+          </svg>
+        </i>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input components Text should match snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  --icon-size: 1rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.c2 svg {
+  width: 100%;
+  height: 100%;
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
+}
+
+.c2.xs {
+  width: calc(var(--icon-size) * .8);
+  height: calc(var(--icon-size) * .8);
+}
+
+.c2.xs svg {
+  max-width: calc(var(--icon-size) * .8);
+  max-height: calc(var(--icon-size) * .8);
+}
+
+.c2.md {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+}
+
+.c2.md svg {
+  max-width: calc(var(--icon-size) * 2);
+  max-height: calc(var(--icon-size) * 2);
+}
+
+.c2.lg {
+  width: calc(var(--icon-size) * 4);
+  height: calc(var(--icon-size) * 4);
+}
+
+.c2.lg svg {
+  max-width: calc(var(--icon-size) * 4);
+  max-height: calc(var(--icon-size) * 4);
+}
+
+.c2.xl {
+  width: calc(var(--icon-size) * 7);
+  height: calc(var(--icon-size) * 7);
+}
+
+.c2.xl svg {
+  max-width: calc(var(--icon-size) * 7);
+  max-height: calc(var(--icon-size) * 7);
+}
+
+.c4 {
+  position: absolute;
+  top: 6px;
+  z-index: 10;
+  opacity: .5;
+  font-size: var(--text-md);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 {
+  --cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.02);
+  cursor: var(--cursor);
+  width: 44px;
+  min-width: 44px;
+  min-height: 100%;
+  color: var(--text-color);
+  border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c1 svg {
+  width: 16px;
+  height: 100%;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  --border-radius: 0 var(--radius) var(--radius) 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: var(--space-xxl);
+  border: var(--border);
+  background-color: var(--element-bg-color);
+  width: 100%;
+  min-width: 240px;
+  font-size: 1em;
+  border-radius: var(--radius);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  outline: none;
+}
+
+.c0 .input-label {
+  position: absolute;
+  top: .3rem;
+  left: 0.8rem;
+  z-index: 1;
+  opacity: 0.5;
+  color: var(--text-color);
+  font-size: var(--text-xxs);
+  font-weight: var(--font-weight-bd);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.c0 input {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: var(--space-fixed-md) var(--space-fixed-md) 0 var(--space-fixed-md);
+  width: 100%;
+  height: 2.75rem;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  outline: none;
+  -webkit-transition: top 200ms ease-in-out;
+  transition: top 200ms ease-in-out;
+}
+
+.c0 input:disabled {
+  cursor: not-allowed;
+}
+
+.c0 .error {
+  position: absolute;
+  right: 0;
+  bottom: -1.5rem;
+  padding: 0.125rem 0.25rem;
+  text-align: right;
+  color: var(--color-error);
+  font-size: var(--text-xs);
+}
+
+.c0.empty label {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  top: 1rem;
+  left: 1rem;
+}
+
+.c0 .show-password {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+  outline: none;
+}
+
+.c0 .show-password:before {
+  position: absolute;
+  background-color: var(--color-white-50);
+  width: 2px;
+  height: 18px;
+  content: '';
+  border-radius: calc(var(--radius) / 2);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password svg {
+  color: var(--color-white-50);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.c0 .show-password:hover svg {
+  color: var(--color-white);
+}
+
+.c0 .show-password:hover:before {
+  background-color: var(--color-white);
+}
+
+.c0 .show-password.dark svg {
+  color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:before {
+  background-color: var(--color-black-50);
+}
+
+.c0 .show-password.dark:hover svg {
+  color: var(--color-black);
+}
+
+.c0 .show-password.dark:hover:before {
+  background-color: var(--color-black);
+}
+
+.c0 .show-password.active:before {
+  background-color: transparent;
+}
+
+.c0 .show-password.dark.active:before {
+  background-color: inherit;
+}
+
+.c0:hover .input-icon,
+.c0.focus .input-icon,
+.c0:focus-within .input-icon {
+  background-color: var(--color-primary);
+  color: var(--color-white-fix);
+}
+
+.c0:focus-within {
+  border-color: var(--color-primary);
+}
+
+.c0:focus-within label {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  top: .3rem;
+  left: 0.8rem;
+}
+
+<div
+    class="c0 text-input focus empty "
+    id="inputWrapper"
+    style="margin-bottom: 0px;"
+  >
+    <div
+      class="c1 input-icon undefined"
+    >
+      <i
+        class="c2 icon undefined sm"
+      >
+        <svg
+          height="12.647"
+          viewBox="0 0 14.154 12.647"
+          width="14.154"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="tag"
+            transform="translate(0 -23.224)"
+          >
+            <g
+              data-name="Gruppe 529"
+              id="Gruppe_529"
+              transform="translate(0 23.224)"
+            >
+              <g
+                data-name="Gruppe 528"
+                id="Gruppe_528"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M11.04,23.224H6.694a1.038,1.038,0,0,0-.734.3L.3,29.184a1.038,1.038,0,0,0,0,1.468L4.65,35a1.038,1.038,0,0,0,1.468,0l5.657-5.656a1.041,1.041,0,0,0,.3-.735V24.262A1.038,1.038,0,0,0,11.04,23.224ZM9.224,26.857A.778.778,0,1,1,10,26.078.779.779,0,0,1,9.224,26.857Z"
+                  data-name="Pfad 300"
+                  fill="currentColor"
+                  id="Pfad_300"
+                  transform="translate(0 -23.224)"
+                />
+              </g>
+            </g>
+            <g
+              data-name="Gruppe 531"
+              id="Gruppe_531"
+              transform="translate(7.103 24.262)"
+            >
+              <g
+                data-name="Gruppe 530"
+                id="Gruppe_530"
+                transform="translate(0 0)"
+              >
+                <path
+                  d="M225,55.224v4.831a.9.9,0,0,1-.265.638l-5.748,5.748.088.088a1.038,1.038,0,0,0,1.468,0l5.191-5.19a1.037,1.037,0,0,0,.3-.734V56.262A1.038,1.038,0,0,0,225,55.224Z"
+                  data-name="Pfad 301"
+                  fill="currentColor"
+                  id="Pfad_301"
+                  transform="translate(-218.988 -55.224)"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </i>
+    </div>
+    <div
+      class="c3"
+    >
+      <label
+        class="c4 input-label undefined"
+        for="input"
+      >
+        Label
+      </label>
+      <input
+        autocomplete="off"
+        class="input--text undefined"
+        id="input"
+        name="input"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
