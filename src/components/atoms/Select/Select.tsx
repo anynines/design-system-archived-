@@ -21,7 +21,7 @@ export interface SelectProps extends DefaultComponentProps {
   onChange?: (value: string) => void
   register?: (validationRules: ValidationOptions) => void
   setValue?: (key: string, value: string) => void
-  values: (string | number)[]
+  values: (string | number)[] | {value: string | number; label: string}[]
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -36,8 +36,22 @@ export const Select: React.FC<SelectProps> = ({
   setValue,
   defaultValue = values[0]
 }) => {
+  const getValueIndex = React.useCallback((
+    valueToFind: string | number | {value: string | number; label: string}
+  ): number => {
+    if (typeof values[0] === 'object') {
+      // @ts-ignore
+      return values.findIndex((value: {value: string | number; label: string}) => {
+        return value.value === valueToFind
+      })
+    }
+
+    // @ts-ignore
+    return values.indexOf(valueToFind)
+  }, [values])
+
   const [valueState, setValueState] = React.useState(defaultValue)
-  const [hoveredValueIndex, setHoveredValueIndex] = React.useState<number>(values.indexOf(defaultValue))
+  const [hoveredValueIndex, setHoveredValueIndex] = React.useState<number>(getValueIndex(defaultValue))
   const [isActive, setIsActive] = React.useState(false)
   const selectRef = React.useRef<HTMLDivElement | null>(null)
 
@@ -52,9 +66,7 @@ export const Select: React.FC<SelectProps> = ({
     onChange(newValue)
   }
 
-  const onCustomSelectOptionClick = (event: React.MouseEvent<HTMLDivElement>): void => {
-    const newValue = event.currentTarget.dataset.value || ''
-
+  const onCustomSelectOptionClick = (newValue: string): void => {
     if (!register) {
       onChange(newValue)
     } else if (setValue) {
@@ -80,10 +92,15 @@ export const Select: React.FC<SelectProps> = ({
           : hoveredValueIndex)
         break
 
-      case 'Enter': case 'Spacebar':
-        onChange(values[hoveredValueIndex].toString())
+      case 'Enter': case 'Spacebar': {
+        const value = typeof values[hoveredValueIndex] === 'object'
+          // @ts-ignore
+          ? values[hoveredValueIndex].value
+          : values[hoveredValueIndex]
+        onChange(value)
         setIsActive(false)
         break
+      }
 
       default:
         break
@@ -92,9 +109,9 @@ export const Select: React.FC<SelectProps> = ({
 
   React.useEffect(() => {
     if (!isActive) {
-      setHoveredValueIndex(values.indexOf(valueState))
+      setHoveredValueIndex(getValueIndex(valueState))
     }
-  }, [isActive, valueState, values])
+  }, [getValueIndex, isActive, valueState, values])
 
   React.useEffect(() => {
     const cleanOnClickOutsideHook = onClickOutsideHook(selectRef, () => { setIsActive(false) })
@@ -127,12 +144,15 @@ export const Select: React.FC<SelectProps> = ({
       <div className='selectWrapper'>
         <select
           aria-labelledby={name}
-          defaultValue={defaultValue}
+          defaultValue={typeof defaultValue === 'object' ? defaultValue.value.toString() : defaultValue}
           name={name}
           ref={register ? register({ required: true }) as unknown as undefined : undefined}
           {...!register ? { ...props } : {}}
         >
           {values.map((value): JSX.Element => {
+            if (typeof value === 'object') {
+              return (<option value={value.value} key={value.value}>{value.label}</option>)
+            }
             return (<option value={value} key={value}>{value}</option>)
           })}
         </select>
@@ -144,15 +164,19 @@ export const Select: React.FC<SelectProps> = ({
           <div className='select-custom__option-container'>
             <div className='select-custom__inner-option-container'>
               {values.map((value, i): JSX.Element => {
+                const key = typeof value === 'object' ? value.value : value
+                const dataValue = typeof value === 'object' ? value.value : value
+                const dataLabel =  typeof value === 'object' ? value.label : value
+
                 return (
                   <div
                     className={`select-custom__option ${i === hoveredValueIndex ? 'is-hovered' : ''}`}
-                    data-value={value}
-                    key={value}
-                    onClick={onCustomSelectOptionClick}
+                    data-value={dataValue}
+                    key={key}
+                    onClick={(): void => { return onCustomSelectOptionClick(dataValue) }}
                     tabIndex={i}
                   >
-                    {value}
+                    {dataLabel}
                   </div>
                 )
               })}
