@@ -142,6 +142,7 @@ export const Select: React.FC<SelectProps> = ({
       */}
 
       <div className='selectWrapper'>
+        {/* @ts-ignore */}
         <select
           aria-labelledby={name}
           defaultValue={typeof defaultValue === 'object' ? defaultValue.value.toString() : defaultValue}
@@ -149,12 +150,15 @@ export const Select: React.FC<SelectProps> = ({
           ref={register ? register({ required: true }) as unknown as undefined : undefined}
           {...!register ? { ...props } : {}}
         >
-          {values.map((value): JSX.Element => {
-            if (typeof value === 'object') {
-              return (<option value={value.value} key={value.value}>{value.label}</option>)
-            }
-            return (<option value={value} key={value}>{value}</option>)
-          })}
+          {
+          // @ts-ignore
+            values.map((value): JSX.Element => {
+              if (typeof value === 'object') {
+                return (<option value={value.value} key={value.value}>{value.label}</option>)
+              }
+              return (<option value={value} key={value}>{value}</option>)
+            })
+          }
         </select>
 
         <div
@@ -163,23 +167,26 @@ export const Select: React.FC<SelectProps> = ({
         >
           <div className='select-custom__option-container'>
             <div className='select-custom__inner-option-container'>
-              {values.map((value, i): JSX.Element => {
-                const key = typeof value === 'object' ? value.value : value
-                const dataValue = typeof value === 'object' ? value.value : value
-                const dataLabel =  typeof value === 'object' ? value.label : value
+              {
+                // @ts-ignore
+                values.map((value, i): JSX.Element => {
+                  const key = typeof value === 'object' ? value.value : value
+                  const dataValue = typeof value === 'object' ? value.value : value
+                  const dataLabel =  typeof value === 'object' ? value.label : value
 
-                return (
-                  <div
-                    className={`select-custom__option ${i === focusedValueIndex ? 'is-hovered' : ''}`}
-                    data-value={dataValue}
-                    key={key}
-                    onClick={(): void => { return onCustomSelectOptionClick(dataValue) }}
-                    tabIndex={i}
-                  >
-                    {dataLabel}
-                  </div>
-                )
-              })}
+                  return (
+                    <div
+                      className={`select-custom__option ${i === focusedValueIndex ? 'is-hovered' : ''}`}
+                      data-value={dataValue}
+                      key={key}
+                      onClick={(): void => { return onCustomSelectOptionClick(dataValue) }}
+                      tabIndex={i}
+                    >
+                      {dataLabel}
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
         </div>
