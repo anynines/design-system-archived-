@@ -1,0 +1,8 @@
+{
+  "Changed": [
+    {
+      "title": "🌳 Organisms / Slider / SlideItemContent",
+      "description": "Added support for putting content over Slider images."
+    }
+  ]
+}

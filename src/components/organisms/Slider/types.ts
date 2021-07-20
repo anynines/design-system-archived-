@@ -7,6 +7,7 @@ export interface Slide {
   subtitle: string
   src: string
   link?: string
+  children?: React.ReactNode
 }
 
 export type Slider<T = SectionData> = T & {

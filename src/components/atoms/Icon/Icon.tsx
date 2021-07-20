@@ -32,6 +32,7 @@ import Customer from './assets/customer'
 import Dashboard from './assets/dashboard'
 import Delivery from './assets/delivery'
 import Diamond from './assets/diamond'
+import Diamond2 from './assets/diamond-2'
 import Drop from './assets/drop'
 
 // E
@@ -160,6 +161,7 @@ export type IconName = 'arrowUpRight'
   | 'dashboard'
   | 'delivery'
   | 'diamond'
+  | 'diamond2'
   | 'drop'
   | 'edit'
   | 'euro'
@@ -253,6 +255,7 @@ const ICONS: { [key in IconName]: JSX.Element } = {
   dashboard: <Dashboard />,
   delivery: <Delivery />,
   diamond: <Diamond />,
+  diamond2: <Diamond2 />,
   drop: <Drop />,
   edit: <Edit />,
   euro: <Euro />,
