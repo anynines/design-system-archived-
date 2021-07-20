@@ -51,7 +51,7 @@ export const Select: React.FC<SelectProps> = ({
   }, [values])
 
   const [valueState, setValueState] = React.useState(defaultValue)
-  const [hoveredValueIndex, setHoveredValueIndex] = React.useState<number>(getValueIndex(defaultValue))
+  const [focusedValueIndex, setFocusedValueIndex] = React.useState<number>(getValueIndex(defaultValue))
   const [isActive, setIsActive] = React.useState(false)
   const selectRef = React.useRef<HTMLDivElement | null>(null)
 
@@ -81,22 +81,22 @@ export const Select: React.FC<SelectProps> = ({
   const onSelectKeyDown = (event: KeyboardEvent): void => {
     switch (event.key) {
       case 'ArrowDown':
-        setHoveredValueIndex(hoveredValueIndex < values.length - 1
-          ? hoveredValueIndex + 1
-          : hoveredValueIndex)
+        setFocusedValueIndex(focusedValueIndex < values.length - 1
+          ? focusedValueIndex + 1
+          : focusedValueIndex)
         break
 
       case 'ArrowUp':
-        setHoveredValueIndex(hoveredValueIndex > 0
-          ? hoveredValueIndex - 1
-          : hoveredValueIndex)
+        setFocusedValueIndex(focusedValueIndex > 0
+          ? focusedValueIndex - 1
+          : focusedValueIndex)
         break
 
       case 'Enter': case 'Spacebar': {
-        const value = typeof values[hoveredValueIndex] === 'object'
+        const value = typeof values[focusedValueIndex] === 'object'
           // @ts-ignore
-          ? values[hoveredValueIndex].value
-          : values[hoveredValueIndex]
+          ? values[focusedValueIndex].value
+          : values[focusedValueIndex]
         onChange(value)
         setIsActive(false)
         break
@@ -109,7 +109,7 @@ export const Select: React.FC<SelectProps> = ({
 
   React.useEffect(() => {
     if (!isActive) {
-      setHoveredValueIndex(getValueIndex(valueState))
+      setFocusedValueIndex(getValueIndex(valueState))
     }
   }, [getValueIndex, isActive, valueState, values])
 
@@ -170,7 +170,7 @@ export const Select: React.FC<SelectProps> = ({
 
                 return (
                   <div
-                    className={`select-custom__option ${i === hoveredValueIndex ? 'is-hovered' : ''}`}
+                    className={`select-custom__option ${i === focusedValueIndex ? 'is-hovered' : ''}`}
                     data-value={dataValue}
                     key={key}
                     onClick={(): void => { return onCustomSelectOptionClick(dataValue) }}
