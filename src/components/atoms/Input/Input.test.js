@@ -234,4 +234,85 @@ describe('Input components', () => {
       expect(elem.getAttribute('type')).toBe('password')
     })
   })
+
+  describe('Date', () => {
+    beforeEach(() => {
+      type = 'date'
+      name = 'date'
+      label = 'Pick a date'
+      props = {
+        style, name, type, icon, label, autoComplete, autoFocus
+      }
+      component = renderWithProviders(<Input
+        {...props}
+      />)
+    })
+
+    it('should match snapshot', () => {
+      const { asFragment } = component
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('should print correct label', () => {
+      const { container } = component
+      const span = container.querySelector('.input-label')
+
+      expect(span.textContent).toBe(label)
+    })
+
+    it('should contain icon', () => {
+      const { container } = component
+      const elem = container.querySelector('.input-icon svg')
+      expect(elem).toBeTruthy()
+    })
+  })
+
+  describe('Color', () => {
+    beforeEach(() => {
+      type = 'color'
+      name = 'color'
+      label = 'Pick a color'
+      props = {
+        style, name, type, icon, label, autoComplete, autoFocus
+      }
+      component = renderWithProviders(<Input
+        {...props}
+      />)
+    })
+
+    it('should match snapshot', () => {
+      const { asFragment } = component
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('should print correct label', () => {
+      const { container } = component
+      const span = container.querySelector('.input-label')
+
+      expect(span.textContent).toBe(label)
+    })
+
+    it('should contain icon', () => {
+      const { container } = component
+      const elem = container.querySelector('.input-icon svg')
+      expect(elem).toBeTruthy()
+    })
+
+    it('should allow characters to be inputted', () => {
+      const { container } = component
+      const elem = container.querySelector('#color')
+
+      fireEvent.change(elem, { target: { value: '#000000' } })
+      expect(elem.value).toBe('#000000')
+    })
+
+    it('should allow letters to be deleted', () => {
+      const { container } = component
+      const elem = container.querySelector('#color')
+
+      fireEvent.change(elem, { target: { value: '#000000' } })
+      fireEvent.change(elem, { target: { value: '#fff' } })
+      expect(elem.value).toBe('#fff')
+    })
+  })
 })
