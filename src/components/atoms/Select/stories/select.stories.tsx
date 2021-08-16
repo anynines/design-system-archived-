@@ -112,3 +112,15 @@ export const WithNumber = () => (
     />
   </Wrapper>
 )
+
+export const WithValuesAsObjects = () => (
+  <Wrapper>
+    <Select
+      label='Pick a number'
+      name='number'
+      values={[{value: 'banana', label: '🍌'}, {value: 'apple', label: '🍎'}, {value: 'pineapple', label: '🍍'}]}
+      icon='drop'
+      onChange={action('Selected item')}
+    />
+  </Wrapper>
+)
