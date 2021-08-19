@@ -29,7 +29,7 @@ const StyledLineSkeleton = styled.span`
   position: relative;
   overflow: hidden;
   opacity: .25;
-  background: linear-gradient(to right, var(--color-white) 8%, var(--color-white-70) 18%, var(--color-white) 33%);
+  background: linear-gradient(to right, var(--color-dark) 8%, var(--color-dark-70) 18%, var(--color-dark) 33%);
   background-size: 1200px 104px;
   border-radius: var(--radius);
   animation-duration: 1s;
